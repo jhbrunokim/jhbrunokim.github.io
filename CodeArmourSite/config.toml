@@ -1,6 +1,6 @@
 baseURL = "https://codearmour.netlify.com"
 disableLanguages = []
-disqusShortname = "educenter"
+disqusShortname = "Code Armour"
 paginate = "6"
 summaryLength = "10"
 theme = "educenter-hugo"
