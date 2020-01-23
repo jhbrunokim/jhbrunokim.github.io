@@ -1,6 +1,6 @@
 [build]
-  publish = "CodeArmour/public"
-  command = "cd CodeArmour && hugo --gc --themesDir ../.."
+  publish = "CodeArmourSite/public"
+  command = "cd CodeArmourSite && hugo --gc --themesDir ../.."
   
 [build.environment]
   HUGO_VERSION = "0.60.1"

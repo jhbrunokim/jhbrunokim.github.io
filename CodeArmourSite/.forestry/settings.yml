@@ -7,14 +7,14 @@ sections:
 - type: heading
   label: Blog Post
 - type: directory
-  path: CodeArmour/content/english/blog
+  path: CodeArmourSite/content/english/blog
   label: Post (en)
   create: documents
   match: "**/*"
   templates:
   - post
 - type: directory
-  path: CodeArmour/content/french/blog
+  path: CodeArmourSite/content/french/blog
   label: Post (fr)
   create: documents
   match: "**/*"
@@ -23,14 +23,14 @@ sections:
 - type: heading
   label: Author
 - type: directory
-  path: CodeArmour/content/english/author
+  path: CodeArmourSite/content/english/author
   label: Author (en)
   create: documents
   match: "**/*"
   templates:
   - author
 - type: directory
-  path: CodeArmour/content/french/author
+  path: CodeArmourSite/content/french/author
   label: Author (fr)
   create: documents
   match: "**/*"
@@ -39,14 +39,14 @@ sections:
 - type: heading
   label: Course
 - type: directory
-  path: CodeArmour/content/english/course
+  path: CodeArmourSite/content/english/course
   label: Course (en)
   create: documents
   match: "**/*"
   templates:
   - course
 - type: directory
-  path: CodeArmour/content/french/course
+  path: CodeArmourSite/content/french/course
   label: Course (fr)
   create: documents
   match: "**/*"
@@ -55,14 +55,14 @@ sections:
 - type: heading
   label: Notice
 - type: directory
-  path: CodeArmour/content/english/notice
+  path: CodeArmourSite/content/english/notice
   label: Notice (en)
   create: all
   match: "**/*"
   templates:
   - notice
 - type: directory
-  path: CodeArmour/content/french/notice
+  path: CodeArmourSite/content/french/notice
   label: Notice (fr)
   create: all
   match: "**/*"
@@ -71,14 +71,14 @@ sections:
 - type: heading
   label: Teacher
 - type: directory
-  path: CodeArmour/content/english/teacher
+  path: CodeArmourSite/content/english/teacher
   label: Teacher (en)
   create: all
   match: "**/*"
   templates:
   - teacher
 - type: directory
-  path: CodeArmour/content/french/teacher
+  path: CodeArmourSite/content/french/teacher
   label: Teacher (fr)
   create: all
   match: "**/*"
@@ -87,14 +87,14 @@ sections:
 - type: heading
   label: Event
 - type: directory
-  path: CodeArmour/content/english/event
+  path: CodeArmourSite/content/english/event
   label: Event (en)
   create: all
   match: "**/*"
   templates:
   - event
 - type: directory
-  path: CodeArmour/content/french/event
+  path: CodeArmourSite/content/french/event
   label: Event (fr)
   create: all
   match: "**/*"
@@ -103,14 +103,14 @@ sections:
 - type: heading
   label: Research
 - type: directory
-  path: CodeArmour/content/english/research
+  path: CodeArmourSite/content/english/research
   label: Research (en)
   create: all
   match: "**/*"
   templates:
   - research
 - type: directory
-  path: CodeArmour/content/french/research
+  path: CodeArmourSite/content/french/research
   label: Research (fr)
   create: all
   match: "**/*"
@@ -119,14 +119,14 @@ sections:
 - type: heading
   label: Scholarship
 - type: directory
-  path: CodeArmour/content/english/scholarship
+  path: CodeArmourSite/content/english/scholarship
   label: Scholarship (en)
   create: all
   match: "**/*"
   templates:
   - scholarship
 - type: directory
-  path: CodeArmour/content/french/scholarship
+  path: CodeArmourSite/content/french/scholarship
   label: Scholarship (fr)
   create: all
   match: "**/*"
@@ -135,48 +135,48 @@ sections:
 - type: heading
   label: Others Pages
 - type: directory
-  path: CodeArmour/content/english/about
+  path: CodeArmourSite/content/english/about
   label: About (en)
   create: none
   match: "*"
 - type: directory
-  path: CodeArmour/content/french/about
+  path: CodeArmourSite/content/french/about
   label: About (fr)
   create: none
   match: "*"
 - type: directory
-  path: CodeArmour/content/english/contact
+  path: CodeArmourSite/content/english/contact
   label: Contact (en)
   create: none
   match: "*"
 - type: directory
-  path: CodeArmour/content/french/contact
+  path: CodeArmourSite/content/french/contact
   label: Contact (fr)
   create: none
   match: "*"
 - type: directory
-  path: CodeArmour/content/english/pages
+  path: CodeArmourSite/content/english/pages
   label: Created Pages (en)
   create: documents
   match: "**/*"
   templates:
   - new-page
 - type: directory
-  path: CodeArmour/content/french/pages
+  path: CodeArmourSite/content/french/pages
   label: Created Pages (fr)
   create: all
   match: "**/*"
   templates:
   - new-page
 - type: directory
-  path: CodeArmour/content/english
+  path: CodeArmourSite/content/english
   label: All Pages (en)
   create: all
   match: "**/*"
   templates:
   - new-page
 - type: directory
-  path: CodeArmour/content/french
+  path: CodeArmourSite/content/french
   label: All Pages (fr)
   create: all
   match: "**/*"
@@ -185,29 +185,29 @@ sections:
 - type: heading
   label: Data
 - type: directory
-  path: CodeArmour/data/en
+  path: CodeArmourSite/data/en
   label: Data (en)
   create: all
   match: "**/*"
 - type: directory
-  path: CodeArmour/data/fr
+  path: CodeArmourSite/data/fr
   label: Data (fr)
   create: all
   match: "**/*"
 - type: directory
-  path: CodeArmour/i18n
+  path: CodeArmourSite/i18n
   label: i18n
   create: documents
   match: "**/*"
 - type: heading
   label: Configuration
 - type: directory
-  path: CodeArmour
+  path: CodeArmourSite
   label: Configuration
   create: all
   match: "*.toml"
   new_doc_ext: toml
-upload_dir: CodeArmour/static/images
+upload_dir: CodeArmourSite/static/images
 public_path: "/images"
 front_matter_path: ''
 use_front_matter_path: false
