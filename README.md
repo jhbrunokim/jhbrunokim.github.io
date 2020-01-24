@@ -1,4 +1,4 @@
-# Start 
+# Start  
 # Easy Setup (Hugo + Netlify + Forestry)
 Build your website with educenter hugo theme by following this easy steps (No Coding Required)
 
