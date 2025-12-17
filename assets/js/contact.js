@@ -68,9 +68,9 @@ class ContactFormManager {
     try {
       // EmailJS send
       // Replace these with your actual EmailJS credentials
-      const serviceID = 'YOUR_SERVICE_ID';
-      const templateID = 'YOUR_TEMPLATE_ID';
-      const publicKey = 'YOUR_PUBLIC_KEY';
+      const serviceID = 'service_gmmt';
+      const templateID = 'template_owc4fne';
+      const publicKey = 'oxNyGY4Y3JcIsG6Ml';
 
       await emailjs.send(serviceID, templateID, data, publicKey);
 
@@ -92,10 +92,10 @@ class ContactFormManager {
 
   validateForm(data) {
     return data.from_name &&
-           data.from_email &&
-           data.subject &&
-           data.message &&
-           this.validateEmail(data.from_email);
+      data.from_email &&
+      data.subject &&
+      data.message &&
+      this.validateEmail(data.from_email);
   }
 
   validateEmail(email) {
@@ -125,11 +125,10 @@ class ContactFormManager {
     if (!this.statusMessage) return;
 
     this.statusMessage.textContent = message;
-    this.statusMessage.className = `mt-4 p-4 rounded-lg text-sm font-medium ${
-      type === 'success'
-        ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'
-        : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400'
-    }`;
+    this.statusMessage.className = `mt-4 p-4 rounded-lg text-sm font-medium ${type === 'success'
+      ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'
+      : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400'
+      }`;
     this.statusMessage.classList.remove('hidden');
 
     // Hide after 5 seconds
