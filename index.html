@@ -1,523 +1,1279 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title 수정: Kwangmyeong -> Gwangmyung -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>광명마리타임 (Gwangmyung Maritime)</title>
-    
-    <!-- Tailwind CSS (스타일링) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons (아이콘) -->
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="조선·해양 산업을 위한 선박 OT 및 사이버 보안 중심의 기술 전문 기업. IACS UR E26/E27 대응 및 선박 보안 아키텍처 설계."
+    />
+    <meta
+      name="keywords"
+      content="선박 보안, OT 보안, 사이버 보안, E26, E27, IACS, 조선, 해양, 광명마리타임"
+    />
+    <meta name="author" content="Gwangmyung Maritime" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="광명마리타임 (Gwangmyung Maritime)" />
+    <meta
+      property="og:description"
+      content="선박 OT 및 사이버 보안 전문 기업"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gmmaritime.com" />
+    <meta
+      property="og:image"
+      content="https://gmmaritime.com/assets/images/logo.svg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS (Built) -->
+    <link rel="stylesheet" href="assets/css/output.css" />
+
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <style>
-        /* 한글 줄바꿈 처리 */
-        body {
-            word-break: keep-all;
-            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-        /* 애니메이션 정의 */
-        @keyframes blob {
-            0% { transform: translate(0px, 0px) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-            100% { transform: translate(0px, 0px) scale(1); }
-        }
-        .animate-blob {
-            animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-            animation-delay: 2s;
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.5s ease-out forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-</head>
-<body class="bg-slate-50 text-slate-800 overflow-x-hidden">
+    <!-- EmailJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("oxNyGY4Y3JcIsG6Ml"); // Replace with your EmailJS public key
+      })();
+    </script>
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 overflow-x-hidden transition-colors duration-300"
+  >
+    <!-- Country/Language Detection Modal -->
+    <div
+      id="country-modal"
+      class="hidden fixed inset-0 z-[100] items-center justify-center bg-black/60 backdrop-blur-sm"
+    >
+      <div
+        class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl max-w-md w-full mx-4 p-8 text-center"
+      >
+        <div class="mb-6">
+          <i data-lucide="globe" class="w-12 h-12 text-blue-500 mx-auto mb-4"></i>
+          <h2
+            class="text-2xl font-bold text-slate-900 dark:text-white mb-2"
+            id="modal-title"
+          >
+            <span data-i18n="countryModal.detectedMessage">You are connecting from</span>
+          </h2>
+          <p
+            class="text-3xl font-bold text-blue-600 dark:text-blue-400"
+            id="detected-country-name"
+          >
+            Korea
+          </p>
+        </div>
+
+        <!-- Country Selection Dropdown (Initially Hidden) -->
+        <div class="mb-6 hidden" id="country-dropdown-container">
+          <select
+            id="country-select"
+            class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 dark:text-white"
+          >
+            <option value="KR" data-i18n="countryModal.countries.KR">대한민국 (Korea)</option>
+            <option value="US" data-i18n="countryModal.countries.US">United States</option>
+            <option value="CN" data-i18n="countryModal.countries.CN">中国 (China)</option>
+            <option value="JP" data-i18n="countryModal.countries.JP">日本 (Japan)</option>
+          </select>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="space-y-3">
+          <button
+            id="modal-continue"
+            class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all shadow-lg"
+          >
+            <span data-i18n="countryModal.continueButton">Continue</span>
+          </button>
+          <button
+            id="select-other"
+            class="w-full px-6 py-3 bg-transparent border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 text-slate-700 dark:text-slate-300 rounded-lg font-medium transition-all"
+          >
+            <span data-i18n="countryModal.selectOther">Select other country or region</span>
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-5 bg-transparent">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <!-- Logo Image: alt 텍스트 수정 -->
-                <img src="resource/gmmaritime.ico" alt="Gwangmyung Maritime Logo" class="w-10 h-10 object-contain rounded-xl shadow-md bg-white/10 p-0.5">
-                <span id="nav-logo-text" class="text-xl font-bold tracking-wider text-white">
-                    광명마리타임
-                </span>
-            </div>
-
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors">Home</a>
-                <a href="#about" class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors">About</a>
-                <a href="#expertise" class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors">Expertise</a>
-                <a href="#compliance" class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors">UR E26/E27</a>
-                <a href="#vision" class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors">Vision</a>
-                <a href="#contact" class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors">Contact</a>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+    <nav
+      id="navbar"
+      class="fixed w-full z-50 transition-all duration-300 py-5 bg-transparent"
+    >
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+          <img
+            src="assets/images/logo.svg"
+            alt="Gwangmyung Maritime Logo"
+            class="w-10 h-10 object-contain"
+          />
+          <span
+            id="nav-logo-text"
+            class="text-xl font-bold tracking-wider text-white dark:text-white"
+            data-i18n="nav.logo"
+          >
+            광명마리타임
+          </span>
         </div>
 
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900 border-t border-slate-800 py-4 shadow-xl">
-            <div class="flex flex-col px-6 space-y-4">
-                <a href="#home" class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium">Home</a>
-                <a href="#about" class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium">About</a>
-                <a href="#expertise" class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium">Expertise</a>
-                <a href="#compliance" class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium">UR E26/E27</a>
-                <a href="#vision" class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium">Vision</a>
-                <a href="#contact" class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium">Contact</a>
-            </div>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="#home"
+            class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors"
+            data-i18n="nav.home"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors"
+            data-i18n="nav.about"
+            >About</a
+          >
+          <a
+            href="#expertise"
+            class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors"
+            data-i18n="nav.expertise"
+            >Expertise</a
+          >
+          <a
+            href="#compliance"
+            class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors"
+            data-i18n="nav.compliance"
+            >UR E26/E27</a
+          >
+          <a
+            href="#vision"
+            class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors"
+            data-i18n="nav.vision"
+            >Vision</a
+          >
+          <a
+            href="#contact"
+            class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors"
+            data-i18n="nav.contact"
+            >Contact</a
+          >
         </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden text-white focus:outline-none"
+        >
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900 dark:bg-slate-950 border-t border-slate-800 dark:border-slate-800 py-4 shadow-xl"
+      >
+        <div class="flex flex-col px-6 space-y-4">
+          <a
+            href="#home"
+            class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium"
+            data-i18n="nav.home"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium"
+            data-i18n="nav.about"
+            >About</a
+          >
+          <a
+            href="#expertise"
+            class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium"
+            data-i18n="nav.expertise"
+            >Expertise</a
+          >
+          <a
+            href="#compliance"
+            class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium"
+            data-i18n="nav.compliance"
+            >UR E26/E27</a
+          >
+          <a
+            href="#vision"
+            class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium"
+            data-i18n="nav.vision"
+            >Vision</a
+          >
+          <a
+            href="#contact"
+            class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium"
+            data-i18n="nav.contact"
+            >Contact</a
+          >
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center bg-slate-900 overflow-hidden">
-        <!-- Abstract Background -->
-        <div class="absolute inset-0 z-0">
-            <div class="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-l from-blue-900/20 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-slate-900 to-transparent"></div>
-            <div class="absolute w-full h-full opacity-10" 
-                 style="background-image: linear-gradient(rgba(59, 130, 246, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.5) 1px, transparent 1px); background-size: 40px 40px;">
-            </div>
-        </div>
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center bg-slate-900 dark:bg-slate-950 overflow-hidden"
+    >
+      <!-- Abstract Background -->
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-l from-blue-900/20 to-transparent"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-slate-900 dark:from-slate-950 to-transparent"
+        ></div>
+        <div
+          class="absolute w-full h-full opacity-10"
+          style="
+            background-image: linear-gradient(
+                rgba(59, 130, 246, 0.5) 1px,
+                transparent 1px
+              ),
+              linear-gradient(
+                90deg,
+                rgba(59, 130, 246, 0.5) 1px,
+                transparent 1px
+              );
+            background-size: 40px 40px;
+          "
+        ></div>
+      </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-6 pt-20">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-semibold mb-6">
-                    <i data-lucide="shield" class="w-4 h-4"></i>
-                    <span>Ship OT & Cyber Security Specialist</span>
-                </div>
-                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                    선박을 단순한 IT가 아닌<br />
-                    <span class="text-blue-500">실제 운항되는 물리 시스템</span>으로 이해합니다.
-                </h1>
-                <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl">
-                    광명마리타임은 운항 안전과 사이버 리스크를 함께 고려하여,<br class="hidden md:block"/>
-                    현실적이고 지속 가능한 선박 보안 아키텍처를 설계합니다.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#compliance" class="flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all shadow-lg shadow-blue-900/50">
-                        UR E26/E27 솔루션 보기
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                    <a href="#contact" class="flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-slate-600 hover:border-slate-400 text-slate-300 hover:text-white rounded-lg font-semibold transition-all">
-                        문의하기
-                    </a>
-                </div>
-            </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 pt-16">
+        <div class="max-w-3xl">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-semibold mb-6"
+          >
+            <i data-lucide="shield" class="w-4 h-4"></i>
+            <span data-i18n="hero.badge"
+              >Ship OT & Cyber Security Specialist</span
+            >
+          </div>
+          <h1
+            class="text-4xl md:text-6xl font-bold text-white leading-snug mb-6"
+          >
+            <span data-i18n="hero.title">선박을 단순한 IT가 아닌</span><br />
+            <span class="text-blue-500" data-i18n="hero.titleHighlight"
+              >실제 운항되는 물리 시스템</span
+            ><span data-i18n="hero.titleEnd">으로 이해합니다.</span>
+          </h1>
+          <p
+            class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl"
+            data-i18n="hero.description"
+            data-i18n-html="true"
+          >
+            광명마리타임은 운항 안전과 사이버 리스크를 함께 고려하여,<br
+              class="hidden md:block"
+            />
+            현실적이고 지속 가능한 선박 보안 아키텍처를 설계합니다.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#compliance"
+              class="flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white rounded-lg font-semibold transition-all shadow-lg shadow-blue-900/50"
+            >
+              <span data-i18n="hero.ctaPrimary">UR E26/E27 솔루션 보기</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="#contact"
+              class="flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-slate-600 hover:border-slate-400 text-slate-300 hover:text-white rounded-lg font-semibold transition-all"
+            >
+              <span data-i18n="hero.ctaSecondary">문의하기</span>
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Philosophy Section -->
-    <section id="about" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
+    <section id="about" class="py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2
+              class="text-3xl font-bold text-slate-900 dark:text-white mb-6 leading-snug"
+              data-i18n="philosophy.title"
+            >
+              우리의 접근 방식은 다릅니다.
+            </h2>
+            <div class="space-y-8">
+              <div class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center"
+                >
+                  <i
+                    data-lucide="activity"
+                    class="w-6 h-6 text-slate-600 dark:text-slate-400"
+                  ></i>
+                </div>
                 <div>
-                    <h2 class="text-3xl font-bold text-slate-900 mb-6">
-                        우리의 접근 방식은 다릅니다.
-                    </h2>
-                    <div class="space-y-8">
-                        <div class="flex gap-4">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center">
-                                <i data-lucide="activity" class="w-6 h-6 text-slate-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-2">설치가 아닌 설계</h3>
-                                <p class="text-slate-600 leading-relaxed">
-                                    보안 솔루션을 단순히 "설치"하는 것이 아니라, 구조를 설계하고 책임을 정리하여 운항 중단 없는 보안 통제 구조를 만듭니다.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center">
-                                <i data-lucide="lock" class="w-6 h-6 text-slate-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-2">운항 안정성 최우선</h3>
-                                <p class="text-slate-600 leading-relaxed">
-                                    무조건적인 최신 솔루션보다는 운항 안정성을, 자동 패치보다는 통제 가능한 구조를 우선시합니다.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center">
-                                <i data-lucide="anchor" class="w-6 h-6 text-slate-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-2">Lifecycle 관점</h3>
-                                <p class="text-slate-600 leading-relaxed">
-                                    단기 프로젝트가 아닌 선박의 전체 수명주기(Lifecycle) 관점에서 지속 가능한 보안 모델을 제시합니다.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                  <h3
+                    class="text-xl font-bold text-slate-900 dark:text-white mb-2"
+                    data-i18n="philosophy.item1Title"
+                  >
+                    설치가 아닌 설계
+                  </h3>
+                  <p
+                    class="text-slate-600 dark:text-slate-400 leading-relaxed"
+                    data-i18n="philosophy.item1Desc"
+                  >
+                    보안 솔루션을 단순히 "설치"하는 것이 아니라, 구조를 설계하고
+                    책임을 정리하여 운항 중단 없는 보안 통제 구조를 만듭니다.
+                  </p>
                 </div>
-                <div class="relative">
-                    <div class="aspect-[4/3] rounded-2xl bg-slate-900 overflow-hidden shadow-2xl relative">
-                        <div class="absolute inset-0 flex items-center justify-center flex-col text-center p-8 bg-gradient-to-br from-slate-800 to-slate-900">
-                            <i data-lucide="file-text" class="w-16 h-16 text-blue-500 mb-4 opacity-80"></i>
-                            <h3 class="text-2xl font-bold text-white mb-2">Document vs Reality</h3>
-                            <p class="text-slate-400">
-                                "선급을 통과하는 문서"에 그치지 않고,<br />
-                                <span class="text-blue-400 font-semibold">실제로 운항 단계에서 작동하는</span><br />
-                                OT 보안을 구현합니다.
-                            </p>
-                        </div>
-                        <div class="absolute top-4 left-4 right-4 bottom-4 border border-slate-700/50 rounded-xl pointer-events-none"></div>
-                    </div>
+              </div>
+              <div class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center"
+                >
+                  <i
+                    data-lucide="lock"
+                    class="w-6 h-6 text-slate-600 dark:text-slate-400"
+                  ></i>
                 </div>
+                <div>
+                  <h3
+                    class="text-xl font-bold text-slate-900 dark:text-white mb-2"
+                    data-i18n="philosophy.item2Title"
+                  >
+                    운항 안정성 최우선
+                  </h3>
+                  <p
+                    class="text-slate-600 dark:text-slate-400 leading-relaxed"
+                    data-i18n="philosophy.item2Desc"
+                  >
+                    무조건적인 최신 솔루션보다는 운항 안정성을, 자동 패치보다는
+                    통제 가능한 구조를 우선시합니다.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center"
+                >
+                  <i
+                    data-lucide="anchor"
+                    class="w-6 h-6 text-slate-600 dark:text-slate-400"
+                  ></i>
+                </div>
+                <div>
+                  <h3
+                    class="text-xl font-bold text-slate-900 dark:text-white mb-2"
+                    data-i18n="philosophy.item3Title"
+                  >
+                    Lifecycle 관점
+                  </h3>
+                  <p
+                    class="text-slate-600 dark:text-slate-400 leading-relaxed"
+                    data-i18n="philosophy.item3Desc"
+                  >
+                    단기 프로젝트가 아닌 선박의 전체 수명주기(Lifecycle)
+                    관점에서 지속 가능한 보안 모델을 제시합니다.
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="relative">
+            <div
+              class="aspect-[4/3] rounded-2xl bg-slate-900 dark:bg-slate-800 overflow-hidden shadow-2xl relative"
+            >
+              <div
+                class="absolute inset-0 flex items-center justify-center flex-col text-center p-8 bg-gradient-to-br from-slate-800 to-slate-900 dark:from-slate-900 dark:to-slate-950"
+              >
+                <i
+                  data-lucide="file-text"
+                  class="w-16 h-16 text-blue-500 mb-4 opacity-80"
+                ></i>
+                <h3
+                  class="text-2xl font-bold text-white mb-2"
+                  data-i18n="philosophy.boxTitle"
+                >
+                  Document vs Reality
+                </h3>
+                <p
+                  class="text-slate-400"
+                  data-i18n="philosophy.boxDesc"
+                  data-i18n-html="true"
+                >
+                  "선급을 통과하는 문서"에 그치지 않고,<br />
+                  <span class="text-blue-400 font-semibold"
+                    >실제로 운항 단계에서 작동하는</span
+                  ><br />
+                  OT 보안을 구현합니다.
+                </p>
+              </div>
+              <div
+                class="absolute top-4 left-4 right-4 bottom-4 border border-slate-700/50 rounded-xl pointer-events-none"
+              ></div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Expertise Summary Section -->
-    <section id="expertise" class="py-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="text-blue-600 font-semibold tracking-wider text-sm uppercase">Our Expertise</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">광명마리타임의 핵심 역량</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
-                    <div class="mb-4"><i data-lucide="shield" class="w-8 h-8 text-blue-400"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">선박 OT 보안 아키텍처</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">운항 안전과 사이버 리스크를 고려한 현실적인 설계</p>
-                </div>
-                <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
-                    <div class="mb-4"><i data-lucide="layers" class="w-8 h-8 text-blue-400"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">E26 / E27 대응 구조</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">선급 승인을 위한 구조 설계 및 기술 컨설팅</p>
-                </div>
-                <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
-                    <div class="mb-4"><i data-lucide="network" class="w-8 h-8 text-blue-400"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">네트워크 경계 설계</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">OT Zone 분리 및 Ship-Shore 보안 구조 수립</p>
-                </div>
-                <!-- Service 4 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
-                    <div class="mb-4"><i data-lucide="server" class="w-8 h-8 text-blue-400"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">MSUS & 패치 관리</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">소프트웨어 버전 변경 관리 및 패치 불가 환경 리스크 관리</p>
-                </div>
-            </div>
-
-            <div class="mt-12 grid md:grid-cols-3 gap-4 text-sm font-medium text-slate-700">
-                <div class="flex items-center gap-2 bg-white px-4 py-3 rounded-lg border border-slate-200"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>E26/E27 기반 구조 설계</div>
-                <div class="flex items-center gap-2 bg-white px-4 py-3 rounded-lg border border-slate-200"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>SCARP 구조 설계 및 검토</div>
-                <div class="flex items-center gap-2 bg-white px-4 py-3 rounded-lg border border-slate-200"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>선주·조선소·공급사 역할 정립</div>
-                <div class="flex items-center gap-2 bg-white px-4 py-3 rounded-lg border border-slate-200"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>선급(Class) 대응 기술 자문</div>
-                <div class="flex items-center gap-2 bg-white px-4 py-3 rounded-lg border border-slate-200"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>OT-aware Firewall 적용</div>
-                <div class="flex items-center gap-2 bg-white px-4 py-3 rounded-lg border border-slate-200"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>장비(E27) 기반 변경 이력 관리</div>
-            </div>
+    <section id="expertise" class="py-24 bg-slate-50 dark:bg-slate-950">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span
+            class="text-blue-600 dark:text-blue-400 font-semibold tracking-wider text-sm uppercase"
+            data-i18n="expertise.subtitle"
+            >Our Expertise</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
+            data-i18n="expertise.title"
+          >
+            광명마리타임의 핵심 역량
+          </h2>
         </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Service 1 -->
+          <div
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 dark:border-slate-800"
+          >
+            <div class="mb-4">
+              <i data-lucide="shield" class="w-8 h-8 text-blue-400"></i>
+            </div>
+            <h3
+              class="text-lg font-bold text-slate-900 dark:text-white mb-3"
+              data-i18n="expertise.service1Title"
+            >
+              선박 OT 보안 아키텍처
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+              data-i18n="expertise.service1Desc"
+            >
+              운항 안전과 사이버 리스크를 고려한 현실적인 설계
+            </p>
+          </div>
+          <!-- Service 2 -->
+          <div
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 dark:border-slate-800"
+          >
+            <div class="mb-4">
+              <i data-lucide="layers" class="w-8 h-8 text-blue-400"></i>
+            </div>
+            <h3
+              class="text-lg font-bold text-slate-900 dark:text-white mb-3"
+              data-i18n="expertise.service2Title"
+            >
+              E26 / E27 대응 구조
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+              data-i18n="expertise.service2Desc"
+            >
+              선급 승인을 위한 구조 설계 및 기술 컨설팅
+            </p>
+          </div>
+          <!-- Service 3 -->
+          <div
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 dark:border-slate-800"
+          >
+            <div class="mb-4">
+              <i data-lucide="network" class="w-8 h-8 text-blue-400"></i>
+            </div>
+            <h3
+              class="text-lg font-bold text-slate-900 dark:text-white mb-3"
+              data-i18n="expertise.service3Title"
+            >
+              네트워크 경계 설계
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+              data-i18n="expertise.service3Desc"
+            >
+              OT Zone 분리 및 Ship-Shore 보안 구조 수립
+            </p>
+          </div>
+          <!-- Service 4 -->
+          <div
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 dark:border-slate-800"
+          >
+            <div class="mb-4">
+              <i data-lucide="server" class="w-8 h-8 text-blue-400"></i>
+            </div>
+            <h3
+              class="text-lg font-bold text-slate-900 dark:text-white mb-3"
+              data-i18n="expertise.service4Title"
+            >
+              MSUS & 패치 관리
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+              data-i18n="expertise.service4Desc"
+            >
+              소프트웨어 버전 변경 관리 및 패치 불가 환경 리스크 관리
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="mt-12 grid md:grid-cols-3 gap-4 text-sm font-medium text-slate-700 dark:text-slate-300"
+        >
+          <div
+            class="flex items-center gap-2 bg-white dark:bg-slate-900 px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800"
+          >
+            <i
+              data-lucide="check-circle"
+              class="w-4 h-4 text-green-500 flex-shrink-0"
+            ></i
+            ><span data-i18n="expertise.check1">E26/E27 기반 구조 설계</span>
+          </div>
+          <div
+            class="flex items-center gap-2 bg-white dark:bg-slate-900 px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800"
+          >
+            <i
+              data-lucide="check-circle"
+              class="w-4 h-4 text-green-500 flex-shrink-0"
+            ></i
+            ><span data-i18n="expertise.check2">SCARP 구조 설계 및 검토</span>
+          </div>
+          <div
+            class="flex items-center gap-2 bg-white dark:bg-slate-900 px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800"
+          >
+            <i
+              data-lucide="check-circle"
+              class="w-4 h-4 text-green-500 flex-shrink-0"
+            ></i
+            ><span data-i18n="expertise.check3"
+              >선주·조선소·공급사 역할 정립</span
+            >
+          </div>
+          <div
+            class="flex items-center gap-2 bg-white dark:bg-slate-900 px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800"
+          >
+            <i
+              data-lucide="check-circle"
+              class="w-4 h-4 text-green-500 flex-shrink-0"
+            ></i
+            ><span data-i18n="expertise.check4"
+              >선급(Class) 대응 기술 자문</span
+            >
+          </div>
+          <div
+            class="flex items-center gap-2 bg-white dark:bg-slate-900 px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800"
+          >
+            <i
+              data-lucide="check-circle"
+              class="w-4 h-4 text-green-500 flex-shrink-0"
+            ></i
+            ><span data-i18n="expertise.check5">OT-aware Firewall 적용</span>
+          </div>
+          <div
+            class="flex items-center gap-2 bg-white dark:bg-slate-900 px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800"
+          >
+            <i
+              data-lucide="check-circle"
+              class="w-4 h-4 text-green-500 flex-shrink-0"
+            ></i
+            ><span data-i18n="expertise.check6"
+              >장비(E27) 기반 변경 이력 관리</span
+            >
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- UR E26/E27 Deep Dive Section -->
-    <section id="compliance" class="py-24 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">IACS UR E26 / E27 수행 역량</h2>
-                <p class="text-slate-400 max-w-2xl">
-                    단순한 문서 제출이 아닌, 선급이 승인할 수밖에 없는 기술적 구조와 증빙을 확보해 드립니다.
-                </p>
-            </div>
-
-            <div class="flex flex-col md:flex-row gap-8">
-                <!-- Sidebar Tabs -->
-                <div class="md:w-1/4 flex flex-col gap-2">
-                    <button onclick="switchTab('e27')" id="tab-btn-e27" class="tab-btn text-left px-6 py-4 rounded-lg transition-all bg-blue-600 text-white shadow-lg">
-                        <div class="font-bold text-lg">UR E27 수행</div>
-                        <div class="text-xs opacity-80 mt-1">System Supplier 관점</div>
-                    </button>
-                    <button onclick="switchTab('e26')" id="tab-btn-e26" class="tab-btn text-left px-6 py-4 rounded-lg transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
-                        <div class="font-bold text-lg">UR E26 연계</div>
-                        <div class="text-xs opacity-80 mt-1">Ship-Level 관점</div>
-                    </button>
-                    <button onclick="switchTab('role')" id="tab-btn-role" class="tab-btn text-left px-6 py-4 rounded-lg transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
-                        <div class="font-bold text-lg">수행 역할 및 강점</div>
-                        <div class="text-xs opacity-80 mt-1">Engineering Partner</div>
-                    </button>
-                </div>
-
-                <!-- Content Area -->
-                <div class="md:w-3/4 bg-slate-800 rounded-2xl p-8 border border-slate-700">
-                    
-                    <!-- E27 Content -->
-                    <div id="content-e27" class="tab-content animate-fade-in">
-                        <h3 class="text-2xl font-bold mb-6 text-blue-400">UR E27 수행 범위 (System Supplier)</h3>
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div class="space-y-6">
-                                <div>
-                                    <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
-                                        <span class="w-6 h-6 rounded bg-slate-700 flex items-center justify-center text-xs">1</span>
-                                        자산 식별 (Asset Identification)
-                                    </h4>
-                                    <p class="text-sm text-slate-400 pl-8">H/W, S/W, Network 자산 식별 및 시스템 경계 정의, 데이터 흐름 정리</p>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
-                                        <span class="w-6 h-6 rounded bg-slate-700 flex items-center justify-center text-xs">2</span>
-                                        리스크 고려 (Risk Consideration)
-                                    </h4>
-                                    <p class="text-sm text-slate-400 pl-8">시스템 위협 시나리오 식별 및 E26 Ship-level RA와 연계 가능한 구조 설계</p>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
-                                        <span class="w-6 h-6 rounded bg-slate-700 flex items-center justify-center text-xs">3</span>
-                                        기술적 아키텍처 (Architecture)
-                                    </h4>
-                                    <p class="text-sm text-slate-400 pl-8">논리적/물리적 구성도, 통신 구조, 외부 연결 및 유지보수 접근 정의</p>
-                                </div>
-                            </div>
-                            <div class="space-y-6">
-                                <div>
-                                    <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
-                                        <span class="w-6 h-6 rounded bg-slate-700 flex items-center justify-center text-xs">4</span>
-                                        보안 통제 (Security Measures)
-                                    </h4>
-                                    <p class="text-sm text-slate-400 pl-8">접근통제, 인증, 계정관리, 네트워크 분리, 패치 및 백업 정책 수립</p>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
-                                        <span class="w-6 h-6 rounded bg-slate-700 flex items-center justify-center text-xs">5</span>
-                                        검증 및 문서화 (Verification)
-                                    </h4>
-                                    <p class="text-sm text-slate-400 pl-8">FAT/SAT 지원, E27 Technical Documentation, Declaration, Evidence 패키지 제공</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- E26 Content -->
-                    <div id="content-e26" class="tab-content hidden animate-fade-in">
-                        <h3 class="text-2xl font-bold mb-6 text-blue-400">UR E26 연계 수행 (Ship-level)</h3>
-                        <p class="text-slate-300 mb-8 leading-relaxed">
-                            광명마리타임은 E27 단독 대응이 아닌, 조선소·CRSI·선주가 수행하는 E26 산출물과의 연결성을 중시합니다. 
-                            "E27은 제출했는데 E26에서 문제 되는 상황"을 미연에 방지합니다.
-                        </p>
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div class="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
-                                <h4 class="font-bold text-white mb-3">Asset Inventory 연계</h4>
-                                <p class="text-sm text-slate-400">E26 Asset Inventory에 즉시 반영 가능한 구조화된 자산 정보 제공</p>
-                            </div>
-                            <div class="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
-                                <h4 class="font-bold text-white mb-3">Ship-level RA 지원</h4>
-                                <p class="text-sm text-slate-400">선박 전체 리스크 평가(RA)에 활용 가능한 정확한 시스템 정보 제공</p>
-                            </div>
-                            <div class="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
-                                <h4 class="font-bold text-white mb-3">SCARP 구성 지원</h4>
-                                <p class="text-sm text-slate-400">운영 및 보안 정보를 체계적으로 정리하여 SCARP 작성 지원</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Role Content -->
-                    <div id="content-role" class="tab-content hidden animate-fade-in">
-                        <h3 class="text-2xl font-bold mb-6 text-blue-400">광명마리타임의 역할 및 강점</h3>
-                        <div class="mb-8 p-4 bg-blue-900/30 rounded-lg border border-blue-500/30">
-                            <h4 class="font-bold text-white mb-2">Engineering Partner Position</h4>
-                            <p class="text-sm text-blue-200">
-                                단순 기자재 공급을 넘어, UR E27 요구사항을 해석하고 조선소·선주·선급이 이해할 수 있는 산출물을 제공합니다.
-                            </p>
-                        </div>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                                <div>
-                                    <span class="font-bold text-white block">조선소/선주 요구 완벽 이해</span>
-                                    <span class="text-sm text-slate-400">선박 건조 프로세스와 선주의 운항 환경을 모두 고려한 접근</span>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                                <div>
-                                    <span class="font-bold text-white block">주요 선급(Class) 대응 전략</span>
-                                    <span class="text-sm text-slate-400">DNV, LR, ABS, NK 등 선급별 해석 차이에 따른 문서 보완 및 Q&A 대응</span>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                                <div>
-                                    <span class="font-bold text-white block">전 주기(Full Lifecycle) 지원</span>
-                                    <span class="text-sm text-slate-400">설계부터 FAT, Onboard Test, 인도까지 책임 있는 기술 지원</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <section
+      id="compliance"
+      class="py-24 bg-slate-900 dark:bg-slate-950 text-white"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-12">
+          <h2
+            class="text-3xl md:text-4xl font-bold mb-4 leading-snug"
+            data-i18n="compliance.title"
+          >
+            IACS UR E26 / E27 수행 역량
+          </h2>
+          <p
+            class="text-slate-400 max-w-2xl"
+            data-i18n="compliance.description"
+          >
+            단순한 문서 제출이 아닌, 선급이 승인할 수밖에 없는 기술적 구조와
+            증빙을 확보해 드립니다.
+          </p>
         </div>
+
+        <div class="flex flex-col md:flex-row gap-8">
+          <!-- Sidebar Tabs -->
+          <div class="md:w-1/4 flex flex-col gap-2">
+            <button
+              onclick="switchTab('e27')"
+              id="tab-btn-e27"
+              class="tab-btn text-left px-6 py-4 rounded-lg transition-all bg-blue-600 text-white shadow-lg"
+            >
+              <div class="font-bold text-lg" data-i18n="compliance.tabE27Title">
+                UR E27 수행
+              </div>
+              <div
+                class="text-xs opacity-80 mt-1"
+                data-i18n="compliance.tabE27Subtitle"
+              >
+                System Supplier 관점
+              </div>
+            </button>
+            <button
+              onclick="switchTab('e26')"
+              id="tab-btn-e26"
+              class="tab-btn text-left px-6 py-4 rounded-lg transition-all bg-slate-800 text-slate-400 hover:bg-slate-700"
+            >
+              <div class="font-bold text-lg" data-i18n="compliance.tabE26Title">
+                UR E26 연계
+              </div>
+              <div
+                class="text-xs opacity-80 mt-1"
+                data-i18n="compliance.tabE26Subtitle"
+              >
+                Ship-Level 관점
+              </div>
+            </button>
+            <button
+              onclick="switchTab('role')"
+              id="tab-btn-role"
+              class="tab-btn text-left px-6 py-4 rounded-lg transition-all bg-slate-800 text-slate-400 hover:bg-slate-700"
+            >
+              <div
+                class="font-bold text-lg"
+                data-i18n="compliance.tabRoleTitle"
+              >
+                수행 역할 및 강점
+              </div>
+              <div
+                class="text-xs opacity-80 mt-1"
+                data-i18n="compliance.tabRoleSubtitle"
+              >
+                Engineering Partner
+              </div>
+            </button>
+          </div>
+
+          <!-- Content Area -->
+          <div
+            class="md:w-3/4 bg-slate-800 dark:bg-slate-900 rounded-2xl p-8 border border-slate-700 dark:border-slate-800"
+          >
+            <!-- E27 Content -->
+            <div id="content-e27" class="tab-content animate-fade-in">
+              <h3
+                class="text-2xl font-bold mb-6 text-blue-400"
+                data-i18n="compliance.e27Title"
+              >
+                UR E27 수행 범위 (System Supplier)
+              </h3>
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                  <div>
+                    <h4
+                      class="font-semibold text-white mb-2 flex items-center gap-2"
+                    >
+                      <span
+                        class="w-6 h-6 rounded bg-slate-700 flex items-center justify-center text-xs"
+                        >1</span
+                      >
+                      <span data-i18n="compliance.e27Step1Title"
+                        >자산 식별 (Asset Identification)</span
+                      >
+                    </h4>
+                    <p
+                      class="text-sm text-slate-400 pl-8"
+                      data-i18n="compliance.e27Step1Desc"
+                    >
+                      H/W, S/W, Network 자산 식별 및 시스템 경계 정의, 데이터
+                      흐름 정리
+                    </p>
+                  </div>
+                  <div>
+                    <h4
+                      class="font-semibold text-white mb-2 flex items-center gap-2"
+                    >
+                      <span
+                        class="w-6 h-6 rounded bg-slate-700 flex items-center justify-center text-xs"
+                        >2</span
+                      >
+                      <span data-i18n="compliance.e27Step2Title"
+                        >리스크 고려 (Risk Consideration)</span
+                      >
+                    </h4>
+                    <p
+                      class="text-sm text-slate-400 pl-8"
+                      data-i18n="compliance.e27Step2Desc"
+                    >
+                      시스템 위협 시나리오 식별 및 E26 Ship-level RA와 연계
+                      가능한 구조 설계
+                    </p>
+                  </div>
+                  <div>
+                    <h4
+                      class="font-semibold text-white mb-2 flex items-center gap-2"
+                    >
+                      <span
+                        class="w-6 h-6 rounded bg-slate-700 flex items-center justify-center text-xs"
+                        >3</span
+                      >
+                      <span data-i18n="compliance.e27Step3Title"
+                        >기술적 아키텍처 (Architecture)</span
+                      >
+                    </h4>
+                    <p
+                      class="text-sm text-slate-400 pl-8"
+                      data-i18n="compliance.e27Step3Desc"
+                    >
+                      논리적/물리적 구성도, 통신 구조, 외부 연결 및 유지보수
+                      접근 정의
+                    </p>
+                  </div>
+                </div>
+                <div class="space-y-6">
+                  <div>
+                    <h4
+                      class="font-semibold text-white mb-2 flex items-center gap-2"
+                    >
+                      <span
+                        class="w-6 h-6 rounded bg-slate-700 flex items-center justify-center text-xs"
+                        >4</span
+                      >
+                      <span data-i18n="compliance.e27Step4Title"
+                        >보안 통제 (Security Measures)</span
+                      >
+                    </h4>
+                    <p
+                      class="text-sm text-slate-400 pl-8"
+                      data-i18n="compliance.e27Step4Desc"
+                    >
+                      접근통제, 인증, 계정관리, 네트워크 분리, 패치 및 백업 정책
+                      수립
+                    </p>
+                  </div>
+                  <div>
+                    <h4
+                      class="font-semibold text-white mb-2 flex items-center gap-2"
+                    >
+                      <span
+                        class="w-6 h-6 rounded bg-slate-700 flex items-center justify-center text-xs"
+                        >5</span
+                      >
+                      <span data-i18n="compliance.e27Step5Title"
+                        >검증 및 문서화 (Verification)</span
+                      >
+                    </h4>
+                    <p
+                      class="text-sm text-slate-400 pl-8"
+                      data-i18n="compliance.e27Step5Desc"
+                    >
+                      FAT/SAT 지원, E27 Technical Documentation, Declaration,
+                      Evidence 패키지 제공
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- E26 Content -->
+            <div id="content-e26" class="tab-content hidden animate-fade-in">
+              <h3
+                class="text-2xl font-bold mb-6 text-blue-400"
+                data-i18n="compliance.e26Title"
+              >
+                UR E26 연계 수행 (Ship-level)
+              </h3>
+              <p
+                class="text-slate-300 mb-8 leading-relaxed"
+                data-i18n="compliance.e26Description"
+              >
+                광명마리타임은 E27 단독 대응이 아닌, 조선소·CRSI·선주가 수행하는
+                E26 산출물과의 연결성을 중시합니다. "E27은 제출했는데 E26에서
+                문제 되는 상황"을 미연에 방지합니다.
+              </p>
+              <div class="grid md:grid-cols-3 gap-6">
+                <div
+                  class="bg-slate-700/50 dark:bg-slate-800/50 p-6 rounded-xl border border-slate-600 dark:border-slate-700"
+                >
+                  <h4
+                    class="font-bold text-white mb-3"
+                    data-i18n="compliance.e26Card1Title"
+                  >
+                    Asset Inventory 연계
+                  </h4>
+                  <p
+                    class="text-sm text-slate-400"
+                    data-i18n="compliance.e26Card1Desc"
+                  >
+                    E26 Asset Inventory에 즉시 반영 가능한 구조화된 자산 정보
+                    제공
+                  </p>
+                </div>
+                <div
+                  class="bg-slate-700/50 dark:bg-slate-800/50 p-6 rounded-xl border border-slate-600 dark:border-slate-700"
+                >
+                  <h4
+                    class="font-bold text-white mb-3"
+                    data-i18n="compliance.e26Card2Title"
+                  >
+                    Ship-level RA 지원
+                  </h4>
+                  <p
+                    class="text-sm text-slate-400"
+                    data-i18n="compliance.e26Card2Desc"
+                  >
+                    선박 전체 리스크 평가(RA)에 활용 가능한 정확한 시스템 정보
+                    제공
+                  </p>
+                </div>
+                <div
+                  class="bg-slate-700/50 dark:bg-slate-800/50 p-6 rounded-xl border border-slate-600 dark:border-slate-700"
+                >
+                  <h4
+                    class="font-bold text-white mb-3"
+                    data-i18n="compliance.e26Card3Title"
+                  >
+                    SCARP 구성 지원
+                  </h4>
+                  <p
+                    class="text-sm text-slate-400"
+                    data-i18n="compliance.e26Card3Desc"
+                  >
+                    운영 및 보안 정보를 체계적으로 정리하여 SCARP 작성 지원
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Role Content -->
+            <div id="content-role" class="tab-content hidden animate-fade-in">
+              <h3
+                class="text-2xl font-bold mb-6 text-blue-400"
+                data-i18n="compliance.roleTitle"
+              >
+                광명마리타임의 역할 및 강점
+              </h3>
+              <div
+                class="mb-8 p-4 bg-blue-900/30 rounded-lg border border-blue-500/30"
+              >
+                <h4
+                  class="font-bold text-white mb-2"
+                  data-i18n="compliance.roleBoxTitle"
+                >
+                  Engineering Partner Position
+                </h4>
+                <p
+                  class="text-sm text-blue-200"
+                  data-i18n="compliance.roleBoxDesc"
+                >
+                  단순 기자재 공급을 넘어, UR E27 요구사항을 해석하고
+                  조선소·선주·선급이 이해할 수 있는 산출물을 제공합니다.
+                </p>
+              </div>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"
+                  ></i>
+                  <div>
+                    <span
+                      class="font-bold text-white block"
+                      data-i18n="compliance.roleItem1Title"
+                      >조선소/선주 요구 완벽 이해</span
+                    >
+                    <span
+                      class="text-sm text-slate-400"
+                      data-i18n="compliance.roleItem1Desc"
+                      >선박 건조 프로세스와 선주의 운항 환경을 모두 고려한
+                      접근</span
+                    >
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"
+                  ></i>
+                  <div>
+                    <span
+                      class="font-bold text-white block"
+                      data-i18n="compliance.roleItem2Title"
+                      >주요 선급(Class) 대응 전략</span
+                    >
+                    <span
+                      class="text-sm text-slate-400"
+                      data-i18n="compliance.roleItem2Desc"
+                      >DNV, LR, ABS, NK 등 선급별 해석 차이에 따른 문서 보완 및
+                      Q&A 대응</span
+                    >
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"
+                  ></i>
+                  <div>
+                    <span
+                      class="font-bold text-white block"
+                      data-i18n="compliance.roleItem3Title"
+                      >전 주기(Full Lifecycle) 지원</span
+                    >
+                    <span
+                      class="text-sm text-slate-400"
+                      data-i18n="compliance.roleItem3Desc"
+                      >설계부터 FAT, Onboard Test, 인도까지 책임 있는 기술
+                      지원</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Value & Vision Section -->
-    <section id="vision" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">우리가 만드는 가치</h2>
-                <p class="text-slate-600">이해관계자 모두를 만족시키는 현실적인 보안 모델을 제시합니다.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-                <!-- Card 1 -->
-                <div class="bg-slate-50 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300">
-                    <div class="text-4xl mb-4">🚢</div>
-                    <h3 class="font-bold text-slate-900 mb-2">선주 (Shipowner)</h3>
-                    <div class="w-10 h-1 bg-blue-500 mx-auto mb-4"></div>
-                    <p class="text-slate-600 font-medium">안전하고 설명 가능한 선대 보안 구조</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="bg-slate-50 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300">
-                    <div class="text-4xl mb-4">🏗️</div>
-                    <h3 class="font-bold text-slate-900 mb-2">조선소 (Shipyard)</h3>
-                    <div class="w-10 h-1 bg-blue-500 mx-auto mb-4"></div>
-                    <p class="text-slate-600 font-medium">디지털 기본설계와 연계된 OT 아키텍처</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="bg-slate-50 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300">
-                    <div class="text-4xl mb-4">🔧</div>
-                    <h3 class="font-bold text-slate-900 mb-2">공급사 (Supplier)</h3>
-                    <div class="w-10 h-1 bg-blue-500 mx-auto mb-4"></div>
-                    <p class="text-slate-600 font-medium">E27 기준에 부합하는 명확한 기술 기준</p>
-                </div>
-                <!-- Card 4 -->
-                <div class="bg-slate-50 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300">
-                    <div class="text-4xl mb-4">🌏</div>
-                    <h3 class="font-bold text-slate-900 mb-2">산업 (Industry)</h3>
-                    <div class="w-10 h-1 bg-blue-500 mx-auto mb-4"></div>
-                    <p class="text-slate-600 font-medium">현실적이고 지속 가능한 선박 보안 모델</p>
-                </div>
-            </div>
-
-            <div class="bg-slate-900 rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
-                 <div class="relative z-10">
-                    <h3 class="text-blue-400 font-bold tracking-widest uppercase mb-4">Our Vision</h3>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight">
-                      "데이터와 거버넌스를 설계하는 산업으로의 전환,<br/>
-                      그 중심에 <span class="text-blue-500">광명마리타임</span>이 있습니다."
-                    </h2>
-                    <p class="text-slate-300 max-w-2xl mx-auto text-lg">
-                      OT 보안과 디지털 아키텍처 분야의 신뢰받는 기술 파트너가 되어<br/>
-                      조선·해양 산업의 새로운 기준을 만들어 가겠습니다.
-                    </p>
-                 </div>
-                 <!-- Background Decoration -->
-                 <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-                 <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-            </div>
+    <section id="vision" class="py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-snug"
+            data-i18n="vision.title"
+          >
+            우리가 만드는 가치
+          </h2>
+          <p
+            class="text-slate-600 dark:text-slate-400"
+            data-i18n="vision.description"
+          >
+            이해관계자 모두를 만족시키는 현실적인 보안 모델을 제시합니다.
+          </p>
         </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          <!-- Card 1 -->
+          <div
+            class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300"
+          >
+            <div class="text-4xl mb-4">🚢</div>
+            <h3
+              class="font-bold text-slate-900 dark:text-white mb-2"
+              data-i18n="vision.card1Title"
+            >
+              선주 (Shipowner)
+            </h3>
+            <div class="w-10 h-1 bg-blue-500 mx-auto mb-4"></div>
+            <p
+              class="text-slate-600 dark:text-slate-400 font-medium"
+              data-i18n="vision.card1Desc"
+            >
+              안전하고 설명 가능한 선대 보안 구조
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300"
+          >
+            <div class="text-4xl mb-4">🏗️</div>
+            <h3
+              class="font-bold text-slate-900 dark:text-white mb-2"
+              data-i18n="vision.card2Title"
+            >
+              조선소 (Shipyard)
+            </h3>
+            <div class="w-10 h-1 bg-blue-500 mx-auto mb-4"></div>
+            <p
+              class="text-slate-600 dark:text-slate-400 font-medium"
+              data-i18n="vision.card2Desc"
+            >
+              디지털 기본설계와 연계된 OT 아키텍처
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300"
+          >
+            <div class="text-4xl mb-4">🔧</div>
+            <h3
+              class="font-bold text-slate-900 dark:text-white mb-2"
+              data-i18n="vision.card3Title"
+            >
+              공급사 (Supplier)
+            </h3>
+            <div class="w-10 h-1 bg-blue-500 mx-auto mb-4"></div>
+            <p
+              class="text-slate-600 dark:text-slate-400 font-medium"
+              data-i18n="vision.card3Desc"
+            >
+              E27 기준에 부합하는 명확한 기술 기준
+            </p>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300"
+          >
+            <div class="text-4xl mb-4">🌏</div>
+            <h3
+              class="font-bold text-slate-900 dark:text-white mb-2"
+              data-i18n="vision.card4Title"
+            >
+              산업 (Industry)
+            </h3>
+            <div class="w-10 h-1 bg-blue-500 mx-auto mb-4"></div>
+            <p
+              class="text-slate-600 dark:text-slate-400 font-medium"
+              data-i18n="vision.card4Desc"
+            >
+              현실적이고 지속 가능한 선박 보안 모델
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-slate-900 dark:bg-slate-950 rounded-3xl p-10 md:p-16 text-center relative overflow-hidden"
+        >
+          <div class="relative z-10">
+            <h3
+              class="text-blue-400 font-bold tracking-widest uppercase mb-4"
+              data-i18n="vision.visionLabel"
+            >
+              Our Vision
+            </h3>
+            <h2
+              class="text-3xl md:text-4xl font-bold text-white mb-8 leading-snug"
+              data-i18n="vision.visionTitle"
+              data-i18n-html="true"
+            >
+              "데이터와 거버넌스를 설계하는 산업으로의 전환,<br />
+              그 중심에 <span class="text-blue-500">광명마리타임</span>이
+              있습니다."
+            </h2>
+            <p
+              class="text-slate-300 max-w-2xl mx-auto text-lg"
+              data-i18n="vision.visionDesc"
+              data-i18n-html="true"
+            >
+              OT 보안과 디지털 아키텍처 분야의 신뢰받는 기술 파트너가 되어<br />
+              조선·해양 산업의 새로운 기준을 만들어 가겠습니다.
+            </p>
+          </div>
+          <!-- Background Decoration -->
+          <div
+            class="absolute top-0 right-0 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 w-64 h-64 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section (NEW) -->
+    <section id="contact" class="py-24 bg-slate-50 dark:bg-slate-950">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 leading-snug"
+            data-i18n="contactSection.title"
+          >
+            문의하기
+          </h2>
+          <p
+            class="text-slate-600 dark:text-slate-400"
+            data-i18n="contactSection.description"
+          >
+            프로젝트 상담 및 기술 문의는 아래 양식을 통해 보내주세요.
+          </p>
+        </div>
+
+        <form
+          id="contact-form"
+          class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800"
+        >
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
+                data-i18n="contactSection.nameLabel"
+                >이름</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                data-i18n-placeholder="contactSection.namePlaceholder"
+                placeholder="홍길동"
+                class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-colors"
+              />
+            </div>
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
+                data-i18n="contactSection.emailLabel"
+                >이메일</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                data-i18n-placeholder="contactSection.emailPlaceholder"
+                placeholder="your@email.com"
+                class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-colors"
+              />
+            </div>
+          </div>
+          <div class="mb-6">
+            <label
+              for="subject"
+              class="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
+              data-i18n="contactSection.subjectLabel"
+              >제목</label
+            >
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              data-i18n-placeholder="contactSection.subjectPlaceholder"
+              placeholder="문의 제목을 입력하세요"
+              class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-colors"
+            />
+          </div>
+          <div class="mb-6">
+            <label
+              for="message"
+              class="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
+              data-i18n="contactSection.messageLabel"
+              >메시지</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              required
+              data-i18n-placeholder="contactSection.messagePlaceholder"
+              placeholder="문의 내용을 입력하세요"
+              class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-colors resize-none"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            id="contact-submit"
+            class="w-full flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white rounded-lg font-semibold transition-all shadow-lg"
+          >
+            <i data-lucide="send" class="w-5 h-5"></i>
+            <span data-i18n="contactSection.submitButton">전송하기</span>
+          </button>
+          <div id="contact-status" class="hidden mt-4"></div>
+        </form>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <!-- Logo Image: alt 텍스트 수정 -->
-                        <img src="resource/gmmaritime.ico" alt="Gwangmyung Maritime Logo" class="w-8 h-8 object-contain rounded-xl shadow-md bg-white/10 p-0.5">
-                        <span class="text-xl font-bold text-white">광명마리타임</span>
-                    </div>
-                    <p class="mb-6 max-w-sm">
-                        조선·해양 산업을 위한 선박 OT 및 사이버 보안 중심의 기술 전문 기업.
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 gap-8">
-                    <div>
-                        <h4 class="text-white font-bold mb-4">Contact</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>info@gmmaritime.com</li>
-                            <li>전라북도 군산시 상신6길 12</li>
-                            <li>사업자 등록번호: 391-81-02164</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-white font-bold mb-4">Services</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>OT Security Architecture</li>
-                            <li>UR E26 / E27 Compliance</li>
-                            <li>Risk Assessment</li>
-                            <li>Ship-Shore Connectivity</li>
-                        </ul>
-                    </div>
-                </div>
+    <footer
+      class="bg-slate-950 dark:bg-black text-slate-400 py-16 border-t border-slate-900 dark:border-slate-900"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <img
+                src="assets/images/logo.svg"
+                alt="Gwangmyung Maritime Logo"
+                class="w-8 h-8 object-contain"
+              />
+              <span class="text-xl font-bold text-white" data-i18n="nav.logo"
+                >광명마리타임</span
+              >
             </div>
-            <div class="border-t border-slate-900 mt-12 pt-8 text-xs text-center md:text-left">
-                <!-- Copyright 수정: Kwangmyeong -> Gwangmyung -->
-                &copy; 2025 Gwangmyung Maritime. All rights reserved.
+            <p class="mb-6 max-w-sm" data-i18n="footer.description">
+              조선·해양 산업을 위한 선박 OT 및 사이버 보안 중심의 기술 전문
+              기업.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-8">
+            <div>
+              <h4
+                class="text-white font-bold mb-4"
+                data-i18n="footer.contactTitle"
+              >
+                Contact
+              </h4>
+              <ul class="space-y-2 text-sm">
+                <li data-i18n="footer.email">info@gmmaritime.com</li>
+                <li data-i18n="footer.address">전라북도 군산시 상신6길 12</li>
+                <li data-i18n="footer.businessNumber">
+                  사업자 등록번호: 391-81-02164
+                </li>
+              </ul>
             </div>
+            <div>
+              <h4
+                class="text-white font-bold mb-4"
+                data-i18n="footer.servicesTitle"
+              >
+                Services
+              </h4>
+              <ul class="space-y-2 text-sm">
+                <li data-i18n="footer.service1">OT Security Architecture</li>
+                <li data-i18n="footer.service2">UR E26 / E27 Compliance</li>
+                <li data-i18n="footer.service3">Risk Assessment</li>
+                <li data-i18n="footer.service4">Ship-Shore Connectivity</li>
+              </ul>
+            </div>
+          </div>
         </div>
+        <div
+          class="border-t border-slate-900 mt-12 pt-8 text-xs text-center md:text-left"
+        >
+          <p data-i18n="footer.copyright">
+            &copy; 2025 Gwangmyung Maritime. All rights reserved.
+          </p>
+          <div class="mt-4 text-center">
+            <button
+              id="change-language-btn"
+              onclick="window.countryDetector?.reopenModal()"
+              class="text-slate-500 hover:text-white text-xs underline transition-colors"
+              data-i18n="footer.changeLanguage"
+            >
+              Change Language / 언어 변경
+            </button>
+          </div>
+        </div>
+      </div>
     </footer>
 
-    <script>
-        // Init Icons
-        lucide.createIcons();
-
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        const navLogoText = document.getElementById('nav-logo-text');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('bg-slate-900/95', 'backdrop-blur-md', 'shadow-lg', 'py-3');
-                navbar.classList.remove('py-5', 'bg-transparent');
-            } else {
-                navbar.classList.add('py-5', 'bg-transparent');
-                navbar.classList.remove('bg-slate-900/95', 'backdrop-blur-md', 'shadow-lg', 'py-3');
-            }
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Tab Switching Logic
-        function switchTab(tabId) {
-            // Reset buttons
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('bg-blue-600', 'text-white', 'shadow-lg');
-                btn.classList.add('bg-slate-800', 'text-slate-400', 'hover:bg-slate-700');
-            });
-
-            // Activate current button
-            const activeBtn = document.getElementById('tab-btn-' + tabId);
-            activeBtn.classList.remove('bg-slate-800', 'text-slate-400', 'hover:bg-slate-700');
-            activeBtn.classList.add('bg-blue-600', 'text-white', 'shadow-lg');
-
-            // Hide all content
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.add('hidden');
-            });
-
-            // Show current content
-            document.getElementById('content-' + tabId).classList.remove('hidden');
-        }
-    </script>
-</body>
+    <!-- JavaScript Files -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/country-detector.js"></script>
+  </body>
 </html>

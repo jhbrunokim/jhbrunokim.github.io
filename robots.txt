@@ -1,0 +1,10 @@
+# robots.txt for Gwangmyung Maritime
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://gmmaritime.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1

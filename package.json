@@ -1,0 +1,19 @@
+{
+  "name": "gmmaritime-website",
+  "version": "1.0.0",
+  "description": "Gwangmyung Maritime Corporation Website",
+  "scripts": {
+    "build": "tailwindcss -i ./assets/css/styles.css -o ./assets/css/output.css --minify",
+    "dev": "tailwindcss -i ./assets/css/styles.css -o ./assets/css/output.css --watch"
+  },
+  "keywords": [
+    "maritime",
+    "shipping",
+    "compliance"
+  ],
+  "author": "Gwangmyung Maritime",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
