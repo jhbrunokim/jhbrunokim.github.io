@@ -32,23 +32,12 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            animation: {
-              blob: "blob 7s infinite",
-              "fade-in": "fadeIn 1s ease-in",
-            },
-          },
-        },
-      };
-    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 
-    <!-- Custom CSS -->
+    <!-- Tailwind CSS (Built) -->
     <link rel="stylesheet" href="assets/css/output.css" />
 
     <!-- Lucide Icons -->
@@ -68,6 +57,61 @@
   <body
     class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 overflow-x-hidden transition-colors duration-300"
   >
+    <!-- Country/Language Detection Modal -->
+    <div
+      id="country-modal"
+      class="hidden fixed inset-0 z-[100] items-center justify-center bg-black/60 backdrop-blur-sm"
+    >
+      <div
+        class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl max-w-md w-full mx-4 p-8 text-center"
+      >
+        <div class="mb-6">
+          <i data-lucide="globe" class="w-12 h-12 text-blue-500 mx-auto mb-4"></i>
+          <h2
+            class="text-2xl font-bold text-slate-900 dark:text-white mb-2"
+            id="modal-title"
+          >
+            <span data-i18n="countryModal.detectedMessage">You are connecting from</span>
+          </h2>
+          <p
+            class="text-3xl font-bold text-blue-600 dark:text-blue-400"
+            id="detected-country-name"
+          >
+            Korea
+          </p>
+        </div>
+
+        <!-- Country Selection Dropdown (Initially Hidden) -->
+        <div class="mb-6 hidden" id="country-dropdown-container">
+          <select
+            id="country-select"
+            class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 dark:text-white"
+          >
+            <option value="KR" data-i18n="countryModal.countries.KR">대한민국 (Korea)</option>
+            <option value="US" data-i18n="countryModal.countries.US">United States</option>
+            <option value="CN" data-i18n="countryModal.countries.CN">中国 (China)</option>
+            <option value="JP" data-i18n="countryModal.countries.JP">日本 (Japan)</option>
+          </select>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="space-y-3">
+          <button
+            id="modal-continue"
+            class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all shadow-lg"
+          >
+            <span data-i18n="countryModal.continueButton">Continue</span>
+          </button>
+          <button
+            id="select-other"
+            class="w-full px-6 py-3 bg-transparent border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 text-slate-700 dark:text-slate-300 rounded-lg font-medium transition-all"
+          >
+            <span data-i18n="countryModal.selectOther">Select other country or region</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- Navigation -->
     <nav
       id="navbar"
@@ -214,7 +258,7 @@
         ></div>
       </div>
 
-      <div class="relative z-10 max-w-7xl mx-auto px-6 pt-20">
+      <div class="relative z-10 max-w-7xl mx-auto px-6 pt-16">
         <div class="max-w-3xl">
           <div
             class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-semibold mb-6"
@@ -225,7 +269,7 @@
             >
           </div>
           <h1
-            class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6"
+            class="text-4xl md:text-6xl font-bold text-white leading-snug mb-6"
           >
             <span data-i18n="hero.title">선박을 단순한 IT가 아닌</span><br />
             <span class="text-blue-500" data-i18n="hero.titleHighlight"
@@ -267,7 +311,7 @@
         <div class="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2
-              class="text-3xl font-bold text-slate-900 dark:text-white mb-6"
+              class="text-3xl font-bold text-slate-900 dark:text-white mb-6 leading-snug"
               data-i18n="philosophy.title"
             >
               우리의 접근 방식은 다릅니다.
@@ -398,7 +442,7 @@
             >Our Expertise</span
           >
           <h2
-            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2"
+            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
             data-i18n="expertise.title"
           >
             광명마리타임의 핵심 역량
@@ -563,7 +607,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="mb-12">
           <h2
-            class="text-3xl md:text-4xl font-bold mb-4"
+            class="text-3xl md:text-4xl font-bold mb-4 leading-snug"
             data-i18n="compliance.title"
           >
             IACS UR E26 / E27 수행 역량
@@ -915,7 +959,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
           <h2
-            class="text-3xl font-bold text-slate-900 dark:text-white mb-4"
+            class="text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-snug"
             data-i18n="vision.title"
           >
             우리가 만드는 가치
@@ -1018,7 +1062,7 @@
               Our Vision
             </h3>
             <h2
-              class="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight"
+              class="text-3xl md:text-4xl font-bold text-white mb-8 leading-snug"
               data-i18n="vision.visionTitle"
               data-i18n-html="true"
             >
@@ -1051,7 +1095,7 @@
       <div class="max-w-3xl mx-auto px-6">
         <div class="text-center mb-12">
           <h2
-            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
+            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 leading-snug"
             data-i18n="contactSection.title"
           >
             문의하기
@@ -1207,9 +1251,20 @@
         </div>
         <div
           class="border-t border-slate-900 mt-12 pt-8 text-xs text-center md:text-left"
-          data-i18n="footer.copyright"
         >
-          &copy; 2025 Gwangmyung Maritime. All rights reserved.
+          <p data-i18n="footer.copyright">
+            &copy; 2025 Gwangmyung Maritime. All rights reserved.
+          </p>
+          <div class="mt-4 text-center">
+            <button
+              id="change-language-btn"
+              onclick="window.countryDetector?.reopenModal()"
+              class="text-slate-500 hover:text-white text-xs underline transition-colors"
+              data-i18n="footer.changeLanguage"
+            >
+              Change Language / 언어 변경
+            </button>
+          </div>
         </div>
       </div>
     </footer>
@@ -1219,5 +1274,6 @@
     <script src="assets/js/theme.js"></script>
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/contact.js"></script>
+    <script src="assets/js/country-detector.js"></script>
   </body>
 </html>

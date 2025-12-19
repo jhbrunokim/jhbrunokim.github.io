@@ -7,6 +7,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'Noto Sans KR', 'Noto Sans SC', 'Noto Sans JP', 'sans-serif']
+      },
       animation: {
         'blob': 'blob 7s infinite',
         'fade-in': 'fadeIn 1s ease-in'

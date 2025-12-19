@@ -1,20 +1,21 @@
 // Internationalization (i18n) Manager
 class I18nManager {
   constructor() {
-    this.currentLang = localStorage.getItem('language') || 'ko';
+    // Use 'preferredLanguage' key to match country-detector
+    // Default to English ('en')
+    this.currentLang = localStorage.getItem('preferredLanguage') || 'en';
     this.translations = null;
     this.init();
   }
 
   async init() {
     await this.loadTranslations();
-    this.createLanguageToggle();
     this.applyTranslations();
   }
 
   async loadTranslations() {
     try {
-      const response = await fetch('/data/translations.json');
+      const response = await fetch('./data/translations.json');
       this.translations = await response.json();
     } catch (error) {
       console.error('Failed to load translations:', error);
@@ -52,58 +53,31 @@ class I18nManager {
       }
     });
 
+    // Update select option texts
+    document.querySelectorAll('select option[data-i18n]').forEach(option => {
+      const key = option.getAttribute('data-i18n');
+      const value = this.getNestedValue(lang, key);
+
+      if (value) {
+        option.textContent = value;
+      }
+    });
+
     // Reinitialize icons after updating content
-    lucide.createIcons();
+    if (window.lucide) {
+      lucide.createIcons();
+    }
   }
 
   getNestedValue(obj, path) {
     return path.split('.').reduce((current, key) => current?.[key], obj);
   }
 
-  switchLanguage(lang) {
+  // Public method for changing language (called by country-detector)
+  changeLanguage(lang) {
     this.currentLang = lang;
-    localStorage.setItem('language', lang);
+    localStorage.setItem('preferredLanguage', lang);
     this.applyTranslations();
-    this.updateLanguageToggle();
-  }
-
-  createLanguageToggle() {
-    const desktopNav = document.querySelector('nav .hidden.md\\:flex');
-    const mobileNav = document.querySelector('#mobile-menu .flex.flex-col');
-
-    if (desktopNav) {
-      const toggle = this.createToggle('desktop');
-      desktopNav.appendChild(toggle);
-    }
-
-    if (mobileNav) {
-      const toggle = this.createToggle('mobile');
-      mobileNav.appendChild(toggle);
-    }
-  }
-
-  createToggle(type) {
-    const button = document.createElement('button');
-    button.id = `lang-toggle-${type}`;
-    button.className = type === 'desktop'
-      ? 'text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors'
-      : 'mobile-link text-slate-300 hover:text-blue-400 text-base font-medium text-left';
-
-    button.textContent = this.currentLang === 'ko' ? 'EN' : 'KO';
-
-    button.addEventListener('click', () => {
-      const newLang = this.currentLang === 'ko' ? 'en' : 'ko';
-      this.switchLanguage(newLang);
-    });
-
-    return button;
-  }
-
-  updateLanguageToggle() {
-    const buttons = document.querySelectorAll('[id^="lang-toggle-"]');
-    buttons.forEach(button => {
-      button.textContent = this.currentLang === 'ko' ? 'EN' : 'KO';
-    });
   }
 }
 
