@@ -13,10 +13,8 @@
     },
     "hero": {
       "badge": "Ship OT & Cyber Security Specialist",
-      "title": "선박을 단순한 IT가 아닌",
-      "titleHighlight": "실제 운항되는 물리 시스템",
-      "titleEnd": "으로 이해합니다.",
-      "description": "광명마리타임은 운항 안전과 사이버 리스크를 함께 고려하여,<br class=\"hidden md:block\"/>현실적이고 지속 가능한 선박 보안 아키텍처를 설계합니다.",
+      "title": "조선해양 시스템 통합 및 규제 대응 전문",
+      "description": "광명 마리타임은 복잡해진 해양 산업과 기술에 대한 경험과 이해를 바탕으로<br class=\"hidden md:block\"/>데이터와 AI 기반 System Integration 솔루션을 제공하고<br class=\"hidden md:block\"/>Global Compliance 에 대응 합니다.",
       "ctaPrimary": "UR E26/E27 솔루션 보기",
       "ctaSecondary": "문의하기"
     },
@@ -237,10 +235,8 @@
     },
     "hero": {
       "badge": "Ship OT & Cyber Security Specialist",
-      "title": "Understanding ships not as simple IT, but as",
-      "titleHighlight": "real operational physical systems",
-      "titleEnd": ".",
-      "description": "Gwangmyung Maritime designs realistic and sustainable ship security architectures,<br class=\"hidden md:block\"/>considering both operational safety and cyber risks.",
+      "title": "Shipbuilding and Maritime System Integration and Regulatory Compliance Experts",
+      "description": "Gwangmyung Maritime provides DATA·AI-based System Integration solutions<br class=\"hidden md:block\"/>and responds to Global Compliance<br class=\"hidden md:block\"/>based on experience and understanding of the increasingly complex maritime industry and technology.",
       "ctaPrimary": "View UR E26/E27 Solutions",
       "ctaSecondary": "Contact Us"
     },
@@ -462,9 +458,8 @@
     "hero": {
       "badge": "船舶OT与网络安全专家",
       "title": "不仅将船舶视为简单的IT系统",
-      "titleHighlight": "而是理解为实际运营的物理系统",
-      "titleEnd": "。",
-      "description": "光明海事同时考虑运营安全和网络风险，<br class=\"hidden md:block\"/>设计现实且可持续的船舶安全架构。",
+      "title": "造船及海事系统集成与法规合规专家",
+      "description": "光明海事基于对日益复杂的海事行业和技术的经验与理解，<br class=\"hidden md:block\"/>提供基于DATA·AI的系统集成解决方案，<br class=\"hidden md:block\"/>并应对全球合规要求。",
       "ctaPrimary": "查看UR E26/E27解决方案",
       "ctaSecondary": "联系我们"
     },
@@ -686,9 +681,8 @@
     "hero": {
       "badge": "船舶OT・サイバー セキュリティ 専門家",
       "title": "船舶を 単なるITシステム ではなく",
-      "titleHighlight": "実際に 運航される 物理システム",
-      "titleEnd": "として 理解します。",
-      "description": "光明マリタイムは 運航安全と サイバーリスクの 両方を考慮し、<br class=\"hidden md:block\"/>現実的で 持続可能な 船舶セキュリティ アーキテクチャを 設計します。",
+      "title": "造船・海事システム統合及び規制対応の専門家",
+      "description": "光明マリタイムは、複雑化した海事産業と技術に対する経験と理解を基に、<br class=\"hidden md:block\"/>DATA・AIベースのシステムインテグレーションソリューションを提供し、<br class=\"hidden md:block\"/>グローバルコンプライアンスに対応します。",
       "ctaPrimary": "UR E26/E27 ソリューションを見る",
       "ctaSecondary": "お問い合わせ"
     },
