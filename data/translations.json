@@ -106,7 +106,7 @@
     },
     "contactSection": {
       "coreValuesTitle": "Trust\nExecution\nResponsibility\nPartnership",
-      "coreValuesDesc": "광명 마리타임은 IT/OT 시스템을 포함한 해양 선박의 안전 운영과 사이버 리스크를 함께 고려하여 현실적이고 지속 가능한 시스템 통합 기술을 제공하여 글로벌 컴플라이언스에 대응 합니다.",
+      "coreValuesDesc": "광명 마리타임은 IT/OT 시스템을 포함한 해양 선박의 안전 운영과 사이버 리스크를 함께 고려하여<br/>현실적이고 지속 가능한 시스템 통합 기술을 제공하여 글로벌 컴플라이언스에 대응 합니다.",
       "title": "문의하기",
       "description": "프로젝트 상담 및 기술 문의는 아래 양식을 통해 보내주세요.",
       "nameLabel": "이름",
@@ -350,7 +350,7 @@
     },
     "contactSection": {
       "coreValuesTitle": "Trust\nExecution\nResponsibility\nPartnership",
-      "coreValuesDesc": "Gwangmyung Maritime provides realistic and sustainable system integration technologies by considering both the safe operation of maritime vessels and cyber risks, including IT/OT systems, to respond to global compliance.",
+      "coreValuesDesc": "Gwangmyung Maritime provides realistic and sustainable system integration technologies<br/>by considering both the safe operation of maritime vessels and cyber risks, including IT/OT systems, to respond to global compliance.",
       "title": "Contact Us",
       "description": "Please send your project consultation and technical inquiries through the form below.",
       "nameLabel": "Name",
@@ -597,7 +597,7 @@
     },
     "contactSection": {
       "coreValuesTitle": "Trust\nExecution\nResponsibility\nPartnership",
-      "coreValuesDesc": "光明海事通过同时考虑包括IT/OT系统在内的海事船舶的安全运营和网络风险，提供现实且可持续的系统集成技术，以应对全球合规要求。",
+      "coreValuesDesc": "光明海事通过同时考虑包括IT/OT系统在内的海事船舶的安全运营和网络风险，<br/>提供现实且可持续的系统集成技术，以应对全球合规要求。",
       "title": "联系我们",
       "description": "请通过以下表格发送您的项目咨询和技术咨询。",
       "nameLabel": "姓名",
@@ -842,7 +842,7 @@
     },
     "contactSection": {
       "coreValuesTitle": "Trust\nExecution\nResponsibility\nPartnership",
-      "coreValuesDesc": "光明マリタイムは IT/OTシステムを含む海事船舶の安全運営とサイバーリスクを共に考慮し、現実的で持続可能なシステム統合技術を提供してグローバルコンプライアンスに対応します。",
+      "coreValuesDesc": "光明マリタイムは IT/OTシステムを含む海事船舶の安全運営とサイバーリスクを共に考慮し、<br/>現実的で持続可能なシステム統合技術を提供してグローバルコンプライアンスに対応します。",
       "title": "お問い合わせ",
       "description": "プロジェクトの相談と 技術的な お問い合わせは、以下の フォームから お送りください。",
       "nameLabel": "お名前",
