@@ -1307,16 +1307,11 @@
 
     <!-- Contact Section (NEW) -->
     <section id="contact" class="py-24 bg-slate-50 dark:bg-slate-950">
-      <div class="max-w-5xl mx-auto px-6">
-        <!-- Core Values Header -->
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Company Description (Full Width) -->
         <div class="text-center mb-16">
-          <div class="mb-8">
-            <h2 class="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-2" data-i18n="contactSection.coreValuesTitle">
-              Trust<br/>Execution<br/>Responsibility<br/>Partnership
-            </h2>
-          </div>
           <p
-            class="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed"
+            class="text-lg text-slate-600 dark:text-slate-400 max-w-4xl mx-auto leading-relaxed"
             data-i18n="contactSection.coreValuesDesc"
             data-i18n-html="true"
           >
@@ -1324,26 +1319,36 @@
           </p>
         </div>
 
-        <!-- Contact Form Title -->
-        <div class="text-center mb-12">
-          <h3
-            class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4"
-            data-i18n="contactSection.title"
-          >
-            문의하기
-          </h3>
-          <p
-            class="text-slate-600 dark:text-slate-400"
-            data-i18n="contactSection.description"
-          >
-            프로젝트 상담 및 기술 문의는 아래 양식을 통해 보내주세요.
-          </p>
-        </div>
+        <!-- 2 Column Layout -->
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+          <!-- Left: Core Values -->
+          <div>
+            <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-tight" data-i18n="contactSection.coreValuesTitle">
+              Trust<br/>Execution<br/>Responsibility<br/>Partnership
+            </h2>
+          </div>
 
-        <form
-          id="contact-form"
-          class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800"
-        >
+          <!-- Right: Contact Form -->
+          <div>
+            <div class="mb-8">
+              <h3
+                class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4"
+                data-i18n="contactSection.title"
+              >
+                문의하기
+              </h3>
+              <p
+                class="text-slate-600 dark:text-slate-400"
+                data-i18n="contactSection.description"
+              >
+                프로젝트 상담 및 기술 문의는 아래 양식을 통해 보내주세요.
+              </p>
+            </div>
+
+            <form
+              id="contact-form"
+              class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800"
+            >
           <div class="grid md:grid-cols-2 gap-6 mb-6">
             <div>
               <label
@@ -1424,6 +1429,8 @@
           </button>
           <div id="contact-status" class="hidden mt-4"></div>
         </form>
+          </div>
+        </div>
       </div>
     </section>
 
