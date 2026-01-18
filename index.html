@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -35,10 +35,15 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Tailwind CSS (Built) -->
     <link rel="stylesheet" href="assets/css/output.css" />
+    <!-- Tailwind CSS CDN for additional classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -66,12 +71,17 @@
         class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl max-w-md w-full mx-4 p-8 text-center"
       >
         <div class="mb-6">
-          <i data-lucide="globe" class="w-12 h-12 text-blue-500 mx-auto mb-4"></i>
+          <i
+            data-lucide="globe"
+            class="w-12 h-12 text-blue-500 mx-auto mb-4"
+          ></i>
           <h2
             class="text-2xl font-bold text-slate-900 dark:text-white mb-2"
             id="modal-title"
           >
-            <span data-i18n="countryModal.detectedMessage">You are connecting from</span>
+            <span data-i18n="countryModal.detectedMessage"
+              >You are connecting from</span
+            >
           </h2>
           <p
             class="text-3xl font-bold text-blue-600 dark:text-blue-400"
@@ -87,10 +97,18 @@
             id="country-select"
             class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 dark:text-white"
           >
-            <option value="KR" data-i18n="countryModal.countries.KR">대한민국 (Korea)</option>
-            <option value="US" data-i18n="countryModal.countries.US">United States</option>
-            <option value="CN" data-i18n="countryModal.countries.CN">中国 (China)</option>
-            <option value="JP" data-i18n="countryModal.countries.JP">日本 (Japan)</option>
+            <option value="KR" data-i18n="countryModal.countries.KR">
+              대한민국 (Korea)
+            </option>
+            <option value="US" data-i18n="countryModal.countries.US">
+              United States
+            </option>
+            <option value="CN" data-i18n="countryModal.countries.CN">
+              中国 (China)
+            </option>
+            <option value="JP" data-i18n="countryModal.countries.JP">
+              日本 (Japan)
+            </option>
           </select>
         </div>
 
@@ -106,7 +124,9 @@
             id="select-other"
             class="w-full px-6 py-3 bg-transparent border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 text-slate-700 dark:text-slate-300 rounded-lg font-medium transition-all"
           >
-            <span data-i18n="countryModal.selectOther">Select other country or region</span>
+            <span data-i18n="countryModal.selectOther"
+              >Select other country or region</span
+            >
           </button>
         </div>
       </div>
@@ -156,16 +176,18 @@
               <span data-i18n="nav.business">Business</span>
               <i data-lucide="chevron-down" class="w-4 h-4"></i>
             </button>
-            <div class="absolute top-full left-0 mt-2 w-56 bg-slate-900 dark:bg-slate-950 border border-slate-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div
+              class="absolute top-full left-0 mt-2 w-56 bg-slate-900 dark:bg-slate-950 border border-slate-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+            >
               <a
-                href="#system-integration"
+                href="system-integration.html"
                 class="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800 dark:hover:bg-slate-900 text-sm transition-colors first:rounded-t-lg"
                 data-i18n="nav.systemIntegration"
               >
                 System Integration
               </a>
               <a
-                href="#compliance"
+                href="compliance.html"
                 class="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800 dark:hover:bg-slate-900 text-sm transition-colors last:rounded-b-lg"
                 data-i18n="nav.compliance"
               >
@@ -224,16 +246,21 @@
 
           <!-- BUSINESS Mobile Submenu -->
           <div class="border-l-2 border-slate-700 pl-4 space-y-3">
-            <div class="text-slate-400 text-sm font-semibold" data-i18n="nav.business">Business</div>
+            <div
+              class="text-slate-400 text-sm font-semibold"
+              data-i18n="nav.business"
+            >
+              Business
+            </div>
             <a
-              href="#system-integration"
+              href="system-integration.html"
               class="mobile-link block text-slate-300 hover:text-blue-400 text-sm font-medium"
               data-i18n="nav.systemIntegration"
             >
               System Integration
             </a>
             <a
-              href="#compliance"
+              href="compliance.html"
               class="mobile-link block text-slate-300 hover:text-blue-400 text-sm font-medium"
               data-i18n="nav.compliance"
             >
@@ -264,67 +291,173 @@
     </nav>
 
     <!-- Hero Section -->
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center bg-slate-900 dark:bg-slate-950 overflow-hidden px-6 py-24">
-      <!-- Dark gradient background -->
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-
-      <div class="relative z-10 max-w-7xl mx-auto w-full">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-
-          <!-- Left: Text Content -->
-          <div class="space-y-8">
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-semibold">
-              <i data-lucide="shield" class="w-4 h-4"></i>
-              <span data-i18n="hero.badge">Ship OT & Cyber Security Specialist</span>
+    <section
+      id="home"
+      class="relative isolate bg-slate-900 dark:bg-slate-950 min-h-screen"
+    >
+      <svg
+        aria-hidden="true"
+        class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200/10 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
+      >
+        <defs>
+          <pattern
+            id="hero-pattern"
+            width="200"
+            height="200"
+            x="50%"
+            y="-1"
+            patternUnits="userSpaceOnUse"
+          >
+            <path d="M.5 200V.5H200" fill="none" />
+          </pattern>
+        </defs>
+        <rect
+          width="100%"
+          height="100%"
+          fill="url(#hero-pattern)"
+          stroke-width="0"
+        />
+      </svg>
+      <div
+        aria-hidden="true"
+        class="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
+      >
+        <div
+          style="
+            clip-path: polygon(
+              63.1% 29.5%,
+              100% 17.1%,
+              76.6% 3%,
+              48.4% 0%,
+              44.6% 4.7%,
+              54.5% 25.3%,
+              59.8% 49%,
+              55.2% 57.8%,
+              44.4% 57.2%,
+              27.8% 47.9%,
+              35.1% 81.5%,
+              0% 97.7%,
+              39.2% 100%,
+              35.2% 81.4%,
+              97.2% 52.8%,
+              63.1% 29.5%
+            );
+          "
+          class="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+        ></div>
+      </div>
+      <div class="overflow-hidden">
+        <div
+          class="mx-auto max-w-7xl px-6 pb-32 pt-48 sm:pt-60 lg:px-8 lg:pt-48"
+        >
+          <div
+            class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-start"
+          >
+            <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
+              <!-- Badge -->
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-semibold"
+              >
+                <i data-lucide="shield" class="w-4 h-4"></i>
+                <span data-i18n="hero.badge"
+                  >Ship OT & Cyber Security Specialist</span
+                >
+              </div>
+              <!-- Title -->
+              <h1
+                class="mt-10 text-pretty text-5xl font-semibold tracking-tight text-white sm:text-7xl"
+                data-i18n="hero.title"
+                data-i18n-html="true"
+              >
+                조선해양 시스템 통합 및<br />규제 대응 전문
+              </h1>
+              <!-- Description -->
+              <p
+                class="mt-8 text-pretty text-lg font-medium text-gray-400 sm:max-w-md sm:text-xl/8 lg:max-w-none"
+                data-i18n="hero.description"
+                data-i18n-html="true"
+              >
+                광명 마리타임은 복잡해진 해양 산업과 기술에 대한 경험과 이해를
+                바탕으로<br class="hidden md:block" />데이터와 AI 기반 System
+                Integration 솔루션을 제공하고<br
+                  class="hidden md:block"
+                />Global Compliance 에 대응 합니다.
+              </p>
+              <!-- CTA Button -->
+              <div class="mt-10 flex items-center gap-x-6">
+                <a
+                  href="#contact"
+                  class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  <span data-i18n="hero.ctaSecondary">문의하기</span>
+                </a>
+              </div>
             </div>
-
-            <!-- Title -->
-            <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight" data-i18n="hero.title" data-i18n-html="true">
-              조선해양 시스템 통합 및<br/>규제 대응 전문
-            </h1>
-
-            <!-- Description -->
-            <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl" data-i18n="hero.description" data-i18n-html="true">
-              광명 마리타임은 복잡해진 해양 산업과 기술에 대한 경험과 이해를 바탕으로<br class="hidden md:block"/>데이터와 AI 기반 System Integration 솔루션을 제공하고<br class="hidden md:block"/>Global Compliance 에 대응 합니다.
-            </p>
-
-            <!-- CTA Buttons -->
-            <div class="flex flex-wrap gap-4">
-              <a href="#contact" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-semibold transition-all">
-                <span data-i18n="hero.ctaSecondary">문의하기</span>
-              </a>
+            <div
+              class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0"
+            >
+              <div
+                class="ml-auto w-48 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80"
+              >
+                <div class="relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1719721584783-c35e4f4c66de?w=400&h=528&fit=crop&auto=format"
+                    alt=""
+                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
+                  />
+                  <div
+                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10 dark:ring-white/10"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="mr-auto w-48 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36"
+              >
+                <div class="relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1661756977826-c66970f2a2cb?w=400&h=528&fit=crop&auto=format"
+                    alt=""
+                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
+                  />
+                  <div
+                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10 dark:ring-white/10"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1670121180530-cfcba4438038?q=80&w=3387&auto=format"
+                    alt=""
+                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
+                  />
+                  <div
+                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10 dark:ring-white/10"
+                  ></div>
+                </div>
+              </div>
+              <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
+                <div class="relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1595936398510-7057e9288156?w=400&h=528&fit=crop&auto=format"
+                    alt=""
+                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
+                  />
+                  <div
+                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10 dark:ring-white/10"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1747457421287-cdc4c33c3484?w=400&h=528&fit=crop&auto=format"
+                    alt=""
+                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
+                  />
+                  <div
+                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10 dark:ring-white/10"
+                  ></div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <!-- Right: Image Grid (6 images, irregular layout) -->
-          <div class="relative lg:h-[600px] hidden md:block">
-            <!-- Row 1: 2 images -->
-            <div class="absolute top-0 left-0 w-[45%]">
-              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop" alt="Container Ship" class="w-full h-48 object-cover rounded-2xl shadow-lg" />
-            </div>
-            <div class="absolute top-0 right-0 w-[50%]">
-              <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&h=400&fit=crop" alt="Shipyard" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
-            </div>
-
-            <!-- Row 2: 2 images -->
-            <div class="absolute top-52 left-0 w-[48%]">
-              <img src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=400&h=250&fit=crop" alt="Port Operations" class="w-full h-52 object-cover rounded-2xl shadow-lg" />
-            </div>
-            <div class="absolute top-64 right-2 w-[45%]">
-              <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=400&h=350&fit=crop" alt="Ship Bridge" class="w-full h-56 object-cover rounded-2xl shadow-lg" />
-            </div>
-
-            <!-- Row 3: 2 images -->
-            <div class="absolute bottom-0 left-2 w-[43%]">
-              <img src="https://images.unsplash.com/photo-1605128311787-5032d02b9a63?w=400&h=280&fit=crop" alt="Cargo Vessel" class="w-full h-48 object-cover rounded-2xl shadow-lg" />
-            </div>
-            <div class="absolute bottom-4 right-0 w-[45%]">
-              <img src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=400&h=300&fit=crop" alt="Maritime Port" class="w-full h-52 object-cover rounded-2xl shadow-lg" />
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -349,38 +482,81 @@
         <!-- Timeline -->
         <div class="relative">
           <!-- Timeline Line -->
-          <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200 dark:bg-blue-900"></div>
+          <div
+            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200 dark:bg-blue-900"
+          ></div>
 
           <!-- Timeline Items -->
-          <div class="space-y-12">
+          <div class="space-y-6">
             <!-- 2021 -->
             <div class="relative flex flex-col md:flex-row items-center gap-8">
               <div class="md:w-1/2 md:text-right md:pr-12">
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800">
+                <div
+                  class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800"
+                >
                   <div class="flex md:justify-end items-center gap-3 mb-3">
                     <i data-lucide="rocket" class="w-6 h-6 text-blue-600"></i>
-                    <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-400" data-i18n="expertise.timeline2021">2021</h3>
+                    <h3
+                      class="text-2xl font-bold text-blue-600 dark:text-blue-400"
+                      data-i18n="expertise.timeline2021"
+                    >
+                      2021
+                    </h3>
                   </div>
-                  <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-2" data-i18n="expertise.timeline2021Title">기술 기반 사업의 출발</h4>
-                  <p class="text-slate-600 dark:text-slate-400 text-sm" data-i18n="expertise.timeline2021Desc">㈜끌밋 법인 설립 및 데이터·플랫폼 기반 시스템 개발 시작</p>
+                  <h4
+                    class="text-lg font-semibold text-slate-900 dark:text-white mb-2"
+                    data-i18n="expertise.timeline2021Title"
+                  >
+                    기술 기반 사업의 출발
+                  </h4>
+                  <p
+                    class="text-slate-600 dark:text-slate-400 text-sm"
+                    data-i18n="expertise.timeline2021Desc"
+                  >
+                    ㈜끌밋 법인 설립 및 데이터·플랫폼 기반 시스템 개발 시작
+                  </p>
                 </div>
               </div>
-              <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950"></div>
+              <div
+                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950"
+              ></div>
               <div class="md:w-1/2"></div>
             </div>
 
             <!-- 2022 -->
             <div class="relative flex flex-col md:flex-row items-center gap-8">
               <div class="md:w-1/2"></div>
-              <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950"></div>
+              <div
+                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950"
+              ></div>
               <div class="md:w-1/2 md:pl-12">
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800">
+                <div
+                  class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800"
+                >
                   <div class="flex items-center gap-3 mb-3">
-                    <i data-lucide="trending-up" class="w-6 h-6 text-cyan-600"></i>
-                    <h3 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400" data-i18n="expertise.timeline2022">2022</h3>
+                    <i
+                      data-lucide="trending-up"
+                      class="w-6 h-6 text-cyan-600"
+                    ></i>
+                    <h3
+                      class="text-2xl font-bold text-cyan-600 dark:text-cyan-400"
+                      data-i18n="expertise.timeline2022"
+                    >
+                      2022
+                    </h3>
                   </div>
-                  <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-2" data-i18n="expertise.timeline2022Title">산업 도메인 확장 및 기술 내재화</h4>
-                  <p class="text-slate-600 dark:text-slate-400 text-sm" data-i18n="expertise.timeline2022Desc">해양·물류·운영 산업으로의 기술 적용 가능성 검증</p>
+                  <h4
+                    class="text-lg font-semibold text-slate-900 dark:text-white mb-2"
+                    data-i18n="expertise.timeline2022Title"
+                  >
+                    산업 도메인 확장 및 기술 내재화
+                  </h4>
+                  <p
+                    class="text-slate-600 dark:text-slate-400 text-sm"
+                    data-i18n="expertise.timeline2022Desc"
+                  >
+                    해양·물류·운영 산업으로의 기술 적용 가능성 검증
+                  </p>
                 </div>
               </div>
             </div>
@@ -388,31 +564,72 @@
             <!-- 2023 -->
             <div class="relative flex flex-col md:flex-row items-center gap-8">
               <div class="md:w-1/2 md:text-right md:pr-12">
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800">
+                <div
+                  class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800"
+                >
                   <div class="flex md:justify-end items-center gap-3 mb-3">
-                    <i data-lucide="shield-check" class="w-6 h-6 text-indigo-600"></i>
-                    <h3 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400" data-i18n="expertise.timeline2023">2023</h3>
+                    <i
+                      data-lucide="shield-check"
+                      class="w-6 h-6 text-indigo-600"
+                    ></i>
+                    <h3
+                      class="text-2xl font-bold text-indigo-600 dark:text-indigo-400"
+                      data-i18n="expertise.timeline2023"
+                    >
+                      2023
+                    </h3>
                   </div>
-                  <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-2" data-i18n="expertise.timeline2023Title">고신뢰·고보안 시스템 참여 경험 확보</h4>
-                  <p class="text-slate-600 dark:text-slate-400 text-sm" data-i18n="expertise.timeline2023Desc">국방부 위성 영상 처리 시스템 구축 사업 참여</p>
+                  <h4
+                    class="text-lg font-semibold text-slate-900 dark:text-white mb-2"
+                    data-i18n="expertise.timeline2023Title"
+                  >
+                    고신뢰·고보안 시스템 참여 경험 확보
+                  </h4>
+                  <p
+                    class="text-slate-600 dark:text-slate-400 text-sm"
+                    data-i18n="expertise.timeline2023Desc"
+                  >
+                    국방부 위성 영상 처리 시스템 구축 사업 참여
+                  </p>
                 </div>
               </div>
-              <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950"></div>
+              <div
+                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950"
+              ></div>
               <div class="md:w-1/2"></div>
             </div>
 
             <!-- 2024 -->
             <div class="relative flex flex-col md:flex-row items-center gap-8">
               <div class="md:w-1/2"></div>
-              <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950"></div>
+              <div
+                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950"
+              ></div>
               <div class="md:w-1/2 md:pl-12">
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800">
+                <div
+                  class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800"
+                >
                   <div class="flex items-center gap-3 mb-3">
                     <i data-lucide="anchor" class="w-6 h-6 text-purple-600"></i>
-                    <h3 class="text-2xl font-bold text-purple-600 dark:text-purple-400" data-i18n="expertise.timeline2024">2024</h3>
+                    <h3
+                      class="text-2xl font-bold text-purple-600 dark:text-purple-400"
+                      data-i18n="expertise.timeline2024"
+                    >
+                      2024
+                    </h3>
                   </div>
-                  <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-2" data-i18n="expertise.timeline2024Title">Maritime Cyber & Smart Ship 전문성 정립</h4>
-                  <p class="text-slate-600 dark:text-slate-400 text-sm" data-i18n="expertise.timeline2024Desc">IACS UR E26 / E27 규제 대응 구조 연구</p>
+                  <h4
+                    class="text-lg font-semibold text-slate-900 dark:text-white mb-2"
+                    data-i18n="expertise.timeline2024Title"
+                  >
+                    Maritime Cyber & Smart Ship 전문성 정립
+                  </h4>
+                  <p
+                    class="text-slate-600 dark:text-slate-400 text-sm"
+                    data-i18n="expertise.timeline2024Desc"
+                  >
+                    IACS UR E26 / E27 규제 대응 구조 연구
+                  </p>
                 </div>
               </div>
             </div>
@@ -420,402 +637,74 @@
             <!-- 2025 -->
             <div class="relative flex flex-col md:flex-row items-center gap-8">
               <div class="md:w-1/2 md:text-right md:pr-12">
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800">
+                <div
+                  class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800"
+                >
                   <div class="flex md:justify-end items-center gap-3 mb-3">
-                    <i data-lucide="building-2" class="w-6 h-6 text-emerald-600"></i>
-                    <h3 class="text-2xl font-bold text-emerald-600 dark:text-emerald-400" data-i18n="expertise.timeline2025">2025</h3>
+                    <i
+                      data-lucide="building-2"
+                      class="w-6 h-6 text-emerald-600"
+                    ></i>
+                    <h3
+                      class="text-2xl font-bold text-emerald-600 dark:text-emerald-400"
+                      data-i18n="expertise.timeline2025"
+                    >
+                      2025
+                    </h3>
                   </div>
-                  <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-2" data-i18n="expertise.timeline2025Title">㈜광명 마리타임 출범</h4>
-                  <p class="text-slate-600 dark:text-slate-400 text-sm" data-i18n="expertise.timeline2025Desc">Maritime 전문 컨설팅 기업으로 공식 출범</p>
+                  <h4
+                    class="text-lg font-semibold text-slate-900 dark:text-white mb-2"
+                    data-i18n="expertise.timeline2025Title"
+                  >
+                    ㈜광명 마리타임 출범
+                  </h4>
+                  <p
+                    class="text-slate-600 dark:text-slate-400 text-sm"
+                    data-i18n="expertise.timeline2025Desc"
+                  >
+                    Maritime 전문 컨설팅 기업으로 공식 출범
+                  </p>
                 </div>
               </div>
-              <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950"></div>
+              <div
+                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950"
+              ></div>
               <div class="md:w-1/2"></div>
             </div>
 
             <!-- 2026 -->
             <div class="relative flex flex-col md:flex-row items-center gap-8">
               <div class="md:w-1/2"></div>
-              <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950 ring-4 ring-blue-200 dark:ring-blue-900"></div>
+              <div
+                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950 ring-4 ring-blue-200 dark:ring-blue-900"
+              ></div>
               <div class="md:w-1/2 md:pl-12">
-                <div class="bg-gradient-to-br from-blue-600 to-cyan-600 p-6 rounded-xl shadow-lg">
+                <div
+                  class="bg-gradient-to-br from-blue-600 to-cyan-600 p-6 rounded-xl shadow-lg"
+                >
                   <div class="flex items-center gap-3 mb-3">
                     <i data-lucide="target" class="w-6 h-6 text-white"></i>
-                    <h3 class="text-2xl font-bold text-white" data-i18n="expertise.timeline2026">2026</h3>
+                    <h3
+                      class="text-2xl font-bold text-white"
+                      data-i18n="expertise.timeline2026"
+                    >
+                      2026
+                    </h3>
                   </div>
-                  <h4 class="text-lg font-semibold text-white mb-2" data-i18n="expertise.timeline2026Title">Maritime Compliance 사업 중심 조직 개편</h4>
-                  <p class="text-blue-50 text-sm" data-i18n="expertise.timeline2026Desc">주요 선급 IACS UR E27 TA 취득 및 E26 Deliverable 제공</p>
+                  <h4
+                    class="text-lg font-semibold text-white mb-2"
+                    data-i18n="expertise.timeline2026Title"
+                  >
+                    Maritime Compliance 사업 중심 조직 개편
+                  </h4>
+                  <p
+                    class="text-blue-50 text-sm"
+                    data-i18n="expertise.timeline2026Desc"
+                  >
+                    주요 선급 IACS UR E27 TA 취득 및 E26 Deliverable 제공
+                  </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- System Integration Section -->
-    <section
-      id="system-integration"
-      class="py-24 bg-white dark:bg-slate-950"
-    >
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="mb-16 text-center">
-          <h2
-            class="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white leading-snug"
-            data-i18n="systemIntegration.title"
-          >
-            사업 범위
-          </h2>
-          <p
-            class="text-slate-600 dark:text-slate-400 max-w-3xl mx-auto text-lg leading-relaxed"
-            data-i18n="systemIntegration.subtitle"
-          >
-            광명마리타임은 공공·민간·해양 분야에서 운영이 요구되는 IT/OT 플랫폼의 개발·구축과 이에 대한 전문 컨설팅을 제공합니다.
-          </p>
-        </div>
-
-        <!-- Two Main Service Areas -->
-        <div class="grid md:grid-cols-2 gap-8 mb-12">
-          <!-- Platform Development & Deployment Box -->
-          <div class="bg-gradient-to-br from-pink-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 p-10 rounded-2xl border-2 border-pink-200 dark:border-pink-900">
-            <div class="flex items-start gap-4 mb-6">
-              <div class="bg-blue-600 p-3 rounded-lg flex-shrink-0">
-                <i data-lucide="database" class="w-7 h-7 text-white"></i>
-              </div>
-              <h3
-                class="text-2xl font-bold text-slate-900 dark:text-white mt-1"
-                data-i18n="systemIntegration.platformDevTitle"
-              >
-                Platform Development & Deployment
-              </h3>
-            </div>
-
-            <div class="bg-white/50 dark:bg-slate-800/50 p-6 rounded-xl mb-4">
-              <h4
-                class="text-lg font-semibold text-slate-900 dark:text-white mb-3"
-                data-i18n="systemIntegration.platformDevBoxTitle"
-              >
-                공공/민간 IT OT 플랫폼 개발 및 구축
-              </h4>
-            </div>
-
-            <ul class="space-y-2 text-slate-700 dark:text-slate-300">
-              <li class="flex items-start gap-2">
-                <span class="text-blue-600 dark:text-blue-400 mt-1">•</span>
-                <span data-i18n="systemIntegration.platformDevBullet1">글로벌 표준 기반</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-blue-600 dark:text-blue-400 mt-1">•</span>
-                <span data-i18n="systemIntegration.platformDevBullet2">DATA·AI 활용</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Maritime Consulting Box -->
-          <div class="bg-gradient-to-br from-cyan-50 to-green-50 dark:from-slate-800 dark:to-slate-900 p-10 rounded-2xl border-2 border-green-200 dark:border-green-900">
-            <div class="flex items-start gap-4 mb-6">
-              <div class="bg-cyan-600 p-3 rounded-lg flex-shrink-0">
-                <i data-lucide="ship" class="w-7 h-7 text-white"></i>
-              </div>
-              <h3
-                class="text-2xl font-bold text-slate-900 dark:text-white mt-1"
-                data-i18n="systemIntegration.maritimeConsultingTitle"
-              >
-                Maritime Consulting
-              </h3>
-            </div>
-
-            <div class="bg-white/50 dark:bg-slate-800/50 p-6 rounded-xl mb-4">
-              <h4
-                class="text-lg font-semibold text-slate-900 dark:text-white mb-3"
-                data-i18n="systemIntegration.maritimeConsultingBoxTitle"
-              >
-                Smart Ship & Digital Shipyard Consulting
-              </h4>
-            </div>
-
-            <div class="text-slate-700 dark:text-slate-300 space-y-2">
-              <p class="font-medium" data-i18n="systemIntegration.maritimeConsultingSubtitle">Engineering and Development</p>
-              <ul class="space-y-2">
-                <li class="flex items-start gap-2">
-                  <span class="text-cyan-600 dark:text-cyan-400 mt-1">•</span>
-                  <span data-i18n="systemIntegration.maritimeConsultingBullet1">IACS UR E26/E27 기반</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- System Integration Container -->
-        <div class="bg-white dark:bg-slate-900 p-12 rounded-2xl border-2 border-slate-300 dark:border-slate-700 shadow-lg">
-          <!-- Header -->
-          <div class="text-center mb-10">
-            <h3
-              class="text-3xl font-bold text-slate-900 dark:text-white mb-3"
-              data-i18n="systemIntegration.systemIntegrationTitle"
-            >
-              System Integration
-            </h3>
-            <p
-              class="text-slate-600 dark:text-slate-400 text-lg"
-              data-i18n="systemIntegration.systemIntegrationSubtitle"
-            >
-              (Structure-first 접근 기반의 해양 시스템 통합)
-            </p>
-          </div>
-
-          <!-- Engineering and Development Section -->
-          <div class="mb-8">
-            <h4
-              class="text-xl font-bold text-slate-900 dark:text-white text-center mb-6"
-              data-i18n="systemIntegration.engineeringTitle"
-            >
-              Engineering and Development
-            </h4>
-
-            <div class="grid md:grid-cols-2 gap-6 mb-8">
-              <!-- Left: Global Standards -->
-              <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border-2 border-pink-300 dark:border-pink-700 shadow-md">
-                <h5
-                  class="text-lg font-bold text-slate-900 dark:text-white mb-4"
-                  data-i18n="systemIntegration.engDevLeftTitle"
-                >
-                  글로벌 표준 기반 데이터 관리 체계 구축
-                </h5>
-                <p
-                  class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed"
-                  data-i18n="systemIntegration.engDevLeftDesc"
-                >
-                  DATA·AI 활용 기반 공공/민간 운영환경에 최적화된 플랫폼 설계 개발
-                </p>
-              </div>
-
-              <!-- Right: IACS Standards -->
-              <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border-2 border-slate-300 dark:border-slate-600 shadow-md">
-                <h5
-                  class="text-lg font-bold text-slate-900 dark:text-white mb-4"
-                  data-i18n="systemIntegration.engDevRightTitle"
-                >
-                  IACS UR E26/E27 기반 설계·검증·문서 체계 구축
-                </h5>
-                <p
-                  class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed"
-                  data-i18n="systemIntegration.engDevRightDesc"
-                >
-                  운항 선박의 IT/OT 환경에 최적화된 Cyber Resilience 모델 설계
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Risk Assessment Bar -->
-          <div class="bg-green-500 dark:bg-green-600 p-6 rounded-xl mb-4">
-            <h4
-              class="text-xl font-bold text-white text-center"
-              data-i18n="systemIntegration.riskManagementTitle"
-            >
-              Risk Assessment / Risk Management
-            </h4>
-          </div>
-
-          <!-- Cyber Resilience Bar -->
-          <div class="bg-slate-200 dark:bg-slate-700 p-6 rounded-xl border-2 border-slate-300 dark:border-slate-600">
-            <h4
-              class="text-xl font-bold text-slate-900 dark:text-white text-center mb-2"
-              data-i18n="systemIntegration.cyberResilienceTitle"
-            >
-              Cyber Resilience & Security Architecture
-            </h4>
-            <p
-              class="text-slate-700 dark:text-slate-300 text-center text-sm"
-              data-i18n="systemIntegration.cyberResilienceSubtitle"
-            >
-              (사고를 막는 보안이 아니라, 버티는 구조를 만드는 보안)
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Compliance Section -->
-    <section
-      id="compliance"
-      class="py-24 bg-slate-900 dark:bg-slate-950 text-white"
-    >
-      <div class="max-w-7xl mx-auto px-6">
-        <!-- Header -->
-        <div class="mb-16 text-center">
-          <h2
-            class="text-3xl md:text-4xl font-bold mb-4 leading-snug"
-            data-i18n="compliance.title"
-          >
-            Maritime Cyber Security
-          </h2>
-          <p
-            class="text-slate-400 max-w-3xl mx-auto text-lg"
-            data-i18n="compliance.subtitle"
-          >
-            IACS UR E26/E27 - 선박 사이버 복원력 강제화
-          </p>
-        </div>
-
-        <!-- IACS UR E26/E27 Diagram -->
-        <div class="mb-16 bg-slate-800 p-10 rounded-2xl border border-slate-700">
-          <div class="grid md:grid-cols-3 gap-8 mb-8">
-            <!-- E26 Card -->
-            <div class="bg-slate-900 p-6 rounded-xl border border-blue-600">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="bg-blue-600 p-2 rounded-lg">
-                  <i data-lucide="ship" class="w-6 h-6 text-white"></i>
-                </div>
-                <h3
-                  class="text-xl font-bold text-blue-400"
-                  data-i18n="compliance.e26Title"
-                >
-                  E26 - Ship-level
-                </h3>
-              </div>
-              <p
-                class="text-slate-300 text-sm leading-relaxed"
-                data-i18n="compliance.e26Desc"
-              >
-                선박 전체의 사이버 보안 개념과 관리 체계 확보
-              </p>
-            </div>
-
-            <!-- E27 Card -->
-            <div class="bg-slate-900 p-6 rounded-xl border border-cyan-600">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="bg-cyan-600 p-2 rounded-lg">
-                  <i data-lucide="cpu" class="w-6 h-6 text-white"></i>
-                </div>
-                <h3
-                  class="text-xl font-bold text-cyan-400"
-                  data-i18n="compliance.e27Title"
-                >
-                  E27 - System Supplier
-                </h3>
-              </div>
-              <p
-                class="text-slate-300 text-sm leading-relaxed"
-                data-i18n="compliance.e27Desc"
-              >
-                각 시스템의 사이버 보안을 전제한 설계와 운영
-              </p>
-            </div>
-
-            <!-- SCARP Card -->
-            <div class="bg-slate-900 p-6 rounded-xl border border-amber-600">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="bg-amber-600 p-2 rounded-lg">
-                  <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
-                </div>
-                <h3
-                  class="text-xl font-bold text-amber-400"
-                  data-i18n="compliance.scarpTitle"
-                >
-                  SCARP
-                </h3>
-              </div>
-              <p
-                class="text-slate-300 text-sm leading-relaxed"
-                data-i18n="compliance.scarpDesc"
-              >
-                Owner's Requirement
-              </p>
-            </div>
-          </div>
-
-          <div class="text-center py-4">
-            <p
-              class="text-sm text-slate-400 italic"
-              data-i18n="compliance.structuralChangeTitle"
-            >
-              해양 산업의 구조적 변화
-            </p>
-          </div>
-        </div>
-
-        <!-- One-stop Service -->
-        <div class="mb-12">
-          <h3
-            class="text-2xl font-bold text-center mb-8 text-white"
-            data-i18n="compliance.oneStopServiceTitle"
-          >
-            One-stop Service
-          </h3>
-
-          <div class="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 p-6 rounded-xl mb-8 border border-blue-700">
-            <div class="flex items-center justify-center gap-4 flex-wrap">
-              <span class="text-white font-semibold">Advisory</span>
-              <i data-lucide="arrow-right" class="w-5 h-5 text-blue-400"></i>
-              <span class="text-white font-semibold">Design</span>
-              <i data-lucide="arrow-right" class="w-5 h-5 text-blue-400"></i>
-              <span class="text-white font-semibold">Integration Support</span>
-              <i data-lucide="arrow-right" class="w-5 h-5 text-blue-400"></i>
-              <span class="text-white font-semibold">Operation Readiness</span>
-            </div>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-6">
-            <!-- For System Supplies -->
-            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
-              <h4
-                class="text-lg font-bold text-cyan-400 mb-4"
-                data-i18n="compliance.forSuppliesTitle"
-              >
-                For System Supplies
-              </h4>
-              <ul class="space-y-2 text-sm text-slate-300">
-                <li class="flex items-start gap-2">
-                  <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
-                  <span data-i18n="compliance.forSuppliesItem1">IACS UR E27 TA</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
-                  <span data-i18n="compliance.forSuppliesItem2">IACS Deliverable</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- For System Integration -->
-            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
-              <h4
-                class="text-lg font-bold text-blue-400 mb-4"
-                data-i18n="compliance.forIntegrationTitle"
-              >
-                For System Integration
-              </h4>
-              <ul class="space-y-2 text-sm text-slate-300">
-                <li class="flex items-start gap-2">
-                  <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
-                  <span data-i18n="compliance.forIntegrationItem">IACS UR E26 Deliverable</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- For Ship Management -->
-            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
-              <h4
-                class="text-lg font-bold text-amber-400 mb-4"
-                data-i18n="compliance.forManagementTitle"
-              >
-                For Ship Management and Operation
-              </h4>
-              <ul class="space-y-2 text-sm text-slate-300">
-                <li class="flex items-start gap-2">
-                  <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
-                  <span data-i18n="compliance.forManagementItem1">Cybersecurity Policy (Requirement)</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
-                  <span data-i18n="compliance.forManagementItem2">SCARP</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
-                  <span data-i18n="compliance.forManagementItem3">Annual Survey</span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
@@ -845,8 +734,13 @@
           <div
             class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300"
           >
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-4">
-              <i data-lucide="ship" class="w-8 h-8 text-blue-600 dark:text-blue-400"></i>
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-4"
+            >
+              <i
+                data-lucide="ship"
+                class="w-8 h-8 text-blue-600 dark:text-blue-400"
+              ></i>
             </div>
             <h3
               class="font-bold text-slate-900 dark:text-white mb-2"
@@ -866,8 +760,13 @@
           <div
             class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300"
           >
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-cyan-100 dark:bg-cyan-900/30 rounded-full mb-4">
-              <i data-lucide="factory" class="w-8 h-8 text-cyan-600 dark:text-cyan-400"></i>
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-cyan-100 dark:bg-cyan-900/30 rounded-full mb-4"
+            >
+              <i
+                data-lucide="factory"
+                class="w-8 h-8 text-cyan-600 dark:text-cyan-400"
+              ></i>
             </div>
             <h3
               class="font-bold text-slate-900 dark:text-white mb-2"
@@ -887,8 +786,13 @@
           <div
             class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300"
           >
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full mb-4">
-              <i data-lucide="package" class="w-8 h-8 text-indigo-600 dark:text-indigo-400"></i>
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full mb-4"
+            >
+              <i
+                data-lucide="package"
+                class="w-8 h-8 text-indigo-600 dark:text-indigo-400"
+              ></i>
             </div>
             <h3
               class="font-bold text-slate-900 dark:text-white mb-2"
@@ -908,8 +812,13 @@
           <div
             class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300"
           >
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full mb-4">
-              <i data-lucide="globe" class="w-8 h-8 text-purple-600 dark:text-purple-400"></i>
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full mb-4"
+            >
+              <i
+                data-lucide="globe"
+                class="w-8 h-8 text-purple-600 dark:text-purple-400"
+              ></i>
             </div>
             <h3
               class="font-bold text-slate-900 dark:text-white mb-2"
@@ -981,91 +890,9 @@
             class="text-slate-600 dark:text-slate-400 max-w-3xl mx-auto text-lg leading-relaxed"
             data-i18n="about.subtitle"
           >
-            광명마리타임은 공공·민간·해양 분야에서 운영이 요구되는 IT/OT 플랫폼의 개발·구축과 이에 대한 전문 컨설팅을 제공합니다.
+            광명마리타임은 공공·민간·해양 분야에서 운영이 요구되는 IT/OT
+            플랫폼의 개발·구축과 이에 대한 전문 컨설팅을 제공합니다.
           </p>
-        </div>
-
-        <!-- Timeline -->
-        <div class="mb-20">
-          <h3
-            class="text-2xl font-bold mb-10 text-slate-900 dark:text-white text-center"
-            data-i18n="about.timelineTitle"
-          >
-            광명 마리타임이 걸어온 길
-          </h3>
-
-          <!-- Horizontal Timeline -->
-          <div class="relative overflow-x-auto">
-            <div class="flex items-stretch min-w-full gap-2">
-              <!-- 2021 -->
-              <div class="flex-1 min-w-[200px] relative">
-                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-slate-800 dark:to-slate-700 p-6 rounded-lg h-full border-l-4 border-blue-600">
-                  <div class="text-3xl font-bold text-blue-600 mb-3" data-i18n="about.timeline2021">2021</div>
-                  <h4 class="font-bold text-slate-900 dark:text-white mb-2" data-i18n="about.timeline2021Desc">기술 기반 사업의 출발</h4>
-                </div>
-                <!-- Arrow -->
-                <div class="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 z-10">
-                  <i data-lucide="chevron-right" class="w-8 h-8 text-blue-600"></i>
-                </div>
-              </div>
-
-              <!-- 2022 -->
-              <div class="flex-1 min-w-[200px] relative">
-                <div class="bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 p-6 rounded-lg h-full border-l-4 border-cyan-600">
-                  <div class="text-3xl font-bold text-cyan-600 mb-3" data-i18n="about.timeline2022">2022</div>
-                  <h4 class="font-bold text-slate-900 dark:text-white mb-2" data-i18n="about.timeline2022Desc">산업 도메인 확장 및 기술 내재화</h4>
-                </div>
-                <!-- Arrow -->
-                <div class="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 z-10">
-                  <i data-lucide="chevron-right" class="w-8 h-8 text-cyan-600"></i>
-                </div>
-              </div>
-
-              <!-- 2023 -->
-              <div class="flex-1 min-w-[200px] relative">
-                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 p-6 rounded-lg h-full border-l-4 border-indigo-600">
-                  <div class="text-3xl font-bold text-indigo-600 mb-3" data-i18n="about.timeline2023">2023</div>
-                  <h4 class="font-bold text-slate-900 dark:text-white mb-2" data-i18n="about.timeline2023Desc">고신뢰·고보안 시스템 참여 경험 확보</h4>
-                </div>
-                <!-- Arrow -->
-                <div class="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 z-10">
-                  <i data-lucide="chevron-right" class="w-8 h-8 text-indigo-600"></i>
-                </div>
-              </div>
-
-              <!-- 2024 -->
-              <div class="flex-1 min-w-[200px] relative">
-                <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-slate-700 dark:to-slate-800 p-6 rounded-lg h-full border-l-4 border-purple-600">
-                  <div class="text-3xl font-bold text-purple-600 mb-3" data-i18n="about.timeline2024">2024</div>
-                  <h4 class="font-bold text-slate-900 dark:text-white mb-2" data-i18n="about.timeline2024Desc">Maritime Cyber & Smart Ship 전문성 정립</h4>
-                </div>
-                <!-- Arrow -->
-                <div class="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 z-10">
-                  <i data-lucide="chevron-right" class="w-8 h-8 text-purple-600"></i>
-                </div>
-              </div>
-
-              <!-- 2025 -->
-              <div class="flex-1 min-w-[200px] relative">
-                <div class="bg-gradient-to-br from-pink-50 to-rose-50 dark:from-slate-800 dark:to-slate-700 p-6 rounded-lg h-full border-l-4 border-pink-600">
-                  <div class="text-3xl font-bold text-pink-600 mb-3" data-i18n="about.timeline2025">2025</div>
-                  <h4 class="font-bold text-slate-900 dark:text-white mb-2" data-i18n="about.timeline2025Desc">㈜광명 마리타임 출범</h4>
-                </div>
-                <!-- Arrow -->
-                <div class="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 z-10">
-                  <i data-lucide="chevron-right" class="w-8 h-8 text-pink-600"></i>
-                </div>
-              </div>
-
-              <!-- 2026 -->
-              <div class="flex-1 min-w-[200px]">
-                <div class="bg-gradient-to-br from-rose-50 to-red-50 dark:from-slate-700 dark:to-slate-800 p-6 rounded-lg h-full border-l-4 border-rose-600">
-                  <div class="text-3xl font-bold text-rose-600 mb-3" data-i18n="about.timeline2026">2026</div>
-                  <h4 class="font-bold text-slate-900 dark:text-white mb-2" data-i18n="about.timeline2026Desc">Maritime Compliance 사업 중심 조직 개편</h4>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <!-- Core Competencies -->
@@ -1161,7 +988,9 @@
         </div>
 
         <!-- Core Values -->
-        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-slate-800 dark:to-slate-900 p-12 rounded-2xl">
+        <div
+          class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-slate-800 dark:to-slate-900 p-12 rounded-2xl"
+        >
           <h3
             class="text-2xl font-bold mb-8 text-slate-900 dark:text-white text-center"
             data-i18n="about.coreValuesTitle"
@@ -1171,71 +1000,295 @@
           <div class="grid md:grid-cols-4 gap-6">
             <!-- Trust -->
             <div class="text-center">
-              <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div
+                class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
                 <i data-lucide="shield-check" class="w-8 h-8 text-white"></i>
               </div>
-              <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2" data-i18n="about.coreValue1">Trust</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="about.coreValue1Desc">신뢰를 기반으로 한 파트너십</p>
+              <h4
+                class="text-lg font-bold text-slate-900 dark:text-white mb-2"
+                data-i18n="about.coreValue1"
+              >
+                Trust
+              </h4>
+              <p
+                class="text-sm text-slate-600 dark:text-slate-400"
+                data-i18n="about.coreValue1Desc"
+              >
+                신뢰를 기반으로 한 파트너십
+              </p>
             </div>
 
             <!-- Execution -->
             <div class="text-center">
-              <div class="bg-cyan-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div
+                class="bg-cyan-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
                 <i data-lucide="zap" class="w-8 h-8 text-white"></i>
               </div>
-              <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2" data-i18n="about.coreValue2">Execution</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="about.coreValue2Desc">실행력 있는 프로젝트 수행</p>
+              <h4
+                class="text-lg font-bold text-slate-900 dark:text-white mb-2"
+                data-i18n="about.coreValue2"
+              >
+                Execution
+              </h4>
+              <p
+                class="text-sm text-slate-600 dark:text-slate-400"
+                data-i18n="about.coreValue2Desc"
+              >
+                실행력 있는 프로젝트 수행
+              </p>
             </div>
 
             <!-- Responsibility -->
             <div class="text-center">
-              <div class="bg-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div
+                class="bg-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
                 <i data-lucide="award" class="w-8 h-8 text-white"></i>
               </div>
-              <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2" data-i18n="about.coreValue3">Responsibility</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="about.coreValue3Desc">책임감 있는 기술 지원</p>
+              <h4
+                class="text-lg font-bold text-slate-900 dark:text-white mb-2"
+                data-i18n="about.coreValue3"
+              >
+                Responsibility
+              </h4>
+              <p
+                class="text-sm text-slate-600 dark:text-slate-400"
+                data-i18n="about.coreValue3Desc"
+              >
+                책임감 있는 기술 지원
+              </p>
             </div>
 
             <!-- Partnership -->
             <div class="text-center">
-              <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div
+                class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
                 <i data-lucide="users" class="w-8 h-8 text-white"></i>
               </div>
-              <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2" data-i18n="about.coreValue4">Partnership</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="about.coreValue4Desc">상생하는 협력 관계</p>
+              <h4
+                class="text-lg font-bold text-slate-900 dark:text-white mb-2"
+                data-i18n="about.coreValue4"
+              >
+                Partnership
+              </h4>
+              <p
+                class="text-sm text-slate-600 dark:text-slate-400"
+                data-i18n="about.coreValue4Desc"
+              >
+                상생하는 협력 관계
+              </p>
             </div>
           </div>
         </div>
 
         <!-- Support Scope -->
-        <div class="mt-16 bg-slate-50 dark:bg-slate-800 p-10 rounded-2xl">
-          <h3
-            class="text-2xl font-bold mb-8 text-slate-900 dark:text-white text-center"
-            data-i18n="about.supportScopeTitle"
-          >
-            지원 범위
-          </h3>
-          <div class="grid md:grid-cols-2 gap-8">
-            <!-- IACS Classification Societies -->
-            <div>
-              <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                <i data-lucide="ship" class="w-5 h-5 text-blue-600"></i>
-                <span data-i18n="about.supportScopeIACS">IACS 선급</span>
-              </h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="about.supportScopeIACSList">
-                ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IR Class, Class NK, CRS 등
-              </p>
-            </div>
+        <div class="mt-16 bg-white dark:bg-slate-800 pt-8 pb-10 rounded-2xl">
+          <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl lg:max-w-none">
+              <h2
+                class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-6"
+                data-i18n="about.supportScopeTitle"
+              >
+                지원 범위
+              </h2>
 
-            <!-- International Organizations -->
-            <div>
-              <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                <i data-lucide="globe" class="w-5 h-5 text-cyan-600"></i>
-                <span data-i18n="about.supportScopeInternational">국제 기관</span>
-              </h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="about.supportScopeInternationalList">
-                NSA, USCG, UK NCSC, CSA Singapore
-              </p>
+              <!-- IACS Classification Societies -->
+              <div class="mb-16">
+                <h3
+                  class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-8 flex items-center gap-2"
+                >
+                  <i data-lucide="ship" class="w-5 h-5 text-blue-600"></i>
+                  <span data-i18n="about.supportScopeIACS">IACS 선급</span>
+                </h3>
+                <div
+                  class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 items-center"
+                >
+                  <!-- IACS -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <img
+                      src="resource/logos/iacs.png"
+                      alt="IACS"
+                      class="max-h-14 w-auto object-contain"
+                    />
+                  </div>
+                  <!-- ABS -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <img
+                      src="resource/logos/abs.png"
+                      alt="ABS"
+                      class="max-h-14 w-auto object-contain"
+                    />
+                  </div>
+                  <!-- RINA -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <img
+                      src="resource/logos/rina.svg"
+                      alt="RINA"
+                      class="max-h-14 w-auto object-contain"
+                    />
+                  </div>
+                  <!-- IR Class -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <img
+                      src="resource/logos/irclass.png"
+                      alt="IR Class"
+                      class="max-h-14 w-auto object-contain"
+                    />
+                  </div>
+                  <!-- Bureau Veritas -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <img
+                      src="resource/logos/bv.png"
+                      alt="Bureau Veritas"
+                      class="max-h-14 w-auto object-contain"
+                    />
+                  </div>
+                  <!-- CCS -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <img
+                      src="resource/logos/ccs.svg"
+                      alt="CCS"
+                      class="max-h-14 w-auto object-contain"
+                    />
+                  </div>
+                  <!-- PRS -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <img
+                      src="resource/logos/prs.jpg"
+                      alt="PRS"
+                      class="max-h-14 w-auto object-contain"
+                    />
+                  </div>
+                  <!-- DNV -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <img
+                      src="resource/logos/dnv.webp"
+                      alt="DNV"
+                      class="max-h-12 w-auto object-contain"
+                    />
+                  </div>
+                  <!-- Lloyd's Register -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <img
+                      src="resource/logos/lr.jpg"
+                      alt="Lloyd's Register"
+                      class="max-h-14 w-auto object-contain"
+                    />
+                  </div>
+                  <!-- ClassNK -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <img
+                      src="resource/logos/classnk.jpg"
+                      alt="ClassNK"
+                      class="max-h-12 w-auto object-contain"
+                    />
+                  </div>
+                  <!-- KR -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <img
+                      src="resource/logos/kr.jpg"
+                      alt="KR"
+                      class="max-h-14 w-auto object-contain"
+                    />
+                  </div>
+                  <!-- CRS -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <img
+                      src="resource/logos/crs.png"
+                      alt="CRS"
+                      class="max-h-14 w-auto object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- International Organizations -->
+              <div>
+                <h3
+                  class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-8 flex items-center gap-2"
+                >
+                  <i data-lucide="globe" class="w-5 h-5 text-cyan-600"></i>
+                  <span data-i18n="about.supportScopeInternational"
+                    >국제 기관</span
+                  >
+                </h3>
+                <div
+                  class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center"
+                >
+                  <!-- NSA - Replace src with: assets/images/logos/nsa.png -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <span
+                      class="text-lg font-bold text-gray-700 dark:text-gray-300"
+                      >NSA</span
+                    >
+                  </div>
+                  <!-- UK NCSC - Replace src with: assets/images/logos/ncsc-uk.png -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <span
+                      class="text-sm font-bold text-gray-700 dark:text-gray-300"
+                      >UK NCSC</span
+                    >
+                  </div>
+                  <!-- USCG - Replace src with: assets/images/logos/uscg.png -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <span
+                      class="text-lg font-bold text-gray-700 dark:text-gray-300"
+                      >USCG</span
+                    >
+                  </div>
+                  <!-- CSA Singapore - Replace src with: assets/images/logos/csa-sg.png -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <span
+                      class="text-sm font-bold text-gray-700 dark:text-gray-300"
+                      >CSA Singapore</span
+                    >
+                  </div>
+                  <!-- NCSC - Replace src with: assets/images/logos/ncsc.png -->
+                  <div
+                    class="flex items-center justify-center h-20 bg-white rounded-lg px-4"
+                  >
+                    <span
+                      class="text-sm font-bold text-gray-700 dark:text-gray-300"
+                      >NCSC</span
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1251,20 +1304,40 @@
               주요 수행 프로젝트
             </h3>
             <div class="space-y-3">
-              <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
-                <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+              <div
+                class="flex items-center gap-3 text-slate-700 dark:text-slate-300"
+              >
+                <i
+                  data-lucide="check-circle"
+                  class="w-5 h-5 text-green-500"
+                ></i>
                 <span data-i18n="about.project1">국방부</span>
               </div>
-              <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
-                <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+              <div
+                class="flex items-center gap-3 text-slate-700 dark:text-slate-300"
+              >
+                <i
+                  data-lucide="check-circle"
+                  class="w-5 h-5 text-green-500"
+                ></i>
                 <span data-i18n="about.project2">한진관광</span>
               </div>
-              <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
-                <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+              <div
+                class="flex items-center gap-3 text-slate-700 dark:text-slate-300"
+              >
+                <i
+                  data-lucide="check-circle"
+                  class="w-5 h-5 text-green-500"
+                ></i>
                 <span data-i18n="about.project3">MOL</span>
               </div>
-              <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
-                <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+              <div
+                class="flex items-center gap-3 text-slate-700 dark:text-slate-300"
+              >
+                <i
+                  data-lucide="check-circle"
+                  class="w-5 h-5 text-green-500"
+                ></i>
                 <span data-i18n="about.project4">EVERGREEN</span>
               </div>
             </div>
@@ -1279,19 +1352,27 @@
               협력사
             </h3>
             <div class="space-y-3">
-              <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+              <div
+                class="flex items-center gap-3 text-slate-700 dark:text-slate-300"
+              >
                 <i data-lucide="handshake" class="w-5 h-5 text-blue-500"></i>
                 <span data-i18n="about.partner1">SEANET</span>
               </div>
-              <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+              <div
+                class="flex items-center gap-3 text-slate-700 dark:text-slate-300"
+              >
                 <i data-lucide="handshake" class="w-5 h-5 text-blue-500"></i>
                 <span data-i18n="about.partner2">CYTUR</span>
               </div>
-              <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+              <div
+                class="flex items-center gap-3 text-slate-700 dark:text-slate-300"
+              >
                 <i data-lucide="handshake" class="w-5 h-5 text-blue-500"></i>
                 <span data-i18n="about.partner3">C&A 전기</span>
               </div>
-              <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+              <div
+                class="flex items-center gap-3 text-slate-700 dark:text-slate-300"
+              >
                 <i data-lucide="handshake" class="w-5 h-5 text-blue-500"></i>
                 <span data-i18n="about.partner4">진흥기업</span>
               </div>
@@ -1311,7 +1392,9 @@
             data-i18n="contactSection.coreValuesDesc"
             data-i18n-html="true"
           >
-            광명 마리타임은 IT/OT 시스템을 포함한 해양 선박의 안전 운영과 사이버 리스크를 함께 고려하여<br/>현실적이고 지속 가능한 시스템 통합 기술을 제공하여 글로벌 컴플라이언스에 대응 합니다.
+            광명 마리타임은 IT/OT 시스템을 포함한 해양 선박의 안전 운영과 사이버
+            리스크를 함께 고려하여<br />현실적이고 지속 가능한 시스템 통합
+            기술을 제공하여 글로벌 컴플라이언스에 대응 합니다.
           </p>
         </div>
 
@@ -1319,8 +1402,16 @@
         <div class="grid md:grid-cols-2 gap-16 items-start">
           <!-- Left: Core Values -->
           <div class="overflow-hidden text-center md:text-left">
-            <h2 class="font-bold text-slate-900 dark:text-white max-w-full" style="font-size: clamp(3rem, 6vw, 6rem); line-height: 1.3; hyphens: none;" data-i18n="contactSection.coreValuesTitle">
-              Trust<br/>Execution<br/>Responsibility<br/>Partnership
+            <h2
+              class="font-bold text-slate-900 dark:text-white max-w-full"
+              style="
+                font-size: clamp(3rem, 6vw, 6rem);
+                line-height: 1.3;
+                hyphens: none;
+              "
+              data-i18n="contactSection.coreValuesTitle"
+            >
+              Trust<br />Execution<br />Responsibility<br />Partnership
             </h2>
           </div>
 
@@ -1345,86 +1436,86 @@
               id="contact-form"
               class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800"
             >
-          <div class="grid md:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label
-                for="name"
-                class="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
-                data-i18n="contactSection.nameLabel"
-                >이름</label
+              <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
+                    data-i18n="contactSection.nameLabel"
+                    >이름</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    data-i18n-placeholder="contactSection.namePlaceholder"
+                    placeholder="홍길동"
+                    class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-colors"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
+                    data-i18n="contactSection.emailLabel"
+                    >이메일</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    data-i18n-placeholder="contactSection.emailPlaceholder"
+                    placeholder="your@email.com"
+                    class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-colors"
+                  />
+                </div>
+              </div>
+              <div class="mb-6">
+                <label
+                  for="subject"
+                  class="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
+                  data-i18n="contactSection.subjectLabel"
+                  >제목</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  data-i18n-placeholder="contactSection.subjectPlaceholder"
+                  placeholder="문의 제목을 입력하세요"
+                  class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-colors"
+                />
+              </div>
+              <div class="mb-6">
+                <label
+                  for="message"
+                  class="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
+                  data-i18n="contactSection.messageLabel"
+                  >메시지</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  required
+                  data-i18n-placeholder="contactSection.messagePlaceholder"
+                  placeholder="문의 내용을 입력하세요"
+                  class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-colors resize-none"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                id="contact-submit"
+                class="w-full flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white rounded-lg font-semibold transition-all shadow-lg"
               >
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                data-i18n-placeholder="contactSection.namePlaceholder"
-                placeholder="홍길동"
-                class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-colors"
-              />
-            </div>
-            <div>
-              <label
-                for="email"
-                class="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
-                data-i18n="contactSection.emailLabel"
-                >이메일</label
-              >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                data-i18n-placeholder="contactSection.emailPlaceholder"
-                placeholder="your@email.com"
-                class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-colors"
-              />
-            </div>
-          </div>
-          <div class="mb-6">
-            <label
-              for="subject"
-              class="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
-              data-i18n="contactSection.subjectLabel"
-              >제목</label
-            >
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              required
-              data-i18n-placeholder="contactSection.subjectPlaceholder"
-              placeholder="문의 제목을 입력하세요"
-              class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-colors"
-            />
-          </div>
-          <div class="mb-6">
-            <label
-              for="message"
-              class="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
-              data-i18n="contactSection.messageLabel"
-              >메시지</label
-            >
-            <textarea
-              id="message"
-              name="message"
-              rows="6"
-              required
-              data-i18n-placeholder="contactSection.messagePlaceholder"
-              placeholder="문의 내용을 입력하세요"
-              class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-colors resize-none"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            id="contact-submit"
-            class="w-full flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white rounded-lg font-semibold transition-all shadow-lg"
-          >
-            <i data-lucide="send" class="w-5 h-5"></i>
-            <span data-i18n="contactSection.submitButton">전송하기</span>
-          </button>
-          <div id="contact-status" class="hidden mt-4"></div>
-        </form>
+                <i data-lucide="send" class="w-5 h-5"></i>
+                <span data-i18n="contactSection.submitButton">전송하기</span>
+              </button>
+              <div id="contact-status" class="hidden mt-4"></div>
+            </form>
           </div>
         </div>
       </div>
