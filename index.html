@@ -265,93 +265,66 @@
 
     <!-- Hero Section -->
     <!-- Hero Section -->
-    <section id="home" class="bg-white dark:bg-gray-900">
-      <div class="relative isolate">
-        <!-- SVG Grid Pattern Background -->
-        <svg aria-hidden="true" class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 dark:stroke-white/10 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]">
-          <defs>
-            <pattern id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
-              <path d="M.5 200V.5H200" fill="none" />
-            </pattern>
-          </defs>
-          <svg x="50%" y="-1" class="overflow-visible fill-gray-50 dark:fill-gray-800">
-            <path d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z" stroke-width="0" />
-          </svg>
-          <rect width="100%" height="100%" fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" stroke-width="0" />
-        </svg>
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-slate-900 dark:bg-slate-950 overflow-hidden px-6 py-24">
+      <!-- Dark gradient background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
 
-        <!-- Gradient Blob -->
-        <div aria-hidden="true" class="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48">
-          <div style="clip-path: polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)" class="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"></div>
-        </div>
+      <div class="relative z-10 max-w-7xl mx-auto w-full">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
 
-        <div class="overflow-hidden">
-          <div class="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
-            <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+          <!-- Left: Text Content -->
+          <div class="space-y-8">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-semibold">
+              <i data-lucide="shield" class="w-4 h-4"></i>
+              <span data-i18n="hero.badge">Ship OT & Cyber Security Specialist</span>
+            </div>
 
-              <!-- Left Column: Text Content -->
-              <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
-                <!-- Badge -->
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-semibold mb-6">
-                  <i data-lucide="shield" class="w-4 h-4"></i>
-                  <span data-i18n="hero.badge">Ship OT & Cyber Security Specialist</span>
-                </div>
+            <!-- Title -->
+            <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight" data-i18n="hero.title" data-i18n-html="true">
+              조선해양 시스템 통합 및<br/>규제 대응 전문
+            </h1>
 
-                <!-- Title -->
-                <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-7xl" data-i18n="hero.title" data-i18n-html="true">
-                  조선해양 시스템 통합 및<br/>규제 대응 전문
-                </h1>
+            <!-- Description -->
+            <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl" data-i18n="hero.description" data-i18n-html="true">
+              광명 마리타임은 복잡해진 해양 산업과 기술에 대한 경험과 이해를 바탕으로<br class="hidden md:block"/>데이터와 AI 기반 System Integration 솔루션을 제공하고<br class="hidden md:block"/>Global Compliance 에 대응 합니다.
+            </p>
 
-                <!-- Description -->
-                <p class="mt-8 text-pretty text-lg font-medium text-gray-500 dark:text-gray-400 sm:max-w-md sm:text-xl/8 lg:max-w-none" data-i18n="hero.description" data-i18n-html="true">
-                  광명 마리타임은 복잡해진 해양 산업과 기술에 대한 경험과 이해를 바탕으로<br class="hidden md:block"/>데이터와 AI 기반 System Integration 솔루션을 제공하고<br class="hidden md:block"/>Global Compliance 에 대응 합니다.
-                </p>
-
-                <!-- CTA Button -->
-                <div class="mt-10 flex items-center gap-x-6">
-                  <a href="#contact" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400">
-                    <span data-i18n="hero.ctaSecondary">문의하기</span>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Right Column: Image Gallery -->
-              <div class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
-                <!-- Column 1: Single image -->
-                <div class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
-                  <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=528&fit=crop" alt="Container Ship at Sea" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 dark:bg-gray-700/5 object-cover shadow-lg" />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10 dark:ring-white/10"></div>
-                  </div>
-                </div>
-
-                <!-- Column 2: Two images -->
-                <div class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
-                  <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&h=528&fit=crop" alt="Modern Shipyard Facility" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 dark:bg-gray-700/5 object-cover shadow-lg" />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10 dark:ring-white/10"></div>
-                  </div>
-                  <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=400&h=528&fit=crop" alt="Maritime Port Operations" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 dark:bg-gray-700/5 object-cover shadow-lg" />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10 dark:ring-white/10"></div>
-                  </div>
-                </div>
-
-                <!-- Column 3: Two images -->
-                <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-                  <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=400&h=528&fit=crop" alt="Ship Bridge Technology" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 dark:bg-gray-700/5 object-cover shadow-lg" />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10 dark:ring-white/10"></div>
-                  </div>
-                  <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1605128311787-5032d02b9a63?w=400&h=528&fit=crop" alt="Cargo Vessel" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 dark:bg-gray-700/5 object-cover shadow-lg" />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10 dark:ring-white/10"></div>
-                  </div>
-                </div>
-              </div>
-
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-4">
+              <a href="#contact" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-semibold transition-all">
+                <span data-i18n="hero.ctaSecondary">문의하기</span>
+              </a>
             </div>
           </div>
+
+          <!-- Right: Image Grid (6 images, irregular layout) -->
+          <div class="relative lg:h-[600px] hidden lg:block">
+            <!-- Row 1: 2 images -->
+            <div class="absolute top-0 left-0 w-[45%]">
+              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop" alt="Container Ship" class="w-full h-48 object-cover rounded-2xl shadow-lg" />
+            </div>
+            <div class="absolute top-0 right-0 w-[50%]">
+              <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&h=400&fit=crop" alt="Shipyard" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+
+            <!-- Row 2: 2 images -->
+            <div class="absolute top-52 left-0 w-[48%]">
+              <img src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=400&h=250&fit=crop" alt="Port Operations" class="w-full h-52 object-cover rounded-2xl shadow-lg" />
+            </div>
+            <div class="absolute top-64 right-2 w-[45%]">
+              <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=400&h=350&fit=crop" alt="Ship Bridge" class="w-full h-56 object-cover rounded-2xl shadow-lg" />
+            </div>
+
+            <!-- Row 3: 2 images -->
+            <div class="absolute bottom-0 left-2 w-[43%]">
+              <img src="https://images.unsplash.com/photo-1605128311787-5032d02b9a63?w=400&h=280&fit=crop" alt="Cargo Vessel" class="w-full h-48 object-cover rounded-2xl shadow-lg" />
+            </div>
+            <div class="absolute bottom-4 right-0 w-[45%]">
+              <img src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=400&h=300&fit=crop" alt="Maritime Port" class="w-full h-52 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
