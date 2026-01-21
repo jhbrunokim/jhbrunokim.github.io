@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maritime Cyber Security - 광명마리타임</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="IACS UR E26/E27 기반 Maritime Cyber Security 컴플라이언스 서비스. 선박 사이버 복원력 강제화 대응 전문."
+    />
+    <meta
+      name="keywords"
+      content="Maritime Cyber Security, IACS UR E26, E27, 선박 사이버 보안, Compliance, SCARP, 광명마리타임"
+    />
+    <meta name="author" content="Gwangmyung Maritime" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Maritime Cyber Security - 광명마리타임" />
+    <meta
+      property="og:description"
+      content="IACS UR E26/E27 기반 선박 사이버 복원력 강제화 대응"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gmmaritime.com/compliance" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS (Built) -->
+    <link rel="stylesheet" href="assets/css/output.css" />
+    <!-- Tailwind CSS CDN for additional classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden transition-colors duration-300"
+  >
+    <!-- Navigation (loaded dynamically) -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-b from-slate-800 to-slate-700">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center">
+          <span class="inline-block px-4 py-2 bg-cyan-600/20 text-cyan-400 rounded-full text-sm font-medium mb-6">
+            Compliance
+          </span>
+          <h1
+            class="text-4xl md:text-5xl font-bold text-white mb-6"
+            data-i18n="compliance.title"
+          >
+            Maritime Cyber Security
+          </h1>
+          <p
+            class="text-slate-400 max-w-3xl mx-auto text-lg"
+            data-i18n="compliance.subtitle"
+          >
+            IACS UR E26/E27 - 선박 사이버 복원력 강제화
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-24 bg-slate-800 text-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- IACS UR E26/E27 Diagram -->
+        <div class="mb-16 bg-slate-700 p-8 rounded-2xl border border-slate-600">
+          <!-- Top Bar -->
+          <div class="bg-black text-white text-center py-3 text-lg font-bold rounded-xl border-2 border-slate-600 mb-8">
+            IACS UR E26/E27
+          </div>
+
+          <!-- Main Diagram Area -->
+          <div class="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
+            <!-- Headers Row -->
+            <div class="flex justify-between mb-6">
+              <div>
+                <h3 class="text-lg font-bold text-white bg-blue-600/30 px-4 py-2 rounded-lg border border-blue-500" data-i18n="compliance.cyberResilienceTitle">선박 사이버 복원력 강제화</h3>
+                <p class="text-sm italic text-slate-400 mt-2" data-i18n="compliance.ownersRequirement">Owner's Requirement</p>
+              </div>
+              <div class="text-right">
+                <h3 class="text-lg font-bold text-white bg-blue-600/30 px-4 py-2 rounded-lg border border-blue-500" data-i18n="compliance.structuralChangeTitle">해양 산업의 구조적 변화</h3>
+              </div>
+            </div>
+
+            <!-- Nested Boxes Diagram -->
+            <div class="relative flex items-center">
+              <!-- Left Labels (E26, E27) -->
+              <div class="flex flex-col gap-6 mr-4">
+                <div class="flex items-center gap-2">
+                  <span class="text-blue-400 font-bold italic text-lg">E26</span>
+                  <i data-lucide="arrow-right" class="w-6 h-6 text-blue-400"></i>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-blue-400 font-bold italic text-lg">E27</span>
+                  <i data-lucide="arrow-right" class="w-6 h-6 text-blue-400"></i>
+                </div>
+              </div>
+
+              <!-- Nested Boxes -->
+              <div class="flex-1 bg-slate-600 p-6 rounded-xl border-2 border-slate-500 shadow-lg">
+                <p class="text-white text-center font-semibold mb-4" data-i18n="compliance.e26Desc">선박 전체의 사이버 보안 개념과 관리 체계 확보</p>
+                <div class="bg-red-400/30 p-4 rounded-xl border-2 border-red-400/50">
+                  <p class="text-white text-center" data-i18n="compliance.e27Desc">각 시스템의 사이버 보안을 전제한 설계와 운영</p>
+                </div>
+              </div>
+
+              <!-- Right Label (SCARP) -->
+              <div class="flex items-center gap-2 ml-4">
+                <i data-lucide="arrow-right" class="w-6 h-6 text-amber-400"></i>
+                <span class="text-amber-400 font-bold italic text-lg">SCARP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- One-stop Service -->
+        <div class="mb-12">
+          <h3
+            class="text-2xl font-bold text-center mb-8 text-white"
+            data-i18n="compliance.oneStopServiceTitle"
+          >
+            One-stop Service
+          </h3>
+
+          <div class="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 p-6 rounded-xl mb-8 border border-blue-700">
+            <div class="flex items-center justify-center gap-4 flex-wrap">
+              <span class="text-white font-semibold">Advisory</span>
+              <i data-lucide="arrow-right" class="w-5 h-5 text-blue-400"></i>
+              <span class="text-white font-semibold">Design</span>
+              <i data-lucide="arrow-right" class="w-5 h-5 text-blue-400"></i>
+              <span class="text-white font-semibold">Integration Support</span>
+              <i data-lucide="arrow-right" class="w-5 h-5 text-blue-400"></i>
+              <span class="text-white font-semibold">Operation Readiness</span>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- For System Supplies -->
+            <div class="bg-slate-700 p-6 rounded-xl border border-slate-600">
+              <h4
+                class="text-lg font-bold text-cyan-400 mb-4"
+                data-i18n="compliance.forSuppliesTitle"
+              >
+                For System Supplies
+              </h4>
+              <ul class="space-y-2 text-sm text-slate-300">
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                  <span data-i18n="compliance.forSuppliesItem1">IACS UR E27 TA</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                  <span data-i18n="compliance.forSuppliesItem2">IACS Deliverable</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- For System Integration -->
+            <div class="bg-slate-700 p-6 rounded-xl border border-slate-600">
+              <h4
+                class="text-lg font-bold text-blue-400 mb-4"
+                data-i18n="compliance.forIntegrationTitle"
+              >
+                For System Integration
+              </h4>
+              <ul class="space-y-2 text-sm text-slate-300">
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                  <span data-i18n="compliance.forIntegrationItem">IACS UR E26 Deliverable</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- For Ship Management -->
+            <div class="bg-slate-700 p-6 rounded-xl border border-slate-600">
+              <h4
+                class="text-lg font-bold text-amber-400 mb-4"
+                data-i18n="compliance.forManagementTitle"
+              >
+                For Ship Management and Operation
+              </h4>
+              <ul class="space-y-2 text-sm text-slate-300">
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                  <span data-i18n="compliance.forManagementItem1">Cybersecurity Policy (Requirement)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                  <span data-i18n="compliance.forManagementItem2">SCARP</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                  <span data-i18n="compliance.forManagementItem3">Annual Survey</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-slate-700">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-2xl font-bold text-white mb-4">IACS UR E26/E27 대응이 필요하신가요?</h2>
+        <p class="text-slate-400 mb-8">전문가와 상담을 통해 컴플라이언스 요구사항을 충족하세요.</p>
+        <a
+          href="index.html#contact"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg font-semibold transition-all"
+        >
+          <i data-lucide="mail" class="w-5 h-5"></i>
+          <span data-i18n="nav.contact">Contact</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer (loaded dynamically) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/country-detector.js"></script>
+  </body>
+</html>

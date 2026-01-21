@@ -9,6 +9,7 @@ assets/css/output.css
 Thumbs.db
 
 # IDE
+.serena
 .vscode/
 .idea/
 *.swp
