@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article - 광명마리타임</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="광명마리타임 아티클" />
+    <meta name="author" content="Gwangmyung Maritime" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS (Built) -->
+    <link rel="stylesheet" href="assets/css/output.css" />
+    <!-- Tailwind CSS CDN for additional classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Marked.js for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden transition-colors duration-300"
+  >
+    <!-- Navigation (loaded dynamically) -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section (Article Meta) -->
+    <section class="pt-32 pb-16 bg-gradient-to-b from-slate-800 to-slate-700">
+      <div class="max-w-3xl mx-auto px-6">
+        <a
+          href="articles.html"
+          class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm font-medium mb-8 transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Back to Articles
+        </a>
+        <div id="article-meta">
+          <!-- Article meta will be rendered here by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Content (always light background for readability) -->
+    <section class="py-16 bg-white">
+      <div class="max-w-3xl mx-auto px-6">
+        <div
+          id="article-content"
+          class="prose max-w-none text-slate-700"
+        >
+          <!-- Article content will be rendered here by JS -->
+          <div class="text-center py-16">
+            <div class="animate-pulse text-slate-400">Loading...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer (loaded dynamically) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/articles.js"></script>
+    <script src="assets/js/country-detector.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        const manager = window.articlesManager;
+        await manager.renderArticleDetail('article-meta', 'article-content');
+      });
+    </script>
+  </body>
+</html>

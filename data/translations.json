@@ -8,9 +8,14 @@
       "competitiveness": "Competitiveness",
       "systemIntegration": "System Integration",
       "compliance": "Compliance",
+      "articles": "Articles",
       "vision": "Vision",
       "aboutUs": "About Us",
       "contact": "Contact"
+    },
+    "articles": {
+      "title": "Articles",
+      "subtitle": "기술 동향, 업계 인사이트, 규제 소식을 공유합니다."
     },
     "hero": {
       "badge": "Ship OT & Cyber Security Specialist",
@@ -191,8 +196,8 @@
       "service2Desc": "선급 승인을 위한 구조 설계 및 기술 컨설팅",
       "service3Title": "네트워크 경계 설계",
       "service3Desc": "OT Zone 분리 및 Ship-Shore 보안 구조 수립",
-      "service4Title": "WSUS & 패치 관리",
-      "service4Desc": "소프트웨어 버전 변경 관리 및 패치 불가 환경 리스크 관리",
+      "service4Title": "CBS update & patch 관리",
+      "service4Desc": "기자재 운영 시스템 소프트웨어 버전 및 패치 관리",
       "supportScopeTitle": "지원 범위",
       "supportScopeIACS": "IACS 선급",
       "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IR Class, Class NK, CRS 등",
@@ -253,9 +258,14 @@
       "competitiveness": "Competitiveness",
       "systemIntegration": "System Integration",
       "compliance": "Compliance",
+      "articles": "Articles",
       "vision": "Vision",
       "aboutUs": "About Us",
       "contact": "Contact"
+    },
+    "articles": {
+      "title": "Articles",
+      "subtitle": "Sharing technology trends, industry insights, and regulatory updates."
     },
     "hero": {
       "badge": "Ship OT & Cyber Security Specialist",
@@ -436,8 +446,8 @@
       "service2Desc": "Structure design and technical consulting for classification approval",
       "service3Title": "Network Boundary Design",
       "service3Desc": "OT Zone separation and Ship-Shore security structure establishment",
-      "service4Title": "WSUS & Patch Management",
-      "service4Desc": "Software version change management and risk management for patch-restricted environments",
+      "service4Title": "CBS Update & Patch Management",
+      "service4Desc": "Equipment operating system software version and patch management",
       "supportScopeTitle": "Support Scope",
       "supportScopeIACS": "IACS Classification Societies",
       "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IR Class, Class NK, CRS, etc.",
@@ -498,9 +508,14 @@
       "competitiveness": "竞争力",
       "systemIntegration": "系统集成",
       "compliance": "合规",
+      "articles": "文章",
       "vision": "愿景",
       "aboutUs": "关于我们",
       "contact": "联系我们"
+    },
+    "articles": {
+      "title": "文章",
+      "subtitle": "分享技术趋势、行业洞察和法规动态。"
     },
     "hero": {
       "badge": "船舶OT与网络安全专家",
@@ -681,8 +696,8 @@
       "service2Desc": "为船级社批准提供结构设计和技术咨询",
       "service3Title": "网络边界设计",
       "service3Desc": "OT区域分离和船岸安全结构建立",
-      "service4Title": "WSUS与补丁管理",
-      "service4Desc": "软件版本变更管理和补丁受限环境的风险管理",
+      "service4Title": "CBS更新与补丁管理",
+      "service4Desc": "设备操作系统软件版本及补丁管理",
       "supportScopeTitle": "支持范围",
       "supportScopeIACS": "IACS 船级社",
       "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IR Class, Class NK, CRS 等",
@@ -743,9 +758,14 @@
       "competitiveness": "競争力",
       "systemIntegration": "システム インテグレーション",
       "compliance": "コンプライアンス",
+      "articles": "記事",
       "vision": "ビジョン",
       "aboutUs": "会社概要",
       "contact": "お問い合わせ"
+    },
+    "articles": {
+      "title": "記事",
+      "subtitle": "技術動向、業界インサイト、規制ニュースを共有します。"
     },
     "hero": {
       "badge": "船舶OT・サイバー セキュリティ 専門家",
@@ -926,8 +946,8 @@
       "service2Desc": "船級承認のための 構造設計と 技術コンサルティング",
       "service3Title": "ネットワーク 境界設計",
       "service3Desc": "OTゾーン分離と Ship-Shore セキュリティ構造の 確立",
-      "service4Title": "WSUS・パッチ管理",
-      "service4Desc": "ソフトウェア バージョン変更管理と パッチ制限環境の リスク管理",
+      "service4Title": "CBSアップデート・パッチ管理",
+      "service4Desc": "機器 運用システム ソフトウェア バージョン及び パッチ管理",
       "supportScopeTitle": "支援範囲",
       "supportScopeIACS": "IACS 船級協会",
       "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IR Class, Class NK, CRS など",
