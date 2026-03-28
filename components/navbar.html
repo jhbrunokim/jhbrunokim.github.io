@@ -94,6 +94,13 @@
         data-i18n="nav.contact"
         >Contact</a
       >
+      <button
+        onclick="window.countryDetector?.reopenModal()"
+        class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors flex items-center gap-1"
+        title="Change Language"
+      >
+        <i data-lucide="globe" class="w-4 h-4"></i>
+      </button>
     </div>
 
     <!-- Mobile Menu Button -->
@@ -180,6 +187,13 @@
         data-i18n="nav.contact"
         >Contact</a
       >
+      <button
+        onclick="window.countryDetector?.reopenModal()"
+        class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium flex items-center gap-2"
+      >
+        <i data-lucide="globe" class="w-5 h-5"></i>
+        <span data-i18n="footer.changeLanguage">Change Language</span>
+      </button>
     </div>
   </div>
 </nav>
