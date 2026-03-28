@@ -238,7 +238,7 @@
       "changeLanguage": "언어 변경"
     },
     "countryModal": {
-      "detectedMessage": "에서 접속하셨습니다.",
+      "detectedMessage": "접속 지역",
       "continueButton": "계속",
       "selectOther": "다른 국가 또는 지역 선택",
       "countries": {
@@ -988,7 +988,7 @@
       "changeLanguage": "言語を変更"
     },
     "countryModal": {
-      "detectedMessage": "から接続しています",
+      "detectedMessage": "接続地域",
       "continueButton": "続ける",
       "selectOther": "他の国または地域を選択",
       "countries": {
