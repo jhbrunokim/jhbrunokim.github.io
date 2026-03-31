@@ -68,7 +68,7 @@ class ContactFormManager {
     try {
       // EmailJS send
       // Replace these with your actual EmailJS credentials
-      const serviceID = 'service_gmmt';
+      const serviceID = 'service_molk';
       const templateID = 'template_owc4fne';
       const publicKey = 'oxNyGY4Y3JcIsG6Ml';
 

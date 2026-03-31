@@ -7,7 +7,8 @@ class LayoutManager {
   async init() {
     await Promise.all([
       this.loadComponent('navbar-placeholder', 'components/navbar.html'),
-      this.loadComponent('footer-placeholder', 'components/footer.html')
+      this.loadComponent('footer-placeholder', 'components/footer.html'),
+      this.loadComponent('country-modal-placeholder', 'components/country-modal.html')
     ]);
 
     // After components are loaded, initialize other scripts
