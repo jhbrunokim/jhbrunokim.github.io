@@ -2,6 +2,8 @@
 <nav
   id="navbar"
   class="fixed w-full z-50 transition-all duration-300 py-5 bg-transparent"
+  role="navigation"
+  aria-label="Main navigation"
 >
   <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
     <a href="index.html" class="flex items-center gap-3">
@@ -46,6 +48,8 @@
       <div class="relative group">
         <button
           class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors flex items-center gap-1"
+          aria-haspopup="true"
+          aria-expanded="false"
         >
           <span data-i18n="nav.competitiveness">Competitiveness</span>
           <i data-lucide="chevron-down" class="w-4 h-4"></i>
@@ -107,6 +111,9 @@
     <button
       id="mobile-menu-btn"
       class="md:hidden text-white focus:outline-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
     >
       <i data-lucide="menu" class="w-6 h-6"></i>
     </button>
@@ -116,6 +123,8 @@
   <div
     id="mobile-menu"
     class="hidden md:hidden absolute top-full left-0 w-full bg-slate-800 dark:bg-slate-900 border-t border-slate-600 dark:border-slate-600 py-4 shadow-xl"
+    role="menu"
+    aria-label="Mobile navigation menu"
   >
     <div class="flex flex-col px-6 space-y-4">
       <a
