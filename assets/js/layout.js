@@ -56,14 +56,22 @@ class LayoutManager {
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (mobileMenuBtn && mobileMenu) {
+      // Helper function to update aria-expanded
+      const updateAriaExpanded = () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
+      };
+
       mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
+        updateAriaExpanded();
       });
 
       // Close menu when clicking a link
       mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           mobileMenu.classList.add('hidden');
+          updateAriaExpanded();
         });
       });
 
@@ -73,6 +81,7 @@ class LayoutManager {
             !mobileMenu.contains(e.target) &&
             !mobileMenuBtn.contains(e.target)) {
           mobileMenu.classList.add('hidden');
+          updateAriaExpanded();
         }
       });
     }

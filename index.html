@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>광명마리타임 (Gwangmyung Maritime)</title>
 
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CJMFQE9NT4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-CJMFQE9NT4");
+    </script>
+
     <!-- SEO Meta Tags -->
     <meta
       name="description"
@@ -47,6 +61,38 @@
       name="twitter:image"
       content="https://gmmaritime.com/assets/images/og-image.png"
     />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "광명마리타임",
+        "alternateName": "Gwangmyung Maritime",
+        "url": "https://gmmaritime.com",
+        "logo": "https://gmmaritime.com/assets/images/logo.svg",
+        "description": "조선 · 해양 산업을 위한 선박 OT 및 사이버 보안 중심의 기술 전문 기업",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Busan",
+          "addressCountry": "KR"
+        },
+        "sameAs": [],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "contact@gmmaritime.com",
+          "availableLanguage": ["Korean", "English"]
+        },
+        "knowsAbout": [
+          "Maritime Cybersecurity",
+          "IACS UR E26",
+          "IACS UR E27",
+          "Ship OT Security",
+          "Smart Ship"
+        ]
+      }
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
@@ -294,7 +340,9 @@
           <!-- Timeline Items -->
           <div class="space-y-6">
             <!-- 2021 -->
-            <div class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8">
+            <div
+              class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+            >
               <div class="w-full md:w-1/2 md:text-right md:pr-12">
                 <div
                   class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800"
@@ -329,7 +377,9 @@
             </div>
 
             <!-- 2022 -->
-            <div class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8">
+            <div
+              class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+            >
               <div class="md:w-1/2"></div>
               <div
                 class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950"
@@ -367,7 +417,9 @@
             </div>
 
             <!-- 2023 -->
-            <div class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8">
+            <div
+              class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+            >
               <div class="w-full md:w-1/2 md:text-right md:pr-12">
                 <div
                   class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800"
@@ -405,7 +457,9 @@
             </div>
 
             <!-- 2024 -->
-            <div class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8">
+            <div
+              class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+            >
               <div class="md:w-1/2"></div>
               <div
                 class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950"
@@ -440,7 +494,9 @@
             </div>
 
             <!-- 2025 -->
-            <div class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8">
+            <div
+              class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+            >
               <div class="w-full md:w-1/2 md:text-right md:pr-12">
                 <div
                   class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800"
@@ -478,7 +534,9 @@
             </div>
 
             <!-- 2026 -->
-            <div class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8">
+            <div
+              class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+            >
               <div class="md:w-1/2"></div>
               <div
                 class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950 ring-4 ring-blue-200 dark:ring-blue-900"
@@ -1032,6 +1090,7 @@
                       src="resource/logos/iacs.png"
                       alt="IACS"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <!-- ABS -->
@@ -1042,6 +1101,7 @@
                       src="resource/logos/abs.png"
                       alt="ABS"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <!-- RINA -->
@@ -1052,6 +1112,7 @@
                       src="resource/logos/rina.svg"
                       alt="RINA"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <!-- IR Class -->
@@ -1062,6 +1123,7 @@
                       src="resource/logos/irclass.png"
                       alt="IR Class"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <!-- Bureau Veritas -->
@@ -1072,6 +1134,7 @@
                       src="resource/logos/bv.png"
                       alt="Bureau Veritas"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <!-- CCS -->
@@ -1082,6 +1145,7 @@
                       src="resource/logos/ccs.svg"
                       alt="CCS"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <!-- PRS -->
@@ -1092,6 +1156,7 @@
                       src="resource/logos/prs.jpg"
                       alt="PRS"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <!-- DNV -->
@@ -1112,6 +1177,7 @@
                       src="resource/logos/lr.jpg"
                       alt="Lloyd's Register"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <!-- ClassNK -->
@@ -1132,6 +1198,7 @@
                       src="resource/logos/kr.jpg"
                       alt="KR"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <!-- CRS -->
@@ -1142,6 +1209,7 @@
                       src="resource/logos/crs.png"
                       alt="CRS"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -1168,6 +1236,7 @@
                       src="resource/logos/nsa.png"
                       alt="NSA"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <!-- UK NCSC -->
@@ -1178,6 +1247,7 @@
                       src="resource/logos/ncsc-uk.png"
                       alt="UK NCSC"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <!-- USCG -->
@@ -1188,6 +1258,7 @@
                       src="resource/logos/uscg.webp"
                       alt="USCG"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <!-- CSA Singapore -->
@@ -1198,6 +1269,7 @@
                       src="resource/logos/csa-sg.png"
                       alt="CSA Singapore"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <!-- NCSC -->
@@ -1208,6 +1280,7 @@
                       src="resource/logos/ncsc.jpg"
                       alt="NCSC"
                       class="max-h-14 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                 </div>
