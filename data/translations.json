@@ -13,7 +13,8 @@
       "vision": "Vision",
       "aboutUs": "About Us",
       "contact": "Contact",
-      "backToOverview": "Overview로 돌아가기"
+      "backToOverview": "Overview로 돌아가기",
+      "skipToContent": "본문으로 건너뛰기"
     },
     "articles": {
       "title": "Articles",
@@ -23,7 +24,6 @@
       "badge": "Ship OT & Cyber Security Specialist",
       "title": "조선 · 해양 산업의<br/>플랫폼 개발, 시스템 통합,<br/>글로벌 규제 대응<br/>전문 기술 기업",
       "description": "광명 마리타임은 복잡해진 해양 산업과 기술에 대한 이해와 경험으로<br class=\"hidden md:block\"/>데이터와 AI 기반 System Integration 솔루션을 제공하고<br class=\"hidden md:block\"/>Global Compliance 에 대응 합니다.",
-      "ctaPrimary": "UR E26 / E27 솔루션 보기",
       "ctaSecondary": "문의하기"
     },
     "expertise": {
@@ -51,15 +51,10 @@
     "compliance": {
       "title": "Maritime Cyber Security",
       "subtitle": "IACS UR E26 / E27 - 선박 사이버 복원력 강제화",
-      "e26Title": "E26 - Ship-level",
       "e26Desc": "선박 전체의 사이버 보안 개념과 관리 체계 확보",
-      "e27Title": "E27 - System Supplier",
       "e27Desc": "각 시스템의 사이버 보안을 전제한 설계와 운영",
-      "scarpTitle": "SCARP",
-      "scarpDesc": "Owner's Requirement",
       "structuralChangeTitle": "해양 산업의 구조적 변화",
       "oneStopServiceTitle": "One-stop Service",
-      "oneStopServiceFlow": "Advisory → Design → Integration Support → Operation Readiness",
       "forSuppliesTitle": "For System Supplies",
       "forSuppliesItem1": "IACS UR E27 TA",
       "forSuppliesItem2": "IACS Deliverable",
@@ -93,15 +88,11 @@
       "title": "문의하기",
       "description": "프로젝트 상담 및 기술 문의는 아래 양식을 통해 보내주세요.",
       "nameLabel": "이름",
-      "namePlaceholder": "홍길동",
       "emailLabel": "이메일",
-      "emailPlaceholder": "your@email.com",
-      "subjectLabel": "제목",
-      "subjectPlaceholder": "문의 제목을 입력하세요",
       "messageLabel": "메시지",
-      "messagePlaceholder": "문의 내용을 입력하세요",
       "submitButton": "전송하기",
       "sending": "전송 중...",
+      "submitAgain": "전송하기",
       "successMessage": "메시지가 성공적으로 전송되었습니다!",
       "errorMessage": "전송에 실패했습니다. 나중에 다시 시도해주세요.",
       "validationError": "모든 필드를 입력해주세요."
@@ -228,19 +219,6 @@
     "about": {
       "title": "About Us",
       "subtitle": "광명마리타임은 공공 · 민간 · 해양 분야에서 운영이 요구되는 IT / OT 플랫폼의 개발·구축과 이에 대한 전문 컨설팅을 제공합니다.",
-      "timelineTitle": "광명 마리타임이 걸어온 길",
-      "timeline2021": "2021",
-      "timeline2021Desc": "기술 기반 사업의 출발",
-      "timeline2022": "2022",
-      "timeline2022Desc": "산업 도메인 확장 및 기술 내재화",
-      "timeline2023": "2023",
-      "timeline2023Desc": "고신뢰 · 고보안 시스템 참여 경험 확보",
-      "timeline2024": "2024",
-      "timeline2024Desc": "Maritime Cyber & Smart Ship 전문성 정립",
-      "timeline2025": "2025",
-      "timeline2025Desc": "㈜광명 마리타임 출범",
-      "timeline2026": "2026",
-      "timeline2026Desc": "Maritime Compliance 사업 중심 조직 개편",
       "coreCompetenciesTitle": "핵심 역량",
       "service1Title": "선박 OT 보안 아키텍처",
       "service1Desc": "운항 안전과 사이버 리스크를 고려한 현실적인 설계",
@@ -255,16 +233,6 @@
       "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IR Class, Class NK, CRS 등",
       "supportScopeInternational": "국제 기관",
       "supportScopeInternationalList": "NSA, USCG, UK NCSC, CSA Singapore",
-      "projectsTitle": "주요 수행 프로젝트",
-      "project1": "국방부",
-      "project2": "한진관광",
-      "project3": "MOL",
-      "project4": "EVERGREEN",
-      "partnersTitle": "협력사",
-      "partner1": "SEANET",
-      "partner2": "CYTUR",
-      "partner3": "C&A 전기",
-      "partner4": "진흥기업",
       "coreValuesTitle": "핵심 가치",
       "coreValue1": "Trust",
       "coreValue1Desc": "신뢰를 기반으로 한 파트너십",
@@ -317,6 +285,11 @@
       "title": "최신 인사이트",
       "subtitle": "해양 사이버 보안과 컴플라이언스에 대한 광명마리타임의 관점",
       "viewAll": "모든 아티클 보기"
+    },
+    "consent": {
+      "message": "이 사이트는 방문 통계를 위해 Google Analytics 쿠키를 사용합니다. 동의하시면 분석 도구가 활성화됩니다.",
+      "accept": "동의",
+      "decline": "거부"
     }
   },
   "en": {
@@ -333,7 +306,8 @@
       "vision": "Vision",
       "aboutUs": "About Us",
       "contact": "Contact",
-      "backToOverview": "Back to Overview"
+      "backToOverview": "Back to Overview",
+      "skipToContent": "Skip to content"
     },
     "articles": {
       "title": "Articles",
@@ -343,7 +317,6 @@
       "badge": "Ship OT & Cyber Security Specialist",
       "title": "Shipbuilding & Maritime:<br/>Platform Development,<br/>System Integration &<br/>Global Compliance",
       "description": "DATA·AI-powered solutions for system integration<br class=\"hidden md:block\"/>and global regulatory compliance in the maritime industry.",
-      "ctaPrimary": "View UR E26 / E27 Solutions",
       "ctaSecondary": "Contact Us"
     },
     "expertise": {
@@ -371,15 +344,10 @@
     "compliance": {
       "title": "Maritime Cyber Security",
       "subtitle": "IACS UR E26 / E27 - Mandatory Ship Cyber Resilience",
-      "e26Title": "E26 - Ship-level",
       "e26Desc": "Establishing cyber security concepts and management systems for the entire ship",
-      "e27Title": "E27 - System Supplier",
       "e27Desc": "Design and operation based on cyber security for each system",
-      "scarpTitle": "SCARP",
-      "scarpDesc": "Owner's Requirement",
       "structuralChangeTitle": "Structural Change in Maritime Industry",
       "oneStopServiceTitle": "One-stop Service",
-      "oneStopServiceFlow": "Advisory → Design → Integration Support → Operation Readiness",
       "forSuppliesTitle": "For System Supplies",
       "forSuppliesItem1": "IACS UR E27 TA",
       "forSuppliesItem2": "IACS Deliverable",
@@ -413,15 +381,11 @@
       "title": "Contact Us",
       "description": "Please send your project consultation and technical inquiries through the form below.",
       "nameLabel": "Name",
-      "namePlaceholder": "John Doe",
       "emailLabel": "Email",
-      "emailPlaceholder": "your@email.com",
-      "subjectLabel": "Subject",
-      "subjectPlaceholder": "Enter inquiry subject",
       "messageLabel": "Message",
-      "messagePlaceholder": "Enter your inquiry",
       "submitButton": "Send Message",
       "sending": "Sending...",
+      "submitAgain": "Send Message",
       "successMessage": "Message sent successfully!",
       "errorMessage": "Failed to send message. Please try again later.",
       "validationError": "Please fill in all fields."
@@ -548,19 +512,6 @@
     "about": {
       "title": "About Us",
       "subtitle": "Gwangmyung Maritime provides development, deployment, and professional consulting for IT / OT platforms required in public, private, and maritime sectors.",
-      "timelineTitle": "Our Journey",
-      "timeline2021": "2021",
-      "timeline2021Desc": "Foundation of Technology-Based Business",
-      "timeline2022": "2022",
-      "timeline2022Desc": "Expansion of Industry Domains and Technology Integration",
-      "timeline2023": "2023",
-      "timeline2023Desc": "Experience in High-Trust and High-Security Systems",
-      "timeline2024": "2024",
-      "timeline2024Desc": "Establishment of Maritime Cyber & Smart Ship Expertise",
-      "timeline2025": "2025",
-      "timeline2025Desc": "Launch of Gwangmyung Maritime Corporation",
-      "timeline2026": "2026",
-      "timeline2026Desc": "Organizational Reorganization Focused on Maritime Compliance",
       "coreCompetenciesTitle": "Core Competencies",
       "service1Title": "Ship OT Security Architecture",
       "service1Desc": "Realistic design considering operational safety and cyber risks",
@@ -575,16 +526,6 @@
       "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IR Class, Class NK, CRS, etc.",
       "supportScopeInternational": "International Organizations",
       "supportScopeInternationalList": "NSA, USCG, UK NCSC, CSA Singapore",
-      "projectsTitle": "Major Projects",
-      "project1": "Ministry of National Defense",
-      "project2": "Hanjin Tourism",
-      "project3": "MOL",
-      "project4": "EVERGREEN",
-      "partnersTitle": "Partners",
-      "partner1": "SEANET",
-      "partner2": "CYTUR",
-      "partner3": "C&A Electric",
-      "partner4": "Jinheung Enterprise",
       "coreValuesTitle": "Core Values",
       "coreValue1": "Trust",
       "coreValue1Desc": "Partnership Based on Trust",
@@ -637,6 +578,11 @@
       "title": "Latest insights",
       "subtitle": "Gwangmyung Maritime perspectives on maritime cybersecurity and compliance",
       "viewAll": "View all articles"
+    },
+    "consent": {
+      "message": "This site uses Google Analytics cookies to understand traffic. If you accept, analytics will be enabled.",
+      "accept": "Accept",
+      "decline": "Decline"
     }
   },
   "zh": {
@@ -653,7 +599,8 @@
       "vision": "愿景",
       "aboutUs": "关于我们",
       "contact": "联系我们",
-      "backToOverview": "返回总览"
+      "backToOverview": "返回总览",
+      "skipToContent": "跳到主要内容"
     },
     "articles": {
       "title": "文章",
@@ -663,7 +610,6 @@
       "badge": "船舶OT与网络安全专家",
       "title": "造船 · 海事行业的<br/>平台开发、系统集成、<br/>全球法规合规<br/>专业技术企业",
       "description": "光明海事基于对日益复杂的海事行业和技术的理解与经验，<br class=\"hidden md:block\"/>提供基于DATA·AI的系统集成解决方案，<br class=\"hidden md:block\"/>并应对全球合规要求。",
-      "ctaPrimary": "查看UR E26 / E27解决方案",
       "ctaSecondary": "联系我们"
     },
     "expertise": {
@@ -691,15 +637,10 @@
     "compliance": {
       "title": "海事网络安全",
       "subtitle": "IACS UR E26 / E27 - 强制船舶网络弹性",
-      "e26Title": "E26 - 船级",
       "e26Desc": "为整个船舶建立网络安全概念和管理系统",
-      "e27Title": "E27 - 系统供应商",
       "e27Desc": "基于每个系统网络安全的设计和运营",
-      "scarpTitle": "SCARP",
-      "scarpDesc": "船东要求",
       "structuralChangeTitle": "海事行业的结构性变化",
       "oneStopServiceTitle": "一站式服务",
-      "oneStopServiceFlow": "咨询 → 设计 → 集成支持 → 运营准备",
       "forSuppliesTitle": "系统供应",
       "forSuppliesItem1": "IACS UR E27 TA",
       "forSuppliesItem2": "IACS 交付物",
@@ -733,18 +674,14 @@
       "title": "联系我们",
       "description": "请通过以下表格发送您的项目咨询和技术咨询。",
       "nameLabel": "姓名",
-      "namePlaceholder": "张三",
       "emailLabel": "电子邮件",
-      "emailPlaceholder": "your@email.com",
-      "subjectLabel": "主题",
-      "subjectPlaceholder": "输入咨询主题",
       "messageLabel": "信息",
-      "messagePlaceholder": "输入您的咨询",
       "submitButton": "发送消息",
       "sending": "发送中...",
+      "submitAgain": "发送消息",
       "successMessage": "消息发送成功！",
-      "errorMessage": "发送消息失败。请稍后再试。",
-      "validationError": "请填写所有字段。"
+      "errorMessage": "发送失败，请稍后再试。",
+      "validationError": "请填写所有必填项。"
     },
     "systemIntegration": {
       "title": "业务范围",
@@ -868,19 +805,6 @@
     "about": {
       "title": "关于我们",
       "subtitle": "光明海事为公共、私人和海事领域所需的IT / OT平台提供开发、部署和专业咨询服务。",
-      "timelineTitle": "我们的历程",
-      "timeline2021": "2021",
-      "timeline2021Desc": "基于技术的业务起步",
-      "timeline2022": "2022",
-      "timeline2022Desc": "产业领域扩展与技术整合",
-      "timeline2023": "2023",
-      "timeline2023Desc": "高信任度和高安全性系统经验积累",
-      "timeline2024": "2024",
-      "timeline2024Desc": "确立海事网络和智能船舶专业知识",
-      "timeline2025": "2025",
-      "timeline2025Desc": "光明海事公司成立",
-      "timeline2026": "2026",
-      "timeline2026Desc": "以海事合规为中心的组织重组",
       "coreCompetenciesTitle": "核心能力",
       "service1Title": "船舶OT安全架构",
       "service1Desc": "考虑运营安全和网络风险的现实设计",
@@ -895,16 +819,6 @@
       "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IR Class, Class NK, CRS 等",
       "supportScopeInternational": "国际组织",
       "supportScopeInternationalList": "NSA, USCG, UK NCSC, CSA Singapore",
-      "projectsTitle": "主要项目",
-      "project1": "国防部",
-      "project2": "韩进观光",
-      "project3": "MOL",
-      "project4": "EVERGREEN",
-      "partnersTitle": "合作伙伴",
-      "partner1": "SEANET",
-      "partner2": "CYTUR",
-      "partner3": "C&A 电气",
-      "partner4": "振兴企业",
       "coreValuesTitle": "核心价值",
       "coreValue1": "Trust",
       "coreValue1Desc": "基于信任的伙伴关系",
@@ -957,6 +871,11 @@
       "title": "最新洞察",
       "subtitle": "光明海事对海事网络安全与合规的观点",
       "viewAll": "查看全部文章"
+    },
+    "consent": {
+      "message": "本网站使用 Google Analytics Cookie 以了解访问情况。如您同意，将启用分析工具。",
+      "accept": "同意",
+      "decline": "拒绝"
     }
   },
   "ja": {
@@ -973,7 +892,8 @@
       "vision": "ビジョン",
       "aboutUs": "会社概要",
       "contact": "お問い合わせ",
-      "backToOverview": "Overviewに 戻る"
+      "backToOverview": "Overviewに 戻る",
+      "skipToContent": "メインコンテンツへ"
     },
     "articles": {
       "title": "記事",
@@ -983,7 +903,6 @@
       "badge": "船舶OT・サイバー セキュリティ 専門家",
       "title": "造船 · 海事産業の<br/>プラットフォーム開発、<br/>システム統合、グローバル規制対応<br/>専門技術企業",
       "description": "光明マリタイムは、複雑化した海事産業と技術に対する理解と経験を基に、<br class=\"hidden md:block\"/>DATA・AIベースのシステムインテグレーションソリューションを提供し、<br class=\"hidden md:block\"/>グローバルコンプライアンスに対応します。",
-      "ctaPrimary": "UR E26 / E27 ソリューションを見る",
       "ctaSecondary": "お問い合わせ"
     },
     "expertise": {
@@ -1011,15 +930,10 @@
     "compliance": {
       "title": "マリタイム サイバー セキュリティ",
       "subtitle": "IACS UR E26 / E27 - 船舶 サイバー レジリエンス 強制化",
-      "e26Title": "E26 - Ship-level",
       "e26Desc": "船舶 全体の サイバー セキュリティ 概念と 管理 体系 確保",
-      "e27Title": "E27 - System Supplier",
       "e27Desc": "各 システムの サイバー セキュリティを 前提とした 設計と 運営",
-      "scarpTitle": "SCARP",
-      "scarpDesc": "Owner's Requirement",
       "structuralChangeTitle": "海事 産業の 構造的 変化",
       "oneStopServiceTitle": "ワンストップ サービス",
-      "oneStopServiceFlow": "Advisory → Design → Integration Support → Operation Readiness",
       "forSuppliesTitle": "システム サプライ向け",
       "forSuppliesItem1": "IACS UR E27 TA",
       "forSuppliesItem2": "IACS Deliverable",
@@ -1053,18 +967,14 @@
       "title": "お問い合わせ",
       "description": "プロジェクトの相談と 技術的な お問い合わせは、以下の フォームから お送りください。",
       "nameLabel": "お名前",
-      "namePlaceholder": "山田太郎",
       "emailLabel": "メールアドレス",
-      "emailPlaceholder": "your@email.com",
-      "subjectLabel": "件名",
-      "subjectPlaceholder": "お問い合わせ 件名を入力",
       "messageLabel": "メッセージ",
-      "messagePlaceholder": "お問い合わせ 内容を入力",
       "submitButton": "送信",
       "sending": "送信中...",
-      "successMessage": "メッセージが 正常に 送信されました！",
-      "errorMessage": "メッセージの 送信に 失敗しました。後で もう一度 お試しください。",
-      "validationError": "すべての フィールドに 入力してください。"
+      "submitAgain": "メッセージを 送信",
+      "successMessage": "メッセージが 送信されました。",
+      "errorMessage": "送信に 失敗しました。後ほど 再度 お試しください。",
+      "validationError": "すべての 項目を 入力してください。"
     },
     "systemIntegration": {
       "title": "事業範囲",
@@ -1188,19 +1098,6 @@
     "about": {
       "title": "会社概要",
       "subtitle": "光明マリタイムは 公共・民間・海事分野で 必要な IT / OT プラットフォームの 開発・構築と 専門 コンサルティングを 提供します。",
-      "timelineTitle": "私たちの 歩み",
-      "timeline2021": "2021",
-      "timeline2021Desc": "技術 ベース 事業の スタート",
-      "timeline2022": "2022",
-      "timeline2022Desc": "産業 ドメイン 拡大 及び 技術 統合",
-      "timeline2023": "2023",
-      "timeline2023Desc": "高信頼・高セキュリティ システム 参加 経験 蓄積",
-      "timeline2024": "2024",
-      "timeline2024Desc": "マリタイム サイバー & スマート シップ 専門性 確立",
-      "timeline2025": "2025",
-      "timeline2025Desc": "光明 マリタイム 株式会社 設立",
-      "timeline2026": "2026",
-      "timeline2026Desc": "マリタイム コンプライアンス 事業 中心 組織 改編",
       "coreCompetenciesTitle": "コア コンピテンシー",
       "service1Title": "船舶OT セキュリティ アーキテクチャ",
       "service1Desc": "運航安全と サイバーリスクを 考慮した 現実的な設計",
@@ -1215,16 +1112,6 @@
       "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IR Class, Class NK, CRS など",
       "supportScopeInternational": "国際機関",
       "supportScopeInternationalList": "NSA, USCG, UK NCSC, CSA Singapore",
-      "projectsTitle": "主要 プロジェクト",
-      "project1": "国防部",
-      "project2": "韓進観光",
-      "project3": "MOL",
-      "project4": "EVERGREEN",
-      "partnersTitle": "パートナー",
-      "partner1": "SEANET",
-      "partner2": "CYTUR",
-      "partner3": "C&A 電気",
-      "partner4": "振興企業",
       "coreValuesTitle": "コア バリュー",
       "coreValue1": "Trust",
       "coreValue1Desc": "信頼を 基盤とした パートナーシップ",
@@ -1277,6 +1164,11 @@
       "title": "最新 インサイト",
       "subtitle": "海洋 サイバー セキュリティと コンプライアンスに ついての 光明マリタイムの 視点",
       "viewAll": "記事一覧を 見る"
+    },
+    "consent": {
+      "message": "このサイトは、アクセス解析のために Google Analytics クッキーを使用します。ご同意いただくと、解析ツールが有効になります。",
+      "accept": "同意する",
+      "decline": "拒否する"
     }
   }
 }

@@ -4,21 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>광명마리타임 (Gwangmyung Maritime)</title>
-
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-CJMFQE9NT4"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-CJMFQE9NT4");
-    </script>
-
     <!-- SEO Meta Tags -->
     <meta
       name="description"
@@ -29,6 +14,9 @@
       content="선박 보안, OT 보안, 사이버 보안, E26, E27, IACS, 조선, 해양, 광명마리타임"
     />
     <meta name="author" content="Gwangmyung Maritime" />
+
+    <!-- Analytics (loaded via consent.js after user opt-in) -->
+    <meta name="ga-id" content="G-CJMFQE9NT4" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://gmmaritime.com" />
@@ -70,7 +58,7 @@
         "name": "광명마리타임",
         "alternateName": "Gwangmyung Maritime",
         "url": "https://gmmaritime.com",
-        "logo": "https://gmmaritime.com/assets/images/logo.svg",
+        "logo": "https://gmmaritime.com/resource/gmmaritime-logo.jpg",
         "description": "조선 · 해양 산업을 위한 선박 OT 및 사이버 보안 중심의 기술 전문 기업",
         "address": {
           "@type": "PostalAddress",
@@ -100,30 +88,37 @@
     <!-- Theme (must run before body renders to avoid FOUC) -->
     <script src="assets/js/theme.js"></script>
 
+    <!-- Preload above-the-fold hero images for LCP -->
+    <link rel="preload" as="image" href="resource/images/hero-port-night.jpg" fetchpriority="high" media="(min-width: 1024px)" />
+    <link rel="preload" as="image" href="resource/images/hero-container-ship.jpg" fetchpriority="high" media="(min-width: 1024px)" />
+
     <!-- Google Fonts -->
+    <!-- DNS prefetch for third-party assets -->
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <script>
+      (function () {
+        var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
+        var lang = localStorage.getItem('preferredLanguage') || 'en';
+        var families = ['Inter:wght@400;500;600;700'];
+        if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.googleapis.com/css2?family=' + families.join('&family=') + '&display=swap';
+        document.head.appendChild(link);
+      })();
+    </script>
 
     <!-- Tailwind CSS (Built) -->
     <link rel="stylesheet" href="assets/css/output.css" />
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- EmailJS -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("oxNyGY4Y3JcIsG6Ml"); // Replace with your EmailJS public key
-      })();
-    </script>
+    <!-- EmailJS SDK (init lives in contact.js so it runs after defer resolves) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   </head>
   <body
     class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden transition-colors duration-300"
@@ -133,6 +128,7 @@
 
     <!-- Navigation (loaded dynamically) -->
     <div id="navbar-placeholder"></div>
+    <a id="main-content" tabindex="-1"></a>
 
     <!-- Hero Section -->
     <section
@@ -251,6 +247,10 @@
                   <img
                     src="resource/images/hero-port-night.jpg"
                     alt=""
+                    width="400"
+                    height="528"
+                    loading="lazy"
+                    decoding="async"
                     class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                   />
                   <div
@@ -266,6 +266,10 @@
                   <img
                     src="resource/images/hero-container-ship.jpg"
                     alt=""
+                    width="400"
+                    height="528"
+                    loading="lazy"
+                    decoding="async"
                     class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                   />
                   <div
@@ -277,6 +281,10 @@
                   <img
                     src="resource/images/hero-cargo-crane.jpg"
                     alt=""
+                    width="400"
+                    height="528"
+                    loading="lazy"
+                    decoding="async"
                     class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                   />
                   <div
@@ -290,6 +298,10 @@
                   <img
                     src="resource/images/hero-ship-wake.jpg"
                     alt=""
+                    width="400"
+                    height="528"
+                    loading="lazy"
+                    decoding="async"
                     class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                   />
                   <div
@@ -301,6 +313,10 @@
                   <img
                     src="resource/images/hero-container-yard.jpg"
                     alt=""
+                    width="400"
+                    height="528"
+                    loading="lazy"
+                    decoding="async"
                     class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                   />
                   <div
@@ -1428,12 +1444,10 @@
             </div>
           </div>
         </div>
-
-        <!-- Projects & Partners (HIDDEN) -->
       </div>
     </section>
 
-    <!-- Contact Section (NEW) -->
+    <!-- Contact Section -->
     <section id="contact" class="py-24 bg-slate-50 dark:bg-slate-900">
       <div class="max-w-7xl mx-auto px-6">
         <!-- Company Description (Full Width) -->
@@ -1552,6 +1566,7 @@
     <script src="assets/js/contact.js"></script>
     <script src="assets/js/articles.js"></script>
     <script src="assets/js/country-detector.js"></script>
+    <script src="assets/js/consent.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', async () => {
         const m = window.articlesManager;

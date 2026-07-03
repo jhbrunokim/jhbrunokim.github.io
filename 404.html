@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="assets/css/output.css" />
 
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body class="bg-slate-900 text-slate-200 min-h-screen flex flex-col">
     <main class="flex-1 flex items-center justify-center px-6">
@@ -38,6 +38,6 @@
         </div>
       </div>
     </main>
-    <script>lucide.createIcons();</script>
+    <script>document.addEventListener('DOMContentLoaded', () => { window.lucide && lucide.createIcons(); });</script>
   </body>
 </html>

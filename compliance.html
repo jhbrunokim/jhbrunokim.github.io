@@ -16,18 +16,11 @@
     />
     <meta name="author" content="Gwangmyung Maritime" />
 
+    <!-- Analytics (loaded via consent.js after user opt-in) -->
+    <meta name="ga-id" content="G-CJMFQE9NT4" />
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://gmmaritime.com/compliance.html" />
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJMFQE9NT4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag("js", new Date());
-      gtag("config", "G-CJMFQE9NT4");
-    </script>
-
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Maritime Cyber Security - 광명마리타임" />
     <meta
@@ -35,7 +28,21 @@
       content="IACS UR E26 / E27 기반 선박 사이버 복원력 강제화 대응"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://gmmaritime.com/compliance" />
+    <meta property="og:url" content="https://gmmaritime.com/compliance.html" />
+    <meta property="og:site_name" content="광명마리타임" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:image" content="https://gmmaritime.com/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Maritime Cyber Security - 광명마리타임" />
+    <meta
+      name="twitter:description"
+      content="IACS UR E26 / E27 기반 선박 사이버 복원력 강제화 대응"
+    />
+    <meta name="twitter:image" content="https://gmmaritime.com/assets/images/og-image.png" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
@@ -44,15 +51,29 @@
     <script src="assets/js/theme.js"></script>
 
     <!-- Google Fonts -->
+    <!-- DNS prefetch for third-party assets -->
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script>
+      (function () {
+        var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
+        var lang = localStorage.getItem('preferredLanguage') || 'en';
+        var families = ['Inter:wght@400;500;600;700'];
+        if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.googleapis.com/css2?family=' + families.join('&family=') + '&display=swap';
+        document.head.appendChild(link);
+      })();
+    </script>
 
     <!-- Tailwind CSS (Built) -->
     <link rel="stylesheet" href="assets/css/output.css" />
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -83,6 +104,7 @@
 
     <!-- Navigation (loaded dynamically) -->
     <div id="navbar-placeholder"></div>
+    <a id="main-content" tabindex="-1"></a>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-16 bg-gradient-to-b from-slate-800 to-slate-700">
@@ -276,5 +298,6 @@
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/country-detector.js"></script>
+    <script src="assets/js/consent.js"></script>
   </body>
 </html>

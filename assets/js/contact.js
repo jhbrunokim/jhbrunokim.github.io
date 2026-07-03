@@ -9,6 +9,12 @@ class ContactFormManager {
 
   init() {
     document.addEventListener('DOMContentLoaded', () => {
+      // EmailJS SDK is loaded with defer, so it's ready by the time
+      // DOMContentLoaded fires. Init here instead of inline in <head>.
+      if (window.emailjs) {
+        emailjs.init('oxNyGY4Y3JcIsG6Ml');
+      }
+
       this.form = document.getElementById('contact-form');
       this.submitButton = document.getElementById('contact-submit');
       this.statusMessage = document.getElementById('contact-status');
@@ -20,6 +26,11 @@ class ContactFormManager {
       // Add honeypot field for spam prevention (hidden from users)
       this.addHoneypot();
     });
+  }
+
+  t(key, fallback) {
+    const lang = window.i18nManager?.currentLang || 'en';
+    return window.i18nManager?.translations?.[lang]?.contactSection?.[key] || fallback;
   }
 
   addHoneypot() {
@@ -56,9 +67,7 @@ class ContactFormManager {
 
     // Validate
     if (!this.validateForm(data)) {
-      this.showStatus('error', window.i18nManager?.currentLang === 'ko'
-        ? '모든 필드를 입력해주세요.'
-        : 'Please fill in all fields.');
+      this.showStatus('error', this.t('validationError', 'Please fill in all fields.'));
       return;
     }
 
@@ -75,16 +84,12 @@ class ContactFormManager {
       await emailjs.send(serviceID, templateID, data, publicKey);
 
       // Success
-      this.showStatus('success', window.i18nManager?.currentLang === 'ko'
-        ? '메시지가 성공적으로 전송되었습니다!'
-        : 'Message sent successfully!');
+      this.showStatus('success', this.t('successMessage', 'Message sent successfully!'));
 
       this.form.reset();
     } catch (error) {
       console.error('EmailJS Error:', error);
-      this.showStatus('error', window.i18nManager?.currentLang === 'ko'
-        ? '전송에 실패했습니다. 나중에 다시 시도해주세요.'
-        : 'Failed to send message. Please try again later.');
+      this.showStatus('error', this.t('errorMessage', 'Failed to send message. Please try again later.'));
     } finally {
       this.setLoading(false);
     }
@@ -107,18 +112,18 @@ class ContactFormManager {
     if (!this.submitButton) return;
 
     if (isLoading) {
+      const label = this.t('sending', 'Sending...');
       this.submitButton.disabled = true;
-      this.submitButton.innerHTML = window.i18nManager?.currentLang === 'ko'
-        ? '<i data-lucide="loader" class="w-5 h-5 animate-spin inline mr-2"></i>전송 중...'
-        : '<i data-lucide="loader" class="w-5 h-5 animate-spin inline mr-2"></i>Sending...';
+      this.submitButton.innerHTML =
+        `<i data-lucide="loader" class="w-5 h-5 animate-spin inline mr-2"></i>${label}`;
     } else {
+      const label = this.t('submitAgain', 'Send Message');
       this.submitButton.disabled = false;
-      this.submitButton.innerHTML = window.i18nManager?.currentLang === 'ko'
-        ? '<i data-lucide="send" class="w-5 h-5 inline mr-2"></i>전송하기'
-        : '<i data-lucide="send" class="w-5 h-5 inline mr-2"></i>Send Message';
+      this.submitButton.innerHTML =
+        `<i data-lucide="send" class="w-5 h-5 inline mr-2"></i>${label}`;
     }
 
-    lucide.createIcons();
+    if (window.lucide) lucide.createIcons();
   }
 
   showStatus(type, message) {

@@ -9,6 +9,9 @@
     <meta name="description" content="광명마리타임 아티클" />
     <meta name="author" content="Gwangmyung Maritime" />
 
+    <!-- Analytics (loaded via consent.js after user opt-in) -->
+    <meta name="ga-id" content="G-CJMFQE9NT4" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
 
@@ -16,15 +19,29 @@
     <script src="assets/js/theme.js"></script>
 
     <!-- Google Fonts -->
+    <!-- DNS prefetch for third-party assets -->
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script>
+      (function () {
+        var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
+        var lang = localStorage.getItem('preferredLanguage') || 'en';
+        var families = ['Inter:wght@400;500;600;700'];
+        if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.googleapis.com/css2?family=' + families.join('&family=') + '&display=swap';
+        document.head.appendChild(link);
+      })();
+    </script>
 
     <!-- Tailwind CSS (Built) -->
     <link rel="stylesheet" href="assets/css/output.css" />
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Marked.js for Markdown rendering -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -37,6 +54,7 @@
 
     <!-- Navigation (loaded dynamically) -->
     <div id="navbar-placeholder"></div>
+    <a id="main-content" tabindex="-1"></a>
 
     <!-- Hero Section (Article Meta) -->
     <section class="pt-32 pb-16 bg-gradient-to-b from-slate-800 to-slate-700">
@@ -79,6 +97,7 @@
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/articles.js"></script>
     <script src="assets/js/country-detector.js"></script>
+    <script src="assets/js/consent.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', async () => {
         const manager = window.articlesManager;
