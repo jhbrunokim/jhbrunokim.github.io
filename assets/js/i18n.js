@@ -28,6 +28,9 @@ class I18nManager {
     const lang = this.translations[this.currentLang];
     if (!lang) return;
 
+    // Keep <html lang> aligned with the active locale for a11y/SEO
+    document.documentElement.setAttribute('lang', this.currentLang);
+
     // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
       const key = element.getAttribute('data-i18n');
