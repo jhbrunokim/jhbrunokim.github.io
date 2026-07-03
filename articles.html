@@ -16,18 +16,11 @@
     />
     <meta name="author" content="Gwangmyung Maritime" />
 
+    <!-- Analytics (loaded via consent.js after user opt-in) -->
+    <meta name="ga-id" content="G-CJMFQE9NT4" />
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://gmmaritime.com/articles.html" />
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJMFQE9NT4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag("js", new Date());
-      gtag("config", "G-CJMFQE9NT4");
-    </script>
-
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Articles - 광명마리타임" />
     <meta
@@ -35,7 +28,21 @@
       content="기술 아티클, 업계 동향, 규제 소식"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://gmmaritime.com/articles" />
+    <meta property="og:url" content="https://gmmaritime.com/articles.html" />
+    <meta property="og:site_name" content="광명마리타임" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:image" content="https://gmmaritime.com/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Articles - 광명마리타임" />
+    <meta
+      name="twitter:description"
+      content="기술 아티클, 업계 동향, 규제 소식"
+    />
+    <meta name="twitter:image" content="https://gmmaritime.com/assets/images/og-image.png" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
@@ -83,6 +90,7 @@
 
     <!-- Navigation (loaded dynamically) -->
     <div id="navbar-placeholder"></div>
+    <a id="main-content" tabindex="-1"></a>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-16 bg-gradient-to-b from-slate-800 to-slate-700">
@@ -134,6 +142,7 @@
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/articles.js"></script>
     <script src="assets/js/country-detector.js"></script>
+    <script src="assets/js/consent.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', async () => {
         const manager = window.articlesManager;

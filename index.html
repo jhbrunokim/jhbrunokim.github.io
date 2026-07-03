@@ -4,21 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>광명마리타임 (Gwangmyung Maritime)</title>
-
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-CJMFQE9NT4"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-CJMFQE9NT4");
-    </script>
-
     <!-- SEO Meta Tags -->
     <meta
       name="description"
@@ -29,6 +14,9 @@
       content="선박 보안, OT 보안, 사이버 보안, E26, E27, IACS, 조선, 해양, 광명마리타임"
     />
     <meta name="author" content="Gwangmyung Maritime" />
+
+    <!-- Analytics (loaded via consent.js after user opt-in) -->
+    <meta name="ga-id" content="G-CJMFQE9NT4" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://gmmaritime.com" />
@@ -100,6 +88,10 @@
     <!-- Theme (must run before body renders to avoid FOUC) -->
     <script src="assets/js/theme.js"></script>
 
+    <!-- Preload above-the-fold hero images for LCP -->
+    <link rel="preload" as="image" href="resource/images/hero-port-night.jpg" fetchpriority="high" media="(min-width: 1024px)" />
+    <link rel="preload" as="image" href="resource/images/hero-container-ship.jpg" fetchpriority="high" media="(min-width: 1024px)" />
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -133,6 +125,7 @@
 
     <!-- Navigation (loaded dynamically) -->
     <div id="navbar-placeholder"></div>
+    <a id="main-content" tabindex="-1"></a>
 
     <!-- Hero Section -->
     <section
@@ -251,6 +244,10 @@
                   <img
                     src="resource/images/hero-port-night.jpg"
                     alt=""
+                    width="400"
+                    height="528"
+                    fetchpriority="high"
+                    decoding="async"
                     class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                   />
                   <div
@@ -266,6 +263,10 @@
                   <img
                     src="resource/images/hero-container-ship.jpg"
                     alt=""
+                    width="400"
+                    height="528"
+                    fetchpriority="high"
+                    decoding="async"
                     class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                   />
                   <div
@@ -277,6 +278,10 @@
                   <img
                     src="resource/images/hero-cargo-crane.jpg"
                     alt=""
+                    width="400"
+                    height="528"
+                    loading="lazy"
+                    decoding="async"
                     class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                   />
                   <div
@@ -290,6 +295,10 @@
                   <img
                     src="resource/images/hero-ship-wake.jpg"
                     alt=""
+                    width="400"
+                    height="528"
+                    loading="lazy"
+                    decoding="async"
                     class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                   />
                   <div
@@ -301,6 +310,10 @@
                   <img
                     src="resource/images/hero-container-yard.jpg"
                     alt=""
+                    width="400"
+                    height="528"
+                    loading="lazy"
+                    decoding="async"
                     class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                   />
                   <div
@@ -1550,6 +1563,7 @@
     <script src="assets/js/contact.js"></script>
     <script src="assets/js/articles.js"></script>
     <script src="assets/js/country-detector.js"></script>
+    <script src="assets/js/consent.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', async () => {
         const m = window.articlesManager;

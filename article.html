@@ -9,6 +9,9 @@
     <meta name="description" content="광명마리타임 아티클" />
     <meta name="author" content="Gwangmyung Maritime" />
 
+    <!-- Analytics (loaded via consent.js after user opt-in) -->
+    <meta name="ga-id" content="G-CJMFQE9NT4" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
 
@@ -37,6 +40,7 @@
 
     <!-- Navigation (loaded dynamically) -->
     <div id="navbar-placeholder"></div>
+    <a id="main-content" tabindex="-1"></a>
 
     <!-- Hero Section (Article Meta) -->
     <section class="pt-32 pb-16 bg-gradient-to-b from-slate-800 to-slate-700">
@@ -79,6 +83,7 @@
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/articles.js"></script>
     <script src="assets/js/country-detector.js"></script>
+    <script src="assets/js/consent.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', async () => {
         const manager = window.articlesManager;

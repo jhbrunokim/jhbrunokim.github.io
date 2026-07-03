@@ -13,7 +13,8 @@
       "vision": "Vision",
       "aboutUs": "About Us",
       "contact": "Contact",
-      "backToOverview": "Overview로 돌아가기"
+      "backToOverview": "Overview로 돌아가기",
+      "skipToContent": "본문으로 건너뛰기"
     },
     "articles": {
       "title": "Articles",
@@ -279,6 +280,11 @@
       "title": "최신 인사이트",
       "subtitle": "해양 사이버 보안과 컴플라이언스에 대한 광명마리타임의 관점",
       "viewAll": "모든 아티클 보기"
+    },
+    "consent": {
+      "message": "이 사이트는 방문 통계를 위해 Google Analytics 쿠키를 사용합니다. 동의하시면 분석 도구가 활성화됩니다.",
+      "accept": "동의",
+      "decline": "거부"
     }
   },
   "en": {
@@ -295,7 +301,8 @@
       "vision": "Vision",
       "aboutUs": "About Us",
       "contact": "Contact",
-      "backToOverview": "Back to Overview"
+      "backToOverview": "Back to Overview",
+      "skipToContent": "Skip to content"
     },
     "articles": {
       "title": "Articles",
@@ -561,6 +568,11 @@
       "title": "Latest insights",
       "subtitle": "Gwangmyung Maritime perspectives on maritime cybersecurity and compliance",
       "viewAll": "View all articles"
+    },
+    "consent": {
+      "message": "This site uses Google Analytics cookies to understand traffic. If you accept, analytics will be enabled.",
+      "accept": "Accept",
+      "decline": "Decline"
     }
   },
   "zh": {
@@ -577,7 +589,8 @@
       "vision": "愿景",
       "aboutUs": "关于我们",
       "contact": "联系我们",
-      "backToOverview": "返回总览"
+      "backToOverview": "返回总览",
+      "skipToContent": "跳到主要内容"
     },
     "articles": {
       "title": "文章",
@@ -843,6 +856,11 @@
       "title": "最新洞察",
       "subtitle": "光明海事对海事网络安全与合规的观点",
       "viewAll": "查看全部文章"
+    },
+    "consent": {
+      "message": "本网站使用 Google Analytics Cookie 以了解访问情况。如您同意，将启用分析工具。",
+      "accept": "同意",
+      "decline": "拒绝"
     }
   },
   "ja": {
@@ -859,7 +877,8 @@
       "vision": "ビジョン",
       "aboutUs": "会社概要",
       "contact": "お問い合わせ",
-      "backToOverview": "Overviewに 戻る"
+      "backToOverview": "Overviewに 戻る",
+      "skipToContent": "メインコンテンツへ"
     },
     "articles": {
       "title": "記事",
@@ -1125,6 +1144,11 @@
       "title": "最新 インサイト",
       "subtitle": "海洋 サイバー セキュリティと コンプライアンスに ついての 光明マリタイムの 視点",
       "viewAll": "記事一覧を 見る"
+    },
+    "consent": {
+      "message": "このサイトは、アクセス解析のために Google Analytics クッキーを使用します。ご同意いただくと、解析ツールが有効になります。",
+      "accept": "同意する",
+      "decline": "拒否する"
     }
   }
 }
