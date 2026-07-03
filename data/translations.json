@@ -90,7 +90,12 @@
       "nameLabel": "이름",
       "emailLabel": "이메일",
       "messageLabel": "메시지",
-      "submitButton": "전송하기"
+      "submitButton": "전송하기",
+      "sending": "전송 중...",
+      "submitAgain": "전송하기",
+      "successMessage": "메시지가 성공적으로 전송되었습니다!",
+      "errorMessage": "전송에 실패했습니다. 나중에 다시 시도해주세요.",
+      "validationError": "모든 필드를 입력해주세요."
     },
     "systemIntegration": {
       "title": "사업 범위",
@@ -378,7 +383,12 @@
       "nameLabel": "Name",
       "emailLabel": "Email",
       "messageLabel": "Message",
-      "submitButton": "Send Message"
+      "submitButton": "Send Message",
+      "sending": "Sending...",
+      "submitAgain": "Send Message",
+      "successMessage": "Message sent successfully!",
+      "errorMessage": "Failed to send message. Please try again later.",
+      "validationError": "Please fill in all fields."
     },
     "systemIntegration": {
       "title": "Business Scope",
@@ -666,7 +676,12 @@
       "nameLabel": "姓名",
       "emailLabel": "电子邮件",
       "messageLabel": "信息",
-      "submitButton": "发送消息"
+      "submitButton": "发送消息",
+      "sending": "发送中...",
+      "submitAgain": "发送消息",
+      "successMessage": "消息发送成功！",
+      "errorMessage": "发送失败，请稍后再试。",
+      "validationError": "请填写所有必填项。"
     },
     "systemIntegration": {
       "title": "业务范围",
@@ -954,7 +969,12 @@
       "nameLabel": "お名前",
       "emailLabel": "メールアドレス",
       "messageLabel": "メッセージ",
-      "submitButton": "送信"
+      "submitButton": "送信",
+      "sending": "送信中...",
+      "submitAgain": "メッセージを 送信",
+      "successMessage": "メッセージが 送信されました。",
+      "errorMessage": "送信に 失敗しました。後ほど 再度 お試しください。",
+      "validationError": "すべての 項目を 入力してください。"
     },
     "systemIntegration": {
       "title": "事業範囲",

@@ -80,7 +80,25 @@ class I18nManager {
   changeLanguage(lang) {
     this.currentLang = lang;
     localStorage.setItem('preferredLanguage', lang);
+    this.ensureFontForLocale(lang);
     this.applyTranslations();
+  }
+
+  // Load the CJK Google Font matching the newly selected locale so
+  // switching languages doesn't leave the user staring at a fallback
+  // system font. Idempotent — repeat calls with the same locale are
+  // no-ops. Initial page load is handled by the inline <head> script.
+  ensureFontForLocale(lang) {
+    const CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
+    const family = CJK[lang];
+    if (!family) return;
+    const id = `font-cjk-${lang}`;
+    if (document.getElementById(id)) return;
+    const link = document.createElement('link');
+    link.id = id;
+    link.rel = 'stylesheet';
+    link.href = `https://fonts.googleapis.com/css2?family=${family}:wght@400;500;700&display=swap`;
+    document.head.appendChild(link);
   }
 }
 
