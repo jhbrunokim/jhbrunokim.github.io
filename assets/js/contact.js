@@ -9,6 +9,12 @@ class ContactFormManager {
 
   init() {
     document.addEventListener('DOMContentLoaded', () => {
+      // EmailJS SDK is loaded with defer, so it's ready by the time
+      // DOMContentLoaded fires. Init here instead of inline in <head>.
+      if (window.emailjs) {
+        emailjs.init('oxNyGY4Y3JcIsG6Ml');
+      }
+
       this.form = document.getElementById('contact-form');
       this.submitButton = document.getElementById('contact-submit');
       this.statusMessage = document.getElementById('contact-status');

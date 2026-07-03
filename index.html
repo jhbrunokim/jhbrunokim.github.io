@@ -93,6 +93,9 @@
     <link rel="preload" as="image" href="resource/images/hero-container-ship.jpg" fetchpriority="high" media="(min-width: 1024px)" />
 
     <!-- Google Fonts -->
+    <!-- DNS prefetch for third-party assets -->
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script>
@@ -112,18 +115,10 @@
     <link rel="stylesheet" href="assets/css/output.css" />
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- EmailJS -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("oxNyGY4Y3JcIsG6Ml"); // Replace with your EmailJS public key
-      })();
-    </script>
+    <!-- EmailJS SDK (init lives in contact.js so it runs after defer resolves) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   </head>
   <body
     class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden transition-colors duration-300"
@@ -254,7 +249,7 @@
                     alt=""
                     width="400"
                     height="528"
-                    fetchpriority="high"
+                    loading="lazy"
                     decoding="async"
                     class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                   />
@@ -273,7 +268,7 @@
                     alt=""
                     width="400"
                     height="528"
-                    fetchpriority="high"
+                    loading="lazy"
                     decoding="async"
                     class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                   />
