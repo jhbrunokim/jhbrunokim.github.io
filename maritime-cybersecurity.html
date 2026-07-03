@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maritime Cybersecurity - 광명마리타임</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Secure by Design 기반 선박 사이버 보안 플랫폼. 설계 - 건조 - 운항 전주기(Lifecycle) 대응 및 IACS UR E26 / E27 컴플라이언스 자동화 문서 지원."
+    />
+    <meta
+      name="keywords"
+      content="Maritime Cybersecurity, 해양 사이버 보안, 선박 사이버 보안, Security Engineering, Voyage Resilience, Threat Horizon, Threat Modeling, Attack Surface Analysis, SBOM, Honeypot, IACS UR E26, E27, 광명마리타임"
+    />
+    <meta name="author" content="Gwangmyung Maritime" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Maritime Cybersecurity - 광명마리타임" />
+    <meta
+      property="og:description"
+      content="Secure by Design 기반 선박 사이버 보안 플랫폼 및 전주기 서비스"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gmmaritime.com/maritime-cybersecurity" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS (Built) -->
+    <link rel="stylesheet" href="assets/css/output.css" />
+    <!-- Tailwind CSS CDN for additional classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden transition-colors duration-300"
+  >
+    <!-- Country/Language Detection Modal (loaded dynamically) -->
+    <div id="country-modal-placeholder"></div>
+
+    <!-- Navigation (loaded dynamically) -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-b from-slate-800 to-slate-700">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center">
+          <span class="inline-block px-4 py-2 bg-indigo-600/20 text-indigo-300 rounded-full text-sm font-medium mb-6">
+            Maritime Cybersecurity
+          </span>
+          <h1
+            class="text-4xl md:text-5xl font-bold text-white mb-6"
+            data-i18n="maritimeCyber.title"
+          >
+            해양 사이버 보안 플랫폼
+          </h1>
+          <p
+            class="text-slate-300 max-w-3xl mx-auto text-lg leading-relaxed"
+            data-i18n="maritimeCyber.subtitle"
+          >
+            Secure by Design — 설계부터 운항까지, 선박 전 주기(Lifecycle)를 지키는 사이버 보안 구조
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section class="py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span
+            class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase"
+            data-i18n="maritimeCyber.conceptLabel"
+            >Our Approach</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
+            data-i18n="maritimeCyber.conceptTitle"
+          >
+            사후 대응이 아닌, 설계 단계부터 심는 보안
+          </h2>
+          <p
+            class="text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mt-6 leading-relaxed"
+            data-i18n="maritimeCyber.conceptDesc"
+          >
+            초기 설계 단계에서 놓친 보안 결함은 이후 단계에서 훨씬 큰 재작업 비용으로 돌아옵니다. 광명마리타임은 Design · Build · Operate 전 주기에 걸쳐 검증 가능한 보안 구조를 함께 설계하고 운영합니다.
+          </p>
+        </div>
+
+        <!-- 3+1 Lifecycle -->
+        <div class="mb-8">
+          <div class="grid md:grid-cols-3 gap-6 mb-6">
+            <!-- Design -->
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl border-2 border-blue-200 dark:border-blue-900">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="bg-blue-600 p-3 rounded-lg">
+                  <i data-lucide="pen-tool" class="w-6 h-6 text-white"></i>
+                </div>
+                <h3
+                  class="text-xl font-bold text-slate-900 dark:text-white"
+                  data-i18n="maritimeCyber.stageDesignTitle"
+                >
+                  Design
+                </h3>
+              </div>
+              <p
+                class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed"
+                data-i18n="maritimeCyber.stageDesignDesc"
+              >
+                위협 모델링 · 공격 표면 분석 · 자산 인벤토리 정의를 통한 설계 단계 리스크 사전 식별
+              </p>
+            </div>
+
+            <!-- Build -->
+            <div class="bg-gradient-to-br from-cyan-50 to-teal-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl border-2 border-cyan-200 dark:border-cyan-900">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="bg-cyan-600 p-3 rounded-lg">
+                  <i data-lucide="wrench" class="w-6 h-6 text-white"></i>
+                </div>
+                <h3
+                  class="text-xl font-bold text-slate-900 dark:text-white"
+                  data-i18n="maritimeCyber.stageBuildTitle"
+                >
+                  Build
+                </h3>
+              </div>
+              <p
+                class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed"
+                data-i18n="maritimeCyber.stageBuildDesc"
+              >
+                FAT / SAT 단계 취약점 스캐닝 · SBOM 검증 · 컴플라이언스 문서화
+              </p>
+            </div>
+
+            <!-- Operate -->
+            <div class="bg-gradient-to-br from-emerald-50 to-green-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl border-2 border-emerald-200 dark:border-emerald-900">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="bg-emerald-600 p-3 rounded-lg">
+                  <i data-lucide="activity" class="w-6 h-6 text-white"></i>
+                </div>
+                <h3
+                  class="text-xl font-bold text-slate-900 dark:text-white"
+                  data-i18n="maritimeCyber.stageOperateTitle"
+                >
+                  Operate
+                </h3>
+              </div>
+              <p
+                class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed"
+                data-i18n="maritimeCyber.stageOperateDesc"
+              >
+                운항 중 실시간 모니터링 · 침입 탐지 · AI CCTV 방어를 통한 상시 위협 관리
+              </p>
+            </div>
+          </div>
+
+          <!-- Intelligence Layer -->
+          <div class="bg-gradient-to-r from-purple-600 to-indigo-600 p-8 rounded-2xl text-white shadow-lg">
+            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+              <div class="bg-white/20 p-3 rounded-lg flex-shrink-0">
+                <i data-lucide="radar" class="w-7 h-7 text-white"></i>
+              </div>
+              <div class="text-center md:text-left">
+                <h3
+                  class="text-xl font-bold mb-2"
+                  data-i18n="maritimeCyber.stageIntelTitle"
+                >
+                  Intelligence — 전 주기 위협 정보
+                </h3>
+                <p
+                  class="text-white/90 text-sm leading-relaxed"
+                  data-i18n="maritimeCyber.stageIntelDesc"
+                >
+                  다크웹 · OSINT 기반 해양 특화 위협 인텔리전스를 Design / Build / Operate 전 단계에 지속 공급
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Categories Section -->
+    <section class="py-24 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span
+            class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase"
+            data-i18n="maritimeCyber.solutionsLabel"
+            >Solution Modules</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
+            data-i18n="maritimeCyber.solutionsTitle"
+          >
+            3개 카테고리로 구성된 해양 보안 모듈
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Security Engineering (SE) -->
+          <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-shadow">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="bg-blue-100 dark:bg-blue-900/40 p-3 rounded-lg">
+                <i data-lucide="shield-check" class="w-6 h-6 text-blue-600 dark:text-blue-400"></i>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-blue-600 dark:text-blue-400 tracking-wider">SE</p>
+                <h3
+                  class="text-lg font-bold text-slate-900 dark:text-white"
+                  data-i18n="maritimeCyber.cbdTitle"
+                >
+                  Security Engineering
+                </h3>
+              </div>
+            </div>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6"
+              data-i18n="maritimeCyber.cbdDesc"
+            >
+              설계 · 건조 단계에서 위협 식별부터 취약점 검증까지, 보안을 구조에 내재화
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 text-blue-500 mt-1 flex-shrink-0"></i>
+                <div>
+                  <p class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="maritimeCyber.cbdItem1.label">Threat Modeling</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed" data-i18n="maritimeCyber.cbdItem1.sub">위협 모델링 · 시뮬레이션</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 text-blue-500 mt-1 flex-shrink-0"></i>
+                <div>
+                  <p class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="maritimeCyber.cbdItem2.label">Attack Surface Analysis</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed" data-i18n="maritimeCyber.cbdItem2.sub">S/W · F/W 취약점 식별</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 text-blue-500 mt-1 flex-shrink-0"></i>
+                <div>
+                  <p class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="maritimeCyber.cbdItem3.label">Security Scanning</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed" data-i18n="maritimeCyber.cbdItem3.sub">선내 네트워크 취약점 검증</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 text-blue-500 mt-1 flex-shrink-0"></i>
+                <div>
+                  <p class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="maritimeCyber.cbdItem4.label">SBOM</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed" data-i18n="maritimeCyber.cbdItem4.sub">자산 인벤토리 및 E26 / E27 문서 자동화</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Voyage Resilience (VR) -->
+          <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-shadow">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="bg-emerald-100 dark:bg-emerald-900/40 p-3 rounded-lg">
+                <i data-lucide="ship" class="w-6 h-6 text-emerald-600 dark:text-emerald-400"></i>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-emerald-600 dark:text-emerald-400 tracking-wider">VR</p>
+                <h3
+                  class="text-lg font-bold text-slate-900 dark:text-white"
+                  data-i18n="maritimeCyber.srmTitle"
+                >
+                  Voyage Resilience
+                </h3>
+              </div>
+            </div>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6"
+              data-i18n="maritimeCyber.srmDesc"
+            >
+              운항 중 통합 관제 · 조기 탐지 · AI 방어를 통한 위협 통제와 복원력 확보
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0"></i>
+                <div>
+                  <p class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="maritimeCyber.srmItem1.label">Integrated Security Monitoring</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed" data-i18n="maritimeCyber.srmItem1.sub">통합 관제 및 위협 분석</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0"></i>
+                <div>
+                  <p class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="maritimeCyber.srmItem2.label">Deception & Early Detection</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed" data-i18n="maritimeCyber.srmItem2.sub">허니팟 기반 조기 침입 탐지</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0"></i>
+                <div>
+                  <p class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="maritimeCyber.srmItem3.label">AI Video Integrity</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed" data-i18n="maritimeCyber.srmItem3.sub">CCTV 적대적 공격 방어</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0"></i>
+                <div>
+                  <p class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="maritimeCyber.srmItem4.label">Continuous Risk Management</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed" data-i18n="maritimeCyber.srmItem4.sub">운항 리스크 상시 관리</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Threat Horizon (TH) -->
+          <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-shadow">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="bg-purple-100 dark:bg-purple-900/40 p-3 rounded-lg">
+                <i data-lucide="satellite" class="w-6 h-6 text-purple-600 dark:text-purple-400"></i>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-purple-600 dark:text-purple-400 tracking-wider">TH</p>
+                <h3
+                  class="text-lg font-bold text-slate-900 dark:text-white"
+                  data-i18n="maritimeCyber.ctiTitle"
+                >
+                  Threat Horizon
+                </h3>
+              </div>
+            </div>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6"
+              data-i18n="maritimeCyber.ctiDesc"
+            >
+              다크웹 · OSINT 기반 해양 특화 위협 정보의 전 주기 공급
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 text-purple-500 mt-1 flex-shrink-0"></i>
+                <div>
+                  <p class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="maritimeCyber.ctiItem1.label">Dark Web Monitoring</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed" data-i18n="maritimeCyber.ctiItem1.sub">정보 유출 감시</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 text-purple-500 mt-1 flex-shrink-0"></i>
+                <div>
+                  <p class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="maritimeCyber.ctiItem2.label">Maritime Threat Feed</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed" data-i18n="maritimeCyber.ctiItem2.sub">해양 특화 위협 정보</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 text-purple-500 mt-1 flex-shrink-0"></i>
+                <div>
+                  <p class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="maritimeCyber.ctiItem3.label">Vulnerability Advisory</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed" data-i18n="maritimeCyber.ctiItem3.sub">취약점 정보 상시 갱신</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 text-purple-500 mt-1 flex-shrink-0"></i>
+                <div>
+                  <p class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="maritimeCyber.ctiItem4.label">Lifecycle-wide</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed" data-i18n="maritimeCyber.ctiItem4.sub">설계 · 건조 · 운항 통합 적용</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Target Users Section -->
+    <section class="py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span
+            class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase"
+            data-i18n="maritimeCyber.usersLabel"
+            >Target Users</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
+            data-i18n="maritimeCyber.usersTitle"
+          >
+            선박 생태계 전체를 위한 보안 파트너
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900/40 rounded-full mb-4">
+              <i data-lucide="ship" class="w-8 h-8 text-blue-600 dark:text-blue-400"></i>
+            </div>
+            <h3
+              class="font-bold text-slate-900 dark:text-white mb-2"
+              data-i18n="maritimeCyber.user1Title"
+            >
+              선주 (Shipowner)
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm"
+              data-i18n="maritimeCyber.user1Desc"
+            >
+              선대 운영 중 발생하는 사이버 리스크의 상시 가시화
+            </p>
+          </div>
+
+          <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-cyan-100 dark:bg-cyan-900/40 rounded-full mb-4">
+              <i data-lucide="factory" class="w-8 h-8 text-cyan-600 dark:text-cyan-400"></i>
+            </div>
+            <h3
+              class="font-bold text-slate-900 dark:text-white mb-2"
+              data-i18n="maritimeCyber.user2Title"
+            >
+              조선소 (Shipyard)
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm"
+              data-i18n="maritimeCyber.user2Desc"
+            >
+              설계 · 건조 단계에서 검증 가능한 보안 결과물 확보
+            </p>
+          </div>
+
+          <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 dark:bg-indigo-900/40 rounded-full mb-4">
+              <i data-lucide="package" class="w-8 h-8 text-indigo-600 dark:text-indigo-400"></i>
+            </div>
+            <h3
+              class="font-bold text-slate-900 dark:text-white mb-2"
+              data-i18n="maritimeCyber.user3Title"
+            >
+              기자재 공급사 (Vendor)
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm"
+              data-i18n="maritimeCyber.user3Desc"
+            >
+              E27 TA 취득 및 Deliverable 자동화 지원
+            </p>
+          </div>
+
+          <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl text-center hover:-translate-y-1 transition-transform duration-300">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 dark:bg-purple-900/40 rounded-full mb-4">
+              <i data-lucide="shield" class="w-8 h-8 text-purple-600 dark:text-purple-400"></i>
+            </div>
+            <h3
+              class="font-bold text-slate-900 dark:text-white mb-2"
+              data-i18n="maritimeCyber.user4Title"
+            >
+              방산 (Defense)
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm"
+              data-i18n="maritimeCyber.user4Desc"
+            >
+              고신뢰 · 고보안 함정 시스템의 사이버 복원력 확보
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance Integration -->
+    <section class="py-24 bg-slate-800 text-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <span
+              class="text-indigo-300 font-bold tracking-widest uppercase"
+              data-i18n="maritimeCyber.complianceLabel"
+              >Compliance Ready</span
+            >
+            <h2
+              class="text-3xl md:text-4xl font-bold text-white mt-2 mb-6 leading-snug"
+              data-i18n="maritimeCyber.complianceTitle"
+            >
+              IACS UR E26 / E27 문서 자동화
+            </h2>
+            <p
+              class="text-slate-300 text-lg leading-relaxed mb-6"
+              data-i18n="maritimeCyber.complianceDesc"
+            >
+              플랫폼이 수집한 자산 · 위협 · 통제 데이터를 기반으로 선급이 요구하는 컴플라이언스 산출물을 자동 생성합니다. 문서 작성 부담을 줄이고, 심사 · 승인 프로세스를 가속화합니다.
+            </p>
+            <a
+              href="compliance.html"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white font-semibold transition-colors"
+            >
+              <span data-i18n="maritimeCyber.complianceCta">Compliance 상세 보기</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+
+          <div class="bg-slate-700 p-8 rounded-2xl border border-slate-600">
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 pb-4 border-b border-slate-600">
+                <i data-lucide="file-check" class="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <p class="font-semibold text-white" data-i18n="maritimeCyber.complianceItem1Title">E27 Technical Documentation</p>
+                  <p class="text-slate-400 text-sm" data-i18n="maritimeCyber.complianceItem1Desc">System Supplier 산출물 자동 생성</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3 pb-4 border-b border-slate-600">
+                <i data-lucide="file-check" class="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <p class="font-semibold text-white" data-i18n="maritimeCyber.complianceItem2Title">E26 Asset Inventory · Ship-level RA</p>
+                  <p class="text-slate-400 text-sm" data-i18n="maritimeCyber.complianceItem2Desc">선박 전체 자산 · 리스크 평가 연계</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3 pb-4 border-b border-slate-600">
+                <i data-lucide="file-check" class="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <p class="font-semibold text-white" data-i18n="maritimeCyber.complianceItem3Title">SBOM (Software Bill of Materials)</p>
+                  <p class="text-slate-400 text-sm" data-i18n="maritimeCyber.complianceItem3Desc">S/W 구성 요소 및 취약점 이력 관리</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="file-check" class="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <p class="font-semibold text-white" data-i18n="maritimeCyber.complianceItem4Title">SCARP 지원</p>
+                  <p class="text-slate-400 text-sm" data-i18n="maritimeCyber.complianceItem4Desc">운영 단계 보안 정보 체계화 지원</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-slate-900">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2
+          class="text-2xl font-bold text-white mb-4"
+          data-i18n="maritimeCyber.ctaTitle"
+        >
+          선박 사이버 보안 도입을 검토 중이신가요?
+        </h2>
+        <p
+          class="text-slate-400 mb-8"
+          data-i18n="maritimeCyber.ctaDesc"
+        >
+          설계 단계부터 운항까지, 광명마리타임과 상의하세요.
+        </p>
+        <a
+          href="index.html#contact"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-all"
+        >
+          <i data-lucide="mail" class="w-5 h-5"></i>
+          <span data-i18n="nav.contact">Contact</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer (loaded dynamically) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/country-detector.js"></script>
+  </body>
+</html>
