@@ -36,6 +36,13 @@
         >Expertise</a
       >
 
+      <a
+        href="index.html#vision"
+        class="nav-link text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors"
+        data-i18n="nav.vision"
+        >Vision</a
+      >
+
       <!-- Business (단일 링크) -->
       <a
         href="index.html#business"
@@ -45,29 +52,43 @@
       >
 
       <!-- COMPETITIVENESS Dropdown -->
-      <div class="relative group">
-        <button
-          class="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors flex items-center gap-1"
+      <div class="relative group" data-dropdown>
+        <a
+          href="index.html#competitiveness"
+          class="nav-link text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors flex items-center gap-1"
           aria-haspopup="true"
           aria-expanded="false"
+          data-dropdown-toggle
         >
           <span data-i18n="nav.competitiveness">Competitiveness</span>
           <i data-lucide="chevron-down" class="w-4 h-4"></i>
-        </button>
+        </a>
         <div
-          class="absolute top-full left-0 mt-2 w-56 bg-slate-800 dark:bg-slate-900 border border-slate-600 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+          class="absolute top-full left-0 mt-2 w-56 bg-slate-800 dark:bg-slate-900 border border-slate-600 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200"
+          role="menu"
+          data-dropdown-menu
         >
           <a
             href="system-integration.html"
-            class="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-700 dark:hover:bg-slate-800 text-sm transition-colors first:rounded-t-lg"
+            class="nav-link block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-700 dark:hover:bg-slate-800 text-sm transition-colors first:rounded-t-lg"
             data-i18n="nav.systemIntegration"
+            role="menuitem"
           >
             System Integration
           </a>
           <a
+            href="maritime-cybersecurity.html"
+            class="nav-link block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-700 dark:hover:bg-slate-800 text-sm transition-colors"
+            data-i18n="nav.maritimeCybersecurity"
+            role="menuitem"
+          >
+            Maritime Cybersecurity
+          </a>
+          <a
             href="compliance.html"
-            class="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-700 dark:hover:bg-slate-800 text-sm transition-colors last:rounded-b-lg"
+            class="nav-link block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-700 dark:hover:bg-slate-800 text-sm transition-colors last:rounded-b-lg"
             data-i18n="nav.compliance"
+            role="menuitem"
           >
             Compliance
           </a>
@@ -75,16 +96,10 @@
       </div>
 
       <a
-        href="articles.html"
+        href="index.html#articles"
         class="nav-link text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors"
         data-i18n="nav.articles"
         >Articles</a
-      >
-      <a
-        href="index.html#vision"
-        class="nav-link text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors"
-        data-i18n="nav.vision"
-        >Vision</a
       >
       <a
         href="index.html#about"
@@ -140,6 +155,13 @@
         >Expertise</a
       >
 
+      <a
+        href="index.html#vision"
+        class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium"
+        data-i18n="nav.vision"
+        >Vision</a
+      >
+
       <!-- Business (단일 링크) -->
       <a
         href="index.html#business"
@@ -150,18 +172,26 @@
 
       <!-- COMPETITIVENESS Mobile Submenu -->
       <div class="border-l-2 border-slate-600 pl-4 space-y-3">
-        <div
-          class="text-slate-400 text-sm font-semibold"
+        <a
+          href="index.html#competitiveness"
+          class="mobile-link block text-slate-300 hover:text-blue-400 text-base font-medium"
           data-i18n="nav.competitiveness"
         >
           Competitiveness
-        </div>
+        </a>
         <a
           href="system-integration.html"
           class="mobile-link block text-slate-300 hover:text-blue-400 text-sm font-medium"
           data-i18n="nav.systemIntegration"
         >
           System Integration
+        </a>
+        <a
+          href="maritime-cybersecurity.html"
+          class="mobile-link block text-slate-300 hover:text-blue-400 text-sm font-medium"
+          data-i18n="nav.maritimeCybersecurity"
+        >
+          Maritime Cybersecurity
         </a>
         <a
           href="compliance.html"
@@ -173,16 +203,10 @@
       </div>
 
       <a
-        href="articles.html"
+        href="index.html#articles"
         class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium"
         data-i18n="nav.articles"
         >Articles</a
-      >
-      <a
-        href="index.html#vision"
-        class="mobile-link text-slate-300 hover:text-blue-400 text-base font-medium"
-        data-i18n="nav.vision"
-        >Vision</a
       >
       <a
         href="index.html#about"

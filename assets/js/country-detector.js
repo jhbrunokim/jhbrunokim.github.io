@@ -96,20 +96,17 @@ class CountryDetector {
     const countryNameElement = document.getElementById('detected-country-name');
     if (!countryNameElement) return;
 
-    // Get current language from i18nManager or default to 'en'
     const currentLang = window.i18nManager?.currentLang || 'en';
+    const translations = window.i18nManager?.translations;
 
-    // Update modal text with selected country name
-    fetch('./data/translations.json')
-      .then(res => res.json())
-      .then(translations => {
-        const countryName = translations[currentLang]?.countryModal?.countries[countryCode] || countryCode;
-        countryNameElement.textContent = countryName;
-      })
-      .catch(err => {
-        console.error('Failed to load translations:', err);
-        countryNameElement.textContent = countryCode;
-      });
+    if (translations) {
+      countryNameElement.textContent =
+        translations[currentLang]?.countryModal?.countries?.[countryCode] || countryCode;
+      return;
+    }
+
+    // Fallback: i18n not ready yet — show code, will be corrected on next apply
+    countryNameElement.textContent = countryCode;
   }
 
   toggleDropdown() {

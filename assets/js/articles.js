@@ -104,6 +104,40 @@ class ArticlesManager {
     if (window.lucide) lucide.createIcons();
   }
 
+  renderArticlePreview(containerId, limit = 3) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const items = this.articles.slice(0, limit);
+    if (!items.length) {
+      container.innerHTML = '';
+      return;
+    }
+
+    container.innerHTML = items.map(article => `
+      <a href="article.html#${article.slug}" class="group block bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md hover:-translate-y-0.5 transition-all">
+        <div class="flex items-center gap-x-3 text-xs mb-3">
+          <time datetime="${article.date}" class="text-slate-500 dark:text-slate-400">
+            ${this.formatDate(article.date)}
+          </time>
+          ${article.category ? `
+            <span class="inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-900/30 px-2.5 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-300">
+              ${article.category}
+            </span>
+          ` : ''}
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
+          ${article.title}
+        </h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
+          ${article.description}
+        </p>
+      </a>
+    `).join('');
+
+    if (window.lucide) lucide.createIcons();
+  }
+
   async renderArticleDetail(metaContainerId, contentContainerId) {
     // Support both hash (#slug) and query param (?slug=xxx) formats
     const slug = window.location.hash.slice(1) || new URLSearchParams(window.location.search).get('slug');

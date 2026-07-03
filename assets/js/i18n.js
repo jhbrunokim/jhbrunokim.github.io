@@ -15,7 +15,7 @@ class I18nManager {
 
   async loadTranslations() {
     try {
-      const response = await fetch('./data/translations.json');
+      const response = await fetch('./data/translations.json', { cache: 'no-cache' });
       this.translations = await response.json();
     } catch (error) {
       console.error('Failed to load translations:', error);
@@ -27,6 +27,9 @@ class I18nManager {
 
     const lang = this.translations[this.currentLang];
     if (!lang) return;
+
+    // Keep <html lang> aligned with the active locale for a11y/SEO
+    document.documentElement.setAttribute('lang', this.currentLang);
 
     // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {

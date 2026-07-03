@@ -4,11 +4,38 @@
 
 /* Custom Base Styles */
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
   /* 한글 줄바꿈 처리 */
   body {
     @apply word-break-keep-all;
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
+}
+
+/* Nav active indicators */
+.nav-link.is-active,
+.mobile-link.is-active {
+  color: rgb(96 165 250);
+}
+.nav-link.is-active:not([role="menuitem"]) {
+  position: relative;
+}
+.nav-link.is-active:not([role="menuitem"])::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: rgb(96 165 250);
+  border-radius: 2px;
+}
+.nav-link[role="menuitem"].is-active {
+  background: rgba(51 65 85 / 0.6);
 }
 
 /* Custom Utilities */
