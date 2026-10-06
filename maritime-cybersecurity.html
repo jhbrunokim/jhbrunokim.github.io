@@ -159,6 +159,50 @@
           </p>
         </div>
 
+        <!-- Lifecycle Timeline SVG — Design/Build/Operate with Intelligence thread -->
+        <div class="mb-10 max-w-5xl mx-auto">
+          <svg
+            viewBox="0 0 820 240"
+            class="w-full h-auto"
+            role="img"
+            aria-label="Vessel lifecycle timeline from kickoff to annual survey, with Design, Build, Operate stages and Intelligence layer threading all stages"
+          >
+            <!-- Timeline axis -->
+            <line x1="40" y1="80" x2="780" y2="80" stroke="#94a3b8" stroke-width="2" />
+            <!-- Milestone ticks -->
+            <g font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">
+              <circle cx="40" cy="80" r="4" fill="#64748b" /><text x="40" y="62" text-anchor="middle">K/O</text>
+              <circle cx="150" cy="80" r="4" fill="#64748b" /><text x="150" y="62" text-anchor="middle">D/S</text>
+              <circle cx="260" cy="80" r="4" fill="#64748b" /><text x="260" y="62" text-anchor="middle">S/C</text>
+              <circle cx="370" cy="80" r="4" fill="#64748b" /><text x="370" y="62" text-anchor="middle">K/L</text>
+              <circle cx="480" cy="80" r="4" fill="#64748b" /><text x="480" y="62" text-anchor="middle">L/C · S/T</text>
+              <circle cx="590" cy="80" r="4" fill="#64748b" /><text x="590" y="62" text-anchor="middle">D/L</text>
+              <circle cx="700" cy="80" r="4" fill="#64748b" /><text x="700" y="62" text-anchor="middle">1st Yr</text>
+              <circle cx="780" cy="80" r="4" fill="#94a3b8" /><text x="780" y="62" text-anchor="middle">N Yr</text>
+            </g>
+
+            <!-- Design band -->
+            <rect x="40" y="100" width="260" height="46" rx="8" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="2" />
+            <text x="60" y="124" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="800" fill="#60a5fa" class="dark:fill-blue-300">DESIGN</text>
+            <text x="60" y="140" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#3b82f6" class="dark:fill-blue-400">Threat Modeling · Asset Inventory</text>
+
+            <!-- Build band -->
+            <rect x="310" y="100" width="270" height="46" rx="8" fill="#06b6d4" fill-opacity="0.2" stroke="#06b6d4" stroke-width="2" />
+            <text x="330" y="124" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="800" fill="#22d3ee" class="dark:fill-cyan-300">BUILD</text>
+            <text x="330" y="140" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#06b6d4" class="dark:fill-cyan-400">FAT · SAT · SBOM · E26/E27 문서화</text>
+
+            <!-- Operate band -->
+            <rect x="590" y="100" width="190" height="46" rx="8" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="2" />
+            <text x="610" y="124" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="800" fill="#34d399" class="dark:fill-emerald-300">OPERATE</text>
+            <text x="610" y="140" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#10b981" class="dark:fill-emerald-400">실시간 관제 · 침입 탐지 · 복원</text>
+
+            <!-- Intelligence threading band (bottom) -->
+            <rect x="40" y="170" width="740" height="46" rx="8" fill="#8b5cf6" fill-opacity="0.2" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5 4" />
+            <text x="60" y="194" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="800" fill="#a78bfa" class="dark:fill-purple-300">INTELLIGENCE</text>
+            <text x="60" y="210" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#8b5cf6" class="dark:fill-purple-400">Dark Web · OSINT · Maritime-specific Threat Feed — 전 주기 공급</text>
+          </svg>
+        </div>
+
         <!-- 3+1 Lifecycle -->
         <div class="mb-8">
           <div class="grid md:grid-cols-3 gap-6 mb-6">

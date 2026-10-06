@@ -139,55 +139,131 @@
     <!-- Main Content -->
     <section class="py-24 bg-slate-800 text-white">
       <div class="max-w-7xl mx-auto px-6">
-        <!-- IACS UR E26 / E27 Diagram -->
-        <div class="mb-16 bg-slate-700 p-8 rounded-2xl border border-slate-600">
-          <!-- Top Bar -->
-          <div class="bg-black text-white text-center py-3 text-lg font-bold rounded-xl border-2 border-slate-600 mb-8">
-            IACS UR E26 / E27
+        <!-- IACS UR E26 / E27 / SCARP — 3-tier scope diagram -->
+        <div class="mb-16">
+          <div class="text-center mb-10">
+            <span class="text-cyan-400 font-bold tracking-widest uppercase text-sm" data-i18n="compliance.diagramLabel">IACS UR E26 / E27</span>
+            <h3 class="text-2xl md:text-3xl font-bold text-white mt-2" data-i18n="compliance.diagramTitle">선박 사이버 복원력 강제화의 3단계 적용 범위</h3>
+            <p class="text-slate-400 max-w-2xl mx-auto mt-3 text-sm" data-i18n="compliance.diagramSubtitle">
+              E26(선박 전체) → E27(개별 시스템) → SCARP(운항 단계) 로 책임 범위가 확장됩니다.
+            </p>
           </div>
 
-          <!-- Main Diagram Area -->
-          <div class="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
-            <!-- Headers Row -->
-            <div class="flex justify-between mb-6">
-              <div>
-                <h3 class="text-lg font-bold text-white bg-blue-600/30 px-4 py-2 rounded-lg border border-blue-500" data-i18n="compliance.cyberResilienceTitle">선박 사이버 복원력 강제화</h3>
-                <p class="text-sm italic text-slate-400 mt-2" data-i18n="compliance.ownersRequirement">Owner's Requirement</p>
-              </div>
-              <div class="text-right">
-                <h3 class="text-lg font-bold text-white bg-blue-600/30 px-4 py-2 rounded-lg border border-blue-500" data-i18n="compliance.structuralChangeTitle">해양 산업의 구조적 변화</h3>
-              </div>
-            </div>
+          <!-- 3-Tier SVG Diagram -->
+          <div class="max-w-5xl mx-auto bg-slate-700/40 p-6 md:p-8 rounded-2xl border border-slate-600">
+            <svg
+              viewBox="0 0 720 300"
+              class="w-full h-auto"
+              role="img"
+              aria-label="IACS UR E26 covers ship-level cyber security management, E27 covers per-system design and operation, SCARP covers the operation lifecycle"
+            >
+              <!-- Build stage label (top-left) -->
+              <text x="20" y="24" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#60a5fa" letter-spacing="2">BUILD STAGE</text>
+              <!-- Operation stage label (top-right) -->
+              <text x="700" y="24" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24" letter-spacing="2">OPERATION STAGE</text>
 
-            <!-- Nested Boxes Diagram -->
-            <div class="relative flex items-center">
-              <!-- Left Labels (E26, E27) -->
-              <div class="flex flex-col gap-6 mr-4">
-                <div class="flex items-center gap-2">
-                  <span class="text-blue-400 font-bold italic text-lg">E26</span>
-                  <i data-lucide="arrow-right" class="w-6 h-6 text-blue-400"></i>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="text-blue-400 font-bold italic text-lg">E27</span>
-                  <i data-lucide="arrow-right" class="w-6 h-6 text-blue-400"></i>
-                </div>
-              </div>
+              <!-- Horizontal axis arrow -->
+              <line x1="20" y1="40" x2="700" y2="40" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4 4" />
+              <polygon points="700,40 692,36 692,44" fill="#64748b" />
 
-              <!-- Nested Boxes -->
-              <div class="flex-1 bg-slate-600 p-6 rounded-xl border-2 border-slate-500 shadow-lg">
-                <p class="text-white text-center font-semibold mb-4" data-i18n="compliance.e26Desc">선박 전체의 사이버 보안 개념과 관리 체계 확보</p>
-                <div class="bg-red-400/30 p-4 rounded-xl border-2 border-red-400/50">
-                  <p class="text-white text-center" data-i18n="compliance.e27Desc">각 시스템의 사이버 보안을 전제한 설계와 운영</p>
-                </div>
-              </div>
+              <!-- Tier 1: E26 (Ship-wide) -->
+              <g>
+                <rect x="20" y="70" width="210" height="200" rx="14" fill="#3b82f6" fill-opacity="0.18" stroke="#3b82f6" stroke-width="2" />
+                <text x="40" y="100" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="800" fill="#93c5fd" letter-spacing="2">TIER 1</text>
+                <text x="40" y="128" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="800" fill="#dbeafe">E26</text>
+                <text x="40" y="152" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#bfdbfe">Ship-wide</text>
+                <text x="40" y="184" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#dbeafe">선박 전체의</text>
+                <text x="40" y="200" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#dbeafe">사이버 보안 개념과</text>
+                <text x="40" y="216" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#dbeafe">관리 체계 확보</text>
+                <text x="40" y="248" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600" fill="#93c5fd">Owner · Shipyard</text>
+              </g>
 
-              <!-- Right Label (SCARP) -->
-              <div class="flex items-center gap-2 ml-4">
-                <i data-lucide="arrow-right" class="w-6 h-6 text-amber-400"></i>
-                <span class="text-amber-400 font-bold italic text-lg">SCARP</span>
-              </div>
-            </div>
+              <!-- Arrow 1 -->
+              <polygon points="248,170 265,160 265,180" fill="#64748b" />
+
+              <!-- Tier 2: E27 (Per-system) -->
+              <g>
+                <rect x="275" y="70" width="210" height="200" rx="14" fill="#ef4444" fill-opacity="0.18" stroke="#ef4444" stroke-width="2" />
+                <text x="295" y="100" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="800" fill="#fca5a5" letter-spacing="2">TIER 2</text>
+                <text x="295" y="128" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="800" fill="#fecaca">E27</text>
+                <text x="295" y="152" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#fecaca">Per-system</text>
+                <text x="295" y="184" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fecaca">각 시스템의</text>
+                <text x="295" y="200" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fecaca">사이버 보안을</text>
+                <text x="295" y="216" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fecaca">전제한 설계와 운영</text>
+                <text x="295" y="248" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600" fill="#fca5a5">Supplier · Integrator</text>
+              </g>
+
+              <!-- Arrow 2 -->
+              <polygon points="503,170 520,160 520,180" fill="#64748b" />
+
+              <!-- Tier 3: SCARP (Operation) -->
+              <g>
+                <rect x="530" y="70" width="170" height="200" rx="14" fill="#f59e0b" fill-opacity="0.18" stroke="#f59e0b" stroke-width="2" />
+                <text x="550" y="100" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="800" fill="#fcd34d" letter-spacing="2">TIER 3</text>
+                <text x="550" y="128" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="800" fill="#fef3c7">SCARP</text>
+                <text x="550" y="152" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#fde68a">Operation</text>
+                <text x="550" y="184" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fde68a">선박 사이버 복원력</text>
+                <text x="550" y="200" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fde68a">프로그램의 상시 수행</text>
+                <text x="550" y="248" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600" fill="#fcd34d">Ship Mgmt. Co.</text>
+              </g>
+            </svg>
           </div>
+        </div>
+
+        <!-- RA Phase 1 → 2 → 3 progression -->
+        <div class="mb-16">
+          <div class="text-center mb-10">
+            <span class="text-cyan-400 font-bold tracking-widest uppercase text-sm" data-i18n="compliance.raPhaseLabel">Risk Assessment Phases</span>
+            <h3 class="text-2xl md:text-3xl font-bold text-white mt-2" data-i18n="compliance.raPhaseTitle">조기 유형 확정을 위한 3단계 위험 평가</h3>
+            <p class="text-slate-400 max-w-2xl mx-auto mt-3 text-sm" data-i18n="compliance.raPhaseSubtitle">
+              시스템 유형이 확정되기 전까지 제출 범위가 유동적이기 때문에, 선정 단계부터 단계별로 위험을 재평가합니다.
+            </p>
+          </div>
+
+          <svg
+            viewBox="0 0 820 220"
+            class="w-full h-auto max-w-5xl mx-auto"
+            role="img"
+            aria-label="Three-phase risk assessment progression: Phase 1 maker selection, Phase 2 drawings and cabling integration, Phase 3 operating environment"
+          >
+            <!-- Phase 1 -->
+            <g>
+              <rect x="10" y="30" width="240" height="160" rx="12" fill="#06b6d4" fill-opacity="0.15" stroke="#06b6d4" stroke-width="2" />
+              <circle cx="40" cy="60" r="18" fill="#06b6d4" />
+              <text x="40" y="65" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">1</text>
+              <text x="68" y="65" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#67e8f9">RA PHASE 1</text>
+              <text x="30" y="100" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#a5f3fc">Maker Selection</text>
+              <text x="30" y="128" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#cffafe">선정 단계 조기 식별</text>
+              <text x="30" y="146" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#cffafe">선급 가이드 + 1:1 분류</text>
+              <text x="30" y="164" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#cffafe">공급사 사전 상담</text>
+            </g>
+            <polygon points="263,110 285,100 285,120" fill="#64748b" />
+
+            <!-- Phase 2 -->
+            <g>
+              <rect x="290" y="30" width="240" height="160" rx="12" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-width="2" />
+              <circle cx="320" cy="60" r="18" fill="#6366f1" />
+              <text x="320" y="65" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">2</text>
+              <text x="348" y="65" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#a5b4fc">RA PHASE 2</text>
+              <text x="310" y="100" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#c7d2fe">Drawing &amp; Cabling</text>
+              <text x="310" y="128" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#e0e7ff">Stage 1 유형 + 자산 정보</text>
+              <text x="310" y="146" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#e0e7ff">도면 · 배선 통합 검토</text>
+              <text x="310" y="164" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#e0e7ff">위협 노출 경로 평가</text>
+            </g>
+            <polygon points="543,110 565,100 565,120" fill="#64748b" />
+
+            <!-- Phase 3 -->
+            <g>
+              <rect x="570" y="30" width="240" height="160" rx="12" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="2" />
+              <circle cx="600" cy="60" r="18" fill="#10b981" />
+              <text x="600" y="65" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">3</text>
+              <text x="628" y="65" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#6ee7b7">RA PHASE 3</text>
+              <text x="590" y="100" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#a7f3d0">Operating Environment</text>
+              <text x="590" y="128" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#d1fae5">실제 운용 환경 반영</text>
+              <text x="590" y="146" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#d1fae5">대응 역량 · 통제 수준</text>
+              <text x="590" y="164" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#d1fae5">알려진 위협 대비 평가</text>
+            </g>
+          </svg>
         </div>
 
         <!-- One-stop Service -->
