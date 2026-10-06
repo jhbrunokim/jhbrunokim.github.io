@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI × Cybersecurity Consulting - 광명마리타임</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Agentic AI SecOps 기반 선박 사이버 보안 컨설팅. Global Compliance · Real-Time Threat Detection · Integrated Operations 3-pillar 서비스와 Zero Trust · Digital Twin · MASS 자율운항 역량."
+    />
+    <meta
+      name="keywords"
+      content="AI Cybersecurity Consulting, Agentic AI SecOps, SIEM, EDR, Zero Trust, Digital Twin, MASS, Cyber Control Center, Threat Intelligence, Attack Surface Management, DevSecOps, 해양 사이버 보안 컨설팅, 광명마리타임"
+    />
+    <meta name="author" content="Gwangmyung Maritime" />
+
+    <!-- Analytics (loaded via consent.js after user opt-in) -->
+    <meta name="ga-id" content="G-CJMFQE9NT4" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://gmmaritime.com/ai-cybersecurity-consulting.html" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AI × Cybersecurity Consulting - 광명마리타임" />
+    <meta
+      property="og:description"
+      content="Agentic AI SecOps · Global Compliance · Integrated Maritime Operations — 선박 사이버 보안 컨설팅 서비스"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gmmaritime.com/ai-cybersecurity-consulting.html" />
+    <meta property="og:site_name" content="광명마리타임" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:image" content="https://gmmaritime.com/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI × Cybersecurity Consulting - 광명마리타임" />
+    <meta
+      name="twitter:description"
+      content="Agentic AI SecOps · Global Compliance · Integrated Maritime Operations — 선박 사이버 보안 컨설팅 서비스"
+    />
+    <meta name="twitter:image" content="https://gmmaritime.com/assets/images/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
+
+    <!-- Theme (must run before body renders to avoid FOUC) -->
+    <script src="assets/js/theme.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>
+      (function () {
+        var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
+        var lang = localStorage.getItem('preferredLanguage') || 'en';
+        var families = ['Inter:wght@400;500;600;700'];
+        if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.googleapis.com/css2?family=' + families.join('&family=') + '&display=swap';
+        document.head.appendChild(link);
+      })();
+    </script>
+
+    <!-- Tailwind CSS (Built) -->
+    <link rel="stylesheet" href="assets/css/output.css" />
+
+    <!-- Lucide Icons -->
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "AI × Cybersecurity Consulting — Gwangmyung Maritime",
+        "url": "https://gmmaritime.com/ai-cybersecurity-consulting.html",
+        "description": "Agentic AI SecOps 기반 선박 사이버 보안 컨설팅. Global Compliance · Real-Time Threat Detection · Integrated Operations 3-pillar 서비스.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "url": "https://gmmaritime.com",
+          "name": "Gwangmyung Maritime"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Gwangmyung Maritime",
+          "url": "https://gmmaritime.com"
+        }
+      }
+    </script>
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden transition-colors duration-300"
+  >
+    <!-- Country/Language Detection Modal (loaded dynamically) -->
+    <div id="country-modal-placeholder"></div>
+
+    <!-- Navigation (loaded dynamically) -->
+    <div id="navbar-placeholder"></div>
+    <a id="main-content" tabindex="-1"></a>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-b from-slate-800 to-slate-700">
+      <div class="max-w-7xl mx-auto px-6">
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1.5 text-slate-400 hover:text-blue-400 text-sm mb-8 transition-colors"
+        >
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span data-i18n="nav.backToOverview">Overview로 돌아가기</span>
+        </a>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="inline-block px-4 py-2 bg-indigo-600/20 text-indigo-300 rounded-full text-sm font-medium mb-6">
+              AI × Cybersecurity Consulting
+            </span>
+            <h1
+              class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
+              data-i18n="aiConsulting.hero.title"
+            >
+              Agentic AI 기반 선박 사이버 보안 컨설팅
+            </h1>
+            <p
+              class="text-slate-300 text-lg leading-relaxed"
+              data-i18n="aiConsulting.hero.subtitle"
+            >
+              Global Compliance · Real-Time Threat Detection · Integrated Maritime Operations 3-pillar 로 선박 생애주기 전체의 사이버 복원력을 설계합니다.
+            </p>
+          </div>
+
+          <!-- Hero SVG: Layered Architecture + Agentic AI Spine -->
+          <div class="relative">
+            <svg
+              viewBox="0 0 440 320"
+              class="w-full h-auto"
+              role="img"
+              aria-label="Layered cyber resilience architecture — Global Compliance, Real-Time Threat Detection, Integrated Operations with Agentic AI spine"
+            >
+              <!-- Backdrop glow -->
+              <defs>
+                <linearGradient id="heroGlow" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25" />
+                  <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.1" />
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="440" height="320" rx="20" fill="url(#heroGlow)" />
+
+              <!-- Layer 3 (top): Integrated Operations -->
+              <g>
+                <rect x="40" y="40" width="340" height="68" rx="10" fill="#10b981" fill-opacity="0.18" stroke="#10b981" stroke-width="2" />
+                <text x="60" y="72" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#6ee7b7">INTEGRATED OPERATIONS</text>
+                <text x="60" y="92" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a7f3d0">SIEM · EDR · Zero Trust · Digital Twin · MASS</text>
+              </g>
+
+              <!-- Layer 2 (middle): Real-Time Threat Detection -->
+              <g>
+                <rect x="40" y="126" width="340" height="68" rx="10" fill="#06b6d4" fill-opacity="0.18" stroke="#06b6d4" stroke-width="2" />
+                <text x="60" y="158" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#67e8f9">REAL-TIME THREAT DETECTION</text>
+                <text x="60" y="178" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a5f3fc">Cyber Control Center · Threat Intel · Attack Surface Mgmt</text>
+              </g>
+
+              <!-- Layer 1 (bottom): Global Compliance -->
+              <g>
+                <rect x="40" y="212" width="340" height="68" rx="10" fill="#6366f1" fill-opacity="0.2" stroke="#6366f1" stroke-width="2" />
+                <text x="60" y="244" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#a5b4fc">GLOBAL COMPLIANCE</text>
+                <text x="60" y="264" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#c7d2fe">IACS UR E26 · E27 · ISO 27001 · ISMS-P · N2SF</text>
+              </g>
+
+              <!-- Agentic AI vertical spine -->
+              <g>
+                <rect x="388" y="40" width="26" height="240" rx="6" fill="#f59e0b" fill-opacity="0.3" stroke="#f59e0b" stroke-width="2" />
+                <text x="401" y="162" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24" text-anchor="middle" transform="rotate(-90, 401, 162)">AGENTIC AI</text>
+              </g>
+
+              <!-- Connecting dots: AI bridging layers -->
+              <circle cx="380" cy="74" r="4" fill="#f59e0b" />
+              <circle cx="380" cy="160" r="4" fill="#f59e0b" />
+              <circle cx="380" cy="246" r="4" fill="#f59e0b" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Maritime Cyber Service Area Section -->
+    <section class="py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span
+            class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase"
+            data-i18n="aiConsulting.serviceArea.label"
+            >Maritime Cyber Service Area</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
+            data-i18n="aiConsulting.serviceArea.title"
+          >
+            효과적인 사이버 보안 컨설팅을 위한 실행 방법론
+          </h2>
+          <p
+            class="text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mt-4"
+            data-i18n="aiConsulting.serviceArea.subtitle"
+          >
+            글로벌 컴플라이언스 · 실시간 위협 탐지 · 운영 통합 보안의 3개 축으로 선박 생애주기 전체를 커버합니다.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Pillar 1: Global Compliance -->
+          <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-shadow flex flex-col">
+            <div class="bg-indigo-100 dark:bg-indigo-900/40 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+              <i data-lucide="landmark" class="w-7 h-7 text-indigo-600 dark:text-indigo-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="aiConsulting.serviceArea.pillar1.title">Global Compliance</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-5 leading-relaxed" data-i18n="aiConsulting.serviceArea.pillar1.desc">국제 규제 · 선급 가이드라인 · 글로벌 보안 표준 전반에 걸친 통합 대응</p>
+            <ul class="space-y-2.5 text-sm text-slate-700 dark:text-slate-300 flex-1">
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar1.item1">IACS UR E10 · E26 · E27 · BIMCO</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar1.item2">선급 가이드라인 (NK · BV · KR 등)</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar1.item3">Port Rules & Regulations</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar1.item4">ISO 27001 / 27701 / 42001 · ISMS-P · N2SF Governance</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar1.item5">선급 Liaison & Survey Response</span></li>
+            </ul>
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700">
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+                <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                <span data-i18n="aiConsulting.serviceArea.pillar1.target">Target: 선주 · 조선소</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Real-Time Threat Detection & Management Center -->
+          <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-shadow flex flex-col">
+            <div class="bg-cyan-100 dark:bg-cyan-900/40 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+              <i data-lucide="radar" class="w-7 h-7 text-cyan-600 dark:text-cyan-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="aiConsulting.serviceArea.pillar2.title">Real-Time Threat Detection & Management Center</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-5 leading-relaxed" data-i18n="aiConsulting.serviceArea.pillar2.desc">사전 탐지 · 실시간 대응 · 사후 분석을 아우르는 Agentic AI 기반 보안 관제</p>
+            <ul class="space-y-2.5 text-sm text-slate-700 dark:text-slate-300 flex-1">
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar2.item1">Pre-Detection · Detection · Response 가이드라인</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar2.item2">솔루션 설계 & 서비스 구축</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar2.item3">Cyber Control Centers & Services</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar2.item4">Threat Intelligence & Malware Analysis</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar2.item5">Agentic AI SecOps & Incident Response</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar2.item6">Attack Surface Management</span></li>
+            </ul>
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700">
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-600 dark:text-cyan-400">
+                <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                <span data-i18n="aiConsulting.serviceArea.pillar2.target">Target: 선주 · 조선소 · 공급사</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Integrated Cyber Security for Maritime Operations -->
+          <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-shadow flex flex-col">
+            <div class="bg-emerald-100 dark:bg-emerald-900/40 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+              <i data-lucide="network" class="w-7 h-7 text-emerald-600 dark:text-emerald-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="aiConsulting.serviceArea.pillar3.title">Integrated Cyber Security for Maritime Operations</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-5 leading-relaxed" data-i18n="aiConsulting.serviceArea.pillar3.desc">IT · OT · 자율운항까지 아우르는 선박 운영 전주기 통합 보안</p>
+            <ul class="space-y-2.5 text-sm text-slate-700 dark:text-slate-300 flex-1">
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar3.item1">Customized Security Solutions (SIEM · EDR · Anti-Virus)</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar3.item2">BMT for Solution Implementation</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar3.item3">운영 단계 Cyber Policies</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar3.item4">OT Defence-in-Depth (CBS · ECDIS · VDR)</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar3.item5">Zero Trust & Converged IT / OT</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0"></i><span data-i18n="aiConsulting.serviceArea.pillar3.item6">Digital Twin & MASS 자율운항</span></li>
+            </ul>
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700">
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                <span data-i18n="aiConsulting.serviceArea.pillar3.target">Target: 선주 · 조선소 · 공급사</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI-Driven Engineering & Cross-Domain Expertise Section -->
+    <section class="py-24 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span
+            class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase"
+            data-i18n="aiConsulting.aiEngineering.label"
+            >AI × Cross-Domain Capability</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
+            data-i18n="aiConsulting.aiEngineering.title"
+          >
+            전통 조선 · 해운 위에 쌓아 올린 AI 엔지니어링 역량
+          </h2>
+          <p
+            class="text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mt-4"
+            data-i18n="aiConsulting.aiEngineering.intro"
+          >
+            설계 · 클라우드 · 차세대 운영 세 축의 AI 역량을 Maritime · Defense · Offshore · Merchant Fleet 4개 도메인에서 재사용합니다.
+          </p>
+        </div>
+
+        <!-- Central Agentic AI Hub SVG -->
+        <div class="max-w-3xl mx-auto mb-14">
+          <svg
+            viewBox="0 0 560 280"
+            class="w-full h-auto"
+            role="img"
+            aria-label="Agentic AI central hub connecting Design Lifecycle, Cloud & Pipeline, and Next-Gen Operations clusters"
+          >
+            <!-- Connecting lines (behind nodes) -->
+            <g stroke-width="2" fill="none" opacity="0.55">
+              <line x1="280" y1="140" x2="110" y2="80" stroke="#3b82f6" />
+              <line x1="280" y1="140" x2="110" y2="200" stroke="#06b6d4" />
+              <line x1="280" y1="140" x2="450" y2="140" stroke="#6366f1" />
+            </g>
+
+            <!-- Center: Agentic AI -->
+            <g>
+              <circle cx="280" cy="140" r="52" fill="#f59e0b" fill-opacity="0.2" stroke="#f59e0b" stroke-width="2.5" />
+              <text x="280" y="135" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="800" fill="#f59e0b" text-anchor="middle">AGENTIC AI</text>
+              <text x="280" y="152" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#d97706" text-anchor="middle">SecOps Core</text>
+            </g>
+
+            <!-- Cluster 1: Design Lifecycle (upper-left) -->
+            <g>
+              <rect x="20" y="40" width="180" height="80" rx="10" fill="#3b82f6" fill-opacity="0.14" stroke="#3b82f6" stroke-width="2" />
+              <text x="110" y="68" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#60a5fa" text-anchor="middle">DESIGN LIFECYCLE</text>
+              <text x="110" y="88" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#93c5fd" text-anchor="middle">AI Platform Development</text>
+              <text x="110" y="104" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#93c5fd" text-anchor="middle">Data Governance</text>
+            </g>
+
+            <!-- Cluster 2: Cloud & Pipeline (lower-left) -->
+            <g>
+              <rect x="20" y="160" width="180" height="80" rx="10" fill="#06b6d4" fill-opacity="0.14" stroke="#06b6d4" stroke-width="2" />
+              <text x="110" y="188" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#22d3ee" text-anchor="middle">CLOUD & PIPELINE</text>
+              <text x="110" y="208" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#67e8f9" text-anchor="middle">AWS · GCP · Azure</text>
+              <text x="110" y="224" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#67e8f9" text-anchor="middle">DevSecOps Pipeline</text>
+            </g>
+
+            <!-- Cluster 3: Next-Gen Operations (right) -->
+            <g>
+              <rect x="360" y="100" width="180" height="80" rx="10" fill="#6366f1" fill-opacity="0.14" stroke="#6366f1" stroke-width="2" />
+              <text x="450" y="128" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#818cf8" text-anchor="middle">NEXT-GEN OPS</text>
+              <text x="450" y="148" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#a5b4fc" text-anchor="middle">Digital Twin · MASS</text>
+              <text x="450" y="164" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#a5b4fc" text-anchor="middle">Zero Trust Reference</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+          <!-- Cluster 1: Design Lifecycle -->
+          <div class="bg-white dark:bg-slate-900 p-7 rounded-2xl border border-slate-200 dark:border-slate-700">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="bg-blue-100 dark:bg-blue-900/40 p-2.5 rounded-lg">
+                <i data-lucide="cpu" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white" data-i18n="aiConsulting.aiEngineering.cluster1.title">Design Lifecycle</h3>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></span><span data-i18n="aiConsulting.aiEngineering.cluster1.item1">Agentic AI SecOps</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></span><span data-i18n="aiConsulting.aiEngineering.cluster1.item2">AI-driven Platform Development</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></span><span data-i18n="aiConsulting.aiEngineering.cluster1.item3">데이터 거버넌스 · 흐름 구조화</span></li>
+            </ul>
+          </div>
+
+          <!-- Cluster 2: Cloud & Pipeline -->
+          <div class="bg-white dark:bg-slate-900 p-7 rounded-2xl border border-slate-200 dark:border-slate-700">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="bg-cyan-100 dark:bg-cyan-900/40 p-2.5 rounded-lg">
+                <i data-lucide="cloud" class="w-5 h-5 text-cyan-600 dark:text-cyan-400"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white" data-i18n="aiConsulting.aiEngineering.cluster2.title">Cloud & Pipeline</h3>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-cyan-500 rounded-full mt-1.5 flex-shrink-0"></span><span data-i18n="aiConsulting.aiEngineering.cluster2.item1">AWS · GCP · Azure 보안</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-cyan-500 rounded-full mt-1.5 flex-shrink-0"></span><span data-i18n="aiConsulting.aiEngineering.cluster2.item2">DevSecOps 파이프라인 설계</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-cyan-500 rounded-full mt-1.5 flex-shrink-0"></span><span data-i18n="aiConsulting.aiEngineering.cluster2.item3">Converged IT / OT Architecture</span></li>
+            </ul>
+          </div>
+
+          <!-- Cluster 3: Next-Gen Operations -->
+          <div class="bg-white dark:bg-slate-900 p-7 rounded-2xl border border-slate-200 dark:border-slate-700">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="bg-indigo-100 dark:bg-indigo-900/40 p-2.5 rounded-lg">
+                <i data-lucide="rocket" class="w-5 h-5 text-indigo-600 dark:text-indigo-400"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white" data-i18n="aiConsulting.aiEngineering.cluster3.title">Next-Gen Operations</h3>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mt-1.5 flex-shrink-0"></span><span data-i18n="aiConsulting.aiEngineering.cluster3.item1">Digital Twin · MASS 자율운항</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mt-1.5 flex-shrink-0"></span><span data-i18n="aiConsulting.aiEngineering.cluster3.item2">Zero Trust Reference Architecture</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mt-1.5 flex-shrink-0"></span><span data-i18n="aiConsulting.aiEngineering.cluster3.item3">실시간 AI 기반 위협 모니터링</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cross-Domain Band -->
+        <div>
+          <h3
+            class="text-center text-sm font-bold tracking-widest uppercase text-slate-500 dark:text-slate-400 mb-6"
+            data-i18n="aiConsulting.aiEngineering.domainBandTitle"
+          >
+            4-Domain Coverage
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl p-5 text-center">
+              <div class="inline-flex items-center justify-center w-12 h-12 bg-indigo-100 dark:bg-indigo-900/40 rounded-full mb-3">
+                <i data-lucide="ship" class="w-6 h-6 text-indigo-600 dark:text-indigo-400"></i>
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1" data-i18n="aiConsulting.aiEngineering.domain1.name">Maritime</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="aiConsulting.aiEngineering.domain1.desc">조선 · 스마트십 · OT 보안</p>
+            </div>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl p-5 text-center">
+              <div class="inline-flex items-center justify-center w-12 h-12 bg-cyan-100 dark:bg-cyan-900/40 rounded-full mb-3">
+                <i data-lucide="shield" class="w-6 h-6 text-cyan-600 dark:text-cyan-400"></i>
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1" data-i18n="aiConsulting.aiEngineering.domain2.name">Defense</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="aiConsulting.aiEngineering.domain2.desc">국가 사이버 위협 분석 · 대응</p>
+            </div>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl p-5 text-center">
+              <div class="inline-flex items-center justify-center w-12 h-12 bg-emerald-100 dark:bg-emerald-900/40 rounded-full mb-3">
+                <i data-lucide="anchor" class="w-6 h-6 text-emerald-600 dark:text-emerald-400"></i>
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1" data-i18n="aiConsulting.aiEngineering.domain3.name">Offshore</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="aiConsulting.aiEngineering.domain3.desc">해양 플랫폼 설계 · 통합</p>
+            </div>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl p-5 text-center">
+              <div class="inline-flex items-center justify-center w-12 h-12 bg-amber-100 dark:bg-amber-900/40 rounded-full mb-3">
+                <i data-lucide="truck" class="w-6 h-6 text-amber-600 dark:text-amber-400"></i>
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1" data-i18n="aiConsulting.aiEngineering.domain4.name">Merchant Fleet</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="aiConsulting.aiEngineering.domain4.desc">선대 OT 보안 · 자율운항</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Differentiation Section -->
+    <section class="py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span
+            class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase"
+            data-i18n="aiConsulting.differentiation.label"
+            >What Makes Us Different</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
+            data-i18n="aiConsulting.differentiation.title"
+          >
+            문서가 아닌 구조로, 인증이 아닌 운영으로
+          </h2>
+          <p
+            class="text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mt-4"
+            data-i18n="aiConsulting.differentiation.subtitle"
+          >
+            7개 축에서 기존 컨설팅과 광명마리타임의 접근 방식이 어떻게 다른지 비교합니다.
+          </p>
+        </div>
+
+        <!-- Flow comparison SVG -->
+        <div class="max-w-4xl mx-auto mb-14">
+          <svg
+            viewBox="0 0 640 180"
+            class="w-full h-auto"
+            role="img"
+            aria-label="Comparison of competitor project flow (ends at delivery) vs Gwangmyung Maritime flow (spans design to survey)"
+          >
+            <!-- Competitors path (upper, dim) -->
+            <g>
+              <text x="20" y="30" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">COMPETITORS</text>
+              <rect x="20" y="42" width="110" height="34" rx="6" fill="#94a3b8" fill-opacity="0.15" stroke="#94a3b8" stroke-width="1.5" />
+              <text x="75" y="63" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Design</text>
+              <line x1="130" y1="59" x2="160" y2="59" stroke="#94a3b8" stroke-width="1.5" />
+              <rect x="160" y="42" width="110" height="34" rx="6" fill="#94a3b8" fill-opacity="0.15" stroke="#94a3b8" stroke-width="1.5" />
+              <text x="215" y="63" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Development</text>
+              <line x1="270" y1="59" x2="300" y2="59" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3" />
+              <text x="330" y="63" font-family="Inter, system-ui, sans-serif" font-size="10" font-style="italic" fill="#94a3b8">(ends here)</text>
+            </g>
+
+            <!-- Gwangmyung Maritime path (lower, accented) -->
+            <g>
+              <text x="20" y="118" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#6366f1">GWANGMYUNG MARITIME</text>
+              <rect x="20" y="130" width="100" height="34" rx="6" fill="#6366f1" fill-opacity="0.2" stroke="#6366f1" stroke-width="1.5" />
+              <text x="70" y="151" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#4f46e5" text-anchor="middle">Design</text>
+              <line x1="120" y1="147" x2="140" y2="147" stroke="#6366f1" stroke-width="1.5" />
+              <rect x="140" y="130" width="100" height="34" rx="6" fill="#6366f1" fill-opacity="0.2" stroke="#6366f1" stroke-width="1.5" />
+              <text x="190" y="151" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#4f46e5" text-anchor="middle">Development</text>
+              <line x1="240" y1="147" x2="260" y2="147" stroke="#6366f1" stroke-width="1.5" />
+              <rect x="260" y="130" width="80" height="34" rx="6" fill="#6366f1" fill-opacity="0.2" stroke="#6366f1" stroke-width="1.5" />
+              <text x="300" y="151" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#4f46e5" text-anchor="middle">FAT</text>
+              <line x1="340" y1="147" x2="360" y2="147" stroke="#6366f1" stroke-width="1.5" />
+              <rect x="360" y="130" width="100" height="34" rx="6" fill="#6366f1" fill-opacity="0.2" stroke="#6366f1" stroke-width="1.5" />
+              <text x="410" y="151" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#4f46e5" text-anchor="middle">Delivery</text>
+              <line x1="460" y1="147" x2="480" y2="147" stroke="#6366f1" stroke-width="1.5" />
+              <rect x="480" y="130" width="100" height="34" rx="6" fill="#6366f1" fill-opacity="0.25" stroke="#6366f1" stroke-width="2" />
+              <text x="530" y="151" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="700" fill="#4f46e5" text-anchor="middle">Survey</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="max-w-5xl mx-auto space-y-6">
+          <!-- Dim 1 -->
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center justify-center w-9 h-9 bg-indigo-600 text-white rounded-full text-xs font-bold">01</span>
+              <i data-lucide="search" class="w-5 h-5 text-indigo-600 dark:text-indigo-400"></i>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white" data-i18n="aiConsulting.differentiation.dim1.title">Problem Recognition</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="order-last md:order-first bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5">
+                <span class="inline-block px-2 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded mb-2" data-i18n="aiConsulting.differentiation.competitorsLabel">Competitors</span>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="aiConsulting.differentiation.dim1.competitor">필요 기능을 설계 · 개발하고 산출물 문서를 준비</p>
+              </div>
+              <div class="order-first md:order-last bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 rounded-xl p-5">
+                <span class="inline-block px-2 py-0.5 bg-indigo-600 text-white text-xs font-semibold rounded mb-2" data-i18n="aiConsulting.differentiation.usLabel">Gwangmyung Maritime</span>
+                <p class="text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-medium" data-i18n="aiConsulting.differentiation.dim1.us">근본 문제를 해결하고 장기 지속 가능성 기준으로 판단</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dim 2 -->
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center justify-center w-9 h-9 bg-indigo-600 text-white rounded-full text-xs font-bold">02</span>
+              <i data-lucide="target" class="w-5 h-5 text-indigo-600 dark:text-indigo-400"></i>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white" data-i18n="aiConsulting.differentiation.dim2.title">Goal Setting</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="order-last md:order-first bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5">
+                <span class="inline-block px-2 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded mb-2" data-i18n="aiConsulting.differentiation.competitorsLabel">Competitors</span>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="aiConsulting.differentiation.dim2.competitor">시스템 구축 · 납품 · 인증 획득이 목표</p>
+              </div>
+              <div class="order-first md:order-last bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 rounded-xl p-5">
+                <span class="inline-block px-2 py-0.5 bg-indigo-600 text-white text-xs font-semibold rounded mb-2" data-i18n="aiConsulting.differentiation.usLabel">Gwangmyung Maritime</span>
+                <p class="text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-medium" data-i18n="aiConsulting.differentiation.dim2.us">컴플라이언스는 결과물 하나일 뿐 — 운영 가능한 구조와 거버넌스 확보</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dim 3 -->
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center justify-center w-9 h-9 bg-indigo-600 text-white rounded-full text-xs font-bold">03</span>
+              <i data-lucide="layout" class="w-5 h-5 text-indigo-600 dark:text-indigo-400"></i>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white" data-i18n="aiConsulting.differentiation.dim3.title">Structural Design</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="order-last md:order-first bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5">
+                <span class="inline-block px-2 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded mb-2" data-i18n="aiConsulting.differentiation.competitorsLabel">Competitors</span>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="aiConsulting.differentiation.dim3.competitor">필요 기능이 제공되는지 중심 · 보안 솔루션과 장비 도입</p>
+              </div>
+              <div class="order-first md:order-last bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 rounded-xl p-5">
+                <span class="inline-block px-2 py-0.5 bg-indigo-600 text-white text-xs font-semibold rounded mb-2" data-i18n="aiConsulting.differentiation.usLabel">Gwangmyung Maritime</span>
+                <p class="text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-medium" data-i18n="aiConsulting.differentiation.dim3.us">OT · IT · 원격 접속의 연결 구조와 경계를 가장 먼저 설계</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dim 4 -->
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center justify-center w-9 h-9 bg-indigo-600 text-white rounded-full text-xs font-bold">04</span>
+              <i data-lucide="cpu" class="w-5 h-5 text-indigo-600 dark:text-indigo-400"></i>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white" data-i18n="aiConsulting.differentiation.dim4.title">Technology Application</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="order-last md:order-first bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5">
+                <span class="inline-block px-2 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded mb-2" data-i18n="aiConsulting.differentiation.competitorsLabel">Competitors</span>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="aiConsulting.differentiation.dim4.competitor">IT / OT 기술의 단순 적용 · 사이버 보안 가이드라인 수용 중심</p>
+              </div>
+              <div class="order-first md:order-last bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 rounded-xl p-5">
+                <span class="inline-block px-2 py-0.5 bg-indigo-600 text-white text-xs font-semibold rounded mb-2" data-i18n="aiConsulting.differentiation.usLabel">Gwangmyung Maritime</span>
+                <p class="text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-medium" data-i18n="aiConsulting.differentiation.dim4.us">IT / OT 기술을 넘어 가용성과 운영 현실에 최적화된 기술 선택</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dim 5 -->
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center justify-center w-9 h-9 bg-indigo-600 text-white rounded-full text-xs font-bold">05</span>
+              <i data-lucide="database" class="w-5 h-5 text-indigo-600 dark:text-indigo-400"></i>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white" data-i18n="aiConsulting.differentiation.dim5.title">Data & AI Utilization</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="order-last md:order-first bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5">
+                <span class="inline-block px-2 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded mb-2" data-i18n="aiConsulting.differentiation.competitorsLabel">Competitors</span>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="aiConsulting.differentiation.dim5.competitor">데이터 수집 · AI 적용 자체에 집중</p>
+              </div>
+              <div class="order-first md:order-last bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 rounded-xl p-5">
+                <span class="inline-block px-2 py-0.5 bg-indigo-600 text-white text-xs font-semibold rounded mb-2" data-i18n="aiConsulting.differentiation.usLabel">Gwangmyung Maritime</span>
+                <p class="text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-medium" data-i18n="aiConsulting.differentiation.dim5.us">데이터 거버넌스와 흐름을 먼저 구조화한 뒤 데이터 / AI 활용</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dim 6 -->
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center justify-center w-9 h-9 bg-indigo-600 text-white rounded-full text-xs font-bold">06</span>
+              <i data-lucide="file-check" class="w-5 h-5 text-indigo-600 dark:text-indigo-400"></i>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white" data-i18n="aiConsulting.differentiation.dim6.title">Regulatory Response</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="order-last md:order-first bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5">
+                <span class="inline-block px-2 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded mb-2" data-i18n="aiConsulting.differentiation.competitorsLabel">Competitors</span>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="aiConsulting.differentiation.dim6.competitor">문서 작성 · 제출 중심</p>
+              </div>
+              <div class="order-first md:order-last bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 rounded-xl p-5">
+                <span class="inline-block px-2 py-0.5 bg-indigo-600 text-white text-xs font-semibold rounded mb-2" data-i18n="aiConsulting.differentiation.usLabel">Gwangmyung Maritime</span>
+                <p class="text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-medium" data-i18n="aiConsulting.differentiation.dim6.us">선급 가이드라인 방향성과 정렬 · 표준화를 통한 효율 확보</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dim 7 -->
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center justify-center w-9 h-9 bg-indigo-600 text-white rounded-full text-xs font-bold">07</span>
+              <i data-lucide="route" class="w-5 h-5 text-indigo-600 dark:text-indigo-400"></i>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white" data-i18n="aiConsulting.differentiation.dim7.title">Project Scope</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="order-last md:order-first bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5">
+                <span class="inline-block px-2 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded mb-2" data-i18n="aiConsulting.differentiation.competitorsLabel">Competitors</span>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="aiConsulting.differentiation.dim7.competitor">설계 · 개발 단계에서 종료</p>
+              </div>
+              <div class="order-first md:order-last bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 rounded-xl p-5">
+                <span class="inline-block px-2 py-0.5 bg-indigo-600 text-white text-xs font-semibold rounded mb-2" data-i18n="aiConsulting.differentiation.usLabel">Gwangmyung Maritime</span>
+                <p class="text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-medium" data-i18n="aiConsulting.differentiation.dim7.us">설계부터 운영까지 (FAT · 납품 · Survey) 전주기 수행</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-slate-900">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4" data-i18n="aiConsulting.cta.title">
+          AI 기반 사이버 보안 컨설팅이 필요하신가요?
+        </h2>
+        <p class="text-slate-400 mb-8 max-w-2xl mx-auto" data-i18n="aiConsulting.cta.desc">
+          Agentic AI SecOps · Zero Trust · Digital Twin 전략까지, 광명마리타임이 함께 설계합니다.
+        </p>
+        <a
+          href="index.html#contact"
+          class="inline-flex items-center gap-2 px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition-colors"
+        >
+          <span data-i18n="aiConsulting.cta.button">상담 문의하기</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer (loaded dynamically) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/country-detector.js"></script>
+    <script src="assets/js/consent.js"></script>
+  </body>
+</html>
