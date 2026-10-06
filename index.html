@@ -102,7 +102,7 @@
       (function () {
         var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
         var lang = localStorage.getItem('preferredLanguage') || 'en';
-        var families = ['Inter:wght@400;500;600;700'];
+        var families = ['Inter:wght@400;500;600;700', 'Space+Grotesk:wght@500;600;700'];
         if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
         var link = document.createElement('link');
         link.rel = 'stylesheet';
@@ -207,7 +207,7 @@
               </div>
               <!-- Title -->
               <h1
-                class="mt-10 text-pretty text-5xl font-semibold tracking-tight text-white sm:text-7xl"
+                class="font-display mt-10 text-pretty text-5xl font-semibold tracking-tight text-white sm:text-7xl"
                 data-i18n="hero.title"
                 data-i18n-html="true"
               >
@@ -340,7 +340,7 @@
             >Our Journey</span
           >
           <h2
-            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
+            class="font-display text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
             data-i18n="expertise.title"
           >
             광명 마리타임이 걸어온 길
@@ -596,7 +596,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
           <h2
-            class="text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-snug"
+            class="font-display text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-snug"
             data-i18n="vision.title"
           >
             우리가 만드는 가치
@@ -727,7 +727,7 @@
               Our Vision
             </h3>
             <h2
-              class="text-3xl md:text-4xl font-bold text-white mb-8 leading-snug"
+              class="font-display text-3xl md:text-4xl font-bold text-white mb-8 leading-snug"
               data-i18n="vision.visionTitle"
               data-i18n-html="true"
             >
@@ -765,7 +765,7 @@
             >Business</span
           >
           <h2
-            class="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white leading-snug mt-4"
+            class="font-display text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white leading-snug mt-4"
             data-i18n="systemIntegration.title"
           >
             사업 범위
@@ -878,7 +878,7 @@
             >Competitiveness</span
           >
           <h2
-            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
+            class="font-display text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
             data-i18n="competitivenessSection.title"
           >
             핵심 경쟁력
@@ -1005,7 +1005,7 @@
             >Articles</span
           >
           <h2
-            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
+            class="font-display text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
             data-i18n="articlesSection.title"
           >
             최신 인사이트
@@ -1018,7 +1018,7 @@
           </p>
         </div>
 
-        <div id="articles-preview-list" class="grid md:grid-cols-3 gap-6 mb-10"></div>
+        <div id="articles-preview-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10"></div>
 
         <div class="text-center">
           <a
@@ -1038,7 +1038,7 @@
         <!-- Header -->
         <div class="mb-16 text-center">
           <h2
-            class="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white leading-snug"
+            class="font-display text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white leading-snug"
             data-i18n="about.title"
           >
             About Us
@@ -1246,7 +1246,7 @@
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl lg:max-w-none">
               <h2
-                class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-6"
+                class="font-display text-2xl font-bold text-gray-900 dark:text-white text-center mb-6"
                 data-i18n="about.supportScopeTitle"
               >
                 지원 범위
@@ -1493,7 +1493,7 @@
           <!-- Left: Core Values -->
           <div class="text-center md:text-left">
             <h2
-              class="font-bold text-slate-900 dark:text-white max-w-full"
+              class="font-display font-bold text-slate-900 dark:text-white max-w-full"
               style="
                 font-size: clamp(3rem, 6vw, 6rem);
                 line-height: 1.3;

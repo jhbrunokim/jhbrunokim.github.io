@@ -60,7 +60,7 @@
       (function () {
         var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
         var lang = localStorage.getItem('preferredLanguage') || 'en';
-        var families = ['Inter:wght@400;500;600;700'];
+        var families = ['Inter:wght@400;500;600;700', 'Space+Grotesk:wght@500;600;700'];
         if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
         var link = document.createElement('link');
         link.rel = 'stylesheet';
@@ -121,7 +121,7 @@
             Maritime Cybersecurity
           </span>
           <h1
-            class="text-4xl md:text-5xl font-bold text-white mb-6"
+            class="font-display text-4xl md:text-5xl font-bold text-white mb-6"
             data-i18n="maritimeCyber.title"
           >
             해양 사이버 보안 플랫폼
@@ -140,13 +140,8 @@
     <section class="py-24 bg-white dark:bg-slate-900">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
-          <span
-            class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase"
-            data-i18n="maritimeCyber.conceptLabel"
-            >Our Approach</span
-          >
           <h2
-            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
+            class="font-display text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
             data-i18n="maritimeCyber.conceptTitle"
           >
             사후 대응이 아닌, 설계 단계부터 심는 보안
@@ -200,7 +195,7 @@
 
         <!-- 3+1 Lifecycle -->
         <div class="mb-8">
-          <div class="grid md:grid-cols-3 gap-6 mb-6">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
             <!-- Design -->
             <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl border-2 border-blue-200 dark:border-blue-900">
               <div class="flex items-center gap-3 mb-4">
@@ -295,20 +290,15 @@
     <section class="py-24 bg-slate-50 dark:bg-slate-800">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
-          <span
-            class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase"
-            data-i18n="maritimeCyber.solutionsLabel"
-            >Solution Modules</span
-          >
           <h2
-            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
+            class="font-display text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
             data-i18n="maritimeCyber.solutionsTitle"
           >
             3개 카테고리로 구성된 해양 보안 모듈
           </h2>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Security Engineering (SE) -->
           <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-shadow">
             <div class="flex items-center gap-3 mb-6">
@@ -478,13 +468,8 @@
     <section class="py-24 bg-white dark:bg-slate-900">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
-          <span
-            class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase"
-            data-i18n="maritimeCyber.usersLabel"
-            >Target Users</span
-          >
           <h2
-            class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
+            class="font-display text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2 leading-snug"
             data-i18n="maritimeCyber.usersTitle"
           >
             선박 생태계 전체를 위한 보안 파트너
@@ -572,13 +557,8 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <span
-              class="text-indigo-300 font-bold tracking-widest uppercase"
-              data-i18n="maritimeCyber.complianceLabel"
-              >Compliance Ready</span
-            >
             <h2
-              class="text-3xl md:text-4xl font-bold text-white mt-2 mb-6 leading-snug"
+              class="font-display text-3xl md:text-4xl font-bold text-white mt-2 mb-6 leading-snug"
               data-i18n="maritimeCyber.complianceTitle"
             >
               IACS UR E26 / E27 문서 자동화
@@ -638,7 +618,7 @@
     <section class="py-16 bg-slate-900">
       <div class="max-w-4xl mx-auto px-6 text-center">
         <h2
-          class="text-2xl font-bold text-white mb-4"
+          class="font-display text-2xl font-bold text-white mb-4"
           data-i18n="maritimeCyber.ctaTitle"
         >
           선박 사이버 보안 도입을 검토 중이신가요?

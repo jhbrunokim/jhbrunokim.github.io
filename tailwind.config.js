@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'Noto Sans KR', 'Noto Sans SC', 'Noto Sans JP', 'sans-serif']
+        sans: ['Inter', 'Noto Sans KR', 'Noto Sans SC', 'Noto Sans JP', 'sans-serif'],
+        display: ['Space Grotesk', 'Noto Sans KR', 'Noto Sans SC', 'Noto Sans JP', 'sans-serif']
       },
       animation: {
         'blob': 'blob 7s infinite',

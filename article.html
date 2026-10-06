@@ -28,7 +28,7 @@
       (function () {
         var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
         var lang = localStorage.getItem('preferredLanguage') || 'en';
-        var families = ['Inter:wght@400;500;600;700'];
+        var families = ['Inter:wght@400;500;600;700', 'Space+Grotesk:wght@500;600;700'];
         if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
         var link = document.createElement('link');
         link.rel = 'stylesheet';
