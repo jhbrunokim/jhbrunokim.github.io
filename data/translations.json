@@ -348,7 +348,8 @@
     "aiConsulting": {
       "hero": {
         "title": "Agentic AI 기반 선박 사이버 보안 컨설팅",
-        "subtitle": "Global Compliance · Real-Time Threat Detection · Integrated Maritime Operations 3-pillar 로 선박 생애주기 전체의 사이버 복원력을 설계합니다."
+        "subtitle": "Global Compliance · Real-Time Threat Detection · Integrated Maritime Operations 3-pillar 로 선박 생애주기 전체의 사이버 복원력을 설계합니다.",
+        "ctaSecondary": "서비스 영역 보기"
       },
       "serviceArea": {
         "title": "효과적인 사이버 보안 컨설팅을 위한 실행 방법론",
@@ -464,12 +465,14 @@
           "title": "Project Scope",
           "competitor": "설계 · 개발 단계에서 종료",
           "us": "설계부터 운영까지 (FAT · 납품 · Survey) 전주기 수행"
-        }
+        },
+        "axisLabel": "비교 축"
       },
       "cta": {
         "title": "AI 기반 사이버 보안 컨설팅이 필요하신가요?",
         "desc": "Agentic AI SecOps · Zero Trust · Digital Twin 전략까지, 광명마리타임이 함께 설계합니다.",
-        "button": "상담 문의하기"
+        "button": "상담 문의하기",
+        "secondary": "관련 아티클 읽기"
       }
     }
   },
@@ -822,7 +825,8 @@
     "aiConsulting": {
       "hero": {
         "title": "Agentic AI-driven Maritime Cybersecurity Consulting",
-        "subtitle": "Three pillars — Global Compliance, Real-Time Threat Detection, Integrated Maritime Operations — designing cyber resilience across the full vessel lifecycle."
+        "subtitle": "Three pillars — Global Compliance, Real-Time Threat Detection, Integrated Maritime Operations — designing cyber resilience across the full vessel lifecycle.",
+        "ctaSecondary": "See service areas"
       },
       "serviceArea": {
         "title": "Execution methodology for effective cybersecurity consulting",
@@ -938,12 +942,14 @@
           "title": "Project Scope",
           "competitor": "Ends at the design-development stage.",
           "us": "Delivery spanning design to operation (FAT · Delivery · Survey)."
-        }
+        },
+        "axisLabel": "Dimension"
       },
       "cta": {
         "title": "Need AI-driven cybersecurity consulting?",
         "desc": "From Agentic AI SecOps to Zero Trust and Digital Twin strategy — Gwangmyung Maritime designs it with you.",
-        "button": "Contact us"
+        "button": "Contact us",
+        "secondary": "Read related articles"
       }
     }
   },
@@ -1296,7 +1302,8 @@
     "aiConsulting": {
       "hero": {
         "title": "基于 Agentic AI 的船舶网络安全咨询",
-        "subtitle": "通过全球合规、实时威胁检测、海事运营综合安全三大支柱,设计覆盖船舶全生命周期的网络韧性。"
+        "subtitle": "通过全球合规、实时威胁检测、海事运营综合安全三大支柱,设计覆盖船舶全生命周期的网络韧性。",
+        "ctaSecondary": "查看服务领域"
       },
       "serviceArea": {
         "title": "有效开展网络安全咨询的执行方法论",
@@ -1412,12 +1419,14 @@
           "title": "项目范围",
           "competitor": "在设计—开发阶段结束。",
           "us": "贯穿设计到运营 (FAT · 交付 · 检验) 的全周期交付。"
-        }
+        },
+        "axisLabel": "比较维度"
       },
       "cta": {
         "title": "需要 AI 驱动的网络安全咨询吗?",
         "desc": "从 Agentic AI SecOps 到 Zero Trust、数字孪生战略,光明海事与您一起设计。",
-        "button": "联系我们"
+        "button": "联系我们",
+        "secondary": "阅读相关文章"
       }
     }
   },
@@ -1770,7 +1779,8 @@
     "aiConsulting": {
       "hero": {
         "title": "Agentic AI ベースの 船舶 サイバーセキュリティ コンサルティング",
-        "subtitle": "Global Compliance · Real-Time Threat Detection · Integrated Maritime Operations の 3-pillar で 船舶 ライフサイクル 全体の サイバー レジリエンスを 設計します。"
+        "subtitle": "Global Compliance · Real-Time Threat Detection · Integrated Maritime Operations の 3-pillar で 船舶 ライフサイクル 全体の サイバー レジリエンスを 設計します。",
+        "ctaSecondary": "サービス領域を見る"
       },
       "serviceArea": {
         "title": "効果的な サイバーセキュリティ コンサルティングの ための 実行 方法論",
@@ -1886,12 +1896,14 @@
           "title": "Project Scope",
           "competitor": "設計 · 開発 段階で 終了。",
           "us": "設計から 運用まで (FAT · 納品 · Survey) 全周期で 遂行。"
-        }
+        },
+        "axisLabel": "比較軸"
       },
       "cta": {
         "title": "AI ベースの サイバーセキュリティ コンサルティングが 必要 ですか?",
         "desc": "Agentic AI SecOps · Zero Trust · Digital Twin 戦略まで、光明マリタイムが ともに 設計します。",
-        "button": "お問い合わせ"
+        "button": "お問い合わせ",
+        "secondary": "関連記事を読む"
       }
     }
   }
