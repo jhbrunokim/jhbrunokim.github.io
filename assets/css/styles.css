@@ -156,6 +156,19 @@
   background-color: #f8fafc;
   font-weight: 600;
 }
+/* Body copy uses word-break: keep-all, so multi-column tables can't shrink
+   below their longest Korean word. On narrow screens let the table scroll
+   inside its own box instead of pushing the whole page sideways. */
+@media (max-width: 767px) {
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .prose th, .prose td {
+    min-width: 7rem;
+  }
+}
 .prose img {
   max-width: 100%;
   border-radius: 0.5rem;
