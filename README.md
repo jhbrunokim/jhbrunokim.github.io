@@ -55,6 +55,7 @@ jhbrunokim.github.io/
 ├── system-integration.html           # Competitiveness ▸ System Integration
 ├── maritime-cybersecurity.html       # Competitiveness ▸ Maritime Cybersecurity
 ├── compliance.html                   # Competitiveness ▸ Compliance
+├── ai-cybersecurity-consulting.html  # Competitiveness ▸ AI × Cybersecurity Consulting
 ├── articles.html                     # 아티클 목록
 ├── article.html                      # 아티클 본문 뷰어 (hash로 slug 지정)
 ├── privacy-policy.html               # 개인정보 처리방침

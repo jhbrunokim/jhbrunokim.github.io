@@ -102,7 +102,7 @@ class LayoutManager {
     const isIndex = currentPath === '/' || currentPath.endsWith('/');
 
     const compBtn = document.querySelector('[data-dropdown-toggle]');
-    const isCompetitivenessPage = /\/(system-integration|maritime-cybersecurity|compliance)\.html$/.test(window.location.pathname);
+    const isCompetitivenessPage = /\/(system-integration|maritime-cybersecurity|compliance|ai-cybersecurity-consulting)\.html$/.test(window.location.pathname);
     const isArticlesPage = /\/(articles|article)\.html$/.test(window.location.pathname);
 
     const setActive = (linkHref) => {

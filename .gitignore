@@ -8,8 +8,10 @@ assets/css/output.css
 .DS_Store
 Thumbs.db
 
-# IDE
+# IDE / tooling
 .serena
+.claude/
+.playwright-mcp/
 .vscode/
 .idea/
 *.swp
