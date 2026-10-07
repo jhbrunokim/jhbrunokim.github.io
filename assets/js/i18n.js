@@ -56,6 +56,16 @@ class I18nManager {
       }
     });
 
+    // Update accessible names of icon-only controls
+    document.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
+      const key = element.getAttribute('data-i18n-aria-label');
+      const value = this.getNestedValue(lang, key);
+
+      if (value) {
+        element.setAttribute('aria-label', value);
+      }
+    });
+
     // Update select option texts
     document.querySelectorAll('select option[data-i18n]').forEach(option => {
       const key = option.getAttribute('data-i18n');

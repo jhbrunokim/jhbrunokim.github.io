@@ -286,7 +286,9 @@
       "coreValue4": "Partnership",
       "coreValue4Desc": "상생하는 협력 관계",
       "supportScopeStandards": "표준 · 프레임워크",
-      "supportScopeClassLiaison": "선급 Liaison"
+      "supportScopeClassLiaison": "선급 Liaison",
+      "marqueePause": "로고 흐름 멈추기",
+      "marqueePlay": "로고 흐름 다시 재생"
     },
     "footer": {
       "description": "조선 · 해양 산업을 위한 선박 OT 및 사이버 보안 중심의 기술 전문 기업.",
@@ -752,7 +754,9 @@
       "coreValue4": "Partnership",
       "coreValue4Desc": "Collaborative Win-Win Relationships",
       "supportScopeStandards": "Standards · frameworks",
-      "supportScopeClassLiaison": "Class society liaison"
+      "supportScopeClassLiaison": "Class society liaison",
+      "marqueePause": "Pause logos",
+      "marqueePlay": "Play logos"
     },
     "footer": {
       "description": "Technical company specializing in ship OT and cyber security for the shipbuilding and maritime industry.",
@@ -1218,7 +1222,9 @@
       "coreValue4": "Partnership",
       "coreValue4Desc": "合作共赢的关系",
       "supportScopeStandards": "标准 · 框架",
-      "supportScopeClassLiaison": "船级社联络"
+      "supportScopeClassLiaison": "船级社联络",
+      "marqueePause": "暂停标志滚动",
+      "marqueePlay": "继续标志滚动"
     },
     "footer": {
       "description": "专门从事造船和海事行业船舶OT和网络安全的技术公司。",
@@ -1684,7 +1690,9 @@
       "coreValue4": "Partnership",
       "coreValue4Desc": "共生する 協力 関係",
       "supportScopeStandards": "標準 · フレームワーク",
-      "supportScopeClassLiaison": "船級 リエゾン"
+      "supportScopeClassLiaison": "船級 リエゾン",
+      "marqueePause": "ロゴの流れを一時停止",
+      "marqueePlay": "ロゴの流れを再生"
     },
     "footer": {
       "description": "造船・海事産業向けの 船舶OTおよび サイバーセキュリティ 専門技術会社。",

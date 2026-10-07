@@ -283,3 +283,55 @@
     font-size: clamp(3rem, 6vw, 6rem);
   }
 }
+
+/* Support-scope logo marquee (class societies). Two identical sets slide
+   left by exactly one set width; each set carries trailing padding equal
+   to the gap so the seam is invisible. */
+.logo-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+.logo-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: logo-marquee 45s linear infinite;
+}
+.logo-marquee__set {
+  display: flex;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+  margin: 0;
+  list-style: none;
+}
+.logo-marquee__item {
+  flex: none;
+  width: 11rem;
+}
+.logo-marquee:hover .logo-marquee__track,
+.logo-marquee:focus-within .logo-marquee__track,
+.logo-marquee.is-paused .logo-marquee__track {
+  animation-play-state: paused;
+}
+@keyframes logo-marquee {
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .logo-marquee__track {
+    animation: none;
+    width: auto;
+  }
+  .logo-marquee__set {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 0;
+  }
+  .logo-marquee__set[aria-hidden="true"],
+  .logo-marquee__toggle {
+    display: none;
+  }
+}
