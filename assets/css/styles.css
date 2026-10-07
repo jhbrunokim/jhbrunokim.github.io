@@ -18,7 +18,7 @@
 /* Nav active indicators */
 .nav-link.is-active,
 .mobile-link.is-active {
-  color: rgb(96 165 250);
+  color: #8ab9e6; /* ocean-300 */
 }
 .nav-link.is-active:not([role="menuitem"]) {
   position: relative;
@@ -30,11 +30,11 @@
   right: 0;
   bottom: -6px;
   height: 2px;
-  background: rgb(96 165 250);
+  background: #8ab9e6; /* ocean-300 */
   border-radius: 2px;
 }
 .nav-link[role="menuitem"].is-active {
-  background: rgba(51 65 85 / 0.6);
+  background: #052d4c; /* ocean-900 */
 }
 
 /* Custom Utilities */
@@ -94,7 +94,7 @@
   line-height: 1.8;
 }
 .prose a {
-  color: #2563eb;
+  color: #0d5387; /* ocean-700 */
   text-decoration: underline;
 }
 .prose strong {
@@ -132,7 +132,7 @@
   font-size: 0.875rem;
 }
 .prose blockquote {
-  border-left: 4px solid #3b82f6;
+  border-left: 4px solid #2a7fc3; /* ocean-500 */
   padding-left: 1rem;
   margin: 1.5rem 0;
   font-style: italic;
@@ -174,6 +174,7 @@
   border-radius: 0.5rem;
   margin: 1.5rem 0;
 }
+
 
 /* Line clamp utility */
 .line-clamp-2 {

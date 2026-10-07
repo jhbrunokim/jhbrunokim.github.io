@@ -77,12 +77,12 @@ class ArticlesManager {
               ${this.formatDate(article.date)}
             </time>
             ${article.category ? `
-              <span class="inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-900/30 px-2.5 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-300">
+              <span class="inline-flex items-center rounded-full bg-ocean-50 dark:bg-ocean-900/30 px-2.5 py-0.5 text-xs font-medium text-ocean-700 dark:text-ocean-300">
                 ${article.category}
               </span>
             ` : ''}
           </div>
-          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-ocean-700 dark:group-hover:text-ocean-300 transition-colors">
             <a href="article.html#${article.slug}" class="block">
               <span class="absolute inset-0"></span>
               ${article.title}
@@ -91,7 +91,7 @@ class ArticlesManager {
           <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
             ${article.description}
           </p>
-          <div class="mt-4 flex items-center text-sm font-medium text-blue-600 dark:text-blue-400">
+          <div class="mt-4 flex items-center text-sm font-medium text-ocean-700 dark:text-ocean-300">
             <span>Read article</span>
             <svg class="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -121,12 +121,12 @@ class ArticlesManager {
             ${this.formatDate(article.date)}
           </time>
           ${article.category ? `
-            <span class="inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-900/30 px-2.5 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-300">
+            <span class="inline-flex items-center rounded-full bg-ocean-50 dark:bg-ocean-900/30 px-2.5 py-0.5 text-xs font-medium text-ocean-700 dark:text-ocean-300">
               ${article.category}
             </span>
           ` : ''}
         </div>
-        <h3 class="text-base font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
+        <h3 class="text-base font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-ocean-700 dark:group-hover:text-ocean-300 transition-colors leading-snug">
           ${article.title}
         </h3>
         <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
@@ -157,17 +157,17 @@ class ArticlesManager {
     const metaContainer = document.getElementById(metaContainerId);
     if (metaContainer) {
       metaContainer.innerHTML = `
-        <div class="flex items-center gap-x-3 text-sm text-slate-500 dark:text-slate-400 mb-4">
+        <div class="flex items-center gap-x-3 text-sm text-slate-300 mb-4">
           <time datetime="${meta.date}">${this.formatDate(meta.date)}</time>
           ${meta.category ? `
-            <span class="inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-900/30 px-2.5 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-300">
+            <span class="inline-flex items-center rounded-full bg-ocean-50 dark:bg-ocean-900/30 px-2.5 py-0.5 text-xs font-medium text-ocean-700 dark:text-ocean-300">
               ${meta.category}
             </span>
           ` : ''}
         </div>
         <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">${meta.title}</h1>
         <p class="text-slate-300 text-lg">${meta.description}</p>
-        ${meta.author ? `<p class="mt-4 text-sm text-slate-400">By ${meta.author}</p>` : ''}
+        ${meta.author ? `<p class="mt-4 text-sm text-slate-300">By ${meta.author}</p>` : ''}
       `;
     }
 
@@ -193,7 +193,7 @@ class ArticlesManager {
       container.innerHTML = `
         <div class="text-center py-16">
           <p class="text-slate-500 dark:text-slate-400 mb-4">${message}</p>
-          <a href="articles.html" class="text-blue-600 dark:text-blue-400 hover:underline">Back to Articles</a>
+          <a href="articles.html" class="text-ocean-700 dark:text-ocean-300 hover:underline">Back to Articles</a>
         </div>
       `;
     }

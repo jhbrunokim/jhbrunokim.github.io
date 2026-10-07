@@ -51,7 +51,7 @@
             class="px-4 py-2 text-sm font-medium rounded-md border border-slate-600 hover:bg-slate-800 transition-colors"
             data-i18n="consent.decline">거부</button>
           <button type="button" id="consent-accept"
-            class="px-4 py-2 text-sm font-medium rounded-md bg-blue-600 hover:bg-blue-500 transition-colors"
+            class="px-4 py-2 text-sm font-medium rounded-md bg-ocean-700 hover:bg-ocean-800 transition-colors"
             data-i18n="consent.accept">동의</button>
         </div>
       </div>

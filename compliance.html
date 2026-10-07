@@ -106,374 +106,344 @@
     <div id="navbar-placeholder"></div>
     <a id="main-content" tabindex="-1"></a>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-16 bg-gradient-to-b from-slate-800 to-slate-700">
+    <!-- Hero — the page's one thesis and the evidence for it -->
+    <section class="pt-32 pb-20 bg-ocean-900">
       <div class="max-w-7xl mx-auto px-6">
-        <a
-          href="index.html"
-          class="inline-flex items-center gap-1.5 text-slate-300 hover:text-blue-400 text-sm mb-8 transition-colors"
-        >
+        <a href="index.html" class="inline-flex items-center gap-1.5 text-slate-300 hover:text-ocean-200 text-sm mb-10 transition-colors">
           <i data-lucide="arrow-left" class="w-4 h-4"></i>
           <span data-i18n="nav.backToOverview">Overview로 돌아가기</span>
         </a>
-        <div class="text-center">
-          <span class="inline-block px-4 py-2 bg-cyan-600/20 text-cyan-400 rounded-full text-sm font-medium mb-6">
-            Compliance
-          </span>
-          <h1
-            class="font-display text-4xl md:text-5xl font-bold text-white mb-6"
-            data-i18n="compliance.title"
-          >
-            Maritime Cyber Security
-          </h1>
-          <p
-            class="text-slate-400 max-w-3xl mx-auto text-lg"
-            data-i18n="compliance.subtitle"
-          >
-            IACS UR E26 / E27 - 선박 사이버 복원력 강제화
-          </p>
+        <div class="grid gap-12 lg:grid-cols-12 lg:gap-12 items-center">
+          <div class="lg:col-span-8">
+            <p class="text-sm font-semibold text-ocean-200 mb-5">IACS UR E26 / E27 Compliance</p>
+            <h1 class="font-display text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.15]" data-i18n="compliance.thesisTitle">유형을 늦게 정하면, 일정이 밀립니다.</h1>
+            <p class="mt-6 text-slate-300 text-lg leading-relaxed max-w-2xl" data-i18n="compliance.thesisLede">제출 문서의 범위는 시스템 유형이 확정되어야 고정됩니다. 광명마리타임은 메이커 선정 단계에서 유형을 정하고, 단계마다 위험을 다시 평가합니다.</p>
+            <div class="mt-10 flex flex-wrap gap-3">
+              <a href="index.html#contact" class="inline-flex items-center gap-2 whitespace-nowrap rounded-md bg-signal-400 px-5 py-3 text-sm font-semibold text-ink-950 hover:bg-signal-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+                <span data-i18n="aiConsulting.cta.button">상담 문의하기</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a href="#deliverables" class="inline-flex items-center gap-2 whitespace-nowrap rounded-md border border-ocean-300 px-5 py-3 text-sm font-semibold text-white hover:border-ocean-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+                <span data-i18n="compliance.ctaDeliverables">역할별 산출물 보기</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-14">
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm mb-4">
+            <span class="inline-flex items-center gap-2 text-slate-300"><span class="w-6 h-1.5 rounded-full bg-slate-400" aria-hidden="true"></span><span data-i18n="compliance.trackLate">유형을 늦게 정하면</span></span>
+            <span class="inline-flex items-center gap-2 font-semibold text-white"><span class="w-6 h-1.5 rounded-full bg-signal-400" aria-hidden="true"></span><span data-i18n="compliance.trackEarly">광명마리타임</span></span>
+          </div>
+          <ol class="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+            <li class="grid grid-rows-[auto_1fr_auto] gap-3 rounded-lg border border-ocean-700 bg-ocean-800/60 p-4">
+              <p class="font-display text-lg font-bold text-white"><span class="text-ocean-200 text-sm tabular-nums mr-2">01</span><span data-i18n="compliance.stage1">메이커 선정 · 견적</span></p>
+              <div class="rounded-md bg-ocean-950/40 p-3">
+                <p class="text-xs font-semibold text-slate-400 mb-1" data-i18n="compliance.trackLate">유형을 늦게 정하면</p>
+                <p class="text-sm leading-relaxed text-slate-300" data-i18n="compliance.ready1Desc">UR E27 적용 여부를 설명하지 못합니다.</p>
+              </div>
+              <div class="rounded-md bg-ocean-950/60 p-3 border-t-2 border-signal-400">
+                <p class="text-xs font-semibold text-signal-300 mb-1" data-i18n="compliance.trackEarly">광명마리타임</p>
+                <p class="text-sm leading-relaxed text-white" data-i18n="compliance.early1">RA 1 · 선정 단계에서 유형 확정, 선급 가이드 제공</p>
+              </div>
+            </li>
+            <li class="grid grid-rows-[auto_1fr_auto] gap-3 rounded-lg border border-ocean-700 bg-ocean-800/60 p-4">
+              <p class="font-display text-lg font-bold text-white"><span class="text-ocean-200 text-sm tabular-nums mr-2">02</span><span data-i18n="compliance.stage2">승인도면</span></p>
+              <div class="rounded-md bg-ocean-950/40 p-3">
+                <p class="text-xs font-semibold text-slate-400 mb-1" data-i18n="compliance.trackLate">유형을 늦게 정하면</p>
+                <p class="text-sm leading-relaxed text-slate-300" data-i18n="compliance.ready2Desc">보안 기능과 외부 인터페이스 정의가 부족해 선급 코멘트가 반복됩니다.</p>
+              </div>
+              <div class="rounded-md bg-ocean-950/60 p-3 border-t-2 border-signal-400">
+                <p class="text-xs font-semibold text-signal-300 mb-1" data-i18n="compliance.trackEarly">광명마리타임</p>
+                <p class="text-sm leading-relaxed text-white" data-i18n="compliance.early2">RA 2 · 도면 · 배선으로 위협 노출 경로 평가</p>
+              </div>
+            </li>
+            <li class="grid grid-rows-[auto_1fr_auto] gap-3 rounded-lg border border-ocean-700 bg-ocean-800/60 p-4">
+              <p class="font-display text-lg font-bold text-white"><span class="text-ocean-200 text-sm tabular-nums mr-2">03</span><span data-i18n="compliance.stage3">FAT</span></p>
+              <div class="rounded-md bg-ocean-950/40 p-3">
+                <p class="text-xs font-semibold text-slate-400 mb-1" data-i18n="compliance.trackLate">유형을 늦게 정하면</p>
+                <p class="text-sm leading-relaxed text-slate-300" data-i18n="compliance.ready3Desc">계정 관리, 로깅, 백업 · 복구, 원격 접속 통제가 요건에 미달하는 것으로 확인됩니다.</p>
+              </div>
+              <div class="rounded-md bg-ocean-950/60 p-3 border-t-2 border-signal-400">
+                <p class="text-xs font-semibold text-signal-300 mb-1" data-i18n="compliance.trackEarly">광명마리타임</p>
+                <p class="text-sm leading-relaxed text-white" data-i18n="compliance.early3">RA 3 · 실제 운용 환경 기준으로 통제 수준 평가</p>
+              </div>
+            </li>
+            <li class="grid grid-rows-[auto_1fr_auto] gap-3 rounded-lg border border-ocean-700 bg-ocean-800/60 p-4">
+              <p class="font-display text-lg font-bold text-white"><span class="text-ocean-200 text-sm tabular-nums mr-2">04</span><span data-i18n="compliance.stage4">인도</span></p>
+              <div class="rounded-md bg-red-950/50 border border-red-400/50 p-3">
+                <p class="text-xs font-semibold text-slate-400 mb-1" data-i18n="compliance.trackLate">유형을 늦게 정하면</p>
+                <p class="text-sm leading-relaxed text-red-100" data-i18n="compliance.ready4Desc">소프트웨어 · 네트워크 아키텍처 변경과 납기 조정이 필요해지고, 조선소는 대체 공급사를 검토합니다.</p>
+              </div>
+              <div class="rounded-md bg-ocean-950/60 p-3 border-t-2 border-signal-400">
+                <p class="text-xs font-semibold text-signal-300 mb-1" data-i18n="compliance.trackEarly">광명마리타임</p>
+                <p class="text-sm leading-relaxed text-white" data-i18n="compliance.early4">인도 후 SCARP로 운항 단계까지 관리</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
-
-    <!-- Main Content -->
-    <section class="py-24 bg-slate-800 text-white">
+    <section id="types" class="py-24 bg-white dark:bg-slate-900">
       <div class="max-w-7xl mx-auto px-6">
-        <!-- IACS UR E26 / E27 / SCARP — 3-tier scope diagram -->
-        <div class="mb-16">
-          <div class="max-w-3xl mb-10">
-            <h3 class="font-display text-2xl md:text-3xl font-bold text-white" data-i18n="compliance.diagramTitle">선박 사이버 복원력 강제화의 3단계 적용 범위</h3>
-            <p class="text-slate-300 mt-3 leading-relaxed" data-i18n="compliance.diagramSubtitle">
-              E26(선박 전체) → E27(개별 시스템) → SCARP(운항 단계) 로 책임 범위가 확장됩니다.
-            </p>
-          </div>
-
-          <!-- 3-Tier SVG spine (language-neutral codes only; prose lives in the cards below) -->
-          <div class="max-w-md mx-auto mb-8">
-            <svg
-              viewBox="0 0 380 584"
-              class="w-full h-auto"
-              role="img"
-              aria-label="IACS UR E26 covers ship-level cyber security management, E27 covers per-system design and operation, SCARP covers the operation lifecycle"
-            >
-              <text x="20" y="22" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#93c5fd" letter-spacing="2">BUILD STAGE</text>
-
-              <!-- Tier 1: E26 -->
-              <g>
-                <rect x="20" y="36" width="340" height="142" rx="14" fill="#3b82f6" fill-opacity="0.18" stroke="#3b82f6" stroke-width="2" />
-                <text x="44" y="66" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="800" fill="#93c5fd" letter-spacing="2">TIER 1</text>
-                <text x="44" y="108" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="800" fill="#dbeafe">E26</text>
-                <text x="44" y="134" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700" fill="#bfdbfe">Ship-wide</text>
-                <text x="44" y="160" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#93c5fd">Owner · Shipyard</text>
-              </g>
-
-              <polygon points="190,206 180,186 200,186" fill="#64748b" />
-
-              <!-- Tier 2: E27 -->
-              <g>
-                <rect x="20" y="214" width="340" height="142" rx="14" fill="#ef4444" fill-opacity="0.18" stroke="#ef4444" stroke-width="2" />
-                <text x="44" y="244" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="800" fill="#fca5a5" letter-spacing="2">TIER 2</text>
-                <text x="44" y="286" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="800" fill="#fee2e2">E27</text>
-                <text x="44" y="312" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700" fill="#fecaca">Per-system</text>
-                <text x="44" y="338" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#fca5a5">Supplier · Integrator</text>
-              </g>
-
-              <polygon points="190,384 180,364 200,364" fill="#64748b" />
-
-              <!-- Tier 3: SCARP -->
-              <g>
-                <rect x="20" y="392" width="340" height="142" rx="14" fill="#f59e0b" fill-opacity="0.18" stroke="#f59e0b" stroke-width="2" />
-                <text x="44" y="422" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="800" fill="#fcd34d" letter-spacing="2">TIER 3</text>
-                <text x="44" y="464" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="#fef3c7">SCARP</text>
-                <text x="44" y="490" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700" fill="#fde68a">Operation</text>
-                <text x="44" y="516" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#fcd34d">Ship Mgmt. Co.</text>
-              </g>
-
-              <text x="20" y="566" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#fbbf24" letter-spacing="2">OPERATION STAGE</text>
-            </svg>
-          </div>
-
-          <!-- Tier descriptions (reflow + translate) -->
-          <dl class="max-w-3xl mx-auto divide-y divide-slate-600 border-y border-slate-600">
-            <div class="grid grid-cols-[4.5rem_minmax(0,1fr)] gap-4 py-4">
-              <dt class="font-display font-bold text-blue-300">E26</dt>
-              <dd class="text-slate-200 text-sm leading-relaxed" data-i18n="compliance.tier1Desc">선박 전체의 사이버 보안 개념과 관리 체계를 확보합니다.</dd>
-            </div>
-            <div class="grid grid-cols-[4.5rem_minmax(0,1fr)] gap-4 py-4">
-              <dt class="font-display font-bold text-red-300">E27</dt>
-              <dd class="text-slate-200 text-sm leading-relaxed" data-i18n="compliance.tier2Desc">각 시스템의 사이버 보안을 전제한 설계와 운영을 요구합니다.</dd>
-            </div>
-            <div class="grid grid-cols-[4.5rem_minmax(0,1fr)] gap-4 py-4">
-              <dt class="font-display font-bold text-amber-300">SCARP</dt>
-              <dd class="text-slate-200 text-sm leading-relaxed" data-i18n="compliance.tier3Desc">운항 단계에서 선박 사이버 복원력 프로그램을 상시 수행합니다.</dd>
-            </div>
-          </dl>
+        <div class="grid gap-6 lg:grid-cols-2 lg:gap-16 lg:items-end mb-12">
+          <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight" data-i18n="compliance.typeTitle">시스템 유형 분류</h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="compliance.typeLead">제출해야 할 문서의 범위는 시스템 유형이 확정되어야 고정됩니다. 유형이 정해지지 않은 상태는 그대로 일정 리스크가 됩니다.</p>
         </div>
-
-        <!-- System Type Classification — the thing RA Phase 1–3 exists to settle early -->
-        <div class="mb-16">
-          <div class="max-w-3xl mb-8">
-            <h3 class="font-display text-2xl md:text-3xl font-bold text-white" data-i18n="compliance.typeTitle">시스템 유형 분류</h3>
-            <p class="text-slate-300 mt-3 leading-relaxed" data-i18n="compliance.typeLead">제출해야 할 문서의 범위는 시스템 유형이 확정되어야 고정됩니다. 유형이 정해지지 않은 상태는 그대로 일정 리스크가 됩니다.</p>
+        <dl class="divide-y divide-slate-200 dark:divide-slate-700 border-y border-slate-200 dark:border-slate-700">
+          <div class="grid gap-1 md:gap-6 md:grid-cols-[9rem_minmax(0,1fr)_minmax(0,15rem)] py-5">
+            <dt class="font-display font-bold text-slate-900 dark:text-white">Non-CBS</dt>
+            <dd class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="compliance.type1Def">UR E26 기준상 컴퓨터 기반 시스템(CBS)에 해당하지 않는 시스템</dd>
+            <dd class="text-sm text-slate-600 dark:text-slate-400" data-i18n="compliance.type1Evidence">Non-CBS 판정 근거 자료 필요</dd>
           </div>
-          <dl class="max-w-5xl divide-y divide-slate-600 border-y border-slate-600">
-            <div class="grid gap-1 md:gap-6 md:grid-cols-[9rem_minmax(0,1fr)_minmax(0,15rem)] py-5">
-              <dt class="font-display font-bold text-slate-200">Non-CBS</dt>
-              <dd class="text-sm text-slate-300 leading-relaxed" data-i18n="compliance.type1Def">UR E26 기준상 컴퓨터 기반 시스템(CBS)에 해당하지 않는 시스템</dd>
-              <dd class="text-sm text-slate-400" data-i18n="compliance.type1Evidence">Non-CBS 판정 근거 자료 필요</dd>
-            </div>
-            <div class="grid gap-1 md:gap-6 md:grid-cols-[9rem_minmax(0,1fr)_minmax(0,15rem)] py-5">
-              <dt class="font-display font-bold text-slate-200">Out-of-Scope</dt>
-              <dd class="text-sm text-slate-300 leading-relaxed" data-i18n="compliance.type2Def">CBS이지만 UR E26 1.3.2의 적용 범위에 포함되지 않는 시스템</dd>
-              <dd class="text-sm text-slate-400" data-i18n="compliance.type2Evidence">적용 범위 외 판정 근거 자료 필요</dd>
-            </div>
-            <div class="grid gap-1 md:gap-6 md:grid-cols-[9rem_minmax(0,1fr)_minmax(0,15rem)] py-5">
-              <dt class="font-display font-bold text-slate-200">Exclusion</dt>
-              <dd class="text-sm text-slate-300 leading-relaxed" data-i18n="compliance.type3Def">CBS이지만 UR E26 6.4의 수용 기준에 따라 요구사항 적용에서 제외되는 시스템</dd>
-              <dd class="text-sm text-slate-400" data-i18n="compliance.type3Evidence">적용 제외 근거 자료 필요</dd>
-            </div>
-            <div class="grid gap-1 md:gap-6 md:grid-cols-[9rem_minmax(0,1fr)_minmax(0,15rem)] py-5">
-              <dt class="font-display font-bold text-amber-300">Target</dt>
-              <dd class="text-sm text-slate-200 leading-relaxed" data-i18n="compliance.type4Def">위 어느 유형에도 해당하지 않아 UR E26 요구사항을 적용받는 CBS</dd>
-              <dd class="text-sm font-semibold text-amber-200" data-i18n="compliance.type4Evidence">전체 설계 문서 제출 의무</dd>
-            </div>
-          </dl>
-        </div>
-
-        <!-- RA Phase 1 → 2 → 3 progression -->
-        <div class="mb-16">
-          <div class="max-w-3xl mb-10">
-            <h3 class="font-display text-2xl md:text-3xl font-bold text-white" data-i18n="compliance.raPhaseTitle">조기 유형 확정을 위한 3단계 위험 평가</h3>
-            <p class="text-slate-300 mt-3 leading-relaxed" data-i18n="compliance.raPhaseSubtitle">
-              시스템 유형이 확정되기 전까지 제출 범위가 유동적이기 때문에, 선정 단계부터 단계별로 위험을 재평가합니다.
-            </p>
+          <div class="grid gap-1 md:gap-6 md:grid-cols-[9rem_minmax(0,1fr)_minmax(0,15rem)] py-5">
+            <dt class="font-display font-bold text-slate-900 dark:text-white">Out-of-Scope</dt>
+            <dd class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="compliance.type2Def">CBS이지만 UR E26 1.3.2의 적용 범위에 포함되지 않는 시스템</dd>
+            <dd class="text-sm text-slate-600 dark:text-slate-400" data-i18n="compliance.type2Evidence">적용 범위 외 판정 근거 자료 필요</dd>
           </div>
-
-          <div class="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <!-- Phase 1 -->
-            <div class="relative bg-cyan-500/10 border-2 border-cyan-500 rounded-xl p-6">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-cyan-500 text-slate-900 font-extrabold text-sm shrink-0">1</span>
-                <span class="font-bold text-cyan-300 tracking-wide text-sm">RA PHASE 1</span>
-              </div>
-              <h4 class="font-semibold text-cyan-100 mb-3" data-i18n="compliance.raPhase1Sub">Maker Selection</h4>
-              <ul class="space-y-1.5 text-sm text-slate-300">
+          <div class="grid gap-1 md:gap-6 md:grid-cols-[9rem_minmax(0,1fr)_minmax(0,15rem)] py-5">
+            <dt class="font-display font-bold text-slate-900 dark:text-white">Exclusion</dt>
+            <dd class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="compliance.type3Def">CBS이지만 UR E26 6.4의 수용 기준에 따라 요구사항 적용에서 제외되는 시스템</dd>
+            <dd class="text-sm text-slate-600 dark:text-slate-400" data-i18n="compliance.type3Evidence">적용 제외 근거 자료 필요</dd>
+          </div>
+          <div class="grid gap-1 md:gap-6 md:grid-cols-[9rem_minmax(0,1fr)_minmax(0,15rem)] py-5">
+            <dt class="font-display font-bold text-ocean-700 dark:text-ocean-300">Target</dt>
+            <dd class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="compliance.type4Def">위 어느 유형에도 해당하지 않아 UR E26 요구사항을 적용받는 CBS</dd>
+            <dd class="text-sm font-semibold text-slate-900 dark:text-white" data-i18n="compliance.type4Evidence">전체 설계 문서 제출 의무</dd>
+          </div>
+        </dl>
+        <details class="group mt-6">
+          <summary class="inline-flex items-center gap-1.5 cursor-pointer list-none rounded font-semibold text-ocean-700 dark:text-ocean-300 [&::-webkit-details-marker]:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+            <span data-i18n="compliance.raPhaseTitle">조기 유형 확정을 위한 3단계 위험 평가</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
+          </summary>
+          <div class="mt-5">
+          <p class="max-w-3xl text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="compliance.raPhaseSubtitle">시스템 유형이 확정되기 전까지 제출 범위가 유동적이기 때문에, 선정 단계부터 단계별로 위험을 재평가합니다.</p>
+          <div class="mt-5 grid gap-6 md:grid-cols-3">
+            <div class="border-t border-slate-200 dark:border-slate-700 pt-4">
+              <p class="text-sm font-semibold text-ocean-700 dark:text-ocean-300">RA PHASE 1</p>
+              <p class="mt-1 font-semibold text-slate-900 dark:text-white" data-i18n="compliance.raPhase1Sub">Maker Selection</p>
+              <ul class="mt-2 space-y-1 text-sm text-slate-600 dark:text-slate-400">
                 <li data-i18n="compliance.raPhase1Item1">선정 단계 조기 식별</li>
                 <li data-i18n="compliance.raPhase1Item2">선급 가이드 + 1:1 분류</li>
                 <li data-i18n="compliance.raPhase1Item3">공급사 사전 상담</li>
               </ul>
             </div>
-
-            <!-- Phase 2 -->
-            <div class="relative bg-indigo-500/10 border-2 border-indigo-500 rounded-xl p-6">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-indigo-500 text-slate-900 font-extrabold text-sm shrink-0">2</span>
-                <span class="font-bold text-indigo-300 tracking-wide text-sm">RA PHASE 2</span>
-              </div>
-              <h4 class="font-semibold text-indigo-100 mb-3" data-i18n="compliance.raPhase2Sub">Drawing &amp; Cabling</h4>
-              <ul class="space-y-1.5 text-sm text-slate-300">
+            <div class="border-t border-slate-200 dark:border-slate-700 pt-4">
+              <p class="text-sm font-semibold text-ocean-700 dark:text-ocean-300">RA PHASE 2</p>
+              <p class="mt-1 font-semibold text-slate-900 dark:text-white" data-i18n="compliance.raPhase2Sub">Drawing &amp; Cabling</p>
+              <ul class="mt-2 space-y-1 text-sm text-slate-600 dark:text-slate-400">
                 <li data-i18n="compliance.raPhase2Item1">Stage 1 유형 + 자산 정보</li>
                 <li data-i18n="compliance.raPhase2Item2">도면 · 배선 통합 검토</li>
                 <li data-i18n="compliance.raPhase2Item3">위협 노출 경로 평가</li>
               </ul>
             </div>
-
-            <!-- Phase 3 -->
-            <div class="relative bg-emerald-500/10 border-2 border-emerald-500 rounded-xl p-6">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-emerald-500 text-slate-900 font-extrabold text-sm shrink-0">3</span>
-                <span class="font-bold text-emerald-300 tracking-wide text-sm">RA PHASE 3</span>
-              </div>
-              <h4 class="font-semibold text-emerald-100 mb-3" data-i18n="compliance.raPhase3Sub">Operating Environment</h4>
-              <ul class="space-y-1.5 text-sm text-slate-300">
+            <div class="border-t border-slate-200 dark:border-slate-700 pt-4">
+              <p class="text-sm font-semibold text-ocean-700 dark:text-ocean-300">RA PHASE 3</p>
+              <p class="mt-1 font-semibold text-slate-900 dark:text-white" data-i18n="compliance.raPhase3Sub">Operating Environment</p>
+              <ul class="mt-2 space-y-1 text-sm text-slate-600 dark:text-slate-400">
                 <li data-i18n="compliance.raPhase3Item1">실제 운용 환경 반영</li>
                 <li data-i18n="compliance.raPhase3Item2">대응 역량 · 통제 수준</li>
                 <li data-i18n="compliance.raPhase3Item3">알려진 위협 대비 평가</li>
               </ul>
             </div>
           </div>
-        </div>
-
-        <!-- UR E27 Supplier Readiness — where the risk actually surfaces, and which conformity route fits -->
-        <div class="mb-16">
-          <div class="max-w-3xl mb-8">
-            <h3 class="font-display text-2xl md:text-3xl font-bold text-white" data-i18n="compliance.readyTitle">UR E27 공급사 준비도</h3>
-            <p class="text-slate-300 mt-3 leading-relaxed" data-i18n="compliance.readyLead">UR E27 적합성을 설명하고 입증하지 못하는 제품은 조선소의 설계 · 구매 · 승인 과정에서 선택받기 어려워집니다.</p>
           </div>
-
-          <p class="text-sm font-semibold text-slate-400 mb-4" data-i18n="compliance.readyStagesLabel">리스크가 실제로 드러나는 지점 — 프로젝트 단계별</p>
-          <ol class="grid gap-3 md:grid-cols-2 lg:grid-cols-4 mb-14">
-            <li class="rounded-lg border border-slate-600 bg-slate-700/40 p-5">
-              <span class="font-display text-sm font-bold text-slate-400">1</span>
-              <h4 class="font-semibold text-white mt-1 mb-2" data-i18n="compliance.ready1Title">견적 · 기술협상</h4>
-              <p class="text-sm text-slate-300 leading-relaxed" data-i18n="compliance.ready1Desc">UR E27 적용 여부를 설명하지 못합니다.</p>
-            </li>
-            <li class="rounded-lg border border-slate-600 bg-slate-700/40 p-5">
-              <span class="font-display text-sm font-bold text-slate-400">2</span>
-              <h4 class="font-semibold text-white mt-1 mb-2" data-i18n="compliance.ready2Title">승인도면 제출</h4>
-              <p class="text-sm text-slate-300 leading-relaxed" data-i18n="compliance.ready2Desc">보안 기능과 외부 인터페이스 정의가 부족해 선급 코멘트가 반복됩니다.</p>
-            </li>
-            <li class="rounded-lg border border-slate-600 bg-slate-700/40 p-5">
-              <span class="font-display text-sm font-bold text-slate-400">3</span>
-              <h4 class="font-semibold text-white mt-1 mb-2" data-i18n="compliance.ready3Title">FAT 직전</h4>
-              <p class="text-sm text-slate-300 leading-relaxed" data-i18n="compliance.ready3Desc">계정 관리, 로깅, 백업 · 복구, 원격 접속 통제가 요건에 미달하는 것으로 확인됩니다.</p>
-            </li>
-            <li class="rounded-lg border border-red-400/60 bg-red-950/50 p-5">
-              <span class="font-display text-sm font-bold text-red-300">4</span>
-              <h4 class="font-semibold text-red-100 mt-1 mb-2" data-i18n="compliance.ready4Title">최악의 시나리오</h4>
-              <p class="text-sm text-red-100/90 leading-relaxed" data-i18n="compliance.ready4Desc">소프트웨어 · 네트워크 아키텍처 변경과 납기 조정이 필요해지고, 조선소는 대체 공급사를 검토합니다.</p>
-            </li>
-          </ol>
-
-          <h4 class="font-display text-xl font-bold text-white mb-4" data-i18n="compliance.routeTitle">TA · SoC · SoF — 등급이 아니라 적합성 입증 수단입니다</h4>
-          <dl class="max-w-5xl divide-y divide-slate-600 border-y border-slate-600">
-            <div class="grid gap-1 md:gap-6 md:grid-cols-[14rem_minmax(0,1fr)] py-5">
-              <dt><span class="font-display font-bold text-cyan-300">TA</span> <span class="text-sm text-slate-400">Type Approval</span></dt>
-              <dd class="text-sm text-slate-200 leading-relaxed" data-i18n="compliance.routeTA">동일한 표준 제품을 여러 조선소와 선박에 반복 납품하는 공급사에 적합합니다.</dd>
-            </div>
-            <div class="grid gap-1 md:gap-6 md:grid-cols-[14rem_minmax(0,1fr)] py-5">
-              <dt><span class="font-display font-bold text-cyan-300">SoC</span> <span class="text-sm text-slate-400">Statement of Compliance</span></dt>
-              <dd class="text-sm text-slate-200 leading-relaxed" data-i18n="compliance.routeSoC">특정 제품 버전이나 프로젝트가 우선일 때 현실적인 출발점입니다.</dd>
-            </div>
-            <div class="grid gap-1 md:gap-6 md:grid-cols-[14rem_minmax(0,1fr)] py-5">
-              <dt><span class="font-display font-bold text-cyan-300">SoF</span> <span class="text-sm text-slate-400">Statement of Fact</span></dt>
-              <dd class="text-sm text-slate-200 leading-relaxed" data-i18n="compliance.routeSoF">개별 선박 프로젝트의 설계 승인과 제품 검사 절차에 초점을 맞춘 방식입니다.</dd>
-            </div>
-          </dl>
-          <p class="mt-8 max-w-3xl font-display text-lg text-white leading-relaxed" data-i18n="compliance.readyTakeaway">UR E27 대응은 인증서를 받는 일이 아니라, 제품의 보안 역량과 그것을 만들고 유지하는 엔지니어링 체계를 함께 갖추는 일입니다.</p>
-        </div>
-
-        <!-- One-stop Service -->
-        <div class="mb-12">
-          <h3
-            class="font-display text-2xl md:text-3xl font-bold mb-8 text-white"
-            data-i18n="compliance.oneStopServiceTitle"
-          >
-            One-stop Service
-          </h3>
-
-          <div class="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 p-6 rounded-xl mb-8 border border-blue-700">
-            <div class="flex items-center gap-4 flex-wrap">
-              <span class="text-white font-semibold">Advisory</span>
-              <i data-lucide="arrow-right" class="w-5 h-5 text-blue-400"></i>
-              <span class="text-white font-semibold">Design</span>
-              <i data-lucide="arrow-right" class="w-5 h-5 text-blue-400"></i>
-              <span class="text-white font-semibold">Integration Support</span>
-              <i data-lucide="arrow-right" class="w-5 h-5 text-blue-400"></i>
-              <span class="text-white font-semibold">Operation Readiness</span>
-            </div>
+        </details>
+      </div>
+    </section>
+    <section class="py-24 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          <div class="max-w-sm w-full mx-auto lg:mx-0">
+            <svg viewBox="0 0 380 500" class="w-full h-auto" role="img" aria-label="IACS UR E26 covers ship-level cyber security management, E27 covers per-system design and operation, SCARP covers the operation lifecycle">
+              <rect x="20" y="16" width="340" height="132" rx="6" fill="#2a7fc3" fill-opacity="0.13" stroke="#2a7fc3" stroke-width="1.5" />
+              <text x="44" y="46" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#0d5387" class="dark:fill-ocean-200" letter-spacing="1.5">TIER 1</text>
+              <text x="44" y="84" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="#094069" class="dark:fill-ocean-100">E26</text>
+              <text x="44" y="110" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" fill="#0f172a" class="dark:fill-slate-100">Ship-wide</text>
+              <text x="44" y="134" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#475569" class="dark:fill-slate-300">Owner · Shipyard</text>
+              <polygon points="190,180 182,166 198,166" fill="#94a3b8" />
+              <rect x="20" y="184" width="340" height="132" rx="6" fill="#2a7fc3" fill-opacity="0.18" stroke="#2a7fc3" stroke-width="1.5" />
+              <text x="44" y="214" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#0d5387" class="dark:fill-ocean-200" letter-spacing="1.5">TIER 2</text>
+              <text x="44" y="252" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="#094069" class="dark:fill-ocean-100">E27</text>
+              <text x="44" y="278" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" fill="#0f172a" class="dark:fill-slate-100">Per-system</text>
+              <text x="44" y="302" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#475569" class="dark:fill-slate-300">Supplier · Integrator</text>
+              <polygon points="190,348 182,334 198,334" fill="#94a3b8" />
+              <rect x="20" y="352" width="340" height="132" rx="6" fill="#2a7fc3" fill-opacity="0.23" stroke="#2a7fc3" stroke-width="1.5" />
+              <text x="44" y="382" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#0d5387" class="dark:fill-ocean-200" letter-spacing="1.5">TIER 3</text>
+              <text x="44" y="420" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="#094069" class="dark:fill-ocean-100">SCARP</text>
+              <text x="44" y="446" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" fill="#0f172a" class="dark:fill-slate-100">Operation</text>
+              <text x="44" y="470" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#475569" class="dark:fill-slate-300">Ship Mgmt. Co.</text>
+            </svg>
           </div>
-
-          <div class="max-w-5xl space-y-3">
-            <details class="group rounded-lg border border-slate-600 bg-slate-700/40" open>
-              <summary class="flex items-start justify-between gap-4 cursor-pointer list-none p-5 rounded-lg [&::-webkit-details-marker]:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-400">
-                <span>
-                  <span class="block font-display text-lg font-bold text-cyan-300" data-i18n="compliance.forSuppliesTitle">For System Supplies</span>
-                  <span class="block text-sm text-slate-400 mt-1" data-i18n="compliance.delivSupplierSummary">UR E27 · 10개 산출물 · 41개 요구사항</span>
-                </span>
-                <i data-lucide="chevron-down" class="w-5 h-5 mt-1 text-slate-400 shrink-0 transition-transform duration-200 group-open:rotate-180"></i>
-              </summary>
-              <div class="px-5 pb-6 space-y-5">
-                <div>
-                  <p class="text-xs font-semibold text-slate-400 mb-3">Deliverables — UR E27 sec.</p>
-                  <ol class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-slate-200 leading-relaxed">
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">3.1.1</span><span>CBS Asset Inventory</span></li>
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">3.1.2</span><span>Topology Diagram</span></li>
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">3.1.3</span><span>Description of Security Capabilities</span></li>
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">3.1.4</span><span>Test Procedure for Security Capabilities</span></li>
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">3.1.5</span><span>Security Configuration Guidelines</span></li>
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">3.1.6</span><span>Secure Development Lifecycle (SDL) Documentation</span></li>
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">3.1.7</span><span>Plans for Maintenance and Verification</span></li>
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">3.1.8</span><span>Information Supporting Incident Response and Recovery Plans</span></li>
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">3.1.9</span><span>Management of Change Plan (MoC)</span></li>
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">3.1.10</span><span>Test Reports</span></li>
-                  </ol>
-                </div>
-              </div>
-            </details>
-            <details class="group rounded-lg border border-slate-600 bg-slate-700/40">
-              <summary class="flex items-start justify-between gap-4 cursor-pointer list-none p-5 rounded-lg [&::-webkit-details-marker]:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-400">
-                <span>
-                  <span class="block font-display text-lg font-bold text-blue-300" data-i18n="compliance.forIntegrationTitle">For System Integration</span>
-                  <span class="block text-sm text-slate-400 mt-1" data-i18n="compliance.delivIntegrationSummary">UR E26 · 6개 실증 산출물 + 위험관리 · 보안 솔루션 · FAT 입회</span>
-                </span>
-                <i data-lucide="chevron-down" class="w-5 h-5 mt-1 text-slate-400 shrink-0 transition-transform duration-200 group-open:rotate-180"></i>
-              </summary>
-              <div class="px-5 pb-6 space-y-5">
-                <div>
-                  <p class="text-xs font-semibold text-slate-400 mb-3">Demonstration of Compliance — UR E26 sec.</p>
-                  <ol class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-slate-200 leading-relaxed">
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">5.1.3</span><span>Ship Asset Inventory</span></li>
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">5.1.1</span><span>Zones and Conduit Diagram</span></li>
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">5.1.2</span><span>Cyber Security Design Description</span></li>
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">5.1.4</span><span>Risk Assessment for Exclusion of Computer-Based Systems</span></li>
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">5.1.5</span><span>Description of Compensating Countermeasures</span></li>
-                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-400 shrink-0 w-14 pt-0.5">5.2.1</span><span>Ship Cyber Resilience Test Procedure</span></li>
-                  </ol>
-                </div>
-                <div>
-                  <p class="text-xs font-semibold text-slate-400 mb-3">Also delivered</p>
-                  <ol class="space-y-2 text-sm text-slate-200 leading-relaxed">
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Risk assessment and risk management for non-compliant systems (UR E26 · E27)</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Security solution supply — domain controller, network monitoring, NIDS, WSUS, anti-malware server, firewall, L2/L3 managed switch</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>FAT audit attendance for compliance checks</span></li>
-                  </ol>
-                </div>
-              </div>
-            </details>
-            <details class="group rounded-lg border border-slate-600 bg-slate-700/40">
-              <summary class="flex items-start justify-between gap-4 cursor-pointer list-none p-5 rounded-lg [&::-webkit-details-marker]:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400">
-                <span>
-                  <span class="block font-display text-lg font-bold text-amber-300" data-i18n="compliance.forManagementTitle">For Ship Management and Operation</span>
-                  <span class="block text-sm text-slate-400 mt-1" data-i18n="compliance.delivOwnerSummary">UR E26 선주 대리 · 12개 실증 항목 + 사이버 선박 설계</span>
-                </span>
-                <i data-lucide="chevron-down" class="w-5 h-5 mt-1 text-slate-400 shrink-0 transition-transform duration-200 group-open:rotate-180"></i>
-              </summary>
-              <div class="px-5 pb-6 space-y-5">
-                <div>
-                  <p class="text-xs font-semibold text-slate-400 mb-3">Cyber Ship Design</p>
-                  <ol class="space-y-2 text-sm text-slate-200 leading-relaxed">
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Shipowner's detailed cyber requirements (L1 · L2)</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Gap analysis — owner policy vs IACS UR E22 · E26 · E27, then USCG and IMO MSC revisions</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Penetration testing for vessels (fleet)</span></li>
-                  </ol>
-                </div>
-                <div>
-                  <p class="text-xs font-semibold text-slate-400 mb-3">Demonstration of Compliance (12)</p>
-                  <ol class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-slate-200 leading-relaxed">
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Ship Cybersecurity and Resilience Program (SCARP)</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Management of Change (MoC)</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Management of Software Updates</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Management of Firewalls</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Management of Malware Protection</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Management of Access Control</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Management of Remote Access</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Management of Mobile and Portable Devices</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Detection of Security Anomalies</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Verification of Security Functions</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Incident Response Plans</span></li>
-                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-slate-500"></span><span>Recovery Plans</span></li>
-                  </ol>
-                </div>
-              </div>
-            </details>
+          <div>
+            <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight" data-i18n="compliance.diagramTitle">선박 사이버 복원력 강제화의 3단계 적용 범위</h2>
+            <p class="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="compliance.diagramSubtitle">E26(선박 전체) → E27(개별 시스템) → SCARP(운항 단계) 로 책임 범위가 확장됩니다.</p>
+            <dl class="mt-8 divide-y divide-slate-200 dark:divide-slate-700 border-y border-slate-200 dark:border-slate-700">
+            <div class="grid grid-cols-[4.5rem_minmax(0,1fr)] gap-4 py-4">
+              <dt class="font-display font-bold text-ocean-700 dark:text-ocean-300">E26</dt>
+              <dd class="text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="compliance.tier1Desc">선박 전체의 사이버 보안 개념과 관리 체계를 확보합니다.</dd>
+            </div>
+            <div class="grid grid-cols-[4.5rem_minmax(0,1fr)] gap-4 py-4">
+              <dt class="font-display font-bold text-ocean-700 dark:text-ocean-300">E27</dt>
+              <dd class="text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="compliance.tier2Desc">각 시스템의 사이버 보안을 전제한 설계와 운영을 요구합니다.</dd>
+            </div>
+            <div class="grid grid-cols-[4.5rem_minmax(0,1fr)] gap-4 py-4">
+              <dt class="font-display font-bold text-ocean-700 dark:text-ocean-300">SCARP</dt>
+              <dd class="text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="compliance.tier3Desc">운항 단계에서 선박 사이버 복원력 프로그램을 상시 수행합니다.</dd>
+            </div>
+            </dl>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 bg-slate-700">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="font-display text-2xl font-bold text-white mb-4" data-i18n="compliance.ctaTitle">IACS UR E26 / E27 대응이 필요하신가요?</h2>
-        <p class="text-slate-400 mb-8" data-i18n="compliance.ctaDesc">전문가와 상담을 통해 컴플라이언스 요구사항을 충족하세요.</p>
-        <a
-          href="index.html#contact"
-          class="inline-flex items-center gap-2 px-8 py-4 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg font-semibold transition-all"
-        >
-          <i data-lucide="mail" class="w-5 h-5"></i>
-          <span data-i18n="nav.contact">Contact</span>
-        </a>
+    <section class="py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid gap-6 lg:grid-cols-2 lg:gap-16 lg:items-end mb-12">
+          <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight" data-i18n="compliance.readyTitle">UR E27 공급사 준비도</h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="compliance.readyLead">UR E27 적합성을 설명하고 입증하지 못하는 제품은 조선소의 설계 · 구매 · 승인 과정에서 선택받기 어려워집니다.</p>
+        </div>
+        <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white mb-4" data-i18n="compliance.routeTitle">TA · SoC · SoF — 등급이 아니라 적합성 입증 수단입니다</h3>
+        <dl class="divide-y divide-slate-200 dark:divide-slate-700 border-y border-slate-200 dark:border-slate-700">
+          <div class="grid gap-1 md:gap-6 md:grid-cols-[14rem_minmax(0,1fr)] py-5">
+            <dt><span class="font-display font-bold text-ocean-700 dark:text-ocean-300">TA</span> <span class="text-sm text-slate-500 dark:text-slate-400">Type Approval</span></dt>
+            <dd class="text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="compliance.routeTA">동일한 표준 제품을 여러 조선소와 선박에 반복 납품하는 공급사에 적합합니다.</dd>
+          </div>
+          <div class="grid gap-1 md:gap-6 md:grid-cols-[14rem_minmax(0,1fr)] py-5">
+            <dt><span class="font-display font-bold text-ocean-700 dark:text-ocean-300">SoC</span> <span class="text-sm text-slate-500 dark:text-slate-400">Statement of Compliance</span></dt>
+            <dd class="text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="compliance.routeSoC">특정 제품 버전이나 프로젝트가 우선일 때 현실적인 출발점입니다.</dd>
+          </div>
+          <div class="grid gap-1 md:gap-6 md:grid-cols-[14rem_minmax(0,1fr)] py-5">
+            <dt><span class="font-display font-bold text-ocean-700 dark:text-ocean-300">SoF</span> <span class="text-sm text-slate-500 dark:text-slate-400">Statement of Fact</span></dt>
+            <dd class="text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="compliance.routeSoF">개별 선박 프로젝트의 설계 승인과 제품 검사 절차에 초점을 맞춘 방식입니다.</dd>
+          </div>
+        </dl>
+        <p class="mt-10 max-w-3xl font-display text-xl md:text-2xl font-bold leading-snug text-slate-900 dark:text-white" data-i18n="compliance.readyTakeaway">UR E27 대응은 인증서를 받는 일이 아니라, 제품의 보안 역량과 그것을 만들고 유지하는 엔지니어링 체계를 함께 갖추는 일입니다.</p>
+      </div>
+    </section>
+    <section id="deliverables" class="py-24 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid gap-6 lg:grid-cols-2 lg:gap-16 lg:items-end mb-10">
+          <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight" data-i18n="compliance.oneStopServiceTitle">One-stop Service</h2>
+          <p class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold text-slate-700 dark:text-slate-300"><span>Advisory</span> <i data-lucide="arrow-right" class="w-4 h-4 text-slate-400"></i> <span>Design</span> <i data-lucide="arrow-right" class="w-4 h-4 text-slate-400"></i> <span>Integration Support</span> <i data-lucide="arrow-right" class="w-4 h-4 text-slate-400"></i> <span>Operation Readiness</span></p>
+        </div>
+        <div class="space-y-3">
+          <details class="group rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900" open>
+            <summary class="flex items-start justify-between gap-4 cursor-pointer list-none p-5 rounded-lg [&::-webkit-details-marker]:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+              <span class="flex items-start gap-3">
+                <i data-lucide="package" class="w-6 h-6 mt-0.5 text-ocean-600 dark:text-ocean-300 shrink-0"></i>
+                <span>
+                  <span class="block font-display text-lg font-bold text-slate-900 dark:text-white" data-i18n="compliance.forSuppliesTitle">For System Supplies</span>
+                  <span class="block text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="compliance.delivSupplierSummary">UR E27 · 10개 산출물 · 41개 요구사항</span>
+                </span>
+              </span>
+              <i data-lucide="chevron-down" class="w-5 h-5 mt-1 text-slate-500 shrink-0 transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="px-5 pb-6 space-y-5 sm:pl-14">
+                <div>
+                  <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">Deliverables — UR E27 sec.</p>
+                  <ol class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-slate-800 dark:text-slate-200 leading-relaxed">
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">3.1.1</span><span>CBS Asset Inventory</span></li>
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">3.1.2</span><span>Topology Diagram</span></li>
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">3.1.3</span><span>Description of Security Capabilities</span></li>
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">3.1.4</span><span>Test Procedure for Security Capabilities</span></li>
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">3.1.5</span><span>Security Configuration Guidelines</span></li>
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">3.1.6</span><span>Secure Development Lifecycle (SDL) Documentation</span></li>
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">3.1.7</span><span>Plans for Maintenance and Verification</span></li>
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">3.1.8</span><span>Information Supporting Incident Response and Recovery Plans</span></li>
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">3.1.9</span><span>Management of Change Plan (MoC)</span></li>
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">3.1.10</span><span>Test Reports</span></li>
+                  </ol>
+                </div>
+            </div>
+          </details>
+          <details class="group rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+            <summary class="flex items-start justify-between gap-4 cursor-pointer list-none p-5 rounded-lg [&::-webkit-details-marker]:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+              <span class="flex items-start gap-3">
+                <i data-lucide="workflow" class="w-6 h-6 mt-0.5 text-ocean-600 dark:text-ocean-300 shrink-0"></i>
+                <span>
+                  <span class="block font-display text-lg font-bold text-slate-900 dark:text-white" data-i18n="compliance.forIntegrationTitle">For System Integration</span>
+                  <span class="block text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="compliance.delivIntegrationSummary">UR E26 · 6개 실증 산출물 + 위험관리 · 보안 솔루션 · FAT 입회</span>
+                </span>
+              </span>
+              <i data-lucide="chevron-down" class="w-5 h-5 mt-1 text-slate-500 shrink-0 transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="px-5 pb-6 space-y-5 sm:pl-14">
+                <div>
+                  <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">Demonstration of Compliance — UR E26 sec.</p>
+                  <ol class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-slate-800 dark:text-slate-200 leading-relaxed">
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">5.1.3</span><span>Ship Asset Inventory</span></li>
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">5.1.1</span><span>Zones and Conduit Diagram</span></li>
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">5.1.2</span><span>Cyber Security Design Description</span></li>
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">5.1.4</span><span>Risk Assessment for Exclusion of Computer-Based Systems</span></li>
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">5.1.5</span><span>Description of Compensating Countermeasures</span></li>
+                  <li class="flex gap-3"><span class="font-mono text-xs text-slate-500 dark:text-slate-400 shrink-0 w-14 pt-0.5">5.2.1</span><span>Ship Cyber Resilience Test Procedure</span></li>
+                  </ol>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">Also delivered</p>
+                  <ol class="space-y-2 text-sm text-slate-800 dark:text-slate-200 leading-relaxed">
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Risk assessment and risk management for non-compliant systems (UR E26 · E27)</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Security solution supply — domain controller, network monitoring, NIDS, WSUS, anti-malware server, firewall, L2/L3 managed switch</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>FAT audit attendance for compliance checks</span></li>
+                  </ol>
+                </div>
+            </div>
+          </details>
+          <details class="group rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+            <summary class="flex items-start justify-between gap-4 cursor-pointer list-none p-5 rounded-lg [&::-webkit-details-marker]:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+              <span class="flex items-start gap-3">
+                <i data-lucide="ship" class="w-6 h-6 mt-0.5 text-ocean-600 dark:text-ocean-300 shrink-0"></i>
+                <span>
+                  <span class="block font-display text-lg font-bold text-slate-900 dark:text-white" data-i18n="compliance.forManagementTitle">For Ship Management and Operation</span>
+                  <span class="block text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="compliance.delivOwnerSummary">UR E26 선주 대리 · 12개 실증 항목 + 사이버 선박 설계</span>
+                </span>
+              </span>
+              <i data-lucide="chevron-down" class="w-5 h-5 mt-1 text-slate-500 shrink-0 transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="px-5 pb-6 space-y-5 sm:pl-14">
+                <div>
+                  <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">Cyber Ship Design</p>
+                  <ol class="space-y-2 text-sm text-slate-800 dark:text-slate-200 leading-relaxed">
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Shipowner's detailed cyber requirements (L1 · L2)</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Gap analysis — owner policy vs IACS UR E22 · E26 · E27, then USCG and IMO MSC revisions</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Penetration testing for vessels (fleet)</span></li>
+                  </ol>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">Demonstration of Compliance (12)</p>
+                  <ol class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-slate-800 dark:text-slate-200 leading-relaxed">
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Ship Cybersecurity and Resilience Program (SCARP)</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Management of Change (MoC)</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Management of Software Updates</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Management of Firewalls</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Management of Malware Protection</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Management of Access Control</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Management of Remote Access</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Management of Mobile and Portable Devices</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Detection of Security Anomalies</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Verification of Security Functions</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Incident Response Plans</span></li>
+                  <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-ocean-500"></span><span>Recovery Plans</span></li>
+                  </ol>
+                </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+    <!-- CTA — statement left, actions right -->
+    <section class="py-16 bg-ocean-950">
+      <div class="max-w-7xl mx-auto px-6 grid gap-8 lg:grid-cols-2 lg:gap-16 lg:items-center">
+        <div>
+          <h2 class="font-display text-2xl md:text-3xl font-bold tracking-tight text-white" data-i18n="compliance.ctaTitle">IACS UR E26 / E27 대응이 필요하신가요?</h2>
+          <p class="mt-4 text-slate-400 leading-relaxed" data-i18n="compliance.ctaDesc">전문가와 상담을 통해 컴플라이언스 요구사항을 충족하세요.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 lg:justify-end">
+          <a href="index.html#contact" class="inline-flex items-center gap-2 whitespace-nowrap rounded-md bg-signal-400 px-5 py-3 text-sm font-semibold text-ink-950 hover:bg-signal-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+            <span data-i18n="aiConsulting.cta.button">상담 문의하기</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
       </div>
     </section>
 

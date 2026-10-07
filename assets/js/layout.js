@@ -192,10 +192,10 @@ class LayoutManager {
 
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        navbar.classList.add('bg-slate-800/95', 'backdrop-blur-sm', 'py-3');
+        navbar.classList.add('bg-ocean-950/95', 'backdrop-blur-sm', 'py-3');
         navbar.classList.remove('py-5', 'bg-transparent');
       } else {
-        navbar.classList.remove('bg-slate-800/95', 'backdrop-blur-sm', 'py-3');
+        navbar.classList.remove('bg-ocean-950/95', 'backdrop-blur-sm', 'py-3');
         navbar.classList.add('py-5', 'bg-transparent');
       }
     };
