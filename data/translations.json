@@ -347,13 +347,21 @@
     },
     "aiConsulting": {
       "hero": {
-        "title": "Agentic AI 기반 선박 사이버 보안 컨설팅",
-        "subtitle": "Global Compliance · Real-Time Threat Detection · Integrated Maritime Operations 3-pillar 로 선박 생애주기 전체의 사이버 복원력을 설계합니다.",
-        "ctaSecondary": "서비스 영역 보기"
+        "title": "설계에서 끝나지 않습니다. Survey까지 같은 팀이 갑니다.",
+        "subtitle": "Agentic AI SecOps 기반 선박 사이버 보안 컨설팅. 기존 컨설팅이 설계·개발에서 멈출 때, 광명마리타임은 FAT·인도·Survey까지 책임집니다.",
+        "ctaSecondary": "서비스 영역 보기",
+        "trackOthers": "기존 컨설팅",
+        "trackUs": "광명마리타임",
+        "trackCut": "기존 컨설팅은 개발 단계에서 끝납니다",
+        "stage1": "설계",
+        "stage2": "개발",
+        "stage3": "FAT",
+        "stage4": "인도",
+        "stage5": "Survey"
       },
       "serviceArea": {
-        "title": "효과적인 사이버 보안 컨설팅을 위한 실행 방법론",
-        "subtitle": "글로벌 컴플라이언스 · 실시간 위협 탐지 · 운영 통합 보안의 3개 축으로 선박 생애주기 전체를 커버합니다.",
+        "title": "세 개의 축으로 전 주기를 맡습니다",
+        "subtitle": "규제 대응, 실시간 관제, 운영 보안을 한 팀이 이어서 맡기 때문에 단계 사이에서 책임이 끊기지 않습니다.",
         "pillar1": {
           "title": "Global Compliance",
           "desc": "국제 규제 · 선급 가이드라인 · 글로벌 보안 표준 전반에 걸친 통합 대응",
@@ -385,11 +393,12 @@
           "item5": "Zero Trust & Converged IT / OT",
           "item6": "Digital Twin & MASS 자율운항",
           "target": "Target: 선주 · 조선소 · 공급사"
-        }
+        },
+        "more": "전체 역량 보기"
       },
       "aiEngineering": {
         "title": "전통 조선 · 해운 위에 쌓아 올린 AI 엔지니어링 역량",
-        "intro": "설계 · 클라우드 · 차세대 운영 세 축의 AI 역량을 Maritime · Defense · Offshore · Merchant Fleet 4개 도메인에서 재사용합니다.",
+        "intro": "설계 · 클라우드 · 차세대 운영의 AI 역량을 4개 도메인에 적용합니다.",
         "cluster1": {
           "title": "Design Lifecycle",
           "item1": "Agentic AI SecOps",
@@ -428,45 +437,31 @@
       },
       "differentiation": {
         "title": "문서가 아닌 구조로, 인증이 아닌 운영으로",
-        "subtitle": "7개 축에서 기존 컨설팅과 광명마리타임의 접근 방식이 어떻게 다른지 비교합니다.",
-        "competitorsLabel": "Competitors",
-        "usLabel": "Gwangmyung Maritime",
+        "subtitle": "범위 외에도, 일하는 방식이 다릅니다.",
         "dim1": {
           "title": "Problem Recognition",
-          "competitor": "필요 기능을 설계 · 개발하고 산출물 문서를 준비",
           "us": "근본 문제를 해결하고 장기 지속 가능성 기준으로 판단"
         },
         "dim2": {
           "title": "Goal Setting",
-          "competitor": "시스템 구축 · 납품 · 인증 획득이 목표",
           "us": "컴플라이언스는 결과물 하나일 뿐 — 운영 가능한 구조와 거버넌스 확보"
         },
         "dim3": {
           "title": "Structural Design",
-          "competitor": "필요 기능이 제공되는지 중심 · 보안 솔루션과 장비 도입",
           "us": "OT · IT · 원격 접속의 연결 구조와 경계를 가장 먼저 설계"
         },
         "dim4": {
           "title": "Technology Application",
-          "competitor": "IT / OT 기술의 단순 적용 · 사이버 보안 가이드라인 수용 중심",
           "us": "IT / OT 기술을 넘어 가용성과 운영 현실에 최적화된 기술 선택"
         },
         "dim5": {
           "title": "Data & AI Utilization",
-          "competitor": "데이터 수집 · AI 적용 자체에 집중",
           "us": "데이터 거버넌스와 흐름을 먼저 구조화한 뒤 데이터 / AI 활용"
         },
         "dim6": {
           "title": "Regulatory Response",
-          "competitor": "문서 작성 · 제출 중심",
           "us": "선급 가이드라인 방향성과 정렬 · 표준화를 통한 효율 확보"
-        },
-        "dim7": {
-          "title": "Project Scope",
-          "competitor": "설계 · 개발 단계에서 종료",
-          "us": "설계부터 운영까지 (FAT · 납품 · Survey) 전주기 수행"
-        },
-        "axisLabel": "비교 축"
+        }
       },
       "cta": {
         "title": "AI 기반 사이버 보안 컨설팅이 필요하신가요?",
@@ -824,13 +819,21 @@
     },
     "aiConsulting": {
       "hero": {
-        "title": "Agentic AI-driven Maritime Cybersecurity Consulting",
-        "subtitle": "Three pillars — Global Compliance, Real-Time Threat Detection, Integrated Maritime Operations — designing cyber resilience across the full vessel lifecycle.",
-        "ctaSecondary": "See service areas"
+        "title": "We don’t stop at design. The same team stays through survey.",
+        "subtitle": "Agentic AI SecOps–based maritime cybersecurity consulting. Where conventional consulting stops at design and development, we carry it through FAT, delivery and survey.",
+        "ctaSecondary": "See service areas",
+        "trackOthers": "Conventional consulting",
+        "trackUs": "Gwangmyung Maritime",
+        "trackCut": "Conventional consulting ends at development",
+        "stage1": "Design",
+        "stage2": "Development",
+        "stage3": "FAT",
+        "stage4": "Delivery",
+        "stage5": "Survey"
       },
       "serviceArea": {
-        "title": "Execution methodology for effective cybersecurity consulting",
-        "subtitle": "Three pillars — Global Compliance, Real-Time Threat Detection, and Integrated Operations Security — covering the full vessel lifecycle.",
+        "title": "Three pillars that cover the whole lifecycle",
+        "subtitle": "One team carries compliance, real-time monitoring and operational security, so responsibility doesn’t break between stages.",
         "pillar1": {
           "title": "Global Compliance",
           "desc": "Unified response across international regulations, class-society guidelines, and global security standards.",
@@ -862,11 +865,12 @@
           "item5": "Zero Trust & Converged IT / OT",
           "item6": "Digital Twin & MASS Autonomous Operations",
           "target": "Target: Shipowners · Shipbuilders · Suppliers"
-        }
+        },
+        "more": "See all capabilities"
       },
       "aiEngineering": {
         "title": "AI engineering layered on top of traditional shipbuilding and shipping",
-        "intro": "Design Lifecycle, Cloud & Pipeline, and Next-Gen Operations capabilities reused across Maritime, Defense, Offshore, and Merchant Fleet.",
+        "intro": "AI capabilities in design, cloud and next-gen operations, applied across four domains.",
         "cluster1": {
           "title": "Design Lifecycle",
           "item1": "Agentic AI SecOps",
@@ -905,45 +909,31 @@
       },
       "differentiation": {
         "title": "Structure over documents, operation over certification",
-        "subtitle": "How Gwangmyung Maritime's approach differs from conventional consulting across seven dimensions.",
-        "competitorsLabel": "Competitors",
-        "usLabel": "Gwangmyung Maritime",
+        "subtitle": "Beyond scope, the way we work is different.",
         "dim1": {
           "title": "Problem Recognition",
-          "competitor": "Design and develop required functions; prepare documentation deliverables.",
           "us": "Solving root-cause problems, judged by long-term sustainability."
         },
         "dim2": {
           "title": "Goal Setting",
-          "competitor": "System build, delivery, and obtaining certification.",
           "us": "Compliance is just one output — securing operable structure and governance."
         },
         "dim3": {
           "title": "Structural Design",
-          "competitor": "Focused on whether functions are provided; adopting security solutions and equipment.",
           "us": "OT · IT · remote access connection structure and boundaries designed first."
         },
         "dim4": {
           "title": "Technology Application",
-          "competitor": "Simple application of IT / OT technology, centered on adopting cyber security guidelines.",
           "us": "Beyond IT / OT — optimal tech for availability and operational reality."
         },
         "dim5": {
           "title": "Data & AI Utilization",
-          "competitor": "Focused on data collection / applying AI.",
           "us": "Data governance and flow structuring first, then leveraging data / AI."
         },
         "dim6": {
           "title": "Regulatory Response",
-          "competitor": "Centered on preparing and submitting documents.",
           "us": "Aligning on class-society direction, gaining efficiency through standardization."
-        },
-        "dim7": {
-          "title": "Project Scope",
-          "competitor": "Ends at the design-development stage.",
-          "us": "Delivery spanning design to operation (FAT · Delivery · Survey)."
-        },
-        "axisLabel": "Dimension"
+        }
       },
       "cta": {
         "title": "Need AI-driven cybersecurity consulting?",
@@ -1301,13 +1291,21 @@
     },
     "aiConsulting": {
       "hero": {
-        "title": "基于 Agentic AI 的船舶网络安全咨询",
-        "subtitle": "通过全球合规、实时威胁检测、海事运营综合安全三大支柱,设计覆盖船舶全生命周期的网络韧性。",
-        "ctaSecondary": "查看服务领域"
+        "title": "我们不止于设计。同一团队一直陪伴到检验。",
+        "subtitle": "基于 Agentic AI SecOps 的船舶网络安全咨询。传统咨询止步于设计与开发,光明海事一直负责到 FAT、交付与检验。",
+        "ctaSecondary": "查看服务领域",
+        "trackOthers": "传统咨询",
+        "trackUs": "光明海事",
+        "trackCut": "传统咨询在开发阶段结束",
+        "stage1": "设计",
+        "stage2": "开发",
+        "stage3": "FAT",
+        "stage4": "交付",
+        "stage5": "检验"
       },
       "serviceArea": {
-        "title": "有效开展网络安全咨询的执行方法论",
-        "subtitle": "通过全球合规、实时威胁检测、运营综合安全三大支柱覆盖船舶全生命周期。",
+        "title": "以三大支柱覆盖全生命周期",
+        "subtitle": "由同一团队衔接合规应对、实时监控与运营安全,责任不会在阶段之间中断。",
         "pillar1": {
           "title": "全球合规 (Global Compliance)",
           "desc": "国际法规、船级社指南及全球安全标准的统一应对。",
@@ -1339,11 +1337,12 @@
           "item5": "Zero Trust 与融合 IT / OT",
           "item6": "数字孪生与 MASS 自主航行",
           "target": "目标: 船东 · 造船厂 · 供应商"
-        }
+        },
+        "more": "查看全部能力"
       },
       "aiEngineering": {
         "title": "传统造船、航运之上构建的 AI 工程能力",
-        "intro": "设计、云、下一代运营三大 AI 能力在海事、国防、海洋平台、商船队四大领域中复用。",
+        "intro": "将设计、云与下一代运营的 AI 能力应用于四大领域。",
         "cluster1": {
           "title": "Design Lifecycle",
           "item1": "Agentic AI SecOps",
@@ -1382,45 +1381,31 @@
       },
       "differentiation": {
         "title": "以结构代替文档,以运营代替认证",
-        "subtitle": "从 7 个维度比较光明海事与传统咨询的方法差异。",
-        "competitorsLabel": "传统竞争者",
-        "usLabel": "光明海事 (Gwangmyung Maritime)",
+        "subtitle": "除了范围,工作方式也不同。",
         "dim1": {
           "title": "问题识别",
-          "competitor": "设计并开发所需功能,准备交付文档。",
           "us": "以长期可持续性为标准解决根本问题。"
         },
         "dim2": {
           "title": "目标设定",
-          "competitor": "系统构建、交付、取得认证为目标。",
           "us": "合规只是一项产出 — 确保可运营的结构与治理。"
         },
         "dim3": {
           "title": "结构设计",
-          "competitor": "以功能是否提供为核心,引入安全解决方案与设备。",
           "us": "首先设计 OT · IT · 远程接入的连接结构与边界。"
         },
         "dim4": {
           "title": "技术应用",
-          "competitor": "简单应用 IT / OT 技术,以采纳网络安全指南为中心。",
           "us": "超越 IT / OT,选择与可用性和运营现实最契合的技术。"
         },
         "dim5": {
           "title": "数据与 AI 利用",
-          "competitor": "专注于数据采集与 AI 应用本身。",
           "us": "先结构化数据治理与流程,再利用数据 / AI。"
         },
         "dim6": {
           "title": "监管应对",
-          "competitor": "以文档编制与提交为主。",
           "us": "与船级社方向保持一致,通过标准化获得效率。"
-        },
-        "dim7": {
-          "title": "项目范围",
-          "competitor": "在设计—开发阶段结束。",
-          "us": "贯穿设计到运营 (FAT · 交付 · 检验) 的全周期交付。"
-        },
-        "axisLabel": "比较维度"
+        }
       },
       "cta": {
         "title": "需要 AI 驱动的网络安全咨询吗?",
@@ -1778,13 +1763,21 @@
     },
     "aiConsulting": {
       "hero": {
-        "title": "Agentic AI ベースの 船舶 サイバーセキュリティ コンサルティング",
-        "subtitle": "Global Compliance · Real-Time Threat Detection · Integrated Maritime Operations の 3-pillar で 船舶 ライフサイクル 全体の サイバー レジリエンスを 設計します。",
-        "ctaSecondary": "サービス領域を見る"
+        "title": "設計で 終わりません。Survey まで 同じ チームが 伴走します。",
+        "subtitle": "Agentic AI SecOps ベースの 船舶 サイバーセキュリティ コンサルティング。従来の コンサルが 設計・開発で 止まる ところ、光明マリタイムは FAT・引渡し・Survey まで 責任を 持ちます。",
+        "ctaSecondary": "サービス領域を見る",
+        "trackOthers": "従来の コンサル",
+        "trackUs": "光明マリタイム",
+        "trackCut": "従来の コンサルは 開発段階で 終わります",
+        "stage1": "設計",
+        "stage2": "開発",
+        "stage3": "FAT",
+        "stage4": "引渡し",
+        "stage5": "Survey"
       },
       "serviceArea": {
-        "title": "効果的な サイバーセキュリティ コンサルティングの ための 実行 方法論",
-        "subtitle": "グローバル コンプライアンス · リアルタイム 脅威検知 · 運用統合 セキュリティの 3つの軸で 船舶ライフサイクル 全体を カバーします。",
+        "title": "3つの 軸で 全周期を 担います",
+        "subtitle": "規制対応・リアルタイム 監視・運用 セキュリティを 一つの チームが つなぐ ため、段階の 間で 責任が 途切れません。",
         "pillar1": {
           "title": "Global Compliance",
           "desc": "国際規制 · 船級ガイドライン · グローバル セキュリティ標準に わたる 統合対応。",
@@ -1816,11 +1809,12 @@
           "item5": "Zero Trust & Converged IT / OT",
           "item6": "Digital Twin & MASS 自律運航",
           "target": "Target: 船主 · 造船所 · サプライヤー"
-        }
+        },
+        "more": "すべての 能力を 見る"
       },
       "aiEngineering": {
         "title": "伝統的な 造船 · 海運の 上に 築いた AI エンジニアリング 能力",
-        "intro": "設計 · クラウド · 次世代運用の 3つの AI 能力を Maritime · Defense · Offshore · Merchant Fleet 4つの ドメインで 再利用します。",
+        "intro": "設計・クラウド・次世代運用の AI 能力を 4つの ドメインに 適用します。",
         "cluster1": {
           "title": "Design Lifecycle",
           "item1": "Agentic AI SecOps",
@@ -1859,45 +1853,31 @@
       },
       "differentiation": {
         "title": "文書 ではなく 構造で、認証 ではなく 運用で",
-        "subtitle": "7つの軸で 従来の コンサルティングと 光明マリタイムの アプローチが どう 異なるかを 比較します。",
-        "competitorsLabel": "Competitors",
-        "usLabel": "Gwangmyung Maritime",
+        "subtitle": "範囲 だけで なく、仕事の 進め方も 違います。",
         "dim1": {
           "title": "Problem Recognition",
-          "competitor": "必要な 機能を 設計 · 開発し、成果物 文書を 準備。",
           "us": "根本的な 問題を 解決し、長期的 持続可能性を 基準に 判断。"
         },
         "dim2": {
           "title": "Goal Setting",
-          "competitor": "システム 構築 · 納品 · 認証取得が 目標。",
           "us": "コンプライアンスは 成果物の 一つに すぎず、運用可能な 構造と ガバナンスを 確保。"
         },
         "dim3": {
           "title": "Structural Design",
-          "competitor": "必要な 機能が 提供されるかを 中心に、セキュリティ ソリューションと 装備を 導入。",
           "us": "OT · IT · リモート アクセスの 接続構造と 境界を 最初に 設計。"
         },
         "dim4": {
           "title": "Technology Application",
-          "competitor": "IT / OT 技術の 単純適用、サイバー セキュリティ ガイドライン 受容 中心。",
           "us": "IT / OT 技術を 超え、可用性と 運用現実に 最適化された 技術を 選択。"
         },
         "dim5": {
           "title": "Data & AI Utilization",
-          "competitor": "データ 収集 · AI 適用 そのものに 集中。",
           "us": "データ ガバナンスと フローを 先に 構造化した 上で、データ / AI を 活用。"
         },
         "dim6": {
           "title": "Regulatory Response",
-          "competitor": "文書作成 · 提出 中心。",
           "us": "船級ガイドラインの 方向性と 整合、標準化を 通じ 効率を 確保。"
-        },
-        "dim7": {
-          "title": "Project Scope",
-          "competitor": "設計 · 開発 段階で 終了。",
-          "us": "設計から 運用まで (FAT · 納品 · Survey) 全周期で 遂行。"
-        },
-        "axisLabel": "比較軸"
+        }
       },
       "cta": {
         "title": "AI ベースの サイバーセキュリティ コンサルティングが 必要 ですか?",
