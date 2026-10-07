@@ -143,14 +143,14 @@ class ArticlesManager {
     const slug = window.location.hash.slice(1) || new URLSearchParams(window.location.search).get('slug');
     if (!slug) {
       this.showArticleError(contentContainerId, 'No article specified.');
-      return;
+      return null;
     }
 
     await this.fetchArticleIndex();
     const meta = this.getArticleMeta(slug);
     if (!meta) {
       this.showArticleError(contentContainerId, 'Article not found.');
-      return;
+      return null;
     }
 
     // Render meta
@@ -178,13 +178,14 @@ class ArticlesManager {
     const markdown = await this.fetchArticleContent(slug);
     if (!markdown) {
       this.showArticleError(contentContainerId, 'Failed to load article content.');
-      return;
+      return null;
     }
 
     const contentContainer = document.getElementById(contentContainerId);
     if (contentContainer && window.marked) {
       contentContainer.innerHTML = marked.parse(markdown);
     }
+    return meta;
   }
 
   showArticleError(containerId, message) {
@@ -192,8 +193,8 @@ class ArticlesManager {
     if (container) {
       container.innerHTML = `
         <div class="text-center py-16">
-          <p class="text-slate-500 dark:text-slate-400 mb-4">${message}</p>
-          <a href="articles.html" class="text-ocean-700 dark:text-ocean-300 hover:underline">Back to Articles</a>
+          <p class="text-slate-500 mb-4">${message}</p>
+          <a href="articles.html" class="text-ocean-700 hover:underline">Back to Articles</a>
         </div>
       `;
     }

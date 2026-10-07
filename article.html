@@ -86,6 +86,41 @@
             <div class="animate-pulse text-slate-400">Loading...</div>
           </div>
         </div>
+
+        <!-- End-of-article CTA (shown once the article has loaded) -->
+        <aside
+          id="article-cta"
+          class="hidden mt-16 rounded-2xl border border-ocean-100 bg-ocean-50 p-8 md:p-10"
+          aria-labelledby="article-cta-title"
+        >
+          <h2
+            id="article-cta-title"
+            class="font-display text-xl md:text-2xl font-bold text-slate-900 leading-snug"
+            data-i18n="articleCta.title"
+          >
+            이 글의 내용, 귀사 선박에 어떻게 적용될지 궁금하신가요?
+          </h2>
+          <p class="mt-3 text-slate-600" data-i18n="articleCta.desc">
+            규정 대응부터 보안 설계까지, 프로젝트 상황에 맞춰 함께 검토해 드립니다.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <a
+              href="index.html#contact"
+              class="inline-flex items-center gap-2 whitespace-nowrap rounded-md bg-signal-400 px-5 py-3 text-sm font-semibold text-ink-950 hover:bg-signal-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500"
+            >
+              <span data-i18n="articleCta.button">상담 문의하기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a
+              id="article-cta-service"
+              href="index.html#competitiveness"
+              class="hidden inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-ocean-700 hover:text-ocean-900 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500"
+            >
+              <span data-i18n="articleCta.service">관련 서비스 보기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -101,7 +136,23 @@
     <script>
       document.addEventListener('DOMContentLoaded', async () => {
         const manager = window.articlesManager;
-        await manager.renderArticleDetail('article-meta', 'article-content');
+        const meta = await manager.renderArticleDetail('article-meta', 'article-content');
+        if (!meta) return;
+
+        // Reveal the end-of-article CTA and point its secondary link at the
+        // service page that matches the article's category.
+        const servicePage = {
+          Regulation: 'compliance.html',
+          Compliance: 'compliance.html',
+          'Threat Intelligence': 'maritime-cybersecurity.html',
+        }[meta.category];
+        const service = document.getElementById('article-cta-service');
+        if (servicePage && service) {
+          service.href = servicePage;
+          service.classList.remove('hidden');
+        }
+        document.getElementById('article-cta')?.classList.remove('hidden');
+        if (window.lucide) lucide.createIcons();
       });
     </script>
   </body>

@@ -466,6 +466,12 @@
         "button": "상담 문의하기",
         "secondary": "관련 아티클 읽기"
       }
+    },
+    "articleCta": {
+      "title": "이 글의 내용, 귀사 선박에 어떻게 적용될지 궁금하신가요?",
+      "desc": "규정 대응부터 보안 설계까지, 프로젝트 상황에 맞춰 함께 검토해 드립니다.",
+      "button": "상담 문의하기",
+      "service": "관련 서비스 보기"
     }
   },
   "en": {
@@ -935,6 +941,12 @@
         "button": "Contact us",
         "secondary": "Read related articles"
       }
+    },
+    "articleCta": {
+      "title": "Wondering how this applies to your vessels?",
+      "desc": "From regulatory response to security design, we'll review it against your project.",
+      "button": "Contact us",
+      "service": "See related service"
     }
   },
   "zh": {
@@ -1404,6 +1416,12 @@
         "button": "联系我们",
         "secondary": "阅读相关文章"
       }
+    },
+    "articleCta": {
+      "title": "想了解本文内容如何应用于贵司船舶吗？",
+      "desc": "从法规应对到安全设计，我们将结合您的项目情况一起评估。",
+      "button": "咨询我们",
+      "service": "查看相关服务"
     }
   },
   "ja": {
@@ -1873,6 +1891,12 @@
         "button": "お問い合わせ",
         "secondary": "関連記事を読む"
       }
+    },
+    "articleCta": {
+      "title": "この記事の内容が貴社の船舶にどう関わるか、気になりますか？",
+      "desc": "規制対応からセキュリティ設計まで、プロジェクトの状況に合わせてご一緒に検討します。",
+      "button": "お問い合わせ",
+      "service": "関連サービスを見る"
     }
   }
 }
