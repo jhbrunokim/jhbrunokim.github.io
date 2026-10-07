@@ -69,6 +69,9 @@ class LayoutManager {
     // Open the contact form in a modal from any "#contact" link
     this.initContactModal();
 
+    // Keep index.html#section arrivals aligned while content loads
+    this.initHashAnchor();
+
     // Dispatch custom event for other scripts
     document.dispatchEvent(new CustomEvent('layoutLoaded'));
   }
@@ -109,6 +112,33 @@ class LayoutManager {
 
     // Direct visits to index.html#contact (e.g. shared links)
     if (window.location.hash === '#contact') open('direct-link');
+  }
+
+  // Arriving from another page (e.g. index.html#about), the browser jumps to
+  // the section once, then the navbar, translations, article list and images
+  // load above it and push it down. Re-align on every layout change until
+  // the page has settled or the visitor scrolls on their own.
+  initHashAnchor() {
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id || id === 'contact') return;
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    const align = () => target.scrollIntoView({ block: 'start', behavior: 'instant' });
+    const observer = new ResizeObserver(align);
+    const userEvents = ['wheel', 'touchstart', 'keydown', 'mousedown'];
+    const stop = () => {
+      observer.disconnect();
+      userEvents.forEach(type => window.removeEventListener(type, stop));
+    };
+
+    userEvents.forEach(type => window.addEventListener(type, stop, { passive: true }));
+    observer.observe(document.body);
+    align();
+
+    const settle = () => setTimeout(stop, 1500);
+    if (document.readyState === 'complete') settle();
+    else window.addEventListener('load', settle, { once: true });
   }
 
   // Where the visitor clicked Contact, recorded with the enquiry

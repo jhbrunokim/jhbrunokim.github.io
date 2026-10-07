@@ -6,7 +6,10 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    /* Height of the navbar once scrolled (py-3 + 40px logo). Anchor targets
+       are always past the 50px shrink point, so match that, not the 80px
+       navbar at the very top. */
+    scroll-padding-top: 4rem;
   }
 
   /* 한글 줄바꿈 처리 */
