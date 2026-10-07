@@ -13,6 +13,14 @@
   body {
     @apply word-break-keep-all font-sans;
   }
+  /* keep-all also forbids breaks between Chinese/Japanese characters, which
+     have no spaces, so whole sentences overflow. Use normal CJK line breaking
+     for those locales (i18n.js keeps <html lang> in sync). */
+  html:lang(zh) body,
+  html:lang(ja) body {
+    word-break: normal;
+    line-break: strict;
+  }
 }
 
 /* Nav active indicators */
@@ -271,12 +279,14 @@
 }
 
 /* Contact "Trust / Execution / Responsibility / Partnership" display title.
-   On phones the floor has to let "Responsibility" fit a 320px screen. */
+   One word per line (translations use \n). Words never split: from lg the
+   grid column is max-content, below lg the title has the full width. On
+   phones the floor has to let "Responsibility" fit a 320px screen. */
 .contact-values-title {
   font-size: clamp(2rem, 9vw, 3rem);
   line-height: 1.3;
   hyphens: none;
-  overflow-wrap: anywhere;
+  white-space: pre-line;
 }
 @media (min-width: 768px) {
   .contact-values-title {
