@@ -269,3 +269,17 @@
     animation: none !important;
   }
 }
+
+/* Contact "Trust / Execution / Responsibility / Partnership" display title.
+   On phones the floor has to let "Responsibility" fit a 320px screen. */
+.contact-values-title {
+  font-size: clamp(2rem, 9vw, 3rem);
+  line-height: 1.3;
+  hyphens: none;
+  overflow-wrap: anywhere;
+}
+@media (min-width: 768px) {
+  .contact-values-title {
+    font-size: clamp(3rem, 6vw, 6rem);
+  }
+}
