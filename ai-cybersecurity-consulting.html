@@ -75,6 +75,9 @@
     <!-- Lucide Icons -->
     <script defer src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- EmailJS SDK (init lives in contact.js so it runs after defer resolves) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
       {
@@ -446,6 +449,7 @@
     <!-- Scripts -->
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/contact.js"></script>
     <script src="assets/js/country-detector.js"></script>
     <script src="assets/js/consent.js"></script>
   </body>

@@ -1,9 +1,8 @@
 // EmailJS Contact Form Handler
+// Handles every form marked [data-contact-form]: the inline form on the home
+// page and the contact modal injected on every page by layout.js.
 class ContactFormManager {
   constructor() {
-    this.form = null;
-    this.submitButton = null;
-    this.statusMessage = null;
     this.init();
   }
 
@@ -15,16 +14,22 @@ class ContactFormManager {
         emailjs.init('oxNyGY4Y3JcIsG6Ml');
       }
 
-      this.form = document.getElementById('contact-form');
-      this.submitButton = document.getElementById('contact-submit');
-      this.statusMessage = document.getElementById('contact-status');
+      this.bindForms();
+    });
 
-      if (this.form) {
-        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-      }
+    // The modal form arrives with the layout components
+    document.addEventListener('layoutLoaded', () => this.bindForms());
+  }
+
+  bindForms() {
+    document.querySelectorAll('form[data-contact-form]').forEach(form => {
+      if (form.dataset.contactBound) return;
+      form.dataset.contactBound = 'true';
+
+      form.addEventListener('submit', (e) => this.handleSubmit(e, form));
 
       // Add honeypot field for spam prevention (hidden from users)
-      this.addHoneypot();
+      this.addHoneypot(form);
     });
   }
 
@@ -33,9 +38,7 @@ class ContactFormManager {
     return window.i18nManager?.translations?.[lang]?.contactSection?.[key] || fallback;
   }
 
-  addHoneypot() {
-    if (!this.form) return;
-
+  addHoneypot(form) {
     const honeypot = document.createElement('input');
     honeypot.type = 'text';
     honeypot.name = 'honeypot';
@@ -43,21 +46,31 @@ class ContactFormManager {
     honeypot.tabIndex = -1;
     honeypot.autocomplete = 'off';
 
-    this.form.appendChild(honeypot);
+    form.appendChild(honeypot);
   }
 
-  async handleSubmit(e) {
+  // Which page and which link the enquiry came from. Only added to the
+  // outgoing email; nothing is shown to the visitor.
+  getSource(form) {
+    const dialog = form.closest('dialog');
+    const entry = dialog ? (dialog.dataset.source || 'unknown') : 'index-inline-form';
+    const page = `${document.title} (${window.location.pathname}${window.location.search}${window.location.hash})`;
+    const lang = window.i18nManager?.currentLang || 'unknown';
+    return { page, entry, lang };
+  }
+
+  async handleSubmit(e, form) {
     e.preventDefault();
 
     // Check honeypot (spam prevention)
-    const honeypot = this.form.querySelector('[name="honeypot"]');
+    const honeypot = form.querySelector('[name="honeypot"]');
     if (honeypot && honeypot.value) {
       console.log('Spam detected');
       return;
     }
 
     // Get form data
-    const formData = new FormData(this.form);
+    const formData = new FormData(form);
     const data = {
       from_name: formData.get('name'),
       from_email: formData.get('email'),
@@ -67,12 +80,20 @@ class ContactFormManager {
 
     // Validate
     if (!this.validateForm(data)) {
-      this.showStatus('error', this.t('validationError', 'Please fill in all fields.'));
+      this.showStatus(form, 'error', this.t('validationError', 'Please fill in all fields.'));
       return;
     }
 
+    // Append the enquiry source to the message so it shows up even with the
+    // current EmailJS template; also send it as separate template variables.
+    const source = this.getSource(form);
+    data.message += `\n\n──────────\n[문의 출처] ${source.page}\n[진입 지점] ${source.entry} · [언어] ${source.lang}`;
+    data.source_page = source.page;
+    data.source_entry = source.entry;
+    data.source_lang = source.lang;
+
     // Show loading state
-    this.setLoading(true);
+    this.setLoading(form, true);
 
     try {
       // EmailJS send
@@ -84,14 +105,14 @@ class ContactFormManager {
       await emailjs.send(serviceID, templateID, data, publicKey);
 
       // Success
-      this.showStatus('success', this.t('successMessage', 'Message sent successfully!'));
+      this.showStatus(form, 'success', this.t('successMessage', 'Message sent successfully!'));
 
-      this.form.reset();
+      form.reset();
     } catch (error) {
       console.error('EmailJS Error:', error);
-      this.showStatus('error', this.t('errorMessage', 'Failed to send message. Please try again later.'));
+      this.showStatus(form, 'error', this.t('errorMessage', 'Failed to send message. Please try again later.'));
     } finally {
-      this.setLoading(false);
+      this.setLoading(form, false);
     }
   }
 
@@ -108,37 +129,39 @@ class ContactFormManager {
     return re.test(email);
   }
 
-  setLoading(isLoading) {
-    if (!this.submitButton) return;
+  setLoading(form, isLoading) {
+    const submitButton = form.querySelector('[data-contact-submit]');
+    if (!submitButton) return;
 
     if (isLoading) {
       const label = this.t('sending', 'Sending...');
-      this.submitButton.disabled = true;
-      this.submitButton.innerHTML =
+      submitButton.disabled = true;
+      submitButton.innerHTML =
         `<i data-lucide="loader" class="w-5 h-5 animate-spin inline mr-2"></i>${label}`;
     } else {
       const label = this.t('submitAgain', 'Send Message');
-      this.submitButton.disabled = false;
-      this.submitButton.innerHTML =
+      submitButton.disabled = false;
+      submitButton.innerHTML =
         `<i data-lucide="send" class="w-5 h-5 inline mr-2"></i>${label}`;
     }
 
     if (window.lucide) lucide.createIcons();
   }
 
-  showStatus(type, message) {
-    if (!this.statusMessage) return;
+  showStatus(form, type, message) {
+    const statusMessage = form.querySelector('[data-contact-status]');
+    if (!statusMessage) return;
 
-    this.statusMessage.textContent = message;
-    this.statusMessage.className = `mt-4 p-4 rounded-lg text-sm font-medium ${type === 'success'
+    statusMessage.textContent = message;
+    statusMessage.className = `mt-4 p-4 rounded-lg text-sm font-medium ${type === 'success'
       ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'
       : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400'
       }`;
-    this.statusMessage.classList.remove('hidden');
+    statusMessage.classList.remove('hidden');
 
     // Hide after 5 seconds
     setTimeout(() => {
-      this.statusMessage.classList.add('hidden');
+      statusMessage.classList.add('hidden');
     }, 5000);
   }
 }

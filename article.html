@@ -43,6 +43,9 @@
     <!-- Lucide Icons -->
     <script defer src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- EmailJS SDK (init lives in contact.js so it runs after defer resolves) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <!-- Marked.js for Markdown rendering -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
@@ -130,6 +133,7 @@
     <!-- JavaScript Files -->
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/contact.js"></script>
     <script src="assets/js/articles.js"></script>
     <script src="assets/js/country-detector.js"></script>
     <script src="assets/js/consent.js"></script>

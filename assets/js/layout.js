@@ -8,7 +8,8 @@ class LayoutManager {
     await Promise.all([
       this.loadComponent('navbar-placeholder', 'components/navbar.html'),
       this.loadComponent('footer-placeholder', 'components/footer.html'),
-      this.loadComponent('country-modal-placeholder', 'components/country-modal.html')
+      this.loadComponent('country-modal-placeholder', 'components/country-modal.html'),
+      this.appendComponent('components/contact-modal.html')
     ]);
 
     // After components are loaded, initialize other scripts
@@ -25,6 +26,18 @@ class LayoutManager {
 
       const html = await response.text();
       placeholder.innerHTML = html;
+    } catch (error) {
+      console.error(`Error loading component: ${error.message}`);
+    }
+  }
+
+  // Like loadComponent, but appends to <body> so pages need no placeholder
+  async appendComponent(componentPath) {
+    try {
+      const response = await fetch(componentPath);
+      if (!response.ok) throw new Error(`Failed to load ${componentPath}`);
+
+      document.body.insertAdjacentHTML('beforeend', await response.text());
     } catch (error) {
       console.error(`Error loading component: ${error.message}`);
     }
@@ -53,8 +66,62 @@ class LayoutManager {
     // Keyboard support for the Competitiveness dropdown
     this.initDropdown();
 
+    // Open the contact form in a modal from any "#contact" link
+    this.initContactModal();
+
     // Dispatch custom event for other scripts
     document.dispatchEvent(new CustomEvent('layoutLoaded'));
+  }
+
+  // Every Contact link points at index.html#contact. Jumping there from
+  // another page lands in the wrong place because content above the form
+  // loads asynchronously, so the links open this modal instead. The href
+  // stays as a fallback when JS is unavailable.
+  initContactModal() {
+    const dialog = document.getElementById('contact-modal');
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+
+    const open = (source) => {
+      dialog.dataset.source = source;
+      if (dialog.open) return;
+      dialog.showModal();
+      document.documentElement.classList.add('overflow-hidden');
+      dialog.querySelector('input:not([type="hidden"])')?.focus();
+    };
+
+    dialog.addEventListener('close', () => {
+      document.documentElement.classList.remove('overflow-hidden');
+    });
+
+    dialog.addEventListener('click', (e) => {
+      // A click on the dialog element itself is a click on the backdrop
+      if (e.target === dialog || e.target.closest('[data-contact-close]')) {
+        dialog.close();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href$="#contact"]');
+      if (!link || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      open(this.contactSource(link));
+    });
+
+    // Direct visits to index.html#contact (e.g. shared links)
+    if (window.location.hash === '#contact') open('direct-link');
+  }
+
+  // Where the visitor clicked Contact, recorded with the enquiry
+  contactSource(link) {
+    if (link.closest('#mobile-menu')) return 'mobile-menu';
+    if (link.closest('#navbar')) return 'navbar';
+    if (link.closest('#article-cta')) return 'article-cta';
+    if (link.closest('#footer-placeholder')) return 'footer';
+    // Service pages have unnamed sections: name them hero / section-N
+    const section = link.closest('section');
+    if (!section) return 'page-cta';
+    const index = Array.from(document.querySelectorAll('section')).indexOf(section);
+    return `page-cta#${section.id || (index === 0 ? 'hero' : `section-${index + 1}`)}`;
   }
 
   initDropdown() {

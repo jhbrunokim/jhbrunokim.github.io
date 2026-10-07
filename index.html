@@ -1490,6 +1490,7 @@
 
             <form
               id="contact-form"
+              data-contact-form
               class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800"
             >
               <div class="grid md:grid-cols-2 gap-6 mb-6">
@@ -1536,12 +1537,13 @@
               <button
                 type="submit"
                 id="contact-submit"
+                data-contact-submit
                 class="w-full flex items-center justify-center gap-2 px-8 py-4 bg-signal-400 hover:bg-signal-300 text-ink-950 rounded-lg font-semibold transition-colors shadow-lg"
               >
                 <i data-lucide="send" class="w-5 h-5"></i>
                 <span data-i18n="contactSection.submitButton">전송하기</span>
               </button>
-              <div id="contact-status" class="hidden mt-4"></div>
+              <div id="contact-status" data-contact-status class="hidden mt-4" role="status"></div>
             </form>
           </div>
         </div>
