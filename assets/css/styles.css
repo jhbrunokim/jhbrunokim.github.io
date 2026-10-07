@@ -183,3 +183,89 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Home timeline ("Our Journey"): rail + scroll reveal.
+   Below md the rail sits on the left and cards hang off it; from md up it
+   is the centred zigzag. Hidden states only apply once timeline-reveal.js
+   adds .js-timeline, so the timeline is fully visible without JS. */
+.tl-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.5rem;
+  transform: translateX(-50%);
+  border-radius: 9999px;
+}
+.tl-fill {
+  bottom: auto;
+  height: 0;
+  transition: height 600ms cubic-bezier(0.22, 1, 0.36, 1) 130ms;
+}
+.tl-item {
+  padding-left: 2rem;
+}
+.tl-dot {
+  position: absolute;
+  z-index: 1;
+  left: 0.5rem;
+  top: 2.5rem; /* centre of the year line: card padding 1.5rem + half of 2rem line */
+  transform: translate(-50%, -50%);
+  transition: transform 520ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 300ms ease;
+}
+.tl-card {
+  transition: opacity 620ms cubic-bezier(0.22, 1, 0.36, 1), transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (min-width: 768px) {
+  .tl-line,
+  .tl-dot {
+    left: 50%;
+  }
+  .tl-item {
+    padding-left: 0;
+  }
+  .tl-dot {
+    top: 50%;
+  }
+}
+
+.js-timeline .tl-item:not(.is-in) .tl-dot {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.55);
+}
+.js-timeline .tl-item:not(.is-in) .tl-card {
+  opacity: 0;
+  transform: translateX(28px);
+}
+@media (min-width: 768px) {
+  .js-timeline .tl-item:not(.is-in) .tl-card[data-side="left"] {
+    transform: translateX(-28px);
+  }
+}
+
+/* The current year rings out once when it arrives. */
+.tl-dot--now::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 9999px;
+  border: 2px solid #2a7fc3; /* ocean-500 */
+  opacity: 0;
+}
+.js-timeline .tl-item.is-in .tl-dot--now::after {
+  animation: tl-ring 1200ms ease-out 400ms 1;
+}
+@keyframes tl-ring {
+  from { opacity: 0.9; transform: scale(0.6); }
+  to { opacity: 0; transform: scale(1.8); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tl-fill,
+  .tl-dot,
+  .tl-card {
+    transition: none;
+  }
+  .tl-dot--now::after {
+    animation: none !important;
+  }
+}

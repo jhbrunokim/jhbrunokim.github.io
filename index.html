@@ -304,7 +304,7 @@
     </section>
 
     <!-- Expertise Timeline Section -->
-    <section id="expertise" class="py-24 bg-slate-50 dark:bg-slate-900">
+    <section id="expertise" class="py-24 bg-slate-50 dark:bg-slate-900 overflow-x-clip">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
           <span
@@ -321,19 +321,26 @@
         </div>
 
         <!-- Timeline -->
-        <div class="relative">
-          <!-- Timeline Line -->
+        <div class="tl relative" data-timeline>
+          <!-- Timeline Line: pale track + fill that follows revealed items -->
           <div
-            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-ocean-200 dark:bg-ocean-900"
+            class="tl-line w-1 bg-ocean-200 dark:bg-ocean-900"
+            aria-hidden="true"
+          ></div>
+          <div
+            class="tl-line tl-fill w-1 bg-ocean-700 dark:bg-ocean-400"
+            aria-hidden="true"
+            data-timeline-fill
           ></div>
 
           <!-- Timeline Items -->
           <div class="space-y-6">
             <!-- 2021 -->
             <div
-              class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              class="tl-item relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              data-timeline-item
             >
-              <div class="w-full md:w-1/2 md:text-right md:pr-12">
+              <div class="tl-card w-full md:w-1/2 md:text-right md:pr-12" data-side="left">
                 <div
                   class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800"
                 >
@@ -361,20 +368,23 @@
                 </div>
               </div>
               <div
-                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                class="tl-dot w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                aria-hidden="true"
               ></div>
               <div class="md:w-1/2"></div>
             </div>
 
             <!-- 2022 -->
             <div
-              class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              class="tl-item relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              data-timeline-item
             >
               <div class="md:w-1/2"></div>
               <div
-                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                class="tl-dot w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                aria-hidden="true"
               ></div>
-              <div class="w-full md:w-1/2 md:pl-12">
+              <div class="tl-card w-full md:w-1/2 md:pl-12" data-side="right">
                 <div
                   class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800"
                 >
@@ -408,9 +418,10 @@
 
             <!-- 2023 -->
             <div
-              class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              class="tl-item relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              data-timeline-item
             >
-              <div class="w-full md:w-1/2 md:text-right md:pr-12">
+              <div class="tl-card w-full md:w-1/2 md:text-right md:pr-12" data-side="left">
                 <div
                   class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800"
                 >
@@ -441,20 +452,23 @@
                 </div>
               </div>
               <div
-                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                class="tl-dot w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                aria-hidden="true"
               ></div>
               <div class="md:w-1/2"></div>
             </div>
 
             <!-- 2024 -->
             <div
-              class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              class="tl-item relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              data-timeline-item
             >
               <div class="md:w-1/2"></div>
               <div
-                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                class="tl-dot w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                aria-hidden="true"
               ></div>
-              <div class="w-full md:w-1/2 md:pl-12">
+              <div class="tl-card w-full md:w-1/2 md:pl-12" data-side="right">
                 <div
                   class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800"
                 >
@@ -485,9 +499,10 @@
 
             <!-- 2025 -->
             <div
-              class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              class="tl-item relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              data-timeline-item
             >
-              <div class="w-full md:w-1/2 md:text-right md:pr-12">
+              <div class="tl-card w-full md:w-1/2 md:text-right md:pr-12" data-side="left">
                 <div
                   class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800"
                 >
@@ -518,20 +533,23 @@
                 </div>
               </div>
               <div
-                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                class="tl-dot w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                aria-hidden="true"
               ></div>
               <div class="md:w-1/2"></div>
             </div>
 
             <!-- 2026 -->
             <div
-              class="relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              class="tl-item relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              data-timeline-item
             >
               <div class="md:w-1/2"></div>
               <div
-                class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950 ring-4 ring-ocean-200 dark:ring-ocean-900"
+                class="tl-dot tl-dot--now w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950 ring-4 ring-ocean-200 dark:ring-ocean-900"
+                aria-hidden="true"
               ></div>
-              <div class="w-full md:w-1/2 md:pl-12">
+              <div class="tl-card w-full md:w-1/2 md:pl-12" data-side="right">
                 <div
                   class="bg-ocean-800 p-6 rounded-xl shadow-lg"
                 >
@@ -1584,6 +1602,7 @@
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/contact.js"></script>
     <script src="assets/js/articles.js"></script>
+    <script src="assets/js/timeline-reveal.js"></script>
     <script src="assets/js/country-detector.js"></script>
     <script src="assets/js/consent.js"></script>
     <script>
