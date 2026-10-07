@@ -141,7 +141,8 @@
       "submitAgain": "전송하기",
       "successMessage": "메시지가 성공적으로 전송되었습니다!",
       "errorMessage": "전송에 실패했습니다. 나중에 다시 시도해주세요.",
-      "validationError": "모든 필드를 입력해주세요."
+      "validationError": "모든 필드를 입력해주세요.",
+      "close": "닫기"
     },
     "systemIntegration": {
       "title": "사업 범위",
@@ -472,6 +473,16 @@
       "desc": "규정 대응부터 보안 설계까지, 프로젝트 상황에 맞춰 함께 검토해 드립니다.",
       "button": "상담 문의하기",
       "service": "관련 서비스 보기"
+    },
+    "articlesUi": {
+      "readArticle": "아티클 읽기",
+      "empty": "아직 등록된 아티클이 없습니다.",
+      "by": "작성:",
+      "notFound": "아티클을 찾을 수 없습니다.",
+      "noSlug": "아티클이 지정되지 않았습니다.",
+      "loadFailed": "아티클을 불러오지 못했습니다.",
+      "back": "아티클 목록으로",
+      "siteName": "광명마리타임"
     }
   },
   "en": {
@@ -616,7 +627,8 @@
       "submitAgain": "Send Message",
       "successMessage": "Message sent successfully!",
       "errorMessage": "Failed to send message. Please try again later.",
-      "validationError": "Please fill in all fields."
+      "validationError": "Please fill in all fields.",
+      "close": "Close"
     },
     "systemIntegration": {
       "title": "Business Scope",
@@ -947,6 +959,16 @@
       "desc": "From regulatory response to security design, we'll review it against your project.",
       "button": "Contact us",
       "service": "See related service"
+    },
+    "articlesUi": {
+      "readArticle": "Read article",
+      "empty": "No articles yet.",
+      "by": "By",
+      "notFound": "Article not found.",
+      "noSlug": "No article specified.",
+      "loadFailed": "Failed to load the article.",
+      "back": "Back to Articles",
+      "siteName": "Gwangmyung Maritime"
     }
   },
   "zh": {
@@ -1091,7 +1113,8 @@
       "submitAgain": "发送消息",
       "successMessage": "消息发送成功！",
       "errorMessage": "发送失败，请稍后再试。",
-      "validationError": "请填写所有必填项。"
+      "validationError": "请填写所有必填项。",
+      "close": "关闭"
     },
     "systemIntegration": {
       "title": "业务范围",
@@ -1422,6 +1445,16 @@
       "desc": "从法规应对到安全设计，我们将结合您的项目情况一起评估。",
       "button": "咨询我们",
       "service": "查看相关服务"
+    },
+    "articlesUi": {
+      "readArticle": "阅读文章",
+      "empty": "暂无文章。",
+      "by": "作者：",
+      "notFound": "未找到该文章。",
+      "noSlug": "未指定文章。",
+      "loadFailed": "文章加载失败。",
+      "back": "返回文章列表",
+      "siteName": "光明海事"
     }
   },
   "ja": {
@@ -1566,7 +1599,8 @@
       "submitAgain": "メッセージを 送信",
       "successMessage": "メッセージが 送信されました。",
       "errorMessage": "送信に 失敗しました。後ほど 再度 お試しください。",
-      "validationError": "すべての 項目を 入力してください。"
+      "validationError": "すべての 項目を 入力してください。",
+      "close": "閉じる"
     },
     "systemIntegration": {
       "title": "事業範囲",
@@ -1897,6 +1931,16 @@
       "desc": "規制対応からセキュリティ設計まで、プロジェクトの状況に合わせてご一緒に検討します。",
       "button": "お問い合わせ",
       "service": "関連サービスを見る"
+    },
+    "articlesUi": {
+      "readArticle": "記事を読む",
+      "empty": "まだ記事がありません。",
+      "by": "著者：",
+      "notFound": "記事が見つかりません。",
+      "noSlug": "記事が指定されていません。",
+      "loadFailed": "記事を読み込めませんでした。",
+      "back": "記事一覧に戻る",
+      "siteName": "光明マリタイム"
     }
   }
 }

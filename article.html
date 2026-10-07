@@ -43,6 +43,9 @@
     <!-- Lucide Icons -->
     <script defer src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- EmailJS SDK (init lives in contact.js so it runs after defer resolves) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <!-- Marked.js for Markdown rendering -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
@@ -130,17 +133,15 @@
     <!-- JavaScript Files -->
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/contact.js"></script>
     <script src="assets/js/articles.js"></script>
     <script src="assets/js/country-detector.js"></script>
     <script src="assets/js/consent.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', async () => {
-        const manager = window.articlesManager;
-        const meta = await manager.renderArticleDetail('article-meta', 'article-content');
-        if (!meta) return;
-
-        // Reveal the end-of-article CTA and point its secondary link at the
-        // service page that matches the article's category.
+      // Runs after every render, including re-renders on language change.
+      // Reveal the end-of-article CTA and point its secondary link at the
+      // service page that matches the article's category.
+      document.addEventListener('articleRendered', ({ detail: { meta } }) => {
         const servicePage = {
           Regulation: 'compliance.html',
           Compliance: 'compliance.html',
@@ -153,6 +154,10 @@
         }
         document.getElementById('article-cta')?.classList.remove('hidden');
         if (window.lucide) lucide.createIcons();
+      });
+
+      document.addEventListener('DOMContentLoaded', () => {
+        window.articlesManager.renderArticleDetail('article-meta', 'article-content');
       });
     </script>
   </body>

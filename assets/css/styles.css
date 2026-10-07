@@ -77,6 +77,20 @@
   animation: fadeIn 0.5s ease-out forwards;
 }
 
+/* Contact modal (components/contact-modal.html) */
+#contact-modal::backdrop {
+  background: rgb(18 28 36 / 0.6); /* ink-950 */
+  backdrop-filter: blur(4px);
+}
+#contact-modal[open] {
+  animation: fadeIn 0.2s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  #contact-modal[open] {
+    animation: none;
+  }
+}
+
 /* Prose styles for markdown article rendering */
 .prose {
   line-height: 1.75;

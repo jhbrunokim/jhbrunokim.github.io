@@ -1,26 +1,71 @@
 [
   {
     "slug": "maritime-cyber-regulatory-trends",
-    "title": "해양 사이버 규제 동향: IMO · BIMCO · IACS · NIS2",
+    "title": {
+      "ko": "해양 사이버 규제 동향: IMO · BIMCO · IACS · NIS2",
+      "en": "Maritime Cyber Regulatory Trends: IMO · BIMCO · IACS · NIS2",
+      "zh": "海事网络安全法规动态：IMO · BIMCO · IACS · NIS2",
+      "ja": "海事サイバー規制の動向：IMO · BIMCO · IACS · NIS2"
+    },
     "date": "2026-10-07",
-    "description": "IMO MSC-FAL.1/Circ.3 Rev.3, BIMCO 가이드라인, IACS UR E10/E22/E26/E27, EU NIS2까지 — 해양 사이버 규제가 권고에서 강제로 넘어가는 흐름과 이해관계자별 대응 방향을 정리합니다.",
-    "author": "광명마리타임",
+    "description": {
+      "ko": "IMO MSC-FAL.1/Circ.3 Rev.3, BIMCO 가이드라인, IACS UR E10/E22/E26/E27, EU NIS2까지 — 해양 사이버 규제가 권고에서 강제로 넘어가는 흐름과 이해관계자별 대응 방향을 정리합니다.",
+      "en": "From IMO MSC-FAL.1/Circ.3 Rev.3 and the BIMCO guidelines to IACS UR E10/E22/E26/E27 and EU NIS2 — how maritime cyber regulation is shifting from recommendation to obligation, and how each stakeholder should respond.",
+      "zh": "从 IMO MSC-FAL.1/Circ.3 Rev.3、BIMCO 指南、IACS UR E10/E22/E26/E27 到欧盟 NIS2——梳理海事网络安全法规从建议走向强制的趋势，以及各相关方的应对方向。",
+      "ja": "IMO MSC-FAL.1/Circ.3 Rev.3、BIMCOガイドライン、IACS UR E10/E22/E26/E27からEU NIS2まで——海事サイバー規制が推奨から義務へと移行する流れと、関係者ごとの対応の方向性を整理します。"
+    },
+    "author": {
+      "ko": "광명마리타임",
+      "en": "Gwangmyung Maritime",
+      "zh": "光明海事",
+      "ja": "光明マリタイム"
+    },
     "category": "Regulation"
   },
   {
     "slug": "maritime-cyber-threat-cases",
-    "title": "해양 사이버 위협 사례로 본 선박 보안의 현실",
+    "title": {
+      "ko": "해양 사이버 위협 사례로 본 선박 보안의 현실",
+      "en": "The Reality of Ship Security, Seen Through Maritime Cyber Incidents",
+      "zh": "从海事网络威胁案例看船舶安全的现实",
+      "ja": "海事サイバー脅威の事例から見る船舶セキュリティの現実"
+    },
     "date": "2026-10-07",
-    "description": "Maersk NotPetya부터 2025년 이란 선단 VSAT 공격, MSC Antonia GPS 스푸핑 좌초까지 — 2016–⁠2025년 주요 해양 사이버 사고와 그 시사점을 정리합니다.",
-    "author": "광명마리타임",
+    "description": {
+      "ko": "Maersk NotPetya부터 2025년 이란 선단 VSAT 공격, MSC Antonia GPS 스푸핑 좌초까지 — 2016–⁠2025년 주요 해양 사이버 사고와 그 시사점을 정리합니다.",
+      "en": "From Maersk NotPetya to the 2025 VSAT attack on Iran's fleet and the GPS-spoofing grounding of MSC Antonia — a review of major maritime cyber incidents from 2016–⁠2025 and what they mean.",
+      "zh": "从马士基 NotPetya 到 2025 年伊朗船队 VSAT 攻击，再到 MSC Antonia 因 GPS 欺骗搁浅——梳理 2016–⁠2025 年重大海事网络事件及其启示。",
+      "ja": "マースク NotPetya から2025年のイラン船団への VSAT 攻撃、GPS スプーフィングによる MSC Antonia の座礁まで — 2016–⁠2025年の主要な海事サイバーインシデントとその示唆をまとめます。"
+    },
+    "author": {
+      "ko": "광명마리타임",
+      "en": "Gwangmyung Maritime",
+      "zh": "光明海事",
+      "ja": "光明マリタイム"
+    },
     "category": "Threat Intelligence"
   },
   {
     "slug": "iacs-ur-e26-e27-overview",
-    "title": "IACS UR E26/E27 규제 개요와 대응 전략",
+    "title": {
+      "ko": "IACS UR E26/E27 규제 개요와 대응 전략",
+      "en": "IACS UR E26/E27: Regulatory Overview and Compliance Strategy",
+      "zh": "IACS UR E26/E27 规范概述与应对策略",
+      "ja": "IACS UR E26/E27 規則の概要と対応戦略"
+    },
     "date": "2026-01-31",
-    "description": "2024년 7월부터 시행된 IACS UR E26/E27 사이버 복원력 규제의 핵심 내용과 조선소, 선주, 공급사가 준비해야 할 사항을 정리합니다.",
-    "author": "광명마리타임",
+    "description": {
+      "ko": "2024년 7월부터 시행된 IACS UR E26/E27 사이버 복원력 규제의 핵심 내용과 조선소, 선주, 공급사가 준비해야 할 사항을 정리합니다.",
+      "en": "An overview of the key provisions of the IACS UR E26/E27 cyber resilience requirements, in force since July 2024, and what shipyards, shipowners and suppliers need to prepare.",
+      "zh": "梳理自2024年7月起实施的IACS UR E26/E27网络韧性规范的核心内容，以及船厂、船东和供应商需要做好的准备。",
+      "ja": "2024年7月から適用が開始されたIACS UR E26/E27サイバーレジリエンス規則の要点と、造船所・船主・サプライヤーが準備すべき事項を解説します。"
+    },
+    "author": {
+      "ko": "광명마리타임",
+      "en": "Gwangmyung Maritime",
+      "zh": "光明海事",
+      "ja": "光明マリタイム"
+    },
     "category": "Compliance"
   }
 ]

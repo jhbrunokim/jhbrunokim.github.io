@@ -1,0 +1,79 @@
+<!-- Contact Modal: opened from any "#contact" link (see layout.js initContactModal) -->
+<dialog
+  id="contact-modal"
+  aria-labelledby="contact-modal-title"
+  class="w-[min(36rem,calc(100%-2rem))] max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-2xl bg-white dark:bg-slate-900 p-0 shadow-2xl border border-slate-200 dark:border-slate-800"
+>
+  <div class="p-6 sm:p-8">
+    <div class="flex items-start justify-between gap-4 mb-6">
+      <div>
+        <h2
+          id="contact-modal-title"
+          class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2"
+          data-i18n="contactSection.title"
+        >
+          문의하기
+        </h2>
+        <p
+          class="text-slate-600 dark:text-slate-400"
+          data-i18n="contactSection.description"
+        >
+          프로젝트 상담 및 기술 문의는 아래 양식을 통해 보내주세요.
+        </p>
+      </div>
+      <button
+        type="button"
+        data-contact-close
+        data-i18n-aria-label="contactSection.close"
+        aria-label="닫기"
+        class="shrink-0 -mr-2 -mt-2 p-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-slate-800 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ocean-500"
+      >
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <form data-contact-form>
+      <div class="grid sm:grid-cols-2 gap-4 mb-4">
+        <input
+          type="text"
+          id="contact-modal-name"
+          name="name"
+          required
+          autocomplete="name"
+          data-i18n-placeholder="contactSection.nameLabel"
+          placeholder="이름"
+          class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 dark:text-white transition-colors"
+        />
+        <input
+          type="email"
+          id="contact-modal-email"
+          name="email"
+          required
+          autocomplete="email"
+          data-i18n-placeholder="contactSection.emailLabel"
+          placeholder="이메일"
+          class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 dark:text-white transition-colors"
+        />
+      </div>
+      <input type="hidden" name="subject" value="고객 문의" />
+      <textarea
+        id="contact-modal-message"
+        name="message"
+        rows="6"
+        required
+        data-i18n-placeholder="contactSection.messageLabel"
+        placeholder="메시지"
+        class="w-full mb-6 px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 dark:text-white transition-colors resize-none"
+      ></textarea>
+      <button
+        type="submit"
+        data-contact-submit
+        class="w-full flex items-center justify-center gap-2 px-8 py-4 bg-signal-400 hover:bg-signal-300 text-ink-950 rounded-lg font-semibold transition-colors shadow-lg"
+      >
+        <i data-lucide="send" class="w-5 h-5"></i>
+        <span data-i18n="contactSection.submitButton">전송하기</span>
+      </button>
+      <div data-contact-status class="hidden mt-4" role="status"></div>
+    </form>
+  </div>
+</dialog>

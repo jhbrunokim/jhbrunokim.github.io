@@ -92,6 +92,8 @@ class I18nManager {
     localStorage.setItem('preferredLanguage', lang);
     this.ensureFontForLocale(lang);
     this.applyTranslations();
+    // Let script-rendered content (e.g. articles) redraw in the new locale
+    document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
   }
 
   // Load the CJK Google Font matching the newly selected locale so
