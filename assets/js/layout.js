@@ -71,7 +71,7 @@ class LayoutManager {
     // Highlight the active page/section in the navbar
     this.initActiveState();
 
-    // Keyboard support for the Competitiveness dropdown
+    // Keyboard support for the Services dropdown
     this.initDropdown();
 
     // Open the contact form in a modal from any "#contact" link
@@ -206,9 +206,9 @@ class LayoutManager {
     const currentHash = window.location.hash;
     const isIndex = currentPath === '/' || currentPath.endsWith('/');
 
-    const compBtn = document.querySelector('[data-dropdown-toggle]');
-    const isCompetitivenessPage = /\/(system-integration|maritime-cybersecurity|compliance|ai-cybersecurity-consulting)\.html$/.test(window.location.pathname);
-    // Matches on pathname only, so article.html?slug=... still highlights Articles
+    const servicesToggle = document.querySelector('[data-dropdown-toggle]');
+    const isServicePage = /\/(system-integration|maritime-cybersecurity|compliance|ai-cybersecurity-consulting)\.html$/.test(window.location.pathname);
+    // Matches on pathname only, so article.html?slug=... still highlights Insights
     const isArticlesPage = /\/(articles|article)\.html$/.test(window.location.pathname);
 
     const setActive = (linkHref) => {
@@ -217,7 +217,7 @@ class LayoutManager {
         const match = href === linkHref;
         l.classList.toggle('is-active', match);
       });
-      if (compBtn) compBtn.classList.toggle('is-active', isCompetitivenessPage);
+      if (servicesToggle) servicesToggle.classList.toggle('is-active', isServicePage);
     };
 
     if (!isIndex) {
@@ -225,19 +225,26 @@ class LayoutManager {
       const fileName = window.location.pathname.split('/').pop();
       setActive(fileName);
       if (isArticlesPage) {
-        document.querySelectorAll('a[href="index.html#articles"]').forEach(l => l.classList.add('is-active'));
+        document.querySelectorAll('a[href="index.html#insights"]').forEach(l => l.classList.add('is-active'));
       }
       return;
     }
 
-    // Index page: track section in view
-    const sections = ['home', 'expertise', 'vision', 'business', 'competitiveness', 'articles', 'about', 'contact']
+    // Index page: track section in view. Sections are listed in DOM order;
+    // navFor maps each one (and the old #about / #articles alias anchors) to
+    // the nav item it lights: About covers both Why and Journey.
+    const sections = ['home', 'services', 'why', 'journey', 'insights', 'contact']
       .map(id => document.getElementById(id))
       .filter(Boolean);
     if (!sections.length) return;
 
+    const navFor = {
+      home: 'home', services: 'services', why: 'why', journey: 'why',
+      insights: 'insights', contact: 'contact', about: 'why', articles: 'insights'
+    };
+
     const highlight = (id) => {
-      const targetHref = `index.html#${id}`;
+      const targetHref = `index.html#${navFor[id] || id}`;
       links.forEach(l => {
         const href = l.getAttribute('href') || '';
         l.classList.toggle('is-active', href === targetHref);
