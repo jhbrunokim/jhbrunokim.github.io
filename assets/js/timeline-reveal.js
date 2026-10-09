@@ -10,9 +10,11 @@
 
   // Fill reaches the centre of the last revealed dot (items are positioned
   // relative to the timeline; dots are positioned relative to their item).
+  // A goal item ([data-timeline-goal]) still reveals, but the fill stops at
+  // the last achieved year so the rail is not drawn through the goal.
   const updateFill = () => {
     if (!fill) return;
-    const shown = items.filter(i => i.classList.contains('is-in'));
+    const shown = items.filter(i => i.classList.contains('is-in') && !i.hasAttribute('data-timeline-goal'));
     const last = shown[shown.length - 1];
     const dot = last && last.querySelector('.tl-dot');
     fill.style.height = dot ? `${last.offsetTop + dot.offsetTop}px` : '0px';
