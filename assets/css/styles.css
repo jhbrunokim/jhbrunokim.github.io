@@ -53,27 +53,12 @@
   .word-break-keep-all {
     word-break: keep-all;
   }
-
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
 }
 
 /* Custom Animations */
-@keyframes blob {
-  0% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0px, 0px) scale(1); }
-}
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-blob {
-  animation: blob 7s infinite;
 }
 
 .animate-fade-in {
@@ -209,7 +194,7 @@
   overflow: hidden;
 }
 
-/* Home timeline ("Our Journey"): rail + scroll reveal.
+/* Home timeline (#journey): rail + scroll reveal.
    Below md the rail sits on the left and cards hang off it; from md up it
    is the centred zigzag. Hidden states only apply once timeline-reveal.js
    adds .js-timeline, so the timeline is fully visible without JS. */
@@ -267,51 +252,15 @@
   }
 }
 
-/* The current year rings out once when it arrives. */
-.tl-dot--now::after {
-  content: "";
-  position: absolute;
-  inset: -10px;
-  border-radius: 9999px;
-  border: 2px solid #2a7fc3; /* ocean-500 */
-  opacity: 0;
-}
-.js-timeline .tl-item.is-in .tl-dot--now::after {
-  animation: tl-ring 1200ms ease-out 400ms 1;
-}
-@keyframes tl-ring {
-  from { opacity: 0.9; transform: scale(0.6); }
-  to { opacity: 0; transform: scale(1.8); }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .tl-fill,
   .tl-dot,
   .tl-card {
     transition: none;
   }
-  .tl-dot--now::after {
-    animation: none !important;
-  }
 }
 
-/* Contact "Trust / Execution / Responsibility / Partnership" display title.
-   One word per line (translations use \n). Words never split: from lg the
-   grid column is max-content, below lg the title has the full width. On
-   phones the floor has to let "Responsibility" fit a 320px screen. */
-.contact-values-title {
-  font-size: clamp(2rem, 9vw, 3rem);
-  line-height: 1.3;
-  hyphens: none;
-  white-space: pre-line;
-}
-@media (min-width: 768px) {
-  .contact-values-title {
-    font-size: clamp(3rem, 6vw, 6rem);
-  }
-}
-
-/* Support-scope logo marquee (class societies). Two identical sets slide
+/* Class-society logo marquee (#why). Two identical sets slide
    left by exactly one set width; each set carries trailing padding equal
    to the gap so the seam is invisible. */
 .logo-marquee {
