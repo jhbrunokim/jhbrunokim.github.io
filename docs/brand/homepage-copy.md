@@ -586,9 +586,75 @@ Stage 3에서 홈페이지 히어로 바로 아래에 추가한 섹션입니다.
 | 2행 링크 (`services.html`) | `home.business.cyber.link` | 서비스 보기 | View services |
 | 3행 제목 | `home.business.data.title` | 데이터 · AI 기반 운영 | Data- and AI-based operations |
 | 3행 본문 | `home.business.data.body` | AI 기반 보안 운영(SecOps)과 데이터 분석을 선박과 운영 시스템에 적용합니다. 설계 · 검증 · 운영 단계의 판단을 데이터로 뒷받침합니다. | We apply AI-based security operations (SecOps) and data analysis to ships and operating systems. Data backs the decisions made at the design, verification and operation stages. |
-| 3행 링크 (`ai-cybersecurity-consulting.html`) | `home.business.data.link` | 자세히 보기 | Learn more |
+| 3행 링크 (`ai-cybersecurity-consulting.html`) | `home.business.data.link` | AI 컨설팅 보기 (Stage 4) | View AI consulting |
 
 zh · ja 문구는 `data/translations.json`의 같은 키를 보십시오.
 
 같은 단계에서 히어로는 `hero.title` / `hero.description` / `hero.ctaSecondary`(5d64ea9 문구 복원, ko 설명은 "광명마리타임", "대응합니다"로 표기 수정)로 돌아갔고, 8.2절에 적힌 `hero.title` · `hero.description`은 다시 쓰입니다. 예전 홈페이지의 `home.hero.*` · `home.services.*` · `home.why.*`는 `services.html`이 그대로 씁니다.
 
+---
+
+## 11. 회사 소개 페이지 (Stage 4, `about.html`)
+
+Stage 4에서 홈페이지의 걸어온 길을 옮겨 만든 하위 페이지입니다. 새 키는 `about.*`이며 네 로케일 모두 있습니다. 회사명은 포지셔닝 2.1절, 선급 · 표준 표기는 2.2 · 2.4절을 따릅니다. 핵심 가치 네 항목은 예전 사이트(`5d64ea9`의 `about.coreValue1`–`4`, `*Desc`) 문구를 다시 씁니다(ja는 단어 사이 공백을 지웠고, en 설명은 문장형 대소문자로 바꿨습니다).
+
+- `[OWNER]` 회사명의 영문 법인 형태: 카피 덱 기준값은 "Gwangmyung Maritime Co., Ltd."이지만, 등기상 정식 영문명 확인 전까지 페이지에는 "Gwangmyung Maritime"만 씁니다.
+- 영업시간은 확인된 정보가 없어 쓰지 않습니다.
+
+### 11.1 개요 (`#overview`)
+
+| 슬롯 | 키 | ko | en | zh | ja |
+|---|---|---|---|---|---|
+| `<h1>` | `about.overview.title` | 회사 소개 | About | 关于我们 | 会社概要 |
+| 리드 | `about.overview.lede` | 광명마리타임은 조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응을 맡는 기술 기업입니다. | Gwangmyung Maritime is a technology company handling platform development, system integration and global regulatory compliance for the shipbuilding and maritime industries. | 光明海事是一家承担造船 · 海事行业平台开发、系统集成与全球法规合规的技术企业。 | 光明マリタイムは、造船・海事産業のプラットフォーム開発、システム統合、グローバル規制対応を担う技術企業です。 |
+| 회사명 라벨 | `about.facts.nameLabel` | 회사명 | Company name | 公司名称 | 会社名 |
+| 회사명 값 | `about.facts.nameValue` | 주식회사 광명마리타임 / Gwangmyung Maritime | (같음) | (같음) | (같음) |
+| 출범 라벨 | `about.facts.launchLabel` | 출범 | Launched | 成立 | 発足 |
+| 출범 값 | `about.facts.launchValue` | 2025년 | 2025 | 2025年 | 2025年 |
+| 소재지 라벨 | `about.facts.addressLabel` | 소재지 | Address | 地址 | 所在地 |
+| 소재지 값 | `footer.address` (재사용) | 전라북도 군산시 상신6길 12 | — | — | — |
+| 사업자등록번호 라벨 | `about.facts.businessNumberLabel` | 사업자등록번호 | Business registration no. | 营业执照号码 | 事業者登録番号 |
+| 사업자등록번호 값 | (번역 없음) | 391-81-02164 | — | — | — |
+| 이메일 | `contactSection.emailLabel`, `footer.email` (재사용) | 이메일 · info@gmmaritime.com | — | — | — |
+
+`footer.businessNumberLabel`("사업자 등록번호: ")은 끝에 쌍점이 붙어 있어 정의 목록 라벨로는 새 키를 씁니다.
+
+### 11.2 핵심 가치 (`#values`)
+
+ko UI는 한국어 낱말이 제목이고 영어 낱말이 보조 줄입니다. en UI는 보조 줄을 비웁니다(`empty:hidden`).
+
+| 키 접두 | 제목 `.name` (ko / en / zh / ja) | 보조 줄 `.tag` (en은 빈 문자열) | 설명 `.desc` ko | en | zh | ja |
+|---|---|---|---|---|---|---|
+| `about.values.title` | 핵심 가치 / Core values / 核心价值 / コアバリュー | — | — | — | — | — |
+| `about.values.trust` | 신뢰 / Trust / 信任 / 信頼 | Trust | 신뢰를 기반으로 한 파트너십 | Partnership based on trust | 基于信任的伙伴关系 | 信頼を基盤としたパートナーシップ |
+| `about.values.execution` | 실행 / Execution / 执行 / 実行 | Execution | 실행력 있는 프로젝트 수행 | Project execution with excellence | 卓越的项目执行 | 実行力あるプロジェクト遂行 |
+| `about.values.responsibility` | 책임 / Responsibility / 责任 / 責任 | Responsibility | 책임감 있는 기술 지원 | Responsible technical support | 负责任的技术支持 | 責任感ある技術サポート |
+| `about.values.partnership` | 협력 / Partnership / 合作 / 協力 | Partnership | 상생하는 협력 관계 | Collaborative win-win relationships | 合作共赢的关系 | 共生する協力関係 |
+
+### 11.3 걸어온 길 (`#journey`)
+
+홈페이지에서 옮긴 그대로입니다. 키는 `expertise.title`, `expertise.timeline2021`–`2026`(`*Title`, `*Desc`), `home.journey.goalLabel`(4절과 같음).
+
+### 11.4 대응 가능한 선급 · 참조 표준 (`#scope`)
+
+| 슬롯 | 키 | ko | en | zh | ja |
+|---|---|---|---|---|---|
+| 섹션 제목 | `about.scope.title` | 대응 가능한 선급 · 참조 표준 | Class societies and reference standards | 可支持的船级社 · 参考标准 | 対応可能な船級協会・参照標準 |
+
+그 아래 블록은 `services.html#why`와 같은 키를 씁니다: `home.why.classTitle`, `about.marqueePause` / `about.marqueePlay`, `about.supportScopeIACSList`, `home.why.classNote`, `home.why.standardsTitle`, `home.why.bodiesTitle`, `about.supportScopeInternationalList`.
+
+### 11.5 오시는 길 · 연락처 (`#location`)
+
+| 슬롯 | 키 | ko | en | zh | ja |
+|---|---|---|---|---|---|
+| 섹션 제목 | `about.location.title` | 오시는 길 · 연락처 | Location and contact | 位置与联系方式 | 所在地・連絡先 |
+| 지도 링크 (Google 지도, 새 탭) | `about.location.mapLink` | 지도에서 보기 | View on map | 在地图上查看 | 地図で見る |
+| 주소 · 이메일 | `home.contact.addressLabel`, `footer.address`, `contactSection.emailLabel`, `footer.email` (재사용) | | | | |
+| 버튼 (문의 모달) | `hero.ctaSecondary` (재사용) | 문의하기 | Contact us | 联系我们 | お問い合わせ |
+
+### 11.6 같은 단계에서 바뀐 기존 키
+
+| 키 | ko | en | zh | ja |
+|---|---|---|---|---|
+| `home.business.data.link` | AI 컨설팅 보기 | View AI consulting | 查看 AI 咨询 | AIコンサルティングを見る |
+| `nav.backToOverview` | 서비스 개요로 돌아가기 | Back to services overview | 返回服务概览 | サービス概要に戻る |

@@ -7,7 +7,18 @@
 
 ---
 
-## Stage 3 revision (2026-10-09) — read this first
+## Stage 4 revision (2026-10-10) — read this first
+
+The owner chose a separate About page. Where this section and anything below disagree (including the Stage 3 revision), this section wins.
+
+- **`about.html` (new)**: dark `bg-ocean-900` band `#overview` (`<h1>` 회사 소개, the broad definition sentence, a facts list: 회사명, 출범 2025년, 소재지, 사업자등록번호, 이메일), then light sections `#values` (핵심 가치: 신뢰 · 실행 · 책임 · 협력, Korean word first, English word on a secondary line, two-column ruled list, no icon tiles), `#journey` (the timeline moved verbatim from the homepage; the page's one centred head), `#scope` (대응 가능한 선급 · 참조 표준: the class-society marquee, no-affiliation note, standards chips and guidance-body line, same markup and keys as `services.html#why`), `#location` (오시는 길 · 연락처: address, email, "지도에서 보기" link, and the page's only `signal` element, the 문의하기 button that opens the contact modal). Keys: `about.overview.*`, `about.facts.*`, `about.values.*`, `about.scope.title`, `about.location.*`; the timeline keeps `expertise.timeline*` and `home.journey.goalLabel`.
+- **`index.html`**: `home` → `business` → `insights` → `contact` (+ the mobile mid-page CTA in `business`). The 걸어온 길 section and the `#about` alias are gone; `#business` turns white so the bands still alternate. Business-row link labels: 문의하기 (`#contact`), 서비스 보기 (`services.html`), AI 컨설팅 보기 (`ai-cybersecurity-consulting.html`).
+- **Navigation**: 홈 (`index.html`) · 서비스 (`services.html` + four-page dropdown) · 회사 소개 (`about.html`) · 인사이트 (`articles.html`) · 문의 (`index.html#contact`, opens the modal) · language. `initActiveState`: sub-pages light the link matching the filename (`article.html` lights 인사이트; `services.html` and the four service pages light the Services toggle); on the index page 홈 is lit over `home`, `business`, `insights` and 문의 over `contact`. `initHashAnchor` redirects index `#about` / `#journey` → `about.html#journey`, `#articles` → `articles.html`, `#services` / `#why` → `services.html`.
+- **Footer**: the bottom row links 회사 소개, 인사이트, 개인정보처리방침. `nav.backToOverview` reads "서비스 개요로 돌아가기".
+
+---
+
+## Stage 3 revision (2026-10-09)
 
 The owner split the page in two. Where this section and the rest of the spec disagree, this section wins.
 
