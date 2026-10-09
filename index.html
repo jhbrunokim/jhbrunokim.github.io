@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>광명마리타임 (Gwangmyung Maritime)</title>
+    <title>광명마리타임 | 선박 OT·사이버 보안, IACS UR E26/E27 컴플라이언스</title>
     <!-- SEO Meta Tags -->
     <meta
       name="description"
@@ -56,20 +56,23 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "광명마리타임",
+        "legalName": "주식회사 광명마리타임",
+        "taxID": "391-81-02164",
         "alternateName": "Gwangmyung Maritime",
         "url": "https://gmmaritime.com",
         "logo": "https://gmmaritime.com/resource/gmmaritime-logo.jpg",
         "description": "조선 · 해양 산업을 위한 선박 OT 및 사이버 보안 중심의 기술 전문 기업",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Busan",
+          "streetAddress": "상신6길 12",
+          "addressLocality": "군산시",
+          "addressRegion": "전라북도",
           "addressCountry": "KR"
         },
-        "sameAs": [],
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "customer service",
-          "email": "contact@gmmaritime.com",
+          "email": "info@gmmaritime.com",
           "availableLanguage": ["Korean", "English"]
         },
         "knowsAbout": [
@@ -94,14 +97,21 @@
 
     <!-- Google Fonts -->
     <!-- DNS prefetch for third-party assets -->
-    <link rel="dns-prefetch" href="https://unpkg.com" />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script>
       (function () {
         var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
-        var lang = localStorage.getItem('preferredLanguage') || 'en';
+        var lang = localStorage.getItem('preferredLanguage') || (function () {
+          // Same rule as detectBrowserLanguage() in assets/js/i18n.js
+          var tags = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+          for (var i = 0; i < tags.length; i++) {
+            var primary = String(tags[i] || '').toLowerCase().split('-')[0];
+            if (primary === 'ko' || primary === 'zh' || primary === 'ja') return primary;
+          }
+          return 'en';
+        })();
         var families = ['Inter:wght@400;500;600;700', 'Space+Grotesk:wght@500;600;700'];
         if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
         var link = document.createElement('link');
@@ -115,10 +125,10 @@
     <link rel="stylesheet" href="assets/css/output.css" />
 
     <!-- Lucide Icons -->
-    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/lucide@1.53.0/dist/umd/lucide.min.js"></script>
 
     <!-- EmailJS SDK (init lives in contact.js so it runs after defer resolves) -->
-    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.12.1/dist/email.min.js"></script>
   </head>
   <body
     class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden transition-colors duration-300"
@@ -179,24 +189,20 @@
               </div>
               <!-- Title -->
               <h1
-                class="font-display mt-10 text-pretty text-5xl font-semibold tracking-tight text-white sm:text-7xl"
+                class="font-display mt-10 text-pretty text-5xl font-semibold tracking-tight text-white sm:text-6xl"
                 data-i18n="hero.title"
-                data-i18n-html="true"
               >
-                조선 · 해양 산업의<br />플랫폼 개발, 시스템 통합,<br />글로벌
-                규제 대응<br />전문 기술 기업
+                조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응
+                전문 기술 기업
               </h1>
               <!-- Description -->
               <p
-                class="mt-8 text-pretty text-lg font-medium text-gray-400 sm:max-w-md sm:text-xl/8 lg:max-w-none"
+                class="mt-8 text-pretty text-lg font-medium text-gray-400 sm:max-w-md sm:text-xl/8 lg:max-w-lg"
                 data-i18n="hero.description"
-                data-i18n-html="true"
               >
                 광명 마리타임은 복잡해진 해양 산업과 기술에 대한 이해와
-                경험으로<br class="hidden md:block" />데이터와 AI 기반 System
-                Integration 솔루션을 제공하고<br
-                  class="hidden md:block"
-                />Global Compliance 에 대응 합니다.
+                경험으로 데이터와 AI 기반 System Integration 솔루션을
+                제공하고 Global Compliance 에 대응 합니다.
               </p>
               <!-- CTA Button -->
               <div class="mt-10 flex items-center gap-x-6">
@@ -723,7 +729,7 @@
               data-i18n-html="true"
             >
               "데이터와 거버넌스를 설계하는 산업으로의 전환,<br />
-              그 중심에 <span class="text-ocean-600">광명마리타임</span>이
+              그 중심에 <span class="text-ocean-300">광명마리타임</span>이
               있습니다."
             </h2>
             <p
@@ -1495,22 +1501,26 @@
             >
               <div class="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
+                  <label for="name" class="sr-only" data-i18n="contactSection.nameLabel">이름</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     required
+                    autocomplete="name"
                     data-i18n-placeholder="contactSection.nameLabel"
                     placeholder="이름"
                     class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 dark:text-white transition-colors"
                   />
                 </div>
                 <div>
+                  <label for="email" class="sr-only" data-i18n="contactSection.emailLabel">이메일</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     required
+                    autocomplete="email"
                     data-i18n-placeholder="contactSection.emailLabel"
                     placeholder="이메일"
                     class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 dark:text-white transition-colors"
@@ -1524,6 +1534,7 @@
                 value="고객 문의"
               />
               <div class="mb-6">
+                <label for="message" class="sr-only" data-i18n="contactSection.messageLabel">메시지</label>
                 <textarea
                   id="message"
                   name="message"
@@ -1533,6 +1544,19 @@
                   placeholder="메시지"
                   class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 dark:text-white transition-colors resize-none"
                 ></textarea>
+              </div>
+              <div class="mb-6 flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="privacy-consent"
+                  name="privacyConsent"
+                  aria-required="true"
+                  class="mt-1 h-5 w-5 shrink-0 rounded border-slate-300 dark:border-slate-700 text-ocean-600 focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+                />
+                <label for="privacy-consent" class="text-sm text-slate-600 dark:text-slate-400">
+                  <span data-i18n="contactSection.consentLabel">개인정보 수집 및 이용에 동의합니다.</span>
+                  <a href="privacy-policy.html" target="_blank" rel="noopener" class="text-ocean-600 dark:text-ocean-400 underline hover:no-underline rounded focus:outline-none focus:ring-2 focus:ring-ocean-500" data-i18n="contactSection.consentLink">(내용 보기)</a>
+                </label>
               </div>
               <button
                 type="submit"

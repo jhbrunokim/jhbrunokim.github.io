@@ -43,7 +43,15 @@ class LayoutManager {
     }
   }
 
+  updateFooterYear() {
+    document.querySelectorAll('[data-footer-year]').forEach((el) => {
+      el.textContent = new Date().getFullYear();
+    });
+  }
+
   onComponentsLoaded() {
+    this.updateFooterYear();
+
     // Reinitialize Lucide icons
     if (window.lucide) {
       lucide.createIcons();
@@ -161,7 +169,7 @@ class LayoutManager {
     const menu = wrapper.querySelector('[data-dropdown-menu]');
     if (!toggle || !menu) return;
 
-    const items = () => Array.from(menu.querySelectorAll('a[role="menuitem"]'));
+    const items = () => Array.from(menu.querySelectorAll('a'));
 
     // CSS group-hover / group-focus-within handles show/hide.
     // JS keeps aria-expanded in sync and adds arrow-key navigation for
@@ -200,6 +208,7 @@ class LayoutManager {
 
     const compBtn = document.querySelector('[data-dropdown-toggle]');
     const isCompetitivenessPage = /\/(system-integration|maritime-cybersecurity|compliance|ai-cybersecurity-consulting)\.html$/.test(window.location.pathname);
+    // Matches on pathname only, so article.html?slug=... still highlights Articles
     const isArticlesPage = /\/(articles|article)\.html$/.test(window.location.pathname);
 
     const setActive = (linkHref) => {
@@ -255,7 +264,9 @@ class LayoutManager {
       // Helper function to update aria-expanded
       const updateAriaExpanded = () => {
         const isHidden = mobileMenu.classList.contains('hidden');
-        mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
+        mobileMenuBtn.setAttribute('aria-expanded', String(!isHidden));
+        mobileMenuBtn.querySelector('[data-menu-icon="open"]')?.classList.toggle('hidden', !isHidden);
+        mobileMenuBtn.querySelector('[data-menu-icon="close"]')?.classList.toggle('hidden', isHidden);
       };
 
       mobileMenuBtn.addEventListener('click', () => {

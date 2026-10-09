@@ -3,7 +3,8 @@ module.exports = {
   content: [
     "./*.html",
     "./components/**/*.html",
-    "./assets/js/**/*.js"
+    "./assets/js/**/*.js",
+    "./data/translations.json"
   ],
   darkMode: 'class',
   theme: {

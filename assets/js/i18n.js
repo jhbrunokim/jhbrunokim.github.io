@@ -1,9 +1,28 @@
 // Internationalization (i18n) Manager
+
+// Pick the site locale from the browser's language preferences: the first
+// tag whose primary subtag is ko, zh or ja wins (e.g. 'ko-KR' -> 'ko',
+// 'zh-Hant-TW' -> 'zh'); anything else falls back to English. No network
+// lookup. The inline <head> font script in each page carries a copy of this
+// rule because it runs before any script file loads; keep them in sync.
+function detectBrowserLanguage() {
+  const SUPPORTED = ['ko', 'zh', 'ja'];
+  const tags = navigator.languages && navigator.languages.length
+    ? navigator.languages
+    : [navigator.language];
+  for (const tag of tags) {
+    const primary = String(tag || '').toLowerCase().split('-')[0];
+    if (SUPPORTED.includes(primary)) return primary;
+  }
+  return 'en';
+}
+window.detectBrowserLanguage = detectBrowserLanguage;
+
 class I18nManager {
   constructor() {
-    // Use 'preferredLanguage' key to match country-detector
-    // Default to English ('en')
-    this.currentLang = localStorage.getItem('preferredLanguage') || 'en';
+    // Use 'preferredLanguage' key to match country-detector. With nothing
+    // stored, follow the browser language so the first paint is localised.
+    this.currentLang = localStorage.getItem('preferredLanguage') || detectBrowserLanguage();
     this.translations = null;
     this.init();
   }
@@ -15,7 +34,7 @@ class I18nManager {
 
   async loadTranslations() {
     try {
-      const response = await fetch('./data/translations.json', { cache: 'no-cache' });
+      const response = await fetch('./data/translations.json');
       this.translations = await response.json();
     } catch (error) {
       console.error('Failed to load translations:', error);
