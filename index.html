@@ -91,9 +91,9 @@
     <!-- Theme (must run before body renders to avoid FOUC) -->
     <script src="assets/js/theme.js"></script>
 
-    <!-- Preload above-the-fold hero images for LCP -->
-    <link rel="preload" as="image" href="resource/images/hero-drydock-hull.jpg" fetchpriority="high" media="(min-width: 1024px)" />
-    <link rel="preload" as="image" href="resource/images/hero-bridge-night.jpg" fetchpriority="high" media="(min-width: 1024px)" />
+    <!-- Preload above-the-fold hero images for LCP (the collage shows from 1280px) -->
+    <link rel="preload" as="image" href="resource/images/hero-drydock-hull.jpg" fetchpriority="high" media="(min-width: 1280px)" />
+    <link rel="preload" as="image" href="resource/images/hero-bridge-night.jpg" fetchpriority="high" media="(min-width: 1280px)" />
 
     <!-- Google Fonts -->
     <!-- DNS prefetch for third-party assets -->
@@ -173,7 +173,7 @@
           class="mx-auto max-w-7xl px-6 pb-32 pt-32 sm:pt-36 lg:px-8 lg:pt-36"
         >
           <div
-            class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-start lg:min-h-[47rem] relative"
+            class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-start xl:min-h-[47rem] relative"
           >
             <div
               class="relative z-10 w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl"
@@ -207,7 +207,7 @@
               </div>
             </div>
             <div
-              class="hidden lg:flex lg:absolute lg:inset-y-0 lg:right-0 lg:w-[55%] overflow-visible opacity-90 justify-center gap-8 pointer-events-none"
+              class="hidden xl:flex lg:absolute lg:inset-y-0 lg:right-0 lg:w-[55%] overflow-visible opacity-90 justify-center gap-8 pointer-events-none"
             >
               <div
                 class="ml-auto w-48 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80"
