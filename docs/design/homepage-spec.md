@@ -7,6 +7,20 @@
 
 ---
 
+## Stage 3 revision (2026-10-09) — read this first
+
+The owner split the page in two. Where this section and the rest of the spec disagree, this section wins.
+
+- **`index.html` (broad homepage)**: `home` → `business` → `journey` → `insights` → `contact`, plus the zero-height aliases `#about` (now directly before `#journey`) and `#articles` (before `#insights`).
+  - `home` is the former broad hero from `5d64ea9` (`hero.title`, `hero.description`, `hero.ctaSecondary`, grid background, five-photo collage), without the badge and without `min-h-screen`; the text block carries `lg:min-h-[47rem]` so the section contains the absolutely positioned collage. Collage files: `hero-drydock-hull.jpg`, `hero-bridge-night.jpg`, `hero-tanker-dawn.jpg`, `hero-ship-wake.jpg`, `hero-hull-welding.jpg`; the first two are preloaded at ≥1024 px.
+  - `business` (사업 영역, `home.business.*`): left-aligned head, then three ruled rows in the §5 stakeholder-row style (title · body · link): 플랫폼 개발 · 구축 → `#contact`, 해양 사이버 보안 · 컴플라이언스 → `services.html`, 데이터 · AI 기반 운영 → `ai-cybersecurity-consulting.html`. The mobile mid-page CTA (formerly in `#why`) sits after the rows.
+  - `journey`, `insights`, `contact` are unchanged.
+- **`services.html` (services root)**: the former §3 hero (text + flow diagram, no `#home` id), §4 `#services` cards and §5 `#why` (stakeholder rows, class-society marquee, standards lines; no mid-page CTA), then a closing CTA band (`systemIntegration.ctaTitle` / `ctaDesc`, orange `hero.ctaSecondary` button) and the footer. Keys stay `home.hero.*`, `home.services.*`, `home.why.*`.
+- **Navigation**: the Services toggle (desktop) and the Services link (mobile) go to `services.html`; the dropdown keeps the four service pages; About goes to `index.html#journey`. `initActiveState` tracks `home, business, journey, insights, contact`, maps `about` → `journey` and `articles` → `insights`, and lights the Services toggle on `services.html` and the four service pages (`isServicesPage`).
+- Home `<title>`: `광명마리타임 | 조선 · 해양 플랫폼 개발, 시스템 통합, 글로벌 규제 대응`; `description` / `og:description` / `twitter:description` / JSON-LD `description` repeat `hero.description` (ko).
+
+---
+
 ## 1. Decisions at a glance
 
 | Topic | Decision |

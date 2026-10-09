@@ -567,3 +567,28 @@
 | 7 | 11개 외에 대응 가능한 선급(예: Türk Loydu)이 있습니까? | 11개만 표기, "등" 없음 | 3.3 |
 | 8 | `compliance.html`의 "For System Integration" 산출물(UR E26 · 6개 실증 산출물 + FAT 입회)을 조선소 몫으로 소개해도 됩니까? | 조선소 블록의 산출물 줄로 사용(시스템 통합 주체 = 조선소로 해석). 아니라면 조선소 블록에서 산출물 줄을 빼고 상세 한 줄만 둠 | 3.2 |
 | 9 | 히어로 제목 A / B 중 무엇을 쓰시겠습니까? | 권장안 A "선박 사이버 보안, 설계부터 선급 검사까지." | 1.2 |
+
+---
+
+## 10. 사업 영역 (Stage 3, `index.html#business`)
+
+Stage 3에서 홈페이지 히어로 바로 아래에 추가한 섹션입니다. 키는 `home.business.*`이며 네 로케일 모두 있습니다. ko는 대표 확정 문구, en / zh / ja는 포지셔닝 2절 표기 규칙에 따른 번역입니다.
+
+| 슬롯 | 키 | ko | en |
+|---|---|---|---|
+| 제목 | `home.business.title` | 사업 영역 | Business areas |
+| 서브라인 | `home.business.subtitle` | 조선 · 해양 산업의 운영 현장에서 출발해, 플랫폼 구축부터 규제 대응까지 이어집니다. | We start from day-to-day operations in shipbuilding and maritime, and carry the work from platform builds through to regulatory compliance. |
+| 1행 제목 | `home.business.platform.title` | 플랫폼 개발 · 구축 | Platform development and implementation |
+| 1행 본문 | `home.business.platform.body` | 공공 · 민간 · 해양 분야의 IT / OT 플랫폼을 설계하고 구축합니다. 데이터 · AI 기반 운영 시스템과 글로벌 표준을 따르는 데이터 관리 체계를 포함합니다. | We design and build IT / OT platforms for the public, private and maritime sectors. This includes data- and AI-based operating systems and data management frameworks that follow global standards. |
+| 1행 링크 (`#contact`, 문의 모달) | `home.business.platform.link` | 문의하기 | Contact us |
+| 2행 제목 | `home.business.cyber.title` | 해양 사이버 보안 · 컴플라이언스 | Maritime cybersecurity and compliance |
+| 2행 본문 | `home.business.cyber.body` | 선박 사이버 보안을 설계 단계부터 선급 검사까지 한 팀이 이어서 맡습니다. IACS UR E26 / E27 대응, OT 보안 구조, 선급 제출 문서 체계를 다룹니다. | One team carries ship cybersecurity from the design stage through to class survey. We cover IACS UR E26 / E27 compliance, OT security architecture and the document set for class submission. |
+| 2행 링크 (`services.html`) | `home.business.cyber.link` | 서비스 보기 | View services |
+| 3행 제목 | `home.business.data.title` | 데이터 · AI 기반 운영 | Data- and AI-based operations |
+| 3행 본문 | `home.business.data.body` | AI 기반 보안 운영(SecOps)과 데이터 분석을 선박과 운영 시스템에 적용합니다. 설계 · 검증 · 운영 단계의 판단을 데이터로 뒷받침합니다. | We apply AI-based security operations (SecOps) and data analysis to ships and operating systems. Data backs the decisions made at the design, verification and operation stages. |
+| 3행 링크 (`ai-cybersecurity-consulting.html`) | `home.business.data.link` | 자세히 보기 | Learn more |
+
+zh · ja 문구는 `data/translations.json`의 같은 키를 보십시오.
+
+같은 단계에서 히어로는 `hero.title` / `hero.description` / `hero.ctaSecondary`(5d64ea9 문구 복원, ko 설명은 "광명마리타임", "대응합니다"로 표기 수정)로 돌아갔고, 8.2절에 적힌 `hero.title` · `hero.description`은 다시 쓰입니다. 예전 홈페이지의 `home.hero.*` · `home.services.*` · `home.why.*`는 `services.html`이 그대로 씁니다.
+
