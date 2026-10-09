@@ -55,7 +55,9 @@ class I18nManager {
       const key = element.getAttribute('data-i18n');
       const value = this.getNestedValue(lang, key);
 
-      if (value) {
+      // An empty string is a real value (e.g. a service tag line that the
+      // English UI leaves blank and hides with :empty), so apply it too.
+      if (typeof value === 'string') {
         // Check if element has data-i18n-html attribute for HTML content
         if (element.hasAttribute('data-i18n-html')) {
           element.innerHTML = value;
