@@ -10,8 +10,13 @@ class CountryDetector {
     this.modal = null;
     this.languageSelect = null;
     this.listenersAttached = false;
+    this.opener = null;
     this.onKeydown = (event) => {
-      if (event.key === 'Escape') this.closeModal();
+      if (event.key === 'Escape') {
+        this.closeModal();
+      } else if (event.key === 'Tab') {
+        this.trapFocus(event);
+      }
     };
 
     this.init();
@@ -43,11 +48,32 @@ class CountryDetector {
       this.languageSelect.value = SUPPORTED_LANGUAGES.includes(current) ? current : 'en';
     }
 
+    this.opener = document.activeElement;
     this.attachEventListeners();
     document.addEventListener('keydown', this.onKeydown);
 
     this.modal.classList.remove('hidden');
     this.modal.classList.add('flex');
+    document.getElementById('country-modal-panel')?.focus();
+  }
+
+  // Keep Tab / Shift+Tab inside the dialog while it is open
+  trapFocus(event) {
+    const panel = document.getElementById('country-modal-panel');
+    const focusable = panel
+      ? Array.from(panel.querySelectorAll('button, select, [href], input, [tabindex]:not([tabindex="-1"])'))
+      : [];
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const active = document.activeElement;
+    if (event.shiftKey && (active === first || active === panel)) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && active === last) {
+      event.preventDefault();
+      first.focus();
+    }
   }
 
   // The modal markup is injected once by layout.js, so bind its listeners once.
@@ -85,6 +111,8 @@ class CountryDetector {
       this.modal.classList.add('hidden');
       this.modal.classList.remove('flex');
     }
+    if (this.opener?.isConnected) this.opener.focus();
+    this.opener = null;
   }
 
   // Public method to open the language chooser (navbar globe buttons)

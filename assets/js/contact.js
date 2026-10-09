@@ -80,7 +80,11 @@ class ContactFormManager {
 
     // Consent gate (PIPA): checked first so the message is specific. The
     // value is never added to `data`, so it is not sent to EmailJS.
-    if (!form.querySelector('[name="privacyConsent"]')?.checked) {
+    const consent = form.querySelector('[name="privacyConsent"]');
+    if (!consent?.checked) {
+      consent?.setAttribute('aria-invalid', 'true');
+      consent?.addEventListener('change', () => consent.removeAttribute('aria-invalid'), { once: true });
+      consent?.focus();
       this.showStatus(form, 'error', this.t('consentRequired', '개인정보 수집 및 이용에 동의해 주세요.'));
       return;
     }
