@@ -608,7 +608,7 @@ Stage 4에서 홈페이지의 걸어온 길을 옮겨 만든 하위 페이지입
 | `<h1>` | `about.overview.title` | 회사 소개 | About | 关于我们 | 会社概要 |
 | 리드 | `about.overview.lede` | 광명마리타임은 조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응을 맡는 기술 기업입니다. | Gwangmyung Maritime is a technology company handling platform development, system integration and global regulatory compliance for the shipbuilding and maritime industries. | 光明海事是一家承担造船 · 海事行业平台开发、系统集成与全球法规合规的技术企业。 | 光明マリタイムは、造船・海事産業のプラットフォーム開発、システム統合、グローバル規制対応を担う技術企業です。 |
 | 회사명 라벨 | `about.facts.nameLabel` | 회사명 | Company name | 公司名称 | 会社名 |
-| 회사명 값 | `about.facts.nameValue` | 주식회사 광명마리타임 / Gwangmyung Maritime | (같음) | (같음) | (같음) |
+| 회사명 값 | `about.facts.nameValue` | 주식회사 광명마리타임 / Gwangmyung Maritime | (같음) | 光明海事（주식회사 광명마리타임）/ Gwangmyung Maritime | 光明マリタイム（주식회사 광명마리타임）/ Gwangmyung Maritime |
 | 출범 라벨 | `about.facts.launchLabel` | 출범 | Launched | 成立 | 発足 |
 | 출범 값 | `about.facts.launchValue` | 2025년 | 2025 | 2025年 | 2025年 |
 | 소재지 라벨 | `about.facts.addressLabel` | 소재지 | Address | 地址 | 所在地 |

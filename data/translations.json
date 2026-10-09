@@ -12,6 +12,7 @@
       "aboutUs": "회사 소개",
       "contact": "문의",
       "backToOverview": "서비스 개요로 돌아가기",
+      "backToHome": "홈으로 돌아가기",
       "skipToContent": "본문으로 건너뛰기"
     },
     "articles": {
@@ -285,7 +286,7 @@
       "email": "info@gmmaritime.com",
       "address": "전라북도 군산시 상신6길 12",
       "businessNumber": "사업자 등록번호: 391-81-02164",
-      "businessNumberLabel": "사업자 등록번호: ",
+      "businessNumberLabel": "사업자등록번호: ",
       "servicesTitle": "서비스",
       "privacyPolicy": "개인정보처리방침",
       "copyright": "Gwangmyung Maritime. All rights reserved.",
@@ -453,7 +454,7 @@
       "notFound": "아티클을 찾을 수 없습니다.",
       "noSlug": "아티클이 지정되지 않았습니다.",
       "loadFailed": "아티클을 불러오지 못했습니다.",
-      "back": "아티클 목록으로",
+      "back": "인사이트 목록으로",
       "siteName": "광명마리타임"
     },
     "home": {
@@ -566,6 +567,7 @@
       "aboutUs": "About",
       "contact": "Contact",
       "backToOverview": "Back to services overview",
+      "backToHome": "Back to home",
       "skipToContent": "Skip to content"
     },
     "articles": {
@@ -1007,7 +1009,7 @@
       "notFound": "Article not found.",
       "noSlug": "No article specified.",
       "loadFailed": "Failed to load the article.",
-      "back": "Back to Articles",
+      "back": "Back to insights",
       "siteName": "Gwangmyung Maritime"
     },
     "home": {
@@ -1120,6 +1122,7 @@
       "aboutUs": "关于我们",
       "contact": "联系我们",
       "backToOverview": "返回服务概览",
+      "backToHome": "返回首页",
       "skipToContent": "跳到主要内容"
     },
     "articles": {
@@ -1350,7 +1353,7 @@
       },
       "facts": {
         "nameLabel": "公司名称",
-        "nameValue": "주식회사 광명마리타임 / Gwangmyung Maritime",
+        "nameValue": "光明海事（주식회사 광명마리타임） / Gwangmyung Maritime",
         "launchLabel": "成立",
         "launchValue": "2025年",
         "addressLabel": "地址",
@@ -1561,7 +1564,7 @@
       "notFound": "未找到该文章。",
       "noSlug": "未指定文章。",
       "loadFailed": "文章加载失败。",
-      "back": "返回文章列表",
+      "back": "返回洞察列表",
       "siteName": "光明海事"
     },
     "home": {
@@ -1674,6 +1677,7 @@
       "aboutUs": "会社概要",
       "contact": "お問い合わせ",
       "backToOverview": "サービス概要に戻る",
+      "backToHome": "ホームに戻る",
       "skipToContent": "メインコンテンツへ"
     },
     "articles": {
@@ -1904,7 +1908,7 @@
       },
       "facts": {
         "nameLabel": "会社名",
-        "nameValue": "주식회사 광명마리타임 / Gwangmyung Maritime",
+        "nameValue": "光明マリタイム（주식회사 광명마리타임） / Gwangmyung Maritime",
         "launchLabel": "発足",
         "launchValue": "2025年",
         "addressLabel": "所在地",
@@ -2115,7 +2119,7 @@
       "notFound": "記事が見つかりません。",
       "noSlug": "記事が指定されていません。",
       "loadFailed": "記事を読み込めませんでした。",
-      "back": "記事一覧に戻る",
+      "back": "インサイト一覧へ",
       "siteName": "光明マリタイム"
     },
     "home": {
