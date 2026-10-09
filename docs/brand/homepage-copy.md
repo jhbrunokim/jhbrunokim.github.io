@@ -643,6 +643,14 @@ ko UI는 한국어 낱말이 제목이고 영어 낱말이 보조 줄입니다. 
 
 그 아래 블록은 `services.html#why`와 같은 키를 씁니다: `home.why.classTitle`, `about.marqueePause` / `about.marqueePlay`, `about.supportScopeIACSList`, `home.why.classNote`, `home.why.standardsTitle`, `home.why.bodiesTitle`, `about.supportScopeInternationalList`.
 
+### 11.4a 홈 · 대응 가능한 선급 (`#classes`)
+
+홈페이지의 얇은 선급 띠입니다. 제목은 `home.why.classTitle`, 약어 줄은 `about.supportScopeIACSList`, 고지는 `home.why.classNote`를 그대로 씁니다. 참조 표준 칩과 가이드라인 기관 문구는 넣지 않습니다. `about.html#scope`는 같은 문구에서 로고 흐름만 뺍니다.
+
+| 슬롯 | 키 | ko | en | zh | ja |
+|---|---|---|---|---|---|
+| 한 줄 설명 | `home.classes.lede` | IACS 선급의 사이버 복원력 규칙에 맞춰 설계부터 선급 검사까지 대응합니다. | We work to each IACS society's cyber-resilience rules, from design through class survey. | 按照各 IACS 船级社的网络韧性规范，从设计到船级检验全程对应。 | 各IACS船級協会のサイバーレジリエンス規則に沿って、設計から船級検査まで対応します。 |
+
 ### 11.5 오시는 길 · 연락처 (`#location`)
 
 | 슬롯 | 키 | ko | en | zh | ja |

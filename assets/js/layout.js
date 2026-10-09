@@ -247,13 +247,13 @@ class LayoutManager {
     // Index page: track section in view. Sections are listed in DOM order;
     // navFor maps each one to the nav item it lights: Home for the hero,
     // business areas and the insights teaser, Contact for the form.
-    const sections = ['home', 'business', 'insights', 'contact']
+    const sections = ['home', 'business', 'classes', 'insights', 'contact']
       .map(id => document.getElementById(id))
       .filter(Boolean);
     if (!sections.length) return;
 
     const navFor = {
-      home: 'index.html', business: 'index.html', insights: 'index.html',
+      home: 'index.html', business: 'index.html', classes: 'index.html', insights: 'index.html',
       contact: 'index.html#contact'
     };
 

@@ -535,6 +535,9 @@
         "standardsTitle": "참조 표준",
         "bodiesTitle": "참조 표준 · 가이드라인 기관"
       },
+      "classes": {
+        "lede": "IACS 선급의 사이버 복원력 규칙에 맞춰 설계부터 선급 검사까지 대응합니다."
+      },
       "journey": {
         "goalLabel": "목표"
       },
@@ -1089,6 +1092,9 @@
         "classNote": "Listed for the class rules and guidance we can work to; this does not imply partnership, accreditation or approval.",
         "standardsTitle": "Standards we work to",
         "bodiesTitle": "Reference standards and guidance bodies"
+      },
+      "classes": {
+        "lede": "We work to each IACS society's cyber-resilience rules, from design through class survey."
       },
       "journey": {
         "goalLabel": "Goal"
@@ -1645,6 +1651,9 @@
         "standardsTitle": "参考标准",
         "bodiesTitle": "参考标准与指南发布机构"
       },
+      "classes": {
+        "lede": "按照各 IACS 船级社的网络韧性规范，从设计到船级检验全程对应。"
+      },
       "journey": {
         "goalLabel": "目标"
       },
@@ -2199,6 +2208,9 @@
         "classNote": "各船級協会の規則とガイドラインに沿って対応できることを示すもので、提携・認定・承認の関係を意味するものではありません。",
         "standardsTitle": "参照する標準",
         "bodiesTitle": "参照する標準・ガイドラインの発行機関"
+      },
+      "classes": {
+        "lede": "各IACS船級協会のサイバーレジリエンス規則に沿って、設計から船級検査まで対応します。"
       },
       "journey": {
         "goalLabel": "目標"
