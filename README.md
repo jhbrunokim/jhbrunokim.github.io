@@ -121,10 +121,10 @@ git push origin main
 
 - **CSS**: Tailwind CSS 3.4+ (CLI 빌드, CDN 미사용)
 - **JS**: Vanilla ES6+ (프레임워크 없음)
-- **폰트**: Google Fonts — Inter, Noto Sans KR / SC / JP
-- **아이콘**: Lucide Icons (CDN)
-- **마크다운**: marked.js (아티클 뷰어)
-- **이메일**: EmailJS
+- **폰트**: Google Fonts — Space Grotesk(디스플레이), Inter, Noto Sans KR / SC / JP
+- **아이콘**: Lucide Icons 1.53.0 (jsDelivr CDN, 버전 고정)
+- **마크다운**: marked.js 15.0.12 (jsDelivr CDN, 버전 고정, 아티클 뷰어)
+- **이메일**: EmailJS (`@emailjs/browser` 3.12.1, jsDelivr CDN, 버전 고정)
 - **국가 감지**: GeoJS API
 - **배포**: GitHub Pages + Actions
 
@@ -134,8 +134,8 @@ Contact 폼에 사용됩니다.
 
 1. [EmailJS](https://www.emailjs.com/) 계정 생성
 2. 이메일 서비스 연동 + 템플릿 생성
-3. `index.html`의 `emailjs.init(...)` 호출부(약 124번째 줄)의 public key 교체
-4. `assets/js/contact.js`의 service ID / template ID도 함께 확인
+3. `assets/js/contact.js`의 `emailjs.init(...)` 호출부에서 public key 교체
+4. 같은 파일의 service ID / template ID도 함께 확인
 
 ## 🎨 커스터마이징
 

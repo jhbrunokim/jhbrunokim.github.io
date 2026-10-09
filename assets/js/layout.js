@@ -43,7 +43,15 @@ class LayoutManager {
     }
   }
 
+  updateFooterYear() {
+    document.querySelectorAll('[data-footer-year]').forEach((el) => {
+      el.textContent = new Date().getFullYear();
+    });
+  }
+
   onComponentsLoaded() {
+    this.updateFooterYear();
+
     // Reinitialize Lucide icons
     if (window.lucide) {
       lucide.createIcons();
