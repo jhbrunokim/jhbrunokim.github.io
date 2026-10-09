@@ -163,7 +163,7 @@ Contact 폼에 사용됩니다.
 
 1. `articles/<slug>.md` 마크다운 파일 생성
 2. `articles/index.json`에 메타(`slug`, `title`, `date`, `description`, `category`, `author`) 추가
-3. `article.html?slug=xxx` 또는 `article.html#xxx`로 접근
+3. `article.html?slug=xxx`로 접근 (`article.html#xxx` 형식의 옛 링크는 자동으로 `?slug=`로 바뀜)
 
 ## 🌙 다크 모드
 
