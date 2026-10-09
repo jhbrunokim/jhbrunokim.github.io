@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회사 소개 - 광명마리타임</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="광명마리타임은 조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응을 맡는 기술 기업입니다. 회사 개요, 핵심 가치, 걸어온 길, 대응 가능한 선급과 참조 표준을 소개합니다."
+    />
+    <meta
+      name="keywords"
+      content="조선, 해양, 플랫폼 개발, 시스템 통합, IT OT, 선박 사이버 보안, IACS UR E26, E27, 컴플라이언스, 광명마리타임"
+    />
+    <meta name="author" content="Gwangmyung Maritime" />
+
+    <!-- Analytics (loaded via consent.js after user opt-in) -->
+    <meta name="ga-id" content="G-CJMFQE9NT4" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://gmmaritime.com/about.html" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="회사 소개 - 광명마리타임" />
+    <meta
+      property="og:description"
+      content="광명마리타임은 조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응을 맡는 기술 기업입니다. 회사 개요, 핵심 가치, 걸어온 길, 대응 가능한 선급과 참조 표준을 소개합니다."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gmmaritime.com/about.html" />
+    <meta property="og:site_name" content="광명마리타임" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:image" content="https://gmmaritime.com/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="회사 소개 - 광명마리타임" />
+    <meta
+      name="twitter:description"
+      content="광명마리타임은 조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응을 맡는 기술 기업입니다. 회사 개요, 핵심 가치, 걸어온 길, 대응 가능한 선급과 참조 표준을 소개합니다."
+    />
+    <meta name="twitter:image" content="https://gmmaritime.com/assets/images/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
+
+    <!-- Theme (must run before body renders to avoid FOUC) -->
+    <script src="assets/js/theme.js"></script>
+
+    <!-- Google Fonts -->
+    <!-- DNS prefetch for third-party assets -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>
+      (function () {
+        var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
+        var lang = localStorage.getItem('preferredLanguage') || (function () {
+          // Same rule as detectBrowserLanguage() in assets/js/i18n.js
+          var tags = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+          for (var i = 0; i < tags.length; i++) {
+            var primary = String(tags[i] || '').toLowerCase().split('-')[0];
+            if (primary === 'ko' || primary === 'zh' || primary === 'ja') return primary;
+          }
+          return 'en';
+        })();
+        var families = ['Inter:wght@400;500;600;700', 'Space+Grotesk:wght@500;600;700'];
+        if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.googleapis.com/css2?family=' + families.join('&family=') + '&display=swap';
+        document.head.appendChild(link);
+      })();
+    </script>
+
+    <!-- Tailwind CSS (Built) -->
+    <link rel="stylesheet" href="assets/css/output.css" />
+
+    <!-- Lucide Icons -->
+    <script defer src="https://cdn.jsdelivr.net/npm/lucide@1.53.0/dist/umd/lucide.min.js"></script>
+
+    <!-- EmailJS SDK (init lives in contact.js so it runs after defer resolves) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.12.1/dist/email.min.js"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "회사 소개 — 광명마리타임",
+        "url": "https://gmmaritime.com/about.html",
+        "description": "광명마리타임은 조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응을 맡는 기술 기업입니다. 회사 개요, 핵심 가치, 걸어온 길, 대응 가능한 선급과 참조 표준을 소개합니다.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "url": "https://gmmaritime.com",
+          "name": "Gwangmyung Maritime"
+        },
+        "about": {
+          "@type": "Organization",
+          "name": "광명마리타임",
+          "legalName": "주식회사 광명마리타임",
+          "alternateName": "Gwangmyung Maritime",
+          "taxID": "391-81-02164",
+          "url": "https://gmmaritime.com",
+          "email": "info@gmmaritime.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "상신6길 12",
+            "addressLocality": "군산시",
+            "addressRegion": "전라북도",
+            "addressCountry": "KR"
+          }
+        }
+      }
+    </script>
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden transition-colors duration-300"
+  >
+    <!-- Country/Language Detection Modal (loaded dynamically) -->
+    <div id="country-modal-placeholder"></div>
+
+    <!-- Navigation (loaded dynamically) -->
+    <div id="navbar-placeholder"></div>
+    <a id="main-content" tabindex="-1"></a>
+
+    <!-- Overview: dark band with the definition and the company facts -->
+    <section
+      id="overview"
+      class="relative bg-ocean-900 dark:bg-ocean-950 pt-28 pb-16 md:pt-36 md:pb-24"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-7">
+            <h1
+              class="font-display font-bold tracking-tight leading-[1.15] text-white text-4xl md:text-5xl xl:text-6xl"
+              data-i18n="about.overview.title"
+            >회사 소개</h1>
+            <p
+              class="mt-5 md:mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-slate-300"
+              data-i18n="about.overview.lede"
+            >광명마리타임은 조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응을 맡는 기술 기업입니다.</p>
+          </div>
+
+          <!-- Company facts -->
+          <!-- [OWNER] 등기상 정식 영문 법인명(예: "Gwangmyung Maritime Co., Ltd.") 확인 전까지 영문은 "Gwangmyung Maritime"만 씁니다. -->
+          <dl class="lg:col-span-5 divide-y divide-ocean-700 border-y border-ocean-700 text-sm">
+            <div class="grid grid-cols-[7rem_minmax(0,1fr)] gap-4 py-3">
+              <dt class="font-medium text-slate-400" data-i18n="about.facts.nameLabel">회사명</dt>
+              <dd class="text-white" data-i18n="about.facts.nameValue">주식회사 광명마리타임 / Gwangmyung Maritime</dd>
+            </div>
+            <div class="grid grid-cols-[7rem_minmax(0,1fr)] gap-4 py-3">
+              <dt class="font-medium text-slate-400" data-i18n="about.facts.launchLabel">출범</dt>
+              <dd class="text-white" data-i18n="about.facts.launchValue">2025년</dd>
+            </div>
+            <div class="grid grid-cols-[7rem_minmax(0,1fr)] gap-4 py-3">
+              <dt class="font-medium text-slate-400" data-i18n="about.facts.addressLabel">소재지</dt>
+              <dd class="text-white" data-i18n="footer.address">전라북도 군산시 상신6길 12</dd>
+            </div>
+            <div class="grid grid-cols-[7rem_minmax(0,1fr)] gap-4 py-3">
+              <dt class="font-medium text-slate-400" data-i18n="about.facts.businessNumberLabel">사업자등록번호</dt>
+              <dd class="text-white whitespace-nowrap">391-81-02164</dd>
+            </div>
+            <div class="grid grid-cols-[7rem_minmax(0,1fr)] gap-4 py-3">
+              <dt class="font-medium text-slate-400" data-i18n="contactSection.emailLabel">이메일</dt>
+              <dd>
+                <a
+                  href="mailto:info@gmmaritime.com"
+                  class="font-medium text-ocean-200 underline-offset-4 hover:underline hover:text-white"
+                  data-i18n="footer.email"
+                >info@gmmaritime.com</a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core values: Korean word first, English word on a secondary line -->
+    <section id="values" class="py-20 md:py-24 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="font-display text-3xl md:text-4xl font-bold tracking-tight leading-tight text-slate-900 dark:text-white mb-10 md:mb-12"
+          data-i18n="about.values.title"
+        >
+          핵심 가치
+        </h2>
+        <ul class="grid md:grid-cols-2 md:gap-x-12 border-t border-slate-200 dark:border-slate-700">
+          <li class="grid grid-cols-[7rem_minmax(0,1fr)] gap-x-6 py-6 border-b border-slate-200 dark:border-slate-700">
+            <div>
+              <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="about.values.trust.name">신뢰</h3>
+              <p class="mt-0.5 text-xs font-medium text-slate-500 dark:text-slate-400 empty:hidden" data-i18n="about.values.trust.tag">Trust</p>
+            </div>
+            <p class="text-base leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="about.values.trust.desc">신뢰를 기반으로 한 파트너십</p>
+          </li>
+          <li class="grid grid-cols-[7rem_minmax(0,1fr)] gap-x-6 py-6 border-b border-slate-200 dark:border-slate-700">
+            <div>
+              <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="about.values.execution.name">실행</h3>
+              <p class="mt-0.5 text-xs font-medium text-slate-500 dark:text-slate-400 empty:hidden" data-i18n="about.values.execution.tag">Execution</p>
+            </div>
+            <p class="text-base leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="about.values.execution.desc">실행력 있는 프로젝트 수행</p>
+          </li>
+          <li class="grid grid-cols-[7rem_minmax(0,1fr)] gap-x-6 py-6 border-b border-slate-200 dark:border-slate-700">
+            <div>
+              <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="about.values.responsibility.name">책임</h3>
+              <p class="mt-0.5 text-xs font-medium text-slate-500 dark:text-slate-400 empty:hidden" data-i18n="about.values.responsibility.tag">Responsibility</p>
+            </div>
+            <p class="text-base leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="about.values.responsibility.desc">책임감 있는 기술 지원</p>
+          </li>
+          <li class="grid grid-cols-[7rem_minmax(0,1fr)] gap-x-6 py-6 border-b border-slate-200 dark:border-slate-700">
+            <div>
+              <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="about.values.partnership.name">협력</h3>
+              <p class="mt-0.5 text-xs font-medium text-slate-500 dark:text-slate-400 empty:hidden" data-i18n="about.values.partnership.tag">Partnership</p>
+            </div>
+            <p class="text-base leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="about.values.partnership.desc">상생하는 협력 관계</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Our journey (moved from index.html; the page's one centred head) -->
+    <section id="journey" class="py-20 md:py-24 bg-white dark:bg-slate-900 overflow-x-clip">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center mb-12 md:mb-16">
+          <h2
+            class="font-display text-3xl md:text-4xl font-bold tracking-tight leading-tight text-slate-900 dark:text-white"
+            data-i18n="expertise.title"
+          >
+            광명마리타임이 걸어온 길
+          </h2>
+        </div>
+
+        <!-- Timeline -->
+        <div class="tl relative" data-timeline>
+          <!-- Timeline Line: pale track + fill that follows revealed items -->
+          <div
+            class="tl-line w-1 bg-ocean-200 dark:bg-ocean-900"
+            aria-hidden="true"
+          ></div>
+          <div
+            class="tl-line tl-fill w-1 bg-ocean-700 dark:bg-ocean-400"
+            aria-hidden="true"
+            data-timeline-fill
+          ></div>
+
+          <!-- Timeline Items -->
+          <div class="space-y-6">
+            <!-- 2021 -->
+            <!-- [OWNER] 끌밋과 광명마리타임의 관계 확인 필요 -->
+            <div
+              class="tl-item relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              data-timeline-item
+            >
+              <div class="tl-card w-full md:w-1/2 md:text-right md:pr-12" data-side="left">
+                <div
+                  class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800"
+                >
+                  <p
+                    class="text-2xl font-bold leading-8 text-ocean-700 dark:text-ocean-300 mb-3"
+                    data-i18n="expertise.timeline2021"
+                  >2021</p>
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white mb-2"
+                    data-i18n="expertise.timeline2021Title"
+                  >
+                    기술 기반 사업의 출발
+                  </h3>
+                  <p
+                    class="text-slate-600 dark:text-slate-400 text-sm"
+                    data-i18n="expertise.timeline2021Desc"
+                  >
+                    ㈜끌밋 법인 설립 및 데이터 · 플랫폼 기반 시스템 개발 시작
+                  </p>
+                </div>
+              </div>
+              <div
+                class="tl-dot w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                aria-hidden="true"
+              ></div>
+              <div class="md:w-1/2"></div>
+            </div>
+
+            <!-- 2022 -->
+            <div
+              class="tl-item relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              data-timeline-item
+            >
+              <div class="md:w-1/2"></div>
+              <div
+                class="tl-dot w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                aria-hidden="true"
+              ></div>
+              <div class="tl-card w-full md:w-1/2 md:pl-12" data-side="right">
+                <div
+                  class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800"
+                >
+                  <p
+                    class="text-2xl font-bold leading-8 text-ocean-700 dark:text-ocean-300 mb-3"
+                    data-i18n="expertise.timeline2022"
+                  >2022</p>
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white mb-2"
+                    data-i18n="expertise.timeline2022Title"
+                  >
+                    산업 도메인 확장
+                  </h3>
+                  <p
+                    class="text-slate-600 dark:text-slate-400 text-sm"
+                    data-i18n="expertise.timeline2022Desc"
+                  >
+                    해양 · 물류 · 운영 산업으로의 기술 적용 가능성 검증
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2023 -->
+            <div
+              class="tl-item relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              data-timeline-item
+            >
+              <div class="tl-card w-full md:w-1/2 md:text-right md:pr-12" data-side="left">
+                <div
+                  class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800"
+                >
+                  <p
+                    class="text-2xl font-bold leading-8 text-ocean-700 dark:text-ocean-300 mb-3"
+                    data-i18n="expertise.timeline2023"
+                  >2023</p>
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white mb-2"
+                    data-i18n="expertise.timeline2023Title"
+                  >
+                    고신뢰 · 고보안 시스템 경험
+                  </h3>
+                  <p
+                    class="text-slate-600 dark:text-slate-400 text-sm"
+                    data-i18n="expertise.timeline2023Desc"
+                  >
+                    국방부 위성 영상 처리 시스템 구축 사업 참여
+                  </p>
+                </div>
+              </div>
+              <div
+                class="tl-dot w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                aria-hidden="true"
+              ></div>
+              <div class="md:w-1/2"></div>
+            </div>
+
+            <!-- 2024 -->
+            <div
+              class="tl-item relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              data-timeline-item
+            >
+              <div class="md:w-1/2"></div>
+              <div
+                class="tl-dot w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                aria-hidden="true"
+              ></div>
+              <div class="tl-card w-full md:w-1/2 md:pl-12" data-side="right">
+                <div
+                  class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800"
+                >
+                  <p
+                    class="text-2xl font-bold leading-8 text-ocean-700 dark:text-ocean-300 mb-3"
+                    data-i18n="expertise.timeline2024"
+                  >2024</p>
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white mb-2"
+                    data-i18n="expertise.timeline2024Title"
+                  >
+                    해양 사이버 보안 · 스마트십 전문성 정립
+                  </h3>
+                  <p
+                    class="text-slate-600 dark:text-slate-400 text-sm"
+                    data-i18n="expertise.timeline2024Desc"
+                  >
+                    IACS UR E26 / E27 규제 대응 구조 연구
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2025 -->
+            <div
+              class="tl-item relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              data-timeline-item
+            >
+              <div class="tl-card w-full md:w-1/2 md:text-right md:pr-12" data-side="left">
+                <div
+                  class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800"
+                >
+                  <p
+                    class="text-2xl font-bold leading-8 text-ocean-700 dark:text-ocean-300 mb-3"
+                    data-i18n="expertise.timeline2025"
+                  >2025</p>
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white mb-2"
+                    data-i18n="expertise.timeline2025Title"
+                  >
+                    ㈜광명마리타임 출범
+                  </h3>
+                  <p
+                    class="text-slate-600 dark:text-slate-400 text-sm"
+                    data-i18n="expertise.timeline2025Desc"
+                  >
+                    해양 전문 컨설팅 기업으로 출범
+                  </p>
+                </div>
+              </div>
+              <div
+                class="tl-dot w-4 h-4 bg-ocean-700 rounded-full border-4 border-white dark:border-slate-950"
+                aria-hidden="true"
+              ></div>
+              <div class="md:w-1/2"></div>
+            </div>
+
+            <!-- 2026 (goal, not achieved) -->
+            <!-- [OWNER] 2026 목표의 TA 취득 주체 확인 필요 (CD 9 #2) -->
+            <div
+              class="tl-item relative flex flex-col md:flex-row items-center gap-0 md:gap-8"
+              data-timeline-item
+              data-timeline-goal
+            >
+              <div class="md:w-1/2"></div>
+              <div
+                class="tl-dot w-4 h-4 rounded-full border-2 border-ocean-700 dark:border-ocean-300 bg-white dark:bg-slate-900"
+                aria-hidden="true"
+              ></div>
+              <div class="tl-card w-full md:w-1/2 md:pl-12" data-side="right">
+                <div
+                  class="bg-white dark:bg-slate-900 p-6 rounded-xl border-2 border-dashed border-ocean-400 dark:border-ocean-600"
+                >
+                  <p class="flex items-center gap-2 text-2xl font-bold leading-8 text-ocean-700 dark:text-ocean-300 mb-3">
+                    <span data-i18n="expertise.timeline2026">2026</span>
+                    <span
+                      class="rounded-full border border-dashed border-ocean-500 px-2 py-0.5 text-xs font-semibold leading-5 text-ocean-700 dark:text-ocean-300"
+                      data-i18n="home.journey.goalLabel"
+                    >목표</span>
+                  </p>
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white mb-2"
+                    data-i18n="expertise.timeline2026Title"
+                  >
+                    E26 / E27 대응 중심으로 조직 개편
+                  </h3>
+                  <p
+                    class="text-slate-600 dark:text-slate-400 text-sm"
+                    data-i18n="expertise.timeline2026Desc"
+                  >
+                    주요 선급의 IACS UR E27 형식 승인(TA) 취득 및 E26 산출물 제공
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Class societies and reference standards (same blocks as services.html#why) -->
+    <section id="scope" class="py-20 md:py-24 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="font-display text-3xl md:text-4xl font-bold tracking-tight leading-tight text-slate-900 dark:text-white mb-10 md:mb-12"
+          data-i18n="about.scope.title"
+        >
+          대응 가능한 선급 · 참조 표준
+        </h2>
+
+        <!-- Class societies we can support -->
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white" data-i18n="home.why.classTitle">
+              대응 가능한 선급
+            </h3>
+            <button
+              type="button"
+              class="logo-marquee__toggle inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:text-ocean-700 hover:border-ocean-500 dark:hover:text-ocean-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500"
+              aria-pressed="false"
+              data-i18n-aria-label="about.marqueePause"
+              aria-label="로고 흐름 멈추기"
+              data-marquee-toggle
+            >
+              <i data-lucide="pause" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <div
+            class="logo-marquee border-y border-slate-200 dark:border-slate-700 py-4"
+            data-marquee
+          >
+            <div class="logo-marquee__track">
+              <ul class="logo-marquee__set" role="list">
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/abs.png" alt="American Bureau of Shipping" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/dnv.webp" alt="DNV" class="max-h-12 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/lr.jpg" alt="Lloyd's Register" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/kr.jpg" alt="Korean Register" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/bv.png" alt="Bureau Veritas" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/rina.svg" alt="RINA" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/ccs.svg" alt="China Classification Society" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/prs.jpg" alt="Polski Rejestr Statków" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/irclass.png" alt="Indian Register of Shipping" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/classnk.jpg" alt="Nippon Kaiji Kyokai (ClassNK)" class="max-h-12 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/crs.png" alt="Croatian Register of Shipping" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+              </ul>
+              <ul class="logo-marquee__set" aria-hidden="true">
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/abs.png" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/dnv.webp" alt="" class="max-h-12 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/lr.jpg" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/kr.jpg" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/bv.png" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/rina.svg" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/ccs.svg" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/prs.jpg" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/irclass.png" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/classnk.jpg" alt="" class="max-h-12 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/crs.png" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p class="mt-4 text-sm text-slate-700 dark:text-slate-300" data-i18n="about.supportScopeIACSList">
+            ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IRClass, ClassNK, CRS
+          </p>
+          <p class="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400" data-i18n="home.why.classNote">
+            각 선급의 규칙과 가이드라인에 맞춰 대응할 수 있다는 뜻이며, 제휴 · 인증 · 승인 관계를 뜻하지 않습니다.
+          </p>
+        </div>
+
+        <!-- Standards and guidance bodies (text only) -->
+        <div class="mt-12 grid gap-10 md:grid-cols-2 md:gap-12">
+          <div>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4" data-i18n="home.why.standardsTitle">
+              참조 표준
+            </h3>
+            <ul class="flex flex-wrap gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
+              <li class="rounded-md border border-slate-300 dark:border-slate-600 px-3 py-1.5">IACS UR E26 / E27</li>
+              <li class="rounded-md border border-slate-300 dark:border-slate-600 px-3 py-1.5">IMO MSC-FAL.1/Circ.3 Rev.3</li>
+              <li class="rounded-md border border-slate-300 dark:border-slate-600 px-3 py-1.5">ISO 27001 · 27701 · 42001</li>
+              <li class="rounded-md border border-slate-300 dark:border-slate-600 px-3 py-1.5">ISMS-P</li>
+              <li class="rounded-md border border-slate-300 dark:border-slate-600 px-3 py-1.5">Zero Trust</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4" data-i18n="home.why.bodiesTitle">
+              참조 표준 · 가이드라인 기관
+            </h3>
+            <!-- [OWNER] 예전 로고 ncsc.jpg(alt "NCSC", 삭제됨 — git 기록에 있음)가 어느 기관인지 확인 전까지 목록에서 뺍니다 (CD 9 #6). -->
+            <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="about.supportScopeInternationalList">
+              NSA (미국 국가안보국), UK NCSC (영국 국가사이버보안센터), USCG (미국 해안경비대), CSA Singapore (싱가포르 사이버보안청)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location and contact -->
+    <section id="location" class="py-20 md:py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-5">
+            <h2
+              class="font-display text-3xl md:text-4xl font-bold tracking-tight leading-tight text-slate-900 dark:text-white"
+              data-i18n="about.location.title"
+            >
+              오시는 길 · 연락처
+            </h2>
+          </div>
+          <div class="lg:col-span-7">
+            <dl class="divide-y divide-slate-200 dark:divide-slate-700 border-y border-slate-200 dark:border-slate-700">
+              <div class="grid grid-cols-[6rem_minmax(0,1fr)] gap-4 py-3 text-sm">
+                <dt class="font-medium text-slate-500 dark:text-slate-400" data-i18n="home.contact.addressLabel">주소</dt>
+                <dd>
+                  <span class="text-slate-700 dark:text-slate-300" data-i18n="footer.address">전라북도 군산시 상신6길 12</span>
+                  <a
+                    href="https://maps.google.com/?q=전라북도+군산시+상신6길+12"
+                    target="_blank"
+                    rel="noopener"
+                    class="mt-1 flex w-fit items-center gap-1.5 font-semibold text-ocean-700 dark:text-ocean-300 underline-offset-4 hover:underline"
+                  >
+                    <span data-i18n="about.location.mapLink">지도에서 보기</span>
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                  </a>
+                </dd>
+              </div>
+              <div class="grid grid-cols-[6rem_minmax(0,1fr)] gap-4 py-3 text-sm">
+                <dt class="font-medium text-slate-500 dark:text-slate-400" data-i18n="contactSection.emailLabel">이메일</dt>
+                <dd>
+                  <a
+                    href="mailto:info@gmmaritime.com"
+                    class="font-medium text-ocean-700 dark:text-ocean-300 underline-offset-4 hover:underline"
+                    data-i18n="footer.email"
+                  >info@gmmaritime.com</a>
+                </dd>
+              </div>
+            </dl>
+            <!-- The page's only signal element; opens the contact modal (index.html#contact without JS) -->
+            <a
+              href="index.html#contact"
+              class="mt-8 inline-flex items-center gap-2 whitespace-nowrap rounded-md bg-signal-400 px-5 py-3 text-sm font-semibold text-ink-950 hover:bg-signal-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500"
+            >
+              <span data-i18n="hero.ctaSecondary">문의하기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer (loaded dynamically) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/timeline-reveal.js"></script>
+    <script src="assets/js/logo-marquee.js"></script>
+    <script src="assets/js/country-detector.js"></script>
+    <script src="assets/js/consent.js"></script>
+  </body>
+</html>

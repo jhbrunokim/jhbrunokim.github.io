@@ -235,7 +235,49 @@
       "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IRClass, ClassNK, CRS",
       "supportScopeInternationalList": "NSA (미국 국가안보국), UK NCSC (영국 국가사이버보안센터), USCG (미국 해안경비대), CSA Singapore (싱가포르 사이버보안청)",
       "marqueePause": "로고 흐름 멈추기",
-      "marqueePlay": "로고 흐름 다시 재생"
+      "marqueePlay": "로고 흐름 다시 재생",
+      "overview": {
+        "title": "회사 소개",
+        "lede": "광명마리타임은 조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응을 맡는 기술 기업입니다."
+      },
+      "facts": {
+        "nameLabel": "회사명",
+        "nameValue": "주식회사 광명마리타임 / Gwangmyung Maritime",
+        "launchLabel": "출범",
+        "launchValue": "2025년",
+        "addressLabel": "소재지",
+        "businessNumberLabel": "사업자등록번호"
+      },
+      "values": {
+        "title": "핵심 가치",
+        "trust": {
+          "name": "신뢰",
+          "tag": "Trust",
+          "desc": "신뢰를 기반으로 한 파트너십"
+        },
+        "execution": {
+          "name": "실행",
+          "tag": "Execution",
+          "desc": "실행력 있는 프로젝트 수행"
+        },
+        "responsibility": {
+          "name": "책임",
+          "tag": "Responsibility",
+          "desc": "책임감 있는 기술 지원"
+        },
+        "partnership": {
+          "name": "협력",
+          "tag": "Partnership",
+          "desc": "상생하는 협력 관계"
+        }
+      },
+      "scope": {
+        "title": "대응 가능한 선급 · 참조 표준"
+      },
+      "location": {
+        "title": "오시는 길 · 연락처",
+        "mapLink": "지도에서 보기"
+      }
     },
     "footer": {
       "description": "조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응 기술 기업.",
@@ -747,7 +789,49 @@
       "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IRClass, ClassNK, CRS",
       "supportScopeInternationalList": "NSA (US), UK NCSC, USCG, CSA Singapore",
       "marqueePause": "Pause logos",
-      "marqueePlay": "Play logos"
+      "marqueePlay": "Play logos",
+      "overview": {
+        "title": "About",
+        "lede": "Gwangmyung Maritime is a technology company handling platform development, system integration and global regulatory compliance for the shipbuilding and maritime industries."
+      },
+      "facts": {
+        "nameLabel": "Company name",
+        "nameValue": "주식회사 광명마리타임 / Gwangmyung Maritime",
+        "launchLabel": "Launched",
+        "launchValue": "2025",
+        "addressLabel": "Address",
+        "businessNumberLabel": "Business registration no."
+      },
+      "values": {
+        "title": "Core values",
+        "trust": {
+          "name": "Trust",
+          "tag": "",
+          "desc": "Partnership based on trust"
+        },
+        "execution": {
+          "name": "Execution",
+          "tag": "",
+          "desc": "Project execution with excellence"
+        },
+        "responsibility": {
+          "name": "Responsibility",
+          "tag": "",
+          "desc": "Responsible technical support"
+        },
+        "partnership": {
+          "name": "Partnership",
+          "tag": "",
+          "desc": "Collaborative win-win relationships"
+        }
+      },
+      "scope": {
+        "title": "Class societies and reference standards"
+      },
+      "location": {
+        "title": "Location and contact",
+        "mapLink": "View on map"
+      }
     },
     "footer": {
       "description": "A technology company for shipbuilding and maritime: platform development, system integration and global regulatory compliance.",
@@ -1259,7 +1343,49 @@
       "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IRClass, ClassNK, CRS",
       "supportScopeInternationalList": "NSA（美国国家安全局）、UK NCSC（英国国家网络安全中心）、USCG（美国海岸警卫队）、CSA Singapore（新加坡网络安全局）",
       "marqueePause": "暂停标志滚动",
-      "marqueePlay": "继续标志滚动"
+      "marqueePlay": "继续标志滚动",
+      "overview": {
+        "title": "关于我们",
+        "lede": "光明海事是一家承担造船 · 海事行业平台开发、系统集成与全球法规合规的技术企业。"
+      },
+      "facts": {
+        "nameLabel": "公司名称",
+        "nameValue": "주식회사 광명마리타임 / Gwangmyung Maritime",
+        "launchLabel": "成立",
+        "launchValue": "2025年",
+        "addressLabel": "地址",
+        "businessNumberLabel": "营业执照号码"
+      },
+      "values": {
+        "title": "核心价值",
+        "trust": {
+          "name": "信任",
+          "tag": "Trust",
+          "desc": "基于信任的伙伴关系"
+        },
+        "execution": {
+          "name": "执行",
+          "tag": "Execution",
+          "desc": "卓越的项目执行"
+        },
+        "responsibility": {
+          "name": "责任",
+          "tag": "Responsibility",
+          "desc": "负责任的技术支持"
+        },
+        "partnership": {
+          "name": "合作",
+          "tag": "Partnership",
+          "desc": "合作共赢的关系"
+        }
+      },
+      "scope": {
+        "title": "可支持的船级社 · 参考标准"
+      },
+      "location": {
+        "title": "位置与联系方式",
+        "mapLink": "在地图上查看"
+      }
     },
     "footer": {
       "description": "面向造船与海事产业的技术企业：平台开发、系统集成与全球法规合规。",
@@ -1771,7 +1897,49 @@
       "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IRClass, ClassNK, CRS",
       "supportScopeInternationalList": "NSA（米国家安全保障局）、UK NCSC（英国国家サイバーセキュリティセンター）、USCG（米国沿岸警備隊）、CSA Singapore（シンガポールサイバーセキュリティ庁）",
       "marqueePause": "ロゴの流れを一時停止",
-      "marqueePlay": "ロゴの流れを再生"
+      "marqueePlay": "ロゴの流れを再生",
+      "overview": {
+        "title": "会社概要",
+        "lede": "光明マリタイムは、造船・海事産業のプラットフォーム開発、システム統合、グローバル規制対応を担う技術企業です。"
+      },
+      "facts": {
+        "nameLabel": "会社名",
+        "nameValue": "주식회사 광명마리타임 / Gwangmyung Maritime",
+        "launchLabel": "発足",
+        "launchValue": "2025年",
+        "addressLabel": "所在地",
+        "businessNumberLabel": "事業者登録番号"
+      },
+      "values": {
+        "title": "コアバリュー",
+        "trust": {
+          "name": "信頼",
+          "tag": "Trust",
+          "desc": "信頼を基盤としたパートナーシップ"
+        },
+        "execution": {
+          "name": "実行",
+          "tag": "Execution",
+          "desc": "実行力あるプロジェクト遂行"
+        },
+        "responsibility": {
+          "name": "責任",
+          "tag": "Responsibility",
+          "desc": "責任感ある技術サポート"
+        },
+        "partnership": {
+          "name": "協力",
+          "tag": "Partnership",
+          "desc": "共生する協力関係"
+        }
+      },
+      "scope": {
+        "title": "対応可能な船級協会・参照標準"
+      },
+      "location": {
+        "title": "所在地・連絡先",
+        "mapLink": "地図で見る"
+      }
     },
     "footer": {
       "description": "造船・海事産業のためのプラットフォーム開発、システム統合、グローバル規制対応の技術企業。",
