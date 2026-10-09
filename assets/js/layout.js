@@ -208,6 +208,7 @@ class LayoutManager {
 
     const compBtn = document.querySelector('[data-dropdown-toggle]');
     const isCompetitivenessPage = /\/(system-integration|maritime-cybersecurity|compliance|ai-cybersecurity-consulting)\.html$/.test(window.location.pathname);
+    // Matches on pathname only, so article.html?slug=... still highlights Articles
     const isArticlesPage = /\/(articles|article)\.html$/.test(window.location.pathname);
 
     const setActive = (linkHref) => {
