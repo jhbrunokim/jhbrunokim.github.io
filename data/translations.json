@@ -15,7 +15,7 @@
       "skipToContent": "본문으로 건너뛰기"
     },
     "articles": {
-      "title": "Articles",
+      "title": "인사이트",
       "subtitle": "기술 동향, 업계 인사이트, 규제 소식을 공유합니다."
     },
     "hero": {
@@ -237,12 +237,12 @@
     },
     "footer": {
       "description": "IACS UR E26 / E27 대응과 IT / OT 시스템 통합을 설계부터 선급 검사까지 맡는 해양 사이버 보안 컨설팅 기업입니다.",
-      "contactTitle": "Contact",
+      "contactTitle": "연락처",
       "email": "info@gmmaritime.com",
       "address": "전라북도 군산시 상신6길 12",
       "businessNumber": "사업자 등록번호: 391-81-02164",
       "businessNumberLabel": "사업자 등록번호: ",
-      "servicesTitle": "Services",
+      "servicesTitle": "서비스",
       "privacyPolicy": "개인정보처리방침",
       "copyright": "Gwangmyung Maritime. All rights reserved.",
       "changeLanguage": "언어 변경"
@@ -506,7 +506,7 @@
       "skipToContent": "Skip to content"
     },
     "articles": {
-      "title": "Articles",
+      "title": "Insights",
       "subtitle": "Sharing technology trends, industry insights, and regulatory updates."
     },
     "hero": {
@@ -997,7 +997,7 @@
       "skipToContent": "跳到主要内容"
     },
     "articles": {
-      "title": "文章",
+      "title": "洞察",
       "subtitle": "分享技术趋势、行业洞察和法规动态。"
     },
     "hero": {
@@ -1488,7 +1488,7 @@
       "skipToContent": "メインコンテンツへ"
     },
     "articles": {
-      "title": "記事",
+      "title": "インサイト",
       "subtitle": "技術動向、業界インサイト、規制ニュースを共有します。"
     },
     "hero": {
@@ -1710,7 +1710,7 @@
     },
     "footer": {
       "description": "設計から船級検査まで、IACS UR E26 / E27対応とIT / OTシステム統合を担う海事サイバーセキュリティコンサルティング企業です。",
-      "contactTitle": "連絡先",
+      "contactTitle": "お問い合わせ",
       "email": "info@gmmaritime.com",
       "address": "韓国 全羅北道 群山市 桑新6ギル12",
       "businessNumber": "事業者登録番号：391-81-02164",

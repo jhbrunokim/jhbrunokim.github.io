@@ -16,7 +16,7 @@
 | Hero media | **Inline SVG flow diagram**, no photos. All five hero photos and the grid-pattern SVG are removed. |
 | Hero badge | Removed (CD 1.1) |
 | Centred section heads | **One**: `journey` (its rail is centred from `md`). All others are left-aligned. |
-| `signal` orange | Primary action only (hero CTA, mobile mid-page CTA, form submit, modal submit; never two on one screen) **+ one highlight**: the 2 px top rule of the Compliance card |
+| `signal` orange | Primary action only (hero CTA, mobile mid-page CTA, form submit, modal submit; never two on one screen). The Compliance card's 2 px top rule is `ocean-300`, not `signal` |
 | Navbar | Home · Services ▾ (4) · Insights · About · Contact · language |
 | About target | `index.html#why`. A zero-height alias `#about` sits directly before `#why`. |
 | Agency logos | Removed; replaced by a text list (CD 3.4). IACS logo leaves the class marquee. |
@@ -152,7 +152,7 @@ New-key total becomes 50 (copy deck's 45 + these 5).
 
 | | Compliance card (weighted) | Other three cards |
 |---|---|---|
-| Surface | `bg-ocean-900 dark:bg-ocean-950 border border-ocean-700 border-t-2 border-t-signal-400` (the page's one `signal` highlight) | `bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700` |
+| Surface | `bg-ocean-900 dark:bg-ocean-950 border border-ocean-700 border-t-2 border-t-ocean-300` (the only `signal` elements on the page are the primary CTA(s)) | `bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700` |
 | Hover | `hover:bg-ocean-800` | `hover:border-ocean-500 dark:hover:border-ocean-400` |
 | Padding | `p-6 md:p-8 lg:p-10` | `p-5 md:p-6` |
 | Title | `font-display text-2xl md:text-3xl font-bold text-white` | `text-lg md:text-xl font-bold text-slate-900 dark:text-white` |
@@ -418,7 +418,7 @@ Delete from both menus: Expertise, Vision, Business, Competitiveness. Keys left 
 4. No blurred blobs, `animate-blob`, `blur-3xl` decorations or mesh backgrounds.
 5. No `min-h-screen` (or `h-screen`) hero.
 6. No repeated identical 4-up card grid: services is weighted card + list; why is a ruled list; insights is 3-up.
-7. `signal-*` only on the primary-action buttons and the Compliance card's top rule. No `signal` text, icons, pills, or second highlight.
+7. `signal-*` only on the primary-action buttons. No `signal` text, icons, pills, or highlights.
 8. No stock photos on the homepage.
 9. Tokens only: `ink` / `ocean` / `signal` / `slate`; fonts `font-sans` / `font-display`. No new colours, fonts, plugins, libraries or build steps.
 
@@ -431,7 +431,7 @@ Delete from both menus: Expertise, Vision, Business, Competitiveness. Keys left 
 3. Korean hero headline renders on exactly two lines at 320, 375, 768, 1024, 1440 px; the primary CTA top is ≤ 400 px from the page top at 375×812.
 4. The hero has no photos, no badge, no `min-h-screen`; the four-stage diagram has a caption and translates in all four locales.
 5. The Compliance card is the visibly largest service card at every width; all four cards are single `<a>` elements linking to their sub-page.
-6. `signal` appears only on primary-action buttons and the Compliance top rule; never two on one 375×812 screen.
+6. `signal` appears only on primary-action buttons (the Compliance top rule is `ocean-300`); never two on one 375×812 screen.
 7. Why shows three role rows linking to `compliance.html#deliverables`, the mobile mid-page CTA below 1024 px only, the 11-logo marquee (no IACS) with pause control, the class note, five standards chips, and agency names as text (no agency `<img>`).
 8. Timeline: six entries; 2026 has the "목표" pill, a hollow dot, a dashed card; the fill stops at 2025; the mobile left rail is unchanged; reduced motion shows everything.
 9. Insights renders three latest articles via `renderArticlePreview`; preview cards have no translate/shadow hover.
