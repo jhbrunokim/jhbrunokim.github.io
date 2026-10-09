@@ -207,7 +207,8 @@ class LayoutManager {
     const isIndex = currentPath === '/' || currentPath.endsWith('/');
 
     const servicesToggle = document.querySelector('[data-dropdown-toggle]');
-    const isServicePage = /\/(system-integration|maritime-cybersecurity|compliance|ai-cybersecurity-consulting)\.html$/.test(window.location.pathname);
+    // services.html and the four service pages light the Services toggle
+    const isServicesPage = /\/(services|system-integration|maritime-cybersecurity|compliance|ai-cybersecurity-consulting)\.html$/.test(window.location.pathname);
     // Matches on pathname only, so article.html?slug=... still highlights Insights
     const isArticlesPage = /\/(articles|article)\.html$/.test(window.location.pathname);
 
@@ -217,7 +218,7 @@ class LayoutManager {
         const match = href === linkHref;
         l.classList.toggle('is-active', match);
       });
-      if (servicesToggle) servicesToggle.classList.toggle('is-active', isServicePage);
+      if (servicesToggle) servicesToggle.classList.toggle('is-active', isServicesPage);
     };
 
     if (!isIndex) {
@@ -232,15 +233,16 @@ class LayoutManager {
 
     // Index page: track section in view. Sections are listed in DOM order;
     // navFor maps each one (and the old #about / #articles alias anchors) to
-    // the nav item it lights: About covers both Why and Journey.
-    const sections = ['home', 'services', 'why', 'journey', 'insights', 'contact']
+    // the nav item it lights. Business areas have no nav item of their own
+    // and leave every item unlit; Services lives on services.html.
+    const sections = ['home', 'business', 'journey', 'insights', 'contact']
       .map(id => document.getElementById(id))
       .filter(Boolean);
     if (!sections.length) return;
 
     const navFor = {
-      home: 'home', services: 'services', why: 'why', journey: 'why',
-      insights: 'insights', contact: 'contact', about: 'why', articles: 'insights'
+      home: 'home', journey: 'journey', insights: 'insights', contact: 'contact',
+      about: 'journey', articles: 'insights'
     };
 
     const highlight = (id) => {
