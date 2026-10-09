@@ -19,6 +19,8 @@
       "subtitle": "기술 동향, 업계 인사이트, 규제 소식을 공유합니다."
     },
     "hero": {
+      "title": "조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응 전문 기술 기업",
+      "description": "광명마리타임은 복잡해진 해양 산업과 기술에 대한 이해와 경험으로 데이터와 AI 기반 System Integration 솔루션을 제공하고 Global Compliance 에 대응합니다.",
       "ctaSecondary": "문의하기"
     },
     "expertise": {
@@ -423,6 +425,25 @@
         "flow3": "문서",
         "flow4": "선급 검사"
       },
+      "business": {
+        "title": "사업 영역",
+        "subtitle": "조선 · 해양 산업의 운영 현장에서 출발해, 플랫폼 구축부터 규제 대응까지 이어집니다.",
+        "platform": {
+          "title": "플랫폼 개발 · 구축",
+          "body": "공공 · 민간 · 해양 분야의 IT / OT 플랫폼을 설계하고 구축합니다. 데이터 · AI 기반 운영 시스템과 글로벌 표준을 따르는 데이터 관리 체계를 포함합니다.",
+          "link": "문의하기"
+        },
+        "cyber": {
+          "title": "해양 사이버 보안 · 컴플라이언스",
+          "body": "선박 사이버 보안을 설계 단계부터 선급 검사까지 한 팀이 이어서 맡습니다. IACS UR E26 / E27 대응, OT 보안 구조, 선급 제출 문서 체계를 다룹니다.",
+          "link": "서비스 보기"
+        },
+        "data": {
+          "title": "데이터 · AI 기반 운영",
+          "body": "AI 기반 보안 운영(SecOps)과 데이터 분석을 선박과 운영 시스템에 적용합니다. 설계 · 검증 · 운영 단계의 판단을 데이터로 뒷받침합니다.",
+          "link": "자세히 보기"
+        }
+      },
       "services": {
         "title": "하는 일",
         "subtitle": "네 가지 일은 하나로 이어집니다. 중심은 IACS UR E26 / E27 대응입니다.",
@@ -510,6 +531,8 @@
       "subtitle": "Sharing technology trends, industry insights, and regulatory updates."
     },
     "hero": {
+      "title": "Shipbuilding & Maritime: Platform Development, System Integration & Global Compliance",
+      "description": "DATA·AI-powered solutions for system integration and global regulatory compliance in the maritime industry.",
       "ctaSecondary": "Contact us"
     },
     "expertise": {
@@ -914,6 +937,25 @@
         "flow3": "Documentation",
         "flow4": "Class survey"
       },
+      "business": {
+        "title": "Business areas",
+        "subtitle": "We start from day-to-day operations in shipbuilding and maritime, and carry the work from platform builds through to regulatory compliance.",
+        "platform": {
+          "title": "Platform development and implementation",
+          "body": "We design and build IT / OT platforms for the public, private and maritime sectors. This includes data- and AI-based operating systems and data management frameworks that follow global standards.",
+          "link": "Contact us"
+        },
+        "cyber": {
+          "title": "Maritime cybersecurity and compliance",
+          "body": "One team carries ship cybersecurity from the design stage through to class survey. We cover IACS UR E26 / E27 compliance, OT security architecture and the document set for class submission.",
+          "link": "View services"
+        },
+        "data": {
+          "title": "Data- and AI-based operations",
+          "body": "We apply AI-based security operations (SecOps) and data analysis to ships and operating systems. Data backs the decisions made at the design, verification and operation stages.",
+          "link": "Learn more"
+        }
+      },
       "services": {
         "title": "What we do",
         "subtitle": "Four services, one thread: IACS UR E26 / E27 compliance.",
@@ -1001,6 +1043,8 @@
       "subtitle": "分享技术趋势、行业洞察和法规动态。"
     },
     "hero": {
+      "title": "造船 · 海事行业的平台开发、系统集成、全球法规合规专业技术企业",
+      "description": "光明海事基于对日益复杂的海事行业和技术的理解与经验，提供基于DATA·AI的系统集成解决方案，并应对全球合规要求。",
       "ctaSecondary": "联系我们"
     },
     "expertise": {
@@ -1405,6 +1449,25 @@
         "flow3": "文件",
         "flow4": "船级检验"
       },
+      "business": {
+        "title": "业务领域",
+        "subtitle": "我们从造船 · 海事行业的运营现场出发，从平台建设一直延伸到法规合规。",
+        "platform": {
+          "title": "平台开发 · 建设",
+          "body": "为公共、民间及海事领域设计并建设 IT / OT 平台。涵盖基于数据和 AI 的运营系统，以及遵循全球标准的数据管理体系。",
+          "link": "联系我们"
+        },
+        "cyber": {
+          "title": "海事网络安全 · 合规",
+          "body": "从设计阶段到船级检验，由同一团队持续负责船舶网络安全。涵盖 IACS UR E26 / E27 应对、OT 安全架构以及船级社提交文件体系。",
+          "link": "查看服务"
+        },
+        "data": {
+          "title": "基于数据和 AI 的运营",
+          "body": "将基于 AI 的安全运营（SecOps）和数据分析应用于船舶及运营系统。以数据支撑设计、验证、运营各阶段的判断。",
+          "link": "了解详情"
+        }
+      },
       "services": {
         "title": "业务内容",
         "subtitle": "四项服务环环相扣，核心是 IACS UR E26 / E27 应对。",
@@ -1492,6 +1555,8 @@
       "subtitle": "技術動向、業界インサイト、規制ニュースを共有します。"
     },
     "hero": {
+      "title": "造船 · 海事産業のプラットフォーム開発、システム統合、グローバル規制対応専門技術企業",
+      "description": "光明マリタイムは、複雑化した海事産業と技術に対する理解と経験を基に、DATA・AIベースのシステムインテグレーションソリューションを提供し、グローバルコンプライアンスに対応します。",
       "ctaSecondary": "お問い合わせ"
     },
     "expertise": {
@@ -1895,6 +1960,25 @@
         "flow2": "設計・検証",
         "flow3": "文書",
         "flow4": "船級検査"
+      },
+      "business": {
+        "title": "事業領域",
+        "subtitle": "造船・海事産業の運用現場から出発し、プラットフォーム構築から規制対応までつなげます。",
+        "platform": {
+          "title": "プラットフォーム開発・構築",
+          "body": "公共・民間・海事分野のIT / OTプラットフォームを設計・構築します。データ・AIに基づく運用システムと、グローバル標準に沿ったデータ管理体制を含みます。",
+          "link": "お問い合わせ"
+        },
+        "cyber": {
+          "title": "海事サイバーセキュリティ・コンプライアンス",
+          "body": "船舶サイバーセキュリティを、設計段階から船級検査まで一つのチームが一貫して担います。IACS UR E26 / E27対応、OTセキュリティ構造、船級提出文書の体系を扱います。",
+          "link": "サービスを見る"
+        },
+        "data": {
+          "title": "データ・AIに基づく運用",
+          "body": "AIに基づくセキュリティ運用（SecOps）とデータ分析を、船舶と運用システムに適用します。設計・検証・運用の各段階の判断をデータで裏付けます。",
+          "link": "詳しく見る"
+        }
       },
       "services": {
         "title": "事業内容",
