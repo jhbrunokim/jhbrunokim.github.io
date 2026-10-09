@@ -1540,6 +1540,19 @@
                   class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 dark:text-white transition-colors resize-none"
                 ></textarea>
               </div>
+              <div class="mb-6 flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="privacy-consent"
+                  name="privacyConsent"
+                  aria-required="true"
+                  class="mt-1 h-5 w-5 shrink-0 rounded border-slate-300 dark:border-slate-700 text-ocean-600 focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+                />
+                <label for="privacy-consent" class="text-sm text-slate-600 dark:text-slate-400">
+                  <span data-i18n="contactSection.consentLabel">개인정보 수집 및 이용에 동의합니다.</span>
+                  <a href="privacy-policy.html" target="_blank" rel="noopener" class="text-ocean-600 dark:text-ocean-400 underline hover:no-underline rounded focus:outline-none focus:ring-2 focus:ring-ocean-500" data-i18n="contactSection.consentLink">(내용 보기)</a>
+                </label>
+              </div>
               <button
                 type="submit"
                 id="contact-submit"

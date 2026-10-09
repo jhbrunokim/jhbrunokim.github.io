@@ -142,7 +142,10 @@
       "successMessage": "메시지가 성공적으로 전송되었습니다!",
       "errorMessage": "전송에 실패했습니다. 나중에 다시 시도해주세요.",
       "validationError": "모든 필드를 입력해주세요.",
-      "close": "닫기"
+      "close": "닫기",
+      "consentLabel": "개인정보 수집 및 이용에 동의합니다.",
+      "consentLink": "(내용 보기)",
+      "consentRequired": "개인정보 수집 및 이용에 동의해 주세요."
     },
     "systemIntegration": {
       "title": "사업 범위",
@@ -622,7 +625,10 @@
       "successMessage": "Message sent successfully!",
       "errorMessage": "Failed to send message. Please try again later.",
       "validationError": "Please fill in all fields.",
-      "close": "Close"
+      "close": "Close",
+      "consentLabel": "I agree to the collection and use of my personal data.",
+      "consentLink": "(Details)",
+      "consentRequired": "Please agree to the collection and use of your personal data."
     },
     "systemIntegration": {
       "title": "Business Scope",
@@ -1102,7 +1108,10 @@
       "successMessage": "消息发送成功！",
       "errorMessage": "发送失败，请稍后再试。",
       "validationError": "请填写所有必填项。",
-      "close": "关闭"
+      "close": "关闭",
+      "consentLabel": "我同意收集和使用我的个人信息。",
+      "consentLink": "（查看详情）",
+      "consentRequired": "请同意收集和使用您的个人信息。"
     },
     "systemIntegration": {
       "title": "业务范围",
@@ -1582,7 +1591,10 @@
       "successMessage": "メッセージが 送信されました。",
       "errorMessage": "送信に 失敗しました。後ほど 再度 お試しください。",
       "validationError": "すべての 項目を 入力してください。",
-      "close": "閉じる"
+      "close": "閉じる",
+      "consentLabel": "個人情報の収集および利用に同意します。",
+      "consentLink": "（内容を見る）",
+      "consentRequired": "個人情報の収集および利用に同意してください。"
     },
     "systemIntegration": {
       "title": "事業範囲",
