@@ -483,7 +483,7 @@
         "data": {
           "title": "데이터 · AI 기반 운영",
           "body": "AI 기반 보안 운영(SecOps)과 데이터 분석을 선박과 운영 시스템에 적용합니다. 설계 · 검증 · 운영 단계의 판단을 데이터로 뒷받침합니다.",
-          "link": "자세히 보기"
+          "link": "AI 컨설팅 보기"
         }
       },
       "services": {
@@ -1037,7 +1037,7 @@
         "data": {
           "title": "Data- and AI-based operations",
           "body": "We apply AI-based security operations (SecOps) and data analysis to ships and operating systems. Data backs the decisions made at the design, verification and operation stages.",
-          "link": "Learn more"
+          "link": "View AI consulting"
         }
       },
       "services": {
@@ -1591,7 +1591,7 @@
         "data": {
           "title": "基于数据和 AI 的运营",
           "body": "将基于 AI 的安全运营（SecOps）和数据分析应用于船舶及运营系统。以数据支撑设计、验证、运营各阶段的判断。",
-          "link": "了解详情"
+          "link": "查看 AI 咨询"
         }
       },
       "services": {
@@ -2145,7 +2145,7 @@
         "data": {
           "title": "データ・AIに基づく運用",
           "body": "AIに基づくセキュリティ運用（SecOps）とデータ分析を、船舶と運用システムに適用します。設計・検証・運用の各段階の判断をデータで裏付けます。",
-          "link": "詳しく見る"
+          "link": "AIコンサルティングを見る"
         }
       },
       "services": {
