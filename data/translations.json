@@ -20,7 +20,7 @@
     },
     "hero": {
       "title": "조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응 전문 기술 기업",
-      "description": "광명마리타임은 복잡해진 해양 산업과 기술에 대한 이해와 경험으로 데이터와 AI 기반 System Integration 솔루션을 제공하고 Global Compliance 에 대응합니다.",
+      "description": "광명마리타임은 복잡해진 해양 산업과 기술에 대한 이해와 경험으로 데이터와 AI 기반 System Integration 솔루션을 제공하고 Global Compliance에 대응합니다.",
       "ctaSecondary": "문의하기"
     },
     "expertise": {
@@ -238,7 +238,7 @@
       "marqueePlay": "로고 흐름 다시 재생"
     },
     "footer": {
-      "description": "IACS UR E26 / E27 대응과 IT / OT 시스템 통합을 설계부터 선급 검사까지 맡는 해양 사이버 보안 컨설팅 기업입니다.",
+      "description": "조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응 기술 기업.",
       "contactTitle": "연락처",
       "email": "info@gmmaritime.com",
       "address": "전라북도 군산시 상신6길 12",
@@ -429,17 +429,17 @@
         "title": "사업 영역",
         "subtitle": "조선 · 해양 산업의 운영 현장에서 출발해, 플랫폼 구축부터 규제 대응까지 이어집니다.",
         "platform": {
-          "title": "플랫폼 개발 · 구축",
+          "title": "플랫폼 개발 · 구축",
           "body": "공공 · 민간 · 해양 분야의 IT / OT 플랫폼을 설계하고 구축합니다. 데이터 · AI 기반 운영 시스템과 글로벌 표준을 따르는 데이터 관리 체계를 포함합니다.",
           "link": "문의하기"
         },
         "cyber": {
-          "title": "해양 사이버 보안 · 컴플라이언스",
+          "title": "해양 사이버 보안 · 컴플라이언스",
           "body": "선박 사이버 보안을 설계 단계부터 선급 검사까지 한 팀이 이어서 맡습니다. IACS UR E26 / E27 대응, OT 보안 구조, 선급 제출 문서 체계를 다룹니다.",
           "link": "서비스 보기"
         },
         "data": {
-          "title": "데이터 · AI 기반 운영",
+          "title": "데이터 · AI 기반 운영",
           "body": "AI 기반 보안 운영(SecOps)과 데이터 분석을 선박과 운영 시스템에 적용합니다. 설계 · 검증 · 운영 단계의 판단을 데이터로 뒷받침합니다.",
           "link": "자세히 보기"
         }
@@ -750,7 +750,7 @@
       "marqueePlay": "Play logos"
     },
     "footer": {
-      "description": "A maritime cybersecurity consultancy handling IACS UR E26 / E27 compliance and IT / OT system integration from design to class survey.",
+      "description": "A technology company for shipbuilding and maritime: platform development, system integration and global regulatory compliance.",
       "contactTitle": "Contact",
       "email": "info@gmmaritime.com",
       "address": "12, Sangsin 6-gil, Gunsan-si, Jeollabuk-do, South Korea",
@@ -1262,7 +1262,7 @@
       "marqueePlay": "继续标志滚动"
     },
     "footer": {
-      "description": "从设计到船级检验，负责 IACS UR E26 / E27 应对与 IT / OT 系统集成的海事网络安全咨询公司。",
+      "description": "面向造船与海事产业的技术企业：平台开发、系统集成与全球法规合规。",
       "contactTitle": "联系方式",
       "email": "info@gmmaritime.com",
       "address": "韩国全罗北道群山市桑新6街12号",
@@ -1547,7 +1547,7 @@
       "articles": "インサイト",
       "aboutUs": "会社概要",
       "contact": "お問い合わせ",
-      "backToOverview": "Overviewに 戻る",
+      "backToOverview": "Overviewに戻る",
       "skipToContent": "メインコンテンツへ"
     },
     "articles": {
@@ -1668,8 +1668,8 @@
       "engDevLeftDesc": "DATA·AI 活用 基盤 公共/民間 運営環境に 最適化された プラットフォーム 設計 開発",
       "engDevRightTitle": "IACS UR E26 / E27 基盤 設計·検証·文書 体系 構築",
       "engDevRightDesc": "運航 船舶の IT / OT 環境に 最適化された サイバー レジリエンス モデル 設計",
-      "ctaTitle": "プロジェクトに ついて ご相談されたい ですか？",
-      "ctaDesc": "専門家との 相談を 通じて 最適な ソリューションを お探しください。",
+      "ctaTitle": "プロジェクトについてご相談されたいですか？",
+      "ctaDesc": "専門家との相談を通じて最適なソリューションをお探しください。",
       "thesisTitle": "事故を 防ぐ だけの セキュリティ ではなく、耐え抜く 構造を つくります。",
       "thesisLede": "機能を 先に 付け足しません。運用目標から 標準まで 4つの 層を 先に 築き、その 上に IT・OT システムを 統合します。",
       "nextTitle": "この 構造の 上に 続く サービス"
@@ -1774,7 +1774,7 @@
       "marqueePlay": "ロゴの流れを再生"
     },
     "footer": {
-      "description": "設計から船級検査まで、IACS UR E26 / E27対応とIT / OTシステム統合を担う海事サイバーセキュリティコンサルティング企業です。",
+      "description": "造船・海事産業のためのプラットフォーム開発、システム統合、グローバル規制対応の技術企業。",
       "contactTitle": "お問い合わせ",
       "email": "info@gmmaritime.com",
       "address": "韓国 全羅北道 群山市 桑新6ギル12",

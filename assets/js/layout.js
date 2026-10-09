@@ -127,6 +127,11 @@ class LayoutManager {
   // load above it and push it down. Re-align on every layout change until
   // the page has settled or the visitor scrolls on their own.
   initHashAnchor() {
+    // Old homepage deep links now live on services.html
+    if (/(^|\/)(index\.html)?$/.test(window.location.pathname) && ['#services', '#why'].includes(window.location.hash)) {
+      window.location.replace('services.html' + window.location.hash);
+      return;
+    }
     const id = decodeURIComponent(window.location.hash.slice(1));
     if (!id || id === 'contact') return;
     const target = document.getElementById(id);
