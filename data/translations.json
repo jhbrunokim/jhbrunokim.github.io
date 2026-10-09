@@ -11,7 +11,7 @@
       "articles": "인사이트",
       "aboutUs": "회사 소개",
       "contact": "문의",
-      "backToOverview": "Overview로 돌아가기",
+      "backToOverview": "서비스 개요로 돌아가기",
       "skipToContent": "본문으로 건너뛰기"
     },
     "articles": {
@@ -565,7 +565,7 @@
       "articles": "Insights",
       "aboutUs": "About",
       "contact": "Contact",
-      "backToOverview": "Back to Overview",
+      "backToOverview": "Back to services overview",
       "skipToContent": "Skip to content"
     },
     "articles": {
@@ -1119,7 +1119,7 @@
       "articles": "洞察",
       "aboutUs": "关于我们",
       "contact": "联系我们",
-      "backToOverview": "返回总览",
+      "backToOverview": "返回服务概览",
       "skipToContent": "跳到主要内容"
     },
     "articles": {
@@ -1673,7 +1673,7 @@
       "articles": "インサイト",
       "aboutUs": "会社概要",
       "contact": "お問い合わせ",
-      "backToOverview": "Overviewに戻る",
+      "backToOverview": "サービス概要に戻る",
       "skipToContent": "メインコンテンツへ"
     },
     "articles": {
