@@ -23,8 +23,8 @@
     },
     "hero": {
       "badge": "Ship OT & Cyber Security Specialist",
-      "title": "조선 · 해양 산업의<br/>플랫폼 개발, 시스템 통합,<br/>글로벌 규제 대응<br/>전문 기술 기업",
-      "description": "광명 마리타임은 복잡해진 해양 산업과 기술에 대한 이해와 경험으로<br class=\"hidden md:block\"/>데이터와 AI 기반 System Integration 솔루션을 제공하고<br class=\"hidden md:block\"/>Global Compliance 에 대응 합니다.",
+      "title": "조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응 전문 기술 기업",
+      "description": "광명 마리타임은 복잡해진 해양 산업과 기술에 대한 이해와 경험으로 데이터와 AI 기반 System Integration 솔루션을 제공하고 Global Compliance 에 대응 합니다.",
       "ctaSecondary": "문의하기"
     },
     "expertise": {
@@ -125,7 +125,7 @@
       "card4Title": "산업 (Industry)",
       "card4Desc": "현실적이고 지속 가능한 선박 보안 모델",
       "visionLabel": "Our Vision",
-      "visionTitle": "\"데이터와 거버넌스를 설계하는 산업으로의 전환,<br/>그 중심에 <span class=\"text-blue-500\">광명마리타임</span>이 있습니다.\"",
+      "visionTitle": "\"데이터와 거버넌스를 설계하는 산업으로의 전환,<br/>그 중심에 <span class=\"text-ocean-300\">광명마리타임</span>이 있습니다.\"",
       "visionDesc": "OT 보안과 디지털 아키텍처 분야의 신뢰받는 기술 파트너가 되어<br/>조선 · 해양 산업의 새로운 기준을 만들어 가겠습니다."
     },
     "contactSection": {
@@ -308,15 +308,9 @@
       "changeLanguage": "언어 변경"
     },
     "countryModal": {
-      "detectedMessage": "접속 지역",
+      "title": "언어 선택",
       "continueButton": "계속",
-      "selectOther": "다른 국가 또는 지역 선택",
-      "countries": {
-        "KR": "대한민국 (Korea)",
-        "US": "미국 (United States)",
-        "CN": "중국 (China)",
-        "JP": "일본 (Japan)"
-      }
+      "closeButton": "닫기"
     },
     "competitivenessSection": {
       "label": "Competitiveness",
@@ -509,8 +503,8 @@
     },
     "hero": {
       "badge": "Ship OT & Cyber Security Specialist",
-      "title": "Shipbuilding & Maritime:<br/>Platform Development,<br/>System Integration &<br/>Global Compliance",
-      "description": "DATA·AI-powered solutions for system integration<br class=\"hidden md:block\"/>and global regulatory compliance in the maritime industry.",
+      "title": "Shipbuilding & Maritime: Platform Development, System Integration & Global Compliance",
+      "description": "DATA·AI-powered solutions for system integration and global regulatory compliance in the maritime industry.",
       "ctaSecondary": "Contact Us"
     },
     "expertise": {
@@ -611,7 +605,7 @@
       "card4Title": "Industry",
       "card4Desc": "Realistic and sustainable ship security model",
       "visionLabel": "Our Vision",
-      "visionTitle": "\"Transformation to an industry that designs data and governance,<br/>with <span class=\"text-blue-500\">Gwangmyung Maritime</span> at its center.\"",
+      "visionTitle": "\"Transformation to an industry that designs data and governance,<br/>with <span class=\"text-ocean-300\">Gwangmyung Maritime</span> at its center.\"",
       "visionDesc": "Becoming a trusted technical partner in OT security and digital architecture,<br/>creating new standards for the shipbuilding and maritime industry."
     },
     "contactSection": {
@@ -794,15 +788,9 @@
       "changeLanguage": "Change Language"
     },
     "countryModal": {
-      "detectedMessage": "You are connecting from",
+      "title": "Select language",
       "continueButton": "Continue",
-      "selectOther": "Select other country or region",
-      "countries": {
-        "KR": "Korea (대한민국)",
-        "US": "United States",
-        "CN": "China (中国)",
-        "JP": "Japan (日本)"
-      }
+      "closeButton": "Close"
     },
     "competitivenessSection": {
       "label": "Competitiveness",
@@ -995,8 +983,8 @@
     },
     "hero": {
       "badge": "船舶OT与网络安全专家",
-      "title": "造船 · 海事行业的<br/>平台开发、系统集成、<br/>全球法规合规<br/>专业技术企业",
-      "description": "光明海事基于对日益复杂的海事行业和技术的理解与经验，<br class=\"hidden md:block\"/>提供基于DATA·AI的系统集成解决方案，<br class=\"hidden md:block\"/>并应对全球合规要求。",
+      "title": "造船 · 海事行业的 平台开发、系统集成、 全球法规合规 专业技术企业",
+      "description": "光明海事基于对日益复杂的海事行业和技术的理解与经验， 提供基于DATA·AI的系统集成解决方案， 并应对全球合规要求。",
       "ctaSecondary": "联系我们"
     },
     "expertise": {
@@ -1097,7 +1085,7 @@
       "card4Title": "行业",
       "card4Desc": "现实且可持续的船舶安全模型",
       "visionLabel": "我们的愿景",
-      "visionTitle": "\"向设计数据和治理的行业转型，<br/><span class=\"text-blue-500\">光明海事</span>处于其中心。\"",
+      "visionTitle": "\"向设计数据和治理的行业转型，<br/><span class=\"text-ocean-300\">光明海事</span>处于其中心。\"",
       "visionDesc": "成为OT安全和数字架构领域值得信赖的技术合作伙伴，<br/>为造船和海事行业创造新标准。"
     },
     "contactSection": {
@@ -1280,15 +1268,9 @@
       "changeLanguage": "更改语言"
     },
     "countryModal": {
-      "detectedMessage": "您正在从以下地区访问",
+      "title": "选择语言",
       "continueButton": "继续",
-      "selectOther": "选择其他国家或地区",
-      "countries": {
-        "KR": "韩国 (대한민국)",
-        "US": "美国",
-        "CN": "中国",
-        "JP": "日本 (日本)"
-      }
+      "closeButton": "关闭"
     },
     "competitivenessSection": {
       "label": "Competitiveness",
@@ -1481,8 +1463,8 @@
     },
     "hero": {
       "badge": "船舶OT・サイバー セキュリティ 専門家",
-      "title": "造船 · 海事産業の<br/>プラットフォーム開発、<br/>システム統合、グローバル規制対応<br/>専門技術企業",
-      "description": "光明マリタイムは、複雑化した海事産業と技術に対する理解と経験を基に、<br class=\"hidden md:block\"/>DATA・AIベースのシステムインテグレーションソリューションを提供し、<br class=\"hidden md:block\"/>グローバルコンプライアンスに対応します。",
+      "title": "造船 · 海事産業の プラットフォーム開発、 システム統合、グローバル規制対応 専門技術企業",
+      "description": "光明マリタイムは、複雑化した海事産業と技術に対する理解と経験を基に、 DATA・AIベースのシステムインテグレーションソリューションを提供し、 グローバルコンプライアンスに対応します。",
       "ctaSecondary": "お問い合わせ"
     },
     "expertise": {
@@ -1583,7 +1565,7 @@
       "card4Title": "産業",
       "card4Desc": "現実的で 持続可能な 船舶セキュリティ モデル",
       "visionLabel": "私たちのビジョン",
-      "visionTitle": "\"データと ガバナンスを 設計する 産業への転換、<br/>その中心に<span class=\"text-blue-500\">光明マリタイム</span>が あります。\"",
+      "visionTitle": "\"データと ガバナンスを 設計する 産業への転換、<br/>その中心に<span class=\"text-ocean-300\">光明マリタイム</span>が あります。\"",
       "visionDesc": "OTセキュリティと デジタルアーキテクチャ 分野の 信頼できる 技術パートナーと なり、<br/>造船・海事産業の 新しい基準を 作ります。"
     },
     "contactSection": {
@@ -1766,15 +1748,9 @@
       "changeLanguage": "言語を変更"
     },
     "countryModal": {
-      "detectedMessage": "接続地域",
+      "title": "言語を選択",
       "continueButton": "続ける",
-      "selectOther": "他の国または地域を選択",
-      "countries": {
-        "KR": "韓国 (대한민국)",
-        "US": "米国",
-        "CN": "中国 (中国)",
-        "JP": "日本"
-      }
+      "closeButton": "閉じる"
     },
     "competitivenessSection": {
       "label": "Competitiveness",

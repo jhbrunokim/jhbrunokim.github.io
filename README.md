@@ -9,7 +9,7 @@
 - 🎨 **반응형 디자인** — 모바일 / 태블릿 / 데스크톱
 - 🌙 **OS 테마 자동 반영** — `prefers-color-scheme`을 그대로 따르고 OS 다크/라이트 전환 시 실시간 반영 (수동 토글 없음)
 - 🌐 **4개 언어 i18n** — 한국어 / 영어 / 중국어(간체) / 일본어, `<html lang>`은 로케일에 맞춰 자동 갱신
-- 🗺️ **자동 국가 감지** — GeoJS API로 IP 기반 국가·언어 추천 모달
+- 🗺️ **브라우저 언어 자동 적용** — 첫 방문 시 `navigator.languages` 기준으로 로케일 선택 (외부 API 호출·자동 모달 없음), 네비 지구본 버튼으로 언어 변경
 - 🧭 **스크롤 연동 네비게이션** — IntersectionObserver로 현재 섹션에 active-state 인디케이터, 서브페이지에서는 현재 페이지 하이라이트 + "← Overview" 링크
 - 🗂️ **Competitiveness / Articles 프리뷰 섹션** — 인덱스에서 하위 페이지로 이어지는 진입점
 - 📝 **아티클 시스템** — `articles/*.md` 마크다운 + `index.json`으로 목록·본문 자동 렌더 (marked.js)
@@ -34,13 +34,13 @@ jhbrunokim.github.io/
 │       ├── layout.js                 # navbar/footer/모달 로드, 스크롤·드롭다운·active-state
 │       ├── theme.js                  # OS 테마 감지 (<head>에서 blocking 로드)
 │       ├── i18n.js                   # 다국어 전환 + <html lang> 동기화
-│       ├── country-detector.js       # 국가 감지 + 언어 모달
+│       ├── country-detector.js       # 첫 방문 언어 적용 + 언어 선택 모달
 │       ├── contact.js                # EmailJS 핸들러
 │       └── articles.js               # 마크다운 아티클 목록·본문·프리뷰 렌더
 ├── components/
 │   ├── navbar.html                   # 상단 네비게이션 (동적 로드)
 │   ├── footer.html                   # 푸터 (동적 로드)
-│   └── country-modal.html            # 국가·언어 선택 모달
+│   └── country-modal.html            # 언어 선택 모달
 ├── data/
 │   └── translations.json             # ko / en / zh / ja 번역
 ├── articles/
@@ -125,7 +125,6 @@ git push origin main
 - **아이콘**: Lucide Icons (CDN)
 - **마크다운**: marked.js (아티클 뷰어)
 - **이메일**: EmailJS
-- **국가 감지**: GeoJS API
 - **배포**: GitHub Pages + Actions
 
 ## ⚙️ EmailJS 설정
@@ -179,21 +178,22 @@ FOUC 방지를 위해 `theme.js`는 각 페이지의 `<head>`에서 blocking 로
 
 ## 🌐 다국어
 
-### 자동 국가·언어 감지
+### 언어 결정 방식
 
-첫 방문 시 [GeoJS API](https://get.geojs.io/)로 국가를 감지하고 언어 모달을 표시합니다:
-- 🇰🇷 KR → 한국어
-- 🇨🇳 CN → 중국어
-- 🇯🇵 JP → 일본어
-- 🇺🇸 US · 기타 → 영어
+`localStorage.preferredLanguage`에 저장된 값이 없으면(첫 방문) 브라우저 언어 설정을 따릅니다. 외부 서비스 호출이나 IP 기반 위치 조회는 하지 않고, 모달도 자동으로 띄우지 않습니다.
 
-선택한 언어는 `localStorage.preferredLanguage`에 저장되어 재방문 시 유지됩니다. `<html lang>` 속성도 로케일에 맞춰 갱신됩니다.
+- `navigator.languages`(없으면 `navigator.language`)를 순서대로 확인해 기본 언어 태그가 `ko` / `zh` / `ja`인 첫 항목을 사용 (예: `ko-KR` → 한국어, `zh-TW` → 중국어)
+- 일치하는 항목이 없으면 영어
+
+이 규칙은 `assets/js/i18n.js`의 `detectBrowserLanguage()` 한 곳에 정의되어 `I18nManager`와 `country-detector.js`가 함께 사용합니다. 각 페이지 `<head>`의 인라인 폰트 로딩 스크립트는 스크립트 파일보다 먼저 실행되므로 같은 규칙의 짧은 사본을 갖고 있어, 첫 화면부터 해당 로케일의 Noto CJK 폰트를 불러옵니다.
+
+적용된 언어는 `localStorage.preferredLanguage`에 저장되어 재방문 시 유지되며, `<html lang>` 속성도 로케일에 맞춰 갱신됩니다. 언어 변경은 네비게이션의 지구본 버튼(모바일 메뉴의 "언어 변경")에서 여는 언어 선택 모달로 합니다. 모달은 Esc 키, 배경 클릭, 닫기 버튼으로 닫힙니다.
 
 ### 새 언어 추가
 
 1. `data/translations.json`에 새 로케일 최상위 키 추가 (기존 구조 미러링)
-2. `assets/js/country-detector.js`의 `countryToLanguage` 매핑 확장
-3. `components/country-modal.html`의 국가 옵션 확인
+2. `assets/js/i18n.js`의 `detectBrowserLanguage()`와 각 페이지 `<head>` 인라인 폰트 스크립트의 지원 언어 목록 확장 (CJK 폰트가 필요하면 폰트 매핑도 추가)
+3. `assets/js/country-detector.js`의 `SUPPORTED_LANGUAGES`와 `components/country-modal.html`의 언어 옵션(해당 언어의 자국어 표기, `value` = 언어 코드) 추가
 4. 모든 텍스트 번역
 
 ## 🧭 네비게이션 동작

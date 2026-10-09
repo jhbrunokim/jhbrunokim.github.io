@@ -101,7 +101,15 @@
     <script>
       (function () {
         var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
-        var lang = localStorage.getItem('preferredLanguage') || 'en';
+        var lang = localStorage.getItem('preferredLanguage') || (function () {
+          // Same rule as detectBrowserLanguage() in assets/js/i18n.js
+          var tags = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+          for (var i = 0; i < tags.length; i++) {
+            var primary = String(tags[i] || '').toLowerCase().split('-')[0];
+            if (primary === 'ko' || primary === 'zh' || primary === 'ja') return primary;
+          }
+          return 'en';
+        })();
         var families = ['Inter:wght@400;500;600;700', 'Space+Grotesk:wght@500;600;700'];
         if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
         var link = document.createElement('link');
@@ -179,24 +187,20 @@
               </div>
               <!-- Title -->
               <h1
-                class="font-display mt-10 text-pretty text-5xl font-semibold tracking-tight text-white sm:text-7xl"
+                class="font-display mt-10 text-pretty text-5xl font-semibold tracking-tight text-white sm:text-6xl"
                 data-i18n="hero.title"
-                data-i18n-html="true"
               >
-                조선 · 해양 산업의<br />플랫폼 개발, 시스템 통합,<br />글로벌
-                규제 대응<br />전문 기술 기업
+                조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응
+                전문 기술 기업
               </h1>
               <!-- Description -->
               <p
                 class="mt-8 text-pretty text-lg font-medium text-gray-400 sm:max-w-md sm:text-xl/8 lg:max-w-none"
                 data-i18n="hero.description"
-                data-i18n-html="true"
               >
                 광명 마리타임은 복잡해진 해양 산업과 기술에 대한 이해와
-                경험으로<br class="hidden md:block" />데이터와 AI 기반 System
-                Integration 솔루션을 제공하고<br
-                  class="hidden md:block"
-                />Global Compliance 에 대응 합니다.
+                경험으로 데이터와 AI 기반 System Integration 솔루션을
+                제공하고 Global Compliance 에 대응 합니다.
               </p>
               <!-- CTA Button -->
               <div class="mt-10 flex items-center gap-x-6">
@@ -723,7 +727,7 @@
               data-i18n-html="true"
             >
               "데이터와 거버넌스를 설계하는 산업으로의 전환,<br />
-              그 중심에 <span class="text-ocean-600">광명마리타임</span>이
+              그 중심에 <span class="text-ocean-300">광명마리타임</span>이
               있습니다."
             </h2>
             <p
