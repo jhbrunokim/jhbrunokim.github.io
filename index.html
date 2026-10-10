@@ -536,13 +536,16 @@
     <section id="contact" class="relative overflow-hidden py-20 md:py-24 bg-slate-50 dark:bg-slate-800">
       <!-- Core-values watermark. Decorative, mixed Korean/English on purpose
            (not translated), hidden from assistive tech, sits behind the form. -->
-      <div aria-hidden="true" class="pointer-events-none select-none absolute inset-0">
-        <div class="max-w-7xl mx-auto h-full px-6 flex flex-col justify-center gap-1 md:gap-3 font-display font-bold leading-none tracking-tight whitespace-nowrap text-slate-900/[0.05] dark:text-white/[0.06] text-5xl md:text-7xl xl:text-8xl">
-          <span>신뢰 Trust</span>
-          <span class="md:pl-16 xl:pl-24">실행 Execution</span>
-          <span class="md:pl-32 xl:pl-48">책임 Responsibility</span>
-          <span class="md:pl-48 xl:pl-72">협력 Partnership</span>
-        </div>
+      <div aria-hidden="true" class="pointer-events-none select-none absolute inset-0 font-display font-bold leading-none tracking-tighter text-slate-900 dark:text-white [&>span]:absolute [&>span]:whitespace-nowrap">
+        <span class="left-[-3%] top-[-9%] text-[24vw] opacity-[0.05]">신뢰</span>
+        <span class="left-[14%] top-[10%] text-[10vw] opacity-[0.07]">Trust</span>
+        <span class="left-[52%] top-[-16%] text-[20vw] opacity-[0.04]">책임</span>
+        <span class="right-[-2%] top-[2%] text-[9vw] opacity-[0.06] [writing-mode:vertical-rl]">Responsibility</span>
+        <span class="left-[30%] top-[34%] text-[15vw] opacity-[0.06]">실행</span>
+        <span class="left-[2%] top-[56%] text-[8vw] opacity-[0.07]">Execution</span>
+        <span class="left-[-4%] bottom-[-14%] text-[18vw] opacity-[0.045]">협력</span>
+        <span class="right-[-4%] bottom-[-6%] text-[12vw] opacity-[0.05]">Partnership</span>
+        <span class="left-[62%] top-[52%] text-[7vw] opacity-[0.07] [writing-mode:vertical-rl]">신뢰 · 협력</span>
       </div>
       <div class="relative max-w-7xl mx-auto px-6">
         <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
