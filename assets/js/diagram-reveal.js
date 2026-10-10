@@ -67,10 +67,10 @@
     return Math.min(1, Math.max(0, (startTop - rect.top) / (startTop - endTop)));
   }
 
-  // A diagram already past the threshold on the first measure (e.g. in the
-  // first screen on desktop) would otherwise appear at once. Play it
-  // instead: tween p 0 -> 1 (ease-out, 2200 ms) starting 250 ms after load,
-  // through the same --k path, then leave it complete.
+  // A diagram already on screen at the first measure (e.g. in the first
+  // screen on desktop) would otherwise sit half-drawn. Play it instead:
+  // tween p 0 -> 1 (ease-out, 2200 ms) starting 250 ms after load, through
+  // the same --k path, then leave it complete.
   function play(item) {
     item.state = 'playing';
     const begin = () => setTimeout(() => {
@@ -92,9 +92,10 @@
     const vh = window.innerHeight;
     items.forEach(item => {
       if (item.state !== 'scrub') return;
-      const raw = progressOf(item.el, vh);
-      if (first === true && raw >= 1) play(item);
-      else apply(item, raw);
+      // Already on screen when the page opens (first screen on desktop, or a
+      // restored scroll position): play it instead of leaving it half-drawn.
+      if (first === true && item.el.getBoundingClientRect().top < 0.88 * vh) play(item);
+      else apply(item, progressOf(item.el, vh));
     });
   }
 
