@@ -312,29 +312,55 @@
   }
 }
 
-/* Diagram reveal (assets/js/diagram-reveal.js) on the services flow and the
-   system-integration, compliance and maritime-cybersecurity diagrams. Steps
-   fade/slide in in order (--step × --unit delay); connector lines draw via
-   stroke-dashoffset (they carry pathLength="1"). Hidden states only apply
+/* Diagram reveal (assets/js/diagram-reveal.js). Hidden states only apply
    under .js-reveal, so diagrams are static and visible without JS or with
-   reduced motion. Hidden steps keep their box: no layout shift. */
-.js-reveal [data-reveal]:not(.is-in) [data-reveal-step] {
-  opacity: 0;
-  transform: translateY(6px);
-}
-.js-reveal [data-reveal] [data-reveal-step] {
-  transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1), transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: calc(var(--step, 0) * var(--unit, 140ms));
+   reduced motion. Only opacity/transform/stroke-dashoffset change: hidden
+   steps keep their box, no layout shift. Connector lines carry
+   pathLength="1" and draw via stroke-dashoffset.
+
+   Timed (services hero flow, data-reveal="timed" or bare data-reveal):
+   steps fade/slide in in order once in view, 250 ms lead-in, then
+   --step × --unit apart. */
+.js-reveal [data-reveal]:not([data-reveal="scroll"]) [data-reveal-step] {
+  transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1), transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(250ms + var(--step, 0) * var(--unit, 240ms));
   transform-box: fill-box;
 }
-.js-reveal [data-reveal]:not(.is-in) [data-reveal-line] {
-  stroke-dashoffset: 1;
+.js-reveal [data-reveal]:not([data-reveal="scroll"]):not(.is-in) [data-reveal-step] {
+  opacity: 0;
+  transform: translateY(8px);
 }
-.js-reveal [data-reveal] [data-reveal-line] {
+.js-reveal [data-reveal]:not([data-reveal="scroll"]) [data-reveal-line] {
   stroke-dasharray: 1;
   stroke-dashoffset: 0;
-  transition: stroke-dashoffset 520ms cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: calc(var(--step, 0) * var(--unit, 140ms));
+  transition: stroke-dashoffset 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(250ms + var(--step, 0) * var(--unit, 240ms));
+}
+.js-reveal [data-reveal]:not([data-reveal="scroll"]):not(.is-in) [data-reveal-line] {
+  stroke-dashoffset: 1;
+}
+
+/* Scroll-scrubbed (sub-page diagrams, data-reveal="scroll"): the script
+   writes each step's own progress --k (0..1) from the container's scroll
+   progress --p; the short transition only smooths frame steps. .is-in
+   pins the end state. */
+.js-reveal [data-reveal="scroll"] [data-reveal-step] {
+  opacity: var(--k, 0);
+  transform: translateY(calc((1 - var(--k, 0)) * 8px));
+  transform-box: fill-box;
+  transition: opacity 80ms linear, transform 80ms linear;
+}
+.js-reveal [data-reveal="scroll"] [data-reveal-line] {
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--k, 0));
+  transition: stroke-dashoffset 80ms linear;
+}
+.js-reveal [data-reveal="scroll"].is-in [data-reveal-step] {
+  opacity: 1;
+  transform: none;
+}
+.js-reveal [data-reveal="scroll"].is-in [data-reveal-line] {
+  stroke-dashoffset: 0;
 }
 @media (prefers-reduced-motion: reduce) {
   [data-reveal-step],
