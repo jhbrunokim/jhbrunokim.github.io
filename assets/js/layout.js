@@ -71,7 +71,7 @@ class LayoutManager {
     // Highlight the active page/section in the navbar
     this.initActiveState();
 
-    // Keyboard support for the Competitiveness dropdown
+    // Keyboard support for the Services dropdown
     this.initDropdown();
 
     // Open the contact form in a modal from any "#contact" link
@@ -122,11 +122,25 @@ class LayoutManager {
     if (window.location.hash === '#contact') open('direct-link');
   }
 
-  // Arriving from another page (e.g. index.html#about), the browser jumps to
+  // Arriving from another page (e.g. about.html#journey), the browser jumps to
   // the section once, then the navbar, translations, article list and images
   // load above it and push it down. Re-align on every layout change until
   // the page has settled or the visitor scrolls on their own.
   initHashAnchor() {
+    // Old homepage deep links now live on other pages
+    if (/(^|\/)(index\.html)?$/.test(window.location.pathname)) {
+      const moved = {
+        '#services': 'services.html#services',
+        '#why': 'services.html#why',
+        '#about': 'about.html#journey',
+        '#journey': 'about.html#journey',
+        '#articles': 'articles.html'
+      }[window.location.hash];
+      if (moved) {
+        window.location.replace(moved);
+        return;
+      }
+    }
     const id = decodeURIComponent(window.location.hash.slice(1));
     if (!id || id === 'contact') return;
     const target = document.getElementById(id);
@@ -206,9 +220,10 @@ class LayoutManager {
     const currentHash = window.location.hash;
     const isIndex = currentPath === '/' || currentPath.endsWith('/');
 
-    const compBtn = document.querySelector('[data-dropdown-toggle]');
-    const isCompetitivenessPage = /\/(system-integration|maritime-cybersecurity|compliance|ai-cybersecurity-consulting)\.html$/.test(window.location.pathname);
-    // Matches on pathname only, so article.html?slug=... still highlights Articles
+    const servicesToggle = document.querySelector('[data-dropdown-toggle]');
+    // services.html and the four service pages light the Services toggle
+    const isServicesPage = /\/(services|system-integration|maritime-cybersecurity|compliance|ai-cybersecurity-consulting)\.html$/.test(window.location.pathname);
+    // Matches on pathname only, so article.html?slug=... still highlights Insights
     const isArticlesPage = /\/(articles|article)\.html$/.test(window.location.pathname);
 
     const setActive = (linkHref) => {
@@ -217,27 +232,33 @@ class LayoutManager {
         const match = href === linkHref;
         l.classList.toggle('is-active', match);
       });
-      if (compBtn) compBtn.classList.toggle('is-active', isCompetitivenessPage);
+      if (servicesToggle) servicesToggle.classList.toggle('is-active', isServicesPage);
     };
 
     if (!isIndex) {
-      // Sub-page: highlight the matching link and (if applicable) the dropdown toggle
+      // Sub-page: highlight the matching link (about.html → About,
+      // articles.html / article.html → Insights) and, on services.html and
+      // the four service pages, the dropdown toggle
       const fileName = window.location.pathname.split('/').pop();
-      setActive(fileName);
-      if (isArticlesPage) {
-        document.querySelectorAll('a[href="index.html#articles"]').forEach(l => l.classList.add('is-active'));
-      }
+      setActive(isArticlesPage ? 'articles.html' : fileName);
       return;
     }
 
-    // Index page: track section in view
-    const sections = ['home', 'expertise', 'vision', 'business', 'competitiveness', 'articles', 'about', 'contact']
+    // Index page: track section in view. Sections are listed in DOM order;
+    // navFor maps each one to the nav item it lights: Home for the hero,
+    // business areas and the insights teaser, Contact for the form.
+    const sections = ['home', 'business', 'classes', 'insights', 'contact']
       .map(id => document.getElementById(id))
       .filter(Boolean);
     if (!sections.length) return;
 
+    const navFor = {
+      home: 'index.html', business: 'index.html', classes: 'index.html', insights: 'index.html',
+      contact: 'index.html#contact'
+    };
+
     const highlight = (id) => {
-      const targetHref = `index.html#${id}`;
+      const targetHref = navFor[id];
       links.forEach(l => {
         const href = l.getAttribute('href') || '';
         l.classList.toggle('is-active', href === targetHref);

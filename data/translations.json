@@ -2,52 +2,48 @@
   "ko": {
     "nav": {
       "logo": "광명마리타임",
-      "home": "Home",
-      "expertise": "Expertise",
-      "business": "Business",
-      "competitiveness": "Competitiveness",
-      "systemIntegration": "System Integration",
-      "maritimeCybersecurity": "Maritime Cybersecurity",
-      "aiConsulting": "AI 컨설팅",
-      "compliance": "Compliance",
-      "articles": "Articles",
-      "vision": "Vision",
-      "aboutUs": "About Us",
-      "contact": "Contact",
-      "backToOverview": "Overview로 돌아가기",
+      "home": "홈",
+      "services": "서비스",
+      "systemIntegration": "IT / OT 시스템 통합",
+      "maritimeCybersecurity": "선박 사이버 보안",
+      "aiConsulting": "AI 기반 사이버 보안 컨설팅",
+      "compliance": "IACS UR E26 / E27 대응",
+      "articles": "인사이트",
+      "aboutUs": "회사 소개",
+      "contact": "문의",
+      "backToOverview": "서비스 개요로 돌아가기",
+      "backToHome": "홈으로 돌아가기",
       "skipToContent": "본문으로 건너뛰기"
     },
     "articles": {
-      "title": "Articles",
+      "title": "인사이트",
       "subtitle": "기술 동향, 업계 인사이트, 규제 소식을 공유합니다."
     },
     "hero": {
-      "badge": "Ship OT & Cyber Security Specialist",
       "title": "조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응 전문 기술 기업",
-      "description": "광명 마리타임은 복잡해진 해양 산업과 기술에 대한 이해와 경험으로 데이터와 AI 기반 System Integration 솔루션을 제공하고 Global Compliance 에 대응 합니다.",
+      "description": "광명마리타임은 복잡해진 해양 산업과 기술에 대한 이해와 경험으로 데이터와 AI 기반 System Integration 솔루션을 제공하고 Global Compliance에 대응합니다.",
       "ctaSecondary": "문의하기"
     },
     "expertise": {
-      "subtitle": "Our Journey",
-      "title": "광명 마리타임이 걸어온 길",
+      "title": "광명마리타임이 걸어온 길",
       "timeline2021": "2021",
       "timeline2021Title": "기술 기반 사업의 출발",
       "timeline2021Desc": "㈜끌밋 법인 설립 및 데이터 · 플랫폼 기반 시스템 개발 시작",
       "timeline2022": "2022",
-      "timeline2022Title": "산업 도메인 확장 및 기술 내재화",
+      "timeline2022Title": "산업 도메인 확장",
       "timeline2022Desc": "해양 · 물류 · 운영 산업으로의 기술 적용 가능성 검증",
       "timeline2023": "2023",
-      "timeline2023Title": "고신뢰 · 고보안 시스템 참여 경험 확보",
+      "timeline2023Title": "고신뢰 · 고보안 시스템 경험",
       "timeline2023Desc": "국방부 위성 영상 처리 시스템 구축 사업 참여",
       "timeline2024": "2024",
-      "timeline2024Title": "Maritime Cyber & Smart Ship 전문성 정립",
+      "timeline2024Title": "해양 사이버 보안 · 스마트십 전문성 정립",
       "timeline2024Desc": "IACS UR E26 / E27 규제 대응 구조 연구",
       "timeline2025": "2025",
-      "timeline2025Title": "㈜광명 마리타임 출범",
-      "timeline2025Desc": "Maritime 전문 컨설팅 기업으로 공식 출범",
+      "timeline2025Title": "㈜광명마리타임 출범",
+      "timeline2025Desc": "해양 전문 컨설팅 기업으로 출범",
       "timeline2026": "2026",
-      "timeline2026Title": "Maritime Compliance 사업 중심 조직 개편",
-      "timeline2026Desc": "주요 선급 IACS UR E27 TA 취득 및 E26 Deliverable 제공"
+      "timeline2026Title": "E26 / E27 대응 중심으로 조직 개편",
+      "timeline2026Desc": "주요 선급의 IACS UR E27 형식 승인(TA) 취득 및 E26 산출물 제공"
     },
     "compliance": {
       "diagramTitle": "선박 사이버 복원력 강제화의 3단계 적용 범위",
@@ -113,26 +109,9 @@
       "early4": "인도 후 SCARP로 운항 단계까지 관리",
       "ctaDeliverables": "역할별 산출물 보기"
     },
-    "vision": {
-      "title": "우리가 만드는 가치",
-      "description": "이해관계자 모두를 만족시키는 현실적인 보안 모델을 제시합니다.",
-      "card1Title": "선주 (Shipowner)",
-      "card1Desc": "안전하고 설명 가능한 선대 보안 구조",
-      "card2Title": "조선소 (Shipyard)",
-      "card2Desc": "디지털 기본설계와 연계된 OT 아키텍처",
-      "card3Title": "공급사 (Supplier)",
-      "card3Desc": "E27 기준에 부합하는 명확한 기술 기준",
-      "card4Title": "산업 (Industry)",
-      "card4Desc": "현실적이고 지속 가능한 선박 보안 모델",
-      "visionLabel": "Our Vision",
-      "visionTitle": "\"데이터와 거버넌스를 설계하는 산업으로의 전환,<br/>그 중심에 <span class=\"text-ocean-300\">광명마리타임</span>이 있습니다.\"",
-      "visionDesc": "OT 보안과 디지털 아키텍처 분야의 신뢰받는 기술 파트너가 되어<br/>조선 · 해양 산업의 새로운 기준을 만들어 가겠습니다."
-    },
     "contactSection": {
-      "coreValuesTitle": "Trust\nExecution\nResponsibility\nPartnership",
-      "coreValuesDesc": "광명 마리타임은 IT / OT 시스템을 포함한 해양 선박의 안전 운영과 사이버 리스크를 함께 고려하여<br/>현실적이고 지속 가능한 시스템 통합 기술을 제공하여 글로벌 컴플라이언스에 대응 합니다.",
       "title": "문의하기",
-      "description": "프로젝트 상담 및 기술 문의는 아래 양식을 통해 보내주세요.",
+      "description": "프로젝트 상담과 기술 문의는 아래 양식이나 <a href=\"mailto:info@gmmaritime.com\" class=\"text-ocean-700 dark:text-ocean-300 underline\">info@gmmaritime.com</a>으로 보내 주십시오.",
       "nameLabel": "이름",
       "emailLabel": "이메일",
       "messageLabel": "메시지",
@@ -141,23 +120,13 @@
       "submitAgain": "전송하기",
       "successMessage": "메시지가 성공적으로 전송되었습니다!",
       "errorMessage": "전송에 실패했습니다. 나중에 다시 시도해주세요.",
-      "validationError": "모든 필드를 입력해주세요.",
+      "validationError": "필수 항목을 입력해 주십시오.",
       "close": "닫기",
       "consentLabel": "개인정보 수집 및 이용에 동의합니다.",
       "consentLink": "(내용 보기)",
       "consentRequired": "개인정보 수집 및 이용에 동의해 주세요."
     },
     "systemIntegration": {
-      "title": "사업 범위",
-      "subtitle": "광명마리타임은 공공 · 민간 · 해양 분야에서 운영이 요구되는 IT / OT 플랫폼의 개발·구축과 이에 대한 전문 컨설팅을 제공합니다.",
-      "platformDevTitle": "Platform Development & Deployment",
-      "platformDevBoxTitle": "공공 / 민간 IT OT 플랫폼 개발 및 구축",
-      "platformDevBullet1": "글로벌 표준 기반",
-      "platformDevBullet2": "DATA · AI 활용",
-      "maritimeConsultingTitle": "Maritime Consulting",
-      "maritimeConsultingBoxTitle": "Smart Ship & Digital Shipyard Consulting",
-      "maritimeConsultingSubtitle": "Engineering and Development",
-      "maritimeConsultingBullet1": "IACS UR E26 / E27 기반",
       "diagramSubtitle": "상위 운영 목표 → 사이버 복원력 → 리스크 관리 → 글로벌 · IACS 표준으로 이어지는 수직 구조",
       "engineeringTitle": "Engineering and Development",
       "engDevLeftTitle": "글로벌 표준 기반 데이터 관리 체계 구축",
@@ -264,48 +233,61 @@
       "ctaModules": "보안 모듈 보기"
     },
     "about": {
-      "title": "About Us",
-      "subtitle": "광명마리타임은 공공 · 민간 · 해양 분야에서 운영이 요구되는 IT / OT 플랫폼의 개발·구축과 이에 대한 전문 컨설팅을 제공합니다.",
-      "coreCompetenciesTitle": "핵심 역량",
-      "service1Title": "선박 OT 보안 아키텍처",
-      "service1Desc": "운항 안전과 사이버 리스크를 고려한 현실적인 설계",
-      "service2Title": "E26 / E27 대응 구조",
-      "service2Desc": "선급 승인을 위한 구조 설계 및 기술 컨설팅",
-      "service3Title": "네트워크 경계 설계",
-      "service3Desc": "OT Zone 분리 및 Ship-Shore 보안 구조 수립",
-      "service4Title": "CBS update & patch 관리",
-      "service4Desc": "기자재 운영 시스템 소프트웨어 버전 및 패치 관리",
-      "supportScopeTitle": "지원 범위",
-      "supportScopeIACS": "IACS 선급",
-      "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IR Class, Class NK, CRS 등",
-      "supportScopeInternational": "국제 기관",
-      "supportScopeInternationalList": "NSA, USCG, UK NCSC, CSA Singapore",
-      "coreValuesTitle": "핵심 가치",
-      "coreValue1": "Trust",
-      "coreValue1Desc": "신뢰를 기반으로 한 파트너십",
-      "coreValue2": "Execution",
-      "coreValue2Desc": "실행력 있는 프로젝트 수행",
-      "coreValue3": "Responsibility",
-      "coreValue3Desc": "책임감 있는 기술 지원",
-      "coreValue4": "Partnership",
-      "coreValue4Desc": "상생하는 협력 관계",
-      "supportScopeStandards": "표준 · 프레임워크",
-      "supportScopeClassLiaison": "선급 Liaison",
+      "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IRClass, ClassNK, CRS",
+      "supportScopeInternationalList": "NSA (미국 국가안보국), UK NCSC (영국 국가사이버보안센터), USCG (미국 해안경비대), CSA Singapore (싱가포르 사이버보안청)",
       "marqueePause": "로고 흐름 멈추기",
-      "marqueePlay": "로고 흐름 다시 재생"
+      "marqueePlay": "로고 흐름 다시 재생",
+      "overview": {
+        "title": "회사 소개",
+        "lede": "광명마리타임은 조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응을 맡는 기술 기업입니다."
+      },
+      "facts": {
+        "nameLabel": "회사명",
+        "nameValue": "주식회사 광명마리타임 / Gwangmyung Maritime",
+        "launchLabel": "출범",
+        "launchValue": "2025년",
+        "addressLabel": "소재지",
+        "businessNumberLabel": "사업자등록번호"
+      },
+      "values": {
+        "title": "핵심 가치",
+        "trust": {
+          "name": "신뢰",
+          "tag": "Trust",
+          "desc": "신뢰를 기반으로 한 파트너십"
+        },
+        "execution": {
+          "name": "실행",
+          "tag": "Execution",
+          "desc": "실행력 있는 프로젝트 수행"
+        },
+        "responsibility": {
+          "name": "책임",
+          "tag": "Responsibility",
+          "desc": "책임감 있는 기술 지원"
+        },
+        "partnership": {
+          "name": "협력",
+          "tag": "Partnership",
+          "desc": "상생하는 협력 관계"
+        }
+      },
+      "scope": {
+        "title": "대응 가능한 선급 · 참조 표준"
+      },
+      "location": {
+        "title": "오시는 길 · 연락처",
+        "mapLink": "지도에서 보기"
+      }
     },
     "footer": {
-      "description": "조선 · 해양 산업을 위한 선박 OT 및 사이버 보안 중심의 기술 전문 기업.",
-      "contactTitle": "Contact",
+      "description": "조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응 기술 기업.",
+      "contactTitle": "연락처",
       "email": "info@gmmaritime.com",
       "address": "전라북도 군산시 상신6길 12",
       "businessNumber": "사업자 등록번호: 391-81-02164",
-      "businessNumberLabel": "사업자 등록번호: ",
-      "servicesTitle": "Services",
-      "service1": "OT Security Architecture",
-      "service2": "UR E26 / E27 Compliance",
-      "service3": "Risk Assessment",
-      "service4": "Ship-Shore Connectivity",
+      "businessNumberLabel": "사업자등록번호: ",
+      "servicesTitle": "서비스",
       "privacyPolicy": "개인정보처리방침",
       "copyright": "Gwangmyung Maritime. All rights reserved.",
       "changeLanguage": "언어 변경"
@@ -316,11 +298,6 @@
       "closeButton": "닫기"
     },
     "competitivenessSection": {
-      "label": "Competitiveness",
-      "title": "핵심 경쟁력",
-      "subtitle": "설계부터 컴플라이언스까지, 광명마리타임의 통합 역량",
-      "card1Title": "System Integration",
-      "card1Desc": "Structure-first 접근 기반의 해양 IT / OT 시스템 통합",
       "card2Title": "Maritime Cybersecurity",
       "card2Desc": "선박 전 주기(Lifecycle)에 걸친 사이버 보안 플랫폼",
       "card3Title": "Compliance",
@@ -330,10 +307,9 @@
       "cta": "자세히 보기"
     },
     "articlesSection": {
-      "label": "Articles",
-      "title": "최신 인사이트",
-      "subtitle": "해양 사이버 보안과 컴플라이언스에 대한 광명마리타임의 관점",
-      "viewAll": "모든 아티클 보기"
+      "title": "인사이트",
+      "subtitle": "해양 사이버 규제와 사고 사례를 정리합니다.",
+      "viewAll": "전체 보기"
     },
     "consent": {
       "message": "이 사이트는 방문 통계를 위해 Google Analytics 쿠키를 사용합니다. 동의하시면 분석 도구가 활성화됩니다.",
@@ -478,59 +454,154 @@
       "notFound": "아티클을 찾을 수 없습니다.",
       "noSlug": "아티클이 지정되지 않았습니다.",
       "loadFailed": "아티클을 불러오지 못했습니다.",
-      "back": "아티클 목록으로",
+      "back": "인사이트 목록으로",
       "siteName": "광명마리타임"
+    },
+    "home": {
+      "hero": {
+        "title": "선박 사이버 보안,<br/>설계부터 선급 검사까지.",
+        "subtitle": "IACS UR E26 / E27 대응과 IT / OT 시스템 통합을, 메이커 선정부터 선급 검사까지 같은 팀이 이어서 맡습니다.",
+        "secondaryLink": "E26 / E27 대응 방식 보기",
+        "flowCaption": "광명마리타임이 맡는 네 단계: 메이커 선정, 설계 · 검증, 문서, 선급 검사",
+        "flow1": "메이커 선정",
+        "flow2": "설계 · 검증",
+        "flow3": "문서",
+        "flow4": "선급 검사"
+      },
+      "business": {
+        "title": "사업 영역",
+        "subtitle": "조선 · 해양 산업의 운영 현장에서 출발해, 플랫폼 구축부터 규제 대응까지 이어집니다.",
+        "platform": {
+          "title": "플랫폼 개발 · 구축",
+          "body": "공공 · 민간 · 해양 분야의 IT / OT 플랫폼을 설계하고 구축합니다. 데이터 · AI 기반 운영 시스템과 글로벌 표준을 따르는 데이터 관리 체계를 포함합니다.",
+          "link": "문의하기"
+        },
+        "cyber": {
+          "title": "해양 사이버 보안 · 컴플라이언스",
+          "body": "선박 사이버 보안을 설계 단계부터 선급 검사까지 한 팀이 이어서 맡습니다. IACS UR E26 / E27 대응, OT 보안 구조, 선급 제출 문서 체계를 다룹니다.",
+          "link": "서비스 보기"
+        },
+        "data": {
+          "title": "데이터 · AI 기반 운영",
+          "body": "AI 기반 보안 운영(SecOps)과 데이터 분석을 선박과 운영 시스템에 적용합니다. 설계 · 검증 · 운영 단계의 판단을 데이터로 뒷받침합니다.",
+          "link": "AI 컨설팅 보기"
+        }
+      },
+      "services": {
+        "title": "하는 일",
+        "subtitle": "네 가지 일은 하나로 이어집니다. 중심은 IACS UR E26 / E27 대응입니다.",
+        "compliance": {
+          "title": "IACS UR E26 / E27 대응",
+          "tag": "Compliance",
+          "desc": "메이커 선정 단계에서 시스템 유형을 정해 제출 범위를 일찍 고정합니다."
+        },
+        "maritimeCyber": {
+          "title": "선박 사이버 보안",
+          "tag": "Maritime Cybersecurity",
+          "desc": "설계 · 건조 · 운항 전 주기에 걸쳐 검증 가능한 보안 구조를 설계하고 운영합니다."
+        },
+        "systemIntegration": {
+          "title": "IT / OT 시스템 통합",
+          "tag": "System Integration",
+          "desc": "운영 목표에서 표준까지 구조를 먼저 세우고, 그 위에 IT / OT 시스템을 통합합니다."
+        },
+        "aiConsulting": {
+          "title": "AI 기반 사이버 보안 컨설팅",
+          "tag": "AI × Cybersecurity Consulting",
+          "desc": "AI 기반 관제와 대응을 포함해, FAT · 인도 · 선급 검사까지 같은 팀이 책임집니다."
+        }
+      },
+      "why": {
+        "title": "왜 광명마리타임인가",
+        "subtitle": "선주 · 조선소 · 기자재 공급사는 E26 / E27에서 부딪히는 문제가 서로 다릅니다.",
+        "owner": {
+          "title": "선주",
+          "lead": "인도로 끝나지 않습니다. 운항 단계 규제까지 같은 구조 위에서 관리합니다.",
+          "detail": "IMO MSC-FAL.1/Circ.3 Rev.3 · USCG · EU NIS2 요건까지 다룹니다."
+        },
+        "shipyard": {
+          "title": "조선소",
+          "lead": "제출 범위가 늦게 흔들리면 인도 일정이 밀립니다. 단계마다 위험을 다시 평가합니다.",
+          "detail": "메이커 선정에서 유형, 승인도면에서 위협 노출 경로, FAT에서 통제 수준을 평가합니다."
+        },
+        "supplier": {
+          "title": "기자재 공급사",
+          "lead": "UR E27 적합성을 설명하고 입증할 수 있어야 조선소의 선택을 받습니다.",
+          "detail": "보안 기능 · 외부 인터페이스 정의와 계정 관리 · 원격 접속 통제를 UR E27 기준으로 점검합니다."
+        },
+        "linkLabel": "산출물 보기",
+        "classTitle": "대응 가능한 선급",
+        "classNote": "각 선급의 규칙과 가이드라인에 맞춰 대응할 수 있다는 뜻이며, 제휴 · 인증 · 승인 관계를 뜻하지 않습니다.",
+        "standardsTitle": "참조 표준",
+        "bodiesTitle": "참조 표준 · 가이드라인 기관"
+      },
+      "classes": {
+        "lede": "IACS 선급의 사이버 복원력 규칙에 맞춰 설계부터 선급 검사까지 대응합니다."
+      },
+      "journey": {
+        "goalLabel": "목표"
+      },
+      "insights": {
+        "contactPrompt": "귀사 호선에 어떻게 적용되는지 궁금하시면 문의해 주십시오."
+      },
+      "contact": {
+        "addressLabel": "주소",
+        "companyLabel": "소속(회사)",
+        "roleLabel": "역할",
+        "rolePlaceholder": "역할을 선택해 주십시오",
+        "roleShipyard": "조선소",
+        "roleOwner": "선주 · 선박관리회사",
+        "roleSupplier": "기자재 공급사",
+        "roleOther": "기타",
+        "messagePlaceholder": "예: 선종 · 건조 일정 · 적용 규칙 · 현재 단계(메이커 선정, 승인도면, FAT, 운항)"
+      }
     }
   },
   "en": {
     "nav": {
       "logo": "Gwangmyung Maritime",
       "home": "Home",
-      "expertise": "Expertise",
-      "business": "Business",
-      "competitiveness": "Competitiveness",
+      "services": "Services",
       "systemIntegration": "System Integration",
       "maritimeCybersecurity": "Maritime Cybersecurity",
-      "aiConsulting": "AI Consulting",
+      "aiConsulting": "AI × Cybersecurity Consulting",
       "compliance": "Compliance",
-      "articles": "Articles",
-      "vision": "Vision",
-      "aboutUs": "About Us",
+      "articles": "Insights",
+      "aboutUs": "About",
       "contact": "Contact",
-      "backToOverview": "Back to Overview",
+      "backToOverview": "Back to services overview",
+      "backToHome": "Back to home",
       "skipToContent": "Skip to content"
     },
     "articles": {
-      "title": "Articles",
+      "title": "Insights",
       "subtitle": "Sharing technology trends, industry insights, and regulatory updates."
     },
     "hero": {
-      "badge": "Ship OT & Cyber Security Specialist",
       "title": "Shipbuilding & Maritime: Platform Development, System Integration & Global Compliance",
       "description": "DATA·AI-powered solutions for system integration and global regulatory compliance in the maritime industry.",
-      "ctaSecondary": "Contact Us"
+      "ctaSecondary": "Contact us"
     },
     "expertise": {
-      "subtitle": "Our Journey",
-      "title": "Our Journey",
+      "title": "Our journey",
       "timeline2021": "2021",
-      "timeline2021Title": "Foundation of Technology-Based Business",
-      "timeline2021Desc": "Establishment of Geulmit Corporation and development of data and platform-based systems",
+      "timeline2021Title": "Foundation of a technology business",
+      "timeline2021Desc": "Geulmit founded, and data and platform system development begins",
       "timeline2022": "2022",
-      "timeline2022Title": "Expansion of Industry Domains and Technology Integration",
-      "timeline2022Desc": "Verification of technology applicability in maritime, logistics, and operations industries",
+      "timeline2022Title": "Expanding into new domains",
+      "timeline2022Desc": "Testing how the technology applies to maritime, logistics and operations",
       "timeline2023": "2023",
-      "timeline2023Title": "Experience in High-Trust and High-Security Systems",
-      "timeline2023Desc": "Participation in Ministry of National Defense satellite image processing system construction project",
+      "timeline2023Title": "High-assurance systems experience",
+      "timeline2023Desc": "Took part in a Ministry of National Defense satellite image processing system project",
       "timeline2024": "2024",
-      "timeline2024Title": "Establishment of Maritime Cyber & Smart Ship Expertise",
-      "timeline2024Desc": "Research on IACS UR E26 / E27 regulatory compliance structures",
+      "timeline2024Title": "Maritime cybersecurity and Smart Ship focus",
+      "timeline2024Desc": "Research into IACS UR E26 / E27 compliance structures",
       "timeline2025": "2025",
-      "timeline2025Title": "Launch of Gwangmyung Maritime Corporation",
-      "timeline2025Desc": "Official launch as a maritime professional consulting company",
+      "timeline2025Title": "Gwangmyung Maritime launched",
+      "timeline2025Desc": "Launched as a maritime consultancy",
       "timeline2026": "2026",
-      "timeline2026Title": "Organizational Reorganization Focused on Maritime Compliance",
-      "timeline2026Desc": "Acquisition of major classification IACS UR E27 TA and provision of E26 Deliverables"
+      "timeline2026Title": "Reorganising around E26 / E27 compliance",
+      "timeline2026Desc": "IACS UR E27 type approval (TA) with major class societies, and delivery of E26 deliverables"
     },
     "compliance": {
       "diagramTitle": "Three-tier scope of ship cyber resilience mandate",
@@ -596,26 +667,9 @@
       "early4": "Handed over into operation under SCARP",
       "ctaDeliverables": "See deliverables by role"
     },
-    "vision": {
-      "title": "The Value We Create",
-      "description": "Presenting realistic security models that satisfy all stakeholders.",
-      "card1Title": "Shipowner",
-      "card1Desc": "Safe and explainable fleet security structure",
-      "card2Title": "Shipyard",
-      "card2Desc": "OT architecture integrated with digital basic design",
-      "card3Title": "Supplier",
-      "card3Desc": "Clear technical standards compliant with E27 criteria",
-      "card4Title": "Industry",
-      "card4Desc": "Realistic and sustainable ship security model",
-      "visionLabel": "Our Vision",
-      "visionTitle": "\"Transformation to an industry that designs data and governance,<br/>with <span class=\"text-ocean-300\">Gwangmyung Maritime</span> at its center.\"",
-      "visionDesc": "Becoming a trusted technical partner in OT security and digital architecture,<br/>creating new standards for the shipbuilding and maritime industry."
-    },
     "contactSection": {
-      "coreValuesTitle": "Trust\nExecution\nResponsibility\nPartnership",
-      "coreValuesDesc": "Gwangmyung Maritime provides realistic and sustainable system integration technologies<br/>by considering both the safe operation of maritime vessels and cyber risks, including IT / OT systems, to respond to global compliance.",
       "title": "Contact Us",
-      "description": "Please send your project consultation and technical inquiries through the form below.",
+      "description": "Send project or technical questions through the form below or to <a href=\"mailto:info@gmmaritime.com\" class=\"text-ocean-700 dark:text-ocean-300 underline\">info@gmmaritime.com</a>.",
       "nameLabel": "Name",
       "emailLabel": "Email",
       "messageLabel": "Message",
@@ -624,23 +678,13 @@
       "submitAgain": "Send Message",
       "successMessage": "Message sent successfully!",
       "errorMessage": "Failed to send message. Please try again later.",
-      "validationError": "Please fill in all fields.",
+      "validationError": "Please fill in the required fields.",
       "close": "Close",
       "consentLabel": "I agree to the collection and use of my personal data.",
       "consentLink": "(Details)",
       "consentRequired": "Please agree to the collection and use of your personal data."
     },
     "systemIntegration": {
-      "title": "Business Scope",
-      "subtitle": "Gwangmyung Maritime provides IT / OT platform development, deployment, and professional consulting required for operations in public, private, and maritime sectors.",
-      "platformDevTitle": "Platform Development & Deployment",
-      "platformDevBoxTitle": "Public/Private IT OT Platform Development & Deployment",
-      "platformDevBullet1": "Global standard-based",
-      "platformDevBullet2": "DATA · AI utilization",
-      "maritimeConsultingTitle": "Maritime Consulting",
-      "maritimeConsultingBoxTitle": "Smart Ship & Digital Shipyard Consulting",
-      "maritimeConsultingSubtitle": "Engineering and Development",
-      "maritimeConsultingBullet1": "IACS UR E26 / E27 based",
       "diagramSubtitle": "A vertical stack from operations down through cyber resilience, risk management, and global · IACS standards.",
       "engineeringTitle": "Engineering and Development",
       "engDevLeftTitle": "Establish Global Standard-based Data Management Systems",
@@ -747,51 +791,64 @@
       "ctaModules": "See security modules"
     },
     "about": {
-      "title": "About Us",
-      "subtitle": "Gwangmyung Maritime provides development, deployment, and professional consulting for IT / OT platforms required in public, private, and maritime sectors.",
-      "coreCompetenciesTitle": "Core Competencies",
-      "service1Title": "Ship OT Security Architecture",
-      "service1Desc": "Realistic design considering operational safety and cyber risks",
-      "service2Title": "E26 / E27 Compliance Structure",
-      "service2Desc": "Structure design and technical consulting for classification approval",
-      "service3Title": "Network Boundary Design",
-      "service3Desc": "OT Zone separation and Ship-Shore security structure establishment",
-      "service4Title": "CBS Update & Patch Management",
-      "service4Desc": "Equipment operating system software version and patch management",
-      "supportScopeTitle": "Support Scope",
-      "supportScopeIACS": "IACS Classification Societies",
-      "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IR Class, Class NK, CRS, etc.",
-      "supportScopeInternational": "International Organizations",
-      "supportScopeInternationalList": "NSA, USCG, UK NCSC, CSA Singapore",
-      "coreValuesTitle": "Core Values",
-      "coreValue1": "Trust",
-      "coreValue1Desc": "Partnership Based on Trust",
-      "coreValue2": "Execution",
-      "coreValue2Desc": "Project Execution with Excellence",
-      "coreValue3": "Responsibility",
-      "coreValue3Desc": "Responsible Technical Support",
-      "coreValue4": "Partnership",
-      "coreValue4Desc": "Collaborative Win-Win Relationships",
-      "supportScopeStandards": "Standards · frameworks",
-      "supportScopeClassLiaison": "Class society liaison",
+      "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IRClass, ClassNK, CRS",
+      "supportScopeInternationalList": "NSA (US), UK NCSC, USCG, CSA Singapore",
       "marqueePause": "Pause logos",
-      "marqueePlay": "Play logos"
+      "marqueePlay": "Play logos",
+      "overview": {
+        "title": "About",
+        "lede": "Gwangmyung Maritime is a technology company handling platform development, system integration and global regulatory compliance for the shipbuilding and maritime industries."
+      },
+      "facts": {
+        "nameLabel": "Company name",
+        "nameValue": "주식회사 광명마리타임 / Gwangmyung Maritime",
+        "launchLabel": "Launched",
+        "launchValue": "2025",
+        "addressLabel": "Address",
+        "businessNumberLabel": "Business registration no."
+      },
+      "values": {
+        "title": "Core values",
+        "trust": {
+          "name": "Trust",
+          "tag": "",
+          "desc": "Partnership based on trust"
+        },
+        "execution": {
+          "name": "Execution",
+          "tag": "",
+          "desc": "Project execution with excellence"
+        },
+        "responsibility": {
+          "name": "Responsibility",
+          "tag": "",
+          "desc": "Responsible technical support"
+        },
+        "partnership": {
+          "name": "Partnership",
+          "tag": "",
+          "desc": "Collaborative win-win relationships"
+        }
+      },
+      "scope": {
+        "title": "Class societies and reference standards"
+      },
+      "location": {
+        "title": "Location and contact",
+        "mapLink": "View on map"
+      }
     },
     "footer": {
-      "description": "Technical company specializing in ship OT and cyber security for the shipbuilding and maritime industry.",
+      "description": "A technology company for shipbuilding and maritime: platform development, system integration and global regulatory compliance.",
       "contactTitle": "Contact",
       "email": "info@gmmaritime.com",
       "address": "12, Sangsin 6-gil, Gunsan-si, Jeollabuk-do, South Korea",
       "businessNumber": "Business Registration: 391-81-02164",
       "businessNumberLabel": "Business Registration: ",
       "servicesTitle": "Services",
-      "service1": "OT Security Architecture",
-      "service2": "UR E26 / E27 Compliance",
-      "service3": "Risk Assessment",
-      "service4": "Ship-Shore Connectivity",
       "privacyPolicy": "Privacy Policy",
       "copyright": "Gwangmyung Maritime. All rights reserved.",
-      "changeLanguage": "Change Language"
+      "changeLanguage": "Change language"
     },
     "countryModal": {
       "title": "Select language",
@@ -799,11 +856,6 @@
       "closeButton": "Close"
     },
     "competitivenessSection": {
-      "label": "Competitiveness",
-      "title": "Our Core Competencies",
-      "subtitle": "From design to compliance — Gwangmyung Maritime's integrated capabilities",
-      "card1Title": "System Integration",
-      "card1Desc": "Structure-first maritime IT / OT system integration",
       "card2Title": "Maritime Cybersecurity",
       "card2Desc": "Full-lifecycle cybersecurity platform for ships",
       "card3Title": "Compliance",
@@ -813,10 +865,9 @@
       "cta": "Learn more"
     },
     "articlesSection": {
-      "label": "Articles",
-      "title": "Latest insights",
-      "subtitle": "Gwangmyung Maritime perspectives on maritime cybersecurity and compliance",
-      "viewAll": "View all articles"
+      "title": "Insights",
+      "subtitle": "Notes on maritime cyber regulation and incidents.",
+      "viewAll": "View all"
     },
     "consent": {
       "message": "This site uses Google Analytics cookies to understand traffic. If you accept, analytics will be enabled.",
@@ -961,59 +1012,154 @@
       "notFound": "Article not found.",
       "noSlug": "No article specified.",
       "loadFailed": "Failed to load the article.",
-      "back": "Back to Articles",
+      "back": "Back to insights",
       "siteName": "Gwangmyung Maritime"
+    },
+    "home": {
+      "hero": {
+        "title": "Ship cybersecurity,<br/>from design to class survey.",
+        "subtitle": "IACS UR E26 / E27 compliance and IT / OT system integration — carried by the same team from maker selection to class survey.",
+        "secondaryLink": "How we handle E26 / E27",
+        "flowCaption": "The four stages we carry: maker selection, design and verification, documentation, class survey",
+        "flow1": "Maker selection",
+        "flow2": "Design and verification",
+        "flow3": "Documentation",
+        "flow4": "Class survey"
+      },
+      "business": {
+        "title": "Business areas",
+        "subtitle": "We start from day-to-day operations in shipbuilding and maritime, and carry the work from platform builds through to regulatory compliance.",
+        "platform": {
+          "title": "Platform development and implementation",
+          "body": "We design and build IT / OT platforms for the public, private and maritime sectors. This includes data- and AI-based operating systems and data management frameworks that follow global standards.",
+          "link": "Contact us"
+        },
+        "cyber": {
+          "title": "Maritime cybersecurity and compliance",
+          "body": "One team carries ship cybersecurity from the design stage through to class survey. We cover IACS UR E26 / E27 compliance, OT security architecture and the document set for class submission.",
+          "link": "View services"
+        },
+        "data": {
+          "title": "Data- and AI-based operations",
+          "body": "We apply AI-based security operations (SecOps) and data analysis to ships and operating systems. Data backs the decisions made at the design, verification and operation stages.",
+          "link": "View AI consulting"
+        }
+      },
+      "services": {
+        "title": "What we do",
+        "subtitle": "Four services, one thread: IACS UR E26 / E27 compliance.",
+        "compliance": {
+          "title": "Compliance",
+          "tag": "",
+          "desc": "We settle system types at maker selection, so the submission scope is fixed early."
+        },
+        "maritimeCyber": {
+          "title": "Maritime Cybersecurity",
+          "tag": "",
+          "desc": "We design and operate a verifiable security architecture across design, build and operation."
+        },
+        "systemIntegration": {
+          "title": "System Integration",
+          "tag": "",
+          "desc": "We set the structure first — from operating goals to standards — then integrate IT / OT systems on top."
+        },
+        "aiConsulting": {
+          "title": "AI × Cybersecurity Consulting",
+          "tag": "",
+          "desc": "Including AI-based monitoring and response, the same team stays through FAT, delivery and class survey."
+        }
+      },
+      "why": {
+        "title": "Why Gwangmyung Maritime",
+        "subtitle": "Shipowners, shipyards and equipment suppliers each hit different E26 / E27 problems.",
+        "owner": {
+          "title": "Shipowners",
+          "lead": "Delivery is not the end. We manage operation-stage regulation on the same structure.",
+          "detail": "Including IMO MSC-FAL.1/Circ.3 Rev.3 · USCG · EU NIS2 requirements."
+        },
+        "shipyard": {
+          "title": "Shipyards",
+          "lead": "If the submission scope shifts late, delivery slips. We re-assess risk at every stage.",
+          "detail": "Types at maker selection, threat exposure paths at approval drawings, controls at FAT."
+        },
+        "supplier": {
+          "title": "Equipment suppliers",
+          "lead": "To be chosen by shipyards, you must be able to explain and demonstrate UR E27 conformity.",
+          "detail": "We check security functions, external interfaces, account management and remote access controls against UR E27."
+        },
+        "linkLabel": "See deliverables",
+        "classTitle": "Class societies we can support",
+        "classNote": "Listed for the class rules and guidance we can work to; this does not imply partnership, accreditation or approval.",
+        "standardsTitle": "Standards we work to",
+        "bodiesTitle": "Reference standards and guidance bodies"
+      },
+      "classes": {
+        "lede": "We work to each IACS society's cyber-resilience rules, from design through class survey."
+      },
+      "journey": {
+        "goalLabel": "Goal"
+      },
+      "insights": {
+        "contactPrompt": "Want to know how this applies to your ship? Get in touch."
+      },
+      "contact": {
+        "addressLabel": "Address",
+        "companyLabel": "Company",
+        "roleLabel": "Your role",
+        "rolePlaceholder": "Select your role",
+        "roleShipyard": "Shipyard",
+        "roleOwner": "Shipowner or ship manager",
+        "roleSupplier": "Equipment supplier",
+        "roleOther": "Other",
+        "messagePlaceholder": "e.g. ship type · build schedule · applicable rules · current stage (maker selection, approval drawings, FAT, operation)"
+      }
     }
   },
   "zh": {
     "nav": {
       "logo": "光明海事",
       "home": "首页",
-      "expertise": "专业领域",
-      "business": "业务",
-      "competitiveness": "竞争力",
-      "systemIntegration": "系统集成",
-      "maritimeCybersecurity": "海事网络安全",
-      "aiConsulting": "AI 咨询",
-      "compliance": "合规",
-      "articles": "文章",
-      "vision": "愿景",
+      "services": "服务",
+      "systemIntegration": "IT / OT 系统集成",
+      "maritimeCybersecurity": "船舶网络安全",
+      "aiConsulting": "AI 网络安全咨询",
+      "compliance": "IACS UR E26 / E27 应对",
+      "articles": "洞察",
       "aboutUs": "关于我们",
       "contact": "联系我们",
-      "backToOverview": "返回总览",
+      "backToOverview": "返回服务概览",
+      "backToHome": "返回首页",
       "skipToContent": "跳到主要内容"
     },
     "articles": {
-      "title": "文章",
+      "title": "洞察",
       "subtitle": "分享技术趋势、行业洞察和法规动态。"
     },
     "hero": {
-      "badge": "船舶OT与网络安全专家",
       "title": "造船 · 海事行业的平台开发、系统集成、全球法规合规专业技术企业",
       "description": "光明海事基于对日益复杂的海事行业和技术的理解与经验，提供基于DATA·AI的系统集成解决方案，并应对全球合规要求。",
       "ctaSecondary": "联系我们"
     },
     "expertise": {
-      "subtitle": "我们的历程",
       "title": "我们的历程",
       "timeline2021": "2021",
       "timeline2021Title": "基于技术的业务起步",
       "timeline2021Desc": "设立Geulmit法人及开始基于数据和平台的系统开发",
       "timeline2022": "2022",
-      "timeline2022Title": "产业领域扩展与技术整合",
+      "timeline2022Title": "产业领域扩展",
       "timeline2022Desc": "验证技术在海事、物流和运营产业的适用性",
       "timeline2023": "2023",
-      "timeline2023Title": "高信任度和高安全性系统经验积累",
+      "timeline2023Title": "高可信 · 高安全系统经验",
       "timeline2023Desc": "参与国防部卫星图像处理系统建设项目",
       "timeline2024": "2024",
-      "timeline2024Title": "确立海事网络和智能船舶专业知识",
+      "timeline2024Title": "确立海事网络安全与智能船舶专业能力",
       "timeline2024Desc": "研究IACS UR E26 / E27法规合规结构",
       "timeline2025": "2025",
-      "timeline2025Title": "光明海事公司成立",
-      "timeline2025Desc": "作为海事专业咨询公司正式成立",
+      "timeline2025Title": "光明海事成立",
+      "timeline2025Desc": "作为海事专业咨询公司成立",
       "timeline2026": "2026",
-      "timeline2026Title": "以海事合规为中心的组织重组",
-      "timeline2026Desc": "获得主要船级社IACS UR E27 TA并提供E26交付物"
+      "timeline2026Title": "围绕 E26 / E27 应对进行组织调整",
+      "timeline2026Desc": "在主要船级社取得 IACS UR E27 型式认可（TA），并提供 E26 交付物"
     },
     "compliance": {
       "diagramTitle": "船舶网络韧性强制化的三层适用范围",
@@ -1079,26 +1225,9 @@
       "early4": "交付后以 SCARP 管理至运营阶段",
       "ctaDeliverables": "按角色查看交付物"
     },
-    "vision": {
-      "title": "我们创造的价值",
-      "description": "提出满足所有利益相关者的现实安全模型。",
-      "card1Title": "船东",
-      "card1Desc": "安全且可解释的船队安全结构",
-      "card2Title": "船厂",
-      "card2Desc": "与数字基础设计集成的OT架构",
-      "card3Title": "供应商",
-      "card3Desc": "符合E27标准的明确技术标准",
-      "card4Title": "行业",
-      "card4Desc": "现实且可持续的船舶安全模型",
-      "visionLabel": "我们的愿景",
-      "visionTitle": "\"向设计数据和治理的行业转型，<br/><span class=\"text-ocean-300\">光明海事</span>处于其中心。\"",
-      "visionDesc": "成为OT安全和数字架构领域值得信赖的技术合作伙伴，<br/>为造船和海事行业创造新标准。"
-    },
     "contactSection": {
-      "coreValuesTitle": "Trust\nExecution\nResponsibility\nPartnership",
-      "coreValuesDesc": "光明海事通过同时考虑包括IT / OT系统在内的海事船舶的安全运营和网络风险，<br/>提供现实且可持续的系统集成技术，以应对全球合规要求。",
       "title": "联系我们",
-      "description": "请通过以下表格发送您的项目咨询和技术咨询。",
+      "description": "项目咨询与技术问题，请通过下方表单提交，或发送至 <a href=\"mailto:info@gmmaritime.com\" class=\"text-ocean-700 dark:text-ocean-300 underline\">info@gmmaritime.com</a>。",
       "nameLabel": "姓名",
       "emailLabel": "电子邮件",
       "messageLabel": "信息",
@@ -1107,23 +1236,13 @@
       "submitAgain": "发送消息",
       "successMessage": "消息发送成功！",
       "errorMessage": "发送失败，请稍后再试。",
-      "validationError": "请填写所有必填项。",
+      "validationError": "请填写必填项。",
       "close": "关闭",
       "consentLabel": "我同意收集和使用我的个人信息。",
       "consentLink": "（查看详情）",
       "consentRequired": "请同意收集和使用您的个人信息。"
     },
     "systemIntegration": {
-      "title": "业务范围",
-      "subtitle": "光明海事为公共、私营和海事领域所需的IT / OT平台提供开发、部署和专业咨询服务。",
-      "platformDevTitle": "平台开发与部署",
-      "platformDevBoxTitle": "公共/私营 IT OT 平台开发与部署",
-      "platformDevBullet1": "基于全球标准",
-      "platformDevBullet2": "DATA·AI 利用",
-      "maritimeConsultingTitle": "海事咨询",
-      "maritimeConsultingBoxTitle": "智能船舶与数字造船厂咨询",
-      "maritimeConsultingSubtitle": "工程与开发",
-      "maritimeConsultingBullet1": "基于IACS UR E26 / E27",
       "diagramSubtitle": "由上至下:运营目标 → 网络韧性 → 风险管理 → 全球与 IACS 标准的垂直结构。",
       "engineeringTitle": "工程与开发",
       "engDevLeftTitle": "建立基于全球标准的数据管理体系",
@@ -1230,48 +1349,61 @@
       "ctaModules": "查看安全模块"
     },
     "about": {
-      "title": "关于我们",
-      "subtitle": "光明海事为公共、私人和海事领域所需的IT / OT平台提供开发、部署和专业咨询服务。",
-      "coreCompetenciesTitle": "核心能力",
-      "service1Title": "船舶OT安全架构",
-      "service1Desc": "考虑运营安全和网络风险的现实设计",
-      "service2Title": "E26 / E27合规结构",
-      "service2Desc": "为船级社批准提供结构设计和技术咨询",
-      "service3Title": "网络边界设计",
-      "service3Desc": "OT区域分离和船岸安全结构建立",
-      "service4Title": "CBS更新与补丁管理",
-      "service4Desc": "设备操作系统软件版本及补丁管理",
-      "supportScopeTitle": "支持范围",
-      "supportScopeIACS": "IACS 船级社",
-      "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IR Class, Class NK, CRS 等",
-      "supportScopeInternational": "国际组织",
-      "supportScopeInternationalList": "NSA, USCG, UK NCSC, CSA Singapore",
-      "coreValuesTitle": "核心价值",
-      "coreValue1": "Trust",
-      "coreValue1Desc": "基于信任的伙伴关系",
-      "coreValue2": "Execution",
-      "coreValue2Desc": "卓越的项目执行",
-      "coreValue3": "Responsibility",
-      "coreValue3Desc": "负责任的技术支持",
-      "coreValue4": "Partnership",
-      "coreValue4Desc": "合作共赢的关系",
-      "supportScopeStandards": "标准 · 框架",
-      "supportScopeClassLiaison": "船级社联络",
+      "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IRClass, ClassNK, CRS",
+      "supportScopeInternationalList": "NSA（美国国家安全局）、UK NCSC（英国国家网络安全中心）、USCG（美国海岸警卫队）、CSA Singapore（新加坡网络安全局）",
       "marqueePause": "暂停标志滚动",
-      "marqueePlay": "继续标志滚动"
+      "marqueePlay": "继续标志滚动",
+      "overview": {
+        "title": "关于我们",
+        "lede": "光明海事是一家承担造船 · 海事行业平台开发、系统集成与全球法规合规的技术企业。"
+      },
+      "facts": {
+        "nameLabel": "公司名称",
+        "nameValue": "光明海事（주식회사 광명마리타임） / Gwangmyung Maritime",
+        "launchLabel": "成立",
+        "launchValue": "2025年",
+        "addressLabel": "地址",
+        "businessNumberLabel": "营业执照号码"
+      },
+      "values": {
+        "title": "核心价值",
+        "trust": {
+          "name": "信任",
+          "tag": "Trust",
+          "desc": "基于信任的伙伴关系"
+        },
+        "execution": {
+          "name": "执行",
+          "tag": "Execution",
+          "desc": "卓越的项目执行"
+        },
+        "responsibility": {
+          "name": "责任",
+          "tag": "Responsibility",
+          "desc": "负责任的技术支持"
+        },
+        "partnership": {
+          "name": "合作",
+          "tag": "Partnership",
+          "desc": "合作共赢的关系"
+        }
+      },
+      "scope": {
+        "title": "可支持的船级社 · 参考标准"
+      },
+      "location": {
+        "title": "位置与联系方式",
+        "mapLink": "在地图上查看"
+      }
     },
     "footer": {
-      "description": "专门从事造船和海事行业船舶OT和网络安全的技术公司。",
+      "description": "面向造船与海事产业的技术企业：平台开发、系统集成与全球法规合规。",
       "contactTitle": "联系方式",
       "email": "info@gmmaritime.com",
       "address": "韩国全罗北道群山市桑新6街12号",
       "businessNumber": "营业执照：391-81-02164",
       "businessNumberLabel": "营业执照：",
       "servicesTitle": "服务",
-      "service1": "OT安全架构",
-      "service2": "UR E26 / E27合规",
-      "service3": "风险评估",
-      "service4": "船岸连接",
       "privacyPolicy": "隐私政策",
       "copyright": "光明海事。保留所有权利。",
       "changeLanguage": "更改语言"
@@ -1282,11 +1414,6 @@
       "closeButton": "关闭"
     },
     "competitivenessSection": {
-      "label": "Competitiveness",
-      "title": "核心竞争力",
-      "subtitle": "从设计到合规 — 光明海事的整合能力",
-      "card1Title": "System Integration",
-      "card1Desc": "基于 Structure-first 方法的海事 IT / OT 系统集成",
       "card2Title": "Maritime Cybersecurity",
       "card2Desc": "覆盖船舶全生命周期的网络安全平台",
       "card3Title": "Compliance",
@@ -1296,10 +1423,9 @@
       "cta": "了解详情"
     },
     "articlesSection": {
-      "label": "Articles",
-      "title": "最新洞察",
-      "subtitle": "光明海事对海事网络安全与合规的观点",
-      "viewAll": "查看全部文章"
+      "title": "洞察",
+      "subtitle": "梳理海事网络法规与事件案例。",
+      "viewAll": "查看全部"
     },
     "consent": {
       "message": "本网站使用 Google Analytics Cookie 以了解访问情况。如您同意，将启用分析工具。",
@@ -1444,59 +1570,154 @@
       "notFound": "未找到该文章。",
       "noSlug": "未指定文章。",
       "loadFailed": "文章加载失败。",
-      "back": "返回文章列表",
+      "back": "返回洞察列表",
       "siteName": "光明海事"
+    },
+    "home": {
+      "hero": {
+        "title": "船舶网络安全，<br/>从设计到船级检验。",
+        "subtitle": "IACS UR E26 / E27 应对与 IT / OT 系统集成，从选型到船级检验，由同一团队持续负责。",
+        "secondaryLink": "查看 E26 / E27 应对方式",
+        "flowCaption": "光明海事负责的四个阶段：选型、设计与验证、文件、船级检验",
+        "flow1": "选型",
+        "flow2": "设计与验证",
+        "flow3": "文件",
+        "flow4": "船级检验"
+      },
+      "business": {
+        "title": "业务领域",
+        "subtitle": "我们从造船 · 海事行业的运营现场出发，从平台建设一直延伸到法规合规。",
+        "platform": {
+          "title": "平台开发 · 建设",
+          "body": "为公共、民间及海事领域设计并建设 IT / OT 平台。涵盖基于数据和 AI 的运营系统，以及遵循全球标准的数据管理体系。",
+          "link": "联系我们"
+        },
+        "cyber": {
+          "title": "海事网络安全 · 合规",
+          "body": "从设计阶段到船级检验，由同一团队持续负责船舶网络安全。涵盖 IACS UR E26 / E27 应对、OT 安全架构以及船级社提交文件体系。",
+          "link": "查看服务"
+        },
+        "data": {
+          "title": "基于数据和 AI 的运营",
+          "body": "将基于 AI 的安全运营（SecOps）和数据分析应用于船舶及运营系统。以数据支撑设计、验证、运营各阶段的判断。",
+          "link": "查看 AI 咨询"
+        }
+      },
+      "services": {
+        "title": "业务内容",
+        "subtitle": "四项服务环环相扣，核心是 IACS UR E26 / E27 应对。",
+        "compliance": {
+          "title": "IACS UR E26 / E27 应对",
+          "tag": "Compliance",
+          "desc": "在选型阶段确定系统类型，尽早固定提交范围。"
+        },
+        "maritimeCyber": {
+          "title": "船舶网络安全",
+          "tag": "Maritime Cybersecurity",
+          "desc": "在设计、建造、运营全周期，设计并运营可验证的安全架构。"
+        },
+        "systemIntegration": {
+          "title": "IT / OT 系统集成",
+          "tag": "System Integration",
+          "desc": "先搭建从运营目标到标准的结构，再在其上集成 IT / OT 系统。"
+        },
+        "aiConsulting": {
+          "title": "AI 网络安全咨询",
+          "tag": "AI × Cybersecurity Consulting",
+          "desc": "涵盖基于 AI 的监控与响应，同一团队负责到 FAT、交付与船级检验。"
+        }
+      },
+      "why": {
+        "title": "为什么选择光明海事",
+        "subtitle": "船东、船厂和设备供应商在 E26 / E27 上遇到的问题各不相同。",
+        "owner": {
+          "title": "船东",
+          "lead": "交付并非终点。运营阶段的法规也在同一结构上管理。",
+          "detail": "涵盖 IMO MSC-FAL.1/Circ.3 Rev.3 · USCG · EU NIS2 要求。"
+        },
+        "shipyard": {
+          "title": "船厂",
+          "lead": "提交范围若在后期变动，交付就会延误。我们在每个阶段重新评估风险。",
+          "detail": "选型阶段确定类型，认可图纸阶段评估威胁暴露路径，FAT 阶段评估控制水平。"
+        },
+        "supplier": {
+          "title": "设备供应商",
+          "lead": "能够说明并证明 UR E27 符合性，才会被船厂选用。",
+          "detail": "按 UR E27 要求检查安全功能、外部接口定义以及账户管理、远程访问控制。"
+        },
+        "linkLabel": "查看交付物",
+        "classTitle": "可支持的船级社",
+        "classNote": "表示我们能够按照各船级社的规则与指南开展工作，并不意味着合作、认可或批准关系。",
+        "standardsTitle": "参考标准",
+        "bodiesTitle": "参考标准与指南发布机构"
+      },
+      "classes": {
+        "lede": "按照各 IACS 船级社的网络韧性规范，从设计到船级检验全程对应。"
+      },
+      "journey": {
+        "goalLabel": "目标"
+      },
+      "insights": {
+        "contactPrompt": "想了解这些如何适用于贵司船舶？欢迎联系我们。"
+      },
+      "contact": {
+        "addressLabel": "地址",
+        "companyLabel": "所属公司",
+        "roleLabel": "您的身份",
+        "rolePlaceholder": "请选择您的身份",
+        "roleShipyard": "船厂",
+        "roleOwner": "船东 · 船舶管理公司",
+        "roleSupplier": "设备供应商",
+        "roleOther": "其他",
+        "messagePlaceholder": "例如：船型 · 建造进度 · 适用规则 · 当前阶段（选型、认可图纸、FAT、运营）"
+      }
     }
   },
   "ja": {
     "nav": {
       "logo": "光明マリタイム",
       "home": "ホーム",
-      "expertise": "専門分野",
-      "business": "事業",
-      "competitiveness": "競争力",
-      "systemIntegration": "システム インテグレーション",
-      "maritimeCybersecurity": "マリタイム サイバーセキュリティ",
-      "aiConsulting": "AI コンサルティング",
-      "compliance": "コンプライアンス",
-      "articles": "記事",
-      "vision": "ビジョン",
+      "services": "サービス",
+      "systemIntegration": "IT / OTシステム統合",
+      "maritimeCybersecurity": "船舶サイバーセキュリティ",
+      "aiConsulting": "AIサイバーセキュリティコンサルティング",
+      "compliance": "IACS UR E26 / E27対応",
+      "articles": "インサイト",
       "aboutUs": "会社概要",
       "contact": "お問い合わせ",
-      "backToOverview": "Overviewに 戻る",
+      "backToOverview": "サービス概要に戻る",
+      "backToHome": "ホームに戻る",
       "skipToContent": "メインコンテンツへ"
     },
     "articles": {
-      "title": "記事",
+      "title": "インサイト",
       "subtitle": "技術動向、業界インサイト、規制ニュースを共有します。"
     },
     "hero": {
-      "badge": "船舶OT・サイバー セキュリティ 専門家",
       "title": "造船 · 海事産業のプラットフォーム開発、システム統合、グローバル規制対応専門技術企業",
       "description": "光明マリタイムは、複雑化した海事産業と技術に対する理解と経験を基に、DATA・AIベースのシステムインテグレーションソリューションを提供し、グローバルコンプライアンスに対応します。",
       "ctaSecondary": "お問い合わせ"
     },
     "expertise": {
-      "subtitle": "私たちの 歩み",
-      "title": "私たちの 歩み",
+      "title": "私たちの歩み",
       "timeline2021": "2021",
       "timeline2021Title": "技術 ベース 事業の スタート",
       "timeline2021Desc": "Geulmit 法人設立 及び データ・プラットフォーム ベース システム開発 開始",
       "timeline2022": "2022",
-      "timeline2022Title": "産業 ドメイン 拡大 及び 技術 統合",
+      "timeline2022Title": "産業ドメインの拡大",
       "timeline2022Desc": "海事・物流・運営 産業への 技術適用 可能性 検証",
       "timeline2023": "2023",
-      "timeline2023Title": "高信頼・高セキュリティ システム 参加 経験 蓄積",
+      "timeline2023Title": "高信頼・高セキュリティシステムの経験",
       "timeline2023Desc": "国防部 衛星画像 処理システム 構築 プロジェクト 参加",
       "timeline2024": "2024",
-      "timeline2024Title": "マリタイム サイバー & スマート シップ 専門性 確立",
-      "timeline2024Desc": "IACS UR E26 / E27 規制 対応 構造 研究",
+      "timeline2024Title": "海事サイバーセキュリティ・スマートシップの専門性確立",
+      "timeline2024Desc": "IACS UR E26 / E27規制対応構造の研究",
       "timeline2025": "2025",
-      "timeline2025Title": "光明 マリタイム 株式会社 設立",
-      "timeline2025Desc": "海事 専門 コンサルティング 企業として 正式 設立",
+      "timeline2025Title": "光明マリタイム発足",
+      "timeline2025Desc": "海事専門コンサルティング企業として発足",
       "timeline2026": "2026",
-      "timeline2026Title": "マリタイム コンプライアンス 事業 中心 組織 改編",
-      "timeline2026Desc": "主要 船級協会 IACS UR E27 TA 取得 及び E26 Deliverable 提供"
+      "timeline2026Title": "E26 / E27対応を中心に組織を再編",
+      "timeline2026Desc": "主要船級協会でのIACS UR E27型式承認（TA）取得およびE26成果物の提供"
     },
     "compliance": {
       "diagramTitle": "船舶 サイバー レジリエンス 強制化の 3段階 適用範囲",
@@ -1562,26 +1783,9 @@
       "early4": "引渡し後は SCARP で 運航段階まで 管理",
       "ctaDeliverables": "役割別の 成果物を 見る"
     },
-    "vision": {
-      "title": "私たちが 創造する価値",
-      "description": "すべての ステークホルダーを 満足させる 現実的な セキュリティモデルを 提示します。",
-      "card1Title": "船主",
-      "card1Desc": "安全で 説明可能な 船隊セキュリティ 構造",
-      "card2Title": "造船所",
-      "card2Desc": "デジタル基本設計と 統合された OTアーキテクチャ",
-      "card3Title": "サプライヤー",
-      "card3Desc": "E27基準に 準拠した 明確な 技術基準",
-      "card4Title": "産業",
-      "card4Desc": "現実的で 持続可能な 船舶セキュリティ モデル",
-      "visionLabel": "私たちのビジョン",
-      "visionTitle": "\"データと ガバナンスを 設計する 産業への転換、<br/>その中心に<span class=\"text-ocean-300\">光明マリタイム</span>が あります。\"",
-      "visionDesc": "OTセキュリティと デジタルアーキテクチャ 分野の 信頼できる 技術パートナーと なり、<br/>造船・海事産業の 新しい基準を 作ります。"
-    },
     "contactSection": {
-      "coreValuesTitle": "Trust\nExecution\nResponsibility\nPartnership",
-      "coreValuesDesc": "光明マリタイムは IT / OTシステムを含む海事船舶の安全運営とサイバーリスクを共に考慮し、<br/>現実的で持続可能なシステム統合技術を提供してグローバルコンプライアンスに対応します。",
       "title": "お問い合わせ",
-      "description": "プロジェクトの相談と 技術的な お問い合わせは、以下の フォームから お送りください。",
+      "description": "プロジェクトのご相談や技術的なお問い合わせは、下記フォームまたは<a href=\"mailto:info@gmmaritime.com\" class=\"text-ocean-700 dark:text-ocean-300 underline\">info@gmmaritime.com</a>までお送りください。",
       "nameLabel": "お名前",
       "emailLabel": "メールアドレス",
       "messageLabel": "メッセージ",
@@ -1590,31 +1794,21 @@
       "submitAgain": "メッセージを 送信",
       "successMessage": "メッセージが 送信されました。",
       "errorMessage": "送信に 失敗しました。後ほど 再度 お試しください。",
-      "validationError": "すべての 項目を 入力してください。",
+      "validationError": "必須項目を入力してください。",
       "close": "閉じる",
       "consentLabel": "個人情報の収集および利用に同意します。",
       "consentLink": "（内容を見る）",
       "consentRequired": "個人情報の収集および利用に同意してください。"
     },
     "systemIntegration": {
-      "title": "事業範囲",
-      "subtitle": "光明マリタイムは 公共・民間・海事分野で 運営が 要求される IT / OT プラットフォームの 開発・構築と これに 対する 専門 コンサルティングを 提供します。",
-      "platformDevTitle": "プラットフォーム 開発 & 配備",
-      "platformDevBoxTitle": "公共/民間 IT OT プラットフォーム 開発 及び 構築",
-      "platformDevBullet1": "グローバル 標準 基盤",
-      "platformDevBullet2": "DATA·AI 活用",
-      "maritimeConsultingTitle": "マリタイム コンサルティング",
-      "maritimeConsultingBoxTitle": "スマート シップ & デジタル シップヤード コンサルティング",
-      "maritimeConsultingSubtitle": "エンジニアリング and 開発",
-      "maritimeConsultingBullet1": "IACS UR E26 / E27 基盤",
       "diagramSubtitle": "上位 運用目標 → サイバー レジリエンス → リスク 管理 → グローバル · IACS 標準へ 続く 垂直構造",
       "engineeringTitle": "エンジニアリング and 開発",
       "engDevLeftTitle": "グローバル 標準 基盤 データ 管理 体系 構築",
       "engDevLeftDesc": "DATA·AI 活用 基盤 公共/民間 運営環境に 最適化された プラットフォーム 設計 開発",
       "engDevRightTitle": "IACS UR E26 / E27 基盤 設計·検証·文書 体系 構築",
       "engDevRightDesc": "運航 船舶の IT / OT 環境に 最適化された サイバー レジリエンス モデル 設計",
-      "ctaTitle": "プロジェクトに ついて ご相談されたい ですか？",
-      "ctaDesc": "専門家との 相談を 通じて 最適な ソリューションを お探しください。",
+      "ctaTitle": "プロジェクトについてご相談されたいですか？",
+      "ctaDesc": "専門家との相談を通じて最適なソリューションをお探しください。",
       "thesisTitle": "事故を 防ぐ だけの セキュリティ ではなく、耐え抜く 構造を つくります。",
       "thesisLede": "機能を 先に 付け足しません。運用目標から 標準まで 4つの 層を 先に 築き、その 上に IT・OT システムを 統合します。",
       "nextTitle": "この 構造の 上に 続く サービス"
@@ -1713,48 +1907,61 @@
       "ctaModules": "セキュリティ モジュールを 見る"
     },
     "about": {
-      "title": "会社概要",
-      "subtitle": "光明マリタイムは 公共・民間・海事分野で 必要な IT / OT プラットフォームの 開発・構築と 専門 コンサルティングを 提供します。",
-      "coreCompetenciesTitle": "コア コンピテンシー",
-      "service1Title": "船舶OT セキュリティ アーキテクチャ",
-      "service1Desc": "運航安全と サイバーリスクを 考慮した 現実的な設計",
-      "service2Title": "E26 / E27 対応構造",
-      "service2Desc": "船級承認のための 構造設計と 技術コンサルティング",
-      "service3Title": "ネットワーク 境界設計",
-      "service3Desc": "OTゾーン分離と Ship-Shore セキュリティ構造の 確立",
-      "service4Title": "CBSアップデート・パッチ管理",
-      "service4Desc": "機器 運用システム ソフトウェア バージョン及び パッチ管理",
-      "supportScopeTitle": "支援範囲",
-      "supportScopeIACS": "IACS 船級協会",
-      "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IR Class, Class NK, CRS など",
-      "supportScopeInternational": "国際機関",
-      "supportScopeInternationalList": "NSA, USCG, UK NCSC, CSA Singapore",
-      "coreValuesTitle": "コア バリュー",
-      "coreValue1": "Trust",
-      "coreValue1Desc": "信頼を 基盤とした パートナーシップ",
-      "coreValue2": "Execution",
-      "coreValue2Desc": "実行力 ある プロジェクト 遂行",
-      "coreValue3": "Responsibility",
-      "coreValue3Desc": "責任感 ある 技術 サポート",
-      "coreValue4": "Partnership",
-      "coreValue4Desc": "共生する 協力 関係",
-      "supportScopeStandards": "標準 · フレームワーク",
-      "supportScopeClassLiaison": "船級 リエゾン",
+      "supportScopeIACSList": "ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IRClass, ClassNK, CRS",
+      "supportScopeInternationalList": "NSA（米国家安全保障局）、UK NCSC（英国国家サイバーセキュリティセンター）、USCG（米国沿岸警備隊）、CSA Singapore（シンガポールサイバーセキュリティ庁）",
       "marqueePause": "ロゴの流れを一時停止",
-      "marqueePlay": "ロゴの流れを再生"
+      "marqueePlay": "ロゴの流れを再生",
+      "overview": {
+        "title": "会社概要",
+        "lede": "光明マリタイムは、造船・海事産業のプラットフォーム開発、システム統合、グローバル規制対応を担う技術企業です。"
+      },
+      "facts": {
+        "nameLabel": "会社名",
+        "nameValue": "光明マリタイム（주식회사 광명마리타임） / Gwangmyung Maritime",
+        "launchLabel": "発足",
+        "launchValue": "2025年",
+        "addressLabel": "所在地",
+        "businessNumberLabel": "事業者登録番号"
+      },
+      "values": {
+        "title": "コアバリュー",
+        "trust": {
+          "name": "信頼",
+          "tag": "Trust",
+          "desc": "信頼を基盤としたパートナーシップ"
+        },
+        "execution": {
+          "name": "実行",
+          "tag": "Execution",
+          "desc": "実行力あるプロジェクト遂行"
+        },
+        "responsibility": {
+          "name": "責任",
+          "tag": "Responsibility",
+          "desc": "責任感ある技術サポート"
+        },
+        "partnership": {
+          "name": "協力",
+          "tag": "Partnership",
+          "desc": "共生する協力関係"
+        }
+      },
+      "scope": {
+        "title": "対応可能な船級協会・参照標準"
+      },
+      "location": {
+        "title": "所在地・連絡先",
+        "mapLink": "地図で見る"
+      }
     },
     "footer": {
-      "description": "造船・海事産業向けの 船舶OTおよび サイバーセキュリティ 専門技術会社。",
-      "contactTitle": "連絡先",
+      "description": "造船・海事産業のためのプラットフォーム開発、システム統合、グローバル規制対応の技術企業。",
+      "contactTitle": "お問い合わせ",
       "email": "info@gmmaritime.com",
       "address": "韓国 全羅北道 群山市 桑新6ギル12",
       "businessNumber": "事業者登録番号：391-81-02164",
       "businessNumberLabel": "事業者登録番号：",
       "servicesTitle": "サービス",
-      "service1": "OT セキュリティ アーキテクチャ",
-      "service2": "UR E26 / E27 コンプライアンス",
-      "service3": "リスク アセスメント",
-      "service4": "Ship-Shore 接続",
       "privacyPolicy": "プライバシーポリシー",
       "copyright": "光明マリタイム。All rights reserved。",
       "changeLanguage": "言語を変更"
@@ -1765,11 +1972,6 @@
       "closeButton": "閉じる"
     },
     "competitivenessSection": {
-      "label": "Competitiveness",
-      "title": "コア コンピテンシー",
-      "subtitle": "設計から コンプライアンスまで — 光明マリタイムの 統合 力",
-      "card1Title": "System Integration",
-      "card1Desc": "Structure-first アプローチ 基盤の 海洋 IT / OT システム 統合",
       "card2Title": "Maritime Cybersecurity",
       "card2Desc": "船舶 ライフサイクル 全域の サイバー セキュリティ プラットフォーム",
       "card3Title": "Compliance",
@@ -1779,10 +1981,9 @@
       "cta": "詳しく 見る"
     },
     "articlesSection": {
-      "label": "Articles",
-      "title": "最新 インサイト",
-      "subtitle": "海洋 サイバー セキュリティと コンプライアンスに ついての 光明マリタイムの 視点",
-      "viewAll": "記事一覧を 見る"
+      "title": "インサイト",
+      "subtitle": "海事サイバー規制とインシデント事例をまとめています。",
+      "viewAll": "すべて見る"
     },
     "consent": {
       "message": "このサイトは、アクセス解析のために Google Analytics クッキーを使用します。ご同意いただくと、解析ツールが有効になります。",
@@ -1927,8 +2128,107 @@
       "notFound": "記事が見つかりません。",
       "noSlug": "記事が指定されていません。",
       "loadFailed": "記事を読み込めませんでした。",
-      "back": "記事一覧に戻る",
+      "back": "インサイト一覧へ",
       "siteName": "光明マリタイム"
+    },
+    "home": {
+      "hero": {
+        "title": "船舶サイバーセキュリティ、<br/>設計から船級検査まで。",
+        "subtitle": "IACS UR E26 / E27対応とIT / OTシステム統合を、メーカー選定から船級検査まで同じチームが一貫して担います。",
+        "secondaryLink": "E26 / E27対応の進め方を見る",
+        "flowCaption": "光明マリタイムが担う4つの段階：メーカー選定、設計・検証、文書、船級検査",
+        "flow1": "メーカー選定",
+        "flow2": "設計・検証",
+        "flow3": "文書",
+        "flow4": "船級検査"
+      },
+      "business": {
+        "title": "事業領域",
+        "subtitle": "造船・海事産業の運用現場から出発し、プラットフォーム構築から規制対応までつなげます。",
+        "platform": {
+          "title": "プラットフォーム開発・構築",
+          "body": "公共・民間・海事分野のIT / OTプラットフォームを設計・構築します。データ・AIに基づく運用システムと、グローバル標準に沿ったデータ管理体制を含みます。",
+          "link": "お問い合わせ"
+        },
+        "cyber": {
+          "title": "海事サイバーセキュリティ・コンプライアンス",
+          "body": "船舶サイバーセキュリティを、設計段階から船級検査まで一つのチームが一貫して担います。IACS UR E26 / E27対応、OTセキュリティ構造、船級提出文書の体系を扱います。",
+          "link": "サービスを見る"
+        },
+        "data": {
+          "title": "データ・AIに基づく運用",
+          "body": "AIに基づくセキュリティ運用（SecOps）とデータ分析を、船舶と運用システムに適用します。設計・検証・運用の各段階の判断をデータで裏付けます。",
+          "link": "AIコンサルティングを見る"
+        }
+      },
+      "services": {
+        "title": "事業内容",
+        "subtitle": "4つのサービスは一つにつながっています。中心はIACS UR E26 / E27への対応です。",
+        "compliance": {
+          "title": "IACS UR E26 / E27対応",
+          "tag": "Compliance",
+          "desc": "メーカー選定の段階でシステム種別を確定し、提出範囲を早期に固定します。"
+        },
+        "maritimeCyber": {
+          "title": "船舶サイバーセキュリティ",
+          "tag": "Maritime Cybersecurity",
+          "desc": "設計・建造・運航の全周期にわたり、検証可能なセキュリティ構造を設計・運用します。"
+        },
+        "systemIntegration": {
+          "title": "IT / OTシステム統合",
+          "tag": "System Integration",
+          "desc": "運用目標から標準まで構造を先に固め、その上にIT / OTシステムを統合します。"
+        },
+        "aiConsulting": {
+          "title": "AIサイバーセキュリティコンサルティング",
+          "tag": "AI × Cybersecurity Consulting",
+          "desc": "AIによる監視と対応を含め、FAT・引き渡し・船級検査まで同じチームが責任を持ちます。"
+        }
+      },
+      "why": {
+        "title": "なぜ光明マリタイムか",
+        "subtitle": "船主・造船所・機器サプライヤーでは、E26 / E27で直面する課題がそれぞれ異なります。",
+        "owner": {
+          "title": "船主",
+          "lead": "引き渡しで終わりません。運航段階の規制まで同じ構造の上で管理します。",
+          "detail": "IMO MSC-FAL.1/Circ.3 Rev.3 · USCG · EU NIS2の要件まで扱います。"
+        },
+        "shipyard": {
+          "title": "造船所",
+          "lead": "提出範囲が後から揺らぐと、引き渡しが遅れます。段階ごとにリスクを再評価します。",
+          "detail": "メーカー選定で種別を、承認図面で脅威の露出経路を、FATで統制水準を評価します。"
+        },
+        "supplier": {
+          "title": "機器サプライヤー",
+          "lead": "UR E27への適合性を説明・立証できてこそ、造船所に選ばれます。",
+          "detail": "セキュリティ機能・外部インターフェースの定義、アカウント管理・リモートアクセス制御をUR E27基準で点検します。"
+        },
+        "linkLabel": "成果物を見る",
+        "classTitle": "対応可能な船級協会",
+        "classNote": "各船級協会の規則とガイドラインに沿って対応できることを示すもので、提携・認定・承認の関係を意味するものではありません。",
+        "standardsTitle": "参照する標準",
+        "bodiesTitle": "参照する標準・ガイドラインの発行機関"
+      },
+      "classes": {
+        "lede": "各IACS船級協会のサイバーレジリエンス規則に沿って、設計から船級検査まで対応します。"
+      },
+      "journey": {
+        "goalLabel": "目標"
+      },
+      "insights": {
+        "contactPrompt": "自社の船舶にどう適用されるか知りたい場合は、お問い合わせください。"
+      },
+      "contact": {
+        "addressLabel": "所在地",
+        "companyLabel": "会社名・所属",
+        "roleLabel": "ご立場",
+        "rolePlaceholder": "ご立場を選択してください",
+        "roleShipyard": "造船所",
+        "roleOwner": "船主・船舶管理会社",
+        "roleSupplier": "機器サプライヤー",
+        "roleOther": "その他",
+        "messagePlaceholder": "例：船種・建造スケジュール・適用規則・現在の段階（メーカー選定、承認図面、FAT、運航）"
+      }
     }
   }
 }

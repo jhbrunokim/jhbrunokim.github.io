@@ -29,104 +29,85 @@
     </a>
 
     <!-- Desktop Menu -->
-    <div class="hidden lg:flex space-x-4 xl:space-x-8 items-center">
+    <div class="hidden lg:flex items-center gap-6 xl:gap-8">
       <a
-        href="index.html#home"
+        href="index.html"
         class="nav-link whitespace-nowrap text-slate-300 hover:text-ocean-200 text-sm font-medium transition-colors"
         data-i18n="nav.home"
-        >Home</a
-      >
-      <a
-        href="index.html#expertise"
-        class="nav-link whitespace-nowrap text-slate-300 hover:text-ocean-200 text-sm font-medium transition-colors"
-        data-i18n="nav.expertise"
-        >Expertise</a
+        >홈</a
       >
 
-      <a
-        href="index.html#vision"
-        class="nav-link whitespace-nowrap text-slate-300 hover:text-ocean-200 text-sm font-medium transition-colors"
-        data-i18n="nav.vision"
-        >Vision</a
-      >
-
-      <!-- Business (단일 링크) -->
-      <a
-        href="index.html#business"
-        class="nav-link whitespace-nowrap text-slate-300 hover:text-ocean-200 text-sm font-medium transition-colors"
-        data-i18n="nav.business"
-        >Business</a
-      >
-
-      <!-- COMPETITIVENESS Dropdown -->
+      <!-- Services dropdown: the four service pages, in home-card order -->
       <div class="relative group" data-dropdown>
         <a
-          href="index.html#competitiveness"
+          href="services.html"
           class="nav-link whitespace-nowrap text-slate-300 hover:text-ocean-200 text-sm font-medium transition-colors flex items-center gap-1"
           aria-haspopup="true"
           aria-expanded="false"
           data-dropdown-toggle
         >
-          <span data-i18n="nav.competitiveness">Competitiveness</span>
+          <span data-i18n="nav.services">서비스</span>
           <i data-lucide="chevron-down" class="w-4 h-4"></i>
         </a>
         <div
-          class="absolute top-full left-0 mt-2 w-64 bg-ocean-950 border border-ocean-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200"
+          class="absolute top-full left-0 mt-2 w-72 bg-ocean-950 border border-ocean-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200"
           data-dropdown-menu
         >
           <a
-            href="system-integration.html"
+            href="compliance.html"
             class="nav-link block px-4 py-3 text-slate-300 hover:text-ocean-200 hover:bg-ocean-900 text-sm transition-colors first:rounded-t-lg"
-            data-i18n="nav.systemIntegration"
+            data-i18n="nav.compliance"
           >
-            System Integration
+            IACS UR E26 / E27 대응
           </a>
           <a
             href="maritime-cybersecurity.html"
             class="nav-link block px-4 py-3 text-slate-300 hover:text-ocean-200 hover:bg-ocean-900 text-sm transition-colors"
             data-i18n="nav.maritimeCybersecurity"
           >
-            Maritime Cybersecurity
+            선박 사이버 보안
           </a>
           <a
-            href="compliance.html"
+            href="system-integration.html"
             class="nav-link block px-4 py-3 text-slate-300 hover:text-ocean-200 hover:bg-ocean-900 text-sm transition-colors"
-            data-i18n="nav.compliance"
+            data-i18n="nav.systemIntegration"
           >
-            Compliance
+            IT / OT 시스템 통합
           </a>
           <a
             href="ai-cybersecurity-consulting.html"
             class="nav-link block px-4 py-3 text-slate-300 hover:text-ocean-200 hover:bg-ocean-900 text-sm transition-colors last:rounded-b-lg"
             data-i18n="nav.aiConsulting"
           >
-            AI Consulting
+            AI 기반 사이버 보안 컨설팅
           </a>
         </div>
       </div>
 
       <a
-        href="index.html#articles"
-        class="nav-link whitespace-nowrap text-slate-300 hover:text-ocean-200 text-sm font-medium transition-colors"
-        data-i18n="nav.articles"
-        >Articles</a
-      >
-      <a
-        href="index.html#about"
+        href="about.html"
         class="nav-link whitespace-nowrap text-slate-300 hover:text-ocean-200 text-sm font-medium transition-colors"
         data-i18n="nav.aboutUs"
-        >About Us</a
+        >회사 소개</a
+      >
+      <a
+        href="articles.html"
+        class="nav-link whitespace-nowrap text-slate-300 hover:text-ocean-200 text-sm font-medium transition-colors"
+        data-i18n="nav.articles"
+        >인사이트</a
       >
       <a
         href="index.html#contact"
         class="nav-link whitespace-nowrap text-slate-300 hover:text-ocean-200 text-sm font-medium transition-colors"
         data-i18n="nav.contact"
-        >Contact</a
+        >문의</a
       >
       <button
+        type="button"
         onclick="window.countryDetector?.reopenModal()"
         class="text-slate-300 hover:text-ocean-200 text-sm font-medium transition-colors flex items-center gap-1"
-        title="Change Language"
+        aria-label="언어 변경"
+        data-i18n-aria-label="footer.changeLanguage"
       >
         <i data-lucide="globe" class="w-4 h-4"></i>
       </button>
@@ -152,95 +133,74 @@
   >
     <nav aria-label="Mobile navigation" class="flex flex-col px-6 space-y-4">
       <a
-        href="index.html#home"
+        href="index.html"
         class="mobile-link text-slate-300 hover:text-ocean-200 text-base font-medium"
         data-i18n="nav.home"
-        >Home</a
-      >
-      <a
-        href="index.html#expertise"
-        class="mobile-link text-slate-300 hover:text-ocean-200 text-base font-medium"
-        data-i18n="nav.expertise"
-        >Expertise</a
+        >홈</a
       >
 
+      <!-- Services: top-level link, with the four service pages indented below -->
       <a
-        href="index.html#vision"
+        href="services.html"
         class="mobile-link text-slate-300 hover:text-ocean-200 text-base font-medium"
-        data-i18n="nav.vision"
-        >Vision</a
-      >
-
-      <!-- Business (단일 링크) -->
-      <a
-        href="index.html#business"
-        class="mobile-link text-slate-300 hover:text-ocean-200 text-base font-medium"
-        data-i18n="nav.business"
-        >Business</a
-      >
-
-      <!-- COMPETITIVENESS: top-level link, with its sub-pages indented below -->
-      <a
-        href="index.html#competitiveness"
-        class="mobile-link text-slate-300 hover:text-ocean-200 text-base font-medium"
-        data-i18n="nav.competitiveness"
-        >Competitiveness</a
+        data-i18n="nav.services"
+        >서비스</a
       >
       <div class="!mt-3 border-l-2 border-ocean-800 pl-4 space-y-3">
         <a
-          href="system-integration.html"
+          href="compliance.html"
           class="mobile-link block text-slate-300 hover:text-ocean-200 text-sm font-medium"
-          data-i18n="nav.systemIntegration"
+          data-i18n="nav.compliance"
         >
-          System Integration
+          IACS UR E26 / E27 대응
         </a>
         <a
           href="maritime-cybersecurity.html"
           class="mobile-link block text-slate-300 hover:text-ocean-200 text-sm font-medium"
           data-i18n="nav.maritimeCybersecurity"
         >
-          Maritime Cybersecurity
+          선박 사이버 보안
         </a>
         <a
-          href="compliance.html"
+          href="system-integration.html"
           class="mobile-link block text-slate-300 hover:text-ocean-200 text-sm font-medium"
-          data-i18n="nav.compliance"
+          data-i18n="nav.systemIntegration"
         >
-          Compliance
+          IT / OT 시스템 통합
         </a>
         <a
           href="ai-cybersecurity-consulting.html"
           class="mobile-link block text-slate-300 hover:text-ocean-200 text-sm font-medium"
           data-i18n="nav.aiConsulting"
         >
-          AI Consulting
+          AI 기반 사이버 보안 컨설팅
         </a>
       </div>
 
       <a
-        href="index.html#articles"
-        class="mobile-link text-slate-300 hover:text-ocean-200 text-base font-medium"
-        data-i18n="nav.articles"
-        >Articles</a
-      >
-      <a
-        href="index.html#about"
+        href="about.html"
         class="mobile-link text-slate-300 hover:text-ocean-200 text-base font-medium"
         data-i18n="nav.aboutUs"
-        >About Us</a
+        >회사 소개</a
+      >
+      <a
+        href="articles.html"
+        class="mobile-link text-slate-300 hover:text-ocean-200 text-base font-medium"
+        data-i18n="nav.articles"
+        >인사이트</a
       >
       <a
         href="index.html#contact"
         class="mobile-link text-slate-300 hover:text-ocean-200 text-base font-medium"
         data-i18n="nav.contact"
-        >Contact</a
+        >문의</a
       >
       <button
         onclick="window.countryDetector?.reopenModal()"
         class="mobile-link text-slate-300 hover:text-ocean-200 text-base font-medium flex items-center gap-2"
       >
         <i data-lucide="globe" class="w-5 h-5"></i>
-        <span data-i18n="footer.changeLanguage">Change Language</span>
+        <span data-i18n="footer.changeLanguage">언어 변경</span>
       </button>
     </nav>
   </div>

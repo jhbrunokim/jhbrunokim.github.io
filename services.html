@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서비스 - 광명마리타임</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="IACS UR E26 / E27 대응과 IT / OT 시스템 통합을 설계부터 선급 검사까지 맡는 해양 사이버 보안 컨설팅 기업입니다."
+    />
+    <meta
+      name="keywords"
+      content="선박 보안, OT 보안, 사이버 보안, E26, E27, IACS, IT / OT 시스템 통합, 조선, 해양, 광명마리타임"
+    />
+    <meta name="author" content="Gwangmyung Maritime" />
+
+    <!-- Analytics (loaded via consent.js after user opt-in) -->
+    <meta name="ga-id" content="G-CJMFQE9NT4" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://gmmaritime.com/services.html" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="서비스 - 광명마리타임" />
+    <meta
+      property="og:description"
+      content="IACS UR E26 / E27 대응과 IT / OT 시스템 통합을 설계부터 선급 검사까지 맡는 해양 사이버 보안 컨설팅 기업입니다."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gmmaritime.com/services.html" />
+    <meta property="og:site_name" content="광명마리타임" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:image" content="https://gmmaritime.com/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="서비스 - 광명마리타임" />
+    <meta
+      name="twitter:description"
+      content="IACS UR E26 / E27 대응과 IT / OT 시스템 통합을 설계부터 선급 검사까지 맡는 해양 사이버 보안 컨설팅 기업입니다."
+    />
+    <meta name="twitter:image" content="https://gmmaritime.com/assets/images/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
+
+    <!-- Theme (must run before body renders to avoid FOUC) -->
+    <script src="assets/js/theme.js"></script>
+
+    <!-- Google Fonts -->
+    <!-- DNS prefetch for third-party assets -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>
+      (function () {
+        var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
+        var lang = localStorage.getItem('preferredLanguage') || (function () {
+          // Same rule as detectBrowserLanguage() in assets/js/i18n.js
+          var tags = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+          for (var i = 0; i < tags.length; i++) {
+            var primary = String(tags[i] || '').toLowerCase().split('-')[0];
+            if (primary === 'ko' || primary === 'zh' || primary === 'ja') return primary;
+          }
+          return 'en';
+        })();
+        var families = ['Inter:wght@400;500;600;700', 'Space+Grotesk:wght@500;600;700'];
+        if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.googleapis.com/css2?family=' + families.join('&family=') + '&display=swap';
+        document.head.appendChild(link);
+      })();
+    </script>
+
+    <!-- Tailwind CSS (Built) -->
+    <link rel="stylesheet" href="assets/css/output.css" />
+
+    <!-- Lucide Icons -->
+    <script defer src="https://cdn.jsdelivr.net/npm/lucide@1.53.0/dist/umd/lucide.min.js"></script>
+
+    <!-- EmailJS SDK (init lives in contact.js so it runs after defer resolves) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.12.1/dist/email.min.js"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "서비스 — 광명마리타임",
+        "url": "https://gmmaritime.com/services.html",
+        "description": "IACS UR E26 / E27 대응과 IT / OT 시스템 통합을 설계부터 선급 검사까지 맡는 해양 사이버 보안 컨설팅 기업입니다.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "url": "https://gmmaritime.com",
+          "name": "Gwangmyung Maritime"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Gwangmyung Maritime",
+          "url": "https://gmmaritime.com"
+        }
+      }
+    </script>
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden transition-colors duration-300"
+  >
+    <!-- Country/Language Detection Modal (loaded dynamically) -->
+    <div id="country-modal-placeholder"></div>
+
+    <!-- Navigation (loaded dynamically) -->
+    <div id="navbar-placeholder"></div>
+    <a id="main-content" tabindex="-1"></a>
+
+    <!-- Hero -->
+    <section
+      class="relative bg-ocean-900 dark:bg-ocean-950 pt-28 pb-16 md:pt-36 md:pb-24"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-4xl xl:max-w-5xl">
+          <h1
+            class="font-display font-bold tracking-tight leading-[1.15] text-white text-[clamp(1.5rem,7.6vw,1.875rem)] sm:text-5xl md:text-6xl xl:text-7xl"
+            data-i18n="home.hero.title"
+            data-i18n-html="true"
+          >선박 사이버 보안,<br/>설계부터 선급 검사까지.</h1>
+          <p
+            class="mt-5 md:mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-slate-300"
+            data-i18n="home.hero.subtitle"
+          >
+            IACS UR E26 / E27 대응과 IT / OT 시스템 통합을, 메이커 선정부터 선급 검사까지 같은 팀이 이어서 맡습니다.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <a
+              href="index.html#contact"
+              class="inline-flex items-center gap-2 whitespace-nowrap rounded-md bg-signal-400 px-5 py-3 text-sm font-semibold text-ink-950 hover:bg-signal-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500"
+            >
+              <span data-i18n="hero.ctaSecondary">문의하기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a
+              href="compliance.html"
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-ocean-200 hover:text-white underline-offset-4 hover:underline"
+            >
+              <span data-i18n="home.hero.secondaryLink">E26 / E27 대응 방식 보기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Four-stage flow: the SVG draws nodes and connectors only; labels are HTML so they translate and wrap -->
+        <figure class="mt-12 md:mt-16" aria-labelledby="hero-flow-caption" data-reveal="timed" style="--unit: 240ms">
+          <figcaption id="hero-flow-caption" class="sr-only" data-i18n="home.hero.flowCaption">
+            광명마리타임이 맡는 네 단계: 메이커 선정, 설계 · 검증, 문서, 선급 검사
+          </figcaption>
+          <ol class="grid grid-cols-4">
+            <li class="flex flex-col gap-3">
+              <div class="flex items-center text-ocean-300" aria-hidden="true">
+                <svg data-reveal-step style="--step: 0" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/></svg>
+                <svg class="h-2 flex-1" viewBox="0 0 100 8" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.5"><line data-reveal-line pathLength="1" style="--step: 1" x1="0" y1="4" x2="100" y2="4"/></svg>
+                <svg data-reveal-step style="--step: 1" class="h-2 w-2 shrink-0 -ml-1 mr-1" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 1l3 3-3 3"/></svg>
+              </div>
+              <span data-reveal-step style="--step: 0" class="pr-3 text-sm md:text-base font-semibold leading-snug text-white hyphens-auto break-words" data-i18n="home.hero.flow1">메이커 선정</span>
+            </li>
+            <li class="flex flex-col gap-3">
+              <div class="flex items-center text-ocean-300" aria-hidden="true">
+                <svg data-reveal-step style="--step: 2" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/></svg>
+                <svg class="h-2 flex-1" viewBox="0 0 100 8" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.5"><line data-reveal-line pathLength="1" style="--step: 3" x1="0" y1="4" x2="100" y2="4"/></svg>
+                <svg data-reveal-step style="--step: 3" class="h-2 w-2 shrink-0 -ml-1 mr-1" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 1l3 3-3 3"/></svg>
+              </div>
+              <span data-reveal-step style="--step: 2" class="pr-3 text-sm md:text-base font-semibold leading-snug text-white hyphens-auto break-words" data-i18n="home.hero.flow2">설계 · 검증</span>
+            </li>
+            <li class="flex flex-col gap-3">
+              <div class="flex items-center text-ocean-300" aria-hidden="true">
+                <svg data-reveal-step style="--step: 4" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/></svg>
+                <svg class="h-2 flex-1" viewBox="0 0 100 8" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.5"><line data-reveal-line pathLength="1" style="--step: 5" x1="0" y1="4" x2="100" y2="4"/></svg>
+                <svg data-reveal-step style="--step: 5" class="h-2 w-2 shrink-0 -ml-1 mr-1" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 1l3 3-3 3"/></svg>
+              </div>
+              <span data-reveal-step style="--step: 4" class="pr-3 text-sm md:text-base font-semibold leading-snug text-white hyphens-auto break-words" data-i18n="home.hero.flow3">문서</span>
+            </li>
+            <li class="flex flex-col gap-3">
+              <div class="flex items-center text-white" aria-hidden="true">
+                <svg data-reveal-step style="--step: 6" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="M6 10l3 3 5-6"/></svg>
+              </div>
+              <span data-reveal-step style="--step: 6" class="pr-3 text-sm md:text-base font-semibold leading-snug text-white hyphens-auto break-words" data-i18n="home.hero.flow4">선급 검사</span>
+            </li>
+          </ol>
+        </figure>
+      </div>
+    </section>
+
+    <!-- What we do: one weighted Compliance card + three rows -->
+    <section id="services" class="py-20 md:py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid gap-4 lg:grid-cols-2 lg:gap-16 lg:items-end mb-10 md:mb-12">
+          <h2
+            class="font-display text-3xl md:text-4xl font-bold tracking-tight leading-tight text-slate-900 dark:text-white"
+            data-i18n="home.services.title"
+          >
+            하는 일
+          </h2>
+          <p
+            class="text-base md:text-lg leading-relaxed text-slate-600 dark:text-slate-400"
+            data-i18n="home.services.subtitle"
+          >
+            네 가지 일은 하나로 이어집니다. 중심은 IACS UR E26 / E27 대응입니다.
+          </p>
+        </div>
+
+        <div class="grid gap-4 md:gap-5 lg:grid-cols-12 lg:gap-6 xl:gap-8">
+          <a
+            href="compliance.html"
+            class="group flex flex-col rounded-2xl bg-ocean-900 dark:bg-ocean-950 border border-ocean-700 border-t-2 border-t-ocean-300 p-6 md:p-8 lg:p-10 hover:bg-ocean-800 transition-colors lg:col-span-5 lg:row-span-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500"
+          >
+            <i data-lucide="file-check" class="w-6 h-6 text-ocean-200"></i>
+            <h3
+              class="mt-6 font-display text-2xl md:text-3xl font-bold text-white"
+              data-i18n="home.services.compliance.title"
+            >
+              IACS UR E26 / E27 대응
+            </h3>
+            <p class="mt-1 text-xs font-medium text-ocean-200 empty:hidden" data-i18n="home.services.compliance.tag">Compliance</p>
+            <p
+              class="mt-3 text-base md:text-lg leading-relaxed text-slate-200"
+              data-i18n="home.services.compliance.desc"
+            >
+              메이커 선정 단계에서 시스템 유형을 정해 제출 범위를 일찍 고정합니다.
+            </p>
+            <span class="mt-auto pt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-white">
+              <span data-i18n="competitivenessSection.cta">자세히 보기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </span>
+          </a>
+
+          <a
+            href="maritime-cybersecurity.html"
+            class="group flex flex-col md:grid md:grid-cols-[auto_minmax(0,1fr)_auto] md:gap-x-5 md:items-start rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-5 md:p-6 hover:border-ocean-500 dark:hover:border-ocean-400 transition-colors lg:col-span-7 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500"
+          >
+            <i data-lucide="shield-check" class="w-6 h-6 text-ocean-700 dark:text-ocean-300"></i>
+            <div class="mt-3 md:mt-0">
+              <h3
+                class="text-lg md:text-xl font-bold text-slate-900 dark:text-white"
+                data-i18n="home.services.maritimeCyber.title"
+              >
+                선박 사이버 보안
+              </h3>
+              <p class="mt-0.5 text-xs font-medium text-slate-500 dark:text-slate-400 empty:hidden" data-i18n="home.services.maritimeCyber.tag">Maritime Cybersecurity</p>
+              <p
+                class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400"
+                data-i18n="home.services.maritimeCyber.desc"
+              >
+                설계 · 건조 · 운항 전 주기에 걸쳐 검증 가능한 보안 구조를 설계하고 운영합니다.
+              </p>
+            </div>
+            <span class="mt-4 md:mt-0 inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-ocean-700 dark:text-ocean-300">
+              <span data-i18n="competitivenessSection.cta">자세히 보기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </span>
+          </a>
+
+          <a
+            href="system-integration.html"
+            class="group flex flex-col md:grid md:grid-cols-[auto_minmax(0,1fr)_auto] md:gap-x-5 md:items-start rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-5 md:p-6 hover:border-ocean-500 dark:hover:border-ocean-400 transition-colors lg:col-span-7 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500"
+          >
+            <i data-lucide="network" class="w-6 h-6 text-ocean-700 dark:text-ocean-300"></i>
+            <div class="mt-3 md:mt-0">
+              <h3
+                class="text-lg md:text-xl font-bold text-slate-900 dark:text-white"
+                data-i18n="home.services.systemIntegration.title"
+              >
+                IT / OT 시스템 통합
+              </h3>
+              <p class="mt-0.5 text-xs font-medium text-slate-500 dark:text-slate-400 empty:hidden" data-i18n="home.services.systemIntegration.tag">System Integration</p>
+              <p
+                class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400"
+                data-i18n="home.services.systemIntegration.desc"
+              >
+                운영 목표에서 표준까지 구조를 먼저 세우고, 그 위에 IT / OT 시스템을 통합합니다.
+              </p>
+            </div>
+            <span class="mt-4 md:mt-0 inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-ocean-700 dark:text-ocean-300">
+              <span data-i18n="competitivenessSection.cta">자세히 보기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </span>
+          </a>
+
+          <a
+            href="ai-cybersecurity-consulting.html"
+            class="group flex flex-col md:grid md:grid-cols-[auto_minmax(0,1fr)_auto] md:gap-x-5 md:items-start rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-5 md:p-6 hover:border-ocean-500 dark:hover:border-ocean-400 transition-colors lg:col-span-7 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500"
+          >
+            <i data-lucide="radar" class="w-6 h-6 text-ocean-700 dark:text-ocean-300"></i>
+            <div class="mt-3 md:mt-0">
+              <h3
+                class="text-lg md:text-xl font-bold text-slate-900 dark:text-white"
+                data-i18n="home.services.aiConsulting.title"
+              >
+                AI 기반 사이버 보안 컨설팅
+              </h3>
+              <p class="mt-0.5 text-xs font-medium text-slate-500 dark:text-slate-400 empty:hidden" data-i18n="home.services.aiConsulting.tag">AI × Cybersecurity Consulting</p>
+              <p
+                class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400"
+                data-i18n="home.services.aiConsulting.desc"
+              >
+                AI 기반 관제와 대응을 포함해, FAT · 인도 · 선급 검사까지 같은 팀이 책임집니다.
+              </p>
+            </div>
+            <span class="mt-4 md:mt-0 inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-ocean-700 dark:text-ocean-300">
+              <span data-i18n="competitivenessSection.cta">자세히 보기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Gwangmyung Maritime -->
+    <section id="why" class="py-20 md:py-24 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid gap-4 lg:grid-cols-2 lg:gap-16 lg:items-end mb-10 md:mb-12">
+          <h2
+            class="font-display text-3xl md:text-4xl font-bold tracking-tight leading-tight text-slate-900 dark:text-white"
+            data-i18n="home.why.title"
+          >
+            왜 광명마리타임인가
+          </h2>
+          <p
+            class="text-base md:text-lg leading-relaxed text-slate-600 dark:text-slate-400"
+            data-i18n="home.why.subtitle"
+          >
+            선주 · 조선소 · 기자재 공급사는 E26 / E27에서 부딪히는 문제가 서로 다릅니다.
+          </p>
+        </div>
+
+        <!-- Stakeholders: a ruled list, not cards -->
+        <ul class="divide-y divide-slate-200 dark:divide-slate-700 border-y border-slate-200 dark:border-slate-700">
+          <li class="grid gap-2 py-6 md:grid-cols-[9rem_minmax(0,1fr)] md:gap-x-8 lg:grid-cols-[11rem_minmax(0,1fr)_minmax(0,16rem)] lg:py-8">
+            <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="home.why.owner.title">선주</h3>
+            <div>
+              <p class="text-base md:text-lg font-semibold text-slate-900 dark:text-white" data-i18n="home.why.owner.lead">
+                인도로 끝나지 않습니다. 운항 단계 규제까지 같은 구조 위에서 관리합니다.
+              </p>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400" data-i18n="home.why.owner.detail">
+                IMO MSC-FAL.1/Circ.3 Rev.3 · USCG · EU NIS2 요건까지 다룹니다.
+              </p>
+            </div>
+            <div class="md:col-start-2 lg:col-start-3">
+              <p class="text-sm font-medium text-slate-700 dark:text-slate-300" data-i18n="compliance.delivOwnerSummary">
+                UR E26 선주 대리 · 12개 실증 항목 + 사이버 선박 설계
+              </p>
+              <a
+                href="compliance.html#deliverables"
+                class="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-ocean-700 dark:text-ocean-300 hover:underline underline-offset-4"
+              >
+                <span data-i18n="home.why.linkLabel">산출물 보기</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </li>
+          <li class="grid gap-2 py-6 md:grid-cols-[9rem_minmax(0,1fr)] md:gap-x-8 lg:grid-cols-[11rem_minmax(0,1fr)_minmax(0,16rem)] lg:py-8">
+            <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="home.why.shipyard.title">조선소</h3>
+            <div>
+              <p class="text-base md:text-lg font-semibold text-slate-900 dark:text-white" data-i18n="home.why.shipyard.lead">
+                제출 범위가 늦게 흔들리면 인도 일정이 밀립니다. 단계마다 위험을 다시 평가합니다.
+              </p>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400" data-i18n="home.why.shipyard.detail">
+                메이커 선정에서 유형, 승인도면에서 위협 노출 경로, FAT에서 통제 수준을 평가합니다.
+              </p>
+            </div>
+            <div class="md:col-start-2 lg:col-start-3">
+              <!-- [OWNER] compliance.html의 "For System Integration" 산출물(UR E26 · 6개 실증 산출물 + FAT 입회)을 조선소 몫으로 소개해도 되는지 확인 필요 (CD 9 #8). 아니라면 아래 산출물 줄을 지우고 상세 한 줄만 둡니다. -->
+              <p class="text-sm font-medium text-slate-700 dark:text-slate-300" data-i18n="compliance.delivIntegrationSummary">
+                UR E26 · 6개 실증 산출물 + 위험관리 · 보안 솔루션 · FAT 입회
+              </p>
+              <a
+                href="compliance.html#deliverables"
+                class="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-ocean-700 dark:text-ocean-300 hover:underline underline-offset-4"
+              >
+                <span data-i18n="home.why.linkLabel">산출물 보기</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </li>
+          <li class="grid gap-2 py-6 md:grid-cols-[9rem_minmax(0,1fr)] md:gap-x-8 lg:grid-cols-[11rem_minmax(0,1fr)_minmax(0,16rem)] lg:py-8">
+            <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="home.why.supplier.title">기자재 공급사</h3>
+            <div>
+              <p class="text-base md:text-lg font-semibold text-slate-900 dark:text-white" data-i18n="home.why.supplier.lead">
+                UR E27 적합성을 설명하고 입증할 수 있어야 조선소의 선택을 받습니다.
+              </p>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400" data-i18n="home.why.supplier.detail">
+                보안 기능 · 외부 인터페이스 정의와 계정 관리 · 원격 접속 통제를 UR E27 기준으로 점검합니다.
+              </p>
+            </div>
+            <div class="md:col-start-2 lg:col-start-3">
+              <p class="text-sm font-medium text-slate-700 dark:text-slate-300" data-i18n="compliance.delivSupplierSummary">
+                UR E27 · 10개 산출물 · 41개 요구사항
+              </p>
+              <a
+                href="compliance.html#deliverables"
+                class="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-ocean-700 dark:text-ocean-300 hover:underline underline-offset-4"
+              >
+                <span data-i18n="home.why.linkLabel">산출물 보기</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Class societies we can support -->
+        <div class="mt-16">
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white" data-i18n="home.why.classTitle">
+              대응 가능한 선급
+            </h3>
+            <button
+              type="button"
+              class="logo-marquee__toggle inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:text-ocean-700 hover:border-ocean-500 dark:hover:text-ocean-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500"
+              aria-pressed="false"
+              data-i18n-aria-label="about.marqueePause"
+              aria-label="로고 흐름 멈추기"
+              data-marquee-toggle
+            >
+              <i data-lucide="pause" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <div
+            class="logo-marquee border-y border-slate-200 dark:border-slate-700 py-4"
+            data-marquee
+          >
+            <div class="logo-marquee__track">
+              <ul class="logo-marquee__set" role="list">
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/abs.png" alt="American Bureau of Shipping" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/dnv.webp" alt="DNV" class="max-h-12 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/lr.jpg" alt="Lloyd's Register" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/kr.jpg" alt="Korean Register" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/bv.png" alt="Bureau Veritas" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/rina.svg" alt="RINA" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/ccs.svg" alt="China Classification Society" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/prs.jpg" alt="Polski Rejestr Statków" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/irclass.png" alt="Indian Register of Shipping" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/classnk.jpg" alt="Nippon Kaiji Kyokai (ClassNK)" class="max-h-12 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/crs.png" alt="Croatian Register of Shipping" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+              </ul>
+              <ul class="logo-marquee__set" aria-hidden="true">
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/abs.png" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/dnv.webp" alt="" class="max-h-12 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/lr.jpg" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/kr.jpg" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/bv.png" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/rina.svg" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/ccs.svg" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/prs.jpg" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/irclass.png" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/classnk.jpg" alt="" class="max-h-12 w-auto object-contain" loading="lazy" />
+                </li>
+                <li class="logo-marquee__item flex items-center justify-center h-20 bg-white rounded-lg px-4">
+                  <img src="resource/logos/crs.png" alt="" class="max-h-14 w-auto object-contain" loading="lazy" />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p class="mt-4 text-sm text-slate-700 dark:text-slate-300" data-i18n="about.supportScopeIACSList">
+            ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IRClass, ClassNK, CRS
+          </p>
+          <p class="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400" data-i18n="home.why.classNote">
+            각 선급의 규칙과 가이드라인에 맞춰 대응할 수 있다는 뜻이며, 제휴 · 인증 · 승인 관계를 뜻하지 않습니다.
+          </p>
+        </div>
+
+        <!-- Standards and guidance bodies (text only) -->
+        <div class="mt-12 grid gap-10 md:grid-cols-2 md:gap-12">
+          <div>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4" data-i18n="home.why.standardsTitle">
+              참조 표준
+            </h3>
+            <ul class="flex flex-wrap gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
+              <li class="rounded-md border border-slate-300 dark:border-slate-600 px-3 py-1.5">IACS UR E26 / E27</li>
+              <li class="rounded-md border border-slate-300 dark:border-slate-600 px-3 py-1.5">IMO MSC-FAL.1/Circ.3 Rev.3</li>
+              <li class="rounded-md border border-slate-300 dark:border-slate-600 px-3 py-1.5">ISO 27001 · 27701 · 42001</li>
+              <li class="rounded-md border border-slate-300 dark:border-slate-600 px-3 py-1.5">ISMS-P</li>
+              <li class="rounded-md border border-slate-300 dark:border-slate-600 px-3 py-1.5">Zero Trust</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4" data-i18n="home.why.bodiesTitle">
+              참조 표준 · 가이드라인 기관
+            </h3>
+            <!-- [OWNER] 예전 로고 ncsc.jpg(alt "NCSC", 삭제됨 — git 기록에 있음)가 어느 기관인지 확인 전까지 목록에서 뺍니다 (CD 9 #6). -->
+            <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="about.supportScopeInternationalList">
+              NSA (미국 국가안보국), UK NCSC (영국 국가사이버보안센터), USCG (미국 해안경비대), CSA Singapore (싱가포르 사이버보안청)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA — statement left, actions right -->
+    <section class="py-16 bg-ocean-950">
+      <div class="max-w-7xl mx-auto px-6 grid gap-8 lg:grid-cols-2 lg:gap-16 lg:items-center">
+        <div>
+          <h2 class="font-display text-2xl md:text-3xl font-bold tracking-tight text-white text-balance [word-break:auto-phrase]" data-i18n="systemIntegration.ctaTitle">프로젝트에 대해 상담하고 싶으신가요?</h2>
+          <p class="mt-4 text-slate-400 leading-relaxed" data-i18n="systemIntegration.ctaDesc">전문가와 상담을 통해 최적의 솔루션을 찾아보세요.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 lg:justify-end">
+          <a href="index.html#contact" class="inline-flex items-center gap-2 whitespace-nowrap rounded-md bg-signal-400 px-5 py-3 text-sm font-semibold text-ink-950 hover:bg-signal-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+            <span data-i18n="hero.ctaSecondary">문의하기</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer (loaded dynamically) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/logo-marquee.js"></script>
+    <script src="assets/js/diagram-reveal.js"></script>
+    <script src="assets/js/country-detector.js"></script>
+    <script src="assets/js/consent.js"></script>
+  </body>
+</html>
