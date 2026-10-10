@@ -10,7 +10,35 @@
   if (!words.length) return;
 
   const rand = (a, b) => a + Math.random() * (b - a);
+  const pick = list => list[Math.floor(Math.random() * list.length)];
   const isCjk = el => !/[A-Za-z]/.test(el.textContent);
+
+  // One face per word, drawn at random from the set for its language
+  // (each span carries lang="…"). The extra faces are loaded by the
+  // watermark-only stylesheet in <head>; sans faces are the site's own.
+  const FACES = {
+    en: [
+      { family: "'Space Grotesk', sans-serif", weight: 700 },
+      { family: "'Inter', sans-serif", weight: 700, style: 'italic' },
+      { family: "'Anton', sans-serif", weight: 400, transform: 'uppercase', spacing: '0.02em' },
+      { family: "'Playfair Display', serif", weight: 900, style: 'italic' }
+    ],
+    ko: [
+      { family: "'Noto Sans KR', sans-serif", weight: 700 },
+      { family: "'Black Han Sans', sans-serif", weight: 400 },
+      { family: "'Noto Serif KR', serif", weight: 900 }
+    ],
+    zh: [
+      { family: "'Noto Sans SC', sans-serif", weight: 700 },
+      { family: "'Noto Serif SC', serif", weight: 900 },
+      { family: "'ZCOOL QingKe HuangYou', sans-serif", weight: 400 }
+    ],
+    ja: [
+      { family: "'Noto Sans JP', sans-serif", weight: 700 },
+      { family: "'Noto Serif JP', serif", weight: 900 },
+      { family: "'Dela Gothic One', sans-serif", weight: 400 }
+    ]
+  };
 
   function layout() {
     const w = root.clientWidth;
@@ -47,6 +75,12 @@
       el.style.fontSize = `${Math.round(size)}px`;
       el.style.writingMode = vertical ? 'vertical-rl' : 'horizontal-tb';
       el.style.opacity = rand(0.04, 0.075).toFixed(3);
+      const face = pick(FACES[el.getAttribute('lang')] || FACES.en);
+      el.style.fontFamily = face.family;
+      el.style.fontWeight = face.weight;
+      el.style.fontStyle = face.style || 'normal';
+      el.style.textTransform = face.transform || 'none';
+      el.style.letterSpacing = face.spacing || '';
     });
   }
 
