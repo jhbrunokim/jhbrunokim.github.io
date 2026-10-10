@@ -2,8 +2,8 @@
 // - "timed" (or a bare attribute): the steps play in order once the diagram
 //   is 35 % in view (CSS transition delays), then stay.
 // - "scroll": the reveal is scrubbed by scroll position. Progress --p runs
-//   from 0 (diagram top at the viewport bottom) to 1 (top at 40 % of the
-//   viewport height), never decreases, and each step gets its own --k
+//   from 0 (diagram top at 88 % of the viewport) to 1 (top at 25 %, or
+//   once the whole diagram is on screen), never decreases, and each step gets its own --k
 //   (0..1) from its --step slot out of --steps. At p = 1 the diagram gets
 //   .is-in and stops updating. A diagram already past the threshold on
 //   load plays the same progress on a timer instead (see play()).
@@ -74,12 +74,22 @@
     else window.addEventListener('load', begin, { once: true });
   }
 
+  // Progress window: 0 when the diagram's top is at 88 % of the viewport
+  // (it has just started to show), 1 when its top reaches 25 % of the
+  // viewport, or earlier if the diagram is tall, so the whole diagram is
+  // on screen (bottom within 92 % of the viewport) by the time it finishes.
+  function progressOf(el, vh) {
+    const rect = el.getBoundingClientRect();
+    const startTop = 0.88 * vh;
+    const endTop = Math.max(0.05 * vh, Math.min(0.25 * vh, 0.92 * vh - rect.height));
+    return Math.min(1, Math.max(0, (startTop - rect.top) / (startTop - endTop)));
+  }
+
   function update(first) {
     ticking = false;
     const vh = window.innerHeight;
     pending = pending.filter(item => {
-      const top = item.el.getBoundingClientRect().top;
-      const raw = Math.min(1, Math.max(0, (vh - top) / (0.6 * vh)));
+      const raw = progressOf(item.el, vh);
       if (first === true && raw >= 1) {
         play(item);
         return false;
