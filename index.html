@@ -533,8 +533,18 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-20 md:py-24 bg-slate-50 dark:bg-slate-800">
-      <div class="max-w-7xl mx-auto px-6">
+    <section id="contact" class="relative overflow-hidden py-20 md:py-24 bg-slate-50 dark:bg-slate-800">
+      <!-- Core-values watermark. Decorative, mixed Korean/English on purpose
+           (not translated), hidden from assistive tech, sits behind the form. -->
+      <div aria-hidden="true" class="pointer-events-none select-none absolute inset-0">
+        <div class="max-w-7xl mx-auto h-full px-6 flex flex-col justify-center gap-1 md:gap-3 font-display font-bold leading-none tracking-tight whitespace-nowrap text-slate-900/[0.05] dark:text-white/[0.06] text-5xl md:text-7xl xl:text-8xl">
+          <span>신뢰 Trust</span>
+          <span class="md:pl-16 xl:pl-24">실행 Execution</span>
+          <span class="md:pl-32 xl:pl-48">책임 Responsibility</span>
+          <span class="md:pl-48 xl:pl-72">협력 Partnership</span>
+        </div>
+      </div>
+      <div class="relative max-w-7xl mx-auto px-6">
         <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <!-- Head -->
           <div class="lg:col-span-5">
