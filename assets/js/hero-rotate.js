@@ -8,7 +8,7 @@
   const wrap = document.querySelector('[data-hero-rotate]');
   if (!wrap) return;
 
-  const PERIOD = 8000;  // ms between set changes; the first one is 8 s after load
+  const PERIOD = 60000; // ms between set changes; the first one is 60 s after load
   const STAGGER = 150;  // ms between consecutive frames within one change
   const FADE = 500;     // ms; matches the CSS opacity transition
 
