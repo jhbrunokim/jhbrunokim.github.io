@@ -61,13 +61,22 @@
   // viewport, or later if the diagram is taller than the viewport, so the
   // whole diagram has been on screen (bottom within 92 %) by the time it finishes.
   // A diagram may override the window with data-reveal-start / data-reveal-end
-  // (fractions of the viewport height for the diagram's top).
+  // (fractions of the viewport height for the diagram's top). A tall diagram
+  // that should be complete as soon as it is fully on screen sets
+  // data-reveal-end-bottom instead: the fraction of the viewport its bottom
+  // edge must reach (e.g. 0.9), regardless of where its top is.
   function progressOf(el, vh) {
     const rect = el.getBoundingClientRect();
     const start = parseFloat(el.dataset.revealStart);
     const end = parseFloat(el.dataset.revealEnd);
+    const endBottom = parseFloat(el.dataset.revealEndBottom);
     const startTop = (isNaN(start) ? 0.63 : start) * vh;
-    const endTop = Math.min((isNaN(end) ? 0 : end) * vh, 0.92 * vh - rect.height);
+    let endTop;
+    if (!isNaN(endBottom)) {
+      endTop = Math.min(endBottom * vh - rect.height, startTop - 0.2 * vh);
+    } else {
+      endTop = Math.min((isNaN(end) ? 0 : end) * vh, 0.92 * vh - rect.height);
+    }
     return Math.min(1, Math.max(0, (startTop - rect.top) / (startTop - endTop)));
   }
 
