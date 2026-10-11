@@ -666,3 +666,130 @@ ko UI는 한국어 낱말이 제목이고 영어 낱말이 보조 줄입니다. 
 |---|---|---|---|---|
 | `home.business.data.link` | AI 컨설팅 보기 | View AI consulting | 查看 AI 咨询 | AIコンサルティングを見る |
 | `nav.backToOverview` | 서비스 개요로 돌아가기 | Back to services overview | 返回服务概览 | サービス概要に戻る |
+
+## 12. 제로 트러스트 전환 컨설팅 페이지 (Stage 7, `zero-trust.html`)
+
+Stage 7에서 추가한 다섯 번째 서비스 페이지입니다. 원문은 대표 제공 자료이며, 자료에 없는 수치 · 고객명 · 성과는 쓰지 않습니다. 수행 경험은 회사가 아니라 구성원의 이전 소속 실적이며, 페이지가 그 사실을 먼저 밝힙니다. 새 키는 `zeroTrust.*`, `nav.zeroTrust`, `home.services.zeroTrust.*`이고, 바뀐 값은 `home.services.subtitle`, `home.business.platform.body` · `.link`입니다. Pillar 이름 · 역량 약어(IGA, MFA, ZTNA 등)는 번역하지 않는 고정 영문이며 HTML에만 있습니다.
+
+- `[OWNER]` 수행 경험 고지 문장(`zeroTrust.experience.disclaimer`)의 문구를 확인해 주십시오.
+- ja 페이지 본문은 문서 머리의 표기 규칙대로 구절 단위 띄어쓰기를 넣지 않았습니다. `nav.zeroTrust` ja만 계획서 지정값 "ゼロトラスト コンサルティング"을 씁니다.
+
+| 키 | ko | en | zh | ja |
+|---|---|---|---|---|
+| `nav.zeroTrust` | 제로 트러스트 컨설팅 | Zero Trust Consulting | 零信任咨询 | ゼロトラスト コンサルティング |
+| `zeroTrust.hero.kicker` | Zero Trust · 공공 · 민간 IT | Zero Trust · Public and private-sector IT | Zero Trust · 公共与民间 IT | Zero Trust · 公共・民間IT |
+| `zeroTrust.hero.title` | 경계를 믿지 않습니다. 접근마다 다시 검증합니다. | We don't trust the perimeter. We re-verify every access. | 不信任边界。每一次访问都重新验证。 | 境界を信頼しません。アクセスのたびに検証し直します。 |
+| `zeroTrust.hero.lede` | 경계 중심의 내부망 보안에서 벗어나 사용자 · 단말 · 접근 상황을 지속적으로 검증하고, 시스템 간 접근을 최소화하는 제로 트러스트 체계로 전환해 침해 발생 시 피해 확산을 조기에 차단합니다. | We move internal network security off the perimeter and onto a Zero Trust model that continuously verifies users, devices and access context and minimises access between systems, so a breach is contained early before it spreads. | 摆脱以边界为中心的内网安全，转向持续验证用户、终端与访问情境、并将系统间访问降至最低的零信任体系，在发生入侵时尽早阻断损害扩散。 | 境界中心の内部ネットワークセキュリティから脱却し、ユーザー・端末・アクセス状況を継続的に検証してシステム間のアクセスを最小化するゼロトラスト体制へ移行することで、侵害発生時の被害拡大を早期に遮断します。 |
+| `zeroTrust.hero.ctaAssessment` | 진단 항목 보기 | See the assessment | 查看诊断项目 | 診断項目を見る |
+| `zeroTrust.assessment.title` | 성숙도 진단 | Maturity assessment | 成熟度诊断 | 成熟度診断 |
+| `zeroTrust.assessment.lead` | CISA 제로 트러스트 성숙도 모델(ZTMM)을 기반으로 개발한 진단 도구로 6개 Pillar, 총 45개 항목을 평가합니다. 성숙도는 영역별로 네 단계로 판정합니다. | Our assessment tool, built on the CISA Zero Trust Maturity Model (ZTMM), evaluates 45 items across six pillars. Maturity is rated in four stages for each area. | 以基于 CISA 零信任成熟度模型（ZTMM）开发的诊断工具，评估 6 个 Pillar 共 45 个项目。成熟度按领域分四个阶段判定。 | CISAゼロトラスト成熟度モデル（ZTMM）に基づいて開発した診断ツールで、6つのPillar、計45項目を評価します。成熟度は領域ごとに4段階で判定します。 |
+| `zeroTrust.assessment.scaleAria` | 성숙도 네 단계 | Four maturity stages | 成熟度四个阶段 | 成熟度の4段階 |
+| `zeroTrust.assessment.level1` | Traditional(기존) | Traditional | Traditional（传统） | Traditional（従来） |
+| `zeroTrust.assessment.level2` | Developing(초기) | Developing | Developing（初始） | Developing（初期） |
+| `zeroTrust.assessment.level3` | Enhancing(향상) | Enhancing | Enhancing（提升） | Enhancing（向上） |
+| `zeroTrust.assessment.level4` | Optimal(최적화) | Optimal | Optimal（最优） | Optimal（最適化） |
+| `zeroTrust.matrix.caption` | Zero Trust 기술 역량 | Zero Trust technical capabilities | Zero Trust 技术能力 | Zero Trust技術能力 |
+| `zeroTrust.matrix.aria` | Zero Trust 기술 역량: Identity, Device, Application, Network & Infrastructure, Data의 5개 Pillar별 역량과 그 아래를 받치는 Telemetry & Analytics, Automation & Orchestration | Zero Trust technical capabilities: the capabilities of five pillars (Identity, Device, Application, Network & Infrastructure, Data), underpinned by Telemetry & Analytics and Automation & Orchestration | Zero Trust 技术能力：Identity、Device、Application、Network & Infrastructure、Data 五个 Pillar 的各项能力，以及支撑其下的 Telemetry & Analytics、Automation & Orchestration | Zero Trust技術能力：Identity、Device、Application、Network & Infrastructure、Dataの5つのPillarごとの能力と、それを下支えするTelemetry & Analytics、Automation & Orchestration |
+| `zeroTrust.matrix.identityGloss` | 신원 | (빈 문자열) | 身份 | アイデンティティ |
+| `zeroTrust.matrix.deviceGloss` | 단말 | (빈 문자열) | 终端 | 端末 |
+| `zeroTrust.matrix.applicationGloss` | 애플리케이션 | (빈 문자열) | 应用 | アプリケーション |
+| `zeroTrust.matrix.networkGloss` | 네트워크 · 인프라 | (빈 문자열) | 网络与基础设施 | ネットワーク・インフラ |
+| `zeroTrust.matrix.dataGloss` | 데이터 | (빈 문자열) | 数据 | データ |
+| `zeroTrust.matrix.telemetryGloss` | 가시성 · 분석, 자동화 · 오케스트레이션 | (빈 문자열) | 遥测与分析、自动化与编排 | テレメトリ・分析、自動化・オーケストレーション |
+| `zeroTrust.current.title` | 전형적인 기업의 현재 수준 | Where a typical organisation stands today | 典型企业的现状 | 典型的な企業の現状 |
+| `zeroTrust.current.identity` | 신원 · 권한 통합관리 체계 부재, IDC와 클라우드 간 인증체계 이원화 | No integrated identity and privilege management; separate authentication for the IDC and the cloud | 缺乏身份与权限统一管理体系，IDC 与云之间的认证体系分为两套 | ID・権限の統合管理体制がなく、IDCとクラウドで認証体系が二元化 |
+| `zeroTrust.current.device` | 단말 보안 상태가 접근 결정에 반영되지 않음, 신규 자산 발견 · 인벤토리 자동화 미흡 | Device security posture is not reflected in access decisions; discovery and inventory of new assets are poorly automated | 终端安全状态未反映到访问决策中，新资产发现与资产清单自动化不足 | 端末のセキュリティ状態がアクセス判断に反映されず、新規資産の発見・インベントリの自動化が不十分 |
+| `zeroTrust.current.application` | 최초 인증 이후 지속 승인 · 재검증 미흡, 오픈소스 취약점 · 라이선스 관리 미흡 | Little continuous authorisation or re-verification after first sign-in; weak management of open-source vulnerabilities and licences | 首次认证后的持续授权与再验证不足，开源漏洞与许可证管理不足 | 初回認証後の継続的な承認・再検証が不十分で、オープンソースの脆弱性・ライセンス管理も不十分 |
+| `zeroTrust.current.network` | 경계성 보안 중심, 방화벽 정책 변경 · 검증 자동화 미흡 | Perimeter-centred security; firewall policy changes and verification are poorly automated | 以边界安全为中心，防火墙策略变更与验证自动化不足 | 境界型セキュリティが中心で、ファイアウォールポリシーの変更・検証の自動化が不十分 |
+| `zeroTrust.current.data` | 중요정보 보안 분류체계 미약 | A weak security classification scheme for sensitive information | 重要信息的安全分类体系薄弱 | 重要情報のセキュリティ分類体系が脆弱 |
+| `zeroTrust.approach.title` | 전환 접근 방법 | How we approach the transition | 转型方法 | 移行のアプローチ |
+| `zeroTrust.approach.premiseLabel` | 대전제 | Core premise | 大前提 | 大前提 |
+| `zeroTrust.approach.premise` | IAM · SSO · PAM을 통한 중앙집중형 권한관리 체계 확립 | Establish centralised privilege management through IAM, SSO and PAM | 通过 IAM、SSO、PAM 建立集中式权限管理体系 | IAM・SSO・PAMによる中央集中型の権限管理体制の確立 |
+| `zeroTrust.approach.additionLabel` | 추가 사항 | In addition | 补充事项 | 追加事項 |
+| `zeroTrust.approach.addition` | Micro Segmentation 등 시스템 · 워크로드 · 프로세스 세분화를 구현하는 특화 솔루션 도입 · 정착 | Introduce and embed specialised solutions, such as Micro Segmentation, that segment systems, workloads and processes | 引入并落地 Micro Segmentation 等实现系统、工作负载、进程细分的专用解决方案 | Micro Segmentationなど、システム・ワークロード・プロセスの細分化を実現する特化ソリューションの導入・定着 |
+| `zeroTrust.approach.caseTitle` | 국내 금융사 적용 사례 분석 | Case analysis: a Korean financial institution | 韩国金融机构应用案例分析 | 韓国の金融機関における適用事例の分析 |
+| `zeroTrust.approach.caseSummary` | 기존 IAM · SSO · PAM 기반 중앙집중형 권한관리 체계에 Micro Segmentation을 결합해, 사용자 인증 · 권한 통제를 실제 운영 시스템 · 워크로드 · 프로세스 간 통신 통제로 확장한 사례입니다. | This case combined Micro Segmentation with an existing IAM, SSO and PAM-based centralised privilege management framework, extending user authentication and privilege control into control of the communication between live systems, workloads and processes. | 该案例在原有基于 IAM、SSO、PAM 的集中式权限管理体系上结合 Micro Segmentation，将用户认证与权限控制扩展到实际运营系统、工作负载、进程之间的通信控制。 | 既存のIAM・SSO・PAMに基づく中央集中型の権限管理体制にMicro Segmentationを組み合わせ、ユーザー認証・権限統制を実際の運用システム・ワークロード・プロセス間の通信統制へ拡張した事例です。 |
+| `zeroTrust.approach.taskLabel` | 과제 | Task | 课题 | 課題 |
+| `zeroTrust.approach.detailLabel` | 내용 | What was done | 内容 | 内容 |
+| `zeroTrust.approach.noteLabel` | 고려사항 | Considerations | 注意事项 | 考慮事項 |
+| `zeroTrust.approach.task1Title` | 내부통신 가시성 확보 | Visibility into internal traffic | 确保内部通信可见性 | 内部通信の可視性確保 |
+| `zeroTrust.approach.task1Detail` | 서버 · 클라우드 워크로드 · 사용자 단말에 에이전트를 적용해 실제 통신 흐름 수집, 서버 간 연결과 애플리케이션 · 프로세스 단위 통신 및 미등록 자산 식별 | Agents on servers, cloud workloads and user devices collect the actual traffic flows and identify server-to-server connections, application- and process-level communication, and unregistered assets | 在服务器、云工作负载、用户终端部署代理，收集实际通信流量，识别服务器间连接、应用与进程级通信以及未登记资产 | サーバー・クラウドワークロード・ユーザー端末にエージェントを適用して実際の通信フローを収集し、サーバー間の接続、アプリケーション・プロセス単位の通信、未登録資産を識別 |
+| `zeroTrust.approach.task1Note` | 도입 초기 차단 정책 적용 시 업무 중단 가능성을 줄이기 위해 통신 흐름 분석에 충분한 공수 투입 | Put enough effort into traffic-flow analysis to reduce the risk of business disruption when blocking policies are first applied | 为降低导入初期应用阻断策略时业务中断的可能性，在通信流量分析上投入充足工作量 | 導入初期に遮断ポリシーを適用した際の業務停止の可能性を減らすため、通信フローの分析に十分な工数を投入 |
+| `zeroTrust.approach.task2Title` | 업무 기반의 논리적 그룹화 | Business-based logical grouping | 基于业务的逻辑分组 | 業務に基づく論理的なグループ化 |
+| `zeroTrust.approach.task2Detail` | 부서 · 업무 · 애플리케이션 · OS · 서버 역할 · 중요도 등 속성을 라벨로 정의, 복잡한 IP · 네트워크 구조를 업무 의미 중심의 논리 그룹으로 분류 | Attributes such as department, business function, application, OS, server role and criticality are defined as labels, sorting a complex IP and network structure into logical groups that carry business meaning | 将部门、业务、应用、OS、服务器角色、重要性等属性定义为标签，把复杂的 IP 与网络结构划分为以业务含义为中心的逻辑组 | 部署・業務・アプリケーション・OS・サーバーの役割・重要度などの属性をラベルとして定義し、複雑なIP・ネットワーク構造を業務上の意味を軸とした論理グループに分類 |
+| `zeroTrust.approach.task2Note` | 라벨 부착 시 업무정보 · 자산관리 정보와 교차 대조해 정합성 확인 | When attaching labels, cross-check them against business and asset-management records to confirm consistency | 贴标签时与业务信息、资产管理信息交叉核对，确认一致性 | ラベル付与時は業務情報・資産管理情報と突き合わせて整合性を確認 |
+| `zeroTrust.approach.task3Title` | 중앙 권한 정보와 통신정책 연계 | Linking central privilege data to communication policy | 中央权限信息与通信策略联动 | 中央の権限情報と通信ポリシーの連携 |
+| `zeroTrust.approach.task3Detail` | 기존 사용자 · 로그인 ID · 역할 · 특권정보 활용, 사용자별 접근 가능 URL · IP · 대상 시스템을 ACL로 구성, 중앙 권한관리를 Micro Segmentation 정책에 실시간 반영 | Existing user, login ID, role and privilege data are used to build ACLs of the URLs, IPs and target systems each user may reach, so central privilege management is reflected in Micro Segmentation policy in real time | 利用现有用户、登录 ID、角色、特权信息，将每个用户可访问的 URL、IP、目标系统构建为 ACL，使中央权限管理实时反映到 Micro Segmentation 策略中 | 既存のユーザー・ログインID・ロール・特権情報を活用し、ユーザーごとにアクセス可能なURL・IP・対象システムをACLとして構成、中央の権限管理をMicro Segmentationのポリシーにリアルタイムで反映 |
+| `zeroTrust.approach.task3Note` | 입사 · 이동 · 퇴사 · 직무변경이 IAM 권한 변경과 ACL에 신속히 반영되도록 연계 관리 | Keep the link managed so that joiners, movers, leavers and role changes reach IAM privileges and ACLs quickly | 联动管理入职、调岗、离职、职务变更，使其迅速反映到 IAM 权限变更与 ACL 中 | 入社・異動・退職・職務変更がIAMの権限変更とACLに迅速に反映されるよう連携して管理 |
+| `zeroTrust.approach.task4Title` | 워크로드 · 프로세스 단위 최소권한 통제 | Least-privilege control per workload and process | 以工作负载、进程为单位的最小权限控制 | ワークロード・プロセス単位の最小権限統制 |
+| `zeroTrust.approach.task4Detail` | 서버 · 애플리케이션 · 워크로드 · 프로세스 간 필요 통신만 허용, 관리자 접근도 지정 단말 · 접근경로 · 대상 서버 · 포트 · 프로세스로 세분화, 외부 침입자와 내부 비인가 접근 · 인접 시스템 횡적 이동 차단 | Only the communication needed between servers, applications, workloads and processes is allowed; administrator access is narrowed to designated devices, access paths, target servers, ports and processes, blocking outside intruders, unauthorised internal access and lateral movement to adjacent systems | 服务器、应用、工作负载、进程之间仅允许必要通信，管理员访问也细分到指定终端、访问路径、目标服务器、端口、进程，阻断外部入侵者、内部未授权访问及向相邻系统的横向移动 | サーバー・アプリケーション・ワークロード・プロセス間で必要な通信のみを許可し、管理者アクセスも指定端末・アクセス経路・対象サーバー・ポート・プロセス単位に細分化、外部侵入者と内部の不正アクセス・隣接システムへの横展開を遮断 |
+| `zeroTrust.approach.task4Note` | 중요 업무 · 관리자 접근은 승인 · 예외 · 만료 기한 등에 대한 통제된 정책으로 관리 | Manage critical business and administrator access through controlled policies covering approval, exceptions and expiry dates | 重要业务与管理员访问通过涵盖审批、例外、到期期限等的受控策略进行管理 | 重要業務・管理者アクセスは承認・例外・有効期限などを定めた統制されたポリシーで管理 |
+| `zeroTrust.approach.task5Title` | 단계적 정책 적용 및 운영 고도화 | Phased policy rollout and maturing operations | 分阶段应用策略并提升运营水平 | 段階的なポリシー適用と運用の高度化 |
+| `zeroTrust.approach.task5Detail` | 라벨 · 정책 템플릿 · 자동 정책 추천으로 운영 복잡도 완화, 향후 AI 기반 정책관리 및 탐지 · 대응 자동화 확장 기반 마련 | Labels, policy templates and automatic policy recommendations ease operational complexity and lay the groundwork for AI-based policy management and automated detection and response later | 通过标签、策略模板、自动策略推荐降低运营复杂度，为今后扩展基于 AI 的策略管理及检测与响应自动化奠定基础 | ラベル・ポリシーテンプレート・自動ポリシー推奨で運用の複雑さを緩和し、今後のAIによるポリシー管理と検知・対応の自動化へ拡張する基盤を整備 |
+| `zeroTrust.approach.task5Note` | 정책 위반 · 횡적 이동 · 비인가 접근 이벤트를 SIEM으로 수집하고 반복 대응은 SOAR 플레이북과 연계 | Collect policy-violation, lateral-movement and unauthorised-access events in the SIEM, and link repeat responses to SOAR playbooks | 将策略违规、横向移动、未授权访问事件收集到 SIEM，重复性响应与 SOAR 剧本联动 | ポリシー違反・横展開・不正アクセスのイベントをSIEMで収集し、繰り返しの対応はSOARのプレイブックと連携 |
+| `zeroTrust.approach.effectsLabel` | 적용 효과 | Outcomes | 应用效果 | 適用効果 |
+| `zeroTrust.approach.effect1` | 내부 통신 · 미등록 자산 가시성 확보 | Visibility into internal traffic and unregistered assets | 内部通信与未登记资产可见 | 内部通信・未登録資産の可視化 |
+| `zeroTrust.approach.effect2` | IAM · PAM 권한의 실제 통신정책 집행 | IAM and PAM privileges enforced as live communication policy | IAM、PAM 权限落实为实际通信策略 | IAM・PAM権限を実際の通信ポリシーとして執行 |
+| `zeroTrust.approach.effect3` | 워크로드 · 프로세스 단위 최소권한 구현 | Least privilege at workload and process level | 实现工作负载、进程级最小权限 | ワークロード・プロセス単位の最小権限を実現 |
+| `zeroTrust.approach.effect4` | 침해 시 횡적 이동 · 영향범위 최소화 | Lateral movement and blast radius minimised in a breach | 入侵时横向移动与影响范围最小化 | 侵害時の横展開・影響範囲を最小化 |
+| `zeroTrust.approach.effect5` | 온프레미스 · 클라우드 통합 ZTA 기반 확보 | A foundation for unified on-premises and cloud ZTA | 奠定本地与云统一的 ZTA 基础 | オンプレミス・クラウド統合ZTAの基盤を確保 |
+| `zeroTrust.success.title` | 성공 요인과 시사점 | Success factors and implications | 成功因素与启示 | 成功要因と示唆 |
+| `zeroTrust.success.factorLabel` | 성공 요인 | Success factor | 成功因素 | 成功要因 |
+| `zeroTrust.success.implicationLabel` | 시사점 | Implication | 启示 | 示唆 |
+| `zeroTrust.success.s1Title` | 기존 통제방안 활용 및 연계 | Use and connect existing controls | 利用并联动现有控制手段 | 既存の統制手段の活用と連携 |
+| `zeroTrust.success.s1Factor` | 기존 IAM · SSO · PAM 정보를 공통 정책 기준으로 활용해 워크로드 접근통제로 확장 | Existing IAM, SSO and PAM data served as the common policy basis and was extended to workload access control | 以现有 IAM、SSO、PAM 信息作为共同策略基准，扩展到工作负载访问控制 | 既存のIAM・SSO・PAMの情報を共通のポリシー基準として活用し、ワークロードのアクセス制御へ拡張 |
+| `zeroTrust.success.s1Implication` | Micro Segmentation 도입 시 기존 Identity 정보 · Risk 정보를 공유하는 통합 정책 구조로 설계하는 Zero Trust 설계 지향 | When introducing Micro Segmentation, aim for a Zero Trust design: an integrated policy structure that shares existing Identity and Risk data | 导入 Micro Segmentation 时，以共享现有 Identity 信息与 Risk 信息的统一策略结构进行设计，追求 Zero Trust 设计 | Micro Segmentation導入時は、既存のIdentity情報・Risk情報を共有する統合ポリシー構造として設計するZero Trust設計を目指す |
+| `zeroTrust.success.s2Title` | 내부 가시성 우선 접근 | Internal visibility first | 内部可见性优先 | 内部の可視性を優先 |
+| `zeroTrust.success.s2Factor` | 실제 통신과 애플리케이션 의존관계 우선 파악, 정책 적용 전 시뮬레이션으로 업무 영향과 예외 통신 확인 | Actual traffic and application dependencies were mapped first, and simulation before enforcement confirmed business impact and exception traffic | 优先掌握实际通信与应用依赖关系，在应用策略前通过模拟确认业务影响与例外通信 | 実際の通信とアプリケーションの依存関係を優先して把握し、ポリシー適用前のシミュレーションで業務への影響と例外通信を確認 |
+| `zeroTrust.success.s2Implication` | 전사 일괄 적용을 지양하고 침해 영향도가 높은 업무부터 보호구역을 정의해 단계적으로 확장 | Avoid a company-wide rollout in one go; define protected zones starting with the business functions a breach would hurt most, and expand in stages | 避免全公司一次性应用，从入侵影响度高的业务开始定义保护区并分阶段扩展 | 全社一括適用は避け、侵害の影響度が高い業務から保護区域を定義して段階的に拡張 |
+| `zeroTrust.success.s3Title` | 유의미한 업무 기반 정책관리 | Policy managed around meaningful business context | 基于有意义业务的策略管理 | 意味のある業務に基づくポリシー管理 |
+| `zeroTrust.success.s3Factor` | IP · 포트 중심의 정적 ACL을 업무 · 애플리케이션 · 역할 · 프로세스 중심으로 전환 | Static ACLs built on IPs and ports were shifted to ones built on business functions, applications, roles and processes | 将以 IP、端口为中心的静态 ACL 转变为以业务、应用、角色、进程为中心 | IP・ポート中心の静的なACLを、業務・アプリケーション・ロール・プロセス中心へ転換 |
+| `zeroTrust.success.s3Implication` | 업무 · 보안 · 인프라 조직이 공동으로 라벨링 · 허용통신 정책을 확정하고, 예외 관련 만료 · 재승인 정책 합의 | Business, security and infrastructure teams settle labelling and allowed-traffic policy together, and agree expiry and re-approval rules for exceptions | 业务、安全、基础设施部门共同确定标签与允许通信策略，并就例外相关的到期与重新审批策略达成一致 | 業務・セキュリティ・インフラの各組織が共同でラベリング・許可通信ポリシーを確定し、例外の有効期限・再承認ポリシーに合意 |
+| `zeroTrust.success.s4Title` | 정책 결정과 집행의 연계 | Link policy decision to enforcement | 策略决策与执行的联动 | ポリシーの決定と執行の連携 |
+| `zeroTrust.success.s4Factor` | IAM · PAM은 누가 어떤 권한을 갖는지 결정하고, 솔루션은 그 권한이 어떤 워크로드 · 프로세스까지 적용되는지 연결 | IAM and PAM decide who holds which privileges; the solution connects how far those privileges reach across workloads and processes | IAM、PAM 决定谁拥有何种权限，解决方案则把这些权限连接到其适用的工作负载与进程 | IAM・PAMは誰がどの権限を持つかを決定し、ソリューションはその権限がどのワークロード・プロセスまで適用されるかを結び付ける |
+| `zeroTrust.success.s4Implication` | 통신정책 위반을 탐지 · 대응 체계와 연결(정책 위반 이벤트는 SIEM에서 통합, 고위험 시나리오는 SOAR에서 자동 격리 · 차단 · 조사) | Connect communication-policy violations to detection and response (violation events consolidated in the SIEM; high-risk scenarios automatically isolated, blocked and investigated in SOAR) | 将通信策略违规与检测、响应体系相连接（策略违规事件在 SIEM 中整合，高风险场景在 SOAR 中自动隔离、阻断、调查） | 通信ポリシー違反を検知・対応体制と連携（ポリシー違反イベントはSIEMで統合し、高リスクのシナリオはSOARで自動的に隔離・遮断・調査） |
+| `zeroTrust.success.s5Title` | 솔루션 도입 우선 목표를 침해 확산 억제에 설정 | Make containing breach spread the first goal | 将解决方案导入的首要目标设定为抑制入侵扩散 | ソリューション導入の最優先目標を侵害拡大の抑止に設定 |
+| `zeroTrust.success.s5Factor` | 완전한 예방보다 침해 이후 인접 시스템으로의 확산 통제에 집중, 위협 상황에서도 중요업무 보호구역 유지 | Rather than complete prevention, the focus was on controlling spread to adjacent systems after a breach, keeping critical-business protected zones intact even under threat | 相比完全预防，更专注于控制入侵后向相邻系统的扩散，在威胁情况下也维持重要业务保护区 | 完全な予防よりも侵害後の隣接システムへの拡大の統制に集中し、脅威下でも重要業務の保護区域を維持 |
+| `zeroTrust.success.s5Implication` | 도입 효과 측정을 정책 수립 건수가 아닌 위험 감소 기준(예: 불필요 통신경로 제거율)으로 책정 | Measure the effect by risk reduction (e.g. the rate at which unnecessary communication paths are removed), not by the number of policies written | 以风险降低为基准（例：不必要通信路径的清除率）而非策略制定数量来衡量导入效果 | 導入効果の測定は、ポリシーの策定件数ではなくリスク低減の基準（例：不要な通信経路の除去率）で設定 |
+| `zeroTrust.architecture.title` | 목표 아키텍처: ZTNA 접근통제 구성 | Target architecture: ZTNA access control | 目标架构：ZTNA 访问控制构成 | 目標アーキテクチャ：ZTNAアクセス制御の構成 |
+| `zeroTrust.architecture.lead` | 경계 중심의 내부망 보안에서 벗어나 사용자 · 단말 · 접근 상황을 지속 검증하고, 시스템 간 접근을 최소화하는 체계로 전환합니다. | We move internal network security off the perimeter and onto a model that continuously verifies users, devices and access context and minimises access between systems. | 摆脱以边界为中心的内网安全，转向持续验证用户、终端与访问情境、并将系统间访问降至最低的体系。 | 境界中心の内部ネットワークセキュリティから脱却し、ユーザー・端末・アクセス状況を継続的に検証してシステム間のアクセスを最小化する体制へ移行します。 |
+| `zeroTrust.architecture.aria` | ZTNA 접근통제 구성: End-Point의 접근 요청은 PDP 정책 결정과 PEP 정책 집행을 거쳐 Resource에 닿고, PDP는 신원기반 위험평가를 입력으로 받습니다. | ZTNA access control: an End-Point access request passes through the PDP (policy decision) and the PEP (policy enforcement) to reach the Resource; the PDP takes identity-based risk assessment as input. | ZTNA 访问控制构成：End-Point 的访问请求经过 PDP 策略决策与 PEP 策略执行到达 Resource，PDP 以基于身份的风险评估作为输入。 | ZTNAアクセス制御の構成：End-PointのアクセスリクエストはPDP（ポリシー決定）とPEP（ポリシー執行）を経てResourceに到達し、PDPはアイデンティティベースのリスク評価を入力として受け取ります。 |
+| `zeroTrust.architecture.pdpLabel` | 정책 결정 | Policy decision | 策略决策 | ポリシー決定 |
+| `zeroTrust.architecture.pepLabel` | 정책 집행 | Policy enforcement | 策略执行 | ポリシー執行 |
+| `zeroTrust.architecture.endpointUser` | 사용자 | Users | 用户 | ユーザー |
+| `zeroTrust.architecture.endpointAdmin` | 관리자 | Administrators | 管理员 | 管理者 |
+| `zeroTrust.architecture.endpointDevice` | 디바이스 | Devices | 设备 | デバイス |
+| `zeroTrust.architecture.pdp1` | 정책 관리 · 평가 | Policy management and evaluation | 策略管理与评估 | ポリシー管理・評価 |
+| `zeroTrust.architecture.pdp2` | 접근요청 정책 분석 | Access-request policy analysis | 访问请求策略分析 | アクセス要求のポリシー分析 |
+| `zeroTrust.architecture.pdp3` | 사용자 신원검증 | User identity verification | 用户身份验证 | ユーザーのID検証 |
+| `zeroTrust.architecture.pdp4` | 기기 신원검증 | Device identity verification | 设备身份验证 | デバイスのID検証 |
+| `zeroTrust.architecture.pdp5` | 감사 · 기록 관리 | Audit and log management | 审计与记录管理 | 監査・記録管理 |
+| `zeroTrust.architecture.pdp6` | 실시간 모니터링 | Real-time monitoring | 实时监控 | リアルタイム監視 |
+| `zeroTrust.architecture.riskFeed` | 신원기반 위험평가 | Identity-based risk assessment | 基于身份的风险评估 | アイデンティティベースのリスク評価 |
+| `zeroTrust.architecture.pepDb` | DB 접근제어 | DB access control | DB 访问控制 | DBアクセス制御 |
+| `zeroTrust.architecture.pepUnified` | 통합접근제어 | Unified access control | 统一访问控制 | 統合アクセス制御 |
+| `zeroTrust.architecture.pepCloud` | Cloud 접근제어 | Cloud access control | Cloud 访问控制 | Cloudアクセス制御 |
+| `zeroTrust.architecture.resourceProd` | 운영망 | Production network | 运营网 | 運用網 |
+| `zeroTrust.architecture.resourceDev` | 개발망 | Development network | 开发网 | 開発網 |
+| `zeroTrust.architecture.resourceCloud` | 클라우드(AWS) | Cloud (AWS) | 云（AWS） | クラウド（AWS） |
+| `zeroTrust.architecture.premiseTitle` | 아키텍처 운영 대전제 | Operating premises | 架构运营大前提 | アーキテクチャ運用の大前提 |
+| `zeroTrust.architecture.premise1` | 위치와 네트워크를 신뢰하지 않고 모든 접근을 지속 검증 | Trust no location or network; verify every access continuously | 不信任位置与网络，持续验证所有访问 | 場所とネットワークを信頼せず、すべてのアクセスを継続的に検証 |
+| `zeroTrust.architecture.premise2` | 접근 허용 후에도 위험 변화를 감지해 권한을 지속 재평가 | Even after access is granted, detect changes in risk and keep re-evaluating privileges | 即使允许访问后，也检测风险变化并持续重新评估权限 | アクセス許可後もリスクの変化を検知し、権限を継続的に再評価 |
+| `zeroTrust.architecture.rolesTitle` | 구성 요소별 역할 | What each component does | 各组成部分的作用 | 構成要素ごとの役割 |
+| `zeroTrust.architecture.role1` | 사용자 · 관리자 · 단말 등 모든 접근 주체 식별 | Identifies every access subject: users, administrators and devices | 识别用户、管理员、终端等所有访问主体 | ユーザー・管理者・端末など、すべてのアクセス主体を識別 |
+| `zeroTrust.architecture.role2` | 신원 · 단말 · 접근 상황의 위험도 기반 허용 여부 결정 | Decides whether to allow access based on the risk of the identity, device and access context | 基于身份、终端、访问情境的风险度决定是否允许 | ID・端末・アクセス状況のリスク度に基づいて許可の可否を決定 |
+| `zeroTrust.architecture.role3` | 정책에서 결정된 최소 접근권한 기반의 접근 허용 | Grants access on the least privilege the policy decided | 基于策略确定的最小访问权限允许访问 | ポリシーで決定された最小アクセス権限に基づいてアクセスを許可 |
+| `zeroTrust.architecture.role4` | IDC 서버팜 · 개발망 · 클라우드 망 등 중요자원 통합 보호 | Protects critical resources such as the IDC server farm, development network and cloud network as one | 统一保护 IDC 服务器集群、开发网、云网络等重要资源 | IDCサーバーファーム・開発網・クラウド網などの重要資源を統合的に保護 |
+| `zeroTrust.experience.title` | 수행 경험 | Experience | 执行经验 | 遂行経験 |
+| `zeroTrust.experience.disclaimer` | 아래 실적은 광명마리타임이 직접 수행한 것이 아니라, 광명마리타임 구성원이 이전 소속에서 수행한 프로젝트입니다. | The projects below were not carried out by Gwangmyung Maritime itself; they are projects that Gwangmyung Maritime members carried out at their previous organisations. | 以下业绩并非光明海事直接执行，而是光明海事成员在此前任职单位执行的项目。 | 以下の実績は光明マリタイムが直接遂行したものではなく、光明マリタイムのメンバーが以前の所属先で遂行したプロジェクトです。 |
+| `zeroTrust.experience.item1` | 영호남 지역 대표은행 차세대 정보보안 아키텍처 수립 | Next-generation information security architecture for a leading regional bank in the Yeongnam and Honam regions | 韩国岭南、湖南地区代表性银行的新一代信息安全架构制定 | 嶺南・湖南地域を代表する銀行の次世代情報セキュリティアーキテクチャ策定 |
+| `zeroTrust.experience.item2` | 서울 소재 중대형 공금융 기관 정보보호 선진화 전략계획 수립 | Information security advancement strategy plan for a mid-to-large public financial institution in Seoul | 首尔一家中大型公共金融机构的信息保护先进化战略规划制定 | ソウル所在の中・大規模公的金融機関における情報保護高度化戦略計画の策定 |
+| `zeroTrust.experience.result` | 제로 트러스트 추진방안 제시 | Zero Trust implementation plan proposed | 提出零信任推进方案 | ゼロトラスト推進方策の提示 |
+| `zeroTrust.cta.title` | 내부망 보안을 제로 트러스트로 전환하려 하시나요? | Moving your internal network security to Zero Trust? | 打算将内网安全转向零信任吗？ | 内部ネットワークのセキュリティをゼロトラストへ移行しませんか？ |
+| `zeroTrust.cta.desc` | 현재 수준 진단부터 목표 아키텍처와 단계별 전환 계획까지 함께 설계합니다. | We design it with you, from assessing where you stand today to the target architecture and a phased transition plan. | 从现状诊断到目标架构与分阶段转型计划，与您共同设计。 | 現状の診断から目標アーキテクチャ、段階的な移行計画まで、ともに設計します。 |
+| `home.business.platform.body` | 공공 · 민간 · 해양 분야의 IT / OT 플랫폼을 설계하고 구축합니다. 데이터 · AI 기반 운영 시스템과 글로벌 표준을 따르는 데이터 관리 체계를 포함합니다. 공공 · 민간 기관의 제로 트러스트 전환 컨설팅도 이 영역에서 맡습니다. | We design and build IT / OT platforms for the public, private and maritime sectors. This includes data- and AI-based operating systems and data management frameworks that follow global standards. Zero Trust transition consulting for public and private-sector organisations also sits in this area. | 为公共、民间及海事领域设计并建设 IT / OT 平台。涵盖基于数据和 AI 的运营系统，以及遵循全球标准的数据管理体系。面向公共与民间机构的零信任转型咨询也属于这一领域。 | 公共・民間・海事分野のIT / OTプラットフォームを設計・構築します。データ・AIに基づく運用システムと、グローバル標準に沿ったデータ管理体制を含みます。公共・民間機関のゼロトラスト移行コンサルティングもこの領域で担います。 |
+| `home.business.platform.link` | 제로 트러스트 보기 | View Zero Trust | 查看零信任 | ゼロトラストを見る |
+| `home.services.subtitle` | 다섯 가지 일은 하나로 이어집니다. 중심은 IACS UR E26 / E27 대응입니다. | Five services, one thread: IACS UR E26 / E27 compliance. | 五项服务环环相扣，核心是 IACS UR E26 / E27 应对。 | 5つのサービスは一つにつながっています。中心はIACS UR E26 / E27への対応です。 |
+| `home.services.zeroTrust.title` | 제로 트러스트 전환 컨설팅 | Zero Trust Consulting | 零信任转型咨询 | ゼロトラスト移行コンサルティング |
+| `home.services.zeroTrust.tag` | Zero Trust · 공공 · 민간 IT | (빈 문자열) | Zero Trust · 公共与民间 IT | Zero Trust · 公共・民間IT |
+| `home.services.zeroTrust.desc` | CISA 성숙도 진단부터 IAM · SSO · PAM 중앙집중형 권한관리와 Micro Segmentation, ZTNA 목표 아키텍처까지 내부망 보안을 전환합니다. | From a CISA maturity assessment to centralised privilege management with IAM, SSO and PAM, Micro Segmentation and a ZTNA target architecture, we move internal network security to Zero Trust. | 从 CISA 成熟度诊断到基于 IAM、SSO、PAM 的集中式权限管理、Micro Segmentation 与 ZTNA 目标架构，全面转型内网安全。 | CISA成熟度診断から、IAM・SSO・PAMによる中央集中型の権限管理、Micro Segmentation、ZTNA目標アーキテクチャまで、内部ネットワークのセキュリティを転換します。 |

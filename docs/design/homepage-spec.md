@@ -467,3 +467,5 @@ Delete from both menus: Expertise, Vision, Business, Competitiveness. Keys left 
 12. Every copy-deck key in CD 8.1 and the five §3.4 keys exist in all four locales with identical key sets; the page shows no raw keys in ko/en/zh/ja.
 13. Dead CSS in §10 removed; `npm run build` succeeds; no console errors on index, a sub-page and article.html.
 14. At 375×812 (ko) the `#contact` section starts above 7,000 px (was 11,597 px).
+
+Note (Stage 7): a fifth service, Zero Trust consulting (`zero-trust.html`), joins the Services dropdown, the footer, the `services.html` card grid (the Compliance card now spans four rows) and the home Business row 1 link; copy in homepage-copy.md section 12.

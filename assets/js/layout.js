@@ -221,8 +221,8 @@ class LayoutManager {
     const isIndex = currentPath === '/' || currentPath.endsWith('/');
 
     const servicesToggle = document.querySelector('[data-dropdown-toggle]');
-    // services.html and the four service pages light the Services toggle
-    const isServicesPage = /\/(services|system-integration|maritime-cybersecurity|compliance|ai-cybersecurity-consulting)\.html$/.test(window.location.pathname);
+    // services.html and the five service pages light the Services toggle
+    const isServicesPage = /\/(services|system-integration|maritime-cybersecurity|compliance|ai-cybersecurity-consulting|zero-trust)\.html$/.test(window.location.pathname);
     // Matches on pathname only, so article.html?slug=... still highlights Insights
     const isArticlesPage = /\/(articles|article)\.html$/.test(window.location.pathname);
 
@@ -238,7 +238,7 @@ class LayoutManager {
     if (!isIndex) {
       // Sub-page: highlight the matching link (about.html → About,
       // articles.html / article.html → Insights) and, on services.html and
-      // the four service pages, the dropdown toggle
+      // the five service pages, the dropdown toggle
       const fileName = window.location.pathname.split('/').pop();
       setActive(isArticlesPage ? 'articles.html' : fileName);
       return;
