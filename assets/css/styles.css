@@ -31,10 +31,10 @@
 .mobile-link.is-active {
   color: #8ab9e6; /* ocean-300 */
 }
-.nav-link.is-active:not([role="menuitem"]) {
+.nav-link.is-active:not([data-dropdown-menu] .nav-link) {
   position: relative;
 }
-.nav-link.is-active:not([role="menuitem"])::after {
+.nav-link.is-active:not([data-dropdown-menu] .nav-link)::after {
   content: "";
   position: absolute;
   left: 0;
@@ -44,7 +44,7 @@
   background: #8ab9e6; /* ocean-300 */
   border-radius: 2px;
 }
-.nav-link[role="menuitem"].is-active {
+[data-dropdown-menu] .nav-link.is-active {
   background: #052d4c; /* ocean-900 */
 }
 

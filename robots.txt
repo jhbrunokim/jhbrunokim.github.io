@@ -5,6 +5,3 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://gmmaritime.com/sitemap.xml
-
-# Crawl-delay (optional, helps prevent server overload)
-Crawl-delay: 1

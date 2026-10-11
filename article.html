@@ -9,6 +9,17 @@
     <meta name="description" content="광명마리타임 아티클" />
     <meta name="author" content="Gwangmyung Maritime" />
 
+    <!-- Canonical + social tags (updated at runtime by articles.js once the article loads) -->
+    <meta property="og:title" content="광명마리타임 아티클" />
+    <meta property="og:description" content="광명마리타임 아티클" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="광명마리타임" />
+    <meta property="og:image" content="https://gmmaritime.com/assets/images/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="광명마리타임 아티클" />
+    <meta name="twitter:description" content="광명마리타임 아티클" />
+    <meta name="twitter:image" content="https://gmmaritime.com/assets/images/og-image.png" />
+
     <!-- Analytics (loaded via consent.js after user opt-in) -->
     <meta name="ga-id" content="G-CJMFQE9NT4" />
 
@@ -20,14 +31,21 @@
 
     <!-- Google Fonts -->
     <!-- DNS prefetch for third-party assets -->
-    <link rel="dns-prefetch" href="https://unpkg.com" />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script>
       (function () {
         var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
-        var lang = localStorage.getItem('preferredLanguage') || 'en';
+        var lang = localStorage.getItem('preferredLanguage') || (function () {
+          // Same rule as detectBrowserLanguage() in assets/js/i18n.js
+          var tags = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+          for (var i = 0; i < tags.length; i++) {
+            var primary = String(tags[i] || '').toLowerCase().split('-')[0];
+            if (primary === 'ko' || primary === 'zh' || primary === 'ja') return primary;
+          }
+          return 'en';
+        })();
         var families = ['Inter:wght@400;500;600;700', 'Space+Grotesk:wght@500;600;700'];
         if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
         var link = document.createElement('link');
@@ -41,13 +59,13 @@
     <link rel="stylesheet" href="assets/css/output.css" />
 
     <!-- Lucide Icons -->
-    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/lucide@1.53.0/dist/umd/lucide.min.js"></script>
 
     <!-- EmailJS SDK (init lives in contact.js so it runs after defer resolves) -->
-    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.12.1/dist/email.min.js"></script>
 
     <!-- Marked.js for Markdown rendering -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"></script>
   </head>
   <body
     class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden transition-colors duration-300"

@@ -124,7 +124,7 @@ class ArticlesManager {
             ` : ''}
           </div>
           <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-ocean-700 dark:group-hover:text-ocean-300 transition-colors">
-            <a href="article.html#${article.slug}" class="block">
+            <a href="article.html?slug=${article.slug}" class="block">
               <span class="absolute inset-0"></span>
               ${this.localize(article.title)}
             </a>
@@ -157,7 +157,7 @@ class ArticlesManager {
     }
 
     container.innerHTML = items.map(article => `
-      <a href="article.html#${article.slug}" class="group block bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md hover:-translate-y-0.5 transition-all">
+      <a href="article.html?slug=${article.slug}" class="group block bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md hover:-translate-y-0.5 transition-all">
         <div class="flex items-center gap-x-3 text-xs mb-3">
           <time datetime="${article.date}" class="text-slate-500 dark:text-slate-400">
             ${this.formatDate(article.date)}
@@ -185,11 +185,15 @@ class ArticlesManager {
     // Drop results of an earlier render if the language changed meanwhile
     const token = ++this.renderToken;
 
-    // Support both hash (#slug) and query param (?slug=xxx) formats
-    const slug = window.location.hash.slice(1) || new URLSearchParams(window.location.search).get('slug');
+    // Canonical form is ?slug=xxx; the hash (#slug) is read only for old shared links
+    const querySlug = new URLSearchParams(window.location.search).get('slug');
+    const slug = querySlug || window.location.hash.slice(1);
     if (!slug) {
       this.showArticleError(contentContainerId, 'noSlug', 'No article specified.');
       return null;
+    }
+    if (!querySlug) {
+      history.replaceState(null, '', 'article.html?slug=' + encodeURIComponent(slug));
     }
 
     if (!this.articles.length) await this.fetchArticleIndex();
@@ -236,8 +240,59 @@ class ArticlesManager {
     if (contentContainer && window.marked) {
       contentContainer.innerHTML = marked.parse(markdown);
     }
+    this.updateDocumentHead(meta, slug);
     document.dispatchEvent(new CustomEvent('articleRendered', { detail: { meta } }));
     return meta;
+  }
+
+  // Sync canonical, description, OG/Twitter tags and BlogPosting JSON-LD with the article
+  updateDocumentHead(meta, slug) {
+    const url = `https://gmmaritime.com/article.html?slug=${encodeURIComponent(slug)}`;
+    const title = this.localize(meta.title);
+    const description = this.localize(meta.description);
+
+    const setMeta = (attr, key, value) => {
+      let node = document.head.querySelector(`meta[${attr}="${key}"]`);
+      if (!node) {
+        node = document.createElement('meta');
+        node.setAttribute(attr, key);
+        document.head.appendChild(node);
+      }
+      node.setAttribute('content', value);
+    };
+
+    let canonical = document.head.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = url;
+
+    setMeta('name', 'description', description);
+    setMeta('property', 'og:title', title);
+    setMeta('property', 'og:description', description);
+    setMeta('property', 'og:url', url);
+    setMeta('name', 'twitter:title', title);
+    setMeta('name', 'twitter:description', description);
+
+    let script = document.getElementById('article-jsonld');
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.id = 'article-jsonld';
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: title,
+      description,
+      datePublished: meta.date,
+      inLanguage: this.lang(),
+      author: { '@type': 'Organization', name: '광명마리타임', url: 'https://gmmaritime.com' },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': url }
+    });
   }
 
   showArticleError(containerId, key, fallback) {
