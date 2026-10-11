@@ -371,3 +371,17 @@
     stroke-dashoffset: 0 !important;
   }
 }
+
+/* Home hero collage rotation (assets/js/hero-rotate.js): each frame fades
+   out, swaps its file, then fades back in. Opacity only, so no layout work. */
+.hero-rotate__img {
+  transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hero-rotate__img.is-fading {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-rotate__img {
+    transition: none;
+  }
+}
