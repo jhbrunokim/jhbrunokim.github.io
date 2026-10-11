@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>제로 트러스트 전환 컨설팅 - 광명마리타임</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="CISA 제로 트러스트 성숙도 모델 기반 진단(6개 Pillar · 45개 항목)부터 IAM · SSO · PAM 중앙집중형 권한관리와 Micro Segmentation, ZTNA 목표 아키텍처까지. 공공 · 민간 기관의 내부망 보안을 제로 트러스트 체계로 전환합니다."
+    />
+    <meta
+      name="keywords"
+      content="Zero Trust, 제로 트러스트, ZTMM, CISA, ZTNA, IAM, SSO, PAM, Micro Segmentation, 광명마리타임"
+    />
+    <meta name="author" content="Gwangmyung Maritime" />
+
+    <!-- Analytics (loaded via consent.js after user opt-in) -->
+    <meta name="ga-id" content="G-CJMFQE9NT4" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://gmmaritime.com/zero-trust.html" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="제로 트러스트 전환 컨설팅 - 광명마리타임" />
+    <meta
+      property="og:description"
+      content="CISA 제로 트러스트 성숙도 모델 기반 진단(6개 Pillar · 45개 항목)부터 IAM · SSO · PAM 중앙집중형 권한관리와 Micro Segmentation, ZTNA 목표 아키텍처까지. 공공 · 민간 기관의 내부망 보안을 제로 트러스트 체계로 전환합니다."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gmmaritime.com/zero-trust.html" />
+    <meta property="og:site_name" content="광명마리타임" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:image" content="https://gmmaritime.com/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="제로 트러스트 전환 컨설팅 - 광명마리타임" />
+    <meta
+      name="twitter:description"
+      content="CISA 제로 트러스트 성숙도 모델 기반 진단(6개 Pillar · 45개 항목)부터 IAM · SSO · PAM 중앙집중형 권한관리와 Micro Segmentation, ZTNA 목표 아키텍처까지. 공공 · 민간 기관의 내부망 보안을 제로 트러스트 체계로 전환합니다."
+    />
+    <meta name="twitter:image" content="https://gmmaritime.com/assets/images/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
+
+    <!-- Theme (must run before body renders to avoid FOUC) -->
+    <script src="assets/js/theme.js"></script>
+
+    <!-- Google Fonts -->
+    <!-- DNS prefetch for third-party assets -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>
+      (function () {
+        var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
+        var lang = localStorage.getItem('preferredLanguage') || (function () {
+          // Same rule as detectBrowserLanguage() in assets/js/i18n.js
+          var tags = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+          for (var i = 0; i < tags.length; i++) {
+            var primary = String(tags[i] || '').toLowerCase().split('-')[0];
+            if (primary === 'ko' || primary === 'zh' || primary === 'ja') return primary;
+          }
+          return 'en';
+        })();
+        var families = ['Inter:wght@400;500;600;700', 'Space+Grotesk:wght@500;600;700'];
+        if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.googleapis.com/css2?family=' + families.join('&family=') + '&display=swap';
+        document.head.appendChild(link);
+      })();
+    </script>
+
+    <!-- Tailwind CSS (Built) -->
+    <link rel="stylesheet" href="assets/css/output.css" />
+
+    <!-- Lucide Icons -->
+    <script defer src="https://cdn.jsdelivr.net/npm/lucide@1.53.0/dist/umd/lucide.min.js"></script>
+
+    <!-- EmailJS SDK (init lives in contact.js so it runs after defer resolves) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.12.1/dist/email.min.js"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Zero Trust Consulting — Gwangmyung Maritime",
+        "url": "https://gmmaritime.com/zero-trust.html",
+        "description": "CISA 제로 트러스트 성숙도 모델 기반 진단(6개 Pillar · 45개 항목)부터 IAM · SSO · PAM 중앙집중형 권한관리와 Micro Segmentation, ZTNA 목표 아키텍처까지. 공공 · 민간 기관의 내부망 보안을 제로 트러스트 체계로 전환합니다.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "url": "https://gmmaritime.com",
+          "name": "Gwangmyung Maritime"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Gwangmyung Maritime",
+          "url": "https://gmmaritime.com"
+        }
+      }
+    </script>
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden transition-colors duration-300"
+  >
+    <!-- Country/Language Detection Modal (loaded dynamically) -->
+    <div id="country-modal-placeholder"></div>
+
+    <!-- Navigation (loaded dynamically) -->
+    <div id="navbar-placeholder"></div>
+    <a id="main-content" tabindex="-1"></a>
+
+    <!-- Hero — the page's one thesis -->
+    <section class="pt-32 pb-20 bg-ocean-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <a href="services.html" class="inline-flex items-center gap-1.5 text-slate-300 hover:text-ocean-200 text-sm mb-10 transition-colors">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span data-i18n="nav.backToOverview">서비스 개요로 돌아가기</span>
+        </a>
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold text-ocean-200 mb-5" data-i18n="zeroTrust.hero.kicker">Zero Trust · 공공 · 민간 IT</p>
+          <h1 class="font-display text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.15] [word-break:keep-all] max-w-2xl" data-i18n="zeroTrust.hero.title">경계를 믿지 않습니다. 접근마다 다시 검증합니다.</h1>
+          <p class="mt-6 text-slate-300 text-lg leading-relaxed max-w-2xl" data-i18n="zeroTrust.hero.lede">경계 중심의 내부망 보안에서 벗어나 사용자 · 단말 · 접근 상황을 지속적으로 검증하고, 시스템 간 접근을 최소화하는 제로 트러스트 체계로 전환해 침해 발생 시 피해 확산을 조기에 차단합니다.</p>
+          <div class="mt-10 flex flex-wrap gap-3">
+            <a href="index.html#contact" class="inline-flex items-center gap-2 whitespace-nowrap rounded-md bg-signal-400 px-5 py-3 text-sm font-semibold text-ink-950 hover:bg-signal-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+              <span data-i18n="aiConsulting.cta.button">상담 문의하기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#assessment" class="inline-flex items-center gap-2 whitespace-nowrap rounded-md border border-ocean-300 px-5 py-3 text-sm font-semibold text-white hover:border-ocean-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+              <span data-i18n="zeroTrust.hero.ctaAssessment">진단 항목 보기</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Assessment — ZTMM maturity, capability matrix, typical current level -->
+    <section id="assessment" class="py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid gap-6 lg:grid-cols-2 lg:gap-16 lg:items-end mb-10">
+          <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight" data-i18n="zeroTrust.assessment.title">성숙도 진단</h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="zeroTrust.assessment.lead">CISA 제로 트러스트 성숙도 모델(ZTMM)을 기반으로 개발한 진단 도구로 6개 Pillar, 총 45개 항목을 평가합니다. 성숙도는 영역별로 네 단계로 판정합니다.</p>
+        </div>
+        <ol class="flex flex-wrap items-center gap-2 mb-10" data-i18n-aria-label="zeroTrust.assessment.scaleAria" aria-label="성숙도 네 단계">
+          <li class="flex items-center gap-2">
+            <span class="rounded-md px-3 py-1.5 text-sm font-semibold bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300" data-i18n="zeroTrust.assessment.level1">Traditional(기존)</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400" aria-hidden="true"></i>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="rounded-md px-3 py-1.5 text-sm font-semibold bg-ocean-100 text-ocean-900 dark:bg-ocean-900 dark:text-ocean-100" data-i18n="zeroTrust.assessment.level2">Developing(초기)</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400" aria-hidden="true"></i>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="rounded-md px-3 py-1.5 text-sm font-semibold bg-ocean-300 text-ocean-950 dark:bg-ocean-700 dark:text-white" data-i18n="zeroTrust.assessment.level3">Enhancing(향상)</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400" aria-hidden="true"></i>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="rounded-md px-3 py-1.5 text-sm font-semibold bg-ocean-800 text-white dark:bg-ocean-500 dark:text-ocean-950" data-i18n="zeroTrust.assessment.level4">Optimal(최적화)</span>
+          </li>
+        </ol>
+        <figure>
+          <figcaption class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3" data-i18n="zeroTrust.matrix.caption">Zero Trust 기술 역량</figcaption>
+          <div data-reveal="scroll" style="--steps: 6" class="grid gap-2" role="group" data-i18n-aria-label="zeroTrust.matrix.aria" aria-label="Zero Trust 기술 역량: Identity, Device, Application, Network &amp; Infrastructure, Data의 5개 Pillar별 역량과 그 아래를 받치는 Telemetry &amp; Analytics, Automation &amp; Orchestration">
+            <div data-reveal-step style="--step: 0" class="grid gap-3 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 p-4">
+              <p class="flex flex-wrap items-baseline gap-x-2"><span class="font-display text-sm font-bold tabular-nums text-ocean-700 dark:text-ocean-300">1</span><span class="font-display font-bold text-slate-900 dark:text-white">Identity</span><span class="text-sm text-slate-500 dark:text-slate-400 empty:hidden" data-i18n="zeroTrust.matrix.identityGloss">신원</span></p>
+              <ul class="flex flex-wrap gap-1.5">
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">IGA</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">MFA</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">RBAC</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Secrets Management</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Access Mgmt &amp; Identity Federation</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">PAM</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">PBAC (Risk Engine)</li>
+              </ul>
+            </div>
+            <div data-reveal-step style="--step: 1" class="grid gap-3 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 p-4">
+              <p class="flex flex-wrap items-baseline gap-x-2"><span class="font-display text-sm font-bold tabular-nums text-ocean-700 dark:text-ocean-300">2</span><span class="font-display font-bold text-slate-900 dark:text-white">Device</span><span class="text-sm text-slate-500 dark:text-slate-400 empty:hidden" data-i18n="zeroTrust.matrix.deviceGloss">단말</span></p>
+              <ul class="flex flex-wrap gap-1.5">
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Device Inventory</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">EDR</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Device Sandboxing</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Baseline Config &amp; Patch</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Device Encryption</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Device Compliance</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Device AuthN/AuthZ</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Risk-score Based Compliance</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">MDM</li>
+              </ul>
+            </div>
+            <div data-reveal-step style="--step: 2" class="grid gap-3 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 p-4">
+              <p class="flex flex-wrap items-baseline gap-x-2"><span class="font-display text-sm font-bold tabular-nums text-ocean-700 dark:text-ocean-300">3</span><span class="font-display font-bold text-slate-900 dark:text-white">Application</span><span class="text-sm text-slate-500 dark:text-slate-400 empty:hidden" data-i18n="zeroTrust.matrix.applicationGloss">애플리케이션</span></p>
+              <ul class="flex flex-wrap gap-1.5">
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">API Security</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Application Micro Segmentation</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Vulnerability Mgmt</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Patch &amp; Config Mgmt</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">WAF</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Service Mesh</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Container Security</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">CSPM</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">CASB &amp; On-prem security</li>
+              </ul>
+            </div>
+            <div data-reveal-step style="--step: 3" class="grid gap-3 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 p-4">
+              <p class="flex flex-wrap items-baseline gap-x-2"><span class="font-display text-sm font-bold tabular-nums text-ocean-700 dark:text-ocean-300">4</span><span class="font-display font-bold text-slate-900 dark:text-white">Network &amp; Infrastructure</span><span class="text-sm text-slate-500 dark:text-slate-400 empty:hidden" data-i18n="zeroTrust.matrix.networkGloss">네트워크 · 인프라</span></p>
+              <ul class="flex flex-wrap gap-1.5">
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">SD-WAN</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">NGFW</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">DDoS Protection</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Forward Proxy</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">IDS/IPS</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">RBI</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Network Segmentation</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">ZTNA</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">NAC</li>
+              </ul>
+            </div>
+            <div data-reveal-step style="--step: 4" class="grid gap-3 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 p-4">
+              <p class="flex flex-wrap items-baseline gap-x-2"><span class="font-display text-sm font-bold tabular-nums text-ocean-700 dark:text-ocean-300">5</span><span class="font-display font-bold text-slate-900 dark:text-white">Data</span><span class="text-sm text-slate-500 dark:text-slate-400 empty:hidden" data-i18n="zeroTrust.matrix.dataGloss">데이터</span></p>
+              <ul class="flex flex-wrap gap-1.5">
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Data Discovery</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">DLP</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Removable Media Encryption</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">IRM</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Data Classification</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Data Access Monitoring</li>
+                <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2 py-1 text-xs leading-tight text-slate-700 dark:text-slate-300">Masking &amp; Tokenization</li>
+              </ul>
+            </div>
+            <div data-reveal-step style="--step: 5" class="grid gap-3 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-6 rounded-lg bg-ocean-900 dark:bg-ocean-950 border border-ocean-800 p-4">
+              <p class="flex flex-wrap items-baseline gap-x-2"><span class="font-display text-sm font-bold tabular-nums text-ocean-200">6</span><span class="font-display font-bold text-white">Telemetry &amp; Analytics, Automation &amp; Orchestration</span><span class="text-sm text-slate-300 empty:hidden" data-i18n="zeroTrust.matrix.telemetryGloss">가시성 · 분석, 자동화 · 오케스트레이션</span></p>
+              <ul class="flex flex-wrap gap-1.5 md:self-center">
+                <li class="rounded border border-ocean-700 bg-ocean-800 px-2 py-1 text-xs leading-tight text-white">SOAR</li>
+                <li class="rounded border border-ocean-700 bg-ocean-800 px-2 py-1 text-xs leading-tight text-white">UEBA</li>
+                <li class="rounded border border-ocean-700 bg-ocean-800 px-2 py-1 text-xs leading-tight text-white">SIEM</li>
+                <li class="rounded border border-ocean-700 bg-ocean-800 px-2 py-1 text-xs leading-tight text-white">Threat Intelligence</li>
+              </ul>
+            </div>
+          </div>
+        </figure>
+
+        <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white mt-16 mb-4" data-i18n="zeroTrust.current.title">전형적인 기업의 현재 수준</h3>
+        <dl class="divide-y divide-slate-200 dark:divide-slate-700 border-y border-slate-200 dark:border-slate-700">
+          <div class="grid gap-1 md:gap-6 md:grid-cols-[13rem_minmax(0,1fr)] py-4">
+            <dt class="font-display font-bold text-slate-900 dark:text-white">Identity</dt>
+            <dd class="text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="zeroTrust.current.identity">신원 · 권한 통합관리 체계 부재, IDC와 클라우드 간 인증체계 이원화</dd>
+          </div>
+          <div class="grid gap-1 md:gap-6 md:grid-cols-[13rem_minmax(0,1fr)] py-4">
+            <dt class="font-display font-bold text-slate-900 dark:text-white">Device</dt>
+            <dd class="text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="zeroTrust.current.device">단말 보안 상태가 접근 결정에 반영되지 않음, 신규 자산 발견 · 인벤토리 자동화 미흡</dd>
+          </div>
+          <div class="grid gap-1 md:gap-6 md:grid-cols-[13rem_minmax(0,1fr)] py-4">
+            <dt class="font-display font-bold text-slate-900 dark:text-white">Application</dt>
+            <dd class="text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="zeroTrust.current.application">최초 인증 이후 지속 승인 · 재검증 미흡, 오픈소스 취약점 · 라이선스 관리 미흡</dd>
+          </div>
+          <div class="grid gap-1 md:gap-6 md:grid-cols-[13rem_minmax(0,1fr)] py-4">
+            <dt class="font-display font-bold text-slate-900 dark:text-white">Network</dt>
+            <dd class="text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="zeroTrust.current.network">경계성 보안 중심, 방화벽 정책 변경 · 검증 자동화 미흡</dd>
+          </div>
+          <div class="grid gap-1 md:gap-6 md:grid-cols-[13rem_minmax(0,1fr)] py-4">
+            <dt class="font-display font-bold text-slate-900 dark:text-white">Data</dt>
+            <dd class="text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="zeroTrust.current.data">중요정보 보안 분류체계 미약</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Approach — premises, a financial-sector case, success factors -->
+    <section id="approach" class="py-24 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight mb-10" data-i18n="zeroTrust.approach.title">전환 접근 방법</h2>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="rounded-lg bg-ocean-900 dark:bg-ocean-950 border border-ocean-800 p-6">
+            <p class="text-sm font-semibold text-ocean-200" data-i18n="zeroTrust.approach.premiseLabel">대전제</p>
+            <p class="mt-2 font-display text-xl font-bold leading-snug text-white" data-i18n="zeroTrust.approach.premise">IAM · SSO · PAM을 통한 중앙집중형 권한관리 체계 확립</p>
+          </div>
+          <div class="rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-6">
+            <p class="text-sm font-semibold text-ocean-700 dark:text-ocean-300" data-i18n="zeroTrust.approach.additionLabel">추가 사항</p>
+            <p class="mt-2 font-display text-xl font-bold leading-snug text-slate-900 dark:text-white" data-i18n="zeroTrust.approach.addition">Micro Segmentation 등 시스템 · 워크로드 · 프로세스 세분화를 구현하는 특화 솔루션 도입 · 정착</p>
+          </div>
+        </div>
+
+        <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white mt-16" data-i18n="zeroTrust.approach.caseTitle">국내 금융사 적용 사례 분석</h3>
+        <p class="mt-3 max-w-3xl text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="zeroTrust.approach.caseSummary">기존 IAM · SSO · PAM 기반 중앙집중형 권한관리 체계에 Micro Segmentation을 결합해, 사용자 인증 · 권한 통제를 실제 운영 시스템 · 워크로드 · 프로세스 간 통신 통제로 확장한 사례입니다.</p>
+        <div class="mt-6 hidden lg:grid lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-8 pb-2 text-xs font-semibold text-slate-500 dark:text-slate-400" aria-hidden="true">
+          <p class="pl-8" data-i18n="zeroTrust.approach.taskLabel">과제</p>
+          <p data-i18n="zeroTrust.approach.detailLabel">내용</p>
+          <p class="pl-6" data-i18n="zeroTrust.approach.noteLabel">고려사항</p>
+        </div>
+        <ol class="mt-4 lg:mt-0 divide-y divide-slate-200 dark:divide-slate-700 border-y border-slate-200 dark:border-slate-700">
+          <li class="grid gap-2 py-5 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-8">
+            <p class="flex items-baseline gap-3 font-bold text-slate-900 dark:text-white"><span class="font-display text-sm tabular-nums text-ocean-700 dark:text-ocean-300">01</span><span data-i18n="zeroTrust.approach.task1Title">내부통신 가시성 확보</span></p>
+            <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.approach.task1Detail">서버 · 클라우드 워크로드 · 사용자 단말에 에이전트를 적용해 실제 통신 흐름 수집, 서버 간 연결과 애플리케이션 · 프로세스 단위 통신 및 미등록 자산 식별</p>
+            <div class="text-sm leading-relaxed text-slate-600 dark:text-slate-400 lg:border-l lg:border-slate-200 lg:dark:border-slate-700 lg:pl-6">
+              <p class="lg:hidden text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1" data-i18n="zeroTrust.approach.noteLabel">고려사항</p>
+              <p data-i18n="zeroTrust.approach.task1Note">도입 초기 차단 정책 적용 시 업무 중단 가능성을 줄이기 위해 통신 흐름 분석에 충분한 공수 투입</p>
+            </div>
+          </li>
+          <li class="grid gap-2 py-5 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-8">
+            <p class="flex items-baseline gap-3 font-bold text-slate-900 dark:text-white"><span class="font-display text-sm tabular-nums text-ocean-700 dark:text-ocean-300">02</span><span data-i18n="zeroTrust.approach.task2Title">업무 기반의 논리적 그룹화</span></p>
+            <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.approach.task2Detail">부서 · 업무 · 애플리케이션 · OS · 서버 역할 · 중요도 등 속성을 라벨로 정의, 복잡한 IP · 네트워크 구조를 업무 의미 중심의 논리 그룹으로 분류</p>
+            <div class="text-sm leading-relaxed text-slate-600 dark:text-slate-400 lg:border-l lg:border-slate-200 lg:dark:border-slate-700 lg:pl-6">
+              <p class="lg:hidden text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1" data-i18n="zeroTrust.approach.noteLabel">고려사항</p>
+              <p data-i18n="zeroTrust.approach.task2Note">라벨 부착 시 업무정보 · 자산관리 정보와 교차 대조해 정합성 확인</p>
+            </div>
+          </li>
+          <li class="grid gap-2 py-5 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-8">
+            <p class="flex items-baseline gap-3 font-bold text-slate-900 dark:text-white"><span class="font-display text-sm tabular-nums text-ocean-700 dark:text-ocean-300">03</span><span data-i18n="zeroTrust.approach.task3Title">중앙 권한 정보와 통신정책 연계</span></p>
+            <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.approach.task3Detail">기존 사용자 · 로그인 ID · 역할 · 특권정보 활용, 사용자별 접근 가능 URL · IP · 대상 시스템을 ACL로 구성, 중앙 권한관리를 Micro Segmentation 정책에 실시간 반영</p>
+            <div class="text-sm leading-relaxed text-slate-600 dark:text-slate-400 lg:border-l lg:border-slate-200 lg:dark:border-slate-700 lg:pl-6">
+              <p class="lg:hidden text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1" data-i18n="zeroTrust.approach.noteLabel">고려사항</p>
+              <p data-i18n="zeroTrust.approach.task3Note">입사 · 이동 · 퇴사 · 직무변경이 IAM 권한 변경과 ACL에 신속히 반영되도록 연계 관리</p>
+            </div>
+          </li>
+          <li class="grid gap-2 py-5 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-8">
+            <p class="flex items-baseline gap-3 font-bold text-slate-900 dark:text-white"><span class="font-display text-sm tabular-nums text-ocean-700 dark:text-ocean-300">04</span><span data-i18n="zeroTrust.approach.task4Title">워크로드 · 프로세스 단위 최소권한 통제</span></p>
+            <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.approach.task4Detail">서버 · 애플리케이션 · 워크로드 · 프로세스 간 필요 통신만 허용, 관리자 접근도 지정 단말 · 접근경로 · 대상 서버 · 포트 · 프로세스로 세분화, 외부 침입자와 내부 비인가 접근 · 인접 시스템 횡적 이동 차단</p>
+            <div class="text-sm leading-relaxed text-slate-600 dark:text-slate-400 lg:border-l lg:border-slate-200 lg:dark:border-slate-700 lg:pl-6">
+              <p class="lg:hidden text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1" data-i18n="zeroTrust.approach.noteLabel">고려사항</p>
+              <p data-i18n="zeroTrust.approach.task4Note">중요 업무 · 관리자 접근은 승인 · 예외 · 만료 기한 등에 대한 통제된 정책으로 관리</p>
+            </div>
+          </li>
+          <li class="grid gap-2 py-5 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-8">
+            <p class="flex items-baseline gap-3 font-bold text-slate-900 dark:text-white"><span class="font-display text-sm tabular-nums text-ocean-700 dark:text-ocean-300">05</span><span data-i18n="zeroTrust.approach.task5Title">단계적 정책 적용 및 운영 고도화</span></p>
+            <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.approach.task5Detail">라벨 · 정책 템플릿 · 자동 정책 추천으로 운영 복잡도 완화, 향후 AI 기반 정책관리 및 탐지 · 대응 자동화 확장 기반 마련</p>
+            <div class="text-sm leading-relaxed text-slate-600 dark:text-slate-400 lg:border-l lg:border-slate-200 lg:dark:border-slate-700 lg:pl-6">
+              <p class="lg:hidden text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1" data-i18n="zeroTrust.approach.noteLabel">고려사항</p>
+              <p data-i18n="zeroTrust.approach.task5Note">정책 위반 · 횡적 이동 · 비인가 접근 이벤트를 SIEM으로 수집하고 반복 대응은 SOAR 플레이북과 연계</p>
+            </div>
+          </li>
+        </ol>
+        <p class="mt-8 text-sm font-semibold text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.approach.effectsLabel">적용 효과</p>
+        <ul class="mt-3 flex flex-wrap gap-2">
+            <li class="inline-flex items-center gap-2 rounded-full border border-ocean-200 dark:border-ocean-700 bg-ocean-50 dark:bg-ocean-950/40 px-3 py-1.5 text-sm text-ocean-900 dark:text-ocean-100"><i data-lucide="check" class="w-4 h-4 shrink-0 text-ocean-600 dark:text-ocean-300"></i><span data-i18n="zeroTrust.approach.effect1">내부 통신 · 미등록 자산 가시성 확보</span></li>
+            <li class="inline-flex items-center gap-2 rounded-full border border-ocean-200 dark:border-ocean-700 bg-ocean-50 dark:bg-ocean-950/40 px-3 py-1.5 text-sm text-ocean-900 dark:text-ocean-100"><i data-lucide="check" class="w-4 h-4 shrink-0 text-ocean-600 dark:text-ocean-300"></i><span data-i18n="zeroTrust.approach.effect2">IAM · PAM 권한의 실제 통신정책 집행</span></li>
+            <li class="inline-flex items-center gap-2 rounded-full border border-ocean-200 dark:border-ocean-700 bg-ocean-50 dark:bg-ocean-950/40 px-3 py-1.5 text-sm text-ocean-900 dark:text-ocean-100"><i data-lucide="check" class="w-4 h-4 shrink-0 text-ocean-600 dark:text-ocean-300"></i><span data-i18n="zeroTrust.approach.effect3">워크로드 · 프로세스 단위 최소권한 구현</span></li>
+            <li class="inline-flex items-center gap-2 rounded-full border border-ocean-200 dark:border-ocean-700 bg-ocean-50 dark:bg-ocean-950/40 px-3 py-1.5 text-sm text-ocean-900 dark:text-ocean-100"><i data-lucide="check" class="w-4 h-4 shrink-0 text-ocean-600 dark:text-ocean-300"></i><span data-i18n="zeroTrust.approach.effect4">침해 시 횡적 이동 · 영향범위 최소화</span></li>
+            <li class="inline-flex items-center gap-2 rounded-full border border-ocean-200 dark:border-ocean-700 bg-ocean-50 dark:bg-ocean-950/40 px-3 py-1.5 text-sm text-ocean-900 dark:text-ocean-100"><i data-lucide="check" class="w-4 h-4 shrink-0 text-ocean-600 dark:text-ocean-300"></i><span data-i18n="zeroTrust.approach.effect5">온프레미스 · 클라우드 통합 ZTA 기반 확보</span></li>
+        </ul>
+
+        <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white mt-16" data-i18n="zeroTrust.success.title">성공 요인과 시사점</h3>
+        <ol class="mt-2 divide-y divide-slate-200 dark:divide-slate-700">
+          <li class="py-6">
+            <p class="flex items-baseline gap-3 font-bold text-slate-900 dark:text-white"><span class="font-display text-sm tabular-nums text-ocean-700 dark:text-ocean-300">01</span><span data-i18n="zeroTrust.success.s1Title">기존 통제방안 활용 및 연계</span></p>
+            <div class="mt-3 grid gap-3 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-6 lg:items-start">
+              <div class="rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-4">
+                <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1" data-i18n="zeroTrust.success.factorLabel">성공 요인</p>
+                <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.success.s1Factor">기존 IAM · SSO · PAM 정보를 공통 정책 기준으로 활용해 워크로드 접근통제로 확장</p>
+              </div>
+              <i data-lucide="arrow-right" class="hidden lg:block w-5 h-5 mt-5 text-slate-400" aria-hidden="true"></i>
+              <div class="rounded-md bg-ocean-50 dark:bg-ocean-950/40 border border-ocean-200 dark:border-ocean-800 p-4">
+                <p class="text-xs font-semibold text-ocean-700 dark:text-ocean-300 mb-1" data-i18n="zeroTrust.success.implicationLabel">시사점</p>
+                <p class="text-sm leading-relaxed text-slate-800 dark:text-slate-200" data-i18n="zeroTrust.success.s1Implication">Micro Segmentation 도입 시 기존 Identity 정보 · Risk 정보를 공유하는 통합 정책 구조로 설계하는 Zero Trust 설계 지향</p>
+              </div>
+            </div>
+          </li>
+          <li class="py-6">
+            <p class="flex items-baseline gap-3 font-bold text-slate-900 dark:text-white"><span class="font-display text-sm tabular-nums text-ocean-700 dark:text-ocean-300">02</span><span data-i18n="zeroTrust.success.s2Title">내부 가시성 우선 접근</span></p>
+            <div class="mt-3 grid gap-3 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-6 lg:items-start">
+              <div class="rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-4">
+                <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1" data-i18n="zeroTrust.success.factorLabel">성공 요인</p>
+                <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.success.s2Factor">실제 통신과 애플리케이션 의존관계 우선 파악, 정책 적용 전 시뮬레이션으로 업무 영향과 예외 통신 확인</p>
+              </div>
+              <i data-lucide="arrow-right" class="hidden lg:block w-5 h-5 mt-5 text-slate-400" aria-hidden="true"></i>
+              <div class="rounded-md bg-ocean-50 dark:bg-ocean-950/40 border border-ocean-200 dark:border-ocean-800 p-4">
+                <p class="text-xs font-semibold text-ocean-700 dark:text-ocean-300 mb-1" data-i18n="zeroTrust.success.implicationLabel">시사점</p>
+                <p class="text-sm leading-relaxed text-slate-800 dark:text-slate-200" data-i18n="zeroTrust.success.s2Implication">전사 일괄 적용을 지양하고 침해 영향도가 높은 업무부터 보호구역을 정의해 단계적으로 확장</p>
+              </div>
+            </div>
+          </li>
+          <li class="py-6">
+            <p class="flex items-baseline gap-3 font-bold text-slate-900 dark:text-white"><span class="font-display text-sm tabular-nums text-ocean-700 dark:text-ocean-300">03</span><span data-i18n="zeroTrust.success.s3Title">유의미한 업무 기반 정책관리</span></p>
+            <div class="mt-3 grid gap-3 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-6 lg:items-start">
+              <div class="rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-4">
+                <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1" data-i18n="zeroTrust.success.factorLabel">성공 요인</p>
+                <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.success.s3Factor">IP · 포트 중심의 정적 ACL을 업무 · 애플리케이션 · 역할 · 프로세스 중심으로 전환</p>
+              </div>
+              <i data-lucide="arrow-right" class="hidden lg:block w-5 h-5 mt-5 text-slate-400" aria-hidden="true"></i>
+              <div class="rounded-md bg-ocean-50 dark:bg-ocean-950/40 border border-ocean-200 dark:border-ocean-800 p-4">
+                <p class="text-xs font-semibold text-ocean-700 dark:text-ocean-300 mb-1" data-i18n="zeroTrust.success.implicationLabel">시사점</p>
+                <p class="text-sm leading-relaxed text-slate-800 dark:text-slate-200" data-i18n="zeroTrust.success.s3Implication">업무 · 보안 · 인프라 조직이 공동으로 라벨링 · 허용통신 정책을 확정하고, 예외 관련 만료 · 재승인 정책 합의</p>
+              </div>
+            </div>
+          </li>
+          <li class="py-6">
+            <p class="flex items-baseline gap-3 font-bold text-slate-900 dark:text-white"><span class="font-display text-sm tabular-nums text-ocean-700 dark:text-ocean-300">04</span><span data-i18n="zeroTrust.success.s4Title">정책 결정과 집행의 연계</span></p>
+            <div class="mt-3 grid gap-3 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-6 lg:items-start">
+              <div class="rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-4">
+                <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1" data-i18n="zeroTrust.success.factorLabel">성공 요인</p>
+                <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.success.s4Factor">IAM · PAM은 누가 어떤 권한을 갖는지 결정하고, 솔루션은 그 권한이 어떤 워크로드 · 프로세스까지 적용되는지 연결</p>
+              </div>
+              <i data-lucide="arrow-right" class="hidden lg:block w-5 h-5 mt-5 text-slate-400" aria-hidden="true"></i>
+              <div class="rounded-md bg-ocean-50 dark:bg-ocean-950/40 border border-ocean-200 dark:border-ocean-800 p-4">
+                <p class="text-xs font-semibold text-ocean-700 dark:text-ocean-300 mb-1" data-i18n="zeroTrust.success.implicationLabel">시사점</p>
+                <p class="text-sm leading-relaxed text-slate-800 dark:text-slate-200" data-i18n="zeroTrust.success.s4Implication">통신정책 위반을 탐지 · 대응 체계와 연결(정책 위반 이벤트는 SIEM에서 통합, 고위험 시나리오는 SOAR에서 자동 격리 · 차단 · 조사)</p>
+              </div>
+            </div>
+          </li>
+          <li class="py-6">
+            <p class="flex items-baseline gap-3 font-bold text-slate-900 dark:text-white"><span class="font-display text-sm tabular-nums text-ocean-700 dark:text-ocean-300">05</span><span data-i18n="zeroTrust.success.s5Title">솔루션 도입 우선 목표를 침해 확산 억제에 설정</span></p>
+            <div class="mt-3 grid gap-3 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-6 lg:items-start">
+              <div class="rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-4">
+                <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1" data-i18n="zeroTrust.success.factorLabel">성공 요인</p>
+                <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.success.s5Factor">완전한 예방보다 침해 이후 인접 시스템으로의 확산 통제에 집중, 위협 상황에서도 중요업무 보호구역 유지</p>
+              </div>
+              <i data-lucide="arrow-right" class="hidden lg:block w-5 h-5 mt-5 text-slate-400" aria-hidden="true"></i>
+              <div class="rounded-md bg-ocean-50 dark:bg-ocean-950/40 border border-ocean-200 dark:border-ocean-800 p-4">
+                <p class="text-xs font-semibold text-ocean-700 dark:text-ocean-300 mb-1" data-i18n="zeroTrust.success.implicationLabel">시사점</p>
+                <p class="text-sm leading-relaxed text-slate-800 dark:text-slate-200" data-i18n="zeroTrust.success.s5Implication">도입 효과 측정을 정책 수립 건수가 아닌 위험 감소 기준(예: 불필요 통신경로 제거율)으로 책정</p>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Target architecture — ZTNA access control -->
+    <section id="architecture" class="py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid gap-6 lg:grid-cols-2 lg:gap-16 lg:items-end mb-12">
+          <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight" data-i18n="zeroTrust.architecture.title">목표 아키텍처: ZTNA 접근통제 구성</h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="zeroTrust.architecture.lead">경계 중심의 내부망 보안에서 벗어나 사용자 · 단말 · 접근 상황을 지속 검증하고, 시스템 간 접근을 최소화하는 체계로 전환합니다.</p>
+        </div>
+        <div data-reveal="scroll" style="--steps: 5" class="grid gap-3 lg:grid-cols-[minmax(0,0.8fr)_auto_minmax(0,1.2fr)_auto_minmax(0,1.2fr)_auto_minmax(0,0.8fr)] lg:gap-x-4 lg:gap-y-2 lg:items-start" role="group" data-i18n-aria-label="zeroTrust.architecture.aria" aria-label="ZTNA 접근통제 구성: End-Point의 접근 요청은 PDP 정책 결정과 PEP 정책 집행을 거쳐 Resource에 닿고, PDP는 신원기반 위험평가를 입력으로 받습니다.">
+            <div data-reveal-step style="--step: 0" class="lg:col-start-1 lg:row-start-1 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 p-4">
+              <p class="font-display font-bold text-slate-900 dark:text-white">End-Point</p>
+              <ul class="mt-3 grid gap-1.5">
+                  <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-sm leading-snug text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.architecture.endpointUser">사용자</li>
+                  <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-sm leading-snug text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.architecture.endpointAdmin">관리자</li>
+                  <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-sm leading-snug text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.architecture.endpointDevice">디바이스</li>
+              </ul>
+            </div>
+            <div data-reveal-step style="--step: 1" class="flex justify-center lg:col-start-2 lg:row-start-1 lg:pt-16" aria-hidden="true">
+              <i data-lucide="arrow-right" class="w-5 h-5 rotate-90 lg:rotate-0 text-slate-400"></i>
+            </div>
+            <div data-reveal-step style="--step: 1" class="lg:col-start-3 lg:row-start-1 rounded-lg bg-ocean-900 dark:bg-ocean-950 border border-ocean-800 p-4">
+              <p class="font-display font-bold text-white">PDP <span class="ml-1 text-sm font-semibold text-ocean-200" data-i18n="zeroTrust.architecture.pdpLabel">정책 결정</span></p>
+              <ul class="mt-3 grid gap-1.5">
+                  <li class="rounded border border-ocean-700 bg-ocean-800 px-2.5 py-1.5 text-sm leading-snug text-white" data-i18n="zeroTrust.architecture.pdp1">정책 관리 · 평가</li>
+                  <li class="rounded border border-ocean-700 bg-ocean-800 px-2.5 py-1.5 text-sm leading-snug text-white" data-i18n="zeroTrust.architecture.pdp2">접근요청 정책 분석</li>
+                  <li class="rounded border border-ocean-700 bg-ocean-800 px-2.5 py-1.5 text-sm leading-snug text-white" data-i18n="zeroTrust.architecture.pdp3">사용자 신원검증</li>
+                  <li class="rounded border border-ocean-700 bg-ocean-800 px-2.5 py-1.5 text-sm leading-snug text-white" data-i18n="zeroTrust.architecture.pdp4">기기 신원검증</li>
+                  <li class="rounded border border-ocean-700 bg-ocean-800 px-2.5 py-1.5 text-sm leading-snug text-white" data-i18n="zeroTrust.architecture.pdp5">감사 · 기록 관리</li>
+                  <li class="rounded border border-ocean-700 bg-ocean-800 px-2.5 py-1.5 text-sm leading-snug text-white" data-i18n="zeroTrust.architecture.pdp6">실시간 모니터링</li>
+              </ul>
+            </div>
+            <div data-reveal-step style="--step: 4" class="lg:col-start-3 lg:row-start-2 flex flex-col items-center gap-1">
+              <i data-lucide="arrow-up" class="w-5 h-5 text-slate-400" aria-hidden="true"></i>
+              <p class="w-full rounded-lg border border-dashed border-ocean-500 dark:border-ocean-400 bg-ocean-50 dark:bg-ocean-950/40 px-3 py-2 text-center text-sm font-semibold text-ocean-900 dark:text-ocean-100" data-i18n="zeroTrust.architecture.riskFeed">신원기반 위험평가</p>
+            </div>
+            <div data-reveal-step style="--step: 2" class="flex justify-center lg:col-start-4 lg:row-start-1 lg:pt-16" aria-hidden="true">
+              <i data-lucide="arrow-right" class="w-5 h-5 rotate-90 lg:rotate-0 text-slate-400"></i>
+            </div>
+            <div data-reveal-step style="--step: 2" class="lg:col-start-5 lg:row-start-1 rounded-lg border border-ocean-300 dark:border-ocean-700 bg-ocean-50 dark:bg-ocean-950/40 p-4">
+              <p class="font-display font-bold text-slate-900 dark:text-white">PEP <span class="ml-1 text-sm font-semibold text-ocean-700 dark:text-ocean-300" data-i18n="zeroTrust.architecture.pepLabel">정책 집행</span></p>
+              <ul class="mt-3 grid grid-cols-2 gap-1.5">
+                  <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-sm leading-snug text-slate-700 dark:text-slate-300">MFA</li>
+                  <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-sm leading-snug text-slate-700 dark:text-slate-300">SSO</li>
+                  <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-sm leading-snug text-slate-700 dark:text-slate-300">EDR</li>
+                  <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-sm leading-snug text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.architecture.pepDb">DB 접근제어</li>
+                  <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-sm leading-snug text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.architecture.pepUnified">통합접근제어</li>
+                  <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-sm leading-snug text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.architecture.pepCloud">Cloud 접근제어</li>
+                  <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-sm leading-snug text-slate-700 dark:text-slate-300">&hellip;</li>
+              </ul>
+            </div>
+            <div data-reveal-step style="--step: 3" class="flex justify-center lg:col-start-6 lg:row-start-1 lg:pt-16" aria-hidden="true">
+              <i data-lucide="arrow-right" class="w-5 h-5 rotate-90 lg:rotate-0 text-slate-400"></i>
+            </div>
+            <div data-reveal-step style="--step: 3" class="lg:col-start-7 lg:row-start-1 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 p-4">
+              <p class="font-display font-bold text-slate-900 dark:text-white">Resource</p>
+              <ul class="mt-3 grid gap-1.5">
+                  <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-sm leading-snug text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.architecture.resourceProd">운영망</li>
+                  <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-sm leading-snug text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.architecture.resourceDev">개발망</li>
+                  <li class="rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-sm leading-snug text-slate-700 dark:text-slate-300" data-i18n="zeroTrust.architecture.resourceCloud">클라우드(AWS)</li>
+              </ul>
+            </div>
+        </div>
+
+        <div class="mt-16 grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="zeroTrust.architecture.premiseTitle">아키텍처 운영 대전제</h3>
+            <ul class="mt-4 space-y-3">
+              <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2.5 rounded-full bg-ocean-500" aria-hidden="true"></span><span class="text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="zeroTrust.architecture.premise1">위치와 네트워크를 신뢰하지 않고 모든 접근을 지속 검증</span></li>
+              <li class="flex gap-3"><span class="shrink-0 w-1.5 h-1.5 mt-2.5 rounded-full bg-ocean-500" aria-hidden="true"></span><span class="text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="zeroTrust.architecture.premise2">접근 허용 후에도 위험 변화를 감지해 권한을 지속 재평가</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="zeroTrust.architecture.rolesTitle">구성 요소별 역할</h3>
+            <dl class="mt-2 divide-y divide-slate-200 dark:divide-slate-700">
+            <div class="grid grid-cols-[2rem_minmax(0,1fr)] sm:grid-cols-[2rem_7rem_minmax(0,1fr)] gap-x-3 gap-y-1 py-4">
+              <dt class="font-display text-sm font-bold tabular-nums text-ocean-700 dark:text-ocean-300 pt-0.5">1</dt>
+              <dt class="font-display font-bold text-slate-900 dark:text-white">End-Point</dt>
+              <dd class="col-start-2 sm:col-start-3 text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="zeroTrust.architecture.role1">사용자 · 관리자 · 단말 등 모든 접근 주체 식별</dd>
+            </div>
+            <div class="grid grid-cols-[2rem_minmax(0,1fr)] sm:grid-cols-[2rem_7rem_minmax(0,1fr)] gap-x-3 gap-y-1 py-4">
+              <dt class="font-display text-sm font-bold tabular-nums text-ocean-700 dark:text-ocean-300 pt-0.5">2</dt>
+              <dt class="font-display font-bold text-slate-900 dark:text-white">PDP</dt>
+              <dd class="col-start-2 sm:col-start-3 text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="zeroTrust.architecture.role2">신원 · 단말 · 접근 상황의 위험도 기반 허용 여부 결정</dd>
+            </div>
+            <div class="grid grid-cols-[2rem_minmax(0,1fr)] sm:grid-cols-[2rem_7rem_minmax(0,1fr)] gap-x-3 gap-y-1 py-4">
+              <dt class="font-display text-sm font-bold tabular-nums text-ocean-700 dark:text-ocean-300 pt-0.5">3</dt>
+              <dt class="font-display font-bold text-slate-900 dark:text-white">PEP</dt>
+              <dd class="col-start-2 sm:col-start-3 text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="zeroTrust.architecture.role3">정책에서 결정된 최소 접근권한 기반의 접근 허용</dd>
+            </div>
+            <div class="grid grid-cols-[2rem_minmax(0,1fr)] sm:grid-cols-[2rem_7rem_minmax(0,1fr)] gap-x-3 gap-y-1 py-4">
+              <dt class="font-display text-sm font-bold tabular-nums text-ocean-700 dark:text-ocean-300 pt-0.5">4</dt>
+              <dt class="font-display font-bold text-slate-900 dark:text-white">Resource</dt>
+              <dd class="col-start-2 sm:col-start-3 text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="zeroTrust.architecture.role4">IDC 서버팜 · 개발망 · 클라우드 망 등 중요자원 통합 보호</dd>
+            </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience — members' prior projects, not the company's -->
+    <section id="experience" class="py-24 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight" data-i18n="zeroTrust.experience.title">수행 경험</h2>
+        <!-- [OWNER] confirm the wording of this disclaimer -->
+        <p class="mt-6 max-w-3xl border-l-2 border-ocean-500 pl-4 text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="zeroTrust.experience.disclaimer">아래 실적은 광명마리타임이 직접 수행한 것이 아니라, 광명마리타임 구성원이 이전 소속에서 수행한 프로젝트입니다.</p>
+        <ul class="mt-8 divide-y divide-slate-200 dark:divide-slate-700 border-y border-slate-200 dark:border-slate-700">
+          <li class="grid gap-1 py-5 md:grid-cols-[minmax(0,1fr)_minmax(0,16rem)] md:gap-8">
+            <p class="font-semibold text-slate-900 dark:text-white leading-relaxed" data-i18n="zeroTrust.experience.item1">영호남 지역 대표은행 차세대 정보보안 아키텍처 수립</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 md:pt-0.5" data-i18n="zeroTrust.experience.result">제로 트러스트 추진방안 제시</p>
+          </li>
+          <li class="grid gap-1 py-5 md:grid-cols-[minmax(0,1fr)_minmax(0,16rem)] md:gap-8">
+            <p class="font-semibold text-slate-900 dark:text-white leading-relaxed" data-i18n="zeroTrust.experience.item2">서울 소재 중대형 공금융 기관 정보보호 선진화 전략계획 수립</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 md:pt-0.5" data-i18n="zeroTrust.experience.result">제로 트러스트 추진방안 제시</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA — statement left, actions right -->
+    <section class="py-16 bg-ocean-950">
+      <div class="max-w-7xl mx-auto px-6 grid gap-8 lg:grid-cols-2 lg:gap-16 lg:items-center">
+        <div>
+          <h2 class="font-display text-2xl md:text-3xl font-bold tracking-tight text-white" data-i18n="zeroTrust.cta.title">내부망 보안을 제로 트러스트로 전환하려 하시나요?</h2>
+          <p class="mt-4 text-slate-400 leading-relaxed" data-i18n="zeroTrust.cta.desc">현재 수준 진단부터 목표 아키텍처와 단계별 전환 계획까지 함께 설계합니다.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 lg:justify-end">
+          <a href="index.html#contact" class="inline-flex items-center gap-2 whitespace-nowrap rounded-md bg-signal-400 px-5 py-3 text-sm font-semibold text-ink-950 hover:bg-signal-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+            <span data-i18n="aiConsulting.cta.button">상담 문의하기</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer (loaded dynamically) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/diagram-reveal.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/country-detector.js"></script>
+    <script src="assets/js/consent.js"></script>
+  </body>
+</html>
