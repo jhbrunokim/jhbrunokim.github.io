@@ -130,8 +130,8 @@ class LayoutManager {
     // Old homepage deep links now live on other pages
     if (/(^|\/)(index\.html)?$/.test(window.location.pathname)) {
       const moved = {
-        '#services': 'services.html#services',
-        '#why': 'services.html#why',
+        '#services': 'maritime.html#services',
+        '#why': 'maritime.html#why',
         '#about': 'about.html#journey',
         '#journey': 'about.html#journey',
         '#articles': 'articles.html'
@@ -221,8 +221,8 @@ class LayoutManager {
     const isIndex = currentPath === '/' || currentPath.endsWith('/');
 
     const servicesToggle = document.querySelector('[data-dropdown-toggle]');
-    // services.html and the five service pages light the Services toggle
-    const isServicesPage = /\/(services|system-integration|maritime-cybersecurity|compliance|ai-cybersecurity-consulting|zero-trust)\.html$/.test(window.location.pathname);
+    // The services hub, the maritime field page and the five service pages light the Services toggle
+    const isServicesPage = /\/(services|maritime|system-integration|maritime-cybersecurity|compliance|ai-cybersecurity-consulting|zero-trust)\.html$/.test(window.location.pathname);
     // Matches on pathname only, so article.html?slug=... still highlights Insights
     const isArticlesPage = /\/(articles|article)\.html$/.test(window.location.pathname);
 
@@ -233,12 +233,14 @@ class LayoutManager {
         l.classList.toggle('is-active', match);
       });
       if (servicesToggle) servicesToggle.classList.toggle('is-active', isServicesPage);
+      // The mobile menu's Services link stands in for the toggle there
+      if (isServicesPage) document.querySelector('#mobile-menu .mobile-link[href="services.html"]')?.classList.add('is-active');
     };
 
     if (!isIndex) {
       // Sub-page: highlight the matching link (about.html → About,
-      // articles.html / article.html → Insights) and, on services.html and
-      // the five service pages, the dropdown toggle
+      // articles.html / article.html → Insights) and, on services.html,
+      // maritime.html and the five service pages, the dropdown toggle
       const fileName = window.location.pathname.split('/').pop();
       setActive(isArticlesPage ? 'articles.html' : fileName);
       return;
