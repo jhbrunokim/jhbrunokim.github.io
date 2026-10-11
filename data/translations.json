@@ -572,6 +572,19 @@
         "desc": "현재 수준 진단부터 목표 아키텍처와 단계별 전환 계획까지 함께 설계합니다."
       }
     },
+    "hub": {
+      "title": "선박과 기업, 두 분야의 보안을 설계합니다.",
+      "lede": "조선 · 해양 산업에서는 IACS UR E26 / E27 대응을 중심으로, 공공 · 민간 기관에서는 제로 트러스트 전환을 중심으로 보안 구조를 설계하고 운영합니다.",
+      "maritime": {
+        "title": "선박 사이버 보안",
+        "desc": "설계부터 선급 검사까지 한 팀이 이어서 맡습니다. IACS UR E26 / E27 대응이 중심입니다."
+      },
+      "enterprise": {
+        "title": "기업 보안 컨설팅",
+        "desc": "공공 · 민간 기관의 내부망 보안을 제로 트러스트 체계로 전환합니다. 진단부터 목표 아키텍처까지 함께 설계합니다."
+      },
+      "viewField": "분야 개요 보기"
+    },
     "articleCta": {
       "title": "이 글의 내용, 귀사 선박에 어떻게 적용될지 궁금하신가요?",
       "desc": "규정 대응부터 보안 설계까지, 프로젝트 상황에 맞춰 함께 검토해 드립니다.",
@@ -645,9 +658,7 @@
           "title": "제로 트러스트 전환 컨설팅",
           "tag": "Zero Trust · 공공 · 민간 IT",
           "desc": "CISA 성숙도 진단부터 IAM · SSO · PAM 중앙집중형 권한관리와 Micro Segmentation, ZTNA 목표 아키텍처까지 내부망 보안을 전환합니다."
-        },
-        "otherTitle": "공공 · 민간 IT 보안 서비스",
-        "otherLead": "조선 · 해양과는 별개로, 공공 · 민간 기관의 내부망 보안 전환을 돕는 별도 서비스입니다."
+        }
       },
       "why": {
         "title": "왜 광명마리타임인가",
@@ -1268,6 +1279,19 @@
         "desc": "We design it with you, from assessing where you stand today to the target architecture and a phased transition plan."
       }
     },
+    "hub": {
+      "title": "We design security for two fields: ships and enterprises.",
+      "lede": "In shipbuilding and maritime, our work centres on IACS UR E26 / E27 compliance; for public and private organisations, it centres on the move to Zero Trust. In both, we design and operate the security architecture.",
+      "maritime": {
+        "title": "Ship Cybersecurity",
+        "desc": "One team carries the work from design to class survey. IACS UR E26 / E27 compliance is at the centre."
+      },
+      "enterprise": {
+        "title": "Enterprise Security Consulting",
+        "desc": "We move the internal network security of public and private organisations to a Zero Trust model, designing it with you from the assessment to the target architecture."
+      },
+      "viewField": "View the field overview"
+    },
     "articleCta": {
       "title": "Wondering how this applies to your vessels?",
       "desc": "From regulatory response to security design, we'll review it against your project.",
@@ -1341,9 +1365,7 @@
           "title": "Zero Trust Consulting",
           "tag": "",
           "desc": "From a CISA maturity assessment to centralised privilege management with IAM, SSO and PAM, Micro Segmentation and a ZTNA target architecture, we move internal network security to Zero Trust."
-        },
-        "otherTitle": "IT security beyond ships",
-        "otherLead": "A separate service, independent of our shipbuilding and maritime work: helping public and private organisations move their internal networks to Zero Trust."
+        }
       },
       "why": {
         "title": "Why Gwangmyung Maritime",
@@ -1964,6 +1986,19 @@
         "desc": "从现状诊断到目标架构与分阶段转型计划，与您共同设计。"
       }
     },
+    "hub": {
+      "title": "我们为船舶与企业两个领域设计安全体系。",
+      "lede": "在造船 · 海事行业，以 IACS UR E26 / E27 应对为核心；在公共与民间机构，以零信任转型为核心，设计并运营安全架构。",
+      "maritime": {
+        "title": "船舶网络安全",
+        "desc": "从设计到船级检验，由同一团队持续负责。核心是 IACS UR E26 / E27 应对。"
+      },
+      "enterprise": {
+        "title": "企业安全咨询",
+        "desc": "将公共与民间机构的内网安全转向零信任体系。从诊断到目标架构，与客户共同设计。"
+      },
+      "viewField": "查看领域概览"
+    },
     "articleCta": {
       "title": "想了解本文内容如何应用于贵司船舶吗？",
       "desc": "从法规应对到安全设计，我们将结合您的项目情况一起评估。",
@@ -2037,9 +2072,7 @@
           "title": "零信任转型咨询",
           "tag": "Zero Trust · 公共与民间 IT",
           "desc": "从 CISA 成熟度诊断到基于 IAM、SSO、PAM 的集中式权限管理、Micro Segmentation 与 ZTNA 目标架构，全面转型内网安全。"
-        },
-        "otherTitle": "面向公共·民间机构的 IT 安全服务",
-        "otherLead": "与造船·海事业务相互独立，帮助公共与民间机构将内网安全转向零信任的独立服务。"
+        }
       },
       "why": {
         "title": "为什么选择光明海事",
@@ -2660,6 +2693,19 @@
         "desc": "現状の診断から目標アーキテクチャ、段階的な移行計画まで、ともに設計します。"
       }
     },
+    "hub": {
+      "title": "船舶と企業、二つの分野のセキュリティを設計します。",
+      "lede": "造船・海事産業ではIACS UR E26 / E27対応を中心に、公共・民間機関ではゼロトラスト移行を中心に、セキュリティ構造を設計・運用します。",
+      "maritime": {
+        "title": "船舶サイバーセキュリティ",
+        "desc": "設計から船級検査まで、同じチームが一貫して担います。中心はIACS UR E26 / E27対応です。"
+      },
+      "enterprise": {
+        "title": "企業セキュリティ コンサルティング",
+        "desc": "公共・民間機関の内部ネットワークのセキュリティをゼロトラスト体制へ移行します。診断から目標アーキテクチャまで共に設計します。"
+      },
+      "viewField": "分野概要を見る"
+    },
     "articleCta": {
       "title": "この記事の内容が貴社の船舶にどう関わるか、気になりますか？",
       "desc": "規制対応からセキュリティ設計まで、プロジェクトの状況に合わせてご一緒に検討します。",
@@ -2733,9 +2779,7 @@
           "title": "ゼロトラスト移行コンサルティング",
           "tag": "Zero Trust · 公共・民間IT",
           "desc": "CISA成熟度診断から、IAM・SSO・PAMによる中央集中型の権限管理、Micro Segmentation、ZTNA目標アーキテクチャまで、内部ネットワークのセキュリティを転換します。"
-        },
-        "otherTitle": "公共・民間向け IT セキュリティ サービス",
-        "otherLead": "造船・海事とは別に、公共・民間機関の内部ネットワークをゼロトラストへ移行するための独立したサービスです。"
+        }
       },
       "why": {
         "title": "なぜ光明マリタイムか",
