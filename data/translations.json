@@ -620,7 +620,7 @@
       },
       "services": {
         "title": "하는 일",
-        "subtitle": "다섯 가지 일은 하나로 이어집니다. 중심은 IACS UR E26 / E27 대응입니다.",
+        "subtitle": "네 가지 일은 하나로 이어집니다. 중심은 IACS UR E26 / E27 대응입니다.",
         "compliance": {
           "title": "IACS UR E26 / E27 대응",
           "tag": "Compliance",
@@ -645,7 +645,9 @@
           "title": "제로 트러스트 전환 컨설팅",
           "tag": "Zero Trust · 공공 · 민간 IT",
           "desc": "CISA 성숙도 진단부터 IAM · SSO · PAM 중앙집중형 권한관리와 Micro Segmentation, ZTNA 목표 아키텍처까지 내부망 보안을 전환합니다."
-        }
+        },
+        "otherTitle": "공공 · 민간 IT 보안 서비스",
+        "otherLead": "조선 · 해양과는 별개로, 공공 · 민간 기관의 내부망 보안 전환을 돕는 별도 서비스입니다."
       },
       "why": {
         "title": "왜 광명마리타임인가",
@@ -1314,7 +1316,7 @@
       },
       "services": {
         "title": "What we do",
-        "subtitle": "Five services, one thread: IACS UR E26 / E27 compliance.",
+        "subtitle": "Four services, one thread: IACS UR E26 / E27 compliance.",
         "compliance": {
           "title": "Compliance",
           "tag": "",
@@ -1339,7 +1341,9 @@
           "title": "Zero Trust Consulting",
           "tag": "",
           "desc": "From a CISA maturity assessment to centralised privilege management with IAM, SSO and PAM, Micro Segmentation and a ZTNA target architecture, we move internal network security to Zero Trust."
-        }
+        },
+        "otherTitle": "IT security beyond ships",
+        "otherLead": "A separate service, independent of our shipbuilding and maritime work: helping public and private organisations move their internal networks to Zero Trust."
       },
       "why": {
         "title": "Why Gwangmyung Maritime",
@@ -2008,7 +2012,7 @@
       },
       "services": {
         "title": "业务内容",
-        "subtitle": "五项服务环环相扣，核心是 IACS UR E26 / E27 应对。",
+        "subtitle": "四项服务环环相扣，核心是 IACS UR E26 / E27 应对。",
         "compliance": {
           "title": "IACS UR E26 / E27 应对",
           "tag": "Compliance",
@@ -2033,7 +2037,9 @@
           "title": "零信任转型咨询",
           "tag": "Zero Trust · 公共与民间 IT",
           "desc": "从 CISA 成熟度诊断到基于 IAM、SSO、PAM 的集中式权限管理、Micro Segmentation 与 ZTNA 目标架构，全面转型内网安全。"
-        }
+        },
+        "otherTitle": "面向公共·民间机构的 IT 安全服务",
+        "otherLead": "与造船·海事业务相互独立，帮助公共与民间机构将内网安全转向零信任的独立服务。"
       },
       "why": {
         "title": "为什么选择光明海事",
@@ -2702,7 +2708,7 @@
       },
       "services": {
         "title": "事業内容",
-        "subtitle": "5つのサービスは一つにつながっています。中心はIACS UR E26 / E27への対応です。",
+        "subtitle": "4つのサービスは一つにつながっています。中心はIACS UR E26 / E27への対応です。",
         "compliance": {
           "title": "IACS UR E26 / E27対応",
           "tag": "Compliance",
@@ -2727,7 +2733,9 @@
           "title": "ゼロトラスト移行コンサルティング",
           "tag": "Zero Trust · 公共・民間IT",
           "desc": "CISA成熟度診断から、IAM・SSO・PAMによる中央集中型の権限管理、Micro Segmentation、ZTNA目標アーキテクチャまで、内部ネットワークのセキュリティを転換します。"
-        }
+        },
+        "otherTitle": "公共・民間向け IT セキュリティ サービス",
+        "otherLead": "造船・海事とは別に、公共・民間機関の内部ネットワークをゼロトラストへ移行するための独立したサービスです。"
       },
       "why": {
         "title": "なぜ光明マリタイムか",
