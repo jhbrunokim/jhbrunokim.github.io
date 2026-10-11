@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서비스 - 광명마리타임</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="선박 사이버 보안과 기업 보안 컨설팅, 두 분야의 서비스 개요."
+    />
+    <meta
+      name="keywords"
+      content="선박 사이버 보안, 기업 보안 컨설팅, 제로 트러스트, E26, E27, IACS, IT / OT 시스템 통합, 조선, 해양, 광명마리타임"
+    />
+    <meta name="author" content="Gwangmyung Maritime" />
+
+    <!-- Analytics (loaded via consent.js after user opt-in) -->
+    <meta name="ga-id" content="G-CJMFQE9NT4" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://gmmaritime.com/services.html" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="서비스 - 광명마리타임" />
+    <meta
+      property="og:description"
+      content="선박 사이버 보안과 기업 보안 컨설팅, 두 분야의 서비스 개요."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gmmaritime.com/services.html" />
+    <meta property="og:site_name" content="광명마리타임" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:image" content="https://gmmaritime.com/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="서비스 - 광명마리타임" />
+    <meta
+      name="twitter:description"
+      content="선박 사이버 보안과 기업 보안 컨설팅, 두 분야의 서비스 개요."
+    />
+    <meta name="twitter:image" content="https://gmmaritime.com/assets/images/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="resource/gmmaritime.ico" />
+
+    <!-- Theme (must run before body renders to avoid FOUC) -->
+    <script src="assets/js/theme.js"></script>
+
+    <!-- Google Fonts -->
+    <!-- DNS prefetch for third-party assets -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>
+      (function () {
+        var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
+        var lang = localStorage.getItem('preferredLanguage') || (function () {
+          // Same rule as detectBrowserLanguage() in assets/js/i18n.js
+          var tags = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+          for (var i = 0; i < tags.length; i++) {
+            var primary = String(tags[i] || '').toLowerCase().split('-')[0];
+            if (primary === 'ko' || primary === 'zh' || primary === 'ja') return primary;
+          }
+          return 'en';
+        })();
+        var families = ['Inter:wght@400;500;600;700', 'Space+Grotesk:wght@500;600;700'];
+        if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.googleapis.com/css2?family=' + families.join('&family=') + '&display=swap';
+        document.head.appendChild(link);
+      })();
+    </script>
+
+    <!-- Tailwind CSS (Built) -->
+    <link rel="stylesheet" href="assets/css/output.css" />
+
+    <!-- Lucide Icons -->
+    <script defer src="https://cdn.jsdelivr.net/npm/lucide@1.53.0/dist/umd/lucide.min.js"></script>
+
+    <!-- EmailJS SDK (init lives in contact.js so it runs after defer resolves) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.12.1/dist/email.min.js"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "서비스 — 광명마리타임",
+        "url": "https://gmmaritime.com/services.html",
+        "description": "선박 사이버 보안과 기업 보안 컨설팅, 두 분야의 서비스 개요.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "url": "https://gmmaritime.com",
+          "name": "Gwangmyung Maritime"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Gwangmyung Maritime",
+          "url": "https://gmmaritime.com"
+        }
+      }
+    </script>
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden transition-colors duration-300"
+  >
+    <!-- Country/Language Detection Modal (loaded dynamically) -->
+    <div id="country-modal-placeholder"></div>
+
+    <!-- Navigation (loaded dynamically) -->
+    <div id="navbar-placeholder"></div>
+    <a id="main-content" tabindex="-1"></a>
+
+    <!-- Hero — the two service fields -->
+    <section class="pt-32 pb-20 bg-ocean-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl">
+          <h1
+            class="font-display text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.15] [word-break:keep-all]"
+            data-i18n="hub.title"
+          >선박과 기업, 두 분야의 보안을 설계합니다.</h1>
+          <p class="mt-6 text-slate-300 text-lg leading-relaxed max-w-2xl" data-i18n="hub.lede">조선 · 해양 산업에서는 IACS UR E26 / E27 대응을 중심으로, 공공 · 민간 기관에서는 제로 트러스트 전환을 중심으로 보안 구조를 설계하고 운영합니다.</p>
+          <div class="mt-10 flex flex-wrap gap-3">
+            <a
+              href="index.html#contact"
+              class="inline-flex items-center gap-2 whitespace-nowrap rounded-md bg-signal-400 px-5 py-3 text-sm font-semibold text-ink-950 hover:bg-signal-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500"
+            >
+              <span data-i18n="hero.ctaSecondary">문의하기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Field cards: containers with links inside, equal height on lg -->
+    <section id="fields" class="py-20 md:py-24 lg:py-32 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid gap-6 items-stretch lg:grid-cols-2 lg:gap-8">
+          <div class="flex flex-col rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 md:p-8 lg:p-10">
+            <i data-lucide="ship" class="w-6 h-6 text-ocean-700 dark:text-ocean-300"></i>
+            <h2
+              id="field-maritime"
+              class="mt-6 font-display text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white"
+              data-i18n="hub.maritime.title"
+            >선박 사이버 보안</h2>
+            <p class="mt-3 text-base md:text-lg leading-relaxed text-slate-600 dark:text-slate-400" data-i18n="hub.maritime.desc">설계부터 선급 검사까지 한 팀이 이어서 맡습니다. IACS UR E26 / E27 대응이 중심입니다.</p>
+            <ul class="mt-6 divide-y divide-slate-200 dark:divide-slate-700 border-y border-slate-200 dark:border-slate-700" aria-labelledby="field-maritime">
+              <li>
+                <a href="compliance.html" class="group flex items-center justify-between gap-4 py-3 text-sm md:text-base font-medium text-slate-800 dark:text-slate-200 hover:text-ocean-700 dark:hover:text-ocean-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+                  <span data-i18n="nav.compliance">IACS UR E26 / E27 대응</span>
+                  <i data-lucide="chevron-right" class="w-4 h-4 shrink-0 text-slate-400 group-hover:text-ocean-700 dark:group-hover:text-ocean-300"></i>
+                </a>
+              </li>
+              <li>
+                <a href="maritime-cybersecurity.html" class="group flex items-center justify-between gap-4 py-3 text-sm md:text-base font-medium text-slate-800 dark:text-slate-200 hover:text-ocean-700 dark:hover:text-ocean-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+                  <span data-i18n="nav.maritimeCybersecurity">선박 사이버 보안</span>
+                  <i data-lucide="chevron-right" class="w-4 h-4 shrink-0 text-slate-400 group-hover:text-ocean-700 dark:group-hover:text-ocean-300"></i>
+                </a>
+              </li>
+              <li>
+                <a href="system-integration.html" class="group flex items-center justify-between gap-4 py-3 text-sm md:text-base font-medium text-slate-800 dark:text-slate-200 hover:text-ocean-700 dark:hover:text-ocean-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+                  <span data-i18n="nav.systemIntegration">IT / OT 시스템 통합</span>
+                  <i data-lucide="chevron-right" class="w-4 h-4 shrink-0 text-slate-400 group-hover:text-ocean-700 dark:group-hover:text-ocean-300"></i>
+                </a>
+              </li>
+              <li>
+                <a href="ai-cybersecurity-consulting.html" class="group flex items-center justify-between gap-4 py-3 text-sm md:text-base font-medium text-slate-800 dark:text-slate-200 hover:text-ocean-700 dark:hover:text-ocean-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+                  <span data-i18n="nav.aiConsulting">AI 기반 사이버 보안 컨설팅</span>
+                  <i data-lucide="chevron-right" class="w-4 h-4 shrink-0 text-slate-400 group-hover:text-ocean-700 dark:group-hover:text-ocean-300"></i>
+                </a>
+              </li>
+            </ul>
+            <div class="mt-auto pt-8">
+              <a href="maritime.html" class="inline-flex items-center gap-1.5 text-sm font-semibold text-ocean-700 dark:text-ocean-300 underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+                <span data-i18n="hub.viewField">분야 개요 보기</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="flex flex-col rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 md:p-8 lg:p-10">
+            <i data-lucide="building-2" class="w-6 h-6 text-ocean-700 dark:text-ocean-300"></i>
+            <h2
+              id="field-enterprise"
+              class="mt-6 font-display text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white"
+              data-i18n="hub.enterprise.title"
+            >기업 보안 컨설팅</h2>
+            <p class="mt-3 text-base md:text-lg leading-relaxed text-slate-600 dark:text-slate-400" data-i18n="hub.enterprise.desc">공공 · 민간 기관의 내부망 보안을 제로 트러스트 체계로 전환합니다. 진단부터 목표 아키텍처까지 함께 설계합니다.</p>
+            <ul class="mt-6 divide-y divide-slate-200 dark:divide-slate-700 border-y border-slate-200 dark:border-slate-700" aria-labelledby="field-enterprise">
+              <li>
+                <a href="zero-trust.html" class="group flex items-center justify-between gap-4 py-3 text-sm md:text-base font-medium text-slate-800 dark:text-slate-200 hover:text-ocean-700 dark:hover:text-ocean-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+                  <span data-i18n="nav.zeroTrust">제로 트러스트 컨설팅</span>
+                  <i data-lucide="chevron-right" class="w-4 h-4 shrink-0 text-slate-400 group-hover:text-ocean-700 dark:group-hover:text-ocean-300"></i>
+                </a>
+              </li>
+            </ul>
+            <div class="mt-auto pt-8">
+              <a href="zero-trust.html" class="inline-flex items-center gap-1.5 text-sm font-semibold text-ocean-700 dark:text-ocean-300 underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+                <span data-i18n="competitivenessSection.cta">자세히 보기</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA — statement left, actions right -->
+    <section class="py-16 bg-ocean-950">
+      <div class="max-w-7xl mx-auto px-6 grid gap-8 lg:grid-cols-2 lg:gap-16 lg:items-center">
+        <div>
+          <h2 class="font-display text-2xl md:text-3xl font-bold tracking-tight text-white text-balance [word-break:auto-phrase]" data-i18n="systemIntegration.ctaTitle">프로젝트에 대해 상담하고 싶으신가요?</h2>
+          <p class="mt-4 text-slate-400 leading-relaxed" data-i18n="systemIntegration.ctaDesc">전문가와 상담을 통해 최적의 솔루션을 찾아보세요.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 lg:justify-end">
+          <a href="index.html#contact" class="inline-flex items-center gap-2 whitespace-nowrap rounded-md bg-signal-400 px-5 py-3 text-sm font-semibold text-ink-950 hover:bg-signal-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+            <span data-i18n="hero.ctaSecondary">문의하기</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer (loaded dynamically) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/country-detector.js"></script>
+    <script src="assets/js/consent.js"></script>
+  </body>
+</html>

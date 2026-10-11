@@ -17,9 +17,8 @@
         <p
           class="text-slate-600 dark:text-slate-400"
           data-i18n="contactSection.description"
-        >
-          프로젝트 상담 및 기술 문의는 아래 양식을 통해 보내주세요.
-        </p>
+          data-i18n-html="true"
+        >프로젝트 상담과 기술 문의는 아래 양식이나 <a href="mailto:info@gmmaritime.com" class="text-ocean-700 dark:text-ocean-300 underline">info@gmmaritime.com</a>으로 보내 주십시오.</p>
       </div>
       <button
         type="button"
@@ -57,6 +56,30 @@
           class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 dark:text-white transition-colors"
         />
       </div>
+      <div class="grid sm:grid-cols-2 gap-4 mb-4">
+        <label for="contact-modal-company" class="sr-only" data-i18n="home.contact.companyLabel">소속(회사)</label>
+        <input
+          type="text"
+          id="contact-modal-company"
+          name="company"
+          autocomplete="organization"
+          data-i18n-placeholder="home.contact.companyLabel"
+          placeholder="소속(회사)"
+          class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 dark:text-white transition-colors"
+        />
+        <label for="contact-modal-role" class="sr-only" data-i18n="home.contact.roleLabel">역할</label>
+        <select
+          id="contact-modal-role"
+          name="role"
+          class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 dark:text-white transition-colors"
+        >
+          <option value="" data-i18n="home.contact.rolePlaceholder">역할을 선택해 주십시오</option>
+          <option value="Shipyard" data-i18n="home.contact.roleShipyard">조선소</option>
+          <option value="Shipowner or ship manager" data-i18n="home.contact.roleOwner">선주 · 선박관리회사</option>
+          <option value="Equipment supplier" data-i18n="home.contact.roleSupplier">기자재 공급사</option>
+          <option value="Other" data-i18n="home.contact.roleOther">기타</option>
+        </select>
+      </div>
       <input type="hidden" name="subject" value="고객 문의" />
       <label for="contact-modal-message" class="sr-only" data-i18n="contactSection.messageLabel">메시지</label>
       <textarea
@@ -64,17 +87,17 @@
         name="message"
         rows="6"
         required
-        data-i18n-placeholder="contactSection.messageLabel"
-        placeholder="메시지"
+        data-i18n-placeholder="home.contact.messagePlaceholder"
+        placeholder="예: 선종 · 건조 일정 · 적용 규칙 · 현재 단계(메이커 선정, 승인도면, FAT, 운항)"
         class="w-full mb-6 px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 dark:text-white transition-colors resize-none"
       ></textarea>
-      <div class="mb-6 flex items-start gap-3">
+      <div class="mb-6 flex items-center gap-3">
         <input
           type="checkbox"
           id="contact-modal-privacy-consent"
           name="privacyConsent"
           aria-required="true"
-          class="mt-1 h-5 w-5 shrink-0 rounded border-slate-300 dark:border-slate-700 text-ocean-600 focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+          class="h-5 w-5 shrink-0 rounded border-slate-300 dark:border-slate-700 text-ocean-600 focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
         />
         <label for="contact-modal-privacy-consent" class="text-sm text-slate-600 dark:text-slate-400">
           <span data-i18n="contactSection.consentLabel">개인정보 수집 및 이용에 동의합니다.</span>

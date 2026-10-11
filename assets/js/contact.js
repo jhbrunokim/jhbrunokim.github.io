@@ -77,6 +77,10 @@ class ContactFormManager {
       subject: formData.get('subject'),
       message: formData.get('message')
     };
+    // Optional fields (home form and modal). Role values are English
+    // whatever the UI language, so the email reads the same for the owner.
+    data.company = (formData.get('company') || '').trim();
+    data.role = formData.get('role') || '';
 
     // Consent gate (PIPA): checked first so the message is specific. The
     // value is never added to `data`, so it is not sent to EmailJS.
@@ -95,10 +99,11 @@ class ContactFormManager {
       return;
     }
 
-    // Append the enquiry source to the message so it shows up even with the
-    // current EmailJS template; also send it as separate template variables.
+    // Append the enquiry source (and company / role) to the message so they
+    // show up even with the current EmailJS template, which has no
+    // {{company}} / {{role}}; also send them as separate template variables.
     const source = this.getSource(form);
-    data.message += `\n\n──────────\n[문의 출처] ${source.page}\n[진입 지점] ${source.entry} · [언어] ${source.lang}`;
+    data.message += `\n\n──────────\n[소속] ${data.company || '-'} · [역할] ${data.role || '-'}\n[문의 출처] ${source.page}\n[진입 지점] ${source.entry} · [언어] ${source.lang}`;
     data.source_page = source.page;
     data.source_entry = source.entry;
     data.source_lang = source.lang;

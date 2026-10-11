@@ -157,7 +157,7 @@ class ArticlesManager {
     }
 
     container.innerHTML = items.map(article => `
-      <a href="article.html?slug=${article.slug}" class="group block bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md hover:-translate-y-0.5 transition-all">
+      <a href="article.html?slug=${article.slug}" class="group block bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-ocean-500 dark:hover:border-ocean-400 transition-colors">
         <div class="flex items-center gap-x-3 text-xs mb-3">
           <time datetime="${article.date}" class="text-slate-500 dark:text-slate-400">
             ${this.formatDate(article.date)}
