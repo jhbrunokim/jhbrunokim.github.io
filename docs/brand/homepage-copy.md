@@ -793,3 +793,31 @@ Stage 7에서 추가한 다섯 번째 서비스 페이지입니다. 원문은 �
 | `home.services.zeroTrust.title` | 제로 트러스트 전환 컨설팅 | Zero Trust Consulting | 零信任转型咨询 | ゼロトラスト移行コンサルティング |
 | `home.services.zeroTrust.tag` | Zero Trust · 공공 · 민간 IT | (빈 문자열) | Zero Trust · 公共与民间 IT | Zero Trust · 公共・民間IT |
 | `home.services.zeroTrust.desc` | CISA 성숙도 진단부터 IAM · SSO · PAM 중앙집중형 권한관리와 Micro Segmentation, ZTNA 목표 아키텍처까지 내부망 보안을 전환합니다. | From a CISA maturity assessment to centralised privilege management with IAM, SSO and PAM, Micro Segmentation and a ZTNA target architecture, we move internal network security to Zero Trust. | 从 CISA 成熟度诊断到基于 IAM、SSO、PAM 的集中式权限管理、Micro Segmentation 与 ZTNA 目标架构，全面转型内网安全。 | CISA成熟度診断から、IAM・SSO・PAMによる中央集中型の権限管理、Micro Segmentation、ZTNA目標アーキテクチャまで、内部ネットワークのセキュリティを転換します。 |
+
+## 13. 두 서비스 분야 — 선박 사이버 보안 / 기업 보안 컨설팅 (Stage 8)
+
+대표 결정으로 서비스 영역을 두 분야로 나눴습니다. `services.html`은 두 분야를 소개하는 허브가 되고, 지금까지의 서비스 개요(히어로 흐름도 · 네 개 서비스 카드 · 왜 광명마리타임인가)는 `maritime.html`(선박 사이버 보안 분야 개요)로 옮겼습니다. 제로 트러스트 컨설팅은 두 번째 분야인 기업 보안 컨설팅에 속합니다.
+
+- 새 키: `nav.groupMaritime`, `nav.groupEnterprise`, `nav.maritimeOverview`, `nav.backToMaritime`, `hub.*`, `home.enterprise.*`.
+- 바뀐 값: `home.business.platform.body` · `.link`를 Stage 3 값으로 되돌렸습니다(제로 트러스트 문장 삭제, 링크는 다시 `#contact` "문의하기").
+- 삭제한 키: `home.services.otherTitle`, `home.services.otherLead` (`services.html`의 "공공 · 민간 IT 보안 서비스" 블록이 없어지면서 쓰는 곳이 없습니다).
+- 재사용: 허브 카드 목록은 `nav.compliance` · `nav.maritimeCybersecurity` · `nav.systemIntegration` · `nav.aiConsulting` · `nav.zeroTrust`, 기업 카드 링크와 홈 `#enterprise` 행 링크는 `competitivenessSection.cta`("자세히 보기"), 홈 `#enterprise` 행 제목 · 본문은 `home.services.zeroTrust.title` · `.desc`, 허브 CTA 띠는 `systemIntegration.ctaTitle` · `ctaDesc` · `hero.ctaSecondary`.
+- ja: 분야 이름 "企業セキュリティ コンサルティング"은 내비 라벨의 구절 띄어쓰기 관례를 따릅니다. 허브 본문 문장에는 띄어쓰기를 넣지 않았습니다.
+
+| 키 | ko | en | zh | ja |
+|---|---|---|---|---|
+| `nav.groupMaritime` | 선박 사이버 보안 | Ship Cybersecurity | 船舶网络安全 | 船舶サイバーセキュリティ |
+| `nav.groupEnterprise` | 기업 보안 컨설팅 | Enterprise Security Consulting | 企业安全咨询 | 企業セキュリティ コンサルティング |
+| `nav.maritimeOverview` | 분야 개요 | Overview | 领域概览 | 分野概要 |
+| `nav.backToMaritime` | 선박 사이버 보안 개요로 돌아가기 | Back to ship cybersecurity overview | 返回船舶网络安全概览 | 船舶サイバーセキュリティ概要に戻る |
+| `hub.title` | 선박과 기업, 두 분야의 보안을 설계합니다. | We design security for two fields: ships and enterprises. | 我们为船舶与企业两个领域设计安全体系。 | 船舶と企業、二つの分野のセキュリティを設計します。 |
+| `hub.lede` | 조선 · 해양 산업에서는 IACS UR E26 / E27 대응을 중심으로, 공공 · 민간 기관에서는 제로 트러스트 전환을 중심으로 보안 구조를 설계하고 운영합니다. | In shipbuilding and maritime, our work centres on IACS UR E26 / E27 compliance; for public and private organisations, it centres on the move to Zero Trust. In both, we design and operate the security architecture. | 在造船 · 海事行业，以 IACS UR E26 / E27 应对为核心；在公共与民间机构，以零信任转型为核心，设计并运营安全架构。 | 造船・海事産業ではIACS UR E26 / E27対応を中心に、公共・民間機関ではゼロトラスト移行を中心に、セキュリティ構造を設計・運用します。 |
+| `hub.maritime.title` | 선박 사이버 보안 | Ship Cybersecurity | 船舶网络安全 | 船舶サイバーセキュリティ |
+| `hub.maritime.desc` | 설계부터 선급 검사까지 한 팀이 이어서 맡습니다. IACS UR E26 / E27 대응이 중심입니다. | One team carries the work from design to class survey. IACS UR E26 / E27 compliance is at the centre. | 从设计到船级检验，由同一团队持续负责。核心是 IACS UR E26 / E27 应对。 | 設計から船級検査まで、同じチームが一貫して担います。中心はIACS UR E26 / E27対応です。 |
+| `hub.enterprise.title` | 기업 보안 컨설팅 | Enterprise Security Consulting | 企业安全咨询 | 企業セキュリティ コンサルティング |
+| `hub.enterprise.desc` | 공공 · 민간 기관의 내부망 보안을 제로 트러스트 체계로 전환합니다. 진단부터 목표 아키텍처까지 함께 설계합니다. | We move the internal network security of public and private organisations to a Zero Trust model, designing it with you from the assessment to the target architecture. | 将公共与民间机构的内网安全转向零信任体系。从诊断到目标架构，与客户共同设计。 | 公共・民間機関の内部ネットワークのセキュリティをゼロトラスト体制へ移行します。診断から目標アーキテクチャまで共に設計します。 |
+| `hub.viewField` | 분야 개요 보기 | View the field overview | 查看领域概览 | 分野概要を見る |
+| `home.enterprise.title` | 기업 보안 컨설팅 | Enterprise Security Consulting | 企业安全咨询 | 企業セキュリティ コンサルティング |
+| `home.enterprise.lede` | 조선 · 해양과는 별개로, 공공 · 민간 기관의 보안 체계를 설계합니다. | Separate from our shipbuilding and maritime work, we design security frameworks for public and private organisations. | 与造船 · 海事业务相互独立，为公共与民间机构设计安全体系。 | 造船・海事とは別に、公共・民間機関のセキュリティ体制を設計します。 |
+| `home.business.platform.body` | 공공 · 민간 · 해양 분야의 IT / OT 플랫폼을 설계하고 구축합니다. 데이터 · AI 기반 운영 시스템과 글로벌 표준을 따르는 데이터 관리 체계를 포함합니다. | We design and build IT / OT platforms for the public, private and maritime sectors. This includes data- and AI-based operating systems and data management frameworks that follow global standards. | 为公共、民间及海事领域设计并建设 IT / OT 平台。涵盖基于数据和 AI 的运营系统，以及遵循全球标准的数据管理体系。 | 公共・民間・海事分野のIT / OTプラットフォームを設計・構築します。データ・AIに基づく運用システムと、グローバル標準に沿ったデータ管理体制を含みます。 |
+| `home.business.platform.link` | 문의하기 | Contact us | 联系我们 | お問い合わせ |
