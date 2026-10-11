@@ -325,7 +325,7 @@
       </div>
     </section>
 
-    <!-- Business areas: the same ruled-row list as services.html#why (white, so it alternates with the slate insights band) -->
+    <!-- Business areas: the same ruled-row list as maritime.html#why (white, so it alternates with the slate class band) -->
     <section id="business" class="py-20 md:py-24 bg-white dark:bg-slate-900">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid gap-4 lg:grid-cols-2 lg:gap-16 lg:items-end mb-10 md:mb-12">
@@ -347,14 +347,14 @@
           <li class="grid gap-2 py-6 md:grid-cols-[16rem_minmax(0,1fr)] md:gap-x-8 lg:grid-cols-[20rem_minmax(0,1fr)_minmax(0,10rem)] lg:py-8">
             <h3 class="[word-break:keep-all] font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="home.business.platform.title">플랫폼 개발 · 구축</h3>
             <p class="text-base leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="home.business.platform.body">
-              공공 · 민간 · 해양 분야의 IT / OT 플랫폼을 설계하고 구축합니다. 데이터 · AI 기반 운영 시스템과 글로벌 표준을 따르는 데이터 관리 체계를 포함합니다. 공공 · 민간 기관의 제로 트러스트 전환 컨설팅도 이 영역에서 맡습니다.
+              공공 · 민간 · 해양 분야의 IT / OT 플랫폼을 설계하고 구축합니다. 데이터 · AI 기반 운영 시스템과 글로벌 표준을 따르는 데이터 관리 체계를 포함합니다.
             </p>
             <div class="md:col-start-2 lg:col-start-3">
               <a
-                href="zero-trust.html"
+                href="#contact"
                 class="inline-flex items-center gap-1.5 text-sm font-semibold text-ocean-700 dark:text-ocean-300 hover:underline underline-offset-4"
               >
-                <span data-i18n="home.business.platform.link">제로 트러스트 보기</span>
+                <span data-i18n="home.business.platform.link">문의하기</span>
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </a>
             </div>
@@ -366,7 +366,7 @@
             </p>
             <div class="md:col-start-2 lg:col-start-3">
               <a
-                href="services.html"
+                href="maritime.html"
                 class="inline-flex items-center gap-1.5 text-sm font-semibold text-ocean-700 dark:text-ocean-300 hover:underline underline-offset-4"
               >
                 <span data-i18n="home.business.cyber.link">서비스 보기</span>
@@ -404,7 +404,7 @@
       </div>
     </section>
 
-    <!-- Class societies we can support (slim band; full block with standards lives on services.html#why) -->
+    <!-- Class societies we can support (slim band; full block with standards lives on maritime.html#why) -->
     <section id="classes" class="py-14 md:py-16 bg-slate-50 dark:bg-slate-800 border-y border-slate-200 dark:border-slate-700">
       <div class="max-w-7xl mx-auto px-6">
         <div class="flex items-center justify-between gap-4">
@@ -514,11 +514,49 @@
       </div>
     </section>
 
+    <!-- Enterprise security consulting: the second service field, in the 사업 영역 row style -->
+    <section id="enterprise" class="py-20 md:py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid gap-4 lg:grid-cols-2 lg:gap-16 lg:items-end mb-10 md:mb-12">
+          <h2
+            class="font-display text-3xl md:text-4xl font-bold tracking-tight leading-tight text-slate-900 dark:text-white"
+            data-i18n="home.enterprise.title"
+          >
+            기업 보안 컨설팅
+          </h2>
+          <p
+            class="text-base md:text-lg leading-relaxed text-slate-600 dark:text-slate-400"
+            data-i18n="home.enterprise.lede"
+          >
+            조선 · 해양과는 별개로, 공공 · 민간 기관의 보안 체계를 설계합니다.
+          </p>
+        </div>
+
+        <ul class="divide-y divide-slate-200 dark:divide-slate-700 border-y border-slate-200 dark:border-slate-700">
+          <li class="grid gap-2 py-6 md:grid-cols-[16rem_minmax(0,1fr)] md:gap-x-8 lg:grid-cols-[20rem_minmax(0,1fr)_minmax(0,10rem)] lg:py-8">
+            <h3 class="[word-break:keep-all] font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="home.services.zeroTrust.title">제로 트러스트 전환 컨설팅</h3>
+            <p class="text-base leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="home.services.zeroTrust.desc">
+              CISA 성숙도 진단부터 IAM · SSO · PAM 중앙집중형 권한관리와 Micro Segmentation, ZTNA 목표 아키텍처까지 내부망 보안을 전환합니다.
+            </p>
+            <div class="md:col-start-2 lg:col-start-3">
+              <a
+                href="zero-trust.html"
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-ocean-700 dark:text-ocean-300 hover:underline underline-offset-4"
+              >
+                <span data-i18n="competitivenessSection.cta">자세히 보기</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <!-- Alias for old index.html#articles links -->
     <div id="articles" aria-hidden="true"></div>
 
     <!-- Insights -->
-    <section id="insights" class="py-20 md:py-24 bg-white dark:bg-slate-900">
+    <section id="insights" class="py-20 md:py-24 bg-slate-50 dark:bg-slate-800">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid gap-4 lg:grid-cols-2 lg:gap-16 lg:items-end mb-10 md:mb-12">
           <h2
@@ -558,7 +596,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="relative overflow-hidden py-20 md:py-24 bg-slate-50 dark:bg-slate-800">
+    <section id="contact" class="relative overflow-hidden py-20 md:py-24 bg-white dark:bg-slate-900">
       <!-- Core-values watermark. Decorative, mixed Korean/English on purpose
            (not translated), hidden from assistive tech, sits behind the form. -->
       <div aria-hidden="true" data-values-watermark class="pointer-events-none select-none absolute inset-0 font-display font-bold leading-none tracking-tighter text-slate-900 dark:text-white [&>span]:absolute [&>span]:whitespace-nowrap">

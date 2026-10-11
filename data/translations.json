@@ -621,8 +621,8 @@
         "subtitle": "조선 · 해양 산업의 운영 현장에서 출발해, 플랫폼 구축부터 규제 대응까지 이어집니다.",
         "platform": {
           "title": "플랫폼 개발 · 구축",
-          "body": "공공 · 민간 · 해양 분야의 IT / OT 플랫폼을 설계하고 구축합니다. 데이터 · AI 기반 운영 시스템과 글로벌 표준을 따르는 데이터 관리 체계를 포함합니다. 공공 · 민간 기관의 제로 트러스트 전환 컨설팅도 이 영역에서 맡습니다.",
-          "link": "제로 트러스트 보기"
+          "body": "공공 · 민간 · 해양 분야의 IT / OT 플랫폼을 설계하고 구축합니다. 데이터 · AI 기반 운영 시스템과 글로벌 표준을 따르는 데이터 관리 체계를 포함합니다.",
+          "link": "문의하기"
         },
         "cyber": {
           "title": "해양 사이버 보안 · 컴플라이언스",
@@ -690,6 +690,10 @@
       },
       "classes": {
         "lede": "IACS 선급의 사이버 복원력 규칙에 맞춰 설계부터 선급 검사까지 대응합니다."
+      },
+      "enterprise": {
+        "title": "기업 보안 컨설팅",
+        "lede": "조선 · 해양과는 별개로, 공공 · 민간 기관의 보안 체계를 설계합니다."
       },
       "journey": {
         "goalLabel": "목표"
@@ -1332,8 +1336,8 @@
         "subtitle": "We start from day-to-day operations in shipbuilding and maritime, and carry the work from platform builds through to regulatory compliance.",
         "platform": {
           "title": "Platform development and implementation",
-          "body": "We design and build IT / OT platforms for the public, private and maritime sectors. This includes data- and AI-based operating systems and data management frameworks that follow global standards. Zero Trust transition consulting for public and private-sector organisations also sits in this area.",
-          "link": "View Zero Trust"
+          "body": "We design and build IT / OT platforms for the public, private and maritime sectors. This includes data- and AI-based operating systems and data management frameworks that follow global standards.",
+          "link": "Contact us"
         },
         "cyber": {
           "title": "Maritime cybersecurity and compliance",
@@ -1401,6 +1405,10 @@
       },
       "classes": {
         "lede": "We work to each IACS society's cyber-resilience rules, from design through class survey."
+      },
+      "enterprise": {
+        "title": "Enterprise Security Consulting",
+        "lede": "Separate from our shipbuilding and maritime work, we design security frameworks for public and private organisations."
       },
       "journey": {
         "goalLabel": "Goal"
@@ -2043,8 +2051,8 @@
         "subtitle": "我们从造船 · 海事行业的运营现场出发，从平台建设一直延伸到法规合规。",
         "platform": {
           "title": "平台开发 · 建设",
-          "body": "为公共、民间及海事领域设计并建设 IT / OT 平台。涵盖基于数据和 AI 的运营系统，以及遵循全球标准的数据管理体系。面向公共与民间机构的零信任转型咨询也属于这一领域。",
-          "link": "查看零信任"
+          "body": "为公共、民间及海事领域设计并建设 IT / OT 平台。涵盖基于数据和 AI 的运营系统，以及遵循全球标准的数据管理体系。",
+          "link": "联系我们"
         },
         "cyber": {
           "title": "海事网络安全 · 合规",
@@ -2112,6 +2120,10 @@
       },
       "classes": {
         "lede": "按照各 IACS 船级社的网络韧性规范，从设计到船级检验全程对应。"
+      },
+      "enterprise": {
+        "title": "企业安全咨询",
+        "lede": "与造船 · 海事业务相互独立，为公共与民间机构设计安全体系。"
       },
       "journey": {
         "goalLabel": "目标"
@@ -2754,8 +2766,8 @@
         "subtitle": "造船・海事産業の運用現場から出発し、プラットフォーム構築から規制対応までつなげます。",
         "platform": {
           "title": "プラットフォーム開発・構築",
-          "body": "公共・民間・海事分野のIT / OTプラットフォームを設計・構築します。データ・AIに基づく運用システムと、グローバル標準に沿ったデータ管理体制を含みます。公共・民間機関のゼロトラスト移行コンサルティングもこの領域で担います。",
-          "link": "ゼロトラストを見る"
+          "body": "公共・民間・海事分野のIT / OTプラットフォームを設計・構築します。データ・AIに基づく運用システムと、グローバル標準に沿ったデータ管理体制を含みます。",
+          "link": "お問い合わせ"
         },
         "cyber": {
           "title": "海事サイバーセキュリティ・コンプライアンス",
@@ -2823,6 +2835,10 @@
       },
       "classes": {
         "lede": "各IACS船級協会のサイバーレジリエンス規則に沿って、設計から船級検査まで対応します。"
+      },
+      "enterprise": {
+        "title": "企業セキュリティ コンサルティング",
+        "lede": "造船・海事とは別に、公共・民間機関のセキュリティ体制を設計します。"
       },
       "journey": {
         "goalLabel": "目標"
