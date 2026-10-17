@@ -1,5 +1,19 @@
 # Cloudflare Workers 정적 자산 리다이렉트 · 리라이트 규칙.
 # 문서: https://developers.cloudflare.com/workers/static-assets/redirects/
-# html_handling 이 "none" 이라 루트 경로는 index.html 로 직접 매핑해야 합니다 (200 = URL 유지 리라이트).
+# html_handling 이 "none" 이라 디렉터리 루트는 index.html 로 직접 매핑해야 합니다 (200 = URL 유지 리라이트).
 
 / /index.html 200
+/en/ /en/index.html 200
+/zh/ /zh/index.html 200
+/ja/ /ja/index.html 200
+
+# 2026-10-17 에 잠깐 쓰인 아티클 언어 주소 → 언어 디렉터리 주소
+/articles/maritime-cyber-regulatory-trends.en.html /en/articles/maritime-cyber-regulatory-trends.html 301
+/articles/maritime-cyber-regulatory-trends.zh.html /zh/articles/maritime-cyber-regulatory-trends.html 301
+/articles/maritime-cyber-regulatory-trends.ja.html /ja/articles/maritime-cyber-regulatory-trends.html 301
+/articles/maritime-cyber-threat-cases.en.html /en/articles/maritime-cyber-threat-cases.html 301
+/articles/maritime-cyber-threat-cases.zh.html /zh/articles/maritime-cyber-threat-cases.html 301
+/articles/maritime-cyber-threat-cases.ja.html /ja/articles/maritime-cyber-threat-cases.html 301
+/articles/iacs-ur-e26-e27-overview.en.html /en/articles/iacs-ur-e26-e27-overview.html 301
+/articles/iacs-ur-e26-e27-overview.zh.html /zh/articles/iacs-ur-e26-e27-overview.html 301
+/articles/iacs-ur-e26-e27-overview.ja.html /ja/articles/iacs-ur-e26-e27-overview.html 301

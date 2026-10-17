@@ -36,11 +36,11 @@ class ArticlesManager {
   }
 
   // Static page for an article in the active locale. Korean is the original
-  // (slug.html); other locales are slug.<lang>.html. Must match pageName() in
-  // scripts/build-articles.mjs.
+  // (articles/slug.html); other locales live under their language directory
+  // (en/articles/slug.html). Must match pagePath() in scripts/build-articles.mjs.
   articleUrl(slug) {
     const lang = this.lang();
-    return lang === 'ko' ? `articles/${slug}.html` : `articles/${slug}.${lang}.html`;
+    return `${lang === 'ko' ? '' : `${lang}/`}articles/${slug}.html`;
   }
 
   rerender() {

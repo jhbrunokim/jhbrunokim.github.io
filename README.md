@@ -8,8 +8,8 @@
 
 - 🎨 **반응형 디자인** — 모바일 / 태블릿 / 데스크톱
 - 🌙 **OS 테마 자동 반영** — `prefers-color-scheme`을 그대로 따르고 OS 다크/라이트 전환 시 실시간 반영 (수동 토글 없음)
-- 🌐 **4개 언어 i18n** — 한국어 / 영어 / 중국어(간체) / 일본어, `<html lang>`은 로케일에 맞춰 자동 갱신
-- 🗺️ **브라우저 언어 자동 적용** — 첫 방문 시 `navigator.languages` 기준으로 로케일 선택 (외부 API 호출·자동 모달 없음), 네비 지구본 버튼으로 언어 변경
+- 🌐 **4개 언어, 언어별 URL** — 한국어는 루트(`/about.html`), 영어 · 중국어(간체) · 일본어는 `/en/` · `/zh/` · `/ja/` 아래 정적 페이지. 빌드 때 `translations.json` 으로 생성하며 서로 `hreflang` 으로 연결
+- 🗺️ **선호 언어 리다이렉트** — 저장된 선택(없으면 `navigator.languages`)이 페이지 언어와 다르면 렌더링 전에 해당 언어 페이지로 이동 (크롤러 제외, 외부 API 호출·자동 모달 없음). 네비 지구본 버튼으로 언어 변경
 - 🧭 **스크롤 연동 네비게이션** — IntersectionObserver로 현재 섹션에 active-state 인디케이터, 서브페이지에서는 현재 페이지 하이라이트 + "← Overview" 링크
 - 🗂️ **Competitiveness / Articles 프리뷰 섹션** — 인덱스에서 하위 페이지로 이어지는 진입점
 - 📝 **아티클 시스템** — `articles/*.md` 마크다운 + `index.json`. 본문 페이지는 빌드 때 정적 HTML 로 생성 (검색엔진 · 링크 미리보기 대응)
@@ -49,10 +49,14 @@ jhbrunokim.github.io/
 │   ├── index.json                    # 아티클 메타 목록 (slug/title/date/description/…)
 │   ├── *.md                          # 아티클 본문 (마크다운; ko 는 <slug>.md, 번역은 <slug>.<lang>.md)
 │   └── *.html                        # 빌드 산출물 (커밋 안 함; npm run build 가 생성)
+├── en/ zh/ ja/                       # 빌드 산출물: 언어별 페이지 + articles/ (커밋 안 함)
 ├── templates/
 │   └── article.html                  # 아티클 페이지 템플릿
 ├── scripts/
-│   ├── build-articles.mjs            # 마크다운 → articles/*.html
+│   ├── lib/site.mjs                  # 빌드 공용 상수 (페이지 목록, 언어, 링크 접두사 규칙)
+│   ├── build-pages.mjs               # 루트 페이지 → en/ zh/ ja/ (data-i18n 치환)
+│   ├── build-articles.mjs            # 마크다운 → articles/*.html, <lang>/articles/*.html
+│   ├── build-sitemap.mjs             # sitemap.xml 생성 (커밋 안 함)
 │   └── csp-hashes.mjs                # CSP 인라인 스크립트 해시 관리
 ├── resource/
 │   ├── gmmaritime.ico                # 파비콘
@@ -124,7 +128,7 @@ git push origin main
 1. `actions/checkout@v7`
 2. `actions/setup-node@v6` (Node 22 LTS)
 3. `npm ci`
-4. `npm run build` (Tailwind CSS 빌드 + 아티클 정적 페이지 생성)
+4. `npm run build` (Tailwind CSS 빌드 → 언어별 페이지 → 아티클 페이지 → sitemap.xml)
 5. `cloudflare/wrangler-action@v4` → `wrangler deploy` (정적 자산 업로드)
 
 필요한 GitHub Secrets (Settings → Secrets and variables → Actions):
@@ -203,8 +207,7 @@ EmailJS 비공개 키와 Turnstile 비밀 키는 Worker secret 에만 있고 브
 
 1. `articles/<slug>.md` (한국어 원문) 과 번역본 `articles/<slug>.en.md` · `.zh.md` · `.ja.md` 작성. 첫 줄의 `# 제목` 은 히어로가 대신 보여 주므로 본문에서는 빠집니다
 2. `articles/index.json`에 메타(`slug`, `title`, `date`, `description`, `category`, `author`; 각 4개 언어) 추가
-3. `sitemap.xml` 에 `articles/<slug>.html` 과 언어별 `.en.html` · `.zh.html` · `.ja.html` 항목 추가
-4. `npm run build` 로 `articles/<slug>[.<lang>].html` 이 만들어지는지 확인. 페이지 주소는 `articles/<slug>.html` (ko), `articles/<slug>.en.html` 등이며 서로 `hreflang` 으로 연결됩니다
+3. `npm run build` 로 `articles/<slug>.html` (ko) 과 `en/articles/<slug>.html` 등이 만들어지는지 확인. 서로 `hreflang` 으로 연결되며 sitemap 에도 자동으로 들어갑니다
 
 옛 주소 `article.html?slug=xxx` 는 Worker 가 새 주소로 301 리다이렉트합니다.
 
@@ -223,7 +226,11 @@ FOUC 방지를 위해 `theme.js`는 각 페이지의 `<head>`에서 blocking 로
 
 ### 언어 결정 방식
 
-`localStorage.preferredLanguage`에 저장된 값이 없으면(첫 방문) 브라우저 언어 설정을 따릅니다. 외부 서비스 호출이나 IP 기반 위치 조회는 하지 않고, 모달도 자동으로 띄우지 않습니다.
+URL 이 언어입니다. 각 페이지는 `<html data-page-lang>` 의 언어로 렌더링되고, 내비 · 푸터 같은 공용 컴포넌트는 `layout.js` 가 같은 언어로 맞춥니다(링크에 `en/` 접두사 포함).
+
+`<head>` 의 인라인 부트스트랩 스크립트가 `localStorage.preferredLanguage`(없으면 브라우저 언어)와 페이지 언어를 비교해, 다르면 `hreflang` 대체 페이지로 `location.replace` 합니다. 크롤러(UA 에 bot · crawl · spider 등)는 리다이렉트하지 않아 모든 언어 페이지가 색인됩니다. 선호 언어는 방문자가 지구본에서 직접 고를 때만 저장됩니다. 외부 서비스 호출이나 IP 기반 위치 조회는 하지 않고, 모달도 자동으로 띄우지 않습니다.
+
+새 루트 페이지를 추가할 때는 `scripts/lib/site.mjs` 의 `PAGES` 에 넣고, `<html lang="ko" data-page-lang="ko">` 와 `hreflang` 대체 링크, `translations.json` 의 `pageMeta.<page>` (title · description, 4개 언어) 를 함께 추가하십시오. 인라인 부트스트랩 스크립트는 다른 페이지에서 그대로 복사해야 CSP 해시가 하나로 유지됩니다.
 
 - `navigator.languages`(없으면 `navigator.language`)를 순서대로 확인해 기본 언어 태그가 `ko` / `zh` / `ja`인 첫 항목을 사용 (예: `ko-KR` → 한국어, `zh-TW` → 중국어)
 - 일치하는 항목이 없으면 영어

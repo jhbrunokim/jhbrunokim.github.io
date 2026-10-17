@@ -2,47 +2,34 @@
 // 아티클 정적 페이지 빌드.
 //
 // articles/index.json 의 각 항목과 articles/<slug>.md (ko) · <slug>.<lang>.md (en · zh · ja) 를
-// templates/article.html 에 넣어 articles/<slug>.html · articles/<slug>.<lang>.html 을 만듭니다.
-// 예전에는 article.html?slug=… 이 브라우저에서 마크다운을 그렸는데, 그러면 검색엔진과
-// 링크 미리보기에 빈 페이지가 보였습니다. 이제 본문 · 제목 · 설명 · hreflang · JSON-LD 가
-// HTML 에 들어 있습니다. 생성 파일은 git 에 올리지 않습니다 (npm run build 가 만듭니다).
+// templates/article.html 에 넣어 articles/<slug>.html (ko) · <lang>/articles/<slug>.html 을 만듭니다.
+// 본문 · 제목 · 설명 · hreflang · JSON-LD 가 HTML 에 들어 있어 검색엔진과 링크 미리보기가 그대로 봅니다.
+// 생성 파일은 git 에 올리지 않습니다 (npm run build 가 만듭니다).
+// 설계: docs/design/2026-10-17-language-urls-design.md
 //
 //   node scripts/build-articles.mjs
 
 import { marked } from 'marked';
-import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync } from 'node:fs';
+import { writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { LANGS, LOCALE, OG_LOCALE, ROOT, SITE, TRANSLATIONS, escapeHtml, localizeHref, prefix } from './lib/site.mjs';
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ARTICLES_DIR = join(ROOT, 'articles');
 const TEMPLATE = readFileSync(join(ROOT, 'templates', 'article.html'), 'utf8');
 const INDEX = JSON.parse(readFileSync(join(ARTICLES_DIR, 'index.json'), 'utf8'));
-const TRANSLATIONS = JSON.parse(readFileSync(join(ROOT, 'data', 'translations.json'), 'utf8'));
 
-const SITE = 'https://gmmaritime.com';
-const LANGS = ['ko', 'en', 'zh', 'ja'];
-const LOCALE = { ko: 'ko-KR', en: 'en-US', zh: 'zh-CN', ja: 'ja-JP' };
-const OG_LOCALE = { ko: 'ko_KR', en: 'en_US', zh: 'zh_CN', ja: 'ja_JP' };
-// assets/js/articles.js 의 articleUrl() 과 같은 규칙이어야 합니다.
-const pageName = (slug, lang) => (lang === 'ko' ? `${slug}.html` : `${slug}.${lang}.html`);
-// 카테고리 → 관련 서비스 페이지 (예전 article.html 인라인 스크립트와 같은 매핑)
+// 출력 경로: ko → articles/<slug>.html, 그 외 → <lang>/articles/<slug>.html
+const pagePath = (slug, lang) => `${prefix(lang)}articles/${slug}.html`;
+// 카테고리 → 관련 서비스 페이지
 const SERVICE_PAGE = {
   Regulation: 'compliance.html',
   Compliance: 'compliance.html',
   'Threat Intelligence': 'maritime-cybersecurity.html',
 };
 
-const escapeHtml = (s) =>
-  String(s ?? '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-
 const localize = (field, lang) =>
   !field || typeof field === 'string' ? field || '' : field[lang] ?? field.en ?? field.ko ?? '';
-
 const ui = (lang, section, key, fallback) => TRANSLATIONS[lang]?.[section]?.[key] || fallback;
 
 function render(template, values) {
@@ -53,27 +40,23 @@ function render(template, values) {
 }
 
 function markdownFor(slug, lang) {
-  const candidates = lang === 'ko' ? [`${slug}.md`] : [`${slug}.${lang}.md`];
-  for (const name of candidates) {
-    const p = join(ARTICLES_DIR, name);
-    if (existsSync(p)) return readFileSync(p, 'utf8');
-  }
-  return null;
+  const p = join(ARTICLES_DIR, lang === 'ko' ? `${slug}.md` : `${slug}.${lang}.md`);
+  return existsSync(p) ? readFileSync(p, 'utf8') : null;
 }
 
 // 본문 첫 줄의 "# 제목" 은 히어로가 이미 보여 주므로 뺍니다 (h1 중복 방지).
-function stripLeadingH1(md) {
-  return md.replace(/^\s*# [^\n]*\n+/, '');
-}
+const stripLeadingH1 = (md) => md.replace(/^\s*# [^\n]*\n+/, '');
 
 // 이전 빌드 결과 정리 (md · json 은 남김)
-for (const f of readdirSync(ARTICLES_DIR)) {
-  if (f.endsWith('.html')) rmSync(join(ARTICLES_DIR, f));
+for (const lang of LANGS) {
+  const dir = join(ROOT, prefix(lang), 'articles');
+  if (!existsSync(dir)) continue;
+  for (const f of readdirSync(dir)) {
+    if (f.endsWith('.html')) rmSync(join(dir, f));
+  }
 }
-mkdirSync(ARTICLES_DIR, { recursive: true });
 
 let count = 0;
-const sitemapEntries = [];
 
 for (const meta of INDEX) {
   const available = LANGS.filter((lang) => markdownFor(meta.slug, lang) !== null);
@@ -83,19 +66,20 @@ for (const meta of INDEX) {
   }
 
   const alternates = available
-    .map((l) => `    <link rel="alternate" hreflang="${l}" href="${SITE}/articles/${pageName(meta.slug, l)}" />`)
-    .concat(`    <link rel="alternate" hreflang="x-default" href="${SITE}/articles/${pageName(meta.slug, 'ko')}" />`)
+    .map((l) => `    <link rel="alternate" hreflang="${l}" href="${SITE}/${pagePath(meta.slug, l)}" />`)
+    .concat(`    <link rel="alternate" hreflang="x-default" href="${SITE}/${pagePath(meta.slug, 'ko')}" />`)
     .join('\n');
 
   for (const lang of available) {
     const title = localize(meta.title, lang);
     const description = localize(meta.description, lang);
     const author = localize(meta.author, lang);
-    const canonical = `${SITE}/articles/${pageName(meta.slug, lang)}`;
+    const canonical = `${SITE}/${pagePath(meta.slug, lang)}`;
     const dateText = new Intl.DateTimeFormat(LOCALE[lang], { year: 'numeric', month: 'long', day: 'numeric' }).format(
       new Date(meta.date),
     );
     const servicePage = SERVICE_PAGE[meta.category];
+    const siteName = ui(lang, 'articlesUi', 'siteName', '광명마리타임');
 
     const jsonLd = JSON.stringify(
       {
@@ -105,7 +89,7 @@ for (const meta of INDEX) {
         description,
         datePublished: meta.date,
         inLanguage: lang,
-        author: { '@type': 'Organization', name: ui(lang, 'articlesUi', 'siteName', '광명마리타임'), url: SITE },
+        author: { '@type': 'Organization', name: siteName, url: SITE },
         publisher: { '@type': 'Organization', name: 'Gwangmyung Maritime', url: SITE },
         image: `${SITE}/resource/og-image.png`,
         mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
@@ -116,7 +100,8 @@ for (const meta of INDEX) {
 
     const html = render(TEMPLATE, {
       lang,
-      siteName: ui(lang, 'articlesUi', 'siteName', '광명마리타임'),
+      prefix: prefix(lang),
+      siteName,
       title,
       description,
       canonical,
@@ -137,20 +122,18 @@ for (const meta of INDEX) {
       ctaDesc: ui(lang, 'articleCta', 'desc', ''),
       ctaButton: ui(lang, 'articleCta', 'button', ''),
       ctaServiceLink: servicePage
-        ? `            <a href="${servicePage}" class="inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-ocean-700 hover:text-ocean-900 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
+        ? `            <a href="${localizeHref(servicePage, lang)}" class="inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-ocean-700 hover:text-ocean-900 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500">
               <span data-i18n="articleCta.service">${escapeHtml(ui(lang, 'articleCta', 'service', ''))}</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>`
         : '',
     });
 
-    writeFileSync(join(ARTICLES_DIR, pageName(meta.slug, lang)), html);
-    sitemapEntries.push({ url: canonical, date: meta.date });
+    const out = join(ROOT, pagePath(meta.slug, lang));
+    mkdirSync(join(out, '..'), { recursive: true });
+    writeFileSync(out, html);
     count += 1;
   }
 }
 
-console.log(`Built ${count} article page(s) in articles/.`);
-if (process.argv.includes('--print-sitemap')) {
-  for (const e of sitemapEntries) console.log(`${e.url}\t${e.date}`);
-}
+console.log(`Built ${count} article page(s).`);
