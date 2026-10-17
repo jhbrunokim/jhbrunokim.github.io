@@ -36,6 +36,10 @@ jobs:
       - name: Build CSS
         run: npm run build
 
+      # 인라인 <script> 해시가 _headers 의 Content-Security-Policy 와 맞는지 확인합니다.
+      - name: Check CSP hashes
+        run: npm run check:csp
+
       # package.json 에 고정된 wrangler 버전을 사용합니다.
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v4

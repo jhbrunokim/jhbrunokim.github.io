@@ -16,8 +16,9 @@
 .vscode
 .idea
 
-# Worker 소스 · 로컬 비밀값 · 빌드 도구 (사이트가 쓰는 건 assets/css/output.css 뿐)
+# Worker 소스 · 도구 스크립트 · 로컬 비밀값 · 빌드 도구 (사이트가 쓰는 건 assets/css/output.css 뿐)
 src
+scripts
 .dev.vars
 .dev.vars.*
 node_modules

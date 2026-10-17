@@ -131,6 +131,20 @@ git push origin main
 배포 상태는 [Actions 탭](https://github.com/jhbrunokim/jhbrunokim.github.io/actions)에서 확인.
 도메인 연결은 `wrangler.jsonc` 의 `routes` 주석을 참고.
 
+### Content-Security-Policy
+
+`_headers` 의 CSP 는 `'unsafe-inline'` 없이 스크립트 출처를 잠급니다. 루트 `*.html` 의 인라인 `<script>` 는
+sha256 해시로만 허용되므로, 인라인 스크립트를 고치면 반드시 아래를 실행해 `_headers` 를 갱신하십시오.
+CI 는 `npm run check:csp` 로 검사하고, 어긋나면 배포가 실패합니다.
+
+```bash
+npm run csp:update   # 인라인 <script> 해시를 _headers 에 다시 씀
+npm run check:csp    # 일치 여부 확인 (CI 와 동일)
+```
+
+규칙: 인라인 `onclick=` 같은 이벤트 핸들러 속성과 `javascript:` URL 은 쓰지 마십시오 (해시로 허용할 수 없고 `check:csp` 가 잡아냅니다).
+외부 스크립트 · 스타일 · 폰트 · 이미지 · fetch 출처를 새로 추가하면 `_headers` 의 해당 directive 에 호스트를 더해야 합니다.
+
 ## 🔧 기술 스택
 
 - **CSS**: Tailwind CSS 3.4+ (CLI 빌드, CDN 미사용)
