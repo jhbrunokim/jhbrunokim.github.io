@@ -129,7 +129,8 @@
       "close": "닫기",
       "consentLabel": "개인정보 수집 및 이용에 동의합니다.",
       "consentLink": "(내용 보기)",
-      "consentRequired": "개인정보 수집 및 이용에 동의해 주세요."
+      "consentRequired": "개인정보 수집 및 이용에 동의해 주세요.",
+      "captchaRequired": "보안 확인이 끝날 때까지 잠시 기다린 뒤 다시 시도해 주세요."
     },
     "systemIntegration": {
       "diagramSubtitle": "상위 운영 목표 → 사이버 복원력 → 리스크 관리 → 글로벌 · IACS 표준으로 이어지는 수직 구조",
@@ -844,7 +845,8 @@
       "close": "Close",
       "consentLabel": "I agree to the collection and use of my personal data.",
       "consentLink": "(Details)",
-      "consentRequired": "Please agree to the collection and use of your personal data."
+      "consentRequired": "Please agree to the collection and use of your personal data.",
+      "captchaRequired": "Please wait for the security check to finish, then try again."
     },
     "systemIntegration": {
       "diagramSubtitle": "A vertical stack from operations down through cyber resilience, risk management, and global · IACS standards.",
@@ -1559,7 +1561,8 @@
       "close": "关闭",
       "consentLabel": "我同意收集和使用我的个人信息。",
       "consentLink": "（查看详情）",
-      "consentRequired": "请同意收集和使用您的个人信息。"
+      "consentRequired": "请同意收集和使用您的个人信息。",
+      "captchaRequired": "请等待安全验证完成后再试一次。"
     },
     "systemIntegration": {
       "diagramSubtitle": "由上至下:运营目标 → 网络韧性 → 风险管理 → 全球与 IACS 标准的垂直结构。",
@@ -2274,7 +2277,8 @@
       "close": "閉じる",
       "consentLabel": "個人情報の収集および利用に同意します。",
       "consentLink": "（内容を見る）",
-      "consentRequired": "個人情報の収集および利用に同意してください。"
+      "consentRequired": "個人情報の収集および利用に同意してください。",
+      "captchaRequired": "セキュリティ確認が完了するまでお待ちいただき、もう一度お試しください。"
     },
     "systemIntegration": {
       "diagramSubtitle": "上位 運用目標 → サイバー レジリエンス → リスク 管理 → グローバル · IACS 標準へ 続く 垂直構造",

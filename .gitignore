@@ -22,3 +22,8 @@ Thumbs.db
 *.log
 npm-debug.log*
 .wrangler/
+
+# Local Worker bindings (secrets)
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
