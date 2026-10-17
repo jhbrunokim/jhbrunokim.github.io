@@ -46,6 +46,14 @@ export default {
       return json({ ok: false, error: 'not_found' }, 404);
     }
 
+    // 예전 아티클 주소 article.html?slug=… → 정적 페이지 articles/<slug>.html (301).
+    // (slug 없는 옛 #slug 해시 링크는 서버에 오지 않으므로 목록으로 보냅니다.)
+    if (url.pathname === '/article.html') {
+      const slug = (url.searchParams.get('slug') || '').trim();
+      const target = /^[a-z0-9-]+$/.test(slug) ? `/articles/${slug}.html` : '/articles.html';
+      return Response.redirect(`${url.origin}${target}`, 301);
+    }
+
     // 그 밖의 경로는 정적 자산 핸들러로 넘깁니다 (404.html 처리 포함).
     return env.ASSETS.fetch(request);
   },

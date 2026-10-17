@@ -12,7 +12,7 @@
 - 🗺️ **브라우저 언어 자동 적용** — 첫 방문 시 `navigator.languages` 기준으로 로케일 선택 (외부 API 호출·자동 모달 없음), 네비 지구본 버튼으로 언어 변경
 - 🧭 **스크롤 연동 네비게이션** — IntersectionObserver로 현재 섹션에 active-state 인디케이터, 서브페이지에서는 현재 페이지 하이라이트 + "← Overview" 링크
 - 🗂️ **Competitiveness / Articles 프리뷰 섹션** — 인덱스에서 하위 페이지로 이어지는 진입점
-- 📝 **아티클 시스템** — `articles/*.md` 마크다운 + `index.json`으로 목록·본문 자동 렌더 (marked.js)
+- 📝 **아티클 시스템** — `articles/*.md` 마크다운 + `index.json`. 본문 페이지는 빌드 때 정적 HTML 로 생성 (검색엔진 · 링크 미리보기 대응)
 - 📧 **Contact 폼** — EmailJS 통합
 - 🤖 **SEO 최적화** — 페이지별 canonical, JSON-LD 구조화 데이터, Open Graph, robots.txt, sitemap.xml
 - 📊 **Google Analytics** — 모든 페이지에서 트래킹
@@ -38,7 +38,7 @@ jhbrunokim.github.io/
 │       ├── i18n.js                   # 다국어 전환 + <html lang> 동기화
 │       ├── country-detector.js       # 첫 방문 언어 적용 + 언어 선택 모달
 │       ├── contact.js                # 문의 폼: Turnstile 위젯 렌더 + /api/contact 호출
-│       └── articles.js               # 마크다운 아티클 목록·본문·프리뷰 렌더
+│       └── articles.js               # 아티클 목록·프리뷰 렌더 (본문 페이지는 정적)
 ├── components/
 │   ├── navbar.html                   # 상단 네비게이션 (동적 로드)
 │   ├── footer.html                   # 푸터 (동적 로드)
@@ -47,7 +47,13 @@ jhbrunokim.github.io/
 │   └── translations.json             # ko / en / zh / ja 번역
 ├── articles/
 │   ├── index.json                    # 아티클 메타 목록 (slug/title/date/description/…)
-│   └── *.md                          # 아티클 본문 (마크다운)
+│   ├── *.md                          # 아티클 본문 (마크다운; ko 는 <slug>.md, 번역은 <slug>.<lang>.md)
+│   └── *.html                        # 빌드 산출물 (커밋 안 함; npm run build 가 생성)
+├── templates/
+│   └── article.html                  # 아티클 페이지 템플릿
+├── scripts/
+│   ├── build-articles.mjs            # 마크다운 → articles/*.html
+│   └── csp-hashes.mjs                # CSP 인라인 스크립트 해시 관리
 ├── resource/
 │   ├── gmmaritime.ico                # 파비콘
 │   ├── gmmaritime-logo.jpg           # 로고
@@ -59,7 +65,6 @@ jhbrunokim.github.io/
 ├── compliance.html                   # Competitiveness ▸ Compliance
 ├── ai-cybersecurity-consulting.html  # Competitiveness ▸ AI × Cybersecurity Consulting
 ├── articles.html                     # 아티클 목록
-├── article.html                      # 아티클 본문 뷰어 (hash로 slug 지정)
 ├── privacy-policy.html               # 개인정보 처리방침
 ├── 404.html                          # 사용자 정의 404
 ├── robots.txt
@@ -119,7 +124,7 @@ git push origin main
 1. `actions/checkout@v7`
 2. `actions/setup-node@v6` (Node 22 LTS)
 3. `npm ci`
-4. `npm run build` (Tailwind CSS 빌드)
+4. `npm run build` (Tailwind CSS 빌드 + 아티클 정적 페이지 생성)
 5. `cloudflare/wrangler-action@v4` → `wrangler deploy` (정적 자산 업로드)
 
 필요한 GitHub Secrets (Settings → Secrets and variables → Actions):
@@ -151,7 +156,7 @@ npm run check:csp    # 일치 여부 확인 (CI 와 동일)
 - **JS**: Vanilla ES6+ (프레임워크 없음)
 - **폰트**: Google Fonts — Space Grotesk(디스플레이), Inter, Noto Sans KR / SC / JP
 - **아이콘**: Lucide Icons 1.53.0 (jsDelivr CDN, 버전 고정)
-- **마크다운**: marked.js 15.0.12 (jsDelivr CDN, 버전 고정, 아티클 뷰어)
+- **마크다운**: marked 15.0.12 (빌드 시 Node 에서 렌더; 브라우저에는 로드하지 않음)
 - **문의 폼**: Cloudflare Turnstile + Worker(`src/worker.js`) → EmailJS REST API
 - **배포**: Cloudflare Workers (Static Assets) + GitHub Actions
 
@@ -196,9 +201,12 @@ EmailJS 비공개 키와 Turnstile 비밀 키는 Worker secret 에만 있고 브
 
 ### 새 아티클 추가
 
-1. `articles/<slug>.md` 마크다운 파일 생성
-2. `articles/index.json`에 메타(`slug`, `title`, `date`, `description`, `category`, `author`) 추가
-3. `article.html?slug=xxx`로 접근 (`article.html#xxx` 형식의 옛 링크는 자동으로 `?slug=`로 바뀜)
+1. `articles/<slug>.md` (한국어 원문) 과 번역본 `articles/<slug>.en.md` · `.zh.md` · `.ja.md` 작성. 첫 줄의 `# 제목` 은 히어로가 대신 보여 주므로 본문에서는 빠집니다
+2. `articles/index.json`에 메타(`slug`, `title`, `date`, `description`, `category`, `author`; 각 4개 언어) 추가
+3. `sitemap.xml` 에 `articles/<slug>.html` 과 언어별 `.en.html` · `.zh.html` · `.ja.html` 항목 추가
+4. `npm run build` 로 `articles/<slug>[.<lang>].html` 이 만들어지는지 확인. 페이지 주소는 `articles/<slug>.html` (ko), `articles/<slug>.en.html` 등이며 서로 `hreflang` 으로 연결됩니다
+
+옛 주소 `article.html?slug=xxx` 는 Worker 가 새 주소로 301 리다이렉트합니다.
 
 ## 🌙 다크 모드
 

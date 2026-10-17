@@ -1,11 +1,15 @@
-// Articles Manager - Loads and renders markdown articles
+// Articles Manager - renders the article list (articles.html) and the home
+// page preview from articles/index.json.
+//
+// Article pages themselves are static: scripts/build-articles.mjs turns each
+// markdown file into articles/<slug>.html (ko) and articles/<slug>.<lang>.html,
+// so search engines and link previews see the full text. This file only
+// builds links to those pages.
 class ArticlesManager {
   constructor() {
     this.articles = [];
-    this.basePath = this.getBasePath();
     // Last view rendered, so it can be redrawn when the language changes
     this.lastView = null;
-    this.renderToken = 0;
 
     document.addEventListener('languageChanged', () => this.rerender());
   }
@@ -31,21 +35,19 @@ class ArticlesManager {
     return `<span data-i18n="articlesUi.${key}">${this.ui(key, fallback)}</span>`;
   }
 
+  // Static page for an article in the active locale. Korean is the original
+  // (slug.html); other locales are slug.<lang>.html. Must match pageName() in
+  // scripts/build-articles.mjs.
+  articleUrl(slug) {
+    const lang = this.lang();
+    return lang === 'ko' ? `articles/${slug}.html` : `articles/${slug}.${lang}.html`;
+  }
+
   rerender() {
     if (!this.lastView) return;
     const { type, args } = this.lastView;
     if (type === 'list') this.renderArticleList(...args);
     else if (type === 'preview') this.renderArticlePreview(...args);
-    else if (type === 'detail') this.renderArticleDetail(...args);
-  }
-
-  getBasePath() {
-    // Determine base path based on current page location
-    const path = window.location.pathname;
-    if (path.includes('/articles/') || path.endsWith('/article.html')) {
-      return '';
-    }
-    return '';
   }
 
   async fetchArticleIndex() {
@@ -60,27 +62,6 @@ class ArticlesManager {
       console.error('Error loading article index:', error);
       return [];
     }
-  }
-
-  async fetchArticleContent(slug) {
-    // Korean is the original (slug.md); other locales are slug.<lang>.md,
-    // falling back to the original when a translation is missing.
-    const lang = this.lang();
-    const paths = lang === 'ko' ? [`articles/${slug}.md`] : [`articles/${slug}.${lang}.md`, `articles/${slug}.md`];
-    try {
-      for (const path of paths) {
-        const response = await fetch(path);
-        if (response.ok) return await response.text();
-      }
-      throw new Error(`Article not found: ${slug}`);
-    } catch (error) {
-      console.error('Error loading article:', error);
-      return null;
-    }
-  }
-
-  getArticleMeta(slug) {
-    return this.articles.find(a => a.slug === slug) || null;
   }
 
   formatDate(dateStr) {
@@ -124,7 +105,7 @@ class ArticlesManager {
             ` : ''}
           </div>
           <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-ocean-700 dark:group-hover:text-ocean-300 transition-colors">
-            <a href="article.html?slug=${article.slug}" class="block">
+            <a href="${this.articleUrl(article.slug)}" class="block">
               <span class="absolute inset-0"></span>
               ${this.localize(article.title)}
             </a>
@@ -157,7 +138,7 @@ class ArticlesManager {
     }
 
     container.innerHTML = items.map(article => `
-      <a href="article.html?slug=${article.slug}" class="group block bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-ocean-500 dark:hover:border-ocean-400 transition-colors">
+      <a href="${this.articleUrl(article.slug)}" class="group block bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-ocean-500 dark:hover:border-ocean-400 transition-colors">
         <div class="flex items-center gap-x-3 text-xs mb-3">
           <time datetime="${article.date}" class="text-slate-500 dark:text-slate-400">
             ${this.formatDate(article.date)}
@@ -178,133 +159,6 @@ class ArticlesManager {
     `).join('');
 
     if (window.lucide) lucide.createIcons();
-  }
-
-  async renderArticleDetail(metaContainerId, contentContainerId) {
-    this.lastView = { type: 'detail', args: [metaContainerId, contentContainerId] };
-    // Drop results of an earlier render if the language changed meanwhile
-    const token = ++this.renderToken;
-
-    // Canonical form is ?slug=xxx; the hash (#slug) is read only for old shared links
-    const querySlug = new URLSearchParams(window.location.search).get('slug');
-    const slug = querySlug || window.location.hash.slice(1);
-    if (!slug) {
-      this.showArticleError(contentContainerId, 'noSlug', 'No article specified.');
-      return null;
-    }
-    if (!querySlug) {
-      history.replaceState(null, '', 'article.html?slug=' + encodeURIComponent(slug));
-    }
-
-    if (!this.articles.length) await this.fetchArticleIndex();
-    const meta = this.getArticleMeta(slug);
-    if (!meta) {
-      this.showArticleError(contentContainerId, 'notFound', 'Article not found.');
-      return null;
-    }
-
-    // Fetch the body first so meta and body switch language together
-    const markdown = await this.fetchArticleContent(slug);
-    if (token !== this.renderToken) return null;
-    if (!markdown) {
-      this.showArticleError(contentContainerId, 'loadFailed', 'Failed to load the article.');
-      return null;
-    }
-
-    const title = this.localize(meta.title);
-    const author = this.localize(meta.author);
-
-    // Render meta
-    const metaContainer = document.getElementById(metaContainerId);
-    if (metaContainer) {
-      metaContainer.innerHTML = `
-        <div class="flex items-center gap-x-3 text-sm text-slate-300 mb-4">
-          <time datetime="${meta.date}">${this.formatDate(meta.date)}</time>
-          ${meta.category ? `
-            <span class="inline-flex items-center rounded-full bg-ocean-50 dark:bg-ocean-900/30 px-2.5 py-0.5 text-xs font-medium text-ocean-700 dark:text-ocean-300">
-              ${meta.category}
-            </span>
-          ` : ''}
-        </div>
-        <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">${title}</h1>
-        <p class="text-slate-300 text-lg">${this.localize(meta.description)}</p>
-        ${author ? `<p class="mt-4 text-sm text-slate-300">${this.uiSpan('by', 'By')} ${author}</p>` : ''}
-      `;
-    }
-
-    // Update page title
-    document.title = `${title} - ${this.ui('siteName', 'Gwangmyung Maritime')}`;
-
-    // Render content
-    const contentContainer = document.getElementById(contentContainerId);
-    if (contentContainer && window.marked) {
-      contentContainer.innerHTML = marked.parse(markdown);
-    }
-    this.updateDocumentHead(meta, slug);
-    document.dispatchEvent(new CustomEvent('articleRendered', { detail: { meta } }));
-    return meta;
-  }
-
-  // Sync canonical, description, OG/Twitter tags and BlogPosting JSON-LD with the article
-  updateDocumentHead(meta, slug) {
-    const url = `https://gmmaritime.com/article.html?slug=${encodeURIComponent(slug)}`;
-    const title = this.localize(meta.title);
-    const description = this.localize(meta.description);
-
-    const setMeta = (attr, key, value) => {
-      let node = document.head.querySelector(`meta[${attr}="${key}"]`);
-      if (!node) {
-        node = document.createElement('meta');
-        node.setAttribute(attr, key);
-        document.head.appendChild(node);
-      }
-      node.setAttribute('content', value);
-    };
-
-    let canonical = document.head.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = url;
-
-    setMeta('name', 'description', description);
-    setMeta('property', 'og:title', title);
-    setMeta('property', 'og:description', description);
-    setMeta('property', 'og:url', url);
-    setMeta('name', 'twitter:title', title);
-    setMeta('name', 'twitter:description', description);
-
-    let script = document.getElementById('article-jsonld');
-    if (!script) {
-      script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.id = 'article-jsonld';
-      document.head.appendChild(script);
-    }
-    script.textContent = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
-      headline: title,
-      description,
-      datePublished: meta.date,
-      inLanguage: this.lang(),
-      author: { '@type': 'Organization', name: '광명마리타임', url: 'https://gmmaritime.com' },
-      mainEntityOfPage: { '@type': 'WebPage', '@id': url }
-    });
-  }
-
-  showArticleError(containerId, key, fallback) {
-    const container = document.getElementById(containerId);
-    if (container) {
-      container.innerHTML = `
-        <div class="text-center py-16">
-          <p class="text-slate-500 mb-4">${this.uiSpan(key, fallback)}</p>
-          <a href="articles.html" class="text-ocean-700 hover:underline">${this.uiSpan('back', 'Back to Articles')}</a>
-        </div>
-      `;
-    }
   }
 }
 
