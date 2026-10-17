@@ -43,10 +43,44 @@ class LayoutManager {
     }
   }
 
-  // Static article pages under /articles/ carry <base href="/"> so the
-  // components' relative links resolve from the root. That also makes a bare
-  // "#fragment" link (the skip link) point at the home page, so pin such
-  // links to the current document.
+  // Language of the page as built (ko at the root, en/zh/ja under their
+  // directory). Pages without data-page-lang (privacy policy, 404) are Korean.
+  pageLang() {
+    return document.documentElement.dataset.pageLang || 'ko';
+  }
+
+  // Same rule as localizeHref() in scripts/lib/site.mjs: on an English page,
+  // "about.html" becomes "en/about.html". External, absolute, anchor and
+  // mailto links stay, and so do the Korean-only pages.
+  localizeHref(href) {
+    const lang = this.pageLang();
+    if (!href || lang === 'ko') return href;
+    if (/^(https?:|mailto:|tel:|\/|#|data:)/i.test(href)) return href;
+    if (/^(en|zh|ja)\//.test(href)) return href;
+    const file = href.split(/[?#]/)[0];
+    if (!/\.html$/.test(file)) return href;
+    if (file === 'privacy-policy.html' || file === '404.html') return href;
+    return `${lang}/${href}`;
+  }
+
+  // The navbar, footer and modals are shared Korean fragments; point their
+  // page links at this page's language.
+  localizeComponentLinks() {
+    if (this.pageLang() === 'ko') return;
+    ['navbar-placeholder', 'footer-placeholder', 'country-modal-placeholder', 'contact-modal']
+      .map((id) => document.getElementById(id))
+      .filter(Boolean)
+      .forEach((root) => {
+        root.querySelectorAll('a[href]').forEach((a) => {
+          a.setAttribute('href', this.localizeHref(a.getAttribute('href')));
+        });
+      });
+  }
+
+  // Static pages under /en/, /zh/, /ja/ and /articles/ carry <base href="/">
+  // so the components' relative links resolve from the root. That also makes
+  // a bare "#fragment" link (the skip link) point at the home page, so pin
+  // such links to the current document.
   fixFragmentLinksForBase() {
     if (!document.querySelector('base[href]')) return;
     const here = window.location.pathname + window.location.search;
@@ -63,6 +97,7 @@ class LayoutManager {
 
   onComponentsLoaded() {
     this.updateFooterYear();
+    this.localizeComponentLinks();
     this.fixFragmentLinksForBase();
 
     // Reinitialize Lucide icons
@@ -150,7 +185,7 @@ class LayoutManager {
         '#articles': 'articles.html'
       }[window.location.hash];
       if (moved) {
-        window.location.replace(moved);
+        window.location.replace(this.localizeHref(moved));
         return;
       }
     }
@@ -236,18 +271,20 @@ class LayoutManager {
     const servicesToggle = document.querySelector('[data-dropdown-toggle]');
     // The services hub, the maritime field page and the five service pages light the Services toggle
     const isServicesPage = /\/(services|maritime|system-integration|maritime-cybersecurity|compliance|ai-cybersecurity-consulting|zero-trust)\.html$/.test(window.location.pathname);
-    // Matches on pathname only, so article.html?slug=... still highlights Insights
-    const isArticlesPage = /\/(articles|article)\.html$/.test(window.location.pathname);
+    // The list page and the static article pages (articles/<slug>.html) highlight Insights
+    const isArticlesPage = /\/articles\.html$|\/articles\//.test(window.location.pathname);
+
+    // Component links carry the language prefix (en/about.html); compare without it
+    const bare = (href) => (href || '').replace(/^(en|zh|ja)\//, '');
 
     const setActive = (linkHref) => {
       links.forEach(l => {
-        const href = l.getAttribute('href') || '';
-        const match = href === linkHref;
+        const match = bare(l.getAttribute('href')) === linkHref;
         l.classList.toggle('is-active', match);
       });
       if (servicesToggle) servicesToggle.classList.toggle('is-active', isServicesPage);
       // The mobile menu's Services link stands in for the toggle there
-      if (isServicesPage) document.querySelector('#mobile-menu .mobile-link[href="services.html"]')?.classList.add('is-active');
+      if (isServicesPage) document.querySelector('#mobile-menu .mobile-link[href$="services.html"]')?.classList.add('is-active');
     };
 
     if (!isIndex) {
@@ -277,8 +314,7 @@ class LayoutManager {
     const highlight = (id) => {
       const targetHref = navFor[id];
       links.forEach(l => {
-        const href = l.getAttribute('href') || '';
-        l.classList.toggle('is-active', href === targetHref);
+        l.classList.toggle('is-active', bare(l.getAttribute('href')) === targetHref);
       });
     };
 

@@ -27,8 +27,13 @@ const JS_URL_RE = /\b(?:href|src|action)\s*=\s*["']\s*javascript:/gi;
 
 const listHtml = (dir) =>
   existsSync(join(ROOT, dir)) ? readdirSync(join(ROOT, dir)).filter((f) => f.endsWith('.html')).map((f) => join(dir, f)) : [];
-// 루트 페이지 + 아티클 템플릿 + (빌드돼 있으면) 생성된 아티클 페이지
-const pages = [...readdirSync(ROOT).filter((f) => f.endsWith('.html')), ...listHtml('templates'), ...listHtml('articles')];
+// 루트 페이지 + 아티클 템플릿 + (빌드돼 있으면) 생성된 언어 페이지 · 아티클 페이지
+const pages = [
+  ...readdirSync(ROOT).filter((f) => f.endsWith('.html')),
+  ...listHtml('templates'),
+  ...listHtml('articles'),
+  ...['en', 'zh', 'ja'].flatMap((l) => [...listHtml(l), ...listHtml(join(l, 'articles'))]),
+];
 // components/*.html 은 innerHTML 로 삽입되므로 그 안의 <script> 는 실행되지 않지만
 // 인라인 핸들러 속성은 동작하므로 검사 대상에 넣습니다.
 const fragments = listHtml('components');

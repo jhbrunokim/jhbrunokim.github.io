@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-page-lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,6 +21,11 @@
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://gmmaritime.com/maritime-cybersecurity.html" />
+    <link rel="alternate" hreflang="ko" href="https://gmmaritime.com/maritime-cybersecurity.html" />
+    <link rel="alternate" hreflang="en" href="https://gmmaritime.com/en/maritime-cybersecurity.html" />
+    <link rel="alternate" hreflang="zh" href="https://gmmaritime.com/zh/maritime-cybersecurity.html" />
+    <link rel="alternate" hreflang="ja" href="https://gmmaritime.com/ja/maritime-cybersecurity.html" />
+    <link rel="alternate" hreflang="x-default" href="https://gmmaritime.com/maritime-cybersecurity.html" />
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Maritime Cybersecurity - 광명마리타임" />
     <meta
@@ -57,9 +62,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script>
       (function () {
+        // Language bootstrap. Runs before paint and is byte-identical on every page so a
+        // single CSP hash covers it (scripts/csp-hashes.mjs).
+        // 1. Which language the visitor wants: the saved choice, else the browser language
+        //    (same rule as detectBrowserLanguage() in assets/js/i18n.js).
+        // 2. If this page is written in another language (data-page-lang) and a translated
+        //    page exists (<link rel="alternate" hreflang>), go there. Crawlers are left alone
+        //    so every language version gets indexed on its own URL.
+        // 3. Load the CJK Google Font for the language this page is rendered in.
         var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
-        var lang = localStorage.getItem('preferredLanguage') || (function () {
-          // Same rule as detectBrowserLanguage() in assets/js/i18n.js
+        var stored = null;
+        try { stored = localStorage.getItem('preferredLanguage'); } catch (e) {}
+        var wanted = stored || (function () {
           var tags = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
           for (var i = 0; i < tags.length; i++) {
             var primary = String(tags[i] || '').toLowerCase().split('-')[0];
@@ -67,6 +81,18 @@
           }
           return 'en';
         })();
+        var pageLang = document.documentElement.getAttribute('data-page-lang');
+        var isBot = /bot|crawl|spider|slurp|facebookexternalhit|preview|lighthouse/i.test(navigator.userAgent);
+        if (pageLang && wanted !== pageLang && !isBot) {
+          var alt = document.querySelector('link[rel="alternate"][hreflang="' + wanted + '"]');
+          if (alt) {
+            var target = alt.getAttribute('href');
+            try { target = new URL(target, location.href).pathname + location.search + location.hash; } catch (e) {}
+            location.replace(target);
+            return;
+          }
+        }
+        var lang = pageLang || wanted;
         var families = ['Inter:wght@400;500;600;700', 'Space+Grotesk:wght@500;600;700'];
         if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
         var link = document.createElement('link');

@@ -6,10 +6,12 @@
   "scripts": {
     "build:css": "tailwindcss -i ./assets/css/styles.css -o ./assets/css/output.css --minify",
     "build:articles": "node scripts/build-articles.mjs",
-    "build": "npm run build:css && npm run build:articles",
+    "build": "npm run build:css && npm run build:pages && npm run build:articles && npm run build:sitemap",
     "dev": "tailwindcss -i ./assets/css/styles.css -o ./assets/css/output.css --watch",
     "check:csp": "node scripts/csp-hashes.mjs --check",
-    "csp:update": "node scripts/csp-hashes.mjs --write"
+    "csp:update": "node scripts/csp-hashes.mjs --write",
+    "build:pages": "node scripts/build-pages.mjs",
+    "build:sitemap": "node scripts/build-sitemap.mjs"
   },
   "keywords": [
     "maritime",
@@ -19,6 +21,7 @@
   "author": "Gwangmyung Maritime",
   "license": "UNLICENSED",
   "devDependencies": {
+    "cheerio": "1.2.0",
     "marked": "15.0.12",
     "tailwindcss": "^3.4.1",
     "wrangler": "4.151.1"

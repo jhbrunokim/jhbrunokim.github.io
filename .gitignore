@@ -30,3 +30,9 @@ npm-debug.log*
 
 # Generated article pages (npm run build)
 articles/*.html
+
+# Generated language pages and sitemap (npm run build)
+/en/
+/zh/
+/ja/
+sitemap.xml

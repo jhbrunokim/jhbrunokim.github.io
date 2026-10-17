@@ -56,9 +56,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script>
       (function () {
+        // Language bootstrap. Runs before paint and is byte-identical on every page so a
+        // single CSP hash covers it (scripts/csp-hashes.mjs).
+        // 1. Which language the visitor wants: the saved choice, else the browser language
+        //    (same rule as detectBrowserLanguage() in assets/js/i18n.js).
+        // 2. If this page is written in another language (data-page-lang) and a translated
+        //    page exists (<link rel="alternate" hreflang>), go there. Crawlers are left alone
+        //    so every language version gets indexed on its own URL.
+        // 3. Load the CJK Google Font for the language this page is rendered in.
         var CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
-        var lang = localStorage.getItem('preferredLanguage') || (function () {
-          // Same rule as detectBrowserLanguage() in assets/js/i18n.js
+        var stored = null;
+        try { stored = localStorage.getItem('preferredLanguage'); } catch (e) {}
+        var wanted = stored || (function () {
           var tags = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
           for (var i = 0; i < tags.length; i++) {
             var primary = String(tags[i] || '').toLowerCase().split('-')[0];
@@ -66,6 +75,18 @@
           }
           return 'en';
         })();
+        var pageLang = document.documentElement.getAttribute('data-page-lang');
+        var isBot = /bot|crawl|spider|slurp|facebookexternalhit|preview|lighthouse/i.test(navigator.userAgent);
+        if (pageLang && wanted !== pageLang && !isBot) {
+          var alt = document.querySelector('link[rel="alternate"][hreflang="' + wanted + '"]');
+          if (alt) {
+            var target = alt.getAttribute('href');
+            try { target = new URL(target, location.href).pathname + location.search + location.hash; } catch (e) {}
+            location.replace(target);
+            return;
+          }
+        }
+        var lang = pageLang || wanted;
         var families = ['Inter:wght@400;500;600;700', 'Space+Grotesk:wght@500;600;700'];
         if (CJK[lang]) families.push(CJK[lang] + ':wght@400;500;700');
         var link = document.createElement('link');
@@ -98,7 +119,7 @@
     <section class="pt-32 pb-16 bg-ocean-900">
       <div class="max-w-3xl mx-auto px-6">
         <a
-          href="articles.html"
+          href="{{prefix}}articles.html"
           class="inline-flex items-center gap-2 text-ocean-200 hover:text-white text-sm font-medium mb-8 transition-colors"
         >
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -143,7 +164,7 @@
           </p>
           <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
             <a
-              href="index.html#contact"
+              href="{{prefix}}index.html#contact"
               class="inline-flex items-center gap-2 whitespace-nowrap rounded-md bg-signal-400 px-5 py-3 text-sm font-semibold text-ink-950 hover:bg-signal-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-500"
             >
               <span data-i18n="articleCta.button">{{ctaButton}}</span>
