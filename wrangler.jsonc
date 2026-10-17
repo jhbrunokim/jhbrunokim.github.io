@@ -13,7 +13,7 @@
     "html_handling": "none",
     // 없는 경로는 루트의 404.html 을 404 상태로 돌려줍니다.
     "not_found_handling": "404-page"
-  }
+  },
   // 커스텀 도메인. 배포 시 Cloudflare 가 gmmaritime.com 의 DNS 레코드를 이 Worker 로 맞춥니다.
   // www.gmmaritime.com 은 여기 넣지 않습니다. _redirects 가 호스트 기준 리다이렉트를
   // 지원하지 않으므로, 대시보드에서 www 레코드를 프록시로 두고
