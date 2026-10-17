@@ -10,7 +10,7 @@
 
 // Public site key of the Turnstile widget for gmmaritime.com (Cloudflare
 // dashboard → Turnstile). It is safe to expose; the secret stays in the Worker.
-const TURNSTILE_SITE_KEY = '1x00000000000000000000AA';
+const TURNSTILE_SITE_KEY = '0x4AAAAAAFZRR1oE7iN5VgMi';
 const TURNSTILE_ACTION = 'contact';
 const CONTACT_ENDPOINT = '/api/contact';
 
