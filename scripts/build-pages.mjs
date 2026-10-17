@@ -50,6 +50,12 @@ for (const page of PAGES) {
       $('meta[name="viewport"]').after('\n    <base href="/" />');
     }
 
+    // 자체 호스팅 CJK 글꼴 시트: 원본의 ko.css 를 페이지 언어의 것으로 바꿉니다 (영어는 base.css 만).
+    const fontLink = $('link[rel="stylesheet"][href="assets/fonts/ko.css"]');
+    if (!fontLink.length) warnings.push(`${page}.html: no assets/fonts/ko.css link in <head>`);
+    if (lang === 'en') fontLink.remove();
+    else fontLink.attr('href', `assets/fonts/${lang}.css`);
+
     // data-i18n* 치환 (assets/js/i18n.js applyTranslations 와 같은 규칙)
     $('[data-i18n]').each((_, el) => {
       const value = getNested(dict, $(el).attr('data-i18n'));

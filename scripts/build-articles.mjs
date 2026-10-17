@@ -101,6 +101,8 @@ for (const meta of INDEX) {
     const html = render(TEMPLATE, {
       lang,
       prefix: prefix(lang),
+      // 자체 호스팅 CJK 글꼴 시트 (영어는 base.css 만 쓰므로 비움)
+      fontLang: lang === 'en' ? '' : `    <link rel="stylesheet" href="assets/fonts/${lang}.css" />`,
       siteName,
       title,
       description,
