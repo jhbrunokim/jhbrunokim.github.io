@@ -3,7 +3,7 @@
 > Gwangmyung Maritime — Brand positioning and copy rules
 > 작성일: 2026-10-09 · 대상 독자: 카피라이터, UX 설계자, 사이트 유지보수 담당
 > 이 문서는 홈페이지와 하위 페이지 카피의 단일 기준입니다. 이 문서와 사이트 문구가 다르면 이 문서를 따릅니다.
-> `[OWNER]` 표시는 대표 확인이 필요한 항목입니다. 확인 전에는 표시된 기본값을 씁니다.
+> `[OWNER]` 표시는 대표 확인이 필요한 항목입니다. 확인 전에는 표시된 기본값을 씁니다. 2026-10-17 대표 회신으로 확정된 항목은 7절 "확정 사항"에 모았고, 본문의 해당 자리에는 답과 날짜를 적었습니다.
 
 ---
 
@@ -84,7 +84,7 @@
 | ja | **光明マリタイム** (띄어쓰기 없음) | 光明 マリタイム, 光明マリタイム 株式会社 |
 
 - 근거: `articles/index.json`의 `author` 필드 4개 로케일 표기.
-- 법인 형태(㈜)는 본문에 붙이지 않습니다. 연혁의 설립 · 출범 항목과 법적 고지에서만 "㈜광명마리타임"을 씁니다. `[OWNER]` 등기상 정식 국문 · 영문 법인명(예: "Co., Ltd." 여부)을 확인해 주십시오. 확인 전까지 en에서는 법인 형태 없이 "Gwangmyung Maritime"만 씁니다(현재 연혁 en의 "Gwangmyung Maritime Corporation"은 "Gwangmyung Maritime"으로 바꿉니다).
+- 법인 형태(㈜)는 본문에 붙이지 않습니다. 연혁의 설립 · 출범 항목과 법적 고지에서만 "㈜광명마리타임"을 씁니다. 등기상 영문 법인명은 법인 형태 접미사 없이 **"Gwangmyung Maritime"** 입니다(대표 확인 2026-10-17). en에서는 어디서든 "Gwangmyung Maritime"만 쓰고 "Co., Ltd.", "Corporation"을 붙이지 않습니다(예전 연혁 en의 "Gwangmyung Maritime Corporation"은 이미 "Gwangmyung Maritime"으로 바꿨습니다).
 - 도메인은 항상 소문자 `gmmaritime.com`, 이메일은 `info@gmmaritime.com`.
 - 문장 안에서 회사를 가리킬 때: ko는 "광명마리타임은"(3인칭). "저희", "당사"는 쓰지 않습니다. en은 첫 언급만 "Gwangmyung Maritime", 이후 "we".
 - 전신 법인: ko "㈜끌밋", en / zh / ja "Geulmit". 관계 서술은 5.4절과 6.3절을 따릅니다.
@@ -138,7 +138,7 @@
 | **CRS** | Croatian Register of Shipping | 크로아티아선급 | |
 
 - 나열 순서와 구분자(확정): `ABS, DNV, LR, KR, BV, RINA, CCS, PRS, IRClass, ClassNK, CRS`
-- 목록 끝의 "등" / "etc." / "など"는 빼십시오. 11개 외에 대응 가능한 선급이 있다는 근거가 없습니다. `[OWNER]` Türk Loydu(TL) 등 다른 IACS 회원 선급에도 대응 가능하면 알려 주십시오.
+- 목록 끝의 "등" / "etc." / "など"는 빼십시오. 대응 가능한 선급은 위 11개가 전부입니다(대표 확인 2026-10-17 — Türk Loydu(TL) 등 추가 대응 선급 없음).
 - 현재 `about.supportScopeIACSList` 4개 로케일의 "IR Class", "Class NK"와 `aiConsulting.serviceArea.pillar1.item2`의 "NK"는 위 표기로 바꿉니다.
 - IACS는 선급이 아니라 선급 연합체입니다. IACS 로고를 선급 로고 흐름(marquee)에 섞지 않습니다(6.2절).
 
@@ -247,7 +247,7 @@ ko UI에서는 한글 이름이 제목이고 영문 이름은 보조 줄이나 �
 | UR E26 | 유지 | 선박 전체의 사이버 복원력 요구사항 | Cyber resilience of ships (ship-wide) |
 | UR E27 | 유지 | 선내 시스템 · 장비 단위의 사이버 복원력 요구사항 | Cyber resilience of onboard systems and equipment |
 | TA | 카드에서만 | 형식 승인(Type Approval) | Type approval |
-| SoC · SoF | 홈페이지 삭제 | `[OWNER]` 사이트에 풀이가 없습니다. 정식 명칭 확인 전까지 홈페이지에 쓰지 않습니다. | — |
+| SoC · SoF | 홈페이지 삭제 | 정식 명칭 확인 불가(대표 회신 2026-10-17) — 미사용 유지. 홈페이지에 쓰지 않습니다. `compliance.html`의 기존 풀이(Statement of Compliance · Statement of Fact)는 그대로 둡니다. | — |
 | SCARP | 홈페이지 삭제 | 운항 단계에서 상시 수행하는 선박 사이버 복원력 프로그램 | The ship cyber resilience programme run throughout operation |
 | RA | 홈페이지 삭제 | 위험 평가(Risk Assessment) | Risk assessment |
 | FAT | 유지 | 공장 인수 시험(Factory Acceptance Test) | Factory acceptance test |
@@ -309,14 +309,14 @@ ko UI에서는 한글 이름이 제목이고 영문 이름은 보조 줄이나 �
 - 정부 · 기관(NSA, UK NCSC, USCG, CSA Singapore): 기본값은 로고를 빼고 아래 텍스트 목록으로 바꿉니다(최종 결정은 Task 4 구조 명세).
   - 제목: ko **"참조 표준 · 가이드라인 기관"**, en **"Reference standards and guidance bodies"**
   - 목록 (확정 표기): "NSA (미국 국가안보국)", "UK NCSC (영국 국가사이버보안센터)", "USCG (미국 해안경비대)", "CSA Singapore (싱가포르 사이버보안청)" / en "NSA (US)", "UK NCSC", "USCG", "CSA Singapore"
-  - 현재 다섯 번째 로고 `ncsc.jpg`(alt "NCSC")는 어느 기관인지 사이트에서 알 수 없습니다. `[OWNER]` 한국 국가사이버안보센터인지 확인해 주십시오. 확인 전까지 목록에서 뺍니다.
+  - 예전 다섯 번째 로고 `ncsc.jpg`(alt "NCSC")는 영국 NCSC(UK NCSC) 로고였습니다(대표 확인 2026-10-17 — 한국 국가사이버안보센터가 아님). 위 텍스트 목록의 "UK NCSC"가 이미 그 기관이므로 목록은 그대로 두고(항목 추가 · 삭제 없음), 이미지는 되살리지 않습니다. 파일은 지우지 않고 둡니다.
 - "참조 표준" 목록에서 SC-100 · 200 · 300, N2SF, ISP · ISMP는 홈페이지에서 뺍니다(4.2절). 남는 목록 (확정): "IACS UR E26 / E27", "IMO MSC-FAL.1/Circ.3 Rev.3", "ISO 27001 · 27701 · 42001", "ISMS-P", "Zero Trust". 현재의 "IMO MSC Cyber"는 하위 페이지와 같은 "IMO MSC-FAL.1/Circ.3 Rev.3"로 바꿉니다.
 
 ### 6.3 연혁 (Global Constraints 6)
 
 | 연도 | ko 제목 / 설명 (확정) | en |
 |---|---|---|
-| 2021 | 기술 기반 사업의 출발 / "㈜끌밋 법인 설립 — 광명마리타임의 `[OWNER: 전신 / 모회사 / 관계사 중 택1]` — 데이터 · 플랫폼 기반 시스템 개발 시작" | Foundation of a technology business / "Geulmit founded — `[OWNER]` of Gwangmyung Maritime — and data and platform system development begins" |
+| 2021 | 기술 기반 사업의 출발 / "㈜끌밋 법인 설립 — 광명마리타임의 전신 — 데이터 · 플랫폼 기반 시스템 개발 시작" | Foundation of a technology business / "Geulmit founded — the predecessor of Gwangmyung Maritime — and data and platform system development begins" |
 | 2022 | 산업 도메인 확장 / "해양 · 물류 · 운영 산업으로의 기술 적용 가능성 검증" | Expanding into new domains / "Testing how the technology applies to maritime, logistics and operations" |
 | 2023 | 고신뢰 · 고보안 시스템 경험 / "국방부 위성 영상 처리 시스템 구축 사업 참여" | High-assurance systems experience / "Took part in a Ministry of National Defense satellite image processing system project" |
 | 2024 | 해양 사이버 보안 · 스마트십 전문성 정립 / "IACS UR E26 / E27 규제 대응 구조 연구" | Maritime cybersecurity and Smart Ship focus / "Research into IACS UR E26 / E27 compliance structures" |
@@ -324,8 +324,8 @@ ko UI에서는 한글 이름이 제목이고 영문 이름은 보조 줄이나 �
 | 2026 **목표** | 라벨 **"목표"** (en **"Goal"**)를 연도 옆에 붙입니다. 제목 "Maritime Compliance 사업 중심 조직 개편" → "E26 / E27 대응 중심으로 조직 개편" / 설명 "주요 선급의 IACS UR E27 형식 승인(TA) 취득 및 E26 산출물 제공" | Label **"Goal"**. Title "Reorganising around E26 / E27 compliance" / "IACS UR E27 type approval (TA) with major class societies, and delivery of E26 deliverables" |
 
 - 2026 항목은 대표가 달성을 확인하기 전까지 반드시 "목표" 라벨을 붙이고, 과거형("취득", "제공했습니다")이나 완료형으로 쓰지 않습니다. 시각적으로도 다른 연도와 구분(예: 점선, 빈 원)합니다.
-- `[OWNER]` 2026 목표의 TA 취득 주체가 광명마리타임 자체 제품인지, 고객 공급사의 TA 취득 지원인지 확인해 주십시오. 컨설팅 회사는 보통 TA를 직접 받지 않으므로, 후자라면 문구를 "주요 선급 IACS UR E27 형식 승인(TA) 취득 지원"으로 바꿉니다.
-- 2021 항목의 관계 문구는 대표 확인 전까지 HTML 주석 `<!-- [OWNER] 끌밋과 광명마리타임의 관계 확인 필요 -->`과 함께 "㈜끌밋 법인 설립 및 데이터 · 플랫폼 기반 시스템 개발 시작"을 그대로 둡니다. 관계를 추측해 쓰지 않습니다.
+- 2026 목표의 TA 취득 주체는 광명마리타임 자체 제품입니다(대표 확인 2026-10-17). 위 문구("… 형식 승인(TA) 취득 …")를 그대로 쓰고, "취득 지원"으로 바꾸지 않습니다. 달성 여부는 확인되지 않았으므로 "목표" 라벨은 유지합니다.
+- 2021 항목은 ㈜끌밋이 광명마리타임의 전신임을 대표가 확인(2026-10-17)하여 위 문구로 확정했습니다. 확인 전 중립 문구("㈜끌밋 법인 설립 및 데이터 · 플랫폼 기반 시스템 개발 시작")와 HTML 주석 `<!-- [OWNER] 끌밋과 광명마리타임의 관계 확인 필요 -->`는 더 쓰지 않습니다. zh "设立Geulmit法人（光明海事的前身），开始基于数据和平台的系统开发", ja "Geulmit法人設立（光明マリタイムの前身）、データ・プラットフォーム基盤のシステム開発を開始".
 
 ### 6.4 홈페이지에서 지울 것 (요약)
 
@@ -341,10 +341,18 @@ ko UI에서는 한글 이름이 제목이고 영문 이름은 보조 줄이나 �
 
 ## 7. 열린 질문 ([OWNER])
 
-1. 2021 ㈜끌밋과 광명마리타임의 관계 (전신 / 모회사 / 관계사).
-2. 2026 목표의 TA 취득 주체 (자체 vs 고객 공급사 지원), 그리고 이미 달성된 부분이 있는지.
-3. 등기상 정식 국문 · 영문 법인명.
-4. 로고 `ncsc.jpg`가 가리키는 기관.
-5. 11개 외 대응 가능한 선급(예: Türk Loydu)이 있는지.
-6. SoC · SoF의 정식 명칭 (하위 페이지 풀이용).
-7. SC-100 · 200 · 300 자격을 구성원이 보유하고 있고 이를 밝히고 싶은지 (밝힌다면 About에서 근거와 함께, 표준 목록이 아닌 곳에).
+1. `zeroTrust.experience.disclaimer`(제로 트러스트 페이지 수행 경험 고지)의 문구 — **문구 제안 대기**. 제안 전까지 현재 문구를 그대로 둡니다(`zero-trust.html`의 `<!-- [OWNER] confirm the wording of this disclaimer -->` 주석 유지).
+2. SC-100 · 200 · 300 자격을 구성원이 보유하고 있고 이를 밝히고 싶은지 (밝힌다면 About에서 근거와 함께, 표준 목록이 아닌 곳에). 2026-10-17 회신에 포함되지 않았습니다.
+
+### 확정 사항 (대표 회신 2026-10-17)
+
+| # | 질문 | 답 | 반영 |
+|---|---|---|---|
+| 1 | 2021 ㈜끌밋과 광명마리타임의 관계 | **전신** | 6.3절 2021 문구 확정(ko · en · zh · ja), `about.html`의 `[OWNER]` 주석 제거 |
+| 2 | 2026 목표의 TA 취득 주체 | **광명마리타임 자체 제품** | 현재 문구("취득") 유지, "취득 지원" 대안 폐기. 달성 여부는 미확인이므로 "목표" 라벨 유지 |
+| 3 | 등기상 영문 법인명 | 법인 형태 접미사 **미포함** — "Gwangmyung Maritime" | 2.1절. "Co., Ltd." · "Corporation" 금지. 국문은 연혁 · 법적 고지에서만 "㈜광명마리타임" |
+| 4 | 로고 `ncsc.jpg`가 가리키는 기관 | **영국 NCSC(UK NCSC)** — 한국 국가사이버안보센터가 아님 | 기관 목록의 "UK NCSC"가 이미 그 기관이므로 목록 변경 없음(NCSC는 계속 표기). 이미지는 되살리지 않고, 파일은 지우지 않음 |
+| 5 | 11개 외 대응 가능한 선급 | **없음** | 2.4절 11개 목록 확정, 목록 끝 "등" / "etc." / "など" 없음 |
+| 6 | SoC · SoF의 정식 명칭 | **확인 불가** | 미사용 유지(4.2절). 홈페이지에 쓰지 않음 |
+| — | 개인정보 보호책임자 성명 · 직위 | 현재 이메일만 표기하는 형태 **유지** | `privacy-policy.html` 변경 없음 |
+| — | privacy@gmmaritime.com | **실제 운영 중인 메일함** | 그대로 사용 |
