@@ -25,7 +25,7 @@ The owner chose a separate About page. Where this section and anything below dis
 The owner split the page in two. Where this section and the rest of the spec disagree, this section wins.
 
 - **`index.html` (broad homepage)**: `home` → `business` → `journey` → `insights` → `contact`, plus the zero-height aliases `#about` (now directly before `#journey`) and `#articles` (before `#insights`).
-  - `home` is the former broad hero from `5d64ea9` (`hero.title`, `hero.description`, `hero.ctaSecondary`, grid background, five-photo collage), without the badge and without `min-h-screen`. The collage shows from 1280 px (`hidden xl:flex`; at 1024 px its three 192 px columns overlapped the headline and description), and the text block carries `xl:min-h-[47rem]` so the section contains the absolutely positioned collage. Collage files: `hero-drydock-hull.jpg`, `hero-bridge-night.jpg`, `hero-tanker-dawn.jpg`, `hero-ship-wake.jpg`, `hero-hull-welding.jpg`; the first two are preloaded at ≥1280 px.
+  - `home` is the former broad hero from `5d64ea9` (`hero.title`, `hero.description`, `hero.ctaSecondary`, grid background, five-photo collage), without the badge and without `min-h-screen`. The collage shows from 1280 px (`hidden xl:flex`; at 1024 px its three 192 px columns overlapped the headline and description), and the text block carries `xl:min-h-[47rem]` so the section contains the absolutely positioned collage. Collage files: `hero-drydock-hull.webp`, `hero-bridge-night.webp`, `hero-tanker-dawn.webp`, `hero-ship-wake.webp`, `hero-hull-welding.webp`; the first two are preloaded at ≥1280 px.
   - `business` (사업 영역, `home.business.*`): left-aligned head, then three ruled rows in the §5 stakeholder-row style (title · body · link): 플랫폼 개발 · 구축 → `#contact`, 해양 사이버 보안 · 컴플라이언스 → `services.html`, 데이터 · AI 기반 운영 → `ai-cybersecurity-consulting.html`. The mobile mid-page CTA (formerly in `#why`) sits after the rows.
   - `journey`, `insights`, `contact` are unchanged.
 - **`services.html` (services root)**: the former §3 hero (text + flow diagram, no `#home` id), §4 `#services` cards and §5 `#why` (stakeholder rows, class-society marquee, standards lines; no mid-page CTA), then a closing CTA band (`systemIntegration.ctaTitle` / `ctaDesc`, orange `hero.ctaSecondary` button) and the footer. Keys stay `home.hero.*`, `home.services.*`, `home.why.*`.
@@ -144,7 +144,7 @@ New-key total becomes 50 (copy deck's 45 + these 5).
 
 ### 3.5 `<head>` changes on `index.html`
 
-- Remove both `<link rel="preload" as="image" href="resource/images/hero-*.jpg">`.
+- Remove both `<link rel="preload" as="image" href="resource/images/hero-*.webp">`.
 - `<title>`: `광명마리타임 | 선박 사이버 보안, 설계부터 선급 검사까지`.
 - `meta description`, `og:description`, `twitter:description`, JSON-LD `description`: the positioning 1.4 ko footer sentence ("IACS UR E26 / E27 대응과 IT / OT 시스템 통합을 설계부터 선급 검사까지 맡는 해양 사이버 보안 컨설팅 기업입니다.").
 
@@ -278,14 +278,14 @@ Per-card changes (all six):
 - Card surface: `bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800` (drop `shadow-lg`).
 - Remove the Lucide icon from each year line.
 - Year line becomes `<p class="text-2xl font-bold leading-8 text-ocean-700 dark:text-ocean-300">` (was `h3`, same size and line height, so `.tl-dot { top: 2.5rem }` stays aligned); entry title becomes `<h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">` (was `h4`).
-- 2021: add `<!-- [OWNER] 끌밋과 광명마리타임의 관계 확인 필요 -->` (CD 4.2).
+- 2021: no `[OWNER]` comment — the owner confirmed on 2026-10-17 that Geulmit is the predecessor of Gwangmyung Maritime, so the CD 4.2 confirmed wording ("㈜끌밋 법인 설립 — 광명마리타임의 전신 — …") is used and the former `<!-- [OWNER] 끌밋과 광명마리타임의 관계 확인 필요 -->` comment is removed.
 
 2026 "목표" marker:
 - `tl-item` gets `data-timeline-goal`.
 - Dot: `tl-dot w-4 h-4 rounded-full border-2 border-ocean-700 dark:border-ocean-300 bg-white dark:bg-slate-900` (hollow). Remove `tl-dot--now` and the ring classes.
 - Card: same surface as the others but `border-2 border-dashed border-ocean-400 dark:border-ocean-600` (replaces the filled `bg-ocean-800` card).
 - Year line: `<p class="flex items-center gap-2 …">2026 <span class="rounded-full border border-dashed border-ocean-500 px-2 py-0.5 text-xs font-semibold leading-5 text-ocean-700 dark:text-ocean-300" data-i18n="home.journey.goalLabel">목표</span></p>` — the pill sits on the year line so the line height stays 2 rem.
-- Add `<!-- [OWNER] 2026 목표의 TA 취득 주체 확인 필요 (CD 9 #2) -->`.
+- No `[OWNER]` comment — the owner confirmed on 2026-10-17 that the 2026 TA is for Gwangmyung Maritime's own product (CD 9 #2 resolved); the wording stays as in CD 4.2 and the former `<!-- [OWNER] 2026 목표의 TA 취득 주체 확인 필요 (CD 9 #2) -->` comment is removed. The "목표" label stays until the owner confirms achievement.
 - `timeline-reveal.js`: the fill stops at the last revealed **non-goal** item, so the rail is not drawn "through" the goal:
   `const shown = items.filter(i => i.classList.contains('is-in') && !i.hasAttribute('data-timeline-goal'));`
   (The goal card itself still reveals.)
@@ -430,7 +430,7 @@ Delete from both menus: Expertise, Vision, Business, Competitiveness. Keys left 
 
 **JS**: nothing is deleted. Changed: `layout.js` (§9.1), `timeline-reveal.js` (one filter, §6.2), `articles.js` (one class string, §7), `contact.js` (§8.5). `logo-marquee.js` is unchanged.
 
-**Assets left unreferenced** (do not delete in Task 5; listed for cleanup once the owner answers CD 9 #6):
+**Assets left unreferenced** (do not delete in Task 5. CD 9 #6 was answered on 2026-10-17: `ncsc.jpg` was the UK NCSC logo, already covered by "UK NCSC" in the text list — keep the file, do not restore the image, no list change):
 `resource/images/hero-port-night.jpg`, `hero-container-ship.jpg`, `hero-cargo-crane.jpg`, `hero-ship-wake.jpg`, `hero-container-yard.jpg`; `resource/logos/iacs.png`, `nsa.png`, `ncsc-uk.png`, `uscg.webp`, `csa-sg.png`, `ncsc.jpg`.
 
 **Translation keys**: as CD 8.2, plus `footer.service1–4`, plus the four `nav.*` above. Search the repo before deleting each one; delete from all four locales.
