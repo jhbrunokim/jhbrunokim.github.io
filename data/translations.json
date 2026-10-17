@@ -317,11 +317,6 @@
       "subtitle": "해양 사이버 규제와 사고 사례를 정리합니다.",
       "viewAll": "전체 보기"
     },
-    "consent": {
-      "message": "이 사이트는 방문 통계를 위해 Google Analytics 쿠키를 사용합니다. 동의하시면 분석 도구가 활성화됩니다.",
-      "accept": "동의",
-      "decline": "거부"
-    },
     "aiConsulting": {
       "hero": {
         "title": "설계에서 끝나지 않습니다. Survey까지 같은 팀이 갑니다.",
@@ -1074,11 +1069,6 @@
       "title": "Insights",
       "subtitle": "Notes on maritime cyber regulation and incidents.",
       "viewAll": "View all"
-    },
-    "consent": {
-      "message": "This site uses Google Analytics cookies to understand traffic. If you accept, analytics will be enabled.",
-      "accept": "Accept",
-      "decline": "Decline"
     },
     "aiConsulting": {
       "hero": {
@@ -1833,11 +1823,6 @@
       "subtitle": "梳理海事网络法规与事件案例。",
       "viewAll": "查看全部"
     },
-    "consent": {
-      "message": "本网站使用 Google Analytics Cookie 以了解访问情况。如您同意，将启用分析工具。",
-      "accept": "同意",
-      "decline": "拒绝"
-    },
     "aiConsulting": {
       "hero": {
         "title": "我们不止于设计。同一团队一直陪伴到检验。",
@@ -2590,11 +2575,6 @@
       "title": "インサイト",
       "subtitle": "海事サイバー規制とインシデント事例をまとめています。",
       "viewAll": "すべて見る"
-    },
-    "consent": {
-      "message": "このサイトは、アクセス解析のために Google Analytics クッキーを使用します。ご同意いただくと、解析ツールが有効になります。",
-      "accept": "同意する",
-      "decline": "拒否する"
     },
     "aiConsulting": {
       "hero": {
