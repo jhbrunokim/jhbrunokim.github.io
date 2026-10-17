@@ -14,6 +14,7 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync } from 'node:f
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { LANGS, LOCALE, OG_LOCALE, ROOT, SITE, TRANSLATIONS, escapeHtml, localizeHref, prefix } from './lib/site.mjs';
+import { applyDiagrams } from './lib/diagrams.mjs';
 
 const ARTICLES_DIR = join(ROOT, 'articles');
 const TEMPLATE = readFileSync(join(ROOT, 'templates', 'article.html'), 'utf8');
@@ -119,7 +120,8 @@ for (const meta of INDEX) {
       authorLine: author
         ? `          <p class="mt-4 text-sm text-slate-300"><span data-i18n="articlesUi.by">${escapeHtml(ui(lang, 'articlesUi', 'by', 'By'))}</span> ${escapeHtml(author)}</p>`
         : '',
-      content: marked.parse(stripLeadingH1(markdownFor(meta.slug, lang))),
+      // 본문 안의 [[stage-diagram N]] 은 인라인 SVG 도해로 바뀝니다 (scripts/lib/diagrams.mjs)
+      content: applyDiagrams(marked.parse(stripLeadingH1(markdownFor(meta.slug, lang))), lang),
       ctaTitle: ui(lang, 'articleCta', 'title', ''),
       ctaDesc: ui(lang, 'articleCta', 'desc', ''),
       ctaButton: ui(lang, 'articleCta', 'button', ''),

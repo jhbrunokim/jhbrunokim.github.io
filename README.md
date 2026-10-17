@@ -218,6 +218,12 @@ node scripts/fetch-fonts.mjs   # Google Fonts 에서 woff2 + unicode-range 서�
 2. `articles/index.json`에 메타(`slug`, `title`, `date`, `description`, `category`, `author`; 각 4개 언어) 추가
 3. `npm run build` 로 `articles/<slug>.html` (ko) 과 `en/articles/<slug>.html` 등이 만들어지는지 확인. 서로 `hreflang` 으로 연결되며 sitemap 에도 자동으로 들어갑니다
 
+아티클 본문에 쓸 수 있는 시각 요소 (`assets/css/styles.css` 의 `.prose` 아래, SVG 는 `scripts/lib/diagrams.mjs`):
+- `[[stage-diagram N]]` — 신조선 다섯 단계 흐름도. N 은 강조할 단계(1~5), 0 은 전체. 페이지 언어로 라벨이 바뀝니다
+- `<aside class="callout callout-fail"><span class="callout-label">흔한 실패</span>` … `</aside>` — 강조 상자. `callout-role`(회사 역할), 기본 `callout`(파랑). 안의 본문은 빈 줄로 감싸면 마크다운으로 렌더됩니다
+- `<ol class="decisions"><li><strong>제목</strong> 본문</li>…</ol>` — 번호 카드 목록
+- `<nav class="series-nav"><a href="articles/….html"><span>다음 글 · 2/5</span>제목</a></nav>` — 시리즈 이전 · 다음 글
+
 옛 주소 `article.html?slug=xxx` 는 Worker 가 새 주소로 301 리다이렉트합니다.
 
 ## 🌙 다크 모드
