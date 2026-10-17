@@ -554,7 +554,7 @@
 
 | # | 질문 | 확인 전 기본값 (답이 "아니오" / 미확인일 때 쓰는 문구) | 관련 절 |
 |---|---|---|---|
-| 10 | `zeroTrust.experience.disclaimer`(수행 경험 고지)의 문구 — **문구 제안 대기** | 현재 문구 그대로. `zero-trust.html`의 `<!-- [OWNER] confirm the wording of this disclaimer -->` 주석 유지 | 12 |
+| 10 | `zeroTrust.experience.disclaimer`(수행 경험 고지)의 문구 — **확정(대표 채택 2026-10-17)** | §12 의 새 문구 적용. `[OWNER]` 주석 제거 | 12 |
 | 4 | 회신 시점을 약속할 수 있습니까? (2026-10-17 회신에 없음) | 아무것도 쓰지 않음 | 6.1 |
 | 5 | 담당자 이름 · 전화번호를 공개하시겠습니까? (2026-10-17 회신에 없음) | 이메일과 주소만 표시 | 6.1, 6.2 |
 | 8 | `compliance.html`의 "For System Integration" 산출물(UR E26 · 6개 실증 산출물 + FAT 입회)을 조선소 몫으로 소개해도 됩니까? (2026-10-17 회신에 없음) | 조선소 블록의 산출물 줄로 사용(시스템 통합 주체 = 조선소로 해석). 아니라면 조선소 블록에서 산출물 줄을 빼고 상세 한 줄만 둠. `maritime.html`의 `[OWNER]` 주석 유지 | 3.2 |
@@ -676,7 +676,7 @@ ko UI는 한국어 낱말이 제목이고 영어 낱말이 보조 줄입니다. 
 
 Stage 7에서 추가한 다섯 번째 서비스 페이지입니다. 원문은 대표 제공 자료이며, 자료에 없는 수치 · 고객명 · 성과는 쓰지 않습니다. 수행 경험은 회사가 아니라 구성원의 이전 소속 실적이며, 페이지가 그 사실을 먼저 밝힙니다. 새 키는 `zeroTrust.*`, `nav.zeroTrust`, `home.services.zeroTrust.*`이고, 바뀐 값은 `home.services.subtitle`, `home.business.platform.body` · `.link`입니다. Pillar 이름 · 역량 약어(IGA, MFA, ZTNA 등)는 번역하지 않는 고정 영문이며 HTML에만 있습니다.
 
-- `[OWNER]` 수행 경험 고지 문장(`zeroTrust.experience.disclaimer`)의 문구 — 문구 제안 대기(2026-10-17). 제안 전까지 현재 문구를 그대로 둡니다.
+- 수행 경험 고지 문장(`zeroTrust.experience.disclaimer`) — 확정(대표 채택 2026-10-17). 사실 진술 + 게재 이유 구조로 바꿨습니다(§12).
 - ja 페이지 본문은 문서 머리의 표기 규칙대로 구절 단위 띄어쓰기를 넣지 않았습니다. `nav.zeroTrust` ja만 계획서 지정값 "ゼロトラスト コンサルティング"을 씁니다.
 
 | 키 | ko | en | zh | ja |
@@ -786,7 +786,7 @@ Stage 7에서 추가한 다섯 번째 서비스 페이지입니다. 원문은 �
 | `zeroTrust.architecture.role3` | 정책에서 결정된 최소 접근권한 기반의 접근 허용 | Grants access on the least privilege the policy decided | 基于策略确定的最小访问权限允许访问 | ポリシーで決定された最小アクセス権限に基づいてアクセスを許可 |
 | `zeroTrust.architecture.role4` | IDC 서버팜 · 개발망 · 클라우드 망 등 중요자원 통합 보호 | Protects critical resources such as the IDC server farm, development network and cloud network as one | 统一保护 IDC 服务器集群、开发网、云网络等重要资源 | IDCサーバーファーム・開発網・クラウド網などの重要資源を統合的に保護 |
 | `zeroTrust.experience.title` | 수행 경험 | Experience | 执行经验 | 遂行経験 |
-| `zeroTrust.experience.disclaimer` | 아래 실적은 광명마리타임이 직접 수행한 것이 아니라, 광명마리타임 구성원이 이전 소속에서 수행한 프로젝트입니다. | The projects below were not carried out by Gwangmyung Maritime itself; they are projects that Gwangmyung Maritime members carried out at their previous organisations. | 以下业绩并非光明海事直接执行，而是光明海事成员在此前任职单位执行的项目。 | 以下の実績は光明マリタイムが直接遂行したものではなく、光明マリタイムのメンバーが以前の所属先で遂行したプロジェクトです。 |
+| `zeroTrust.experience.disclaimer` | 아래 실적은 광명마리타임 구성원이 이전 소속에서 수행한 프로젝트입니다. 광명마리타임 법인의 수행 실적이 아니며, 구성원의 경험 범위를 보여 드리기 위해 싣습니다. | The projects below were carried out by Gwangmyung Maritime members at their previous organisations. They are not engagements of Gwangmyung Maritime as a company; we list them to show the range of our members’ experience. | 以下项目由光明海事成员在此前任职单位执行，并非光明海事公司的业绩；列出这些项目是为了展示成员的经验范围。 | 以下の実績は、光明マリタイムのメンバーが以前の所属先で遂行したプロジェクトです。光明マリタイム法人としての実績ではなく、メンバーの経験の範囲をお示しするために掲載しています。 |
 | `zeroTrust.experience.item1` | 영호남 지역 대표은행 차세대 정보보안 아키텍처 수립 | Next-generation information security architecture for a leading regional bank in the Yeongnam and Honam regions | 韩国岭南、湖南地区代表性银行的新一代信息安全架构制定 | 嶺南・湖南地域を代表する銀行の次世代情報セキュリティアーキテクチャ策定 |
 | `zeroTrust.experience.item2` | 서울 소재 중대형 공금융 기관 정보보호 선진화 전략계획 수립 | Information security advancement strategy plan for a mid-to-large public financial institution in Seoul | 首尔一家中大型公共金融机构的信息保护先进化战略规划制定 | ソウル所在の中・大規模公的金融機関における情報保護高度化戦略計画の策定 |
 | `zeroTrust.experience.result` | 제로 트러스트 추진방안 제시 | Zero Trust implementation plan proposed | 提出零信任推进方案 | ゼロトラスト推進方策の提示 |

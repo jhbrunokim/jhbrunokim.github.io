@@ -567,7 +567,7 @@
       },
       "experience": {
         "title": "수행 경험",
-        "disclaimer": "아래 실적은 광명마리타임이 직접 수행한 것이 아니라, 광명마리타임 구성원이 이전 소속에서 수행한 프로젝트입니다.",
+        "disclaimer": "아래 실적은 광명마리타임 구성원이 이전 소속에서 수행한 프로젝트입니다. 광명마리타임 법인의 수행 실적이 아니며, 구성원의 경험 범위를 보여 드리기 위해 싣습니다.",
         "item1": "영호남 지역 대표은행 차세대 정보보안 아키텍처 수립",
         "item2": "서울 소재 중대형 공금융 기관 정보보호 선진화 전략계획 수립",
         "result": "제로 트러스트 추진방안 제시"
@@ -1283,7 +1283,7 @@
       },
       "experience": {
         "title": "Experience",
-        "disclaimer": "The projects below were not carried out by Gwangmyung Maritime itself; they are projects that Gwangmyung Maritime members carried out at their previous organisations.",
+        "disclaimer": "The projects below were carried out by Gwangmyung Maritime members at their previous organisations. They are not engagements of Gwangmyung Maritime as a company; we list them to show the range of our members’ experience.",
         "item1": "Next-generation information security architecture for a leading regional bank in the Yeongnam and Honam regions",
         "item2": "Information security advancement strategy plan for a mid-to-large public financial institution in Seoul",
         "result": "Zero Trust implementation plan proposed"
@@ -1999,7 +1999,7 @@
       },
       "experience": {
         "title": "执行经验",
-        "disclaimer": "以下业绩并非光明海事直接执行，而是光明海事成员在此前任职单位执行的项目。",
+        "disclaimer": "以下项目由光明海事成员在此前任职单位执行，并非光明海事公司的业绩；列出这些项目是为了展示成员的经验范围。",
         "item1": "韩国岭南、湖南地区代表性银行的新一代信息安全架构制定",
         "item2": "首尔一家中大型公共金融机构的信息保护先进化战略规划制定",
         "result": "提出零信任推进方案"
@@ -2715,7 +2715,7 @@
       },
       "experience": {
         "title": "遂行経験",
-        "disclaimer": "以下の実績は光明マリタイムが直接遂行したものではなく、光明マリタイムのメンバーが以前の所属先で遂行したプロジェクトです。",
+        "disclaimer": "以下の実績は、光明マリタイムのメンバーが以前の所属先で遂行したプロジェクトです。光明マリタイム法人としての実績ではなく、メンバーの経験の範囲をお示しするために掲載しています。",
         "item1": "嶺南・湖南地域を代表する銀行の次世代情報セキュリティアーキテクチャ策定",
         "item2": "ソウル所在の中・大規模公的金融機関における情報保護高度化戦略計画の策定",
         "result": "ゼロトラスト推進方策の提示"
