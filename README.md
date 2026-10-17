@@ -125,8 +125,8 @@ git push origin main
 필요한 GitHub Secrets (Settings → Secrets and variables → Actions):
 - `CLOUDFLARE_API_TOKEN` — "Edit Cloudflare Workers" 템플릿으로 만든 API 토큰
 - `CLOUDFLARE_ACCOUNT_ID` — Cloudflare 대시보드 Workers & Pages 우측의 Account ID
-- `TURNSTILE_SECRET_KEY` — Turnstile 위젯의 비밀 키 (배포 때 Worker secret 으로 올라감)
-- `EMAILJS_PRIVATE_KEY` — EmailJS 계정의 Private Key (배포 때 Worker secret 으로 올라감)
+- `TURNSTILE_SECRET_KEY` — Turnstile 위젯의 비밀 키 (배포 때 `--secrets-file` 로 Worker secret 에 함께 올라감)
+- `EMAILJS_PRIVATE_KEY` — EmailJS 계정의 Private Key (배포 때 `--secrets-file` 로 Worker secret 에 함께 올라감)
 
 배포 상태는 [Actions 탭](https://github.com/jhbrunokim/jhbrunokim.github.io/actions)에서 확인.
 도메인 연결은 `wrangler.jsonc` 의 `routes` 주석을 참고.
