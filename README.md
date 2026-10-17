@@ -32,6 +32,7 @@ jhbrunokim.github.io/
 │   ├── css/
 │   │   ├── styles.css                # Tailwind directives + 커스텀 스타일
 │   │   └── output.css                # 빌드된 CSS (커밋 안 함; CI에서 재빌드)
+│   ├── fonts/                        # 자체 호스팅 웹 글꼴 (woff2 + base/ko/zh/ja/watermark.css; scripts/fetch-fonts.mjs 가 생성)
 │   └── js/
 │       ├── layout.js                 # navbar/footer/모달 로드, 스크롤·드롭다운·active-state
 │       ├── theme.js                  # OS 테마 감지 (<head>에서 blocking 로드)
@@ -57,6 +58,7 @@ jhbrunokim.github.io/
 │   ├── build-pages.mjs               # 루트 페이지 → en/ zh/ ja/ (data-i18n 치환)
 │   ├── build-articles.mjs            # 마크다운 → articles/*.html, <lang>/articles/*.html
 │   ├── build-sitemap.mjs             # sitemap.xml 생성 (커밋 안 함)
+│   ├── fetch-fonts.mjs               # Google Fonts → assets/fonts/ 다운로드 (수동 실행, 빌드 미포함)
 │   └── csp-hashes.mjs                # CSP 인라인 스크립트 해시 관리
 ├── resource/
 │   ├── gmmaritime.ico                # 파비콘
@@ -158,7 +160,7 @@ npm run check:csp    # 일치 여부 확인 (CI 와 동일)
 
 - **CSS**: Tailwind CSS 3.4+ (CLI 빌드, CDN 미사용)
 - **JS**: Vanilla ES6+ (프레임워크 없음)
-- **폰트**: Google Fonts — Space Grotesk(디스플레이), Inter, Noto Sans KR / SC / JP
+- **폰트**: 자체 호스팅(`assets/fonts/`) — Space Grotesk(디스플레이), Inter, Noto Sans KR / SC / JP. Google Fonts 서버에는 요청하지 않습니다
 - **아이콘**: Lucide Icons 1.53.0 (jsDelivr CDN, 버전 고정)
 - **마크다운**: marked 15.0.12 (빌드 시 Node 에서 렌더; 브라우저에는 로드하지 않음)
 - **문의 폼**: Cloudflare Turnstile + Worker(`src/worker.js`) → EmailJS REST API
@@ -185,6 +187,12 @@ EmailJS 비공개 키와 Turnstile 비밀 키는 Worker secret 에만 있고 브
 ### 색상 · 폰트 · 애니메이션
 
 `tailwind.config.js`의 `theme.extend`에서 수정.
+
+웹 글꼴은 `assets/fonts/` 에 자체 호스팅합니다 (`base.css` = Inter · Space Grotesk, `ko.css` · `zh.css` · `ja.css` = 언어별 Noto Sans, `watermark.css` = 홈 워터마크 전용 서체). 각 페이지 `<head>` 는 `base.css` 와 `ko.css` 를 링크하고, 빌드 스크립트가 언어 페이지에서 `ko.css` 를 해당 언어 시트로 바꿉니다(영어는 `base.css` 만). 글꼴 종류나 굵기를 바꾸려면 `scripts/fetch-fonts.mjs` 의 `SHEETS` 를 고친 뒤 아래를 실행하고 결과(woff2 + CSS)를 커밋합니다. `npm run build` 에는 포함되지 않습니다.
+
+```bash
+node scripts/fetch-fonts.mjs   # Google Fonts 에서 woff2 + unicode-range 서브셋을 받아 assets/fonts/ 를 다시 만듦
+```
 
 ### 다국어 텍스트
 
@@ -235,14 +243,14 @@ URL 이 언어입니다. 각 페이지는 `<html data-page-lang>` 의 언어로 
 - `navigator.languages`(없으면 `navigator.language`)를 순서대로 확인해 기본 언어 태그가 `ko` / `zh` / `ja`인 첫 항목을 사용 (예: `ko-KR` → 한국어, `zh-TW` → 중국어)
 - 일치하는 항목이 없으면 영어
 
-이 규칙은 `assets/js/i18n.js`의 `detectBrowserLanguage()` 한 곳에 정의되어 `I18nManager`와 `country-detector.js`가 함께 사용합니다. 각 페이지 `<head>`의 인라인 폰트 로딩 스크립트는 스크립트 파일보다 먼저 실행되므로 같은 규칙의 짧은 사본을 갖고 있어, 첫 화면부터 해당 로케일의 Noto CJK 폰트를 불러옵니다.
+이 규칙은 `assets/js/i18n.js`의 `detectBrowserLanguage()` 한 곳에 정의되어 `I18nManager`와 `country-detector.js`가 함께 사용합니다. 각 페이지 `<head>`의 인라인 부트스트랩 스크립트는 스크립트 파일보다 먼저 실행되므로 같은 규칙의 짧은 사본을 갖고 있습니다. 페이지 언어의 Noto CJK 글꼴은 `<head>` 의 정적 `<link>`(`assets/fonts/<lang>.css`)가 불러오므로 스크립트가 글꼴을 다루지는 않습니다.
 
 적용된 언어는 `localStorage.preferredLanguage`에 저장되어 재방문 시 유지되며, `<html lang>` 속성도 로케일에 맞춰 갱신됩니다. 언어 변경은 네비게이션의 지구본 버튼(모바일 메뉴의 "언어 변경")에서 여는 언어 선택 모달로 합니다. 모달은 Esc 키, 배경 클릭, 닫기 버튼으로 닫힙니다.
 
 ### 새 언어 추가
 
 1. `data/translations.json`에 새 로케일 최상위 키 추가 (기존 구조 미러링)
-2. `assets/js/i18n.js`의 `detectBrowserLanguage()`와 각 페이지 `<head>` 인라인 폰트 스크립트의 지원 언어 목록 확장 (CJK 폰트가 필요하면 폰트 매핑도 추가)
+2. `assets/js/i18n.js`의 `detectBrowserLanguage()` · `ensureFontForLocale()`와 각 페이지 `<head>` 인라인 부트스트랩 스크립트의 지원 언어 목록 확장 (CJK 글꼴이 필요하면 `scripts/fetch-fonts.mjs` 의 `SHEETS` 에 시트를 추가하고 `scripts/build-pages.mjs` · `build-articles.mjs` 가 그 시트를 링크하도록 확장)
 3. `assets/js/country-detector.js`의 `SUPPORTED_LANGUAGES`와 `components/country-modal.html`의 언어 옵션(해당 언어의 자국어 표기, `value` = 언어 코드) 추가
 4. 모든 텍스트 번역
 

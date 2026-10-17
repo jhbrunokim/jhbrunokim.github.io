@@ -3,8 +3,8 @@
 // Pick the site locale from the browser's language preferences: the first
 // tag whose primary subtag is ko, zh or ja wins (e.g. 'ko-KR' -> 'ko',
 // 'zh-Hant-TW' -> 'zh'); anything else falls back to English. No network
-// lookup. The inline <head> font script in each page carries a copy of this
-// rule because it runs before any script file loads; keep them in sync.
+// lookup. The inline <head> language bootstrap script in each page carries a
+// copy of this rule because it runs before any script file loads; keep them in sync.
 function detectBrowserLanguage() {
   const SUPPORTED = ['ko', 'zh', 'ja'];
   const tags = navigator.languages && navigator.languages.length
@@ -136,20 +136,20 @@ class I18nManager {
     document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
   }
 
-  // Load the CJK Google Font matching the newly selected locale so
-  // switching languages doesn't leave the user staring at a fallback
-  // system font. Idempotent — repeat calls with the same locale are
-  // no-ops. Initial page load is handled by the inline <head> script.
+  // Load the self-hosted CJK font sheet (assets/fonts/<lang>.css) matching
+  // the newly selected locale so switching languages doesn't leave the user
+  // staring at a fallback system font. Idempotent — repeat calls with the
+  // same locale are no-ops. Initial page load is handled by the static
+  // <link> in <head> (ko.css / zh.css / ja.css per page language).
   ensureFontForLocale(lang) {
-    const CJK = { ko: 'Noto+Sans+KR', zh: 'Noto+Sans+SC', ja: 'Noto+Sans+JP' };
-    const family = CJK[lang];
-    if (!family) return;
+    if (!['ko', 'zh', 'ja'].includes(lang)) return;
     const id = `font-cjk-${lang}`;
     if (document.getElementById(id)) return;
+    if (document.querySelector(`link[rel="stylesheet"][href$="assets/fonts/${lang}.css"]`)) return;
     const link = document.createElement('link');
     link.id = id;
     link.rel = 'stylesheet';
-    link.href = `https://fonts.googleapis.com/css2?family=${family}:wght@400;500;700&display=swap`;
+    link.href = `assets/fonts/${lang}.css`;
     document.head.appendChild(link);
   }
 }
