@@ -23,11 +23,17 @@ class I18nManager {
     // Use 'preferredLanguage' key to match country-detector. With nothing
     // stored, follow the browser language so the first paint is localised.
     this.currentLang = localStorage.getItem('preferredLanguage') || detectBrowserLanguage();
+    // Static article pages are written in one language (<html data-page-lang>).
+    // The page's language wins over the stored preference so the chrome
+    // matches the article; the preference itself is left untouched.
+    this.pageLang = document.documentElement.dataset.pageLang || null;
+    if (this.pageLang) this.currentLang = this.pageLang;
     this.translations = null;
     this.init();
   }
 
   async init() {
+    if (this.pageLang) this.ensureFontForLocale(this.pageLang);
     await this.loadTranslations();
     this.applyTranslations();
   }
@@ -111,6 +117,19 @@ class I18nManager {
   changeLanguage(lang) {
     this.currentLang = lang;
     localStorage.setItem('preferredLanguage', lang);
+
+    // On a static article page, switch to that article's page in the new
+    // language when one exists (declared as <link rel="alternate" hreflang>).
+    if (this.pageLang && lang !== this.pageLang) {
+      const alternate = document.head.querySelector(`link[rel="alternate"][hreflang="${lang}"]`);
+      if (alternate?.href) {
+        // Same-origin path only, so local development stays on localhost
+        const target = new URL(alternate.href);
+        window.location.href = target.pathname + target.search;
+        return;
+      }
+    }
+
     this.ensureFontForLocale(lang);
     this.applyTranslations();
     // Let script-rendered content (e.g. articles) redraw in the new locale

@@ -28,7 +28,10 @@ class CountryDetector {
 
     // Returning visitors keep their choice; first-time visitors get the
     // browser language, which changeLanguage() also persists.
-    if (window.i18nManager) {
+    // Static article pages are written in one language and i18n.js already
+    // follows it (pageLang); don't override that with the stored preference,
+    // or the page would bounce to its translation on every load.
+    if (window.i18nManager && !window.i18nManager.pageLang) {
       window.i18nManager.changeLanguage(language);
     }
   }

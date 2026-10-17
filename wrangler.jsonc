@@ -11,8 +11,9 @@
     "directory": "./",
     // Worker 코드에서 env.ASSETS.fetch() 로 정적 파일을 돌려줄 때 씁니다.
     "binding": "ASSETS",
-    // /api/* 는 자산을 찾기 전에 Worker 를 먼저 실행합니다. 나머지는 자산 우선.
-    "run_worker_first": ["/api/*"],
+    // /api/* 와 옛 아티클 주소(/article.html → 301)는 자산을 찾기 전에 Worker 를 먼저 실행합니다.
+    // 나머지는 자산 우선이며, 자산이 없으면 Worker 를 거치지 않고 404.html 이 나갑니다.
+    "run_worker_first": ["/api/*", "/article.html"],
     // "none": /about.html 같은 기존 URL을 리다이렉트 없이 그대로 서빙합니다.
     // (기본값 auto-trailing-slash 는 /about.html → /about 으로 307 리다이렉트하므로
     //  sitemap.xml · canonical · 내부 링크가 모두 바뀌어야 해서 쓰지 않습니다.)

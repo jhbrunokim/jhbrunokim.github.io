@@ -43,6 +43,18 @@ class LayoutManager {
     }
   }
 
+  // Static article pages under /articles/ carry <base href="/"> so the
+  // components' relative links resolve from the root. That also makes a bare
+  // "#fragment" link (the skip link) point at the home page, so pin such
+  // links to the current document.
+  fixFragmentLinksForBase() {
+    if (!document.querySelector('base[href]')) return;
+    const here = window.location.pathname + window.location.search;
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.setAttribute('href', here + a.getAttribute('href'));
+    });
+  }
+
   updateFooterYear() {
     document.querySelectorAll('[data-footer-year]').forEach((el) => {
       el.textContent = new Date().getFullYear();
@@ -51,6 +63,7 @@ class LayoutManager {
 
   onComponentsLoaded() {
     this.updateFooterYear();
+    this.fixFragmentLinksForBase();
 
     // Reinitialize Lucide icons
     if (window.lucide) {

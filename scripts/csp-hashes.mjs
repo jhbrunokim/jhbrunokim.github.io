@@ -13,7 +13,7 @@
 // 인라인 이벤트 핸들러(onclick= 등)는 해시로 허용할 수 없으니 쓰지 마십시오. --check 가 잡아냅니다.
 
 import { createHash } from 'node:crypto';
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -25,10 +25,13 @@ const SCRIPT_RE = /<script\b([^>]*)>([\s\S]*?)<\/script>/gi;
 const HANDLER_RE = /\son[a-z]+\s*=\s*["']/gi;
 const JS_URL_RE = /\b(?:href|src|action)\s*=\s*["']\s*javascript:/gi;
 
-const pages = readdirSync(ROOT).filter((f) => f.endsWith('.html'));
+const listHtml = (dir) =>
+  existsSync(join(ROOT, dir)) ? readdirSync(join(ROOT, dir)).filter((f) => f.endsWith('.html')).map((f) => join(dir, f)) : [];
+// 루트 페이지 + 아티클 템플릿 + (빌드돼 있으면) 생성된 아티클 페이지
+const pages = [...readdirSync(ROOT).filter((f) => f.endsWith('.html')), ...listHtml('templates'), ...listHtml('articles')];
 // components/*.html 은 innerHTML 로 삽입되므로 그 안의 <script> 는 실행되지 않지만
 // 인라인 핸들러 속성은 동작하므로 검사 대상에 넣습니다.
-const fragments = readdirSync(join(ROOT, 'components')).map((f) => join('components', f));
+const fragments = listHtml('components');
 
 const hashes = new Map(); // hash -> [file:line]
 const problems = [];
