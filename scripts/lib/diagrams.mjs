@@ -103,7 +103,7 @@ function vertical(labels, current) {
     })
     .join('');
   return `<svg class="stage-v" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" aria-hidden="true">
-  <defs><marker id="stage-arrow-v" viewBox="0 0 8 8" refX="4" refY="7" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L8 0 L4 8 z" fill="${C.line}"/></marker></defs>${chips}
+  <defs><marker id="stage-arrow-v" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="${C.line}"/></marker></defs>${chips}
 </svg>`;
 }
 
