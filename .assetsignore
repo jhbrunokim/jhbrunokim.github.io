@@ -24,7 +24,6 @@ tailwind.config.js
 wrangler.jsonc
 assets/css/styles.css
 
-# 내부 문서 · GitHub Pages 전용
+# 내부 문서
 docs
 README.md
-CNAME
