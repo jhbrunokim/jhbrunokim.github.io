@@ -713,6 +713,48 @@
         "roleOther": "기타",
         "messagePlaceholder": "예: 선종 · 건조 일정 · 적용 규칙 · 현재 단계(메이커 선정, 승인도면, FAT, 운항)"
       }
+    },
+    "pageMeta": {
+      "index": {
+        "title": "광명마리타임 | 조선 · 해양 플랫폼 개발, 시스템 통합, 글로벌 규제 대응",
+        "description": "광명마리타임은 복잡해진 해양 산업과 기술에 대한 이해와 경험으로 데이터와 AI 기반 System Integration 솔루션을 제공하고 Global Compliance에 대응합니다."
+      },
+      "about": {
+        "title": "회사 소개 - 광명마리타임",
+        "description": "광명마리타임은 조선 · 해양 산업의 플랫폼 개발, 시스템 통합, 글로벌 규제 대응을 맡는 기술 기업입니다. 회사 개요, 핵심 가치, 걸어온 길, 대응 가능한 선급과 참조 표준을 소개합니다."
+      },
+      "services": {
+        "title": "서비스 - 광명마리타임",
+        "description": "선박 사이버 보안과 기업 보안 컨설팅, 두 분야의 서비스 개요."
+      },
+      "maritime": {
+        "title": "선박 사이버 보안 - 광명마리타임",
+        "description": "IACS UR E26 / E27 대응과 IT / OT 시스템 통합을 설계부터 선급 검사까지 맡는 해양 사이버 보안 컨설팅 기업입니다."
+      },
+      "system-integration": {
+        "title": "System Integration - 광명마리타임",
+        "description": "광명마리타임의 System Integration 서비스. 공공 · 민간 · 해양 분야 IT / OT 플랫폼 개발 및 구축, Maritime Consulting 전문."
+      },
+      "maritime-cybersecurity": {
+        "title": "Maritime Cybersecurity - 광명마리타임",
+        "description": "Secure by Design 기반 선박 사이버 보안 플랫폼. 설계 - 건조 - 운항 전주기(Lifecycle) 대응 및 IACS UR E26 / E27 컴플라이언스 자동화 문서 지원."
+      },
+      "compliance": {
+        "title": "Compliance - 광명마리타임",
+        "description": "IACS UR E26 / E27 기반 Maritime Cyber Security 컴플라이언스 서비스. 선박 사이버 복원력 강제화 대응 전문."
+      },
+      "ai-cybersecurity-consulting": {
+        "title": "AI × Cybersecurity Consulting - 광명마리타임",
+        "description": "Agentic AI SecOps 기반 선박 사이버 보안 컨설팅. Global Compliance · Real-Time Threat Detection · Integrated Operations 3-pillar 서비스와 Zero Trust · Digital Twin · MASS 자율운항 역량."
+      },
+      "articles": {
+        "title": "인사이트 - 광명마리타임",
+        "description": "광명마리타임의 기술 아티클, 업계 동향, 규제 소식을 확인하세요."
+      },
+      "zero-trust": {
+        "title": "제로 트러스트 전환 컨설팅 - 광명마리타임",
+        "description": "CISA 제로 트러스트 성숙도 모델 기반 진단(6개 Pillar · 45개 항목)부터 IAM · SSO · PAM 중앙집중형 권한관리와 Micro Segmentation, ZTNA 목표 아키텍처까지. 공공 · 민간 기관의 내부망 보안을 제로 트러스트 체계로 전환합니다."
+      }
     }
   },
   "en": {
@@ -1428,6 +1470,48 @@
         "roleSupplier": "Equipment supplier",
         "roleOther": "Other",
         "messagePlaceholder": "e.g. ship type · build schedule · applicable rules · current stage (maker selection, approval drawings, FAT, operation)"
+      }
+    },
+    "pageMeta": {
+      "index": {
+        "title": "Gwangmyung Maritime | Shipbuilding & Maritime Platform Development, System Integration, Global Compliance",
+        "description": "Data and AI-based System Integration solutions and Global Compliance support, grounded in Gwangmyung Maritime's experience of the maritime industry and its technology."
+      },
+      "about": {
+        "title": "About Us - Gwangmyung Maritime",
+        "description": "Platform development, system integration and global regulatory compliance for shipbuilding and maritime. Overview, core values, history, class societies and standards."
+      },
+      "services": {
+        "title": "Services - Gwangmyung Maritime",
+        "description": "An overview of our two service fields: ship cybersecurity and enterprise security consulting."
+      },
+      "maritime": {
+        "title": "Ship Cybersecurity - Gwangmyung Maritime",
+        "description": "A maritime cybersecurity consulting company that carries IACS UR E26 / E27 compliance and IT / OT system integration from design to class survey."
+      },
+      "system-integration": {
+        "title": "System Integration - Gwangmyung Maritime",
+        "description": "Gwangmyung Maritime's System Integration services: IT / OT platform development and delivery for the public, private and maritime sectors, plus Maritime Consulting."
+      },
+      "maritime-cybersecurity": {
+        "title": "Maritime Cybersecurity - Gwangmyung Maritime",
+        "description": "A Secure by Design ship cybersecurity platform covering the full design, build and operate lifecycle, with automated IACS UR E26 / E27 compliance documentation."
+      },
+      "compliance": {
+        "title": "Compliance - Gwangmyung Maritime",
+        "description": "IACS UR E26 / E27-based Maritime Cyber Security compliance services, specialising in the ship cyber resilience mandate."
+      },
+      "ai-cybersecurity-consulting": {
+        "title": "AI × Cybersecurity Consulting - Gwangmyung Maritime",
+        "description": "Agentic AI SecOps-based ship cybersecurity consulting: Global Compliance, Real-Time Threat Detection and Integrated Operations, plus Zero Trust, Digital Twin and MASS capabilities."
+      },
+      "articles": {
+        "title": "Insights - Gwangmyung Maritime",
+        "description": "Technical articles, industry trends and regulatory news from Gwangmyung Maritime."
+      },
+      "zero-trust": {
+        "title": "Zero Trust Transition Consulting - Gwangmyung Maritime",
+        "description": "From a CISA Zero Trust Maturity Model assessment (6 pillars · 45 items) to IAM · SSO · PAM privilege management, Micro Segmentation and a ZTNA target architecture: moving public and private-sector internal networks to Zero Trust."
       }
     }
   },
@@ -2145,6 +2229,48 @@
         "roleOther": "其他",
         "messagePlaceholder": "例如：船型 · 建造进度 · 适用规则 · 当前阶段（选型、认可图纸、FAT、运营）"
       }
+    },
+    "pageMeta": {
+      "index": {
+        "title": "光明海事 | 造船 · 海事平台开发、系统集成、全球法规合规",
+        "description": "光明海事基于对日益复杂的海事行业和技术的理解与经验，提供基于数据与 AI 的 System Integration 解决方案，并应对 Global Compliance。"
+      },
+      "about": {
+        "title": "关于我们 - 光明海事",
+        "description": "光明海事是负责造船 · 海事产业平台开发、系统集成与全球法规合规的技术企业。介绍公司概况、核心价值、发展历程、可支持的船级社与参考标准。"
+      },
+      "services": {
+        "title": "服务 - 光明海事",
+        "description": "船舶网络安全与企业安全咨询，两大领域的服务概览。"
+      },
+      "maritime": {
+        "title": "船舶网络安全 - 光明海事",
+        "description": "从设计到船级检验，全程负责 IACS UR E26 / E27 应对与 IT / OT 系统集成的海事网络安全咨询企业。"
+      },
+      "system-integration": {
+        "title": "System Integration - 光明海事",
+        "description": "光明海事的 System Integration 服务。专注于公共 · 民间 · 海事领域 IT / OT 平台开发与建设，以及 Maritime Consulting。"
+      },
+      "maritime-cybersecurity": {
+        "title": "Maritime Cybersecurity - 光明海事",
+        "description": "基于 Secure by Design 的船舶网络安全平台。覆盖设计 - 建造 - 运营全生命周期（Lifecycle），并支持 IACS UR E26 / E27 合规文档自动化。"
+      },
+      "compliance": {
+        "title": "Compliance - 光明海事",
+        "description": "基于 IACS UR E26 / E27 的 Maritime Cyber Security 合规服务。专注于船舶网络韧性强制化应对。"
+      },
+      "ai-cybersecurity-consulting": {
+        "title": "AI × Cybersecurity Consulting - 光明海事",
+        "description": "基于 Agentic AI SecOps 的船舶网络安全咨询。Global Compliance · Real-Time Threat Detection · Integrated Operations 三大支柱服务，以及 Zero Trust · Digital Twin · MASS 自主航行能力。"
+      },
+      "articles": {
+        "title": "洞察 - 光明海事",
+        "description": "查看光明海事的技术文章、行业动态与法规资讯。"
+      },
+      "zero-trust": {
+        "title": "零信任转型咨询 - 光明海事",
+        "description": "从基于 CISA 零信任成熟度模型的诊断（6 个 Pillar · 45 个项目），到 IAM · SSO · PAM 集中式权限管理、Micro Segmentation 与 ZTNA 目标架构。将公共与民间机构的内网安全转向零信任体系。"
+      }
     }
   },
   "ja": {
@@ -2860,6 +2986,48 @@
         "roleSupplier": "機器サプライヤー",
         "roleOther": "その他",
         "messagePlaceholder": "例：船種・建造スケジュール・適用規則・現在の段階（メーカー選定、承認図面、FAT、運航）"
+      }
+    },
+    "pageMeta": {
+      "index": {
+        "title": "光明マリタイム | 造船 · 海事プラットフォーム開発、システム統合、グローバル規制対応",
+        "description": "光明マリタイムは、複雑化した海事産業と技術に対する理解と経験を基に、データとAIベースのSystem Integrationソリューションを提供し、Global Complianceに対応します。"
+      },
+      "about": {
+        "title": "会社概要 - 光明マリタイム",
+        "description": "光明マリタイムは、造船・海事産業のプラットフォーム開発、システム統合、グローバル規制対応を担う技術企業です。会社概要、コアバリュー、歩み、対応可能な船級協会と参照標準をご紹介します。"
+      },
+      "services": {
+        "title": "サービス - 光明マリタイム",
+        "description": "船舶サイバーセキュリティと企業セキュリティ コンサルティング、二つの分野のサービス概要。"
+      },
+      "maritime": {
+        "title": "船舶サイバーセキュリティ - 光明マリタイム",
+        "description": "IACS UR E26 / E27対応とIT / OTシステム統合を、設計から船級検査まで担う海事サイバーセキュリティ コンサルティング企業です。"
+      },
+      "system-integration": {
+        "title": "System Integration - 光明マリタイム",
+        "description": "光明マリタイムのSystem Integrationサービス。公共・民間・海事分野のIT / OTプラットフォーム開発・構築、Maritime Consultingを専門とします。"
+      },
+      "maritime-cybersecurity": {
+        "title": "Maritime Cybersecurity - 光明マリタイム",
+        "description": "Secure by Designに基づく船舶サイバーセキュリティ プラットフォーム。設計 - 建造 - 運航の全周期（Lifecycle）に対応し、IACS UR E26 / E27コンプライアンス文書の自動化を支援します。"
+      },
+      "compliance": {
+        "title": "Compliance - 光明マリタイム",
+        "description": "IACS UR E26 / E27に基づくMaritime Cyber Securityコンプライアンス サービス。船舶サイバーレジリエンス強制化への対応を専門とします。"
+      },
+      "ai-cybersecurity-consulting": {
+        "title": "AI × Cybersecurity Consulting - 光明マリタイム",
+        "description": "Agentic AI SecOpsベースの船舶サイバーセキュリティ コンサルティング。Global Compliance · Real-Time Threat Detection · Integrated Operationsの3本柱サービスと、Zero Trust · Digital Twin · MASS自律運航の能力。"
+      },
+      "articles": {
+        "title": "インサイト - 光明マリタイム",
+        "description": "光明マリタイムの技術記事、業界動向、規制ニュースをご覧ください。"
+      },
+      "zero-trust": {
+        "title": "ゼロトラスト移行コンサルティング - 光明マリタイム",
+        "description": "CISAゼロトラスト成熟度モデルに基づく診断（6つのPillar · 45項目）から、IAM・SSO・PAMによる中央集中型の権限管理、Micro Segmentation、ZTNA目標アーキテクチャまで。公共・民間機関の内部ネットワークセキュリティをゼロトラスト体制へ移行します。"
       }
     }
   }
