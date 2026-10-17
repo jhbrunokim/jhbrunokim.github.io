@@ -1,21 +1,36 @@
-// EmailJS Contact Form Handler
+// Contact Form Handler
 // Handles every form marked [data-contact-form]: the inline form on the home
 // page and the contact modal injected on every page by layout.js.
+//
+// Submissions go to POST /api/contact (src/worker.js), which checks the
+// Turnstile token and sends the email. No email credentials live in the
+// browser. The Turnstile script is loaded with ?render=explicit so this file
+// controls when each widget is drawn (the modal's widget waits until the
+// dialog opens, because a widget rendered inside a hidden <dialog> has no size).
+
+// Public site key of the Turnstile widget for gmmaritime.com (Cloudflare
+// dashboard → Turnstile). It is safe to expose; the secret stays in the Worker.
+const TURNSTILE_SITE_KEY = '0x4AAAAAAFZRR1oE7iN5VgMi';
+const TURNSTILE_ACTION = 'contact';
+const CONTACT_ENDPOINT = '/api/contact';
+
+// Turnstile language codes for the site's i18n languages.
+const TURNSTILE_LANG = { ko: 'ko', en: 'en', zh: 'zh-cn', ja: 'ja' };
+
 class ContactFormManager {
   constructor() {
+    this.widgets = new WeakMap(); // form -> turnstile widget id
+    this.pendingRenders = [];
     this.init();
   }
 
   init() {
-    document.addEventListener('DOMContentLoaded', () => {
-      // EmailJS SDK is loaded with defer, so it's ready by the time
-      // DOMContentLoaded fires. Init here instead of inline in <head>.
-      if (window.emailjs) {
-        emailjs.init('oxNyGY4Y3JcIsG6Ml');
-      }
+    // api.js calls this once it has loaded (see ?onload=__turnstileReady in the
+    // <script> tag). If api.js loaded before this file, window.turnstile already
+    // exists and renders run immediately.
+    window.__turnstileReady = () => this.flushRenders();
 
-      this.bindForms();
-    });
+    document.addEventListener('DOMContentLoaded', () => this.bindForms());
 
     // The modal form arrives with the layout components
     document.addEventListener('layoutLoaded', () => this.bindForms());
@@ -30,6 +45,25 @@ class ContactFormManager {
 
       // Add honeypot field for spam prevention (hidden from users)
       this.addHoneypot(form);
+
+      const dialog = form.closest('dialog');
+      if (dialog) {
+        // Render when the dialog first opens. <dialog> has no "open" event, so
+        // watch the attribute.
+        const observer = new MutationObserver(() => {
+          if (dialog.open) {
+            observer.disconnect();
+            this.renderWidget(form);
+          }
+        });
+        observer.observe(dialog, { attributes: true, attributeFilter: ['open'] });
+        if (dialog.open) {
+          observer.disconnect();
+          this.renderWidget(form);
+        }
+      } else {
+        this.renderWidget(form);
+      }
     });
   }
 
@@ -48,6 +82,56 @@ class ContactFormManager {
 
     form.appendChild(honeypot);
   }
+
+  // ── Turnstile ──────────────────────────────────────────────────────────
+
+  renderWidget(form) {
+    if (this.widgets.has(form)) return;
+    if (!window.turnstile) {
+      this.pendingRenders.push(form);
+      return;
+    }
+    const container = form.querySelector('[data-turnstile]');
+    if (!container) return;
+
+    const lang = window.i18nManager?.currentLang || 'en';
+    const widgetId = window.turnstile.render(container, {
+      sitekey: TURNSTILE_SITE_KEY,
+      action: TURNSTILE_ACTION,
+      theme: 'auto',
+      size: 'flexible',
+      language: TURNSTILE_LANG[lang] || 'auto',
+    });
+    this.widgets.set(form, widgetId);
+  }
+
+  flushRenders() {
+    const forms = this.pendingRenders.splice(0);
+    forms.forEach(form => this.renderWidget(form));
+  }
+
+  getToken(form) {
+    const widgetId = this.widgets.get(form);
+    if (widgetId === undefined || !window.turnstile) return '';
+    try {
+      return window.turnstile.getResponse(widgetId) || '';
+    } catch {
+      return '';
+    }
+  }
+
+  // Tokens are single-use: reset after every attempt so a retry gets a new one.
+  resetWidget(form) {
+    const widgetId = this.widgets.get(form);
+    if (widgetId === undefined || !window.turnstile) return;
+    try {
+      window.turnstile.reset(widgetId);
+    } catch {
+      // Widget may have been removed from the DOM; nothing to reset.
+    }
+  }
+
+  // ── Submission ─────────────────────────────────────────────────────────
 
   // Which page and which link the enquiry came from. Only added to the
   // outgoing email; nothing is shown to the visitor.
@@ -72,18 +156,18 @@ class ContactFormManager {
     // Get form data
     const formData = new FormData(form);
     const data = {
-      from_name: formData.get('name'),
-      from_email: formData.get('email'),
-      subject: formData.get('subject'),
-      message: formData.get('message')
+      name: (formData.get('name') || '').trim(),
+      email: (formData.get('email') || '').trim(),
+      subject: (formData.get('subject') || '').trim(),
+      message: (formData.get('message') || '').trim(),
+      // Optional fields (home form and modal). Role values are English
+      // whatever the UI language, so the email reads the same for the owner.
+      company: (formData.get('company') || '').trim(),
+      role: formData.get('role') || '',
     };
-    // Optional fields (home form and modal). Role values are English
-    // whatever the UI language, so the email reads the same for the owner.
-    data.company = (formData.get('company') || '').trim();
-    data.role = formData.get('role') || '';
 
     // Consent gate (PIPA): checked first so the message is specific. The
-    // value is never added to `data`, so it is not sent to EmailJS.
+    // value is never sent to the server.
     const consent = form.querySelector('[name="privacyConsent"]');
     if (!consent?.checked) {
       consent?.setAttribute('aria-invalid', 'true');
@@ -99,45 +183,56 @@ class ContactFormManager {
       return;
     }
 
-    // Append the enquiry source (and company / role) to the message so they
-    // show up even with the current EmailJS template, which has no
-    // {{company}} / {{role}}; also send them as separate template variables.
-    const source = this.getSource(form);
-    data.message += `\n\n──────────\n[소속] ${data.company || '-'} · [역할] ${data.role || '-'}\n[문의 출처] ${source.page}\n[진입 지점] ${source.entry} · [언어] ${source.lang}`;
-    data.source_page = source.page;
-    data.source_entry = source.entry;
-    data.source_lang = source.lang;
+    // Turnstile must have produced a token (the widget shows its own
+    // progress; usually this is done before the visitor finishes typing).
+    const turnstileToken = this.getToken(form);
+    if (!turnstileToken) {
+      this.showStatus(form, 'error', this.t('captchaRequired', 'Please wait for the security check to finish, then try again.'));
+      return;
+    }
 
     // Show loading state
     this.setLoading(form, true);
 
     try {
-      // EmailJS send
-      // Replace these with your actual EmailJS credentials
-      const serviceID = 'service_molk';
-      const templateID = 'template_owc4fne';
-      const publicKey = 'oxNyGY4Y3JcIsG6Ml';
+      const response = await fetch(CONTACT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, source: this.getSource(form), turnstileToken }),
+      });
 
-      await emailjs.send(serviceID, templateID, data, publicKey);
+      let result = null;
+      try {
+        result = await response.json();
+      } catch {
+        // Non-JSON body (e.g. an HTML error page); handled as a failure below.
+      }
+
+      if (!response.ok || !result?.ok) {
+        const key = result?.error === 'captcha' ? 'captchaRequired' : 'errorMessage';
+        throw Object.assign(new Error(`Contact API error: ${response.status} ${result?.error || ''}`), { key });
+      }
 
       // Success
       this.showStatus(form, 'success', this.t('successMessage', 'Message sent successfully!'));
 
       form.reset();
     } catch (error) {
-      console.error('EmailJS Error:', error);
-      this.showStatus(form, 'error', this.t('errorMessage', 'Failed to send message. Please try again later.'));
+      console.error('Contact form error:', error);
+      const key = error?.key || 'errorMessage';
+      this.showStatus(form, 'error', this.t(key, 'Failed to send message. Please try again later.'));
     } finally {
       this.setLoading(form, false);
+      this.resetWidget(form);
     }
   }
 
   validateForm(data) {
-    return data.from_name &&
-      data.from_email &&
+    return data.name &&
+      data.email &&
       data.subject &&
       data.message &&
-      this.validateEmail(data.from_email);
+      this.validateEmail(data.email);
   }
 
   validateEmail(email) {

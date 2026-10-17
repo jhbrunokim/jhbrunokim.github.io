@@ -1,5 +1,7 @@
 # main 브랜치에 push 될 때마다 Tailwind CSS 를 빌드하고 Cloudflare Workers 에 배포합니다.
-# 필요한 GitHub Secrets: CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID
+# 필요한 GitHub Secrets:
+#   CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID  — 배포 권한
+#   TURNSTILE_SECRET_KEY, EMAILJS_PRIVATE_KEY    — 문의 폼 Worker 비밀 키 (배포 때 Worker secret 으로 바인딩)
 name: Deploy to Cloudflare Workers
 
 on:
@@ -37,7 +39,14 @@ jobs:
       # package.json 에 고정된 wrangler 버전을 사용합니다.
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v4
+        env:
+          TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
+          EMAILJS_PRIVATE_KEY: ${{ secrets.EMAILJS_PRIVATE_KEY }}
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy
+          # 아래 이름의 env 값을 Worker secret 으로 올립니다.
+          secrets: |
+            TURNSTILE_SECRET_KEY
+            EMAILJS_PRIVATE_KEY

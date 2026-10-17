@@ -26,6 +26,8 @@ jhbrunokim.github.io/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml                # Cloudflare Workers 자동 배포 (Node 22)
+├── src/
+│   └── worker.js                     # Worker: POST /api/contact (Turnstile 검증 → EmailJS 발송), 나머지는 정적 자산
 ├── assets/
 │   ├── css/
 │   │   ├── styles.css                # Tailwind directives + 커스텀 스타일
@@ -35,7 +37,7 @@ jhbrunokim.github.io/
 │       ├── theme.js                  # OS 테마 감지 (<head>에서 blocking 로드)
 │       ├── i18n.js                   # 다국어 전환 + <html lang> 동기화
 │       ├── country-detector.js       # 첫 방문 언어 적용 + 언어 선택 모달
-│       ├── contact.js                # EmailJS 핸들러
+│       ├── contact.js                # 문의 폼: Turnstile 위젯 렌더 + /api/contact 호출
 │       └── articles.js               # 마크다운 아티클 목록·본문·프리뷰 렌더
 ├── components/
 │   ├── navbar.html                   # 상단 네비게이션 (동적 로드)
@@ -62,7 +64,8 @@ jhbrunokim.github.io/
 ├── 404.html                          # 사용자 정의 404
 ├── robots.txt
 ├── sitemap.xml
-├── wrangler.jsonc                    # Cloudflare Workers 설정 (정적 자산)
+├── wrangler.jsonc                    # Cloudflare Workers 설정 (정적 자산 + Worker + 공개 vars)
+├── .dev.vars.example                 # 로컬 Worker 비밀값 예시 (.dev.vars 로 복사)
 ├── .assetsignore                     # Workers 에 올리지 않을 파일 목록
 ├── _headers                          # 응답 보안 헤더
 ├── package.json
@@ -95,11 +98,14 @@ npm run build
 정적 사이트지만 컴포넌트/번역 fetch를 위해 HTTP 서버가 필요합니다.
 
 ```bash
+cp .dev.vars.example .dev.vars   # 최초 1회. Turnstile 테스트 키 + 가짜 메일 엔드포인트
 npx wrangler dev
 ```
 
-브라우저에서 `http://localhost:8787` 접속. 운영과 같은 라우팅 · 헤더 · 404 처리로 동작합니다.
-단순 정적 서버가 필요하면 `python3 -m http.server 8080` 도 됩니다.
+브라우저에서 `http://localhost:8787` 접속. 운영과 같은 라우팅 · 헤더 · 404 처리 · `/api/contact` 로 동작합니다.
+`.dev.vars` 기본값은 Cloudflare 의 Turnstile 테스트 키(항상 통과)를 쓰고, 메일은 `127.0.0.1:8790` 의
+가짜 엔드포인트로 보내므로 실제 메일이 나가지 않습니다 (엔드포인트가 없으면 폼은 502 로 실패 메시지를 보여 줍니다).
+단순 정적 서버가 필요하면 `python3 -m http.server 8080` 도 되지만 문의 폼은 동작하지 않습니다.
 
 ## 🚀 배포
 
@@ -119,6 +125,8 @@ git push origin main
 필요한 GitHub Secrets (Settings → Secrets and variables → Actions):
 - `CLOUDFLARE_API_TOKEN` — "Edit Cloudflare Workers" 템플릿으로 만든 API 토큰
 - `CLOUDFLARE_ACCOUNT_ID` — Cloudflare 대시보드 Workers & Pages 우측의 Account ID
+- `TURNSTILE_SECRET_KEY` — Turnstile 위젯의 비밀 키 (배포 때 Worker secret 으로 올라감)
+- `EMAILJS_PRIVATE_KEY` — EmailJS 계정의 Private Key (배포 때 Worker secret 으로 올라감)
 
 배포 상태는 [Actions 탭](https://github.com/jhbrunokim/jhbrunokim.github.io/actions)에서 확인.
 도메인 연결은 `wrangler.jsonc` 의 `routes` 주석을 참고.
@@ -130,17 +138,24 @@ git push origin main
 - **폰트**: Google Fonts — Space Grotesk(디스플레이), Inter, Noto Sans KR / SC / JP
 - **아이콘**: Lucide Icons 1.53.0 (jsDelivr CDN, 버전 고정)
 - **마크다운**: marked.js 15.0.12 (jsDelivr CDN, 버전 고정, 아티클 뷰어)
-- **이메일**: EmailJS (`@emailjs/browser` 3.12.1, jsDelivr CDN, 버전 고정)
+- **문의 폼**: Cloudflare Turnstile + Worker(`src/worker.js`) → EmailJS REST API
 - **배포**: Cloudflare Workers (Static Assets) + GitHub Actions
 
-## ⚙️ EmailJS 설정
+## ⚙️ 문의 폼 (Turnstile + EmailJS)
 
-Contact 폼에 사용됩니다.
+브라우저는 `POST /api/contact` 만 호출하고, `src/worker.js` 가 Turnstile 토큰을 검증한 뒤 EmailJS REST API 로 메일을 보냅니다.
+EmailJS 비공개 키와 Turnstile 비밀 키는 Worker secret 에만 있고 브라우저에 노출되지 않습니다.
 
-1. [EmailJS](https://www.emailjs.com/) 계정 생성
-2. 이메일 서비스 연동 + 템플릿 생성
-3. `assets/js/contact.js`의 `emailjs.init(...)` 호출부에서 public key 교체
-4. 같은 파일의 service ID / template ID도 함께 확인
+**Turnstile**
+1. Cloudflare 대시보드 → Turnstile → Add widget. 호스트명 `gmmaritime.com` (로컬 테스트용으로 `localhost` 도 추가 가능), 모드 Managed
+2. Site Key → `assets/js/contact.js` 의 `TURNSTILE_SITE_KEY`
+3. Secret Key → GitHub Secret `TURNSTILE_SECRET_KEY`
+4. 위젯 action 은 `contact` 로 고정되어 있으며 Worker 가 action 과 hostname(`wrangler.jsonc` 의 `TURNSTILE_HOSTNAMES`)을 검증합니다
+
+**EmailJS**
+1. [EmailJS](https://www.emailjs.com/) 계정 → Account → API Keys 의 Private Key → GitHub Secret `EMAILJS_PRIVATE_KEY`
+2. Account → Security 에서 "Allow EmailJS API for non-browser applications" 를 켭니다 (Worker 는 브라우저가 아닙니다)
+3. Public Key · Service ID · Template ID 는 `wrangler.jsonc` 의 `vars` 에 있습니다
 
 ## 🎨 커스터마이징
 
