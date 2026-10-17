@@ -264,6 +264,182 @@
   display: block;
   margin-bottom: 0.25rem;
 }
+/* 핵심 요약: 글머리에 두는 체크 목록 */
+.prose .takeaways {
+  margin: 0 0 2rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  background: #052d4c; /* ocean-900 */
+  color: #d7ebfe; /* ocean-100 */
+}
+.prose .takeaways .callout-label { color: #8ab9e6; }
+.prose .takeaways ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+.prose .takeaways li {
+  position: relative;
+  padding-left: 1.75rem;
+  color: #ffffff;
+  line-height: 1.6;
+}
+/* 체크 표시는 CSS 로만 그립니다 (data: 이미지는 CSP img-src 'self' 에 막힘) */
+.prose .takeaways li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 9999px;
+  background: #f09025; /* signal-400 */
+}
+.prose .takeaways li::after {
+  content: '';
+  position: absolute;
+  left: 0.33rem;
+  top: 0.62rem;
+  width: 0.3rem;
+  height: 0.55rem;
+  border-right: 2.5px solid #121c24;
+  border-bottom: 2.5px solid #121c24;
+  transform: rotate(45deg);
+}
+/* 숫자 타일: 날짜 · 개수 같은 사실 한 줄 */
+.prose .fact-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem;
+}
+.prose .fact-tiles > div {
+  padding: 1rem 1.125rem;
+  border: 1px solid #e2e9f0;
+  border-radius: 0.75rem;
+  background: #ffffff;
+}
+.prose .fact-tiles strong {
+  display: block;
+  font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0d5387; /* ocean-700 */
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+.prose .fact-tiles span { font-size: 0.875rem; color: #5a656f; line-height: 1.5; display: block; }
+/* 연쇄도: 원인 → 결과 */
+.prose ol.chain {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+  display: grid;
+  gap: 0.5rem;
+  counter-reset: chain;
+}
+@media (min-width: 768px) {
+  .prose ol.chain { grid-auto-flow: column; grid-auto-columns: 1fr; gap: 0; }
+}
+.prose ol.chain > li {
+  counter-increment: chain;
+  position: relative;
+  padding: 0.875rem 1rem 0.875rem 1rem;
+  border: 1px solid #e2e9f0;
+  border-radius: 0.75rem;
+  background: #f8fafc;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+.prose ol.chain > li:last-child {
+  background: #fff3e8;
+  border-color: #fecca1;
+  font-weight: 600;
+  color: #4c2904;
+}
+@media (min-width: 768px) {
+  .prose ol.chain > li { margin-right: 1.5rem; border-radius: 0.75rem; }
+  .prose ol.chain > li:last-child { margin-right: 0; }
+  .prose ol.chain > li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -1.125rem;
+    top: 50%;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-top: 2px solid #aeb5bc;
+    border-right: 2px solid #aeb5bc;
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+@media (max-width: 767px) {
+  .prose ol.chain > li:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin: 0.75rem auto -1.25rem;
+    border-bottom: 2px solid #aeb5bc;
+    border-right: 2px solid #aeb5bc;
+    transform: rotate(45deg);
+  }
+}
+/* 전후 비교: 두 칸 */
+.prose .compare {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem;
+}
+@media (min-width: 640px) { .prose .compare { grid-template-columns: 1fr 1fr; } }
+.prose .compare > div {
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e9f0;
+}
+.prose .compare > div > :last-child { margin-bottom: 0; }
+.prose .compare h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.prose .compare-bad { background: #fff3e8; border-color: #fecca1; }
+.prose .compare-bad h4 { color: #ad6200; }
+.prose .compare-good { background: #eef6fe; border-color: #b3d5f6; }
+.prose .compare-good h4 { color: #0d5387; }
+/* 당사자 카드: 선주 · 조선소 · 공급사 */
+.prose .role-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem;
+}
+@media (min-width: 768px) { .prose .role-grid { grid-template-columns: repeat(3, 1fr); } }
+.prose .role-grid > div {
+  padding: 1.125rem 1.25rem;
+  border: 1px solid #e2e9f0;
+  border-radius: 0.75rem;
+  background: #ffffff;
+}
+.prose .role-grid h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.625rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.prose .role-grid h4 svg, .prose .role-grid h4 i { width: 1.25rem; height: 1.25rem; color: #0d5387; flex: none; }
+.prose .role-grid ul { margin: 0; padding-left: 1.125rem; }
+.prose .role-grid li { font-size: 0.9375rem; margin-bottom: 0.375rem; }
+/* 인용구 (큰 글씨 한 문장) */
+.prose .pullquote {
+  margin: 2rem 0;
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  border-left: 4px solid #f09025; /* signal-400 */
+  font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #0f172a;
+}
 /* 시리즈 내비: 이전 · 다음 글 */
 .prose .series-nav {
   display: flex;
