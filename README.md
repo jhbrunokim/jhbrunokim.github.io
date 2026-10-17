@@ -15,7 +15,7 @@
 - 📝 **아티클 시스템** — `articles/*.md` 마크다운 + `index.json`. 본문 페이지는 빌드 때 정적 HTML 로 생성 (검색엔진 · 링크 미리보기 대응)
 - 📧 **Contact 폼** — EmailJS 통합
 - 🤖 **SEO 최적화** — 페이지별 canonical, JSON-LD 구조화 데이터, Open Graph, robots.txt, sitemap.xml
-- 📊 **Google Analytics** — 모든 페이지에서 트래킹
+- 📊 **Cloudflare Web Analytics** — 쿠키 없는 이용 통계 (Cloudflare 가 엣지에서 자동 삽입, 동의 배너 없음)
 - 🚀 **최적화된 번들** — Tailwind CLI 프로덕션 빌드(CDN 미사용)
 - ⌨️ **드롭다운 접근성** — 키보드 화살표 이동 + focus-within 오픈 + aria-expanded 동기화
 
