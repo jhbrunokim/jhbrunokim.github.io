@@ -40,6 +40,7 @@ for (const page of PAGES) {
 }
 
 entries.push({ loc: `${SITE}/privacy-policy.html`, lastmod: lastCommitDate('privacy-policy.html'), changefreq: 'yearly', priority: '0.3' });
+entries.push({ loc: `${SITE}/en/privacy-policy.html`, lastmod: lastCommitDate('privacy-policy.en.html'), changefreq: 'yearly', priority: '0.3' });
 
 const articles = JSON.parse(readFileSync(join(ROOT, 'articles', 'index.json'), 'utf8'));
 for (const a of articles) {
