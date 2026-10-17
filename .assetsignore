@@ -1,0 +1,30 @@
+# Cloudflare Workers 정적 자산 업로드 제외 목록 (.gitignore 문법).
+# 여기 적힌 파일은 사이트에 공개되지 않습니다.
+
+# 저장소 · 도구
+.git
+.github
+.gitignore
+.assetsignore
+.wrangler
+.claude
+.hallmark
+.serena
+.superpowers
+.playwright-mcp
+.DS_Store
+.vscode
+.idea
+
+# 빌드 도구 (사이트가 쓰는 건 assets/css/output.css 뿐)
+node_modules
+package.json
+package-lock.json
+tailwind.config.js
+wrangler.jsonc
+assets/css/styles.css
+
+# 내부 문서 · GitHub Pages 전용
+docs
+README.md
+CNAME

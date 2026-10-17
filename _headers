@@ -1,0 +1,10 @@
+# Cloudflare Workers 정적 자산 응답 헤더.
+# 문서: https://developers.cloudflare.com/workers/static-assets/headers/
+# Content-Security-Policy 는 외부 CDN · EmailJS · 폰트 출처를 정리한 뒤 별도 작업으로 추가합니다.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000

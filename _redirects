@@ -1,0 +1,5 @@
+# Cloudflare Workers 정적 자산 리다이렉트 · 리라이트 규칙.
+# 문서: https://developers.cloudflare.com/workers/static-assets/redirects/
+# html_handling 이 "none" 이라 루트 경로는 index.html 로 직접 매핑해야 합니다 (200 = URL 유지 리라이트).
+
+/ /index.html 200

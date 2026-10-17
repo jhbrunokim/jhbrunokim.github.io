@@ -25,7 +25,7 @@
 jhbrunokim.github.io/
 ├── .github/
 │   └── workflows/
-│       └── static.yml                # GitHub Pages 자동 배포 (Node 22)
+│       └── deploy.yml                # Cloudflare Workers 자동 배포 (Node 22)
 ├── assets/
 │   ├── css/
 │   │   ├── styles.css                # Tailwind directives + 커스텀 스타일
@@ -62,7 +62,9 @@ jhbrunokim.github.io/
 ├── 404.html                          # 사용자 정의 404
 ├── robots.txt
 ├── sitemap.xml
-├── CNAME                             # 커스텀 도메인
+├── wrangler.jsonc                    # Cloudflare Workers 설정 (정적 자산)
+├── .assetsignore                     # Workers 에 올리지 않을 파일 목록
+├── _headers                          # 응답 보안 헤더
 ├── package.json
 ├── tailwind.config.js
 └── README.md
@@ -93,29 +95,33 @@ npm run build
 정적 사이트지만 컴포넌트/번역 fetch를 위해 HTTP 서버가 필요합니다.
 
 ```bash
-python3 -m http.server 8080
-# 또는
-npx http-server -p 8080
+npx wrangler dev
 ```
 
-브라우저에서 `http://localhost:8080` 접속.
+브라우저에서 `http://localhost:8787` 접속. 운영과 같은 라우팅 · 헤더 · 404 처리로 동작합니다.
+단순 정적 서버가 필요하면 `python3 -m http.server 8080` 도 됩니다.
 
 ## 🚀 배포
 
-`main` 브랜치에 push하면 GitHub Actions가 자동 배포합니다:
+`main` 브랜치에 push하면 GitHub Actions가 Cloudflare Workers 에 자동 배포합니다:
 
 ```bash
 git push origin main
 ```
 
-`.github/workflows/static.yml`이 다음을 수행:
+`.github/workflows/deploy.yml`이 다음을 수행:
 1. `actions/checkout@v7`
 2. `actions/setup-node@v6` (Node 22 LTS)
 3. `npm ci`
 4. `npm run build` (Tailwind CSS 빌드)
-5. `actions/configure-pages@v6` → `actions/upload-pages-artifact@v5` → `actions/deploy-pages@v5`
+5. `cloudflare/wrangler-action@v4` → `wrangler deploy` (정적 자산 업로드)
+
+필요한 GitHub Secrets (Settings → Secrets and variables → Actions):
+- `CLOUDFLARE_API_TOKEN` — "Edit Cloudflare Workers" 템플릿으로 만든 API 토큰
+- `CLOUDFLARE_ACCOUNT_ID` — Cloudflare 대시보드 Workers & Pages 우측의 Account ID
 
 배포 상태는 [Actions 탭](https://github.com/jhbrunokim/jhbrunokim.github.io/actions)에서 확인.
+도메인 연결은 `wrangler.jsonc` 의 `routes` 주석을 참고.
 
 ## 🔧 기술 스택
 
@@ -125,7 +131,7 @@ git push origin main
 - **아이콘**: Lucide Icons 1.53.0 (jsDelivr CDN, 버전 고정)
 - **마크다운**: marked.js 15.0.12 (jsDelivr CDN, 버전 고정, 아티클 뷰어)
 - **이메일**: EmailJS (`@emailjs/browser` 3.12.1, jsDelivr CDN, 버전 고정)
-- **배포**: GitHub Pages + Actions
+- **배포**: Cloudflare Workers (Static Assets) + GitHub Actions
 
 ## ⚙️ EmailJS 설정
 
