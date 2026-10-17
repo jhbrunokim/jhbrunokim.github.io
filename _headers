@@ -1,6 +1,15 @@
 # Cloudflare Workers 정적 자산 응답 헤더.
 # 문서: https://developers.cloudflare.com/workers/static-assets/headers/
-# Content-Security-Policy 는 외부 CDN · EmailJS · 폰트 출처를 정리한 뒤 별도 작업으로 추가합니다.
+#
+# Content-Security-Policy 의 'sha256-…' 항목은 루트 *.html 의 인라인 <script> 해시입니다.
+# 인라인 스크립트를 고치면 `npm run csp:update` 로 다시 쓰고, CI 는 `npm run check:csp` 로 검사합니다.
+# 허용 출처:
+#   script-src   cdn.jsdelivr.net (Lucide, marked) · challenges.cloudflare.com (Turnstile)
+#                www.googletagmanager.com (GA4, 동의 후) · static.cloudflareinsights.com (Cloudflare Web Analytics)
+#   style-src    fonts.googleapis.com (Google Fonts). style-src-attr 'unsafe-inline' 은 style="--step: n" 속성용
+#   font-src     fonts.gstatic.com
+#   connect-src  /api/contact (self) · cloudflareinsights.com · GA4 수집 호스트
+#   frame-src    challenges.cloudflare.com (Turnstile 위젯)
 
 /*
   X-Content-Type-Options: nosniff
@@ -8,3 +17,4 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=31536000
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://challenges.cloudflare.com https://www.googletagmanager.com https://static.cloudflareinsights.com 'sha256-2uOgNZuj0DK5R4rFS5wDJr+d6lhqdirG2+G4zdylBHw=' 'sha256-B5VngsBAO8Sk/EtU0lxXLVMdYDa1LaN2rMlfuNouke4=' 'sha256-YOT9/4FeGeU33QkvoYW5NtBmwk3PF61I/4wCgWjG2yk=' 'sha256-bQpoLIPd5b8SMkVti4+pvFCfxXaigJ7dzGpqhJQbKBc=' 'sha256-cJIZzoUmlH/8qZWb0wDuyNPnRSMj8O4Qvoijqs6B3DQ=' 'sha256-dhZRUz0hrIz1kuQgiiX8OSXcg0/+DqIw4m8BOtBID3w='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src-elem 'self' https://fonts.googleapis.com; style-src-attr 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests

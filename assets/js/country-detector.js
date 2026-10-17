@@ -125,3 +125,13 @@ class CountryDetector {
 document.addEventListener('DOMContentLoaded', () => {
   window.countryDetector = new CountryDetector();
 });
+
+// Navbar globe buttons carry [data-language-toggle]. The navbar is injected
+// by layout.js after this file runs, so listen on the document. (An inline
+// onclick would need 'unsafe-inline' in the Content-Security-Policy.)
+document.addEventListener('click', (e) => {
+  const button = e.target.closest('[data-language-toggle]');
+  if (!button) return;
+  e.preventDefault();
+  window.countryDetector?.reopenModal();
+});

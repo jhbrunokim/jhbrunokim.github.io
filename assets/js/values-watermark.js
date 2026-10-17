@@ -4,6 +4,16 @@
 // each word gets one cell, and only its position inside the cell, size,
 // orientation and opacity are random. Even density, different every time.
 (function () {
+  // The watermark-only Google Fonts stylesheet in <head> is loaded with
+  // media="print" so it never blocks rendering; switch it on once it has
+  // arrived. (Done here instead of an inline onload= attribute, which the
+  // Content-Security-Policy would block.)
+  document.querySelectorAll('link[data-async-style]').forEach(link => {
+    const enable = () => { link.media = 'all'; };
+    if (link.sheet) enable();
+    else link.addEventListener('load', enable, { once: true });
+  });
+
   const root = document.querySelector('[data-values-watermark]');
   if (!root) return;
   const words = Array.from(root.children);
