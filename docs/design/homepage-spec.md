@@ -25,7 +25,7 @@ The owner chose a separate About page. Where this section and anything below dis
 The owner split the page in two. Where this section and the rest of the spec disagree, this section wins.
 
 - **`index.html` (broad homepage)**: `home` → `business` → `journey` → `insights` → `contact`, plus the zero-height aliases `#about` (now directly before `#journey`) and `#articles` (before `#insights`).
-  - `home` is the former broad hero from `5d64ea9` (`hero.title`, `hero.description`, `hero.ctaSecondary`, grid background, five-photo collage), without the badge and without `min-h-screen`. The collage shows from 1280 px (`hidden xl:flex`; at 1024 px its three 192 px columns overlapped the headline and description), and the text block carries `xl:min-h-[47rem]` so the section contains the absolutely positioned collage. Collage files: `hero-drydock-hull.jpg`, `hero-bridge-night.jpg`, `hero-tanker-dawn.jpg`, `hero-ship-wake.jpg`, `hero-hull-welding.jpg`; the first two are preloaded at ≥1280 px.
+  - `home` is the former broad hero from `5d64ea9` (`hero.title`, `hero.description`, `hero.ctaSecondary`, grid background, five-photo collage), without the badge and without `min-h-screen`. The collage shows from 1280 px (`hidden xl:flex`; at 1024 px its three 192 px columns overlapped the headline and description), and the text block carries `xl:min-h-[47rem]` so the section contains the absolutely positioned collage. Collage files: `hero-drydock-hull.webp`, `hero-bridge-night.webp`, `hero-tanker-dawn.webp`, `hero-ship-wake.webp`, `hero-hull-welding.webp`; the first two are preloaded at ≥1280 px.
   - `business` (사업 영역, `home.business.*`): left-aligned head, then three ruled rows in the §5 stakeholder-row style (title · body · link): 플랫폼 개발 · 구축 → `#contact`, 해양 사이버 보안 · 컴플라이언스 → `services.html`, 데이터 · AI 기반 운영 → `ai-cybersecurity-consulting.html`. The mobile mid-page CTA (formerly in `#why`) sits after the rows.
   - `journey`, `insights`, `contact` are unchanged.
 - **`services.html` (services root)**: the former §3 hero (text + flow diagram, no `#home` id), §4 `#services` cards and §5 `#why` (stakeholder rows, class-society marquee, standards lines; no mid-page CTA), then a closing CTA band (`systemIntegration.ctaTitle` / `ctaDesc`, orange `hero.ctaSecondary` button) and the footer. Keys stay `home.hero.*`, `home.services.*`, `home.why.*`.
@@ -144,7 +144,7 @@ New-key total becomes 50 (copy deck's 45 + these 5).
 
 ### 3.5 `<head>` changes on `index.html`
 
-- Remove both `<link rel="preload" as="image" href="resource/images/hero-*.jpg">`.
+- Remove both `<link rel="preload" as="image" href="resource/images/hero-*.webp">`.
 - `<title>`: `광명마리타임 | 선박 사이버 보안, 설계부터 선급 검사까지`.
 - `meta description`, `og:description`, `twitter:description`, JSON-LD `description`: the positioning 1.4 ko footer sentence ("IACS UR E26 / E27 대응과 IT / OT 시스템 통합을 설계부터 선급 검사까지 맡는 해양 사이버 보안 컨설팅 기업입니다.").
 
