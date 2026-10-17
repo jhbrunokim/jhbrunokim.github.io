@@ -28,9 +28,9 @@
 /assets/fonts/*
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 
-# CSS/JS 는 파일명에 해시가 없어 배포 직후 반영되도록 1시간만 캐시합니다.
+# CSS/JS 는 파일명에 해시가 없어 배포 직후 반영되도록 5분만 캐시합니다 (새 스타일이 옛 CSS 캐시와 어긋나는 시간을 줄임).
 /assets/css/*
-  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
 
 /assets/js/*
-  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600

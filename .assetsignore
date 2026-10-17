@@ -29,9 +29,11 @@ tailwind.config.js
 wrangler.jsonc
 assets/css/styles.css
 
-# 내부 문서
+# 내부 문서 · 아티클 원문 (페이지는 빌드 때 생성되므로 마크다운과 전체 목록은 올리지 않음)
 docs
 README.md
+articles/*.md
+articles/index.json
 
 # 빌드 원본 (서비스되는 사본은 en/privacy-policy.html)
 privacy-policy.en.html
