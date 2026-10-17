@@ -32,3 +32,6 @@ assets/css/styles.css
 # 내부 문서
 docs
 README.md
+
+# 빌드 원본 (서비스되는 사본은 en/privacy-policy.html)
+privacy-policy.en.html

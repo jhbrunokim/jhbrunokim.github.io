@@ -9,9 +9,9 @@
 //   node scripts/build-pages.mjs
 
 import { load } from 'cheerio';
-import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { LANGS, OG_LOCALE, PAGES, ROOT, SITE, TRANSLATIONS, getNested, localizeHref, prefix } from './lib/site.mjs';
+import { LANGS, OG_LOCALE, PAGES, PRIVACY_PAGE, ROOT, SITE, TRANSLATIONS, getNested, localizeHref, prefix } from './lib/site.mjs';
 
 const TARGET_LANGS = LANGS.filter((l) => l !== 'ko');
 
@@ -96,6 +96,17 @@ for (const page of PAGES) {
     writeFileSync(join(outDir, `${page}.html`), $.html());
     built += 1;
   }
+}
+
+// 개인정보처리방침 영문판: data-i18n 치환이 아니라 완성된 영어 페이지(privacy-policy.en.html, <base> · hreflang 포함)를
+// en/ 에 그대로 복사합니다. 루트의 원본은 .assetsignore 로 업로드에서 빠집니다.
+const privacyEn = join(ROOT, PRIVACY_PAGE.replace(/\.html$/, '.en.html'));
+if (existsSync(privacyEn)) {
+  mkdirSync(join(ROOT, 'en'), { recursive: true });
+  copyFileSync(privacyEn, join(ROOT, 'en', PRIVACY_PAGE));
+  built += 1;
+} else {
+  warnings.push(`${PRIVACY_PAGE.replace(/\.html$/, '.en.html')} not found; en/${PRIVACY_PAGE} not built`);
 }
 
 console.log(`Built ${built} language page(s) in en/ zh/ ja/.`);

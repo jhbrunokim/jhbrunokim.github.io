@@ -44,14 +44,15 @@ class LayoutManager {
   }
 
   // Language of the page as built (ko at the root, en/zh/ja under their
-  // directory). Pages without data-page-lang (privacy policy, 404) are Korean.
+  // directory). Pages without data-page-lang (404) are Korean.
   pageLang() {
     return document.documentElement.dataset.pageLang || 'ko';
   }
 
   // Same rule as localizeHref() in scripts/lib/site.mjs: on an English page,
   // "about.html" becomes "en/about.html". External, absolute, anchor and
-  // mailto links stay, and so do the Korean-only pages.
+  // mailto links stay, and so do the Korean-only pages. The privacy policy
+  // exists only in Korean and English, so every other language links to en/.
   localizeHref(href) {
     const lang = this.pageLang();
     if (!href || lang === 'ko') return href;
@@ -59,7 +60,8 @@ class LayoutManager {
     if (/^(en|zh|ja)\//.test(href)) return href;
     const file = href.split(/[?#]/)[0];
     if (!/\.html$/.test(file)) return href;
-    if (file === 'privacy-policy.html' || file === '404.html') return href;
+    if (file === '404.html') return href;
+    if (file === 'privacy-policy.html') return `en/${href}`;
     return `${lang}/${href}`;
   }
 

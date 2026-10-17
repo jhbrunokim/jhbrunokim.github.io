@@ -69,7 +69,8 @@ jhbrunokim.github.io/
 ├── compliance.html                   # Competitiveness ▸ Compliance
 ├── ai-cybersecurity-consulting.html  # Competitiveness ▸ AI × Cybersecurity Consulting
 ├── articles.html                     # 아티클 목록
-├── privacy-policy.html               # 개인정보 처리방침
+├── privacy-policy.html               # 개인정보 처리방침 (한국어)
+├── privacy-policy.en.html            # 개인정보 처리방침 영문판 소스 (빌드가 en/privacy-policy.html 로 복사; 루트 사본은 업로드 제외)
 ├── 404.html                          # 사용자 정의 404
 ├── robots.txt
 ├── sitemap.xml
@@ -227,6 +228,8 @@ FOUC 방지를 위해 `theme.js`는 각 페이지의 `<head>`에서 blocking 로
 ### 언어 결정 방식
 
 URL 이 언어입니다. 각 페이지는 `<html data-page-lang>` 의 언어로 렌더링되고, 내비 · 푸터 같은 공용 컴포넌트는 `layout.js` 가 같은 언어로 맞춥니다(링크에 `en/` 접두사 포함).
+
+개인정보처리방침은 한국어(`/privacy-policy.html`)와 영어(`/en/privacy-policy.html`)만 있습니다. 영문판은 `data-i18n` 치환이 아닌 완성된 소스 `privacy-policy.en.html` 을 `npm run build` 가 `en/` 에 그대로 복사한 것이고, 중문 · 일문 페이지의 푸터 · 문의 모달 링크는 영문판을 가리킵니다. 영문 내용을 고칠 때는 `privacy-policy.en.html` 을 수정하십시오.
 
 `<head>` 의 인라인 부트스트랩 스크립트가 `localStorage.preferredLanguage`(없으면 브라우저 언어)와 페이지 언어를 비교해, 다르면 `hreflang` 대체 페이지로 `location.replace` 합니다. 크롤러(UA 에 bot · crawl · spider 등)는 리다이렉트하지 않아 모든 언어 페이지가 색인됩니다. 선호 언어는 방문자가 지구본에서 직접 고를 때만 저장됩니다. 외부 서비스 호출이나 IP 기반 위치 조회는 하지 않고, 모달도 자동으로 띄우지 않습니다.
 
