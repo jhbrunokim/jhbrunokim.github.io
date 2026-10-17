@@ -7,7 +7,7 @@
 import { execSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { LANGS, PAGES, ROOT, SITE, prefix } from './lib/site.mjs';
+import { LANGS, PAGES, ROOT, SITE, loadArticles, prefix } from './lib/site.mjs';
 
 const today = new Date().toISOString().slice(0, 10);
 
@@ -42,7 +42,7 @@ for (const page of PAGES) {
 entries.push({ loc: `${SITE}/privacy-policy.html`, lastmod: lastCommitDate('privacy-policy.html'), changefreq: 'yearly', priority: '0.3' });
 entries.push({ loc: `${SITE}/en/privacy-policy.html`, lastmod: lastCommitDate('privacy-policy.en.html'), changefreq: 'yearly', priority: '0.3' });
 
-const articles = JSON.parse(readFileSync(join(ROOT, 'articles', 'index.json'), 'utf8'));
+const articles = loadArticles().published;
 for (const a of articles) {
   for (const lang of LANGS) {
     const md = lang === 'ko' ? `articles/${a.slug}.md` : `articles/${a.slug}.${lang}.md`;

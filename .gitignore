@@ -36,3 +36,4 @@ articles/*.html
 /zh/
 /ja/
 sitemap.xml
+articles/published.json

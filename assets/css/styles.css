@@ -194,10 +194,23 @@
   background: linear-gradient(180deg, #ffffff, #f8fafc);
 }
 .prose .stage-figure svg { display: block; }
-.prose .stage-figure figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.875rem;
+.prose .stage-figure .stage-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   color: #707c87; /* ink-500 */
+}
+/* 가로형은 넓은 화면, 세로형은 좁은 화면에서만 */
+.prose .stage-figure .stage-v { display: none; max-width: 22rem; margin: 0 auto; }
+@media (max-width: 639px) {
+  .prose .stage-figure .stage-h { display: none; }
+  .prose .stage-figure .stage-v { display: block; }
+}
+/* 카드 · 타일 · 연쇄도 안의 글은 단어 중간에서도 줄바꿈 (본문의 keep-all 이 좁은 칸에서 넘침을 만듦) */
+.prose .fact-tiles, .prose ol.chain, .prose .compare, .prose .role-grid, .prose ol.decisions, .prose .series-nav, .prose .takeaways {
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 /* 강조 상자: 역할 라벨 + 본문 */
 .prose .callout {
@@ -369,15 +382,17 @@
   }
 }
 @media (max-width: 767px) {
+  .prose ol.chain { gap: 1.5rem; }
   .prose ol.chain > li:not(:last-child)::after {
     content: '';
-    display: block;
-    width: 0.75rem;
-    height: 0.75rem;
-    margin: 0.75rem auto -1.25rem;
+    position: absolute;
+    left: 50%;
+    bottom: -1.05rem;
+    width: 0.7rem;
+    height: 0.7rem;
     border-bottom: 2px solid #aeb5bc;
     border-right: 2px solid #aeb5bc;
-    transform: rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
   }
 }
 /* 전후 비교: 두 칸 */

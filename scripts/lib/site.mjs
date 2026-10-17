@@ -33,6 +33,23 @@ export const prefix = (lang) => (lang === 'ko' ? '' : `${lang}/`);
 
 export const TRANSLATIONS = JSON.parse(readFileSync(join(ROOT, 'data', 'translations.json'), 'utf8'));
 
+// 아티클 예약 발행. articles/index.json 의 date 가 오늘(한국 시간) 이하인 글만 사이트에 들어갑니다.
+// deploy.yml 이 매주 월요일 아침에 한 번 더 빌드하므로, 미래 날짜를 적어 두면 그 주에 자동으로 나갑니다.
+// 로컬 미리보기: ARTICLES_AS_OF=2026-12-31 npm run build 처럼 기준일을 바꿀 수 있습니다.
+export function todayInSeoul() {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(
+    new Date(),
+  );
+}
+
+export function loadArticles() {
+  const all = JSON.parse(readFileSync(join(ROOT, 'articles', 'index.json'), 'utf8'));
+  const asOf = process.env.ARTICLES_AS_OF || todayInSeoul();
+  const published = all.filter((a) => a.date <= asOf).sort((x, y) => y.date.localeCompare(x.date));
+  const scheduled = all.filter((a) => a.date > asOf).sort((x, y) => x.date.localeCompare(y.date));
+  return { asOf, published, scheduled };
+}
+
 export const getNested = (obj, path) => path.split('.').reduce((cur, key) => cur?.[key], obj);
 
 export const escapeHtml = (s) =>

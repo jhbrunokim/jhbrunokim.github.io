@@ -13,12 +13,13 @@ import { marked } from 'marked';
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync } from 'node:fs';
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { LANGS, LOCALE, OG_LOCALE, ROOT, SITE, TRANSLATIONS, escapeHtml, localizeHref, prefix } from './lib/site.mjs';
+import { LANGS, LOCALE, OG_LOCALE, ROOT, SITE, TRANSLATIONS, escapeHtml, loadArticles, localizeHref, prefix } from './lib/site.mjs';
 import { applyDiagrams } from './lib/diagrams.mjs';
 
 const ARTICLES_DIR = join(ROOT, 'articles');
 const TEMPLATE = readFileSync(join(ROOT, 'templates', 'article.html'), 'utf8');
-const INDEX = JSON.parse(readFileSync(join(ARTICLES_DIR, 'index.json'), 'utf8'));
+// 발행일이 지난 글만 (예약 발행: scripts/lib/site.mjs loadArticles)
+const { asOf, published: INDEX, scheduled } = loadArticles();
 
 // 출력 경로: ko → articles/<slug>.html, 그 외 → <lang>/articles/<slug>.html
 const pagePath = (slug, lang) => `${prefix(lang)}articles/${slug}.html`;
@@ -140,4 +141,7 @@ for (const meta of INDEX) {
   }
 }
 
-console.log(`Built ${count} article page(s).`);
+// 목록 · 미리보기(assets/js/articles.js)가 읽는 발행 목록. 예약된 글은 들어가지 않습니다.
+writeFileSync(join(ARTICLES_DIR, 'published.json'), JSON.stringify(INDEX, null, 2) + '\n');
+console.log(`Built ${count} article page(s) for ${INDEX.length} published article(s) as of ${asOf}.`);
+for (const a of scheduled) console.log(`  scheduled: ${a.slug} (${a.date})`);
