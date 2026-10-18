@@ -533,6 +533,24 @@
 .prose .faq details > p { margin: 0 0 1rem; font-size: 0.9375rem; }
 /* 자가 점검 표: 짧은 질문 + 예/아니오 */
 .prose table.selfcheck th:first-child, .prose table.selfcheck td:first-child { width: 2.5rem; text-align: center; color: #0d5387; font-weight: 700; }
+/* 인쇄: 아티클 본문만 (내비 · 푸터 · 모달 · CTA · 시리즈 내비 제외), 접힌 FAQ 펼침 */
+@media print {
+  #navbar-placeholder, #footer-placeholder, #contact-modal, #country-modal-placeholder,
+  #article-cta, .prose .series-nav, a[href$="articles.html"].inline-flex { display: none !important; }
+  body { background: #fff !important; }
+  .prose { color: #1f2937; }
+  .prose .faq details > *:not(summary) { display: block; }
+  .prose .faq summary::after { display: none; }
+  .prose .stage-figure .stage-h { display: block; }
+  .prose .stage-figure .stage-v { display: none; }
+  .prose .takeaways, .prose .callout, .prose .scene, .prose .compare > div, .prose .fact-tiles > div,
+  .prose ol.decisions > li, .prose ol.chain > li, .prose ul.signals li, .prose .role-grid > div, .prose .faq details {
+    break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .prose h2 { break-after: avoid; }
+}
 /* 시리즈 내비: 이전 · 다음 글 */
 .prose .series-nav {
   display: flex;
