@@ -17,3 +17,26 @@
 /articles/iacs-ur-e26-e27-overview.en.html /en/articles/iacs-ur-e26-e27-overview.html 301
 /articles/iacs-ur-e26-e27-overview.zh.html /zh/articles/iacs-ur-e26-e27-overview.html 301
 /articles/iacs-ur-e26-e27-overview.ja.html /ja/articles/iacs-ur-e26-e27-overview.html 301
+
+# 브라우저 · iOS 가 자동으로 요청하는 아이콘 주소 (404 집계의 큰 몫). 200 = URL 유지 리라이트
+/favicon.ico /resource/gmmaritime.ico 200
+/apple-touch-icon.png /resource/apple-touch-icon.png 200
+/apple-touch-icon-precomposed.png /resource/apple-touch-icon.png 200
+/apple-touch-icon-180x180.png /resource/apple-touch-icon.png 200
+
+# 2026-10-18 WebP 전환 이전의 히어로 사진 주소 (검색엔진 · 캐시된 페이지가 아직 요청)
+/resource/images/hero-bridge-day.jpg /resource/images/hero-bridge-day.webp 301
+/resource/images/hero-bridge-night.jpg /resource/images/hero-bridge-night.webp 301
+/resource/images/hero-bulk-carrier.jpg /resource/images/hero-bulk-carrier.webp 301
+/resource/images/hero-cargo-crane.jpg /resource/images/hero-cargo-crane.webp 301
+/resource/images/hero-container-ship.jpg /resource/images/hero-container-ship.webp 301
+/resource/images/hero-container-topdown.jpg /resource/images/hero-container-topdown.webp 301
+/resource/images/hero-drydock-aerial.jpg /resource/images/hero-drydock-aerial.webp 301
+/resource/images/hero-drydock-hull.jpg /resource/images/hero-drydock-hull.webp 301
+/resource/images/hero-engine-control-room.jpg /resource/images/hero-engine-control-room.webp 301
+/resource/images/hero-hull-welding.jpg /resource/images/hero-hull-welding.webp 301
+/resource/images/hero-pilot-boat.jpg /resource/images/hero-pilot-boat.webp 301
+/resource/images/hero-port-night.jpg /resource/images/hero-port-night.webp 301
+/resource/images/hero-ship-wake.jpg /resource/images/hero-ship-wake.webp 301
+/resource/images/hero-tanker-blue.jpg /resource/images/hero-tanker-blue.webp 301
+/resource/images/hero-tanker-dawn.jpg /resource/images/hero-tanker-dawn.webp 301
