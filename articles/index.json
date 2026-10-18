@@ -1,5 +1,143 @@
 [
   {
+    "slug": "e26-e27-stage-5-operation",
+    "title": {
+      "ko": "E26/E27 대응 5편 · 인도 · 운항: 문서와 배가 달라지는 순간을 어떻게 잡는가",
+      "en": "Preview",
+      "zh": "Preview",
+      "ja": "Preview"
+    },
+    "date": "2026-12-31",
+    "description": {
+      "ko": "인도 시점에 정해야 할 세 가지와 변경 관리의 시작점을 정리했습니다.",
+      "en": "Preview",
+      "zh": "Preview",
+      "ja": "Preview"
+    },
+    "author": {
+      "ko": "광명마리타임",
+      "en": "Gwangmyung Maritime",
+      "zh": "Gwangmyung Maritime",
+      "ja": "Gwangmyung Maritime"
+    },
+    "category": "Compliance"
+  },
+  {
+    "slug": "e26-e27-stage-4-trials",
+    "title": {
+      "ko": "E26/E27 대응 4편 · FAT · 시운전: 시험을 두 번 하지 않으려면 무엇을 연결해야 하는가",
+      "en": "Preview",
+      "zh": "Preview",
+      "ja": "Preview"
+    },
+    "date": "2026-12-30",
+    "description": {
+      "ko": "FAT와 선박 시험을 하나의 흐름으로 잇기 위해 정해야 할 세 가지를 정리했습니다.",
+      "en": "Preview",
+      "zh": "Preview",
+      "ja": "Preview"
+    },
+    "author": {
+      "ko": "광명마리타임",
+      "en": "Gwangmyung Maritime",
+      "zh": "Gwangmyung Maritime",
+      "ja": "Gwangmyung Maritime"
+    },
+    "category": "Compliance"
+  },
+  {
+    "slug": "e26-e27-stage-3-procurement",
+    "title": {
+      "ko": "E26/E27 대응 3편 · 발주 단계: 공급사 형식승인은 무엇을 확인해야 효력이 있는가",
+      "en": "Preview",
+      "zh": "Preview",
+      "ja": "Preview"
+    },
+    "date": "2026-12-29",
+    "description": {
+      "ko": "형식승인 증서에서 확인할 세 가지와 확인을 건너뛰면 심사 단계에서 생기는 일을 정리했습니다.",
+      "en": "Preview",
+      "zh": "Preview",
+      "ja": "Preview"
+    },
+    "author": {
+      "ko": "광명마리타임",
+      "en": "Gwangmyung Maritime",
+      "zh": "Gwangmyung Maritime",
+      "ja": "Gwangmyung Maritime"
+    },
+    "category": "Compliance"
+  },
+  {
+    "slug": "e26-e27-stage-2-design",
+    "title": {
+      "ko": "E26/E27 대응 2편 · 설계 단계: 네트워크를 나누는 결정은 언제 내려야 하는가",
+      "en": "Preview",
+      "zh": "Preview",
+      "ja": "Preview"
+    },
+    "date": "2026-12-28",
+    "description": {
+      "ko": "설계 단계에서 먼저 정해야 할 세 가지와 공급사 자료를 기다리다 생기는 일을 정리했습니다.",
+      "en": "Preview",
+      "zh": "Preview",
+      "ja": "Preview"
+    },
+    "author": {
+      "ko": "광명마리타임",
+      "en": "Gwangmyung Maritime",
+      "zh": "Gwangmyung Maritime",
+      "ja": "Gwangmyung Maritime"
+    },
+    "category": "Compliance"
+  },
+  {
+    "slug": "e26-e27-stage-1-contract",
+    "title": {
+      "ko": "E26/E27 대응 1편 · 계약 단계: 책임 경계를 적지 않으면 전부 조선소 몫이 됩니다",
+      "en": "E26/E27 stage 1 · Contract",
+      "zh": "E26/E27 stage 1 · Contract",
+      "ja": "E26/E27 stage 1 · Contract"
+    },
+    "date": "2026-10-27",
+    "description": {
+      "ko": "신조선 사이버 복원력 대응의 성패는 계약서에서 갈립니다. 계약 단계에서 결정해야 할 세 가지와 세 당사자가 준비할 것을 정리했습니다.",
+      "en": "Preview",
+      "zh": "Preview",
+      "ja": "Preview"
+    },
+    "author": {
+      "ko": "광명마리타임",
+      "en": "Gwangmyung Maritime",
+      "zh": "Gwangmyung Maritime",
+      "ja": "Gwangmyung Maritime"
+    },
+    "category": "Compliance"
+  },
+  {
+    "slug": "iacs-ur-e26-e27-what-matters",
+    "title": {
+      "ko": "IACS UR E26/E27 대응, 어디서 일정이 밀리고 어디서 차이가 나는가",
+      "en": "E26/E27: where schedules slip and where results differ",
+      "zh": "E26/E27: where schedules slip and where results differ",
+      "ja": "E26/E27: where schedules slip and where results differ"
+    },
+    "date": "2026-10-20",
+    "description": {
+      "ko": "신조선 E26/E27 대응은 문서 양이 아니라 단계마다 놓치기 쉬운 결정이 좌우합니다. 계약부터 인도까지 다섯 단계에서 무엇이 일정과 심사 결과를 가르는지 정리했습니다.",
+      "en": "Preview",
+      "zh": "Preview",
+      "ja": "Preview"
+    },
+    "author": {
+      "ko": "광명마리타임",
+      "en": "Gwangmyung Maritime",
+      "zh": "Gwangmyung Maritime",
+      "ja": "Gwangmyung Maritime"
+    },
+    "category": "Compliance"
+  },
+  {
     "slug": "maritime-cyber-regulatory-trends",
     "title": {
       "ko": "해양 사이버 규제 동향: IMO · BIMCO · IACS · NIS2",
