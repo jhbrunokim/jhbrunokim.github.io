@@ -455,6 +455,84 @@
   line-height: 1.5;
   color: #0f172a;
 }
+/* 현장 장면: 짧은 사례 서술 */
+.prose .scene {
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  background: #f8fafc;
+  border: 1px solid #e2e9f0;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+.prose .scene .callout-label { color: #5a656f; }
+.prose .scene p:last-child { margin-bottom: 0; }
+.prose .scene em { font-style: normal; color: #0d5387; font-weight: 600; }
+/* 위험 신호: 체크 아이콘 대신 경고 점 */
+.prose ul.signals {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+  display: grid;
+  gap: 0.5rem;
+}
+@media (min-width: 640px) { .prose ul.signals { grid-template-columns: 1fr 1fr; } }
+.prose ul.signals li {
+  position: relative;
+  padding: 0.75rem 1rem 0.75rem 2.25rem;
+  border: 1px solid #fecca1;
+  background: #fff3e8;
+  border-radius: 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin: 0;
+}
+.prose ul.signals li::before {
+  content: '!';
+  position: absolute;
+  left: 0.8rem;
+  top: 0.8rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 9999px;
+  background: #f09025;
+  color: #121c24;
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 자주 묻는 질문: details/summary */
+.prose .faq { margin: 1rem 0 2rem; display: grid; gap: 0.5rem; }
+.prose .faq details {
+  border: 1px solid #e2e9f0;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  padding: 0 1.25rem;
+}
+.prose .faq summary {
+  cursor: pointer;
+  padding: 0.875rem 0;
+  font-weight: 600;
+  color: #0f172a;
+  list-style: none;
+  position: relative;
+  padding-right: 2rem;
+}
+.prose .faq summary::-webkit-details-marker { display: none; }
+.prose .faq summary::after {
+  content: '+';
+  position: absolute;
+  right: 0.25rem;
+  top: 0.75rem;
+  font-size: 1.25rem;
+  color: #0d5387;
+}
+.prose .faq details[open] summary::after { content: '−'; }
+.prose .faq details > p { margin: 0 0 1rem; font-size: 0.9375rem; }
+/* 자가 점검 표: 짧은 질문 + 예/아니오 */
+.prose table.selfcheck th:first-child, .prose table.selfcheck td:first-child { width: 2.5rem; text-align: center; color: #0d5387; font-weight: 700; }
 /* 시리즈 내비: 이전 · 다음 글 */
 .prose .series-nav {
   display: flex;
