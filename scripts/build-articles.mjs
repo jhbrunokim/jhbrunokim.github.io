@@ -59,6 +59,9 @@ for (const lang of LANGS) {
 }
 
 let count = 0;
+// 목록(published.json)에 넣을 항목. 번역본이 있는 언어(langs)를 함께 적어 두면
+// assets/js/articles.js 가 없는 언어에서는 한국어 원문으로 링크합니다.
+const listed = [];
 
 for (const meta of INDEX) {
   const available = LANGS.filter((lang) => markdownFor(meta.slug, lang) !== null);
@@ -66,6 +69,7 @@ for (const meta of INDEX) {
     console.warn(`skip ${meta.slug}: articles/${meta.slug}.md (ko) missing`);
     continue;
   }
+  listed.push({ ...meta, langs: available });
 
   const alternates = available
     .map((l) => `    <link rel="alternate" hreflang="${l}" href="${SITE}/${pagePath(meta.slug, l)}" />`)
@@ -142,6 +146,6 @@ for (const meta of INDEX) {
 }
 
 // 목록 · 미리보기(assets/js/articles.js)가 읽는 발행 목록. 예약된 글은 들어가지 않습니다.
-writeFileSync(join(ARTICLES_DIR, 'published.json'), JSON.stringify(INDEX, null, 2) + '\n');
+writeFileSync(join(ARTICLES_DIR, 'published.json'), JSON.stringify(listed, null, 2) + '\n');
 console.log(`Built ${count} article page(s) for ${INDEX.length} published article(s) as of ${asOf}.`);
 for (const a of scheduled) console.log(`  scheduled: ${a.slug} (${a.date})`);
