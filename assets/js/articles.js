@@ -39,9 +39,20 @@ class ArticlesManager {
   // Static page for an article in the active locale. Korean is the original
   // (articles/slug.html); other locales live under their language directory
   // (en/articles/slug.html). Must match pagePath() in scripts/build-articles.mjs.
-  articleUrl(slug) {
-    const lang = this.lang();
+  // An article without a translation in the active locale (article.langs from
+  // the build) links to the Korean original instead of a missing page.
+  articleUrl(article) {
+    const slug = typeof article === 'string' ? article : article.slug;
+    const langs = typeof article === 'string' ? null : article.langs;
+    let lang = this.lang();
+    if (Array.isArray(langs) && !langs.includes(lang)) lang = 'ko';
     return `${lang === 'ko' ? '' : `${lang}/`}articles/${slug}.html`;
+  }
+
+  // hreflang="ko" on links that fall back to the Korean original
+  langAttr(article) {
+    const langs = article.langs;
+    return Array.isArray(langs) && !langs.includes(this.lang()) ? ' hreflang="ko"' : '';
   }
 
   rerender() {
@@ -106,7 +117,7 @@ class ArticlesManager {
             ` : ''}
           </div>
           <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-ocean-700 dark:group-hover:text-ocean-300 transition-colors">
-            <a href="${this.articleUrl(article.slug)}" class="block">
+            <a href="${this.articleUrl(article)}" class="block"${this.langAttr(article)}>
               <span class="absolute inset-0"></span>
               ${this.localize(article.title)}
             </a>
@@ -139,7 +150,7 @@ class ArticlesManager {
     }
 
     container.innerHTML = items.map(article => `
-      <a href="${this.articleUrl(article.slug)}" class="group block bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-ocean-500 dark:hover:border-ocean-400 transition-colors">
+      <a href="${this.articleUrl(article)}"${this.langAttr(article)} class="group block bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-ocean-500 dark:hover:border-ocean-400 transition-colors">
         <div class="flex items-center gap-x-3 text-xs mb-3">
           <time datetime="${article.date}" class="text-slate-500 dark:text-slate-400">
             ${this.formatDate(article.date)}

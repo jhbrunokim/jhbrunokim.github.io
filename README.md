@@ -214,8 +214,8 @@ node scripts/fetch-fonts.mjs   # Google Fonts 에서 woff2 + unicode-range 서�
 
 ### 새 아티클 추가
 
-1. `articles/<slug>.md` (한국어 원문) 과 번역본 `articles/<slug>.en.md` · `.zh.md` · `.ja.md` 작성. 첫 줄의 `# 제목` 은 히어로가 대신 보여 주므로 본문에서는 빠집니다
-2. `articles/index.json`에 메타(`slug`, `title`, `date`, `description`, `category`, `author`; 각 4개 언어) 추가
+1. `articles/<slug>.md` (한국어 원문) 과 번역본 `articles/<slug>.en.md` · `.zh.md` · `.ja.md` 작성. 첫 줄의 `# 제목` 은 히어로가 대신 보여 주므로 본문에서는 빠집니다. 번역본이 아직 없어도 됩니다: 빌드가 있는 언어만 페이지로 만들고 `published.json` 의 `langs` 에 적어 두므로, 영문 · 중문 · 일문 목록에서는 한국어 원문으로 링크됩니다 (번역이 생기면 자동으로 바뀜)
+2. `articles/index.json`에 메타(`slug`, `title`, `date`, `description`, `category`, `author`; 각 4개 언어. 번역 전이면 `ko` 만 적어도 됨) 추가
 3. `date` 에 발행일을 적습니다. **오늘(한국 시간) 이후 날짜면 예약 발행**입니다. 빌드는 발행일이 지난 글만 페이지 · 목록(`articles/published.json`) · sitemap 에 넣고, 배포 워크플로가 매주 월요일 09:00 KST 에 자동으로 다시 빌드하므로 그 주에 글이 나갑니다 (즉시 내보내려면 Actions 에서 수동 실행). 마크다운 원문과 `index.json` 은 사이트에 올라가지 않습니다
 4. `npm run build` 로 `articles/<slug>.html` (ko) 과 `en/articles/<slug>.html` 등이 만들어지는지 확인. 예약된 글까지 미리 보려면 `ARTICLES_AS_OF=2099-12-31 npm run build`
 
