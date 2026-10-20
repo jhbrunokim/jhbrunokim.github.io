@@ -4,6 +4,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    # Tailwind 4 는 CLI 패키지 분리 · 설정 방식 변경(CSS @theme) · 기본값 변화로 별도 마이그레이션이 필요합니다.
+    # 자동 PR 로는 빌드가 깨지므로 메이저 업데이트는 무시하고, 전환은 계획된 작업으로 진행합니다.
+    ignore:
+      - dependency-name: "tailwindcss"
+        update-types: ["version-update:semver-major"]
     groups:
       npm-minor-patch:
         update-types:
