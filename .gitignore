@@ -36,3 +36,7 @@ articles/*.html
 /zh/
 /ja/
 sitemap.xml
+articles/published.json
+
+# 검토용 PDF 출력물
+*.pdf

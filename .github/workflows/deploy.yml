@@ -8,6 +8,9 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  # 예약 발행: 매주 월요일 09:00 KST (00:00 UTC) 에 다시 빌드해, 발행일이 된 아티클을 내보냅니다.
+  schedule:
+    - cron: "0 0 * * 1"
 
 permissions:
   contents: read

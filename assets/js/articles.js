@@ -1,5 +1,6 @@
 // Articles Manager - renders the article list (articles.html) and the home
-// page preview from articles/index.json.
+// page preview from articles/published.json (written by the build from
+// articles/index.json, keeping only articles whose date has arrived).
 //
 // Article pages themselves are static: scripts/build-articles.mjs turns each
 // markdown file into articles/<slug>.html (ko) and articles/<slug>.<lang>.html,
@@ -52,7 +53,7 @@ class ArticlesManager {
 
   async fetchArticleIndex() {
     try {
-      const response = await fetch('articles/index.json');
+      const response = await fetch('articles/published.json');
       if (!response.ok) throw new Error('Failed to load article index');
       this.articles = await response.json();
       // Sort by date descending (newest first)
